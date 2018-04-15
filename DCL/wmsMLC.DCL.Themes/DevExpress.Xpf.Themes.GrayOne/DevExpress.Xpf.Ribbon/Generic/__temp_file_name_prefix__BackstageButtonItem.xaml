@@ -1,0 +1,20 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon" xmlns:dxrt="http://schemas.devexpress.com/winfx/2008/xaml/ribbon/themekeys" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <ControlTemplate x:Key="{dxrt:BackstageButtonItemThemeKey ResourceKey=ControlTemplate}" TargetType="{x:Type dxr:BackstageButtonItem}">
+    <dxr:RibbonCheckedBorderControl Style="{TemplateBinding BorderStyle}" UseAppFocusValue="true" IsEnabled="{TemplateBinding ActualIsEnabled}" AppFocusValue="{TemplateBinding ActualIsFocused}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\BackstageButtonItem.xaml;4;10">
+      <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\BackstageButtonItem.xaml;5;14">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <ContentControl x:Name="PART_Icon" Style="{TemplateBinding GlyphContainerStyle}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\BackstageButtonItem.xaml;10;18">
+          <dxcore_unique_xmlns:PixelSnapper dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\BackstageButtonItem.xaml;11;22">
+            <Image Style="{TemplateBinding GlyphStyle}" Source="{TemplateBinding Glyph}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\BackstageButtonItem.xaml;12;26" />
+          </dxcore_unique_xmlns:PixelSnapper>
+        </ContentControl>
+        <ContentControl x:Name="PART_Content" Style="{TemplateBinding ContentStyle}" Grid.Column="1" IsTabStop="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\BackstageButtonItem.xaml;15;18">
+          <ContentControl Style="{TemplateBinding ActualTextStyle}" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" IsTabStop="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\BackstageButtonItem.xaml;16;22" />
+        </ContentControl>
+      </Grid>
+    </dxr:RibbonCheckedBorderControl>
+  </ControlTemplate>
+</ResourceDictionary>

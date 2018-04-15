@@ -1,0 +1,47 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" xmlns:dxbt="http://schemas.devexpress.com/winfx/2008/xaml/bars/themekeys" xmlns:dxbc="http://schemas.devexpress.com/winfx/2008/xaml/bars/internal" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <ControlTemplate x:Key="{dxbt:FloatingBarPopupThemeKey ResourceKey=SizeGripTemplate}" TargetType="{x:Type Thumb}">
+    <Border Background="Transparent" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\FloatingBarPopup.xaml;4;10" />
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxbt:FloatingBarPopupThemeKey ResourceKey=DragWidgetTemplate}" TargetType="{x:Type dxb:DragWidget}">
+    <Border Background="Transparent" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\FloatingBarPopup.xaml;8;10" />
+  </ControlTemplate>
+  <Style x:Key="{dxbt:FloatingBarPopupThemeKey ResourceKey=DragWidgetStyle}" TargetType="{x:Type dxb:DragWidget}">
+    <Setter Property="Template" Value="{DynamicResource {dxbt:FloatingBarPopupThemeKey ResourceKey=DragWidgetTemplate}}" />
+    <!--BEGIN WPF-->
+    <Setter Property="Cursor" Value="SizeAll" />
+    <!--END WPF-->
+    <!--
+        <Setter Property="dx:CustomCursorController.Cursor" Value="{StaticResource SizeAllCursor}"/>
+        -->
+  </Style>
+  <Style x:Key="{dxbt:FloatingBarPopupThemeKey ResourceKey=SizeGripStyle}" TargetType="{x:Type Thumb}">
+    <Setter Property="Template" Value="{DynamicResource {dxbt:FloatingBarPopupThemeKey ResourceKey=SizeGripTemplate}}" />
+    <Setter Property="Width" Value="2" />
+    <!--BEGIN WPF-->
+    <Setter Property="Cursor" Value="SizeWE" />
+    <!--END WPF-->
+  </Style>
+  <ControlTemplate x:Key="{dxbt:FloatingBarPopupThemeKey ResourceKey=ContentTemplate}" TargetType="{x:Type dxb:FloatingBarPopupContentControl}">
+    <ContentControl x:Name="PART_Border" Template="{DynamicResource {dxbt:FloatingBarPopupThemeKey ResourceKey=BorderTemplate}}" IsTabStop="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\FloatingBarPopup.xaml;30;10">
+      <StackPanel dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\FloatingBarPopup.xaml;31;14">
+        <ContentControl x:Name="PART_Caption" Template="{DynamicResource {dxbt:FloatingBarPopupThemeKey ResourceKey=CaptionBackgroundTemplate}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\FloatingBarPopup.xaml;32;18">
+          <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\FloatingBarPopup.xaml;33;22">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <dxb:DragWidget x:Name="PART_DragWidget" Grid.ColumnSpan="2" Style="{DynamicResource {dxbt:FloatingBarPopupThemeKey ResourceKey=DragWidgetStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\FloatingBarPopup.xaml;38;26" />
+            <Border ClipToBounds="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\FloatingBarPopup.xaml;39;26">
+              <TextBlock Grid.Column="0" TextWrapping="NoWrap" Text="{Binding Path=DataContext.Caption, RelativeSource={RelativeSource TemplatedParent}}" Grid.ColumnSpan="3" Style="{DynamicResource {dxbt:FloatingBarPopupThemeKey ResourceKey=CaptionStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\FloatingBarPopup.xaml;40;30" />
+            </Border>
+            <Button x:Name="PART_CloseButton" Grid.Column="1" Style="{DynamicResource {dxbt:FloatingBarPopupThemeKey ResourceKey=CloseButtonStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\FloatingBarPopup.xaml;42;26" />
+          </Grid>
+        </ContentControl>
+        <Grid Grid.Row="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\FloatingBarPopup.xaml;45;18">
+          <dxb:FloatingBarContainerControl x:Name="PART_FloatingBarContainer" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\FloatingBarPopup.xaml;46;22" />
+          <Thumb HorizontalAlignment="Right" x:Name="PART_SizeGrip" Style="{DynamicResource {dxbt:FloatingBarPopupThemeKey ResourceKey=SizeGripStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\FloatingBarPopup.xaml;47;22" />
+        </Grid>
+      </StackPanel>
+    </ContentControl>
+  </ControlTemplate>
+</ResourceDictionary>

@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{71315D65-FCEF-43D4-B659-F6E50EF8A9DD}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>wmsMLC.Activities.Business.Designer</RootNamespace>
+    <AssemblyName>wmsMLC.Activities.Business.Designer</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>6354f2d4</NuGetPackageImportStamp>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'TST1|AnyCPU'">
+    <OutputPath>bin\TST1\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BLToolkit.4, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b1d3f6ab3aadaca3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Packages\BLToolkit.4.2.0\lib\net40-full\BLToolkit.4.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Activities.Core.Presentation" />
+    <Reference Include="System.Activities.Presentation" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO">
+      <HintPath>..\..\..\Packages\Microsoft.Bcl.1.1.10\lib\net40\System.IO.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime">
+      <HintPath>..\..\..\Packages\Microsoft.Bcl.1.1.10\lib\net40\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>..\..\..\Packages\Microsoft.Bcl.1.1.10\lib\net40\System.Threading.Tasks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="ComboBoxActivityDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CommentActivityDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CreateExpandoObjectViewModelActivityDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DynamicAssignActivityDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ExecuteProcedureActivityDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MultipleDynamicAssignActivityDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RclShowDialogActivityDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RegEventDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Version\AssemblyInfoGlobal.cs">
+      <Link>Properties\AssemblyInfoGlobal.cs</Link>
+    </Compile>
+    <Compile Include="ActivityLibraryMetadata.cs" />
+    <Compile Include="ComboBoxActivityDesigner.xaml.cs">
+      <DependentUpon>ComboBoxActivityDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommentActivityDesigner.xaml.cs">
+      <DependentUpon>CommentActivityDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CreateExpandoObjectViewModelActivityDesigner.xaml.cs">
+      <DependentUpon>CreateExpandoObjectViewModelActivityDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicAssignActivityDesigner.xaml.cs">
+      <DependentUpon>DynamicAssignActivityDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExecuteProcedureActivityDesigner.xaml.cs">
+      <DependentUpon>ExecuteProcedureActivityDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MultipleDynamicAssignActivityDesigner.xaml.cs">
+      <DependentUpon>MultipleDynamicAssignActivityDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="RclShowDialogActivityDesigner.xaml.cs">
+      <DependentUpon>RclShowDialogActivityDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RegEventDesigner.xaml.cs">
+      <DependentUpon>RegEventDesigner.xaml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Business\wmsMLC.Business.Objects\wmsMLC.Business.Objects.csproj">
+      <Project>{67d93016-602c-462b-be46-9fdfa9ed2566}</Project>
+      <Name>wmsMLC.Business.Objects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DCL\wmsMLC.DCL.General\wmsMLC.DCL.General.csproj">
+      <Project>{151601E7-810A-4BAF-8D96-1DC589D603DA}</Project>
+      <Name>wmsMLC.DCL.General</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DCL\wmsMLC.DCL.Resources\wmsMLC.DCL.Resources.csproj">
+      <Project>{d126f979-3e89-4a0f-ad21-9ed5c99c8ac2}</Project>
+      <Name>wmsMLC.DCL.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\General\wmsMLC.General.BL\wmsMLC.General.BL.csproj">
+      <Project>{dcd24e7c-7328-4d5f-9796-f77312e13ea3}</Project>
+      <Name>wmsMLC.General.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\General\wmsMLC.General.PL.WPF\wmsMLC.General.PL.WPF.csproj">
+      <Project>{4312ae52-c3d5-435a-a174-93bc9d14b7c1}</Project>
+      <Name>wmsMLC.General.PL.WPF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\General\wmsMLC.General.PL\wmsMLC.General.PL.csproj">
+      <Project>{360F0643-A516-4B1D-905A-F010A5783AC9}</Project>
+      <Name>wmsMLC.General.PL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\General\wmsMLC.General\wmsMLC.General.csproj">
+      <Project>{123BA357-AAC6-4E30-8AF9-9CD944BF25DF}</Project>
+      <Name>wmsMLC.General</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\wmsMLC.Activities.Business\wmsMLC.Activities.Business.csproj">
+      <Project>{d42ce420-d856-40a5-99e8-5fa15d866779}</Project>
+      <Name>wmsMLC.Activities.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\wmsMLC.Activities.Dialogs\wmsMLC.Activities.Dialogs.csproj">
+      <Project>{6120EDD0-2328-4742-AD76-82FB255065C4}</Project>
+      <Name>wmsMLC.Activities.Dialogs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\wmsMLC.Activities.General\wmsMLC.Activities.General.csproj">
+      <Project>{98ec024c-6439-44b1-8b1e-29e457b2201f}</Project>
+      <Name>wmsMLC.Activities.General</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DCLDefault16.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>mkdir "$(TargetDir)Activities"
+copy "$(TargetPath)" "$(TargetDir)Activities\$(TargetFileName)"</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\..\..\Packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\..\Packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\..\Packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

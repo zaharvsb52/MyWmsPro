@@ -1,0 +1,8 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:localcontrols="clr-namespace:wmsMLC.DCL.Content.Views.Controls"
+    xmlns:controls="clr-namespace:wmsMLC.DCL.Main.Views.Controls;assembly=wmsMLC.DCL.Main">
+
+    <Style TargetType="{x:Type localcontrols:PartnerWithAddressLookupEdit}" BasedOn="{StaticResource {x:Type controls:CustomLookUpEdit}}"/>
+
+</ResourceDictionary>

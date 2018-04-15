@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Parking" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!--Сущность Parking-->
+  <xs:element name="TENTPARKING" type="ParkingType"/>
+  
+  <!--Описание типа Parking-->
+  <xs:complexType name="ParkingType">
+    <xs:sequence>
+      <!--ID записи-->
+      <xs:element name="PARKINGID" type="xs:integer"/>
+      <!--Номер парковочного места-->
+      <xs:element name="PARKINGNUMBER" nillable="false">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Наименование места-->
+      <xs:element name="PARKINGNAME" nillable="false">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Парковочная зона-->
+      <xs:element name="PARKINGAREA">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1030"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,196 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon" xmlns:dxrt="http://schemas.devexpress.com/winfx/2008/xaml/ribbon/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <ControlTemplate x:Key="{dxrt:GalleryDropDownControlThemeKey ResourceKey=SizeGripContainerTemplate}" TargetType="{x:Type ContentControl}">
+    <Border BorderBrush="#FFFFFFFF" BorderThickness="0,1,0,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\DropDownGallery.xaml;4;10">
+      <Border.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+          <GradientStop Color="#FFF0F0F0" Offset="0" />
+          <GradientStop Color="#FFE5E6E8" Offset="1" />
+        </LinearGradientBrush>
+      </Border.Background>
+      <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\DropDownGallery.xaml;11;14" />
+    </Border>
+  </ControlTemplate>
+  <Style x:Key="{dxrt:GalleryDropDownControlThemeKey ResourceKey=GalleryScrollBarContainerStyle}" TargetType="{x:Type ContentControl}">
+    <Setter Property="Margin" Value="1,0,0,0" />
+  </Style>
+  <ControlTemplate x:Key="{dxrt:GalleryDropDownControlThemeKey ResourceKey=MenuBorderTemplate}" TargetType="{x:Type ContentControl}">
+    <Border BorderBrush="#FF9BA7B7" BorderThickness="0,1,0,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\DropDownGallery.xaml;20;10">
+      <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\DropDownGallery.xaml;21;14" />
+    </Border>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxrt:GalleryDropDownControlThemeKey ResourceKey=MenuGlyphSideBorderTemplate}" TargetType="{x:Type ContentControl}">
+    <Border Background="#FFE9ECEE" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\DropDownGallery.xaml;26;10" />
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxrt:GalleryDropDownControlThemeKey ResourceKey=MenuContentSideBorderTemplate}" TargetType="{x:Type ContentControl}">
+    <Border dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\DropDownGallery.xaml;30;10">
+      <Border.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+          <GradientStop Color="#FFE9ECEE" Offset="0" />
+          <GradientStop Color="#FFD0D7E2" Offset="1" />
+        </LinearGradientBrush>
+      </Border.Background>
+    </Border>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxrt:GalleryDropDownControlThemeKey ResourceKey=ThumbForBothResizeModeTemplate}" TargetType="{x:Type Thumb}">
+    <Grid Background="Transparent" Width="16" Height="16" Cursor="SizeNS" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\DropDownGallery.xaml;41;10">
+      <Grid HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,3" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\DropDownGallery.xaml;42;14">
+        <Path Stretch="Fill" Fill="#7FFFFFFF" Data="F1 M 514,431L 516,431L 516,433L 514,433L 514,431 Z M 514,427L 516,427L 516,429L 514,429L 514,427 Z M 512,431L 512,433L 510,433L 510,431L 512,431 Z " Width="6" Height="6" Margin="0,1,0,-1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\DropDownGallery.xaml;43;18" />
+        <Path Stretch="Fill" Fill="#FF868995" Data="F1 M 514,431L 516,431L 516,433L 514,433L 514,431 Z M 514,427L 516,427L 516,429L 514,429L 514,427 Z M 512,431L 512,433L 510,433L 510,431L 512,431 Z " Width="6" Height="6" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\DropDownGallery.xaml;44;18" />
+      </Grid>
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxrt:GalleryDropDownControlThemeKey ResourceKey=ThumbForVertResizeModeTemplate}" TargetType="{x:Type Thumb}">
+    <Grid Background="Transparent" Width="16" Height="16" Cursor="SizeNS" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\DropDownGallery.xaml;50;10">
+      <Grid HorizontalAlignment="Center" VerticalAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\DropDownGallery.xaml;51;14">
+        <Path Stretch="Fill" Fill="#7FFFFFFF" Data="F1 M 507,419L 509,419L 509,421L 507,421L 507,419 Z M 511,419L 513,419L 513,421L 511,421L 511,419 Z M 515,419L 517,419L 517,421L 515,421L 515,419 Z " Width="10" Height="2" Margin="0,1,0,-1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\DropDownGallery.xaml;52;18" />
+        <Path Stretch="Fill" Fill="#FF868995" Data="F1 M 507,419L 509,419L 509,421L 507,421L 507,419 Z M 511,419L 513,419L 513,421L 511,421L 511,419 Z M 515,419L 517,419L 517,421L 515,421L 515,419 Z " Width="10" Height="2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\DropDownGallery.xaml;53;18" />
+      </Grid>
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxrt:GalleryDropDownControlThemeKey ResourceKey=GalleryBackgroundTemplate}" TargetType="{x:Type ContentControl}">
+    <Border Background="#FFFFFFFF" Padding="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\DropDownGallery.xaml;59;10">
+      <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\DropDownGallery.xaml;60;14" />
+    </Border>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxrt:GalleryDropDownControlThemeKey ResourceKey=GalleryGroupsBackgroundTemplate}" TargetType="{x:Type ContentControl}">
+    <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\DropDownGallery.xaml;65;10" />
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxrt:GalleryDropDownControlThemeKey ResourceKey=GalleryCaptionTemplate}" TargetType="{x:Type ToggleButton}">
+    <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\DropDownGallery.xaml;69;10">
+      <Border BorderBrush="#FFD0D2D6" BorderThickness="0,0,0,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\DropDownGallery.xaml;70;14">
+        <Border.Background>
+          <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFF0F0F0" Offset="0" />
+            <GradientStop Color="#FFE5E6E8" Offset="1" />
+          </LinearGradientBrush>
+        </Border.Background>
+      </Border>
+      <Border x:Name="Selection" Background="#FF0066FF" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\DropDownGallery.xaml;78;14" />
+      <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\DropDownGallery.xaml;79;14" />
+      <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup x:Name="CommonStates">
+          <VisualState x:Name="Normal" />
+          <VisualState x:Name="MouseOver">
+            <Storyboard>
+              <DoubleAnimation Storyboard.TargetName="Selection" Storyboard.TargetProperty="Opacity" Duration="0" To="0.05" />
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="Pressed">
+            <Storyboard>
+              <DoubleAnimation Storyboard.TargetName="Selection" Storyboard.TargetProperty="Opacity" Duration="0" To="0.08" />
+            </Storyboard>
+          </VisualState>
+        </VisualStateGroup>
+        <VisualStateGroup x:Name="CheckedStates">
+          <VisualState x:Name="Unchecked" />
+          <VisualState x:Name="Checked">
+            <Storyboard>
+              <DoubleAnimation Storyboard.TargetName="Selection" Storyboard.TargetProperty="Opacity" Duration="0" To="0.08" />
+            </Storyboard>
+          </VisualState>
+        </VisualStateGroup>
+      </VisualStateManager.VisualStateGroups>
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxrt:GalleryDropDownControlThemeKey ResourceKey=GalleryItemBorderTemplate}" TargetType="{x:Type dxb:ItemBorderControl}">
+    <Grid Background="Transparent" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\DropDownGallery.xaml;107;10">
+      <Border x:Name="HoverState" CornerRadius="2" BorderThickness="1" Padding="1" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\DropDownGallery.xaml;108;14">
+        <Border.Background>
+          <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFF4F6FE" Offset="0" />
+            <GradientStop Color="#FFF4F6FE" Offset="1" />
+            <GradientStop Color="#FFECEFF7" Offset="0.25" />
+          </LinearGradientBrush>
+        </Border.Background>
+        <Border.BorderBrush>
+          <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFCECFD5" Offset="0" />
+            <GradientStop Color="#FFCECFD5" Offset="1" />
+            <GradientStop Color="#FFACAFB8" Offset="0.25" />
+          </LinearGradientBrush>
+        </Border.BorderBrush>
+        <Border CornerRadius="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\DropDownGallery.xaml;123;18">
+          <Border.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+              <GradientStop Color="#FFE5EBFF" Offset="0" />
+              <GradientStop Color="#FFE4EBFD" Offset="1" />
+              <GradientStop Color="#FFDEE6FE" Offset="0.25" />
+            </LinearGradientBrush>
+          </Border.Background>
+        </Border>
+      </Border>
+      <Border x:Name="PressedState" CornerRadius="2" BorderThickness="1" Padding="1" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\DropDownGallery.xaml;133;14">
+        <Border.Background>
+          <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFD8D9DD" Offset="0" />
+            <GradientStop Color="#FFE1E2E6" Offset="1" />
+            <GradientStop Color="#FFE1E2E6" Offset="0.25" />
+          </LinearGradientBrush>
+        </Border.Background>
+        <Border.BorderBrush>
+          <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFC5C6CC" Offset="0" />
+            <GradientStop Color="#FFD8D9DD" Offset="1" />
+          </LinearGradientBrush>
+        </Border.BorderBrush>
+      </Border>
+      <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\DropDownGallery.xaml;148;14" />
+      <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup x:Name="State">
+          <VisualState x:Name="Normal" />
+          <VisualState x:Name="Hover">
+            <Storyboard>
+              <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="HoverState" Duration="0" To="1" />
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="Pressed">
+            <Storyboard>
+              <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="PressedState" Duration="0" To="1" />
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="Checked">
+            <Storyboard>
+              <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="PressedState" Duration="0" To="1" />
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="HoverChecked">
+            <Storyboard>
+              <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="PressedState" Duration="0" To="1" />
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="Focused">
+            <Storyboard>
+              <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="HoverState" Duration="0" To="1" />
+            </Storyboard>
+          </VisualState>
+        </VisualStateGroup>
+      </VisualStateManager.VisualStateGroups>
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxrt:GalleryDropDownControlThemeKey ResourceKey=GalleryItemGlyphBorderTemplate}" TargetType="{x:Type dxb:ItemBorderControl}">
+    <Border Name="Root" BorderBrush="Transparent" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\DropDownGallery.xaml;183;10">
+      <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\DropDownGallery.xaml;184;14" />
+    </Border>
+    <ControlTemplate.Triggers>
+      <Trigger Property="State" Value="Checked">
+        <Setter TargetName="Root" Property="BorderBrush" Value="#FFFFFCDF" />
+      </Trigger>
+    </ControlTemplate.Triggers>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxrt:GalleryDropDownControlThemeKey ResourceKey=PopupBorderTemplate}" TargetType="{x:Type dxr:GalleryDropDownPopupBorderControl}">
+    <Grid x:Name="Root" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\DropDownGallery.xaml;194;10">
+      <Grid.Effect>
+        <DropShadowEffect x:Name="Shadow" Direction="270" ShadowDepth="1" BlurRadius="5" Opacity="0.15" />
+      </Grid.Effect>
+      <Border x:Name="Border" Background="#FF9DA0AA" Padding="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\DropDownGallery.xaml;198;14">
+        <ContentPresenter Content="{Binding Path=Content, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\DropDownGallery.xaml;199;18" />
+      </Border>
+      <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup x:Name="AppType">
+          <VisualState x:Name="Standalone" />
+          <VisualState x:Name="BrowserHosted" />
+        </VisualStateGroup>
+      </VisualStateManager.VisualStateGroups>
+    </Grid>
+  </ControlTemplate>
+</ResourceDictionary>

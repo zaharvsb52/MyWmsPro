@@ -1,0 +1,10 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxet="http://schemas.devexpress.com/winfx/2008/xaml/editors/themekeys" xmlns:dxepc="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys">
+
+	<Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.Popups.Calendar.CalendarCellButton}" TargetType="{x:Type dxepc:CalendarCellButton}">
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="VerticalAlignment" Value="Stretch" />
+		<Setter Property="Background" Value="White" />
+        <Setter Property="IsTabStop" Value="False" />
+		<Setter Property="Template" Value="{DynamicResource {dxet:DateEditThemeKey ResourceKey=CellButtonTemplate}}" />
+	</Style>
+</ResourceDictionary>

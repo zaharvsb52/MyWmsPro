@@ -1,0 +1,192 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" xmlns:dxgt="http://schemas.devexpress.com/winfx/2008/xaml/grid/themekeys" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <!--BEGIN WPF-->
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Grid/GrayOne/Constants.xaml" />
+  </ResourceDictionary.MergedDictionaries>
+  <!--END WPF-->
+  <dxg:DetailLevelToObjectConverter x:Key="DetailLevelToWidthConverter" DetailValue="1" NotDetailValue="0" />
+  <ControlTemplate x:Key="{dxgt:GroupRowThemeKey ResourceKey=GroupRowControlContainerTemplate}" TargetType="{x:Type ContentControl}">
+    <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\Rows.xaml;12;10" />
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxgt:GroupRowThemeKey ResourceKey=GroupRowControlHeaderContentTemplate}" TargetType="{x:Type ContentControl}">
+    <Border x:Name="ContentBorder" BorderBrush="#FFDDE0E3" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\Rows.xaml;16;10">
+      <!--BEGIN WPF-->
+      <TextBlock.Foreground>
+        <DynamicResource ResourceKey="GroupGridRowHeaderTextBrush" />
+      </TextBlock.Foreground>
+      <!--END WPF-->
+      <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\Rows.xaml;22;14" />
+    </Border>
+  </ControlTemplate>
+  <Style x:Key="{dxgt:GroupRowThemeKey ResourceKey=GroupRowPresenterStyle}" TargetType="{x:Type dxg:GroupGridRowPresenter}"></Style>
+  <!--BEGIN WPF-->
+  <Style x:Key="{dxgt:CardViewThemeKey ResourceKey=GroupRowControlExpanderVerticalStyle}" TargetType="{x:Type dx:DXExpander}">
+    <Setter Property="Margin" Value="23,0,0,0" />
+    <Setter Property="AnimationProgress" Value="0" />
+    <Setter Property="VerticalAlignment" Value="Top" />
+    <Setter Property="HorizontalAlignment" Value="Stretch" />
+    <Setter Property="HorizontalExpand" Value="None" />
+    <Setter Property="VerticalExpand" Value="FromTopToBottom" />
+  </Style>
+  <Style x:Key="{dxgt:CardViewThemeKey ResourceKey=GroupRowControlExpanderHorizontalStyle}" TargetType="{x:Type dx:DXExpander}">
+    <Setter Property="Margin" Value="0,0,0,23" />
+    <Setter Property="AnimationProgress" Value="0" />
+    <Setter Property="VerticalAlignment" Value="Stretch" />
+    <Setter Property="HorizontalAlignment" Value="Left" />
+    <Setter Property="HorizontalExpand" Value="FromLeftToRight" />
+    <Setter Property="VerticalExpand" Value="None" />
+  </Style>
+  <ControlTemplate x:Key="{dxgt:CardViewThemeKey ResourceKey=GroupRowControlContainerTemplate}" TargetType="{x:Type ContentControl}">
+    <Border x:Name="GroupBorder" Background="#FFFFFFFF" BorderBrush="#FFDDE0E3" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\Rows.xaml;50;10">
+      <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\Rows.xaml;51;14" />
+    </Border>
+    <ControlTemplate.Triggers>
+      <DataTrigger Binding="{Binding Path=(dxg:GridControl.ActiveView).Orientation, RelativeSource={RelativeSource TemplatedParent}}" Value="Vertical">
+        <Setter Property="BorderThickness" TargetName="GroupBorder" Value="0,0,0,1" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding Path=(dxg:GridControl.ActiveView).Orientation, RelativeSource={RelativeSource TemplatedParent}}" Value="Horizontal">
+        <Setter Property="BorderThickness" TargetName="GroupBorder" Value="0,0,1,0" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding Path=IsLastVisibleElementRow}" Value="False">
+        <Setter Property="BorderThickness" Value="0" TargetName="GroupBorder" />
+      </DataTrigger>
+    </ControlTemplate.Triggers>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxgt:CardViewThemeKey ResourceKey=GroupRowControlHeaderContentTemplate}" TargetType="{x:Type ContentControl}">
+    <Border x:Name="ContentBorder" BorderBrush="#FFDDE0E3" DockPanel.Dock="Top" TextBlock.Foreground="{DynamicResource GroupGridRowHeaderTextBrush}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\Rows.xaml;67;10">
+      <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\Rows.xaml;68;14" />
+    </Border>
+    <ControlTemplate.Triggers>
+      <DataTrigger Binding="{Binding Path=IsRowVisible}" Value="false">
+        <Setter Property="Visibility" TargetName="ContentBorder" Value="Collapsed" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding Path=(dxg:GridControl.ActiveView).Orientation, RelativeSource={RelativeSource TemplatedParent}}" Value="Horizontal">
+        <Setter TargetName="ContentBorder" Property="LayoutTransform">
+          <Setter.Value>
+            <RotateTransform Angle="-90" />
+          </Setter.Value>
+        </Setter>
+        <Setter Property="DockPanel.Dock" Value="Left" TargetName="ContentBorder" />
+        <Setter Property="VerticalAlignment" Value="Stretch" TargetName="ContentBorder" />
+      </DataTrigger>
+    </ControlTemplate.Triggers>
+  </ControlTemplate>
+  <SolidColorBrush x:Key="BorderFocusedBrush" Color="#FFE2EAFD" />
+  <SolidColorBrush x:Key="BorderSelectedUnfocusedBrush" Color="#FFE2E3E8" />
+  <!--END WPF-->
+  <ControlTemplate x:Key="{dxgt:GridRowThemeKey ResourceKey=RowControlContainerTemplate}" TargetType="{x:Type ContentControl}">
+    <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\Rows.xaml;91;10">
+      <!--ONLY SL<Grid.Background>
+                <Binding Path="(dxe:BaseEdit.HasValidationError)">
+                    <Binding.Converter>
+                        <dx:BoolToObjectConverter TrueValue="#FFFFD9D9" FalseValue="Transparent"/>
+                    </Binding.Converter>
+                </Binding>
+            </Grid.Background>ONLY SL-->
+      <Border x:Name="RowContentBorder" dxg:FadeSelectionHelper.IsKeyboardFocusWithinView="{Binding Path=View.IsKeyboardFocusWithinView}" dxg:FadeSelectionHelper.FadeSelectionOnLostFocus="{Binding Path=View.FadeSelectionOnLostFocus}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\Rows.xaml;99;14">
+        <!--BEGIN WPF-->
+        <Border.Background>
+          <Binding Path="Background" RelativeSource="{RelativeSource TemplatedParent}" />
+        </Border.Background>
+        <!--END WPF-->
+        <!--ONLY SL<Border.Background>
+                <Binding Path="SelectionState">
+                    <Binding.Converter>
+                        <dx:EnumToObjectConverter>
+                            <dx:EnumToObjectConverter.Values>
+                                <dx:EnumObjectProvider x:Key="None" Value="Transparent"/>
+                                <dx:EnumObjectProvider x:Key="Selected"
+                                                       Value="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=BorderSelectedBrush}}"/>
+                                <dx:EnumObjectProvider x:Key="Focused"
+                                                       Value="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=BorderFocusedBrush}}"/>
+                            </dx:EnumToObjectConverter.Values>
+                        </dx:EnumToObjectConverter>
+                    </Binding.Converter>
+                </Binding>
+            </Border.Background>ONLY SL-->
+      </Border>
+      <Border x:Name="RowBottomLine" BorderBrush="{TemplateBinding BorderBrush}" Padding="{TemplateBinding Padding}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\Rows.xaml;121;14">
+        <Border.BorderThickness>
+          <Binding Path="View.ShowHorizontalLines">
+            <Binding.Converter>
+              <dxcore_unique_xmlns:BoolToObjectConverter TrueValue="0,0,0,1" FalseValue="0" />
+            </Binding.Converter>
+          </Binding>
+        </Border.BorderThickness>
+      </Border>
+      <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\Rows.xaml;130;14" />
+    </Grid>
+    <ControlTemplate.Triggers>
+      <MultiDataTrigger>
+        <MultiDataTrigger.Conditions>
+          <Condition Binding="{Binding Path=(dxg:RowData.CurrentRowData).(dxe:BaseEdit.HasValidationError), RelativeSource={RelativeSource TemplatedParent}}" Value="True" />
+          <Condition Binding="{Binding Path=(dxg:RowData.CurrentRowData).IsSelected, RelativeSource={RelativeSource TemplatedParent}}" Value="False" />
+        </MultiDataTrigger.Conditions>
+        <Setter TargetName="RowContentBorder" Property="Background" Value="#FFFFD9D9" />
+      </MultiDataTrigger>
+    </ControlTemplate.Triggers>
+  </ControlTemplate>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.FixedGroupsAdorner}" TargetType="{x:Type dxg:FixedGroupsAdorner}">
+    <Setter Property="AdornerHeight" Value="20" />
+    <Setter Property="AdornerBrush">
+      <Setter.Value>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+          <GradientStop Color="#14000000" Offset="0.35" />
+          <GradientStop Color="#00000000" Offset="1" />
+          <GradientStop Color="#33000000" />
+          <GradientStop Color="#1E000000" Offset="0.15" />
+        </LinearGradientBrush>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <ContentPresenter IsHitTestVisible="false" Content="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\Rows.xaml;157;22" />
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.RowIndicatorControl}" TargetType="{x:Type dxg:RowIndicatorControl}"></Style>
+  <Style x:Key="{dxgt:GridRowThemeKey ResourceKey=DetailTotalSummaryIndentBorderStyle}" TargetType="{x:Type Border}">
+    <Setter Property="BorderBrush" Value="#FF9DA0AA" />
+    <Setter Property="BorderThickness" Value="0,0,0,1" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.GridDetailExpandButtonContainer}" TargetType="{x:Type dxg:GridDetailExpandButtonContainer}">
+    <Setter Property="IsMasterRowExpanded" Value="{Binding IsMasterRowExpanded}" />
+    <Setter Property="RowPosition" Value="{Binding RowPosition}" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="dxg:GridDetailExpandButtonContainer">
+          <dxg:GridDetailExpandButton Name="PART_ExpandButton" Command="{Binding View.Commands.ChangeMasterRowExpanded}" CommandParameter="{Binding Path=RowHandle.Value}" IsChecked="{Binding Path=IsRowExpanded, Mode=OneWay}" dxg:GridDetailExpandButtonContainer.IsDetailButtonVisible="{Binding Path=(dxg:GridDetailExpandButtonContainer.IsDetailButtonVisible), RelativeSource={RelativeSource TemplatedParent}}" />
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.DetailRowsIndentControl}" TargetType="{x:Type dxg:DetailRowsIndentControl}">
+    <Setter Property="dxg:DetailSummaryControlBase.SummaryDetailLevel" Value="{Binding Path=(dxg:DetailSummaryControlBase.SummaryDetailLevel), RelativeSource={RelativeSource TemplatedParent}}" />
+    <Setter Property="ItemsPanel">
+      <Setter.Value>
+        <ItemsPanelTemplate>
+          <StackPanel Orientation="Horizontal" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\Rows.xaml;184;22" />
+        </ItemsPanelTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="ItemTemplate">
+      <Setter.Value>
+        <DataTemplate>
+          <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\Rows.xaml;191;22">
+            <dxg:BackgroundBorderControl Width="{Binding Path=Width}" ItemLevel="{Binding Path=Level}" RowLevel="{Binding Path=(dx:DataObjectBase.DataObject).DetailLevel, RelativeSource={RelativeSource TemplatedParent}}" LineLevel="{Binding Path=(dx:DataObjectBase.DataObject).LineLevel, RelativeSource={RelativeSource TemplatedParent}}" IsMasterRowExpanded="{Binding Path=(dx:DataObjectBase.DataObject).IsMasterRowExpanded, RelativeSource={RelativeSource TemplatedParent}}" />
+            <Border x:Name="detailLeftLine" dxg:DetailRowsIndentControl.IsSummaryDetailLevel="{Binding Path=(dxg:DetailRowsIndentControl.IsSummaryDetailLevel), RelativeSource={RelativeSource TemplatedParent}}" BorderThickness="1,0,0,0" HorizontalAlignment="Right" Width="{Binding Level, Converter={StaticResource DetailLevelToWidthConverter}}" BorderBrush="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=GridDataRowDelimiterBrush}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\Rows.xaml;193;26" />
+          </Grid>
+        </DataTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <ItemsPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\Rows.xaml;201;22" />
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+</ResourceDictionary>

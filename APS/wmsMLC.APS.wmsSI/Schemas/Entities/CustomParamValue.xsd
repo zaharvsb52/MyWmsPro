@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CustomParamValue" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!--Сущность CustomParamValue-->
+  <xs:element name="TENTCUSTOMPARAMVALUE" type="CustomParamValueType"/>
+  
+  <!--Описание типа CustomParamValue-->
+  <xs:complexType name="CustomParamValueType">
+    <xs:sequence>
+      <!--ID записи-->
+      <xs:element name="CPVID" type="xs:integer"/>
+      <!--Код параметра -->
+      <xs:element name="CUSTOMPARAMCODE_R">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Отношение к сущности экземпляра-->
+      <xs:element name="CPV2ENTITY" nillable="false">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Код экземпляра сущности-->
+      <xs:element name="CPVKEY" nillable="false">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Значение параметра-->
+      <xs:element name="CPVVALUE">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1030"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Владелец-->
+      <xs:element name="CPVPARENT" type="xs:integer"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

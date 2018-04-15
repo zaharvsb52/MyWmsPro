@@ -1,0 +1,402 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/DeepBlue/StandardControlStyles/Brushes.xaml" />
+  </ResourceDictionary.MergedDictionaries>
+  <Thickness x:Key="DemoVerticalScrollBarMargin">0,-1,-1,0</Thickness>
+  <Style x:Key="ScrollingCornerStyle" TargetType="Border">
+    <Setter Property="HorizontalAlignment" Value="Stretch" />
+    <Setter Property="VerticalAlignment" Value="Stretch" />
+    <Setter Property="Width" Value="Auto" />
+    <Setter Property="Height" Value="Auto" />
+    <Setter Property="CornerRadius" Value="0,0,2,0" />
+    <Setter Property="Background">
+      <Setter.Value>
+        <RadialGradientBrush>
+          <RadialGradientBrush.RelativeTransform>
+            <TransformGroup>
+              <ScaleTransform CenterX="0.5" CenterY="0.5" ScaleX="2.671" ScaleY="2.671" />
+              <SkewTransform AngleX="0" AngleY="0" CenterX="0.5" CenterY="0.5" />
+              <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+              <TranslateTransform X="-0.496" Y="-0.496" />
+            </TransformGroup>
+          </RadialGradientBrush.RelativeTransform>
+          <GradientStop Color="#FFBAC6D5" Offset="0" />
+          <GradientStop Color="#FFD2E1ED" Offset="1" />
+          <GradientStop Color="#FFD3E2EE" Offset="0.538" />
+        </RadialGradientBrush>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxt:ScrollBarThemeKey ThemeName=GrayOne, ResourceKey=ScrollingCornerStyle}" TargetType="Border">
+    <Setter Property="CornerRadius" Value="0,0,2,0" />
+    <Setter Property="Background">
+      <Setter.Value>
+        <RadialGradientBrush>
+          <RadialGradientBrush.RelativeTransform>
+            <TransformGroup>
+              <ScaleTransform CenterX="0.5" CenterY="0.5" ScaleX="2.671" ScaleY="2.671" />
+              <SkewTransform AngleX="0" AngleY="0" CenterX="0.5" CenterY="0.5" />
+              <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+              <TranslateTransform X="-0.496" Y="-0.496" />
+            </TransformGroup>
+          </RadialGradientBrush.RelativeTransform>
+          <GradientStop Color="#FFBAC6D5" Offset="0" />
+          <GradientStop Color="#FFD2E1ED" Offset="1" />
+          <GradientStop Color="#FFD3E2EE" Offset="0.538" />
+        </RadialGradientBrush>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <DataTemplate x:Key="{dxt:ScrollBarThemeKey ThemeName=GrayOne, ResourceKey=ScrollBarCornerStyle}">
+    <Border CornerRadius="0,0,0,0" Style="{StaticResource ScrollingCornerStyle}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;53;10"></Border>
+  </DataTemplate>
+  <Style x:Key="{dxt:ScrollBarThemeKey ThemeName=GrayOne, ResourceKey=ScrollButtonRightStyle}" TargetType="{x:Type RepeatButton}">
+    <Setter Property="OverridesDefaultStyle" Value="true" />
+    <Setter Property="Focusable" Value="false" />
+    <Setter Property="IsTabStop" Value="false" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type RepeatButton}">
+          <Grid Background="Transparent" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;63;22">
+            <Path Width="6" Height="7" x:Name="button_glyph" Stretch="Fill" Fill="#FF2F4C8A" Data="F1 M 253,262L 247,265L 247,258L 253,261L 253,262 Z " dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;64;26" />
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter TargetName="button_glyph" Property="Fill" Value="#FF5A7DC7" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxt:ScrollBarThemeKey ThemeName=GrayOne, ResourceKey=ScrollButtonLeftStyle}" TargetType="{x:Type RepeatButton}">
+    <Setter Property="OverridesDefaultStyle" Value="true" />
+    <Setter Property="Focusable" Value="false" />
+    <Setter Property="IsTabStop" Value="false" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type RepeatButton}">
+          <Grid Background="Transparent" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;83;22">
+            <Path Width="6" Height="7" x:Name="button_glyph" Stretch="Fill" Fill="#FF2F4C8A" Data="F1 M 245,248L 251,245L 251,252L 245,249L 245,248 Z " dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;84;26" />
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter TargetName="button_glyph" Property="Fill" Value="#FF5A7DC7" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxt:ScrollBarThemeKey ThemeName=GrayOne, ResourceKey=PageButtonStyle}" TargetType="{x:Type RepeatButton}">
+    <Setter Property="OverridesDefaultStyle" Value="true" />
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="Focusable" Value="false" />
+    <Setter Property="IsTabStop" Value="false" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type RepeatButton}">
+          <Rectangle x:Name="Bg" Fill="{TemplateBinding Background}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;104;22" />
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxt:ScrollBarThemeKey ThemeName=GrayOne, ResourceKey=ScrollThumbHorzStyle}" TargetType="{x:Type Thumb}">
+    <Setter Property="OverridesDefaultStyle" Value="true" />
+    <Setter Property="IsTabStop" Value="false" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Thumb}">
+          <ControlTemplate.Resources>
+            <LinearGradientBrush x:Key="thumbNormalGradient" EndPoint="0.5,-0.003" StartPoint="0.5,1.003">
+              <GradientStop Color="#FF668CC4" Offset="0" />
+              <GradientStop Color="#FFCBE2FF" Offset="1" />
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="thumbHotGradient" EndPoint="0.5,-0.003" StartPoint="0.5,1.003">
+              <GradientStop Color="#FF88AEE6" Offset="0" />
+              <GradientStop Color="#FFEEF6FF" Offset="1" />
+            </LinearGradientBrush>
+            <Storyboard x:Key="Timeline1">
+              <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="border1_1" Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+                <SplineColorKeyFrame KeyTime="00:00:00" Value="#FF668CC4" />
+                <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#FF88AEE6" />
+              </ColorAnimationUsingKeyFrames>
+              <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="border1_1" Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                <SplineColorKeyFrame KeyTime="00:00:00" Value="#FFCBE2FF" />
+                <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#FFEEF6FF" />
+              </ColorAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="Timeline2" FillBehavior="Stop">
+              <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="border1_1" Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+                <SplineColorKeyFrame KeyTime="00:00:00.3000000" Value="#FF668CC4" />
+              </ColorAnimationUsingKeyFrames>
+              <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="border1_1" Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                <SplineColorKeyFrame KeyTime="00:00:00.3000000" Value="#FFCBE2FF" />
+              </ColorAnimationUsingKeyFrames>
+            </Storyboard>
+          </ControlTemplate.Resources>
+          <Border CornerRadius="5,5,5,5" HorizontalAlignment="Stretch" Width="Auto" Padding="1,1,1,1" Margin="0,1,0,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;144;22">
+            <Border.Background>
+              <LinearGradientBrush EndPoint="0.5,-0.003" StartPoint="0.5,1.003">
+                <GradientStop Color="#FF26417A" Offset="0" />
+                <GradientStop Color="#FF365B94" Offset="1" />
+              </LinearGradientBrush>
+            </Border.Background>
+            <Border CornerRadius="4" Background="{DynamicResource thumbNormalGradient}" x:Name="border1_1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;151;26" />
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Trigger.EnterActions>
+                <BeginStoryboard Storyboard="{StaticResource Timeline1}" />
+              </Trigger.EnterActions>
+              <Trigger.ExitActions>
+                <BeginStoryboard Storyboard="{StaticResource Timeline2}" />
+              </Trigger.ExitActions>
+              <!--<Setter Property="Background" TargetName="border1_2" Value="{StaticResource thumbHotGradient}"/>-->
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxt:ScrollBarThemeKey ThemeName=GrayOne, ResourceKey=ScrollThumbVertStyle}" TargetType="{x:Type Thumb}">
+    <Setter Property="OverridesDefaultStyle" Value="true" />
+    <Setter Property="IsTabStop" Value="false" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Thumb}">
+          <ControlTemplate.Resources>
+            <LinearGradientBrush x:Key="thumbNormalGradient" EndPoint="0,0.5" StartPoint="1,0.5">
+              <GradientStop Color="#FF668CC4" Offset="0" />
+              <GradientStop Color="#FFCBE2FF" Offset="1" />
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="thumbHotGradient" EndPoint="0,0.5" StartPoint="1,0.5">
+              <GradientStop Color="#FF88AEE6" Offset="0" />
+              <GradientStop Color="#FFEEF6FF" Offset="1" />
+            </LinearGradientBrush>
+            <Storyboard x:Key="Timeline1">
+              <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="border1_1" Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+                <SplineColorKeyFrame KeyTime="00:00:00" Value="#FF668CC4" />
+                <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#FF88AEE6" />
+              </ColorAnimationUsingKeyFrames>
+              <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="border1_1" Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                <SplineColorKeyFrame KeyTime="00:00:00" Value="#FFCBE2FF" />
+                <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#FFEEF6FF" />
+              </ColorAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="Timeline2" FillBehavior="Stop">
+              <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="border1_1" Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+                <SplineColorKeyFrame KeyTime="00:00:00.3000000" Value="#FF668CC4" />
+              </ColorAnimationUsingKeyFrames>
+              <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="border1_1" Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                <SplineColorKeyFrame KeyTime="00:00:00.3000000" Value="#FFCBE2FF" />
+              </ColorAnimationUsingKeyFrames>
+            </Storyboard>
+          </ControlTemplate.Resources>
+          <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;203;22">
+            <Border CornerRadius="5" Padding="1" Margin="1,0,1,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;204;26">
+              <Border.Background>
+                <LinearGradientBrush EndPoint="-0.002,0.5" StartPoint="1.002,0.5">
+                  <GradientStop Color="#FF26417A" Offset="0" />
+                  <GradientStop Color="#FF365B94" Offset="1" />
+                </LinearGradientBrush>
+              </Border.Background>
+              <Border CornerRadius="4" Background="{DynamicResource thumbNormalGradient}" x:Name="border1_1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;211;30" />
+            </Border>
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Trigger.EnterActions>
+                <BeginStoryboard Storyboard="{StaticResource Timeline1}" />
+              </Trigger.EnterActions>
+              <Trigger.ExitActions>
+                <BeginStoryboard Storyboard="{StaticResource Timeline2}" />
+              </Trigger.ExitActions>
+              <!--<Setter Property="Background" TargetName="border1_2" Value="{StaticResource thumbHotGradient}"/>-->
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxt:ScrollBarThemeKey ThemeName=GrayOne, ResourceKey=ScrollButtonUpStyle}" TargetType="{x:Type RepeatButton}">
+    <Setter Property="OverridesDefaultStyle" Value="true" />
+    <Setter Property="Focusable" Value="false" />
+    <Setter Property="IsTabStop" Value="false" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type RepeatButton}">
+          <Grid Background="Transparent" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;236;22">
+            <Path Width="7" Height="6" x:Name="button_glyph" Fill="#FF2F4C8A" Stretch="Fill" Data="F1 M 143,153L 146,159L 139,159L 142,153L 143,153 Z " RenderTransformOrigin="0.5,0.5" Margin="0,0,0,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;237;26" />
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter TargetName="button_glyph" Property="Fill" Value="#FF5A7DC7" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxt:ScrollBarThemeKey ThemeName=GrayOne, ResourceKey=ScrollButtonDownStyle}" TargetType="{x:Type RepeatButton}">
+    <Setter Property="OverridesDefaultStyle" Value="true" />
+    <Setter Property="Focusable" Value="false" />
+    <Setter Property="IsTabStop" Value="false" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type RepeatButton}">
+          <Grid Background="Transparent" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;256;22">
+            <Path Width="7" Height="6" x:Name="button_glyph" Stretch="Fill" Fill="#FF2F4C8A" Data="F1 M 152,160L 149,154L 156,154L 153,160L 152,160 Z " dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;257;26" />
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter TargetName="button_glyph" Property="Fill" Value="#FF5A7DC7" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxt:ScrollBarThemeKey ThemeName=GrayOne, ResourceKey=ScrollBarHorzStyle}" TargetType="{x:Type ScrollBar}">
+    <Setter Property="Orientation" Value="Horizontal" />
+    <Setter Property="Height" Value="13" />
+    <Setter Property="MinHeight" Value="13" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type ScrollBar}">
+          <Grid SnapsToDevicePixels="true" Background="{x:Null}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;276;22">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="13" />
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="13" />
+            </Grid.ColumnDefinitions>
+            <Border x:Name="HorzBorder" HorizontalAlignment="Stretch" Width="Auto" Grid.ColumnSpan="3" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;282;26">
+              <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1.003" StartPoint="0.5,-0.003">
+                  <GradientStop Color="#FFB9C5D4" Offset="0" />
+                  <GradientStop Color="#FFD3E2EE" Offset="1" />
+                  <GradientStop Color="#FFC4D6E4" Offset="0.255" />
+                </LinearGradientBrush>
+              </Border.Background>
+            </Border>
+            <RepeatButton Style="{DynamicResource {dxt:ScrollBarThemeKey ThemeName=GrayOne, ResourceKey=ScrollButtonLeftStyle}}" Command="{x:Static ScrollBar.LineLeftCommand}" x:Name="left_button" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;291;26" />
+            <Track x:Name="PART_Track" Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;292;26">
+              <Track.DecreaseRepeatButton>
+                <RepeatButton Style="{DynamicResource {dxt:ScrollBarThemeKey ThemeName=GrayOne, ResourceKey=PageButtonStyle}}" Command="{x:Static ScrollBar.PageLeftCommand}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;294;34" />
+              </Track.DecreaseRepeatButton>
+              <Track.IncreaseRepeatButton>
+                <RepeatButton Style="{DynamicResource {dxt:ScrollBarThemeKey ThemeName=GrayOne, ResourceKey=PageButtonStyle}}" Command="{x:Static ScrollBar.PageRightCommand}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;297;34" />
+              </Track.IncreaseRepeatButton>
+              <Track.Thumb>
+                <Thumb Style="{DynamicResource {dxt:ScrollBarThemeKey ThemeName=GrayOne, ResourceKey=ScrollThumbHorzStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;300;34" />
+              </Track.Thumb>
+            </Track>
+            <RepeatButton Style="{DynamicResource {dxt:ScrollBarThemeKey ThemeName=GrayOne, ResourceKey=ScrollButtonRightStyle}}" Grid.Column="2" Command="{x:Static ScrollBar.LineRightCommand}" x:Name="right_button" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;303;26" />
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxt:ScrollBarThemeKey ThemeName=GrayOne, ResourceKey=ScrollBarVertStyle}" TargetType="{x:Type ScrollBar}">
+    <Setter Property="Orientation" Value="Vertical" />
+    <Setter Property="Width" Value="13" />
+    <Setter Property="MinWidth" Value="13" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type ScrollBar}">
+          <Grid SnapsToDevicePixels="true" Background="{x:Null}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;317;22">
+            <Grid.RowDefinitions>
+              <RowDefinition MaxHeight="{DynamicResource {x:Static SystemParameters.VerticalScrollBarButtonHeightKey}}" />
+              <RowDefinition Height="0.00001*" />
+              <RowDefinition MaxHeight="{DynamicResource {x:Static SystemParameters.VerticalScrollBarButtonHeightKey}}" />
+            </Grid.RowDefinitions>
+            <Border x:Name="VertBorder" VerticalAlignment="Stretch" Height="Auto" Grid.RowSpan="3" Margin="0,0,0,0" CornerRadius="{Binding Path=CornerRadius, RelativeSource={RelativeSource TemplatedParent}}" Padding="0,0,0,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;323;26">
+              <Border.Background>
+                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                  <GradientStop Color="#FFB9C5D4" Offset="0" />
+                  <GradientStop Color="#FFD3E2EE" Offset="1" />
+                  <GradientStop Color="#FFC4D6E4" Offset="0.255" />
+                </LinearGradientBrush>
+              </Border.Background>
+            </Border>
+            <RepeatButton Style="{DynamicResource {dxt:ScrollBarThemeKey ThemeName=GrayOne, ResourceKey=ScrollButtonUpStyle}}" Command="{x:Static ScrollBar.LineUpCommand}" x:Name="up_button" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;332;26" />
+            <Track x:Name="PART_Track" Grid.Row="1" IsDirectionReversed="true" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;333;26">
+              <Track.DecreaseRepeatButton>
+                <RepeatButton Style="{DynamicResource {dxt:ScrollBarThemeKey ThemeName=GrayOne, ResourceKey=PageButtonStyle}}" Command="{x:Static ScrollBar.PageUpCommand}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;335;34" />
+              </Track.DecreaseRepeatButton>
+              <Track.IncreaseRepeatButton>
+                <RepeatButton Style="{DynamicResource {dxt:ScrollBarThemeKey ThemeName=GrayOne, ResourceKey=PageButtonStyle}}" Command="{x:Static ScrollBar.PageDownCommand}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;338;34" />
+              </Track.IncreaseRepeatButton>
+              <Track.Thumb>
+                <Thumb Style="{DynamicResource {dxt:ScrollBarThemeKey ThemeName=GrayOne, ResourceKey=ScrollThumbVertStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;341;34" />
+              </Track.Thumb>
+            </Track>
+            <RepeatButton Style="{DynamicResource {dxt:ScrollBarThemeKey ThemeName=GrayOne, ResourceKey=ScrollButtonDownStyle}}" Grid.Row="2" Command="{x:Static ScrollBar.LineDownCommand}" x:Name="down_button" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;344;26" />
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <ControlTemplate x:Key="{dxt:ScrollBarThemeKey ThemeName=GrayOne, ResourceKey=ScrollBarVertTemplate}" TargetType="{x:Type ScrollBar}">
+    <Grid SnapsToDevicePixels="true" Background="{x:Null}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;352;10">
+      <Grid.RowDefinitions>
+        <RowDefinition MaxHeight="{DynamicResource {x:Static SystemParameters.VerticalScrollBarButtonHeightKey}}" />
+        <RowDefinition Height="0.00001*" />
+        <RowDefinition MaxHeight="{DynamicResource {x:Static SystemParameters.VerticalScrollBarButtonHeightKey}}" />
+      </Grid.RowDefinitions>
+      <Border x:Name="VertBorder" VerticalAlignment="Stretch" Height="Auto" Grid.RowSpan="3" Margin="0,0,0,0" Padding="0,0,0,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;358;14">
+        <Border.Background>
+          <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+            <GradientStop Color="#FFB9C5D4" Offset="0" />
+            <GradientStop Color="#FFD3E2EE" Offset="1" />
+            <GradientStop Color="#FFC4D6E4" Offset="0.255" />
+          </LinearGradientBrush>
+        </Border.Background>
+      </Border>
+      <RepeatButton Style="{DynamicResource {dxt:ScrollBarThemeKey ThemeName=GrayOne, ResourceKey=ScrollButtonUpStyle}}" Command="{x:Static ScrollBar.LineUpCommand}" x:Name="up_button" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;367;14" />
+      <Track x:Name="PART_Track" Grid.Row="1" IsDirectionReversed="true" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;368;14">
+        <Track.DecreaseRepeatButton>
+          <RepeatButton Style="{DynamicResource {dxt:ScrollBarThemeKey ThemeName=GrayOne, ResourceKey=PageButtonStyle}}" Command="{x:Static ScrollBar.PageUpCommand}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;370;22" />
+        </Track.DecreaseRepeatButton>
+        <Track.IncreaseRepeatButton>
+          <RepeatButton Style="{DynamicResource {dxt:ScrollBarThemeKey ThemeName=GrayOne, ResourceKey=PageButtonStyle}}" Command="{x:Static ScrollBar.PageDownCommand}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;373;22" />
+        </Track.IncreaseRepeatButton>
+        <Track.Thumb>
+          <Thumb Style="{DynamicResource {dxt:ScrollBarThemeKey ThemeName=GrayOne, ResourceKey=ScrollThumbVertStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;376;22" />
+        </Track.Thumb>
+      </Track>
+      <RepeatButton Style="{DynamicResource {dxt:ScrollBarThemeKey ThemeName=GrayOne, ResourceKey=ScrollButtonDownStyle}}" Grid.Row="2" Command="{x:Static ScrollBar.LineDownCommand}" x:Name="down_button" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;379;14" />
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate TargetType="{x:Type ScrollBar}" x:Key="{dxt:ScrollBarThemeKey ThemeName=GrayOne, ResourceKey=ScrollBarHorzTemplate}">
+    <Grid SnapsToDevicePixels="true" Background="{x:Null}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;384;10">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="13" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="13" />
+      </Grid.ColumnDefinitions>
+      <Border x:Name="HorzBorder" HorizontalAlignment="Stretch" Width="Auto" Grid.ColumnSpan="3" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;390;14">
+        <Border.Background>
+          <LinearGradientBrush EndPoint="0.5,1.003" StartPoint="0.5,-0.003">
+            <GradientStop Color="#FFB9C5D4" Offset="0" />
+            <GradientStop Color="#FFD3E2EE" Offset="1" />
+            <GradientStop Color="#FFC4D6E4" Offset="0.255" />
+          </LinearGradientBrush>
+        </Border.Background>
+      </Border>
+      <RepeatButton Style="{DynamicResource {dxt:ScrollBarThemeKey ThemeName=GrayOne, ResourceKey=ScrollButtonLeftStyle}}" Command="{x:Static ScrollBar.LineLeftCommand}" x:Name="left_button" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;399;14" />
+      <Track x:Name="PART_Track" Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;400;14">
+        <Track.DecreaseRepeatButton>
+          <RepeatButton Style="{DynamicResource {dxt:ScrollBarThemeKey ThemeName=GrayOne, ResourceKey=PageButtonStyle}}" Command="{x:Static ScrollBar.PageLeftCommand}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;402;22" />
+        </Track.DecreaseRepeatButton>
+        <Track.IncreaseRepeatButton>
+          <RepeatButton Style="{DynamicResource {dxt:ScrollBarThemeKey ThemeName=GrayOne, ResourceKey=PageButtonStyle}}" Command="{x:Static ScrollBar.PageRightCommand}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;405;22" />
+        </Track.IncreaseRepeatButton>
+        <Track.Thumb>
+          <Thumb Style="{DynamicResource {dxt:ScrollBarThemeKey ThemeName=GrayOne, ResourceKey=ScrollThumbHorzStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;408;22" />
+        </Track.Thumb>
+      </Track>
+      <RepeatButton Style="{DynamicResource {dxt:ScrollBarThemeKey ThemeName=GrayOne, ResourceKey=ScrollButtonRightStyle}}" Grid.Column="2" Command="{x:Static ScrollBar.LineRightCommand}" x:Name="right_button" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\DeepBlue\StandardControlStyles\ScrollBar.xaml;411;14" />
+    </Grid>
+  </ControlTemplate>
+</ResourceDictionary>

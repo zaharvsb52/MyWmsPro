@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<UpdateInfo>
+  <LastVersion>1.3.115.0</LastVersion>
+  <MinimalSupportVersion>1.3.115.0</MinimalSupportVersion>
+  <DistributivePath>\\10.0.0.19\dev\DCL</DistributivePath>
+  <ProcessName>wmsMLC.DCL.Client</ProcessName>
+  <UpdateTool>\\10.0.0.19\dev\DCL\wmsMLC.Tools.UpdateTool.exe</UpdateTool>
+  <Text>
+Вас приветствует система обновления wmsMLC PRO.
+
+Обнаружена более новая версия приложения. Пожалуйста, обновите клиентскую часть.
+  </Text>
+  <LogPath>\\10.0.0.19\dev\Share\ClientLogs</LogPath>
+  <Commands></Commands>
+</UpdateInfo>

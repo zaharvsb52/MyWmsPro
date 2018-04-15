@@ -1,0 +1,152 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxsch="http://schemas.devexpress.com/winfx/2008/xaml/scheduler" xmlns:dxscht="http://schemas.devexpress.com/winfx/2008/xaml/scheduler/themekeys" xmlns:dxschd="http://schemas.devexpress.com/winfx/2008/xaml/scheduler/internal" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:themes="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <Style x:Key="SchedulerViewBase" TargetType="{x:Type dxsch:SchedulerViewBase}">
+    <!--<Setter Property="Template" Value="{DynamicResource {dxscht:SchedulerViewThemeKey ResourceKey=ViewTemplate}}"/>-->
+    <Setter Property="NavigationButtonPrevStyle" Value="{DynamicResource {dxscht:SchedulerViewThemeKey ResourceKey=NavigationButtonPrevStyle}}" />
+    <Setter Property="NavigationButtonNextStyle" Value="{DynamicResource {dxscht:SchedulerViewThemeKey ResourceKey=NavigationButtonNextStyle}}" />
+    <Setter Property="HorizontalResourceHeaderStyle" Value="{DynamicResource {dxscht:SchedulerViewThemeKey ResourceKey=HorizontalResourceHeaderStyle}}" />
+    <Setter Property="VerticalResourceHeaderStyle" Value="{DynamicResource {dxscht:SchedulerViewThemeKey ResourceKey=VerticalResourceHeaderStyle}}" />
+    <Setter Property="SelectionTemplate" Value="{DynamicResource {dxscht:SchedulerViewThemeKey ResourceKey=SelectionTemplate}}" />
+    <Setter Property="AppointmentToolTipContentTemplate" Value="{DynamicResource {dxscht:SchedulerViewThemeKey ResourceKey=AppointmentToolTipContentTemplate}}" />
+    <Setter Property="MoreButtonToolTipContentTemplate" Value="{DynamicResource {dxscht:SchedulerViewThemeKey ResourceKey=MoreButtonToolTipContentTemplate}}" />
+    <Setter Property="DragDropHoverTimeCellsStyle" Value="{DynamicResource {dxscht:SchedulerViewThemeKey ResourceKey=DragDropHoverTimeCellsStyle}}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Scheduler.DayView}" TargetType="{x:Type dxsch:DayView}" BasedOn="{StaticResource SchedulerViewBase}">
+    <!--<Setter Property="Template" Value="{DynamicResource {dxscht:SchedulerViewThemeKey ResourceKey=ViewTemplate}}"/>-->
+    <Setter Property="VerticalAppointmentStyleSelector" Value="{DynamicResource ResourceKey={dxscht:StyleSelectorThemeKey ResourceKey=VerticalAppointmentStyle}}" />
+    <Setter Property="HorizontalAppointmentStyleSelector" Value="{DynamicResource ResourceKey={dxscht:StyleSelectorThemeKey ResourceKey=HorizontalAppointmentStyle}}" />
+    <Setter Property="MoreButtonUpStyle" Value="{DynamicResource {dxscht:SchedulerViewThemeKey ResourceKey=MoreButtonUpStyle}}" />
+    <Setter Property="MoreButtonDownStyle" Value="{DynamicResource {dxscht:SchedulerViewThemeKey ResourceKey=MoreButtonDownStyle}}" />
+    <Setter Property="CurrentTimeIndicatorStyle" Value="{DynamicResource {dxscht:DayViewThemeKey ResourceKey=CurrentTimeIndicatorStyle}}" />
+    <Setter Property="CellStyle" Value="{DynamicResource {dxscht:DayViewThemeKey ResourceKey=CellStyle}}" />
+    <Setter Property="AllDayAreaCellStyle" Value="{DynamicResource {dxscht:DayViewThemeKey ResourceKey=AllDayAreaCellStyle}}" />
+    <Setter Property="DateHeaderStyle" Value="{DynamicResource  {dxscht:DayViewThemeKey ResourceKey=DateHeaderStyle}}" />
+    <Setter Property="ContentStyleSelector" Value="{DynamicResource {dxscht:DayViewThemeKey ResourceKey=ContentStyleSelector}}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Scheduler.WorkWeekView}" TargetType="{x:Type dxsch:WorkWeekView}" BasedOn="{StaticResource SchedulerViewBase}">
+    <Setter Property="VerticalAppointmentStyleSelector" Value="{DynamicResource ResourceKey={dxscht:StyleSelectorThemeKey ResourceKey=VerticalAppointmentStyle}}" />
+    <Setter Property="HorizontalAppointmentStyleSelector" Value="{DynamicResource ResourceKey={dxscht:StyleSelectorThemeKey ResourceKey=HorizontalAppointmentStyle}}" />
+    <Setter Property="MoreButtonUpStyle" Value="{DynamicResource {dxscht:SchedulerViewThemeKey ResourceKey=MoreButtonUpStyle}}" />
+    <Setter Property="MoreButtonDownStyle" Value="{DynamicResource {dxscht:SchedulerViewThemeKey ResourceKey=MoreButtonDownStyle}}" />
+    <Setter Property="CurrentTimeIndicatorStyle" Value="{DynamicResource {dxscht:DayViewThemeKey ResourceKey=CurrentTimeIndicatorStyle}}" />
+    <Setter Property="CellStyle" Value="{DynamicResource {dxscht:DayViewThemeKey ResourceKey=CellStyle}}" />
+    <Setter Property="AllDayAreaCellStyle" Value="{DynamicResource {dxscht:DayViewThemeKey ResourceKey=AllDayAreaCellStyle}}" />
+    <Setter Property="DateHeaderStyle" Value="{DynamicResource {dxscht:DayViewThemeKey ResourceKey=DateHeaderStyle}}" />
+    <Setter Property="ContentStyleSelector" Value="{DynamicResource {dxscht:WorkWeekViewThemeKey ResourceKey=ContentStyleSelector}}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Scheduler.WeekView}" TargetType="{x:Type dxsch:WeekView}" BasedOn="{StaticResource SchedulerViewBase}">
+    <Setter Property="HorizontalAppointmentStyleSelector" Value="{DynamicResource ResourceKey={dxscht:StyleSelectorThemeKey ResourceKey=HorizontalAppointmentStyle}}" />
+    <Setter Property="MoreButtonStyle" Value="{DynamicResource {dxscht:SchedulerViewThemeKey ResourceKey=MoreButtonDownStyle}}" />
+    <Setter Property="HorizontalWeekCellStyle" Value="{DynamicResource {dxscht:WeekViewThemeKey ResourceKey=HorizontalWeekCellStyle}}" />
+    <Setter Property="VerticalWeekCellStyle" Value="{DynamicResource {dxscht:WeekViewThemeKey ResourceKey=VerticalWeekCellStyle}}" />
+    <Setter Property="HorizontalWeekDateHeaderStyle" Value="{DynamicResource {dxscht:WeekViewThemeKey ResourceKey=HorizontalWeekDateHeaderStyle}}" />
+    <Setter Property="VerticalWeekDateHeaderStyle" Value="{DynamicResource {dxscht:WeekViewThemeKey ResourceKey=VerticalWeekDateHeaderStyle}}" />
+    <Setter Property="DayOfWeekHeaderStyle" Value="{DynamicResource {dxscht:WeekViewThemeKey ResourceKey=DayOfWeekHeaderStyle}}" />
+    <Setter Property="ContentStyleSelector" Value="{DynamicResource {dxscht:WeekViewThemeKey ResourceKey=ContentStyleSelector}}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Scheduler.MonthView}" TargetType="{x:Type dxsch:MonthView}" BasedOn="{StaticResource SchedulerViewBase}">
+    <Setter Property="HorizontalAppointmentStyleSelector" Value="{DynamicResource ResourceKey={dxscht:StyleSelectorThemeKey ResourceKey=HorizontalAppointmentStyle}}" />
+    <Setter Property="MoreButtonStyle" Value="{DynamicResource {dxscht:SchedulerViewThemeKey ResourceKey=MoreButtonDownStyle}}" />
+    <Setter Property="HorizontalWeekCellStyle" Value="{DynamicResource {dxscht:MonthViewThemeKey ResourceKey=HorizontalWeekCellStyle}}" />
+    <Setter Property="HorizontalWeekDateHeaderStyle" Value="{DynamicResource {dxscht:WeekViewThemeKey ResourceKey=HorizontalWeekDateHeaderStyle}}" />
+    <Setter Property="DayOfWeekHeaderStyle" Value="{DynamicResource {dxscht:WeekViewThemeKey ResourceKey=DayOfWeekHeaderStyle}}" />
+    <Setter Property="ContentStyleSelector" Value="{DynamicResource {dxscht:MonthViewThemeKey ResourceKey=ContentStyleSelector}}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Scheduler.TimelineView}" TargetType="{x:Type dxsch:TimelineView}" BasedOn="{StaticResource SchedulerViewBase}">
+    <Setter Property="HorizontalAppointmentStyleSelector" Value="{DynamicResource ResourceKey={dxscht:StyleSelectorThemeKey ResourceKey=HorizontalAppointmentStyle}}" />
+    <Setter Property="MoreButtonStyle" Value="{DynamicResource {dxscht:SchedulerViewThemeKey ResourceKey=MoreButtonDownStyle}}" />
+    <Setter Property="CellStyle" Value="{DynamicResource {dxscht:TimelineViewThemeKey ResourceKey=CellStyle}}" />
+    <Setter Property="SelectionBarCellStyle" Value="{DynamicResource {dxscht:TimelineViewThemeKey ResourceKey=TimelineViewSelectionBarCellStyle}}" />
+    <Setter Property="DateHeaderStyle" Value="{DynamicResource {dxscht:TimelineViewThemeKey ResourceKey=DateHeaderStyle}}" />
+    <Setter Property="ContentStyleSelector" Value="{DynamicResource {dxscht:TimelineViewThemeKey ResourceKey=ContentStyleSelector}}" />
+    <!--<Setter Property="SelectionBar">
+            <Setter.Value>
+                <dxsch:SchedulerSelectionBarOptions Visible="true"/>
+            </Setter.Value>
+        </Setter>-->
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Scheduler.GanttView}" TargetType="{x:Type dxsch:GanttView}" BasedOn="{StaticResource SchedulerViewBase}">
+    <Setter Property="HorizontalAppointmentStyleSelector" Value="{DynamicResource ResourceKey={dxscht:StyleSelectorThemeKey ResourceKey=HorizontalAppointmentStyle}}" />
+    <Setter Property="MoreButtonStyle" Value="{DynamicResource {dxscht:SchedulerViewThemeKey ResourceKey=MoreButtonDownStyle}}" />
+    <Setter Property="CellStyle" Value="{DynamicResource {dxscht:TimelineViewThemeKey ResourceKey=CellStyle}}" />
+    <Setter Property="SelectionBarCellStyle" Value="{DynamicResource {dxscht:TimelineViewThemeKey ResourceKey=TimelineViewSelectionBarCellStyle}}" />
+    <Setter Property="DateHeaderStyle" Value="{DynamicResource {dxscht:TimelineViewThemeKey ResourceKey=DateHeaderStyle}}" />
+    <Setter Property="ContentStyleSelector" Value="{DynamicResource {dxscht:GanttViewThemeKey ResourceKey=ContentStyleSelector}}" />
+  </Style>
+  <!--BEGIN WPF-->
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Scheduler.SchedulerControl}" TargetType="{x:Type dxsch:SchedulerControl}" x:Shared="True">
+    <!--END WPF-->
+    <!--ONLY SL        
+    <Style TargetType="{x:Type dxsch:SchedulerControl}">        
+ ONLY SL-->
+    <Setter Property="Template" Value="{DynamicResource {dxscht:SchedulerControlThemeKey ResourceKey=Template}}" />
+    <Setter Property="ResourceNavigatorHorizontalStyle" Value="{DynamicResource {dxscht:SchedulerControlThemeKey ResourceKey=ResourceNavigatorHorizontalStyle}}" />
+    <Setter Property="ResourceNavigatorVerticalStyle" Value="{DynamicResource {dxscht:SchedulerControlThemeKey ResourceKey=ResourceNavigatorVerticalStyle}}" />
+    <Setter Property="InplaceEditTemplate" Value="{DynamicResource {dxscht:SchedulerControlThemeKey ResourceKey=InplaceEditTemplate}}" />
+    <!--BEGIN WPF-->
+    <Setter Property="Padding" Value="{DynamicResource {dxscht:SchedulerControlThemeKey ResourceKey=Padding}}" />
+    <!--END WPF-->
+    <Setter Property="DefaultResourceColorSchemas" Value="{DynamicResource {dxscht:SchedulerControlThemeKey ResourceKey=ResourceColorSchemaTemplate}}" />
+    <!--<Setter Property="OptionsBehavior">
+            <Setter.Value>
+                <dxsch:OptionsBehavior/>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="OptionsCustomization">
+            <Setter.Value>
+                <dxsch:OptionsCustomization/>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="DragDropOptions">
+            <Setter.Value>
+                <dxsch:DragDropOptions />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="OptionsView">
+            <Setter.Value>
+                <dxsch:OptionsView>
+                    <dxsch:OptionsView.NavigationButtonOptions>
+                        <dxsch:NavigationButtonOptions />
+                    </dxsch:OptionsView.NavigationButtonOptions>
+                </dxsch:OptionsView>
+            </Setter.Value>
+        </Setter>-->
+    <Setter Property="AllowDrop" Value="True" />
+  </Style>
+  <!--BEGIN WPF-->
+  <!--END WPF-->
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Scheduler.Drawing.MultiColorBorder}" TargetType="{x:Type dxschd:MultiColorBorder}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type dxschd:MultiColorBorder}">
+          <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Generic\DefaultStyles.xaml;124;22">
+            <Border BorderThickness="{TemplateBinding LeftBorderThickness}" BorderBrush="{TemplateBinding LeftBorderBrush}" Background="{TemplateBinding Background}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Generic\DefaultStyles.xaml;125;26" />
+            <Border BorderThickness="{TemplateBinding TopBorderThickness}" BorderBrush="{TemplateBinding TopBorderBrush}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Generic\DefaultStyles.xaml;126;26" />
+            <Border BorderThickness="{TemplateBinding RightBorderThickness}" BorderBrush="{TemplateBinding RightBorderBrush}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Generic\DefaultStyles.xaml;127;26" />
+            <Border BorderThickness="{TemplateBinding BottomBorderThickness}" BorderBrush="{TemplateBinding BottomBorderBrush}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Generic\DefaultStyles.xaml;128;26" />
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Scheduler.Drawing.SchedulerBorder}" TargetType="{x:Type dxschd:SchedulerBorder}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type dxschd:SchedulerBorder}">
+          <Border x:Name="PART_Border" CornerRadius="{TemplateBinding CornerRadius}" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" Margin="{TemplateBinding Margin}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Generic\DefaultStyles.xaml;138;22" />
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Scheduler.Drawing.RoundedBorderControl}" TargetType="{x:Type dxschd:RoundedBorderControl}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type dxschd:RoundedBorderControl}">
+          <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" SnapsToDevicePixels="True" UseLayoutRounding="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Generic\DefaultStyles.xaml;147;22">
+            <dxschd:RoundedBorder Panel.ZIndex="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding RoundBorderThickness}" x:Name="Border" SnapsToDevicePixels="True" UseLayoutRounding="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Generic\DefaultStyles.xaml;148;26" />
+            <ContentPresenter Panel.ZIndex="1" Clip="{Binding BackgroundGeometryCache, ElementName=Border}" SnapsToDevicePixels="True" UseLayoutRounding="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Generic\DefaultStyles.xaml;149;26" />
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+</ResourceDictionary>

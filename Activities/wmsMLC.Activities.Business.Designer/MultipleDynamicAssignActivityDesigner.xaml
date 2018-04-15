@@ -1,0 +1,15 @@
+﻿<sap:ActivityDesigner x:Class="wmsMLC.Activities.Business.Designer.MultipleDynamicAssignActivityDesigner"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation">
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        
+        <TextBlock Margin="2" Text="Свойства" VerticalAlignment="Center"/>
+        <Button Grid.Column="1" Content="..." Width="30" HorizontalAlignment="Right" Click="Button_Click"/>
+    </Grid>
+</sap:ActivityDesigner>

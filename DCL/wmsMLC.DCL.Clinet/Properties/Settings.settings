@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="wmsMLC.DCL.Client.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Culture" Type="System.Globalization.CultureInfo" Scope="Application">
+      <Value Profile="(Default)">ru-RU</Value>
+    </Setting>
+    <Setting Name="UpdateInfoFile" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">\\10.0.0.19\DEV\DCL\UpdateInfo.xml</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

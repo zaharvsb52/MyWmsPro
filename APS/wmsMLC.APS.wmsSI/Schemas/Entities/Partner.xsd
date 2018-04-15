@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Partner" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include  id="AddressBook" schemaLocation="AddressBook.xsd"/>
+  <xs:include  id="WmsDateTime" schemaLocation="WmsDateTime.xsd"/>
+
+  <!--Сущность Partner-->
+  <xs:element name="TENTPARTNER" type="PartnerType"/>
+  
+  <!--Описание типа деловой партнер-->
+  <xs:complexType name="PartnerType">
+    <xs:sequence>
+      <!--ID записи-->
+      <!--<xs:element name="PARTNERID" type="xs:integer"/>-->
+      <!--Код партнера-->
+      <xs:element name="PARTNERCODE" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Сокращенное наименование-->
+      <xs:element name="PARTNERNAME" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Полное наименование-->
+      <xs:element name="PARTNERFULLNAME" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1024"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Признак блокировки партнера-->
+      <xs:element name="PARTNERLOCKED" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:totalDigits value="1"/>
+            <xs:maxInclusive value="1"/>
+            <xs:minInclusive value="0"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Договор-->
+      <xs:element name="PARTNERCONTRACT">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Дата заключения договора-->
+      <xs:element name="PARTNERDATECONTRACT" type="WmsDateTime" />
+      <!--Телефон-->
+      <xs:element name="PARTNERPHONE">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Факс-->
+      <xs:element name="PARTNERFAX">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Электронная почта-->
+      <xs:element name="PARTNEREMAIL">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="130"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--ИНН-->
+      <xs:element name="PARTNERINN">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--КПП-->
+      <xs:element name="PARTNERKPP">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--ОГРН-->
+      <xs:element name="PARTNEROGRN">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--ОКПО-->
+      <xs:element name="PARTNEROKPO">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--ОКВЕД-->
+      <xs:element name="PARTNEROKVED">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Расчетный счет-->
+      <xs:element name="PARTNERSETTLEMENTACCOUNT">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Корреспондентский счет-->
+      <xs:element name="PARTNERCORRESPONDENTACCOUNT">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--БИК-->
+      <xs:element name="PARTNERBIK">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Идентификатор партнера в хост-системе-->
+      <xs:element name="PARTNERHOSTREF">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Признак манданта, к которому относится партнер-->
+      <xs:element name="MANDANTID" type="xs:integer"/>
+      <!--Список адресов партнера-->
+      <xs:element name="ADDRESS">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="TENTADDRESSBOOK" type="AddressBookType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>      
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

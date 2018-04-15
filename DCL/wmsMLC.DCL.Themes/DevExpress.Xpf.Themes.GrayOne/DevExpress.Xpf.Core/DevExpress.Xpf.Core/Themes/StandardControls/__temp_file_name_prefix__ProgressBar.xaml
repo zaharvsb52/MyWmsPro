@@ -1,0 +1,47 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/StandardControls/Brushes.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/StandardControls/SharedResources.xaml" />
+  </ResourceDictionary.MergedDictionaries>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey ThemeName=GrayOne, FullName=System.Windows.Controls.ProgressBar}" TargetType="{x:Type ProgressBar}">
+    <Setter Property="Foreground" Value="{StaticResource ProgressBar.IndicatorBackground}" />
+    <Setter Property="Background" Value="{StaticResource ProgressBar.Background}" />
+    <Setter Property="BorderBrush" Value="{StaticResource ProgressBar.BorderBrush}" />
+    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="SnapsToDevicePixels" Value="True" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type ProgressBar}">
+          <Grid x:Name="TemplateRoot" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ProgressBar.xaml;17;22">
+            <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ProgressBar.xaml;18;26">
+              <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ProgressBar.xaml;19;30">
+                <Rectangle x:Name="PART_Track" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ProgressBar.xaml;20;34" />
+                <Decorator x:Name="PART_Indicator" HorizontalAlignment="Left" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ProgressBar.xaml;21;34">
+                  <Grid x:Name="Foreground" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ProgressBar.xaml;22;38">
+                    <Rectangle x:Name="Indicator" Fill="{TemplateBinding Foreground}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ProgressBar.xaml;23;42" />
+                    <Grid x:Name="Animation" ClipToBounds="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ProgressBar.xaml;24;42">
+                      <Rectangle x:Name="PART_GlowRect" Fill="{DynamicResource ProgressBar.IndicatorAnimatedFill}" Margin="-100,0,0,0" Width="100" HorizontalAlignment="Left" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ProgressBar.xaml;25;46" />
+                    </Grid>
+                    <Border BorderBrush="{StaticResource ProgressBar.HighlightBackground}" BorderThickness="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ProgressBar.xaml;27;42" />
+                  </Grid>
+                </Decorator>
+              </Grid>
+            </Border>
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="Orientation" Value="Vertical">
+              <Setter Property="LayoutTransform" TargetName="TemplateRoot">
+                <Setter.Value>
+                  <RotateTransform Angle="-90" />
+                </Setter.Value>
+              </Setter>
+            </Trigger>
+            <Trigger Property="IsIndeterminate" Value="True">
+              <Setter Property="Visibility" TargetName="Indicator" Value="Collapsed" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+</ResourceDictionary>

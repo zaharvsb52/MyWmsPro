@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="PurchaseInvoiceWrapper" nillable="true" type="PurchaseInvoiceWrapper" />
+  <xs:complexType name="PurchaseInvoiceWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="OWNID_R" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="MANDANTID" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IWBSENDER" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IWBRECIPIENT" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IWBPRIORITY" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IWBPAYER" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IWBID" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="STATUSCODE_R_NAME" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="STATUSCODE_R" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IWBSENDER_NAME" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IWBRECIPIENT_NAME" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IWBPAYER_NAME" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IWBNAME" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IWBHOSTREF" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CUSTOMPARAMVAL" type="ArrayOfCustomParamValueWrapper" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IWBPOSL" type="ArrayOfIWBPosWrapper" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MandantCode" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfCustomParamValueWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomParamValueWrapper" nillable="true" type="CustomParamValueWrapper" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CustomParamValueWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="CPV2ENTITY" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CPVID" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CPVKEY" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CPVPARENT" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CPVVALUE" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CUSTOMPARAMCODE_R" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfIWBPosWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IWBPosWrapper" nillable="true" type="IWBPosWrapper" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IWBPosWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IWBPOSMANUAL" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IWBPOSPRODUCTDATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IWBPOSEXPIRYDATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="SKUID_R" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="MANDANTID" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IWBPOSNUMBER" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IWBPOSID" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IWBPOSCOUNT" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IWBID_R" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IWBPOSPRICEVALUE" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" maxOccurs="1" name="STATUSCODE_R_NAME" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="STATUSCODE_R" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SKUID_R_NAME" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="QLFCODE_R" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IWBPOSTONE" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IWBPOSTE" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IWBPOSSIZE" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IWBPOSSERIALNUMBER" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IWBPOSMEASURE" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IWBPOSHOSTREF" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IWBPOSFACTORY" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IWBPOSCOLOR" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IWBPOSBLOCKING_NAME" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IWBPOSBLOCKING" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IWBPOSBATCH" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IWBPOSARTNAME" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IWBID_R_NAME" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

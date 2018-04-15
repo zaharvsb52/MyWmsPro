@@ -1,0 +1,168 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" xmlns:dxbt="http://schemas.devexpress.com/winfx/2008/xaml/bars/themekeys" xmlns:dxbc="http://schemas.devexpress.com/winfx/2008/xaml/bars/internal" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <dxcore_unique_xmlns:BooleanToVisibilityConverter x:Key="boolToVisibilityConverter" />
+  <dxcore_unique_xmlns:BooleanToVisibilityConverter x:Key="invertBoolToVisibilityConverter" Invert="True" />
+  <dxcore_unique_xmlns:ControlBrushesToVisibilityConverter x:Key="controlToVisibilityConverter" />
+  <dxcore_unique_xmlns:ControlBrushesToVisibilityConverter x:Key="invertControlToVisibilityConverter" Invert="True" />
+  <ControlTemplate x:Key="{dxbt:GalleryControlThemeKey ResourceKey=StandaloneControlTemplate}" TargetType="{x:Type dxb:GalleryControl}">
+    <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;7;10">
+      <ContentControl x:Name="PART_StandaloneBarManagerContainer" HorizontalAlignment="Left" VerticalAlignment="Top" Width="0" Height="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;8;14" />
+      <ContentControl Template="{DynamicResource {dxbt:GalleryControlThemeKey ResourceKey=StandaloneBackgroundTemplate}}" Visibility="{Binding RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource invertControlToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;9;14" />
+      <Border x:Name="PART_UserBorder" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Visibility="{Binding RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource controlToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;10;14" />
+      <ContentControl Margin="{Binding ElementName=PART_UserBorder, Path=BorderThickness}" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;11;14">
+        <ContentControl Style="{DynamicResource {dxbt:GalleryControlThemeKey ResourceKey=StandaloneContentStyle}}" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;12;18">
+          <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;13;22">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <ToggleButton x:Name="PART_Caption" Template="{TemplateBinding ActualFilterControlTemplate}" Style="{DynamicResource {dxbt:GalleryControlThemeKey ResourceKey=StandaloneCaptionStyle}}" Visibility="{Binding Path=Gallery.AllowFilter, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter = {StaticResource boolToVisibilityConverter}}" FocusVisualStyle="{x:Null}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;20;26">
+              <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;22;30">
+                <ContentControl Style="{TemplateBinding ActualNormalFilterCaptionTextStyle}" Focusable="False" Content="Wg" Opacity="0" Width="0" Visibility="{Binding Path=IsMouseOver, ElementName=PART_Caption, Converter={StaticResource invertBoolToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;24;34" />
+                <ContentControl Style="{TemplateBinding SelectedFilterCaptionTextStyle}" Focusable="False" Content="Wg" Opacity="0" Width="0" Visibility="{Binding Path=IsMouseOver, ElementName=PART_Caption, Converter={StaticResource boolToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;25;34" />
+                <ContentControl Style="{TemplateBinding ActualNormalFilterCaptionTextStyle}" Focusable="False" Content="{Binding Path=Gallery.FilterCaption, RelativeSource={RelativeSource Mode=TemplatedParent}}" ContentTemplate="{Binding Path=Gallery.FilterCaptionTemplate, RelativeSource={RelativeSource Mode=TemplatedParent}}" Visibility="{Binding Path=IsMouseOver, ElementName=PART_Caption, Converter={StaticResource invertBoolToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;27;34" />
+                <ContentControl Style="{TemplateBinding ActualSelectedFilterCaptionTextStyle}" Focusable="False" Content="{Binding Path=Gallery.FilterCaption, RelativeSource={RelativeSource Mode=TemplatedParent}}" ContentTemplate="{Binding Path=Gallery.FilterCaptionTemplate, RelativeSource={RelativeSource Mode=TemplatedParent}}" Visibility="{Binding Path=IsMouseOver, ElementName=PART_Caption, Converter={StaticResource boolToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;28;34" />
+              </Grid>
+            </ToggleButton>
+            <ContentControl Template="{DynamicResource {dxbt:GalleryControlThemeKey ResourceKey=StandaloneGroupsBackgroundTemplate}}" Style="{DynamicResource {dxbt:GalleryControlThemeKey ResourceKey=StandaloneGroupsBackgroundStyle}}" Grid.Row="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;33;26">
+              <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;34;30">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="*" />
+                  <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <dxb:GalleryGroupsViewer x:Name="PART_ScrollHost" Grid.Column="0" Style="{DynamicResource {dxbt:GalleryControlThemeKey ResourceKey=StandaloneGroupsViewportStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;40;34">
+                  <dxb:GalleryItemGroupsControl x:Name="PART_Groups" ItemsSource="{Binding Path=Gallery.Groups, RelativeSource = {RelativeSource Mode=TemplatedParent}}" ItemGlyphBorderTemplate="{TemplateBinding ActualItemGlyphBorderTemplate}" ItemBorderTemplate="{TemplateBinding ActualItemBorderTemplate}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;41;38" />
+                </dxb:GalleryGroupsViewer>
+                <ContentControl Grid.Column="1" Visibility="{TemplateBinding ActualVerticalScrollBarVisibility}" Style="{DynamicResource {dxbt:GalleryControlThemeKey ResourceKey=StandaloneVerticalScrollBarContainerStyle}}" VerticalContentAlignment="Stretch" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;43;34">
+                  <ScrollBar x:Name="PART_VerticalScrollBar" Orientation="Vertical" ViewportSize="{Binding ElementName=PART_ScrollHost, Path=ViewportSize.Height}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;44;38" />
+                </ContentControl>
+              </Grid>
+            </ContentControl>
+          </Grid>
+        </ContentControl>
+      </ContentControl>
+      <!--ONLY SL<dxb:ContentViewport Visibility="Collapsed" Child="{Binding Path=Content, RelativeSource={RelativeSource Mode=TemplatedParent}}"/> ONLY SL-->
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxbt:GalleryItemControlThemeKey ResourceKey=DefaultControlTemplate}" TargetType="{x:Type dxb:GalleryItemControl}">
+    <!--BEGIN WPF-->
+    <ControlTemplate.Resources>
+      <PopupAnimation x:Key="{x:Static SystemParameters.ToolTipPopupAnimationKey}">None</PopupAnimation>
+    </ControlTemplate.Resources>
+    <!--END WPF-->
+    <Grid x:Name="PART_Panel" Margin="{Binding Path=GroupControl.GroupsControl.GalleryControl.ActualItemMargin, RelativeSource={RelativeSource TemplatedParent}}" Visibility="{Binding Path=Item.IsVisible, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter = {StaticResource boolToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;64;10">
+      <dxb:ItemBorderControl x:Name="PART_Border" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" NormalTemplate="{Binding Path=GroupControl.GroupsControl.ItemBorderTemplate, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;65;14" />
+      <dxb:SplitLayoutPanel Content1Location="{Binding Path=Item.Group.Gallery.ItemGlyphLocation, RelativeSource={RelativeSource TemplatedParent}}" Style="{DynamicResource {dxbt:GalleryItemControlThemeKey ResourceKey=SplitLayoutStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;67;14">
+        <dxb:SplitLayoutPanel.Content1>
+          <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="{Binding Path=Item.Group.Gallery.IsItemGlyphVisible, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter = {StaticResource boolToVisibilityConverter}}" Margin="{Binding Path=GroupControl.GroupsControl.GalleryControl.ActualItemGlyphMargin, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;70;22">
+            <dxb:ItemBorderControl x:Name="PART_GlyphBorder" NormalTemplate="{Binding Path=GroupControl.GroupsControl.ItemGlyphBorderTemplate, RelativeSource={RelativeSource TemplatedParent}}" Visibility="{Binding Path=Item.Group.Gallery.IsItemGlyphVisible, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter = {StaticResource boolToVisibilityConverter}}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;72;26" />
+            <dxb:ContentViewport x:Name="PART_GlyphViewport" HorizontalContentAlignment="{Binding Path=Item.Group.Gallery.ItemGlyphHorizontalAlignment, RelativeSource={RelativeSource Mode=TemplatedParent}}" VerticalContentAlignment="{Binding Path=Item.Group.Gallery.ItemGlyphVerticalAlignment, RelativeSource={RelativeSource Mode=TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;73;26">
+              <dxcore_unique_xmlns:ImagePixelSnapper dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;74;34">
+                <!--BEGIN WPF-->
+                <Image x:Name="PART_Image" Margin="{Binding Path=GroupControl.GroupsControl.GalleryControl.ActualItemGlyphBorderPadding, RelativeSource={RelativeSource TemplatedParent}}" Stretch="{Binding Path=Item.Group.Gallery.ItemGlyphStretch, RelativeSource={RelativeSource Mode=TemplatedParent}}" Width="{Binding Path=Item.Group.Gallery.ItemGlyphSize.Width, RelativeSource={RelativeSource Mode=TemplatedParent}}" Height="{Binding Path=Item.Group.Gallery.ItemGlyphSize.Height, RelativeSource={RelativeSource Mode=TemplatedParent}}" Source="{Binding Path=Item.Glyph, RelativeSource={RelativeSource Mode=TemplatedParent}}" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;76;38" />
+                <!--END WPF-->
+                <!--ONLY SL 
+                                    <Image x:Name="PART_Image"
+                                           Margin="{Binding Path=GroupControl.GroupsControl.GalleryControl.ActualItemGlyphBorderPadding, RelativeSource={RelativeSource TemplatedParent}}"
+                                           Stretch="{Binding Path=Item.Group.Gallery.ItemGlyphStretch, RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                                           Width="{Binding Path=Item.Group.Gallery.ItemGlyphSize.Width, RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                                           Height="{Binding Path=Item.Group.Gallery.ItemGlyphSize.Height, RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                                           Source="{Binding Path=Item.Glyph, RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                                           SnapsToDevicePixels="True"/>
+                                    ONLY SL-->
+              </dxcore_unique_xmlns:ImagePixelSnapper>
+            </dxb:ContentViewport>
+          </Grid>
+        </dxb:SplitLayoutPanel.Content1>
+        <dxb:SplitLayoutPanel.Content2>
+          <dxb:ContentViewport x:Name="PART_ContentViewport" HorizontalAlignment="{Binding Path=Item.Group.Gallery.ItemContentHorizontalAlignment, RelativeSource={RelativeSource Mode=TemplatedParent}}" VerticalAlignment="{Binding Path=Item.Group.Gallery.ItemContentVerticalAlignment, RelativeSource={RelativeSource Mode=TemplatedParent}}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Visibility="{Binding Path=Item.Group.Gallery.IsItemContentVisible, RelativeSource={RelativeSource TemplatedParent}, Converter = {StaticResource boolToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;95;22">
+            <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;96;26">
+              <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+              </Grid.RowDefinitions>
+              <ContentControl Name="PART_Caption" Grid.Row="0" Style="{TemplateBinding ActualCaptionTextStyle}" Focusable="False" IsTabStop="False" Content="{TemplateBinding ActualCaption}" ContentTemplate="{Binding Path=Item.Group.Gallery.ItemCaptionTemplate, RelativeSource={RelativeSource Mode=TemplatedParent}}" Margin="{Binding Path=GroupControl.GroupsControl.GalleryControl.ActualItemCaptionMargin, RelativeSource={RelativeSource TemplatedParent}}" SnapsToDevicePixels="True" HorizontalAlignment="{Binding Path=Item.Group.Gallery.ItemCaptionHorizontalAlignment, RelativeSource={RelativeSource TemplatedParent}}" VerticalAlignment="{Binding Path=Item.Group.Gallery.ItemCaptionVerticalAlignment, RelativeSource={RelativeSource TemplatedParent}}" Visibility="{Binding Path=Item.Group.Gallery.IsItemCaptionVisible, RelativeSource={RelativeSource TemplatedParent}, Converter = {StaticResource boolToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;102;30" />
+              <ContentControl Name="PART_Description" Grid.Row="1" Style="{TemplateBinding ActualDescriptionTextStyle}" Focusable="False" IsTabStop="False" Content="{TemplateBinding ActualDescription}" ContentTemplate="{Binding Path=Item.Group.Gallery.ItemDescriptionTemplate, RelativeSource={RelativeSource Mode=TemplatedParent}}" Margin="{Binding Path=GroupControl.GroupsControl.GalleryControl.ActualItemDescriptionMargin, RelativeSource={RelativeSource TemplatedParent}}" SnapsToDevicePixels="True" HorizontalAlignment="{Binding Path=Item.Group.Gallery.ItemDescriptionHorizontalAlignment, RelativeSource={RelativeSource Mode=TemplatedParent}}" VerticalAlignment="{Binding Path=Item.Group.Gallery.ItemDescriptionVerticalAlignment, RelativeSource={RelativeSource Mode=TemplatedParent}}" Visibility="{Binding Path=Item.Group.Gallery.IsItemDescriptionVisible, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter = {StaticResource boolToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;105;30" />
+            </Grid>
+          </dxb:ContentViewport>
+        </dxb:SplitLayoutPanel.Content2>
+      </dxb:SplitLayoutPanel>
+      <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup x:Name="EnabledStates">
+          <VisualState x:Name="Enabled">
+            <Storyboard>
+              <DoubleAnimation Storyboard.TargetName="PART_Panel" Storyboard.TargetProperty="Opacity" To="1" Duration="0" />
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="Disabled">
+            <Storyboard>
+              <DoubleAnimation Storyboard.TargetName="PART_Panel" Storyboard.TargetProperty="Opacity" To="0.35" Duration="0" />
+            </Storyboard>
+          </VisualState>
+        </VisualStateGroup>
+      </VisualStateManager.VisualStateGroups>
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxbt:GalleryItemGroupControlThemeKey ResourceKey=ControlTemplate}" TargetType="{x:Type dxb:GalleryItemGroupControl}">
+    <ContentControl Focusable="False" IsTabStop="False" Template="{DynamicResource {dxbt:GalleryItemGroupControlThemeKey ResourceKey=BackgroundTemplate}}" Visibility="{Binding Path=Group.IsVisible, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter = {StaticResource boolToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;129;10">
+      <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;130;14">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <ContentControl x:Name="PART_Caption" Template="{Binding Path=GroupsControl.GalleryControl.ActualGroupCaptionControlTemplate, RelativeSource={RelativeSource Mode=TemplatedParent}}" Focusable="False" IsTabStop="False" Visibility="{Binding Path=ActualIsCaptionVisible, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter = {StaticResource boolToVisibilityConverter}}" DataContext="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;136;18">
+          <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;138;26">
+            <ContentControl Style="{Binding Path=GroupsControl.GalleryControl.ActualGroupCaptionTextStyle, RelativeSource={RelativeSource Mode=TemplatedParent}}" Focusable="False" IsTabStop="False" Content="Wg" Margin="{Binding Path=GroupsControl.GalleryControl.ActualGroupCaptionMargin, RelativeSource={RelativeSource Mode=TemplatedParent}}" VerticalAlignment="{Binding Path=Group.Gallery.GroupCaptionVerticalAlignment, RelativeSource={RelativeSource Mode=TemplatedParent}}" HorizontalAlignment="{Binding Path=Group.Gallery.GroupCaptionHorizontalAlignment, RelativeSource={RelativeSource Mode=TemplatedParent}}" Width="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;139;30" />
+            <dxcore_unique_xmlns:PixelSnapper dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;140;30">
+              <ContentControl Style="{Binding Path=GroupsControl.GalleryControl.ActualGroupCaptionTextStyle, RelativeSource={RelativeSource Mode=TemplatedParent}}" Focusable="False" IsTabStop="False" Content="{Binding Path=Group.Caption, RelativeSource={RelativeSource Mode=TemplatedParent}}" ContentTemplate="{Binding Path=Group.Gallery.GroupCaptionTemplate, RelativeSource={RelativeSource Mode=TemplatedParent}}" Margin="{Binding Path=GroupsControl.GalleryControl.ActualGroupCaptionMargin, RelativeSource={RelativeSource Mode=TemplatedParent}}" VerticalAlignment="{Binding Path=Group.Gallery.GroupCaptionVerticalAlignment, RelativeSource={RelativeSource Mode=TemplatedParent}}" HorizontalAlignment="{Binding Path=Group.Gallery.GroupCaptionHorizontalAlignment, RelativeSource={RelativeSource Mode=TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;141;34" />
+            </dxcore_unique_xmlns:PixelSnapper>
+          </Grid>
+        </ContentControl>
+        <ContentControl Grid.Row="1" Template="{DynamicResource {dxbt:GalleryItemGroupControlThemeKey ResourceKey=ItemsBackgroundTemplate}}" Focusable="False" IsTabStop="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;146;18">
+          <ItemsPresenter x:Name="PART_Items" Margin="{Binding Path=GroupsControl.GalleryControl.ActualGroupItemsMargin, RelativeSource={RelativeSource Mode=TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;147;22" />
+        </ContentControl>
+      </Grid>
+    </ContentControl>
+  </ControlTemplate>
+  <ItemsPanelTemplate x:Key="{dxbt:GalleryItemGroupControlThemeKey ResourceKey=ItemsPanelTemplate}">
+    <dxb:GalleryItemsPanel dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;154;10" />
+  </ItemsPanelTemplate>
+  <ControlTemplate x:Key="{dxbt:GalleryItemGroupsControlThemeKey ResourceKey=ControlTemplate}" TargetType="{x:Type dxb:GalleryItemGroupsControl}">
+    <ItemsPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;158;10" />
+  </ControlTemplate>
+  <ItemsPanelTemplate x:Key="{dxbt:GalleryItemGroupsControlThemeKey ResourceKey=ItemsPanelTemplate}">
+    <dxb:GalleryItemGroupsPanel dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;162;10" />
+  </ItemsPanelTemplate>
+  <ControlTemplate x:Key="{dxbt:GalleryItemControlThemeKey ResourceKey=HoverToolTipTemplate}" TargetType="{x:Type dxb:GalleryItemHoverToolTip}">
+    <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;167;10">
+      <ContentControl Template="{DynamicResource {dxbt:GalleryItemControlThemeKey ResourceKey=HoverContentControlTemplate}}" Width="{Binding LargeGlyphSize.Width, RelativeSource={RelativeSource TemplatedParent}}" Height="{Binding LargeGlyphSize.Height, RelativeSource={RelativeSource TemplatedParent}}" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;168;14">
+        <!--BEGIN WPF-->
+        <Image x:Name="PART_LargeImage" Source="{TemplateBinding Glyph}" Stretch="UniformToFill" SnapsToDevicePixels="True" Opacity="0" VerticalAlignment="Center" HorizontalAlignment="Center" RenderOptions.BitmapScalingMode="HighQuality" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;170;18" />
+        <!--END WPF-->
+        <!--ONLY SL
+                <Image x:Name="PART_LargeImage"
+                       Source="{TemplateBinding Glyph}"
+                       Stretch="UniformToFill"
+                       SnapsToDevicePixels="True"
+                       Opacity="0"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"/>
+                ONLY SL-->
+      </ContentControl>
+      <ContentControl Template="{DynamicResource {dxbt:GalleryItemControlThemeKey ResourceKey=HoverContentControlTemplate}}" HorizontalAlignment="Center" VerticalAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;182;14">
+        <!--BEGIN WPF-->
+        <Image x:Name="PART_Image" Stretch="Fill" Source="{TemplateBinding Glyph}" SnapsToDevicePixels="True" Width="{Binding SmallGlyphSize.Width, RelativeSource={RelativeSource TemplatedParent}}" Height="{Binding SmallGlyphSize.Height, RelativeSource={RelativeSource TemplatedParent}}" VerticalAlignment="Center" HorizontalAlignment="Center" RenderOptions.BitmapScalingMode="HighQuality" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\Gallery.xaml;184;18" />
+        <!--END WPF-->
+        <!--ONLY SL
+                <Image x:Name="PART_Image" Stretch="Fill"
+                        Source="{TemplateBinding Glyph}"
+                        SnapsToDevicePixels="True"
+                        Width="{Binding SmallGlyphSize.Width, RelativeSource={RelativeSource TemplatedParent}}"
+                        Height="{Binding SmallGlyphSize.Height, RelativeSource={RelativeSource TemplatedParent}}"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"                       
+                       />
+                ONLY SL-->
+      </ContentControl>
+    </Grid>
+  </ControlTemplate>
+</ResourceDictionary>

@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="IWB" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include  id="IWBPos" schemaLocation="IWBPos.xsd"/>
+  <xs:include  id="IWB2Cargo" schemaLocation="IWB2Cargo.xsd"/>
+  <xs:include  id="CustomParamValue" schemaLocation="CustomParamValue.xsd"/>
+
+  <!--Сущность IWB-->
+  <xs:element name="TENTIWB" type="IWBType"/>
+  
+  <!--Описание типа IWB-->
+  <xs:complexType name="IWBType">
+    <xs:sequence>
+      <!--ID записи-->
+      <xs:element name="IWBID" type="xs:integer"/>
+      <!--Мандант-->
+      <xs:element name="MANDANTID" type="xs:integer" nillable="false"/>
+      <!--Имя приходного документа-->
+      <xs:element name="IWBNAME" nillable="false">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="60"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Приоритет документа-->
+      <xs:element name="IWBPRIORITY" type="xs:integer" nillable="false"/>
+      <!--ID записи расходной накладной-->
+      <xs:element name="OWNID_R" type="xs:integer"/>
+      <!--Отправитель-->
+      <xs:element name="IWBSENDER" type="xs:integer"/>
+      <!--Плательщик-->
+      <xs:element name="IWBPAYER" type="xs:integer"/>
+      <!--Получатель-->
+      <xs:element name="IWBRECIPIENT" type="xs:integer"/>
+      <!--Статус-->
+      <xs:element name="STATUSCODE_R">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Идентификатор в хост-системе-->
+      <xs:element name="IWBHOSTREF">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Список позиций приходной накладной-->
+      <xs:element name="IWBPOSL">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="TENTIWBPOS" type="IWBPosType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--Список груза по накладной-->
+      <xs:element name="IWB2CARGOL">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="TENTIWB2CARGO" type="IWB2CargoType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--Список пользовательских параметров-->
+      <xs:element name="CUSTOMPARAMVAL">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="TENTCUSTOMPARAMVALUE" type="CustomParamValueType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

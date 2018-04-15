@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="wmsMLC.General.BL.BusinessObject" Collapsed="true">
+    <Position X="4.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>cAAAAAAAAAgAAIAEIACAFJAAiAMAAAAAAEAAAAACAAA=</HashCode>
+      <FileName>BusinessObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="wmsMLC.General.BL.EditableBusinessObject" Collapsed="true">
+    <Position X="4.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAQAACAAABAIgoADAEAABAAAQAAAAAkEBAAAgAAA=</HashCode>
+      <FileName>EditableBusinessObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="wmsMLC.General.BL.SerializableBusinessObject" Collapsed="true">
+    <Position X="4.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AECAAAAAAAAAABAgAAAAAAEAAAAAAABAAAAIAAAAAAA=</HashCode>
+      <FileName>SerializableBusinessObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="wmsMLC.General.BL.ValidatableObject" Collapsed="true">
+    <Position X="4.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAQgCCAAAQAAAAAAAAAAAgAAAAAAAIAA=</HashCode>
+      <FileName>ValidatableObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="wmsMLC.General.BL.BusinessObjectCollection&lt;T&gt;" Collapsed="true">
+    <Position X="7.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjectCollection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="wmsMLC.General.BL.EditableBusinessObjectCollection&lt;T&gt;" Collapsed="true">
+    <Position X="7.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAIAAAAAAAAAAIBAABAEgAAAAAAABAICkEBAgAAAAA=</HashCode>
+      <FileName>EditableBusinessObjectCollection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="wmsMLC.General.BL.ValidatableObjectCollection&lt;T&gt;" Collapsed="true">
+    <Position X="7.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAgCAAAAQAAAAAAAAAAAgAAAAAAAIAA=</HashCode>
+      <FileName>ValidatableObjectCollection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="wmsMLC.General.BL.SerializableBusinessObjectCollection&lt;T&gt;" Collapsed="true">
+    <Position X="7.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAABAAAAAAAAEAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>SerializableBusinessObjectCollection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="wmsMLC.General.BL.CustomProperty" Collapsed="true">
+    <Position X="10.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAgAIAAAAAAAAAAAAAAQQAABAgAABAAAqQAgAAAA=</HashCode>
+      <FileName>CustomProperty.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="wmsMLC.General.BL.CustomPropertyCollection" Collapsed="true">
+    <Position X="12" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>CustomPropertyCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="wmsMLC.General.BL.DynamicTypeDescriptor" Collapsed="true">
+    <Position X="11.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAACAAAAAAgAAIAAAAAABAEIAAIAERACAAQCAA=</HashCode>
+      <FileName>DynamicTypeDescriptor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="wmsMLC.General.BL.DynamicPropertyDescriptor" Collapsed="true">
+    <Position X="11.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAJACQAgAQQAAAAAAAAEBAAAQAAAACAAAAEAA=</HashCode>
+      <FileName>DynamicPropertyDescriptor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

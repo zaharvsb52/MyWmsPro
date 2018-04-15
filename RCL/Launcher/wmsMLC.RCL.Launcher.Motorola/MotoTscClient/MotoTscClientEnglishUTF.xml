@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<WalTscClient  >
+  <StringTable Language="English">
+      <String Id="IDS_TITLE_CONNECTED">
+        %s - Remote Desktop
+      </String>
+      <String Id="IDS_RDP">
+        WalTscClient
+      </String>
+      <String Id="IDS_FATALERROR_TITLE">
+        Fatal Error (Error Code: %d)
+      </String>
+      <String Id="IDS_FATALERROR_MSG">
+        The session will be disconnected. Your computer may be low on memory.\nAfter closing some applications, try to reconnect the session.
+      </String>
+      <String Id="IDS_CONFIRMCLOSE_TITLE">
+        Disconnect Windows Session
+      </String>
+      <String Id="IDS_CONFIRMCLOSE_MSG">
+        This will disconnect your Windows session. Your programs will \ncontinue to run while you are disconnected. You can \nreconnect to this session later by logging on again.
+      </String>
+      <String Id="IDS_USAGE">
+        Remote Desktop Connection\n\nMotoTSCClient [/Session=Session] [/Shutdown] | /Session -- specifies the Session to which you want to connect.\n/Shutdown -- Terminates Program.
+      </String>
+      <String Id="IDS_ERR_CONNECTCALLFAILED">
+        An error occurred when the client attempted to connect to the remote computer. \nCheck your system memory and then try the connection again.
+      </String>
+      <String Id="IDS_TITLE_CONNECTING">
+        Connecting - v%d.%d.%02d
+      </String>
+      <String Id="IDS_CONNECTING_RETRY">
+        Retry #%d
+      </String>
+      <String Id="IDS_WAIT_FOR_VALID_IP">
+        Waiting for Valid IP Address
+      </String>
+      <String Id="IDS_WAIT_FOR_IP_SEC">
+        Waiting %d Sec.
+      </String>
+      <String Id="IDS_LOW_OR_NO_SIGNAL">
+        Low or No Signal.  Wait to Connect.
+      </String>
+      <String Id="IDS_NO_SIGNAL">
+        No Signal
+      </String>
+      <String Id="IDS_RETURN_TO_COVERAGE">
+        Please return to Radio Coverage or press Close to Exit
+      </String>
+      <String Id="IDS_NO_SESSION_ERR">
+        Exiting Program.  No Session found on Cmd Line or in Registry.
+      </String>
+      <String Id="IDS_INITIAL_CONNECT_ERR">
+        Exiting Program.  Unable to Connect to Primary Server.
+      </String>
+      <String Id="IDS_SWITCH_SESSION">
+        Close current Session and Start new Session %s?
+      </String>
+	  <String Id="IDS_CLOSE">
+	    Close
+      </String>
+      <String Id="IDS_RDP_MISSING_ERR">
+        Exiting Program. RDP File is missing or corrupt.
+      </String>
+      <String Id="IDS_NO_SERVER_FOUND_ERR">
+        Exiting Program. No Server Found.
+      </String>
+      <String Id="IDS_APPLY_SETTINGS_FAILED_ERR">
+        Exiting Program. Attempt to Apply Settings Failed.
+      </String>
+    </StringTable>
+</WalTscClient>

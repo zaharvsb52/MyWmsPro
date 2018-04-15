@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <appSettings>
+    <!-- Параметр Server может быть задан также как аргумент. -->
+    <add key="Server" value="10.0.0.19" />
+    
+    <add key="Domain" value="my" />
+    
+    <!--<add key="RdcPath" value="Application\MotoTscClient\MotoTscClient.exe" />-->
+    <!--<add key="RdpFileTemplatePath" value="Application\MotoTscClient\rcl.rdp" />-->
+    
+    <add key="RdcPath" value="Windows\cetsc.exe" />
+    <add key="RdpFileTemplatePath" value="rcl.rdp" />
+    
+    <!-- Количество поппыток подключения к TS. Только для режима RdcType == MotoTscClient -->
+    <add key="RetryCount" value="1" />
+    
+    <!-- Показываем логин -->
+    <add key="SetLoginOnLoad" value="False" />
+
+    <!-- Использование клиентов подключения к TS: MotoTscClient - MotoTscClient.exe, CetscHoneywell - cetsc.exe (native) -->
+    <!--<add key="RdcType" value="MotoTscClient" />-->
+    <add key="RdcType" value="CetscHoneywell" />
+    
+    <!-- 0 – Debug logging disabled. 1 – Informational Messages are logged. 2 – Full debug logging enabled. Debug file - \Program Files\MotoTscClient.log -->
+    <add key="DebugLevel" value="2" />
+
+    <!-- Имя компьютера. Если определено и имя отличается, то меняем. -->
+    <add key="ComputerName" value="" />
+
+    <!-- Недопустимые имена ТСД. Разделитель: ',' (без кавычек). Значение по-умолчанию: WindowsCE. -->
+    <add key="BadComputerNames" value="" />
+
+    <!-- Если терминал типа HoneyWell 6500, то пишем в реестр, если True - HKEY_LOCAL_MACHINE\System\Keypad\RemapToVkF1 = 1 -->
+    <add key="Hw6500NeedWriteToRegister" value="True" />
+  </appSettings>
+</configuration>

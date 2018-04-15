@@ -1,0 +1,29 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys">
+    <!--BEGIN WPF-->
+    <Style x:Key="{dxt:DefaultStyleThemeKey ThemeName=GrayOne, FullName=DevExpress.Xpf.Core.BackgroundPanel}" TargetType="local:BackgroundPanel">
+        <!--END WPF-->
+        <!--ONLY SL 
+    <Style TargetType="local:BackgroundPanel"> 
+ONLY SL-->
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="IsTabStop" Value="False" />
+        <!--BEGIN WPF-->
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="Background" Value="{DynamicResource {dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerBackground}}" />
+        <!--END WPF-->
+        <!--ONLY SL 
+        <Setter Property="Control.Foreground" Value="#FF201F35" />
+        <Setter Property="Background" Value="#FFEBECEF" />
+    ONLY SL-->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:BackgroundPanel">
+                    <Border Background="{TemplateBinding Background}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}">
+                        <ContentPresenter Content="{TemplateBinding Content}" x:Name="contentPresenter" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

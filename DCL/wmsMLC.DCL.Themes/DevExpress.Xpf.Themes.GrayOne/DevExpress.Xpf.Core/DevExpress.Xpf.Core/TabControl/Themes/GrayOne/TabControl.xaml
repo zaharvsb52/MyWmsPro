@@ -1,0 +1,197 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="clr-namespace:DevExpress.Xpf.Core;assembly=DevExpress.Xpf.Core.v15.2" xmlns:dxt="clr-namespace:DevExpress.Xpf.Utils.Themes;assembly=DevExpress.Xpf.Core.v15.2" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!--BEGIN WPF-->
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/TabControl/Themes/GrayOne/Brushes.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <!--END WPF-->
+
+    <Style x:Key="TabControlNavigationButtonStyleBase" TargetType="{x:Type Button}">
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Width" Value="18" />
+        <Setter Property="Height" Value="18" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="UseLayoutRounding" Value="True" />
+    </Style>    
+
+    <Style x:Key="{dxt:DXTabControlInternalThemeKey ResourceKey=ClippedContainerTopLayoutStyle}" TargetType="{x:Type dx:ClippedContainer}">
+        <Setter Property="Margin" Value="0,-2,0,-2" />
+    </Style>
+
+    <Style x:Key="{dxt:DXTabControlInternalThemeKey ResourceKey=ClippedContainerBottomLayoutStyle}" TargetType="{x:Type dx:ClippedContainer}">
+        <Setter Property="Margin" Value="0,-2,0,-2" />
+    </Style>
+
+    <Style x:Key="{dxt:DXTabControlInternalThemeKey ResourceKey=ClippedContainerLeftLayoutStyle}" TargetType="{x:Type dx:ClippedContainer}">
+        <Setter Property="Margin" Value="-2,0,-2,0" />
+    </Style>
+
+    <Style x:Key="{dxt:DXTabControlInternalThemeKey ResourceKey=ClippedContainerRightLayoutStyle}" TargetType="{x:Type dx:ClippedContainer}">
+        <Setter Property="Margin" Value="-2,0,-2,0" />
+    </Style>
+
+    <Style x:Key="{dxt:DXTabControlInternalThemeKey ResourceKey=PanelContainerTopLayoutStyle}" TargetType="{x:Type dx:TabPanelContainer}">
+        <Setter Property="HoldMargin" Value="-2,2,-2,3" />
+        <Setter Property="NormalMargin" Value="2,2,-1,1" />
+        <Setter Property="ScrollMargin" Value="2,2,-1,2" />
+        <Setter Property="Orientation" Value="Horizontal" />
+        <Setter Property="FirstPadding" Value="1" />
+        <Setter Property="LastPadding" Value="2" />
+    </Style>
+    <Style x:Key="{dxt:DXTabControlInternalThemeKey ResourceKey=PanelContainerBottomLayoutStyle}" TargetType="{x:Type dx:TabPanelContainer}">
+        <Setter Property="HoldMargin" Value="-3,3,-2,2" />
+        <Setter Property="NormalMargin" Value="2,1,-1,2" />
+        <Setter Property="ScrollMargin" Value="2,2,-1,2" />
+        <Setter Property="Orientation" Value="Horizontal" />
+        <Setter Property="FirstPadding" Value="1" />
+        <Setter Property="LastPadding" Value="2" />
+    </Style>
+    <Style x:Key="{dxt:DXTabControlInternalThemeKey ResourceKey=PanelContainerLeftLayoutStyle}" TargetType="{x:Type dx:TabPanelContainer}">
+        <Setter Property="HoldMargin" Value="2,-1,3,-3" />
+        <Setter Property="NormalMargin" Value="2,2,1,-1" />
+        <Setter Property="ScrollMargin" Value="2,2,2,-1" />
+        <Setter Property="Orientation" Value="Vertical" />
+        <Setter Property="FirstPadding" Value="1" />
+        <Setter Property="LastPadding" Value="2" />
+    </Style>
+    <Style x:Key="{dxt:DXTabControlInternalThemeKey ResourceKey=PanelContainerRightLayoutStyle}" TargetType="{x:Type dx:TabPanelContainer}">
+        <Setter Property="HoldMargin" Value="3,-2,2,-2" />
+        <Setter Property="NormalMargin" Value="1,2,2,-1" />
+        <Setter Property="ScrollMargin" Value="2,2,2,-1" />
+        <Setter Property="Orientation" Value="Vertical" />
+        <Setter Property="FirstPadding" Value="1" />
+        <Setter Property="LastPadding" Value="2" />
+    </Style>
+
+    <Thickness x:Key="{dxt:DXTabControlInternalThemeKey ResourceKey=ComponentsSpaceForHorizontalLayouts}">2,0,2,0</Thickness>
+    <Thickness x:Key="{dxt:DXTabControlInternalThemeKey ResourceKey=ComponentsSpaceForVerticalLayouts}">0,2,0,2</Thickness>
+    <Thickness x:Key="{dxt:DXTabControlThemeKey ResourceKey=Padding}">12</Thickness>
+    
+    <DataTemplate x:Key="{dxt:DXTabControlThemeKey ResourceKey=TopBackgroundTemplate}">
+        <Border Background="{StaticResource TabControlTemplate.Background}" BorderBrush="{StaticResource TabControlTemplate.BorderBrush}" BorderThickness="1" />
+    </DataTemplate>
+    <DataTemplate x:Key="{dxt:DXTabControlThemeKey ResourceKey=BottomBackgroundTemplate}">
+        <Border Background="{StaticResource TabControlTemplate.Background}" BorderBrush="{StaticResource TabControlTemplate.BorderBrush}" BorderThickness="1" />
+    </DataTemplate>
+    <DataTemplate x:Key="{dxt:DXTabControlThemeKey ResourceKey=LeftBackgroundTemplate}">
+        <Border Background="{StaticResource TabControlTemplate.Background}" BorderBrush="{StaticResource TabControlTemplate.BorderBrush}" BorderThickness="1" />
+    </DataTemplate>
+    <DataTemplate x:Key="{dxt:DXTabControlThemeKey ResourceKey=RightBackgroundTemplate}">
+        <Border Background="{StaticResource TabControlTemplate.Background}" BorderBrush="{StaticResource TabControlTemplate.BorderBrush}" BorderThickness="1" />
+    </DataTemplate>
+
+    <ControlTemplate x:Key="{dxt:DXTabControlThemeKey ResourceKey=PrevButtonTemplate}" TargetType="{x:Type Button}">
+        <Grid x:Name="Root" Background="Transparent">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <ColorAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF201F35" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="PressedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <ColorAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF201F35" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="0.35" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Border x:Name="HoverState" Background="{StaticResource TabHeaderButton.HoverState.Border1}" CornerRadius="2" Padding="1" Opacity="0">
+                <Border Background="{StaticResource TabHeaderButton.HoverState.Border3}" BorderBrush="{StaticResource TabHeaderButton.HoverState.Border2}" BorderThickness="1" CornerRadius="1" Padding="1" />
+            </Border>
+            <Border x:Name="PressedState" Background="{StaticResource TabHeaderButton.PressedState.Border1}" CornerRadius="2" Padding="1" Opacity="0">
+                <Border Background="{StaticResource TabHeaderButton.PressedState.Border3}" BorderBrush="{StaticResource TabHeaderButton.PressedState.Border2}" BorderThickness="1" CornerRadius="1" Padding="1" />
+            </Border>
+            <Path x:Name="Glyph" Stretch="Fill" Fill="#FF80838F" Data="F1 M 1235,898L 1231,894L 1235,890L 1235,898 Z" Margin="0,0,2,0" Width="4" Height="8" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxt:DXTabControlThemeKey ResourceKey=NextButtonTemplate}" TargetType="{x:Type Button}">
+        <Grid x:Name="Root" Background="Transparent">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <ColorAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF201F35" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="PressedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <ColorAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF201F35" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="0.35" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Border x:Name="HoverState" Background="{StaticResource TabHeaderButton.HoverState.Border1}" CornerRadius="2" Padding="1" Opacity="0">
+                <Border Background="{StaticResource TabHeaderButton.HoverState.Border3}" BorderBrush="{StaticResource TabHeaderButton.HoverState.Border2}" BorderThickness="1" CornerRadius="1" Padding="1" />
+            </Border>
+            <Border x:Name="PressedState" Background="{StaticResource TabHeaderButton.PressedState.Border1}" CornerRadius="2" Padding="1" Opacity="0">
+                <Border Background="{StaticResource TabHeaderButton.PressedState.Border3}" BorderBrush="{StaticResource TabHeaderButton.PressedState.Border2}" BorderThickness="1" CornerRadius="1" Padding="1" />
+            </Border>
+            <Path x:Name="Glyph" Stretch="Fill" Fill="#FF80838F" Data="F1 M 1230,900L 1234,904L 1230,908L 1230,900 Z" Margin="2,0,0,0" Width="4" Height="8" HorizontalAlignment="Center" VerticalAlignment="Center" UseLayoutRounding="False" />
+        </Grid>
+    </ControlTemplate>
+   
+    <ControlTemplate x:Key="{dxt:DXTabControlThemeKey ResourceKey=HeaderMenuTemplate}" TargetType="{x:Type dx:HeaderMenu}">
+        <Grid x:Name="Root" Background="Transparent">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <ColorAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF201F35" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="PressedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <ColorAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF201F35" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="0.35" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Border x:Name="HoverState" Background="{StaticResource TabHeaderButton.HoverState.Border1}" CornerRadius="2" Padding="1" Opacity="0">
+                <Border Background="{StaticResource TabHeaderButton.HoverState.Border3}" BorderBrush="{StaticResource TabHeaderButton.HoverState.Border2}" BorderThickness="1" CornerRadius="1" Padding="1" />
+            </Border>
+            <Border x:Name="PressedState" Background="{StaticResource TabHeaderButton.PressedState.Border1}" CornerRadius="2" Padding="1" Opacity="0">
+                <Border Background="{StaticResource TabHeaderButton.PressedState.Border3}" BorderBrush="{StaticResource TabHeaderButton.PressedState.Border2}" BorderThickness="1" CornerRadius="1" Padding="1" />
+            </Border>
+            <Path x:Name="Glyph" Stretch="Fill" Fill="#FF80838F" Data="F1 M 1235,883L 1230,888L 1225,883L 1235,883 Z" Margin="0,1,0,0" Height="5" Width="10" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        </Grid>
+    </ControlTemplate>
+    
+    <Style x:Key="{dxt:DXTabControlThemeKey ResourceKey=NextButtonStyle}" BasedOn="{StaticResource TabControlNavigationButtonStyleBase}" TargetType="{x:Type Button}">
+        <Setter Property="Template" Value="{DynamicResource {dxt:DXTabControlThemeKey ResourceKey=NextButtonTemplate}}" />
+    </Style>
+    <Style x:Key="{dxt:DXTabControlThemeKey ResourceKey=PrevButtonStyle}" BasedOn="{StaticResource TabControlNavigationButtonStyleBase}" TargetType="{x:Type Button}">
+        <Setter Property="Template" Value="{DynamicResource {dxt:DXTabControlThemeKey ResourceKey=PrevButtonTemplate}}" />
+    </Style>
+    <Style x:Key="{dxt:DXTabControlThemeKey ResourceKey=HeaderMenuStyle}" TargetType="{x:Type dx:HeaderMenu}">
+        <Setter Property="Template" Value="{DynamicResource {dxt:DXTabControlThemeKey ResourceKey=HeaderMenuTemplate}}" />
+        <Setter Property="Width" Value="18" />
+        <Setter Property="Height" Value="18" />
+    </Style>
+</ResourceDictionary>

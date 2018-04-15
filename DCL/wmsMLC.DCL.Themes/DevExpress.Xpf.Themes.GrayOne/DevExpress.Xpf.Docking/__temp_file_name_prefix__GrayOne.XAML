@@ -1,0 +1,17 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Docking/GrayOne/ControlBoxElements.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Docking/GrayOne/CustomizationWindow.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Docking/GrayOne/VisualizerElements.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Docking/GrayOne/ControlItem.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Docking/GrayOne/DockPane.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Docking/GrayOne/LayoutItemsControl.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Docking/GrayOne/FloatPane.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Docking/GrayOne/LayoutItemsControl.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Docking/GrayOne/TabbedPane.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Docking/GrayOne/DocumentPane.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Docking/GrayOne/AutoHidePanel.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Docking/GrayOne/FixedItem.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Docking/GrayOne/TabbedLayoutGroupPane.xaml" />
+  </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

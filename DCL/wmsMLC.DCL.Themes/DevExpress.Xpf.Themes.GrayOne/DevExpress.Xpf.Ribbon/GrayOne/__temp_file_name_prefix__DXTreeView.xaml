@@ -1,0 +1,15 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxrt="http://schemas.devexpress.com/winfx/2008/xaml/ribbon/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <!--BEGIN WPF-->
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="/DevExpress.Xpf.Ribbon.v12.2;component/Themes/Generic/DXTreeView.xaml" />
+  </ResourceDictionary.MergedDictionaries>
+  <!--END WPF-->
+  <ControlTemplate x:Key="{dxrt:DXTreeViewThemeKey ResourceKey=BackgroundTemplate}" TargetType="{x:Type ContentControl}">
+    <Border Background="#FFFFFFFF" BorderBrush="#FF9DA0AA" BorderThickness="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\DXTreeView.xaml;9;10">
+      <ContentControl Content="{TemplateBinding Content}" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\DXTreeView.xaml;10;14" />
+    </Border>
+  </ControlTemplate>
+  <Style x:Key="{dxrt:DXTreeViewThemeKey ResourceKey=BackgroundStyle}" TargetType="{x:Type ContentControl}">
+    <Setter Property="Template" Value="{DynamicResource {dxrt:DXTreeViewThemeKey ResourceKey=BackgroundTemplate}}" />
+  </Style>
+</ResourceDictionary>

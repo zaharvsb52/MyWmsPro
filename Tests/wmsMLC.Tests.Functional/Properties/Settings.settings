@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="wmsMLC.Tests.Functional.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SessionId" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">9090</Value>
+    </Setting>
+    <Setting Name="SDCL_Endpoint" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">net.tcp://10.0.0.19:8035/wmsSDCLService</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

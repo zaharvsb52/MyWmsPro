@@ -1,0 +1,216 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/charts/themekeys" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:local="http://schemas.devexpress.com/winfx/2008/xaml/charts" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.ChartMirrorControl}" TargetType="{x:Type local:ChartMirrorControl}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type local:ChartMirrorControl}">
+          <Rectangle Fill="{TemplateBinding MirrorBrush}" OpacityMask="{TemplateBinding MirrorOpacityBrush}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram2D.xaml;7;22" />
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.ScrollBarPresentation}" TargetType="{x:Type local:ScrollBarPresentation}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type local:ScrollBarPresentation}">
+          <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram2D.xaml;17;22">
+            <local:AxisScrollBar MinValue="{Binding Path=ScrollBarItem.MinPosition, RelativeSource={RelativeSource TemplatedParent}}" MaxValue="{Binding Path=ScrollBarItem.MaxPosition, RelativeSource={RelativeSource TemplatedParent}}" Orientation="{Binding Path=ScrollBarItem.Orientation, RelativeSource={RelativeSource TemplatedParent}}" Visible="{Binding Path=ScrollBarItem.Visible, RelativeSource={RelativeSource TemplatedParent}}" Command="{Binding Path=ScrollBarItem.Command, RelativeSource={RelativeSource TemplatedParent}}" />
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="Diagram2DStyle" TargetType="local:Diagram2D">
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="BorderThickness" Value="0" />
+  </Style>
+  <local:LinesListToGeometryConverter x:Key="linesToGeometryConverter" />
+  <local:ChartDoubleCollectionConverter x:Key="strokeDashArrayConverter" />
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.Pane}" TargetType="{x:Type local:Pane}">
+    <Setter Property="DomainBrush" Value="{DynamicResource {dxt:ChartBrushesThemeKey ResourceKey=Domain2DBrush}}" />
+    <Setter Property="DomainBorderBrush" Value="{DynamicResource {dxt:ChartBrushesThemeKey ResourceKey=DomainBorderBrush}}" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type local:Pane}">
+          <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram2D.xaml;39;22">
+            <local:PaneItemsControl x:Name="PART_PaneItemsControl" PaneItems="{TemplateBinding PaneItems}" SeriesLabelItems="{TemplateBinding SeriesLabelItems}" AxisXScrollBarItem="{TemplateBinding AxisXScrollBarItem}" AxisYScrollBarItem="{TemplateBinding AxisYScrollBarItem}" Pane="{Binding RelativeSource={RelativeSource TemplatedParent}}">
+              <local:PaneItemsControl.PaneContent>
+                <local:DomainPanel x:Name="PART_Domain" Pane="{Binding RelativeSource={RelativeSource TemplatedParent}}" local:XYDiagram2D.ElementType="DiagramContent">
+                  <Border x:Name="PART_DomainBackground" Background="{TemplateBinding DomainBrush}" BorderThickness="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram2D.xaml;43;38" />
+                  <local:ChartItemsControl x:Name="PART_InterlaceControls" ItemsSource="{TemplateBinding InterlaceControls}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram2D.xaml;44;38">
+                    <local:ChartItemsControl.ItemsPanel>
+                      <ItemsPanelTemplate>
+                        <local:SimplePanel dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram2D.xaml;47;50" />
+                      </ItemsPanelTemplate>
+                    </local:ChartItemsControl.ItemsPanel>
+                  </local:ChartItemsControl>
+                  <local:StripsItemsControl x:Name="PART_Strips" ItemsSource="{TemplateBinding StripItems}">
+                    <local:StripsItemsControl.ItemsPanel>
+                      <ItemsPanelTemplate>
+                        <local:Axis2DElementsPanel dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram2D.xaml;54;50" />
+                      </ItemsPanelTemplate>
+                    </local:StripsItemsControl.ItemsPanel>
+                  </local:StripsItemsControl>
+                  <local:ChartItemsControl x:Name="PART_GridLines" ItemsSource="{TemplateBinding GridLines}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram2D.xaml;58;38">
+                    <local:ChartItemsControl.ItemsPanel>
+                      <ItemsPanelTemplate>
+                        <local:SimplePanel dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram2D.xaml;61;50" />
+                      </ItemsPanelTemplate>
+                    </local:ChartItemsControl.ItemsPanel>
+                  </local:ChartItemsControl>
+                  <local:ConstantLinesItemsControl x:Name="PART_ConstantLinesBehind" ItemsSource="{TemplateBinding ConstantLineBehindItems}">
+                    <local:ConstantLinesItemsControl.ItemsPanel>
+                      <ItemsPanelTemplate>
+                        <local:Axis2DElementsPanel dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram2D.xaml;68;50" />
+                      </ItemsPanelTemplate>
+                    </local:ConstantLinesItemsControl.ItemsPanel>
+                  </local:ConstantLinesItemsControl>
+                  <local:DiagramSeriesItemsControl x:Name="PART_Series" ItemsSource="{TemplateBinding SeriesItems}" Owner="{Binding RelativeSource={RelativeSource TemplatedParent}}">
+                    <local:DiagramSeriesItemsControl.ItemsPanel>
+                      <ItemsPanelTemplate>
+                        <local:XYDiagram2DSeriesPanel dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram2D.xaml;75;50" />
+                      </ItemsPanelTemplate>
+                    </local:DiagramSeriesItemsControl.ItemsPanel>
+                  </local:DiagramSeriesItemsControl>
+                  <local:IndicatorItemsControl x:Name="PART_Indicators" ItemsSource="{TemplateBinding IndicatorItems}">
+                    <local:IndicatorItemsControl.ItemsPanel>
+                      <ItemsPanelTemplate>
+                        <local:IndicatorElementsPanel x:Name="indicatorElementsPanel" />
+                      </ItemsPanelTemplate>
+                    </local:IndicatorItemsControl.ItemsPanel>
+                  </local:IndicatorItemsControl>
+                  <local:ConstantLinesItemsControl x:Name="PART_ConstantLinesInFront" ItemsSource="{TemplateBinding ConstantLineInFrontItems}">
+                    <local:ConstantLinesItemsControl.ItemsPanel>
+                      <ItemsPanelTemplate>
+                        <local:Axis2DElementsPanel dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram2D.xaml;89;50" />
+                      </ItemsPanelTemplate>
+                    </local:ConstantLinesItemsControl.ItemsPanel>
+                  </local:ConstantLinesItemsControl>
+                  <local:FibonacciLabelItemsControl x:Name="PART_IndicatorLabels" ItemsSource="{TemplateBinding IndicatorLabelItems}">
+                    <local:FibonacciLabelItemsControl.ItemsPanel>
+                      <ItemsPanelTemplate>
+                        <local:IndicatorLabelElementsPanel x:Name="indicatorLabelElementsPanel" />
+                      </ItemsPanelTemplate>
+                    </local:FibonacciLabelItemsControl.ItemsPanel>
+                  </local:FibonacciLabelItemsControl>
+                  <local:ConstantLineTitleItemsControl x:Name="PART_ConstantLineTitles" ItemsSource="{TemplateBinding ConstantLineTitleItems}">
+                    <local:ConstantLineTitleItemsControl.ItemsPanel>
+                      <ItemsPanelTemplate>
+                        <local:ConstantLineTitlePanel dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram2D.xaml;103;50" />
+                      </ItemsPanelTemplate>
+                    </local:ConstantLineTitleItemsControl.ItemsPanel>
+                  </local:ConstantLineTitleItemsControl>
+                  <Border x:Name="PART_DomainBorder" BorderThickness="1" BorderBrush="{TemplateBinding DomainBorderBrush}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram2D.xaml;107;38" />
+                </local:DomainPanel>
+              </local:PaneItemsControl.PaneContent>
+              <local:PaneItemsControl.MirrorControl>
+                <local:ChartMirrorControl x:Name="PART_Mirror" Series="{Binding ElementName=PART_Series}" DataContext="{Binding RelativeSource={RelativeSource TemplatedParent}}" local:XYDiagram2D.ElementType="Mirror" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram2D.xaml;111;34" />
+              </local:PaneItemsControl.MirrorControl>
+              <local:PaneItemsControl.Pseudo3DMirrorControl>
+                <local:ChartMirrorControl x:Name="PART_Pseudo3DMirror" IsPseudo3D="True" Series="{Binding ElementName=PART_Pseudo3DSeries}" DataContext="{Binding RelativeSource={RelativeSource TemplatedParent}}" local:XYDiagram2D.ElementType="Pseudo3DMirror" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram2D.xaml;114;34" />
+              </local:PaneItemsControl.Pseudo3DMirrorControl>
+              <local:PaneItemsControl.Pseudo3DBarSeriesContainer>
+                <local:PointsContainer x:Name="PART_Pseudo3DSeries" ItemsSource="{TemplateBinding Pseudo3DPointItems}" DataContext="{Binding RelativeSource={RelativeSource TemplatedParent}}" local:XYDiagram2D.ElementType="Pseudo3DBarSeriesContainer">
+                  <local:ChartItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                      <local:Pseudo3DSeriesPointsPanel dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram2D.xaml;120;46" />
+                    </ItemsPanelTemplate>
+                  </local:ChartItemsControl.ItemsPanel>
+                </local:PointsContainer>
+              </local:PaneItemsControl.Pseudo3DBarSeriesContainer>
+              <local:PaneItemsControl.CrosshairContainer>
+                <ItemsControl local:XYDiagram2D.ElementType="CrosshairContainer" x:Name="PART_CrosshairLinesContainer" IsHitTestVisible="False" ItemsSource="{Binding CrosshairLinesGeometry, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram2D.xaml;126;34">
+                  <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                      <Canvas dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram2D.xaml;129;46" />
+                    </ItemsPanelTemplate>
+                  </ItemsControl.ItemsPanel>
+                  <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                      <Line X1="{Binding X1}" Y1="{Binding Y1}" X2="{Binding X2}" Y2="{Binding Y2}" Stroke="{Binding Path=Brush}" StrokeThickness="{Binding Path=LineStyle.Thickness}" StrokeDashCap="{Binding Path=LineStyle.DashCap}" StrokeLineJoin="{Binding Path=LineStyle.LineJoin}" StrokeMiterLimit="{Binding Path=LineStyle.MiterLimit}" Visibility="Visible" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram2D.xaml;134;46">
+                        <Line.StrokeDashOffset>
+                          <!--BEGIN WPF-->
+                          <Binding Path="LineStyle.DashStyle.Offset" />
+                          <!--END WPF-->
+                          <!--ONLY SL <Binding Path="LineStyle.DashOffset"/> ONLY SL-->
+                        </Line.StrokeDashOffset>
+                        <Line.StrokeDashArray>
+                          <!--BEGIN WPF-->
+                          <Binding Path="LineStyle.DashStyle.Dashes" Converter="{StaticResource strokeDashArrayConverter}" />
+                          <!--END WPF-->
+                          <!--ONLY SL <Binding Path="LineStyle.DashArray" Converter="{StaticResource strokeDashArrayConverter}"/> ONLY SL-->
+                        </Line.StrokeDashArray>
+                      </Line>
+                    </DataTemplate>
+                  </ItemsControl.ItemTemplate>
+                </ItemsControl>
+              </local:PaneItemsControl.CrosshairContainer>
+              <local:PaneItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                  <local:XYDiagram2DPanel dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram2D.xaml;154;38" />
+                </ItemsPanelTemplate>
+              </local:PaneItemsControl.ItemsPanel>
+            </local:PaneItemsControl>
+          </Border>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style TargetType="{x:Type local:XYDiagram2D}" BasedOn="{StaticResource Diagram2DStyle}">
+    <Setter Property="CrosshairSeriesLabelForeground" Value="{DynamicResource {dxt:ChartBrushesThemeKey ResourceKey=CrosshairSeriesLabelForeground}}" />
+    <Setter Property="SelectionTemplate">
+      <Setter.Value>
+        <DataTemplate>
+          <Grid SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram2D.xaml;169;22">
+            <Border BorderBrush="Black" BorderThickness="5" CornerRadius="2" Opacity="0.1" Margin="-4" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram2D.xaml;170;26" />
+            <Border BorderBrush="Black" BorderThickness="1" Opacity="0.5" CornerRadius="2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram2D.xaml;171;26" />
+            <Border BorderBrush="White" BorderThickness="1" Margin="1" Opacity="0.5" CornerRadius="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram2D.xaml;172;26">
+              <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                  <GradientStop Offset="1" Color="#19FFFFFF" />
+                  <GradientStop Color="#BFFFFFFF" />
+                </LinearGradientBrush>
+              </Border.Background>
+            </Border>
+          </Grid>
+        </DataTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="PanesPanel">
+      <Setter.Value>
+        <ItemsPanelTemplate>
+          <local:XYDiagram2DPanesPanel />
+        </ItemsPanelTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type local:XYDiagram2D}">
+          <local:ChartContentControl Padding="{TemplateBinding Padding}" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Visibility="{TemplateBinding Visibility}" Template="{DynamicResource {dxt:ChartControlThemeKey ResourceKey=XYDiagram2DWrapperTemplate}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram2D.xaml;194;22">
+            <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram2D.xaml;195;26">
+              <local:ChartItemsControl x:Name="PART_LogicalTreeHolder" ItemsSource="{TemplateBinding Elements}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram2D.xaml;196;30" />
+              <local:ChartItemsControl x:Name="PART_SeriesHolder" ItemsSource="{TemplateBinding Series}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram2D.xaml;197;30" />
+              <local:ChartItemsControl x:Name="PART_Panes" ItemsSource="{TemplateBinding ActualPanes}" ItemsPanel="{TemplateBinding PanesPanel}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram2D.xaml;198;30" />
+            </Grid>
+          </local:ChartContentControl>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.SimpleDiagram2D}" TargetType="{x:Type local:SimpleDiagram2D}" BasedOn="{StaticResource Diagram2DStyle}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type local:Diagram}">
+          <local:ChartContentControl x:Name="SimpleDiagram2DWrapper" Padding="{TemplateBinding Padding}" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Visibility="{TemplateBinding Visibility}" Template="{DynamicResource {dxt:ChartControlThemeKey ResourceKey=SimpleDiagram2DWrapperTemplate}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram2D.xaml;210;22">
+            <local:SimpleDiagram2DItemsControl ItemsSource="{TemplateBinding Series}" Diagram="{Binding RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram2D.xaml;211;26">
+              <local:SimpleDiagram2DItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                  <local:SimpleDiagram2DPanel dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram2D.xaml;214;38" />
+                </ItemsPanelTemplate>
+              </local:SimpleDiagram2DItemsControl.ItemsPanel>
+            </local:SimpleDiagram2DItemsControl>
+          </local:ChartContentControl>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+</ResourceDictionary>

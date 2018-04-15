@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard CurrencyCulture="ru-RU">
+  <Title Visible="false" Text="Показатели" />
+  <DataSources>
+    <DataSource Name="dsArea" />
+    <DataSource Name="dsCar" />
+    <DataSource Name="dsGate" />
+  </DataSources>
+  <Items>
+    <Card Name="Выбор склада" ContentLineCount="1" ContentArrangementMode="FixedRowCount" IsMasterFilterCrossDataSource="true"
+      DataSource="dsArea" ShowCaption="false" UniqueName="WarehouseCard">
+      <DataItems>
+        <Measure UniqueName="DataItem1" DataMember="Count"/>
+        <Dimension UniqueName="DataItem0" DataMember="WarehouseName"/>
+      </DataItems>
+      <InteractivityOptions IsMasterFilter="true"/>
+      <SeriesDimensions>
+        <SeriesDimension UniqueName="DataItem0"/>
+      </SeriesDimensions>
+      <Card>
+        <ActualValue UniqueName="DataItem1"/>
+        <DeltaOptions/>
+      </Card>
+    </Card>
+    <Chart DataSource="dsArea" UniqueName="AreaChart" Name="Топология склада">
+      <DataItems>
+        <Measure UniqueName="DataItem1" DataMember="Free"/>
+        <Measure UniqueName="DataItem0" DataMember="Busy"/>
+        <Dimension UniqueName="DataItem3" DataMember="WarehouseName"/>
+        <Dimension UniqueName="DataItem2" DataMember="AreaName"/>
+      </DataItems>
+      <InteractivityOptions IsMasterFilter="true" TargetDimensions="Series" IsDrillDownEnabled="true"/>
+      <Arguments>
+        <Argument UniqueName="DataItem2"/>
+        <Argument UniqueName="DataItem3"/>
+      </Arguments>
+      <Panes>
+        <Pane>
+          <AxisY Title="Количество мест"/>
+          <Series>
+            <Simple Name="Свободно" SeriesType="StackedBar">
+              <Value UniqueName="DataItem1"/>
+            </Simple>
+            <Simple Name="Занято" SeriesType="StackedBar">
+              <Value UniqueName="DataItem0"/>
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+      <ChartLegend IsInsidePosition="true"/>
+      <AxisX Title="Название области" TitleVisible="true"/>
+    </Chart>
+    <Chart UniqueName="CarChart" Name="План прибытия" DataSource="dsCar" IsMasterFilterCrossDataSource="true">
+      <DataItems>
+        <Dimension DataMember="DateTime" DateTimeGroupInterval="DayMonthYear" UniqueName="DataItem0" />
+        <Measure DataMember="CountCars" UniqueName="DataItem1" />
+        <Measure DataMember="Places" UniqueName="DataItem2" />
+        <Measure DataMember="Position" UniqueName="DataItem3" />
+      </DataItems>
+      <InteractivityOptions IsMasterFilter="true"/>
+      <Arguments>
+        <Argument UniqueName="DataItem0" />
+      </Arguments>
+      <Panes>
+        <Pane Name="Pane 1">
+          <AxisY Title="Значение" />
+          <Series>
+            <Simple Name="Количество машин" SeriesType="Line">
+              <Value UniqueName="DataItem1" />
+            </Simple>
+            <Simple Name="Грузовые места" SeriesType="Line">
+              <Value UniqueName="DataItem2" />
+            </Simple>
+            <Simple Name="Позиции" SeriesType="Line">
+              <Value UniqueName="DataItem3" />
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+      <ChartLegend />
+      <AxisX Title="Дата" TitleVisible="true" />
+    </Chart>
+    <Chart DataSource="dsGate" UniqueName="GateChart" Name="Ворота"> 
+      <DataItems>
+        <Dimension UniqueName="DataItem0" DataMember="WarehouseName"/>
+        <Measure UniqueName="DataItem1" DataMember="IsBusy"/>
+        <Dimension UniqueName="DataItem2" DataMember="GateNumber"/>
+        <Measure UniqueName="DataItem3" DataMember="IsFree"/>
+      </DataItems>
+      <InteractivityOptions IsMasterFilter="true" TargetDimensions="Series" IsDrillDownEnabled="true"/>
+      <Arguments>
+        <Argument UniqueName="DataItem2"/>
+        <Argument UniqueName="DataItem0"/>
+      </Arguments>
+      <Panes>
+        <Pane>
+          <AxisY Visible="false"/>
+          <Series>
+            <Simple Name="Открыты" SeriesType="FullStackedBar">
+              <Value UniqueName="DataItem1"/>
+            </Simple>
+            <Simple Name="Закрыты" SeriesType="FullStackedBar">
+              <Value UniqueName="DataItem3"/>
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes> 
+      <ChartLegend/>
+      <AxisX TitleVisible="true" Title="Номер ворот"/>
+    </Chart>
+  </Items>
+  <Layout>
+    <LayoutItem Name="WarehouseCard" Left="0" Top="0" Right="0.5" Bottom="0.1" />
+    <LayoutItem Name="AreaChart" Left="0" Top="0.1" Right="0.5" Bottom="0.7" />
+    <LayoutItem Name="CarChart" Left="0.5" Top="0" Right="1" Bottom="1" />
+    <LayoutItem Name="GateChart" Left="0" Top="0.7" Right="0.5" Bottom="1" />
+  </Layout>
+</Dashboard>

@@ -1,0 +1,599 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxet="http://schemas.devexpress.com/winfx/2008/xaml/editors/themekeys" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!--BEGIN WPF-->
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/GrayOne/TextEdit.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/GrayOne/Brushes.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Generic/ButtonEdit.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <!--END WPF-->
+
+    <Color x:Key="{dxet:SpinEditThemeKey ResourceKey=ArrowBrushColor}">#FF201F35</Color>
+    <SolidColorBrush x:Key="{dxet:ButtonsThemeKey ResourceKey=Foreground}" Color="#FF201F35" />
+    <Thickness x:Key="{dxet:ButtonEditThemeKey ResourceKey=ButtonEditPadding}">0</Thickness>
+    <Thickness x:Key="{dxet:ButtonsThemeKey ResourceKey=LeftButtonMargin}">0</Thickness>
+    <Thickness x:Key="{dxet:ButtonsThemeKey ResourceKey=RightButtonMargin}">0</Thickness>
+
+    <DataTemplate x:Key="{dxet:ButtonsThemeKey ResourceKey=SpinUpGlyph}">
+        <Path Stretch="Fill" Data="M 0 4 L 7 4 L 3.5 0 Z" Margin="5,0,5,0" Width="6" Height="3">
+            <Path.Fill>
+                <SolidColorBrush Color="{StaticResource {dxet:SpinEditThemeKey ResourceKey=ArrowBrushColor}}" />
+            </Path.Fill>
+        </Path>
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxet:ButtonsThemeKey ResourceKey=SpinDownGlyph}">
+        <Path Stretch="Fill" Data="M 0 0 L 3.5 4 L 7 0 Z" Margin="5,0,5,0" Width="6" Height="3">
+            <Path.Fill>
+                <SolidColorBrush Color="{StaticResource {dxet:SpinEditThemeKey ResourceKey=ArrowBrushColor}}" />
+            </Path.Fill>
+        </Path>
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxet:ButtonsThemeKey ResourceKey=SpinLeftGlyph}">
+        <Path Stretch="Fill" Data="M 0 4 L 4 8 L 4 0 Z" Margin="6,0,7,0" Width="3" Height="6">
+            <Path.Fill>
+                <SolidColorBrush Color="{StaticResource {dxet:SpinEditThemeKey ResourceKey=ArrowBrushColor}}" />
+            </Path.Fill>
+        </Path>
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxet:ButtonsThemeKey ResourceKey=SpinRightGlyph}">
+        <Path Stretch="Fill" Data="M 0 0 L 0 8 L 4 4 Z" Margin="7,0,6,0" Width="3" Height="6">
+            <Path.Fill>
+                <SolidColorBrush Color="{StaticResource {dxet:SpinEditThemeKey ResourceKey=ArrowBrushColor}}" />
+            </Path.Fill>
+        </Path>
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxet:ButtonsThemeKey ResourceKey=DropDownGlyph}">
+        <Grid Margin="5,0,5,0" Style="{StaticResource ButtonEditButtonGlyphStyle}">
+            <Path Stretch="Fill" Data="F1M1284,845L1281,848 1278,845 1284,845z" Margin="0,0,0,1" Width="6" Height="3">
+                <Path.Fill>
+                    <SolidColorBrush Color="{StaticResource {dxet:SpinEditThemeKey ResourceKey=ArrowBrushColor}}" />
+                </Path.Fill>
+            </Path>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxet:ButtonsThemeKey ResourceKey=RegularGlyph}">
+        <Grid Margin="3,0,3,0" Style="{StaticResource ButtonEditButtonGlyphStyle}">
+            <Path Stretch="Fill" Data="F1 M 1216,828C 1216.55,828 1217,828.448 1217,829C 1217,829.552 1216.55,830 1216,830C 1215.45,830 1215,829.552 1215,829C 1215,828.448 1215.45,828 1216,828 Z M 1220,828C 1220.55,828 1221,828.448 1221,829C 1221,829.552 1220.55,830 1220,830C 1219.45,830 1219,829.552 1219,829C 1219,828.448 1219.45,828 1220,828 Z M 1224,828C 1224.55,828 1225,828.448 1225,829C 1225,829.552 1224.55,830 1224,830C 1223.45,830 1223,829.552 1223,829C 1223,828.448 1223.45,828 1224,828 Z" Width="10" Height="2">
+                <Path.Fill>
+                    <SolidColorBrush Color="{StaticResource {dxet:SpinEditThemeKey ResourceKey=ArrowBrushColor}}" />
+                </Path.Fill>
+            </Path>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxet:ButtonsThemeKey ResourceKey=UpGlyph}">
+        <Grid Margin="4,0,4,0" Style="{StaticResource ButtonEditButtonGlyphStyle}">
+            <Path Stretch="Fill" Data="F1 M 209,6.00006L 201,6.00006L 205,2L 209,6.00006 Z" HorizontalAlignment="Center" VerticalAlignment="Center" Width="8" Height="4">
+                <Path.Fill>
+                    <SolidColorBrush Color="{StaticResource {dxet:SpinEditThemeKey ResourceKey=ArrowBrushColor}}" />
+                </Path.Fill>
+            </Path>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxet:ButtonsThemeKey ResourceKey=DownGlyph}">
+        <Grid Margin="4,0,4,0" Style="{StaticResource ButtonEditButtonGlyphStyle}">
+            <Path Stretch="Fill" Data="F1 M 209,15.9999L 201,15.9999L 205,20L 209,15.9999 Z" HorizontalAlignment="Center" VerticalAlignment="Center" Width="8" Height="4">
+                <Path.Fill>
+                    <SolidColorBrush Color="{StaticResource {dxet:SpinEditThemeKey ResourceKey=ArrowBrushColor}}" />
+                </Path.Fill>
+            </Path>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxet:ButtonsThemeKey ResourceKey=LeftGlyph}">
+        <Grid Margin="6,0,6,0" SnapsToDevicePixels="True">
+            <Path Stretch="Fill" Data="F1 M 204,6.99994L 204,14.9999L 200,10.9999L 204,6.99994 Z" HorizontalAlignment="Center" VerticalAlignment="Center" Width="4" Height="8">
+                <Path.Fill>
+                    <SolidColorBrush Color="{StaticResource {dxet:SpinEditThemeKey ResourceKey=ArrowBrushColor}}" />
+                </Path.Fill>
+            </Path>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxet:ButtonsThemeKey ResourceKey=RightGlyph}">
+        <Grid Margin="6,0,6,0" SnapsToDevicePixels="True">
+            <Path Stretch="Fill" Data="F1 M 206,7.00006L 206,15.0001L 210,11.0001L 206,7.00006 Z" HorizontalAlignment="Center" VerticalAlignment="Center" Width="4" Height="8">
+                <Path.Fill>
+                    <SolidColorBrush Color="{StaticResource {dxet:SpinEditThemeKey ResourceKey=ArrowBrushColor}}" />
+                </Path.Fill>
+            </Path>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxet:ButtonsThemeKey ResourceKey=CancelGlyph}">
+        <Grid Margin="4,0,4,0" Style="{StaticResource ButtonEditButtonGlyphStyle}">
+            <Path Stretch="Fill" Data="F1 M 177,4.99994L 178,3.99994L 181,7L 184,4L 185,5L 182,8L 185,11L 184,12L 181,9L 178,12.0001L 177,11.0001L 180,8L 177,4.99994 Z" HorizontalAlignment="Center" VerticalAlignment="Center" Width="8" Height="8">
+                <Path.Fill>
+                    <SolidColorBrush Color="{StaticResource {dxet:SpinEditThemeKey ResourceKey=ArrowBrushColor}}" />
+                </Path.Fill>
+            </Path>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxet:ButtonsThemeKey ResourceKey=ApplyGlyph}">
+        <Grid Margin="3,0,3,0" Style="{StaticResource ButtonEditButtonGlyphStyle}">
+            <Path Stretch="Fill" Data="F1 M 182.444,20.9999L 178,16L 182.444,17.9999L 188,12" HorizontalAlignment="Center" VerticalAlignment="Center" Width="10" Height="9">
+                <Path.Fill>
+                    <SolidColorBrush Color="{StaticResource {dxet:SpinEditThemeKey ResourceKey=ArrowBrushColor}}" />
+                </Path.Fill>
+            </Path>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxet:ButtonsThemeKey ResourceKey=PlusGlyph}">
+        <Grid Margin="4,0,4,0" Style="{StaticResource ButtonEditButtonGlyphStyle}">
+            <Path Stretch="Fill" Data="F1 M 190,12.9999L 193.066,12.9999L 193.066,10.0001L 195,10.0001L 195,12.9999L 198,12.9999L 198,14.9338L 195,14.9338L 195,18.0001L 193.066,18.0001L 193.066,14.9338L 190,14.9338L 190,12.9999 Z" HorizontalAlignment="Center" VerticalAlignment="Center" Width="8" Height="8">
+                <Path.Fill>
+                    <SolidColorBrush Color="{StaticResource {dxet:SpinEditThemeKey ResourceKey=ArrowBrushColor}}" />
+                </Path.Fill>
+            </Path>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxet:ButtonsThemeKey ResourceKey=MinusGlyph}">
+        <Grid Margin="4,0,4,0" Style="{StaticResource ButtonEditButtonGlyphStyle}">
+            <Rectangle Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Width="8" Height="2">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="{StaticResource {dxet:SpinEditThemeKey ResourceKey=ArrowBrushColor}}" />
+                </Rectangle.Fill>
+            </Rectangle>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxet:ButtonsThemeKey ResourceKey=UndoGlyph}">
+        <Grid Margin="3,0,3,0" Style="{StaticResource ButtonEditButtonGlyphStyle}">
+            <Path Stretch="Fill" Data="M0,0 L1.9997685,1.9997686 2.0814701,1.9394914 C2.9027171,1.3482227 3.9104184,0.99999714 4.9999844,0.9999971 7.7609881,0.99999714 9.999988,3.2385544 9.999988,5.9998981 L8.999987,5.9999968 C8.999987,3.7909421 7.2089857,2.0000765 4.9999844,2.0000765 4.1536974,2.0000765 3.3686451,2.2629111 2.722304,2.7113915 L2.7159228,2.715923 5.0000001,5.0000002 0,5.0000002 z" HorizontalAlignment="Center" VerticalAlignment="Center" Width="10" Height="6">
+                <Path.Fill>
+                    <SolidColorBrush Color="{StaticResource {dxet:SpinEditThemeKey ResourceKey=ArrowBrushColor}}" />
+                </Path.Fill>
+            </Path>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxet:ButtonsThemeKey ResourceKey=RedoGlyph}">
+        <Grid Margin="3,0,3,0" Style="{StaticResource ButtonEditButtonGlyphStyle}">
+            <Path Stretch="Fill" Data="M10,0 L10,4.9999999 5,4.9999999 7.2841098,2.7158901 7.277688,2.7113296 C6.6313429,2.2628393 5.8462857,2.0000007 5.0000037,2.0000007 2.791002,2.0000007 1.0000007,3.7909006 1.0000007,6.0000009 L0,6.0000009 C0,3.2385008 2.2390018,1.0000008 5.0000037,1.0000009 6.0887547,1.0000008 7.0969663,1.3482332 7.9184361,1.9394608 L8.0002208,1.9997793 z" Width="10" Height="6" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Path.Fill>
+                    <SolidColorBrush Color="{StaticResource {dxet:SpinEditThemeKey ResourceKey=ArrowBrushColor}}" />
+                </Path.Fill>
+            </Path>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxet:ButtonsThemeKey ResourceKey=RefreshGlyph}">
+        <Grid Margin="3,0,3,0" Style="{StaticResource ButtonEditButtonGlyphStyle}">
+            <Path Stretch="Fill" Data="M1.0000008,5.9999999 C1.0000007,8.2090558 2.791002,9.9999207 5.0000038,9.9999207 5.8149419,9.9999207 6.5731067,9.7561959 7.2053051,9.3376683 L7.2834491,9.2834481 5,6.9999989 10,6.9999989 10,11.999999 8.0001802,10.000179 7.918436,10.060469 C7.0969662,10.651709 6.0887546,11.000001 5.0000038,11.000001 2.2390017,11.000001 -2.9806088E-08,8.7614449 0,6.0001 z M0,0 L1.9997931,1.9997934 2.0814781,1.939532 C2.902729,1.3482915 3.9104328,1 4.9999962,1 7.7609982,1 10,3.2385551 10,5.9998997 L8.999999,5.9999999 C8.999999,3.7909442 7.2089977,2.00008 4.9999962,2.00008 4.1537142,2.00008 3.3686571,2.2629133 2.7223119,2.7113947 L2.715928,2.7159282 5,5.0000004 0,5.0000004 z" Width="10" Height="12" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Path.Fill>
+                    <SolidColorBrush Color="{StaticResource {dxet:SpinEditThemeKey ResourceKey=ArrowBrushColor}}" />
+                </Path.Fill>
+            </Path>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxet:ButtonsThemeKey ResourceKey=SearchGlyph}">
+        <Grid Margin="3,0,3,0" Style="{StaticResource ButtonEditButtonGlyphStyle}">
+            <Path Stretch="Fill" Data="F1 M 186,23.0001C 187.657,23.0001 189,24.3431 189,26.0001C 189,26.5722 188.84,27.1069 188.562,27.5619L 193,32.0001L 192,33.0001L 187.562,28.5619C 187.107,28.8398 186.572,29.0001 186,29.0001C 184.343,29.0001 183,27.6569 183,26.0001C 183,24.3431 184.343,23.0001 186,23.0001 Z M 186,24.0001C 184.895,24.0001 184,24.8955 184,26.0001C 184,27.1047 184.895,28.0001 186,28.0001C 187.105,28.0001 188,27.1047 188,26.0001C 188,24.8955 187.105,24.0001 186,24.0001 Z" HorizontalAlignment="Center" VerticalAlignment="Center" Width="10" Height="10">
+                <Path.Fill>
+                    <SolidColorBrush Color="{StaticResource {dxet:SpinEditThemeKey ResourceKey=ArrowBrushColor}}" />
+                </Path.Fill>
+            </Path>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxet:ButtonsThemeKey ResourceKey=PrevPageGlyph}">
+        <Grid Margin="4,0,4,0" SnapsToDevicePixels="True">
+            <Grid Width="8" Height="8" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Path Width="4" Stretch="Fill" Data="F1 M 7.99998,0L 7.99998,8L 3.99994,4L 7.99998,0 Z" HorizontalAlignment="Right">
+                    <Path.Fill>
+                        <SolidColorBrush Color="{StaticResource {dxet:SpinEditThemeKey ResourceKey=ArrowBrushColor}}" />
+                    </Path.Fill>
+                </Path>
+                <Path Width="4" Stretch="Fill" Data="F1 M 4.00002,0L 4.00002,8L -2.28882e-005,4L 4.00002,0 Z" HorizontalAlignment="Left">
+                    <Path.Fill>
+                        <SolidColorBrush Color="{StaticResource {dxet:SpinEditThemeKey ResourceKey=ArrowBrushColor}}" />
+                    </Path.Fill>
+                </Path>
+            </Grid>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxet:ButtonsThemeKey ResourceKey=NextPageGlyph}">
+        <Grid Margin="4,0,4,0" SnapsToDevicePixels="True">
+            <Grid Width="8" Height="8" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Path Width="4" Stretch="Fill" Data="F1 M 7.62939e-006,8L 7.62939e-006,0L 4.00005,4L 7.62939e-006,8 Z" HorizontalAlignment="Left">
+                    <Path.Fill>
+                        <SolidColorBrush Color="{StaticResource {dxet:SpinEditThemeKey ResourceKey=ArrowBrushColor}}" />
+                    </Path.Fill>
+                </Path>
+                <Path Width="4" Stretch="Fill" Data="F1 M 3.99997,8L 3.99997,0L 8.00001,4L 3.99997,8 Z" HorizontalAlignment="Right">
+                    <Path.Fill>
+                        <SolidColorBrush Color="{StaticResource {dxet:SpinEditThemeKey ResourceKey=ArrowBrushColor}}" />
+                    </Path.Fill>
+                </Path>
+            </Grid>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxet:ButtonsThemeKey ResourceKey=LastGlyph}">
+        <Grid Margin="4,0,3,0" SnapsToDevicePixels="True">
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="9" Height="8">
+                <Path Stretch="Fill" Data="F1 M 23,30.0001L 23,38.0001L 27.0001,34.0001L 23,30.0001 Z" Width="4" HorizontalAlignment="Left">
+                    <Path.Fill>
+                        <SolidColorBrush Color="{StaticResource {dxet:SpinEditThemeKey ResourceKey=ArrowBrushColor}}" />
+                    </Path.Fill>
+                </Path>
+                <Path Stretch="Fill" Data="F1 M 27,30.0001L 27,38.0001L 31,34.0001L 27,30.0001 Z" Width="4" Margin="4,0,1,0" />
+                <Rectangle Stretch="Fill" Width="1" HorizontalAlignment="Right">
+                    <Rectangle.Fill>
+                        <SolidColorBrush Color="{StaticResource {dxet:SpinEditThemeKey ResourceKey=ArrowBrushColor}}" />
+                    </Rectangle.Fill>
+                </Rectangle>
+            </Grid>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxet:ButtonsThemeKey ResourceKey=FirstGlyph}">
+        <Grid Margin="3,0,4,0" SnapsToDevicePixels="True">
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="9" Height="8">
+                <Path Stretch="Fill" Data="F1 M 32,17L 32,25L 27.9999,21L 32,17 Z" HorizontalAlignment="Right" Width="4">
+                    <Path.Fill>
+                        <SolidColorBrush Color="{StaticResource {dxet:SpinEditThemeKey ResourceKey=ArrowBrushColor}}" />
+                    </Path.Fill>
+                </Path>
+                <Path Stretch="Fill" Data="F1 M 28,17L 28,25L 24,21L 28,17 Z" Margin="1,0,4,0">
+                    <Path.Fill>
+                        <SolidColorBrush Color="{StaticResource {dxet:SpinEditThemeKey ResourceKey=ArrowBrushColor}}" />
+                    </Path.Fill>
+                </Path>
+                <Rectangle Stretch="Fill" HorizontalAlignment="Left" Width="1">
+                    <Rectangle.Fill>
+                        <SolidColorBrush Color="{StaticResource {dxet:SpinEditThemeKey ResourceKey=ArrowBrushColor}}" />
+                    </Rectangle.Fill>
+                </Rectangle>
+            </Grid>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxet:ButtonsThemeKey ResourceKey=EditGlyph}">
+        <Grid Margin="2,0,2,0" Style="{StaticResource ButtonEditButtonGlyphStyle}">
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="12" Height="12">
+                <Path Stretch="Fill" Data="F1 M 65,33L 65,30L 72,23.0001L 75,26.0001L 68,33.0001L 65,33 Z M 71,25.0001L 70,26.0001L 72,28.0001L 73,27.0001L 71,25.0001 Z M 66,32.0001L 68,32.0001L 66,30.0001L 66,32.0001 Z" HorizontalAlignment="Center" VerticalAlignment="Center" Width="10" Height="10">
+                    <Path.Fill>
+                        <SolidColorBrush Color="{StaticResource {dxet:SpinEditThemeKey ResourceKey=ArrowBrushColor}}" />
+                    </Path.Fill>
+                </Path>
+            </Grid>
+        </Grid>
+    </DataTemplate>
+
+    <Style x:Key="{dxet:ButtonsThemeKey ResourceKey=ButtonInfoContentStyle}" TargetType="{x:Type ContentPresenter}">
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="{dxet:ButtonsThemeKey ResourceKey=UserButtonInfoContentStyle}" TargetType="{x:Type ContentPresenter}">
+        <Setter Property="Margin" Value="5,0,5,0" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="{dxet:ButtonsThemeKey ResourceKey=NoneButtonInfoContentStyle}" TargetType="{x:Type ContentPresenter}">
+        <Setter Property="Margin" Value="5,0,5,0" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+    </Style>
+
+    <ControlTemplate TargetType="{x:Type ButtonBase}" x:Key="{dxet:ButtonsThemeKey ResourceKey=ButtonTemplate}">
+        <Grid x:Name="Root">
+            <Grid.Resources>
+                <Style x:Key="PressedElementStyle" TargetType="{x:Type ContentControl}">
+                    <Setter Property="dx:FocusHelper2.Focusable" Value="False" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type ContentControl}">
+                                <Border x:Name="PressedState" Background="{StaticResource ButtonEdit.PressedState.Border1}">
+                                    <Border Background="{StaticResource ButtonEdit.PressedState.Border3}" BorderBrush="{StaticResource ButtonEdit.PressedState.Border2}" BorderThickness="1,1,1,0" Margin="1" />
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+                <!--ONLY SL
+                <dx:EnumToObjectConverter x:Key="EnumToObjectConverter" DefaultValue="{DynamicResource {dxet:ButtonsThemeKey ResourceKey=ButtonInfoContentStyle}}">
+                    <dx:EnumToObjectConverter.Values>
+                        <dx:EnumObjectProvider x:Key="User" Value="{DynamicResource {dxet:ButtonsThemeKey ResourceKey=UserButtonInfoContentStyle}}"/>
+                        <dx:EnumObjectProvider x:Key="None" Value="{DynamicResource {dxet:ButtonsThemeKey ResourceKey=NoneButtonInfoContentStyle}}"/>
+                    </dx:EnumToObjectConverter.Values>
+                </dx:EnumToObjectConverter>
+                ONLY SL-->
+            </Grid.Resources>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="PressedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="0.5" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="CheckStates">
+                    <VisualState x:Name="Checked">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="CheckedState" Storyboard.TargetProperty="Visibility">
+                                <ObjectAnimationUsingKeyFrames.KeyFrames>
+                                    <DiscreteObjectKeyFrame KeyTime="0">
+                                        <DiscreteObjectKeyFrame.Value>
+                                            <Visibility>Visible</Visibility>
+                                        </DiscreteObjectKeyFrame.Value>
+                                    </DiscreteObjectKeyFrame>
+                                </ObjectAnimationUsingKeyFrames.KeyFrames>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Unchecked" />
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto">
+                    <!--BEGIN WPF-->
+                    <ColumnDefinition.SharedSizeGroup>
+                        <sys:String>ComboBoxButton</sys:String>
+                    </ColumnDefinition.SharedSizeGroup>
+                    <!--END WPF-->
+                </ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border x:Name="HoverState" Background="{StaticResource ButtonEdit.HoverState.Border1}" Opacity="0">
+                <Border Background="{StaticResource ButtonEdit.HoverState.Border3}" BorderBrush="{StaticResource ButtonEdit.HoverState.Border2}" BorderThickness="1" Margin="1" />
+            </Border>
+            <ContentControl x:Name="PressedState" Style="{StaticResource PressedElementStyle}" Opacity="0" />
+            <ContentControl x:Name="CheckedState" Style="{StaticResource PressedElementStyle}" Visibility="Collapsed" />
+            <Grid x:Name="Arrow" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="1" SnapsToDevicePixels="True">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.7*" />
+                    <ColumnDefinition Width="0.3*" />
+                </Grid.ColumnDefinitions>
+                <!--BEGIN WPF-->
+                <ContentPresenter x:Name="Glyph" Grid.ColumnSpan="2" Style="{DynamicResource {dxet:ButtonsThemeKey ResourceKey=ButtonInfoContentStyle}}" />
+                <!--END WPF-->
+                <!--ONLY SL
+                <ContentPresenter x:Name="Glyph" Grid.ColumnSpan="2" Style="{Binding Path=DataContext.GlyphKind, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource EnumToObjectConverter}}"/>
+                ONLY SL-->
+            </Grid>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <DataTrigger Binding="{Binding Path=GlyphKind}" Value="User">
+                <Setter TargetName="Glyph" Property="Style" Value="{DynamicResource {dxet:ButtonsThemeKey ResourceKey=UserButtonInfoContentStyle}}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Path=GlyphKind}" Value="None">
+                <Setter TargetName="Glyph" Property="Style" Value="{DynamicResource {dxet:ButtonsThemeKey ResourceKey=NoneButtonInfoContentStyle}}" />
+            </DataTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <ControlTemplate TargetType="{x:Type ButtonBase}" x:Key="{dxet:ButtonsThemeKey ResourceKey=SpinDownButtonTemplate}">
+        <Grid x:Name="Root">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="PressedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="0.25" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto">
+                    <!--BEGIN WPF-->
+                    <ColumnDefinition.SharedSizeGroup>
+                        <sys:String>ComboBoxButton</sys:String>
+                    </ColumnDefinition.SharedSizeGroup>
+                    <!--END WPF-->
+                </ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border x:Name="HoverState" Background="{StaticResource ButtonEdit.HoverState.Border1}" Opacity="0">
+                <Border Background="{StaticResource ButtonEdit.HoverState.Border3}" BorderBrush="{StaticResource ButtonEdit.HoverState.Border2}" BorderThickness="1" Margin="1" />
+            </Border>
+            <Border x:Name="PressedState" Background="{StaticResource ButtonEdit.PressedState.Border1}" Opacity="0">
+                <Border Background="{StaticResource ButtonEdit.PressedState.Border3}" BorderBrush="{StaticResource ButtonEdit.PressedState.Border2}" BorderThickness="1,1,1,0" Margin="1" />
+            </Border>
+            <Grid x:Name="Arrow" Grid.ColumnSpan="1" SnapsToDevicePixels="True">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.7*" />
+                    <ColumnDefinition Width="0.3*" />
+                </Grid.ColumnDefinitions>
+                <ContentPresenter x:Name="Glyph" ContentTemplate="{TemplateBinding ContentTemplate}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2">
+                    <ContentPresenter.Content>
+                        <SolidColorBrush Color="{DynamicResource {dxet:SpinEditThemeKey ResourceKey=ArrowBrushColor}}" />
+                    </ContentPresenter.Content>
+                </ContentPresenter>
+            </Grid>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate TargetType="{x:Type ButtonBase}" x:Key="{dxet:ButtonsThemeKey ResourceKey=SpinUpButtonTemplate}">
+        <Grid x:Name="Root">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="PressedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="0.25" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto">
+                    <!--BEGIN WPF-->
+                    <ColumnDefinition.SharedSizeGroup>
+                        <sys:String>ComboBoxButton</sys:String>
+                    </ColumnDefinition.SharedSizeGroup>
+                    <!--END WPF-->
+                </ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border x:Name="HoverState" Background="{StaticResource ButtonEdit.HoverState.Border1}" Opacity="0">
+                <Border Background="{StaticResource ButtonEdit.HoverState.Border3}" BorderBrush="{StaticResource ButtonEdit.HoverState.Border2}" BorderThickness="1" Margin="1" />
+            </Border>
+            <Border x:Name="PressedState" Background="{StaticResource ButtonEdit.PressedState.Border1}" Opacity="0">
+                <Border Background="{StaticResource ButtonEdit.PressedState.Border3}" BorderBrush="{StaticResource ButtonEdit.PressedState.Border2}" BorderThickness="1,1,1,0" Margin="1" />
+            </Border>
+            <Grid x:Name="Arrow" Grid.ColumnSpan="1" SnapsToDevicePixels="True">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.7*" />
+                    <ColumnDefinition Width="0.3*" />
+                </Grid.ColumnDefinitions>
+                <ContentPresenter x:Name="Glyph" ContentTemplate="{TemplateBinding ContentTemplate}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2">
+                    <ContentPresenter.Content>
+                        <SolidColorBrush Color="{DynamicResource {dxet:SpinEditThemeKey ResourceKey=ArrowBrushColor}}" />
+                    </ContentPresenter.Content>
+                </ContentPresenter>
+            </Grid>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate TargetType="{x:Type ButtonBase}" x:Key="{dxet:ButtonsThemeKey ResourceKey=SpinLeftButtonTemplate}">
+        <Grid x:Name="Root">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="PressedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="0.25" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto">
+                    <!--BEGIN WPF-->
+                    <ColumnDefinition.SharedSizeGroup>
+                        <sys:String>ComboBoxButton</sys:String>
+                    </ColumnDefinition.SharedSizeGroup>
+                    <!--END WPF-->
+                </ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border x:Name="HoverState" Background="{StaticResource ButtonEdit.HoverState.Border1}" Opacity="0">
+                <Border Background="{StaticResource ButtonEdit.HoverState.Border3}" BorderBrush="{StaticResource ButtonEdit.HoverState.Border2}" BorderThickness="1" Margin="1" />
+            </Border>
+            <Border x:Name="PressedState" Background="{StaticResource ButtonEdit.PressedState.Border1}" Opacity="0">
+                <Border Background="{StaticResource ButtonEdit.PressedState.Border3}" BorderBrush="{StaticResource ButtonEdit.PressedState.Border2}" BorderThickness="1,1,1,0" Margin="1" />
+            </Border>
+            <Grid x:Name="Arrow" Grid.ColumnSpan="1" SnapsToDevicePixels="True">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.7*" />
+                    <ColumnDefinition Width="0.3*" />
+                </Grid.ColumnDefinitions>
+                <ContentPresenter x:Name="Glyph" ContentTemplate="{TemplateBinding ContentTemplate}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2">
+                    <ContentPresenter.Content>
+                        <SolidColorBrush Color="{DynamicResource {dxet:SpinEditThemeKey ResourceKey=ArrowBrushColor}}" />
+                    </ContentPresenter.Content>
+                </ContentPresenter>
+            </Grid>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate TargetType="{x:Type ButtonBase}" x:Key="{dxet:ButtonsThemeKey ResourceKey=SpinRightButtonTemplate}">
+        <Grid x:Name="Root">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="PressedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="0.25" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto">
+                    <!--BEGIN WPF-->
+                    <ColumnDefinition.SharedSizeGroup>
+                        <sys:String>ComboBoxButton</sys:String>
+                    </ColumnDefinition.SharedSizeGroup>
+                    <!--END WPF-->
+                </ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border x:Name="HoverState" Background="{StaticResource ButtonEdit.HoverState.Border1}" Opacity="0">
+                <Border Background="{StaticResource ButtonEdit.HoverState.Border3}" BorderBrush="{StaticResource ButtonEdit.HoverState.Border2}" BorderThickness="1" Margin="1" />
+            </Border>
+            <Border x:Name="PressedState" Background="{StaticResource ButtonEdit.PressedState.Border1}" Opacity="0">
+                <Border Background="{StaticResource ButtonEdit.PressedState.Border3}" BorderBrush="{StaticResource ButtonEdit.PressedState.Border2}" BorderThickness="1,1,1,0" Margin="1" />
+            </Border>
+            <Grid x:Name="Arrow" Grid.ColumnSpan="1" SnapsToDevicePixels="True">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.7*" />
+                    <ColumnDefinition Width="0.3*" />
+                </Grid.ColumnDefinitions>
+                <ContentPresenter x:Name="Glyph" ContentTemplate="{TemplateBinding ContentTemplate}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2">
+                    <ContentPresenter.Content>
+                        <SolidColorBrush Color="{DynamicResource {dxet:SpinEditThemeKey ResourceKey=ArrowBrushColor}}" />
+                    </ContentPresenter.Content>
+                </ContentPresenter>
+            </Grid>
+        </Grid>
+    </ControlTemplate>
+
+</ResourceDictionary>

@@ -1,0 +1,46 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxet="http://schemas.devexpress.com/winfx/2008/xaml/editors/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <!--BEGIN WPF-->
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Generic/ImageEdit.xaml" />
+  </ResourceDictionary.MergedDictionaries>
+  <!--END WPF-->
+  <SolidColorBrush x:Key="{dxet:ImageEditThemeKey ResourceKey=ImageBackgroundBrush}" Color="White" />
+  <dxcore_unique_xmlns:EmbeddedResourceImageConverter x:Key="EmbeddedResourceImageConverter" />
+  <ControlTemplate x:Key="{dxet:PopupImageEditThemeKey ResourceKey=DisplayTemplate}">
+    <Grid Margin="3" Background="Transparent" dxcore_unique_xmlns:FocusHelper2.Focusable="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ImageEdit.xaml;12;10">
+      <Image x:Name="Icon" Stretch="None" dxcore_unique_xmlns:FocusHelper2.Focusable="False" Source="{Binding Source=DevExpress.Xpf.Core.Editors.Images.ImageEdit.inactive.png, Converter={StaticResource EmbeddedResourceImageConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ImageEdit.xaml;13;14">
+        <!--BEGIN WPF-->
+        <RenderOptions.BitmapScalingMode>NearestNeighbor</RenderOptions.BitmapScalingMode>
+        <!--END WPF-->
+      </Image>
+    </Grid>
+    <!--BEGIN WPF-->
+    <ControlTemplate.Triggers>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).HasImage, RelativeSource={RelativeSource Self}}" Value="True">
+        <Setter Property="Source" TargetName="Icon" Value="{Binding Source=DevExpress.Xpf.Core.Editors.Images.ImageEdit.active.png, Converter={StaticResource EmbeddedResourceImageConverter}}" />
+      </DataTrigger>
+    </ControlTemplate.Triggers>
+    <!--END WPF-->
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxet:ImageEditThemeKey ResourceKey=BorderTemplate}" TargetType="{x:Type ContentControl}">
+    <Border BorderBrush="#FF8692A3" BorderThickness="1" Background="{DynamicResource {dxet:ImageEditThemeKey ResourceKey=ImageBackgroundBrush}}" Padding="4" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ImageEdit.xaml;29;10">
+      <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ImageEdit.xaml;30;14" />
+    </Border>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxet:ImageEditThemeKey ResourceKey=EmptyContentTemplate}">
+    <Grid x:Name="empty_image" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ImageEdit.xaml;34;10">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="0.25*" />
+        <RowDefinition Height="0.5*" />
+        <RowDefinition Height="0.25*" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="0.25*" />
+        <ColumnDefinition Width="0.5*" />
+        <ColumnDefinition Width="0.25*" />
+      </Grid.ColumnDefinitions>
+      <Border Grid.ColumnSpan="3" Grid.RowSpan="3" Background="#FFF7F7F7" BorderBrush="#FFE0E0E0" BorderThickness="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ImageEdit.xaml;45;14" />
+      <Path Stretch="Uniform" Fill="#FFE0E0E0" Data="F1 M 546,395C 551,394 554,404 564,403C 574,402 576,384 596,390C 597.058,390.317 598,390.895 598,392L 598,411C 598,412.105 597.104,413 596,413L 546,413C 544.895,413 544,412.105 544,411L 544,398C 544,396.895 544.917,395.217 546,395 Z M 560,379C 563.866,379 567,382.134 567,386C 567,389.866 563.866,393 560,393C 556.134,393 553,389.866 553,386C 553,382.134 556.134,379 560,379 Z M 543,370L 599,370C 601.209,370 603,371.791 603,374L 603,414C 603,416.209 601.209,418 599,418L 543,418C 540.791,418 539,416.209 539,414L 539,374C 539,371.791 540.791,370 543,370 Z M 545,374C 543.895,374 543,374.896 543,376L 543,412C 543,413.105 543.895,414 545,414L 597,414C 598.104,414 599,413.105 599,412L 599,376C 599,374.896 598.104,374 597,374L 545,374 Z " UseLayoutRounding="False" Margin="3" Grid.Column="1" Grid.Row="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ImageEdit.xaml;46;14" />
+    </Grid>
+  </ControlTemplate>
+</ResourceDictionary>

@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wmsMLC.RCL.Launcher", "wmsMLC.RCL.Launcher\wmsMLC.RCL.Launcher.csproj", "{D99CCAA3-2BB1-466E-B270-BEAF569A3913}"
+EndProject
+Project("{B900F1C2-3D47-4FEC-85B3-04AAF18C3634}") = "wmsMLC.RCL.Launcher.Motorola", "wmsMLC.RCL.Launcher.Motorola\wmsMLC.RCL.Launcher.Motorola.vddproj", "{D8852720-0328-405B-82C2-813E1EDD5DDE}"
+EndProject
+Project("{B900F1C2-3D47-4FEC-85B3-04AAF18C3634}") = "wmsMLC.RCL.Launcher.Honeywell", "wmsMLC.RCL.Launcher.Honeywell\wmsMLC.RCL.Launcher.Honeywell.vddproj", "{E4DF9BE4-6BD7-42C2-80AA-1FA10EF548E3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D99CCAA3-2BB1-466E-B270-BEAF569A3913}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D99CCAA3-2BB1-466E-B270-BEAF569A3913}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D99CCAA3-2BB1-466E-B270-BEAF569A3913}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{D99CCAA3-2BB1-466E-B270-BEAF569A3913}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D99CCAA3-2BB1-466E-B270-BEAF569A3913}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D99CCAA3-2BB1-466E-B270-BEAF569A3913}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{D8852720-0328-405B-82C2-813E1EDD5DDE}.Debug|Any CPU.ActiveCfg = Debug
+		{D8852720-0328-405B-82C2-813E1EDD5DDE}.Release|Any CPU.ActiveCfg = Release
+		{D8852720-0328-405B-82C2-813E1EDD5DDE}.Release|Any CPU.Build.0 = Release
+		{E4DF9BE4-6BD7-42C2-80AA-1FA10EF548E3}.Debug|Any CPU.ActiveCfg = Debug
+		{E4DF9BE4-6BD7-42C2-80AA-1FA10EF548E3}.Release|Any CPU.ActiveCfg = Release
+		{E4DF9BE4-6BD7-42C2-80AA-1FA10EF548E3}.Release|Any CPU.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

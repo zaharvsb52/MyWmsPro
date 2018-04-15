@@ -1,0 +1,60 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" xmlns:dxbt="http://schemas.devexpress.com/winfx/2008/xaml/bars/themekeys" xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon" xmlns:dxrt="http://schemas.devexpress.com/winfx/2008/xaml/ribbon/themekeys" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <dxcore_unique_xmlns:BooleanToVisibilityConverter x:Key="boolToVisibilityConverter" Invert="False" />
+  <dxcore_unique_xmlns:BooleanToVisibilityConverter x:Key="invertBoolToVisibilityConverter" Invert="True" />
+  <Style x:Key="{dxbt:SubMenuBarControlThemeKey ResourceKey=ScrollViewerStyle}" TargetType="{x:Type dxb:SubMenuScrollViewer}">
+    <!--BEGIN WPF-->
+    <Setter Property="Focusable" Value="False" />
+    <Setter Property="ClipToBounds" Value="True" />
+    <!--END WPF-->
+    <!--ONLY SL
+        <Setter Property="dxc:FrameworkElementHelper.IsClipped" Value="True"/>
+        ONLY SL-->
+  </Style>
+  <ControlTemplate x:Key="{dxrt:RibbonThemeKey ResourceKey=ApplicationMenuBarControlTemplate}" TargetType="{x:Type dxr:ApplicationMenuBarControl}">
+    <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\ApplicationMenu.xaml;14;10">
+      <ContentControl Template="{TemplateBinding ActualBorderTemplate}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\ApplicationMenu.xaml;15;14">
+        <!--BEGIN WPF-->
+        <Grid dxcore_unique_xmlns:DragManager.DropTargetFactory="{dxb:SubMenuBarControlDropTargetFactory}" Background="Transparent" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\ApplicationMenu.xaml;17;18">
+          <!--END WPF-->
+          <!--ONLY SL
+                <Grid Background="Transparent">
+                    ONLY SL-->
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+          </Grid.ColumnDefinitions>
+          <Grid Grid.Row="0" Grid.Column="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\ApplicationMenu.xaml;30;22">
+            <Grid Width="Auto" Height="Auto" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\ApplicationMenu.xaml;31;26">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+              </Grid.ColumnDefinitions>
+              <Border Grid.Column="0" SnapsToDevicePixels="True" Margin="{Binding Path=GlyphPadding, RelativeSource={RelativeSource TemplatedParent}}" Width="{Binding Path=MaxGlyphSize.Width, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\ApplicationMenu.xaml;36;30" />
+              <ContentControl Grid.ColumnSpan="2" SnapsToDevicePixels="True" x:Name="PART_GlyphSide" Template="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=ApplicationMenuBackgroundTemplate}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\ApplicationMenu.xaml;37;30" />
+            </Grid>
+            <dxb:SubMenuScrollViewer Style="{DynamicResource {dxbt:SubMenuBarControlThemeKey ResourceKey=ScrollViewerStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\ApplicationMenu.xaml;39;26">
+              <ItemsPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\ApplicationMenu.xaml;40;30" />
+            </dxb:SubMenuScrollViewer>
+          </Grid>
+          <ContentControl Visibility="{Binding Path=Popup.ShowRightPane, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource boolToVisibilityConverter}}" Width="{TemplateBinding ActualRightPaneWidth}" Template="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=ApplicationMenuRightPaneTemplate}}" Grid.Row="0" Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\ApplicationMenu.xaml;43;22">
+            <dxcore_unique_xmlns:DXContentPresenter x:Name="PART_RightPanePresenter" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="{Binding Path=Popup.RightPane, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\ApplicationMenu.xaml;44;26" />
+          </ContentControl>
+          <ContentControl Template="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=ApplicationMenuBottomPaneTemplate}}" Grid.Row="1" Grid.ColumnSpan="2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\ApplicationMenu.xaml;46;22">
+            <dxcore_unique_xmlns:DXContentPresenter x:Name="PART_BottomPanePresenter" Content="{Binding Path=Popup.BottomPane, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\ApplicationMenu.xaml;47;26" />
+          </ContentControl>
+        </Grid>
+      </ContentControl>
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxrt:RibbonThemeKey ResourceKey=ApplicationMenuContentControlTemplate}" TargetType="{x:Type dxr:ApplicationMenuContentControl}">
+    <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\ApplicationMenu.xaml;54;10">
+      <ContentControl Template="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=ApplicationMenuContentControlBorderTemplate}}" Focusable="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\ApplicationMenu.xaml;55;14">
+        <dxcore_unique_xmlns:DXContentPresenter Content="{TemplateBinding Content}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\ApplicationMenu.xaml;56;18" />
+      </ContentControl>
+    </Grid>
+  </ControlTemplate>
+</ResourceDictionary>

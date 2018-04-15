@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Worker" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include  id="GlobalParamValue" schemaLocation="GlobalParamValue.xsd"/>
+  <xs:include  id="AddressBook" schemaLocation="AddressBook.xsd"/>
+  <xs:include  id="WorkerPass" schemaLocation="WorkerPass.xsd"/>
+
+  <!--Сущность Worker-->
+  <xs:element name="TENTWORKER" type="WorkerType"/>
+  
+  <!--Описание типа Worker-->
+  <xs:complexType name="WorkerType">
+    <xs:sequence>
+      <!--ID записи-->
+      <xs:element name="WORKERID" type="xs:integer"/>
+      <!--Фамилия-->
+      <xs:element name="WORKERLASTNAME">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Имя-->
+      <xs:element name="WORKERNAME">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Отчество-->
+      <xs:element name="WORKERMIDDLENAME">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Является сотрудником компании-->
+      <xs:element name="WORKEREMPLOYEE">
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:totalDigits value="1"/>
+            <xs:maxInclusive value="1"/>
+            <xs:minInclusive value="0"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Рабочий телефон-->
+      <xs:element name="WORKERPHONEWORK">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Мобильный телнфон-->
+      <xs:element name="WORKERPHONEMOBILE">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Рабочая электронная почта-->
+      <xs:element name="WORKEREMAILWORK">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="130"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Личная электронная почта-->
+      <xs:element name="WORKEREMAILPERSONAL">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="130"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Глобальные параметры привязаные к конкретной сущности Worker-->
+      <xs:element name="GLOBALPARAMVAL">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="TENTGLOBALPARAMVALUE" type="GlobalParamValueType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--Список адресов-->
+      <xs:element name="WORKERADDRESS">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="TENTADDRESSBOOK" type="AddressBookType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--Список документов-->
+      <xs:element name="WORKERPASSL">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="TENTWORKERPASS" type="WorkerPassType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

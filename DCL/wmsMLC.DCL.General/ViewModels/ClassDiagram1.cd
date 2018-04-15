@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="wmsMLC.DCL.General.ViewModels.PanelViewModelBase" Collapsed="true">
+    <Position X="5.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAKAEAEiABABADQwAgAAEMBAAAAAAAAAACAAEAAgA=</HashCode>
+      <FileName>ViewModels\PanelViewModelBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="wmsMLC.DCL.General.ViewModels.SourceViewModelBase&lt;TSourceType&gt;" Collapsed="true">
+    <Position X="5.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAIBhkgkVmAQAIIACACAAAIAABEIAEAQAAAAgjFEAUg=</HashCode>
+      <FileName>ViewModels\SourceViewModelBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="wmsMLC.DCL.General.ViewModels.ObjectViewModelBase&lt;TModel&gt;" Collapsed="true">
+    <Position X="2.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>sCAAZMAAIGQQiANSogAAMAASAAGbAAAQEkEJAgAEGAI=</HashCode>
+      <FileName>ViewModels\ObjectViewModelBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="wmsMLC.DCL.General.ViewModels.EditViewModelBase&lt;TModel&gt;" Collapsed="true">
+    <Position X="5.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAQAAAAAAAAAAAAgAAAAAAAAAEAgAAAAAA=</HashCode>
+      <FileName>ViewModels\EditViewModelBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="wmsMLC.DCL.General.ViewModels.ObjectListViewModelBase&lt;TModel&gt;" Collapsed="true">
+    <Position X="6.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAKgAAAIETIyGEaAACEGAAEgCOERkCCASCBgggQAgg=</HashCode>
+      <FileName>ViewModels\ObjectListViewModelBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="wmsMLC.DCL.General.ViewModels.QuickLinkCommandParameter" Collapsed="true">
+    <Position X="2.25" Y="2" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAIAAABAAAAAABAAAA=</HashCode>
+      <FileName>ViewModels\ObjectListViewModelBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="wmsMLC.DCL.General.ViewModels.ObjectMemoryViewModelBase&lt;TModel&gt;" Collapsed="true">
+    <Position X="2.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\ObjectMemoryViewModelBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="wmsMLC.DCL.General.ViewModels.ObjectTreeViewModelBase&lt;TModel&gt;" Collapsed="true">
+    <Position X="6.5" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAACRAEEAAgAAAAAAAA=</HashCode>
+      <FileName>ViewModels\ObjectTreeViewModelBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="wmsMLC.DCL.General.ViewModels.ListViewModelBase&lt;TModel&gt;" Collapsed="true">
+    <Position X="8" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>88FgBfCwFGocAABAj4KAYQKaARCyMOGRAgKASjQoigg=</HashCode>
+      <FileName>ViewModels\ListViewModelBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="wmsMLC.DCL.General.ViewModels.BusinessProcessViewModelBase&lt;TModel, T&gt;" Collapsed="true">
+    <Position X="5.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IaAAAAAgAGAACAAACBAgACCoAACBAQBIAQAABggACAQ=</HashCode>
+      <FileName>ViewModels\BusinessProcessViewModelBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="wmsMLC.DCL.General.ViewModels.BusinessProcessCommandParameter" Collapsed="true">
+    <Position X="2.25" Y="2.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\BusinessProcessViewModelBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="wmsMLC.DCL.General.ViewModels.FilterViewModel&lt;TModel&gt;" Collapsed="true">
+    <Position X="9.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\FilterViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="wmsMLC.DCL.General.ViewModels.ManyToManyViewModel&lt;TModel, TLink&gt;" Collapsed="true">
+    <Position X="11.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MAAAIEAAAAAACABAAACIIAAAABADACAAAgAgAAAEhAA=</HashCode>
+      <FileName>ViewModels\ManyToManyViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="wmsMLC.DCL.General.ViewModels.MenuViewModel" Collapsed="true">
+    <Position X="7.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEQAAAAAAAAAAAAAAKAAACAAAAIEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\MenuViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="wmsMLC.DCL.General.ViewModels.MultipleSelectionViewModel&lt;TModel&gt;" Collapsed="true">
+    <Position X="7.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MAAIIEAEAAAACABAAAAAIAAAAAACAAAAAgAAAAAEgAA=</HashCode>
+      <FileName>ViewModels\MultipleSelectionViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="wmsMLC.General.PL.ViewModels.ViewModelBase" Collapsed="true">
+    <Position X="6.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="wmsMLC.DCL.General.ViewModels.HistoryListViewModelBase&lt;TModel&gt;" Collapsed="true">
+    <Position X="9.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAgAAAAAAAAAAAAAAAAACAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>ViewModels\HistoryListViewModelBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="wmsMLC.DCL.General.ViewModels.IFormulaHandler" Collapsed="true">
+    <Position X="19.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\ObjectViewModelBase.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="wmsMLC.DCL.General.ViewModels.IModelHandler" Collapsed="true">
+    <Position X="15.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAIIgABEBAAAAgAAAAAAAAAAAAAAAAAQAAAAAAEAAIA=</HashCode>
+      <FileName>ViewModels\IModelHandler.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="wmsMLC.DCL.General.ViewModels.IMenuHandler" Collapsed="true">
+    <Position X="19.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>ViewModels\IMenuHandler.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="wmsMLC.DCL.General.ViewModels.IDataViewModel" Collapsed="true">
+    <Position X="19.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\IDataViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="wmsMLC.DCL.General.ViewModels.IFilterViewModel" Collapsed="true">
+    <Position X="19.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ggAQAAAABAAAAAAAAAAAEAAAEBAAABAAAEEAAAIAgAA=</HashCode>
+      <FileName>ViewModels\IFilterViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="wmsMLC.DCL.General.ViewModels.IHaveUniqueName" Collapsed="true">
+    <Position X="19.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\IHaveUniqueName.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="wmsMLC.DCL.General.ViewModels.IObjectViewModel" Collapsed="true">
+    <Position X="16.75" Y="6.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\IObjectViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="wmsMLC.DCL.General.ViewModels.IObjectViewModel&lt;TModel&gt;" Collapsed="true">
+    <Position X="16.75" Y="7.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\IObjectViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="wmsMLC.DCL.General.ViewModels.IWDUCLViewModel" Collapsed="true">
+    <Position X="19.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAIAEAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>ViewModels\IWDUCLViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="wmsMLC.General.PL.ViewModels.IViewModel" Collapsed="true">
+    <Position X="15.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="wmsMLC.DCL.General.ViewModels.IListViewModel&lt;TModel&gt;" Collapsed="true">
+    <Position X="13.25" Y="7.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAIAAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\IListViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="wmsMLC.DCL.General.ViewModels.IListViewModel" Collapsed="true">
+    <Position X="14" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\IListViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="WorkerPass" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include  id="WmsDateTime" schemaLocation="WmsDateTime.xsd"/>
+
+  <!--Сущность WorkerPass-->
+  <xs:element name="TENTWORKERPASS" type="WorkerPassType"/>
+  
+  <!--Описание типа WorkerPass-->
+  <xs:complexType name="WorkerPassType">
+    <xs:sequence>
+      <!--ID записи-->
+      <xs:element name="WORKERPASSID" type="xs:integer"/>
+      <!--ID работника-->
+      <xs:element name="WORKERID_R" type="xs:integer" nillable="false"/>
+      <!--Тип документа -->
+      <xs:element name="WORKERPASSTYPE" nillable="false">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1030"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Серия документа-->
+      <xs:element name="WORKERPASSSERIES">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Номер документа-->
+      <xs:element name="WORKERPASSNUMBER">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Дата получения-->
+      <xs:element name="WORKERPASSRECEIPT" type="WmsDateTime" />
+      <!--Кем выдан-->
+      <xs:element name="WORKERPASSAGENCY">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="255"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

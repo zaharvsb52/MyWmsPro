@@ -1,0 +1,24 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/docking/themekeys" xmlns:ve="http://schemas.devexpress.com/winfx/2008/xaml/docking/visualelements" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <dxcore_unique_xmlns:BoolToVisibilityConverter x:Key="boolToVisibilityConverter" />
+  <ControlTemplate x:Key="{dxt:ControlItemElementsThemeKey ResourceKey=Template}" TargetType="ve:ControlItem">
+    <Border x:Name="PART_Border" ve:DockPane.HitTestType="Bounds" Background="{TemplateBinding Background}" Margin="{Binding Path=LayoutItem.ActualMargin, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\GrayOne\ControlItem.xaml;4;10">
+      <ve:DropBoundsControl dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\GrayOne\ControlItem.xaml;5;14">
+        <ve:DockingSplitLayoutPanel Background="Transparent" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\GrayOne\ControlItem.xaml;6;18">
+          <ve:DockingSplitLayoutPanel.Content1Location>
+            <Binding Path="LayoutItem.CaptionLocation" RelativeSource="{RelativeSource TemplatedParent}">
+              <Binding.Converter>
+                <ve:CaptionLocationToDockConverter />
+              </Binding.Converter>
+            </Binding>
+          </ve:DockingSplitLayoutPanel.Content1Location>
+          <ve:DockingSplitLayoutPanel.Content1>
+            <ve:ControlItemCaptionPresenter x:Name="PART_Caption" Content="{TemplateBinding Header}" Visibility="{Binding LayoutItem.ShowCaption, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource boolToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\GrayOne\ControlItem.xaml;15;26" />
+          </ve:DockingSplitLayoutPanel.Content1>
+          <ve:DockingSplitLayoutPanel.Content2>
+            <ve:ControlItemControlPresenter x:Name="PART_Control" Content="{TemplateBinding Content}" Margin="{Binding Path=LayoutItem.ActualPadding, RelativeSource={RelativeSource TemplatedParent}}" Visibility="{Binding LayoutItem.ShowControl, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource boolToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\GrayOne\ControlItem.xaml;18;26" />
+          </ve:DockingSplitLayoutPanel.Content2>
+        </ve:DockingSplitLayoutPanel>
+      </ve:DropBoundsControl>
+    </Border>
+  </ControlTemplate>
+</ResourceDictionary>

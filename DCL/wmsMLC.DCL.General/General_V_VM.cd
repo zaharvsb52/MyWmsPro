@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="VIEW MODELS">
+    <Position X="1.251" Y="1.01" Height="0.75" Width="14.331" />
+  </Comment>
+  <Comment CommentText="VIEWS">
+    <Position X="15.75" Y="1" Height="0.75" Width="3.856" />
+  </Comment>
+  <Class Name="wmsMLC.DCL.General.ViewModels.PanelViewModelBase" Collapsed="true">
+    <Position X="8.25" Y="5.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAKAEAEiDAQBIDQwAhAAEMAAAAAAAAAAACAAEAAAA=</HashCode>
+      <FileName>ViewModels\PanelViewModelBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="wmsMLC.DCL.General.ViewModels.SourceViewModelBase&lt;TSourceType&gt;">
+    <Position X="7.75" Y="11.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEgAQkAQAIIACQKAAAIAABAIAAAEAAAAgAAAAAg=</HashCode>
+      <FileName>ViewModels\SourceViewModelBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="wmsMLC.DCL.General.ViewModels.ObjectListViewModelBase&lt;TModel&gt;">
+    <Position X="10.75" Y="15" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>EAAKgAAAAETIwGEaAACEAAAEgCMEBEACASCBggAQAgo=</HashCode>
+      <FileName>ViewModels\ObjectListViewModelBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="wmsMLC.DCL.General.Views.PanelView">
+    <Position X="18" Y="6.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAEIgAAAAgBAAAACAACAAAA=</HashCode>
+      <FileName>Views\PanelView.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="wmsMLC.DCL.General.ViewModels.DynamicViewModelBase" Collapsed="true">
+    <Position X="10.75" Y="2.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAIAAAAIAAiAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\DynamicViewModelBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="wmsMLC.DCL.General.ViewModels.MenuViewModel" Collapsed="true">
+    <Position X="10.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEQAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\MenuViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="wmsMLC.DCL.General.ViewModels.ObjectViewModelBase&lt;TModel&gt;">
+    <Position X="7.75" Y="15" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>soAgJMAAAEAQiANSoAAAIAACAAELAAAAAgAJAgAECAA=</HashCode>
+      <FileName>ViewModels\ObjectViewModelBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="wmsMLC.DCL.General.ViewModels.Filters.BaseFilterContentViewModel&lt;TModel&gt;" Collapsed="true">
+    <Position X="3.5" Y="5.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAIACAAgAABEAAEACAAAQCAAAAAAAUSIAAgABAgAQ=</HashCode>
+      <FileName>ViewModels\Filters\BaseFilterContentViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="wmsMLC.DCL.General.ViewModels.Filters.CustomFilterContentViewModel&lt;TModel&gt;">
+    <Position X="3.25" Y="10.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAABAAAAAAAAAAAAAAAAAAAAAAAAABAAEQ=</HashCode>
+      <FileName>ViewModels\Filters\CustomFilterContentViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="wmsMLC.DCL.General.ViewModels.Filters.TreeFilterContentViewModel&lt;TModel&gt;">
+    <Position X="0.5" Y="10.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAABAAAAAAAAAAAAAAAAAAAAAAAAABAAAQ=</HashCode>
+      <FileName>ViewModels\Filters\TreeFilterContentViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="wmsMLC.DCL.General.Views.IView">
+    <Position X="17.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\IView.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="wmsMLC.DCL.General.Views.IShell">
+    <Position X="16" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\IShell.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="wmsMLC.DCL.General.Views.IPanelView">
+    <Position X="18" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\IPanelView.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

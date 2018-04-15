@@ -1,0 +1,41 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:dxscht="http://schemas.devexpress.com/winfx/2008/xaml/scheduler/themekeys" xmlns:dxschd="http://schemas.devexpress.com/winfx/2008/xaml/scheduler/internal" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <!--BEGIN WPF-->
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Scheduler/GrayOne/Colors.xaml" />
+  </ResourceDictionary.MergedDictionaries>
+  <!--END WPF-->
+  <sys:Double x:Key="{dxscht:DayViewThemeKey ResourceKey=TimeRulersMinWidth}">40</sys:Double>
+  <Thickness x:Key="{dxscht:DayViewThemeKey ResourceKey=TimeRulerMargin}">0</Thickness>
+  <Style x:Key="{dxscht:DayViewThemeKey ResourceKey=TimeRulerFontStyle}" TargetType="{x:Type TextBlock}">
+    <Setter Property="Foreground" Value="{StaticResource TimeRulerTextForeground}" />
+  </Style>
+  <DataTemplate x:Key="{dxscht:DayViewThemeKey ResourceKey=TimeRulerMinuteItemTemplate}">
+    <Grid MinWidth="22" VerticalAlignment="Top" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\GrayOne\DayView\TimeRuler.xaml;17;10">
+      <Border Background="#FFCACBD3" Margin="0,-1,0,0" Height="1" VerticalAlignment="Top" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\GrayOne\DayView\TimeRuler.xaml;18;14">
+        <Border.OpacityMask>
+          <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+            <GradientStop Color="#00FFFFFF" Offset="0" />
+            <GradientStop Color="#FFFFFFFF" Offset="1" />
+          </LinearGradientBrush>
+        </Border.OpacityMask>
+      </Border>
+      <TextBlock Text="{Binding Caption}" FontSize="11" Margin="35,2,5,0" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource {dxscht:DayViewThemeKey ResourceKey=TimeRulerFontStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\GrayOne\DayView\TimeRuler.xaml;26;14" />
+    </Grid>
+  </DataTemplate>
+  <DataTemplate x:Key="{dxscht:DayViewThemeKey ResourceKey=TimeRulerHourItemTemplate}">
+    <Grid dxschd:SharedSizePanel.Span="{Binding MinuteItems.Count}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\GrayOne\DayView\TimeRuler.xaml;31;10">
+      <Border Background="#FFCACBD3" Height="1" Margin="0,-1,0,0" VerticalAlignment="Top" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\GrayOne\DayView\TimeRuler.xaml;32;14">
+        <Border.OpacityMask>
+          <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+            <GradientStop Color="#00FFFFFF" Offset="0" />
+            <GradientStop Color="#FFFFFFFF" Offset="1" />
+          </LinearGradientBrush>
+        </Border.OpacityMask>
+      </Border>
+      <TextBlock Text="{Binding Caption}" FontSize="16" Margin="2,0,24,0" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{DynamicResource {dxscht:DayViewThemeKey ResourceKey=TimeRulerFontStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\GrayOne\DayView\TimeRuler.xaml;40;14" />
+    </Grid>
+  </DataTemplate>
+  <ControlTemplate x:Key="{dxscht:DayViewThemeKey ResourceKey=TimeRulerHeaderSeparatorTemplate}">
+    <Rectangle Fill="#FFCACBD3" Height="1" VerticalAlignment="Top" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\GrayOne\DayView\TimeRuler.xaml;45;10" />
+  </ControlTemplate>
+</ResourceDictionary>

@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutProgram" xml:space="preserve">
+    <value>О программе</value>
+  </data>
+  <data name="ApplicationWillBeShutdown" xml:space="preserve">
+    <value>Превышено допустимое количество попыток ввода.{0}Приложение будет закрыто.</value>
+  </data>
+  <data name="AuthenticationError" xml:space="preserve">
+    <value>Ошибка аутентификации</value>
+  </data>
+  <data name="CommunicationError" xml:space="preserve">
+    <value>Отсутсвует связь с сервисом.</value>
+  </data>
+  <data name="DEBUG" xml:space="preserve">
+    <value>DEBUG</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="ErrorUndefined" xml:space="preserve">
+    <value>Неизвестная ошибка</value>
+  </data>
+  <data name="LogInfoDebugMode" xml:space="preserve">
+    <value>DEBUG MODE</value>
+  </data>
+  <data name="LogInfoHeader01" xml:space="preserve">
+    <value>=================</value>
+  </data>
+  <data name="LogInfoHeader02" xml:space="preserve">
+    <value>-----------------</value>
+  </data>
+  <data name="LogInfoStartApp" xml:space="preserve">
+    <value>Start application</value>
+  </data>
+  <data name="LogInfoStopApp" xml:space="preserve">
+    <value>Stop application</value>
+  </data>
+  <data name="MainViewModel_Login" xml:space="preserve">
+    <value>Войти в систему</value>
+  </data>
+  <data name="MainViewModel_Logoff_Template" xml:space="preserve">
+    <value>Выйти из системы [{0}]</value>
+  </data>
+  <data name="MlcDescription" xml:space="preserve">
+    <value>Logistic solutions since 1990</value>
+  </data>
+  <data name="StateInitModules" xml:space="preserve">
+    <value>Инициализация модулей</value>
+  </data>
+  <data name="StatePrefix" xml:space="preserve">
+    <value>Выполняется: {0}</value>
+  </data>
+  <data name="StateRun" xml:space="preserve">
+    <value>Запуск приложения</value>
+  </data>
+  <data name="StateRunModules" xml:space="preserve">
+    <value>Запуск модулей</value>
+  </data>
+  <data name="Timeout" xml:space="preserve">
+    <value>Истек период ожидания ответа.</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="ReportCommand" xml:space="preserve">
+    <value>Отчет...</value>
+  </data>
+  <data name="SystemMessage" xml:space="preserve">
+    <value>Системное сообщение</value>
+  </data>
+  <data name="Administration" xml:space="preserve">
+    <value>Администрирование</value>
+  </data>
+  <data name="ClearCache" xml:space="preserve">
+    <value>Очистить кеш</value>
+  </data>
+  <data name="EnjoyYourWork" xml:space="preserve">
+    <value>Приложение запущено. Желаем Вам приятной работы{0}{0}Команда разработчиков wmsMLC</value>
+  </data>
+  <data name="CantCloseSessionError" xml:space="preserve">
+    <value>Невозможно завершить сеанс. Необходимо закрыть все вкладки.</value>
+  </data>
+  <data name="InputMessageCount" xml:space="preserve">
+    <value>Количество входящих сообщений: {0}</value>
+  </data>
+  <data name="SysDbInfoDialogTitle" xml:space="preserve">
+    <value>Подключение</value>
+  </data>
+  <data name="SysDbInfoMessage" xml:space="preserve">
+    <value>БД: {0}{1}Версия: {2}{1}Расположение: {3}</value>
+  </data>
+  <data name="LookupAddButtonTooltip" xml:space="preserve">
+    <value>Добавить новое значение</value>
+  </data>
+  <data name="ErrorSave" xml:space="preserve">
+    <value>Сохранение невозможно</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Подтверждение</value>
+  </data>
+  <data name="ConfirmationDeleteObject" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить объект?</value>
+  </data>
+  <data name="ConfirmationSaveDataOnRefresh" xml:space="preserve">
+    <value>Запись изменена. Обновление приведет к потере несохраненных данных. Продолжить?</value>
+  </data>
+  <data name="ConfirmationUnsavedData" xml:space="preserve">
+    <value>Имеются несохраненные данные. Сохранить?</value>
+  </data>
+  <data name="FormulaSaveItemsTemplateMessage" xml:space="preserve">
+    <value>"Добавлено объектов: {0}"</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>Информация</value>
+  </data>
+  <data name="MainMenuTransportTaskCaption" xml:space="preserve">
+    <value>Транспортные задания {0}</value>
+  </data>
+  <data name="MainTileMenuTransportTaskHeader" xml:space="preserve">
+    <value>ЗНТ</value>
+  </data>
+  <data name="MainTileMenuRefreshHeader" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
+  <data name="ConfirmExit" xml:space="preserve">
+    <value>Вы уверены, что хотите выйти из приложения?{0}{1}</value>
+  </data>
+  <data name="ConfirmKeyHelp" xml:space="preserve">
+    <value>Enter - ДА{0}Esc - НЕТ</value>
+  </data>
+  <data name="MainMenuTeNoReportCaption" xml:space="preserve">
+    <value>ТЕ не имеет назначенных отчетов.</value>
+  </data>
+  <data name="MainMenuBackCaption" xml:space="preserve">
+    <value>Назад</value>
+  </data>
+  <data name="MainMenuExitCaption" xml:space="preserve">
+    <value>Выход из приложения</value>
+  </data>
+  <data name="MainMenuSubPrintCaption" xml:space="preserve">
+    <value>{0}</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>Нет</value>
+  </data>
+  <data name="WaitShort" xml:space="preserve">
+    <value>Ждите...</value>
+  </data>
+  <data name="Menu" xml:space="preserve">
+    <value>Меню</value>
+  </data>
+  <data name="MainTileMenuPickingLisHeader" xml:space="preserve">
+    <value>Подбор</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Логин:</value>
+  </data>
+  <data name="LoginNullText" xml:space="preserve">
+    <value>Введите Ваш логин...</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Пароль:</value>
+  </data>
+  <data name="PasswordNullText" xml:space="preserve">
+    <value>Введите Ваш пароль...</value>
+  </data>
+  <data name="StateAuthentication" xml:space="preserve">
+    <value>Аутентификация</value>
+  </data>
+  <data name="In" xml:space="preserve">
+    <value>Приемка</value>
+  </data>
+  <data name="Move" xml:space="preserve">
+    <value>Перем-ие</value>
+  </data>
+  <data name="Out" xml:space="preserve">
+    <value>Выдача</value>
+  </data>
+  <data name="AllTask" xml:space="preserve">
+    <value>Все ЗНТ</value>
+  </data>
+  <data name="Return" xml:space="preserve">
+    <value>Назад</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>Инфо</value>
+  </data>
+  <data name="InfoOnPlace" xml:space="preserve">
+    <value>По месту</value>
+  </data>
+  <data name="InfoOnTe" xml:space="preserve">
+    <value>По ТЕ</value>
+  </data>
+  <data name="EmptyError" xml:space="preserve">
+    <value>Ошибка не определена.</value>
+  </data>
+  <data name="RCL" xml:space="preserve">
+    <value>RCL</value>
+  </data>
+  <data name="TruckNotValidated" xml:space="preserve">
+    <value>В настройках Вашего терминала '{0}' не определен погрузчик. Приложение будет завершено.</value>
+  </data>
+  <data name="TruckValidatedError" xml:space="preserve">
+    <value>Ошибки при определении кода погрузчика. Приложение будет завершено.</value>
+  </data>
+  <data name="WorkerNotValidated" xml:space="preserve">
+    <value>К пользователю '{0}' не привязан ни один работник.  Приложение будет завершено.</value>
+  </data>
+  <data name="WorkerValidatedError" xml:space="preserve">
+    <value>Ошибки при определении работника.  Приложение будет завершено.</value>
+  </data>
+  <data name="SelectWorkerPanelCaption" xml:space="preserve">
+    <value>Выберите сотрудника</value>
+  </data>
+  <data name="WorkerList" xml:space="preserve">
+    <value>Сотрудники</value>
+  </data>
+  <data name="WorkerNotSelect" xml:space="preserve">
+    <value>Сотрудник не выбран. Выберите сотрудника.</value>
+  </data>
+  <data name="INV" xml:space="preserve">
+    <value>Инв-я</value>
+  </data>
+  <data name="StateValidateTruck" xml:space="preserve">
+    <value>Валидация погрузчика</value>
+  </data>
+  <data name="StateValidateWorker" xml:space="preserve">
+    <value>Валидация работника</value>
+  </data>
+  <data name="WaitServiceInit" xml:space="preserve">
+    <value>Ожидаем запуск сервиса...</value>
+  </data>
+  <data name="SendMail" xml:space="preserve">
+    <value>Сообщить</value>
+  </data>
+  <data name="Work" xml:space="preserve">
+    <value>Работа</value>
+  </data>
+</root>

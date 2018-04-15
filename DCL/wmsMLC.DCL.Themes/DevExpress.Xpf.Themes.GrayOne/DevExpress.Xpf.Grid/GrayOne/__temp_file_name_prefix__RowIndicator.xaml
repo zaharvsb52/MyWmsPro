@@ -1,0 +1,55 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" xmlns:dxgt="http://schemas.devexpress.com/winfx/2008/xaml/grid/themekeys" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <dxcore_unique_xmlns:BoolInverseConverter x:Key="BoolInverseConverter" />
+  <DataTemplate x:Key="{dxgt:RowIndicatorThemeKey ResourceKey=RowTemplate}">
+    <Border Background="#FFF5F6F7" BorderBrush="#FFCACBD3" BorderThickness="0,0,1,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\RowIndicator.xaml;5;10">
+      <ContentPresenter Content="{Binding DataContext, RelativeSource={RelativeSource TemplatedParent}}" ContentTemplate="{Binding Path=View.RowIndicatorContentTemplate}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\RowIndicator.xaml;6;14" />
+    </Border>
+  </DataTemplate>
+  <DataTemplate x:Key="{dxgt:RowIndicatorThemeKey ResourceKey=GroupRowTemplate}">
+    <Border Background="#FFF5F6F7" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\RowIndicator.xaml;11;10">
+      <Border Background="#FFF5F6F7" BorderBrush="#FFCACBD3" BorderThickness="0,0,1,2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\RowIndicator.xaml;12;14">
+        <ContentPresenter Content="{Binding DataContext, RelativeSource={RelativeSource TemplatedParent}}" ContentTemplate="{Binding Path=View.RowIndicatorContentTemplate}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\RowIndicator.xaml;13;18" />
+      </Border>
+    </Border>
+  </DataTemplate>
+  <DataTemplate x:Key="{dxgt:RowIndicatorThemeKey ResourceKey=FocusedIconTemplate}">
+    <Path Stretch="Fill" Fill="#FF80838F" Data="F1 M 382,1021L 386,1025L 382,1029L 382,1021 Z" Margin="1,0,0,0" Width="4" Height="8" HorizontalAlignment="Center" VerticalAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\RowIndicator.xaml;19;10" />
+  </DataTemplate>
+  <DataTemplate x:Key="{dxgt:RowIndicatorThemeKey ResourceKey=ChangedIconTemplate}">
+    <Path Stretch="Fill" Fill="#FF80838F" Data="F1 M 399,1021L 397,1021L 397,1022L 399,1022M 394,1022L 396,1022L 396,1021L 394,1021M 399,1028L 397,1028L 397,1029L 399,1029M 394,1029L 396,1029L 396,1028L 394,1028M 396,1028L 397,1028L 397,1022L 396,1022L 396,1028 Z" Width="5" Height="8" HorizontalAlignment="Center" VerticalAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\RowIndicator.xaml;23;10" />
+  </DataTemplate>
+  <DataTemplate x:Key="{dxgt:RowIndicatorThemeKey ResourceKey=NewItemRowIconTemplate}">
+    <Path Stretch="Fill" Fill="#FF80838F" Data="F1 M 398,1050L 399,1048L 397,1049L 396.5,1046L 396,1049L 394,1048L 395,1050L 392,1050.5L 395,1051L 394,1053L 396,1052L 396.5,1055L 397,1052L 399,1053L 398,1051L 401,1050.5L 398,1050 Z" Margin="0,1,0,0" Width="9" Height="9" HorizontalAlignment="Center" VerticalAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\RowIndicator.xaml;27;10" />
+  </DataTemplate>
+  <DataTemplate x:Key="{dxgt:RowIndicatorThemeKey ResourceKey=EditingIconTemplate}">
+    <Path Stretch="Fill" Fill="#FF80838F" Data="F1 M 405,1027L 405,1029L 407,1029L 410,1026L 408,1024M 411,1021L 409,1023L 411,1025L 413,1023L 411,1021 Z" HorizontalAlignment="Center" Margin="1,0,0,0" VerticalAlignment="Center" Width="8" Height="8" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\RowIndicator.xaml;31;10" />
+  </DataTemplate>
+  <DataTemplate x:Key="{dxgt:RowIndicatorThemeKey ResourceKey=ErrorIconTemplate}">
+    <Path Stretch="Fill" Fill="#FF80838F" Data="F1 M 412,1040L 411,1041L 409.5,1039.5L 408,1041L 407,1040L 408.5,1038.5L 407,1037L 408,1036L 409.5,1037.5L 411,1036L 412,1037L 410.5,1038.5M 409.5,1034C 407.016,1034 405,1036.02 405,1038.5C 405,1040.98 407.016,1043 409.5,1043C 411.984,1043 414,1040.98 414,1038.5C 414,1036.02 411.984,1034 409.5,1034 Z" Margin="0,1,0,0" Width="9" Height="9" HorizontalAlignment="Center" VerticalAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\RowIndicator.xaml;35;10" />
+  </DataTemplate>
+  <DataTemplate x:Key="{dxgt:RowIndicatorThemeKey ResourceKey=FocusedErrorIconTemplate}">
+    <Path Stretch="Fill" Fill="#FFB50606" Data="F1 M 412,1040L 411,1041L 409.5,1039.5L 408,1041L 407,1040L 408.5,1038.5L 407,1037L 408,1036L 409.5,1037.5L 411,1036L 412,1037L 410.5,1038.5M 409.5,1034C 407.016,1034 405,1036.02 405,1038.5C 405,1040.98 407.016,1043 409.5,1043C 411.984,1043 414,1040.98 414,1038.5C 414,1036.02 411.984,1034 409.5,1034 Z" Margin="0,1,0,0" Width="9" Height="9" HorizontalAlignment="Center" VerticalAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\RowIndicator.xaml;39;10" />
+  </DataTemplate>
+  <DataTemplate x:Key="{dxgt:RowIndicatorThemeKey ResourceKey=AutoFilterRowIconTemplate}">
+    <Path Stretch="Fill" Fill="#FF80838F" Data="F1 M 381,1035L 384,1038L 384,1042L 385,1042L 385,1038L 388,1035L 381,1035 Z" Margin="0,1,0,0" Width="7" Height="7" HorizontalAlignment="Center" VerticalAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\RowIndicator.xaml;43;10" />
+  </DataTemplate>
+  <ControlTemplate x:Key="{dxgt:RowIndicatorThemeKey ResourceKey=RowPanelTemplate}" TargetType="{x:Type ContentControl}">
+    <Border Background="#FFFFFFFF" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\RowIndicator.xaml;47;10">
+      <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\RowIndicator.xaml;48;14" />
+    </Border>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxgt:RowIndicatorThemeKey ResourceKey=RowOffsetControlTemplate}" TargetType="{x:Type dxg:RowOffset}">
+    <Border Background="#FFFFFFFF" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\RowIndicator.xaml;53;10">
+      <Path x:Name="PART_OffsetPath" Stroke="{TemplateBinding BorderBrush}" StrokeThickness="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\RowIndicator.xaml;54;14" />
+    </Border>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxgt:RowIndicatorThemeKey ResourceKey=GroupRowOffsetControlTemplate}" TargetType="{x:Type dxg:GroupRowOffset}">
+    <Border Background="#FFFFFFFF" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\RowIndicator.xaml;59;10" />
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxgt:RowIndicatorThemeKey ResourceKey=RowOffsetTemplate}" TargetType="{x:Type ContentControl}">
+    <dxg:RowOffset AllowHorizontalLines="{Binding IsMasterRowExpanded, Converter={StaticResource BoolInverseConverter}}" AllowVerticalLines="False" BorderBrush="{TemplateBinding BorderBrush}" Offset="{Binding Path=View.LeftGroupAreaIndent}" RowLevel="{Binding Path=Level}" NextRowLevel="{Binding Path=NextRowLevel}" Template="{DynamicResource {dxgt:RowIndicatorThemeKey ResourceKey=RowOffsetControlTemplate}}" />
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxgt:RowIndicatorThemeKey ResourceKey=GroupRowOffsetTemplate}" TargetType="{x:Type ContentControl}">
+    <dxg:GroupRowOffset AllowVerticalLines="False" Offset="{Binding Path=View.LeftGroupAreaIndent}" RowLevel="{Binding Path=GroupLevel}" NextRowLevel="{Binding Path=NextRowLevel}" IsExpanded="{Binding Path=IsRowExpanded}" Template="{DynamicResource {dxgt:RowIndicatorThemeKey ResourceKey=GroupRowOffsetControlTemplate}}" />
+  </ControlTemplate>
+</ResourceDictionary>

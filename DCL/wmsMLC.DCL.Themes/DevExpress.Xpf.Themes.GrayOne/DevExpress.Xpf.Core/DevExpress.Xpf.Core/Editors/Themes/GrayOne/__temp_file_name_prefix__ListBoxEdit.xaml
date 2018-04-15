@@ -1,0 +1,24 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxeh="http://schemas.devexpress.com/winfx/2008/xaml/editors/internal" xmlns:dxei="http://schemas.devexpress.com/winfx/2008/xaml/editors/internal" xmlns:dxep="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxet="http://schemas.devexpress.com/winfx/2008/xaml/editors/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <!--BEGIN WPF-->
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Generic/ListBoxEdit.xaml" />
+  </ResourceDictionary.MergedDictionaries>
+  <!--END WPF-->
+  <!--PROCESS SETTERS WITH BINDING-->
+  <ControlTemplate x:Key="{dxet:ListBoxEditThemeKey ResourceKey=EmptyBorderTemplate}" TargetType="{x:Type ContentControl}">
+    <Border dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ListBoxEdit.xaml;10;10">
+      <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ListBoxEdit.xaml;11;14" />
+    </Border>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxet:ListBoxEditThemeKey ResourceKey=BorderTemplate}" TargetType="{x:Type ContentControl}">
+    <Border BorderThickness="1" Background="#FFFFFFFF" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ListBoxEdit.xaml;16;10">
+      <Border.BorderBrush>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+          <GradientStop Color="#FF9DA0AA" Offset="0" />
+          <GradientStop Color="#FFD9DAE0" Offset="1" />
+        </LinearGradientBrush>
+      </Border.BorderBrush>
+      <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ListBoxEdit.xaml;23;14" />
+    </Border>
+  </ControlTemplate>
+</ResourceDictionary>

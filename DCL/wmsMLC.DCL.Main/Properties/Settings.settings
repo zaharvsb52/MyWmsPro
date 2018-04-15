@@ -1,0 +1,33 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="wmsMLC.DCL.Main.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="HelpServiceMail" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">mail not set</Value>
+    </Setting>
+    <Setting Name="SessionId" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Auto</Value>
+    </Setting>
+    <Setting Name="SDCL_Endpoint" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ClientType" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Client</Value>
+    </Setting>
+    <Setting Name="HelpFileName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">wmsMLC.DCL.Client.chm</Value>
+    </Setting>
+    <Setting Name="DefaultPingTimeInMS" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">5000</Value>
+    </Setting>
+    <Setting Name="GoodPingInMS" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="Theme" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Office2013</Value>
+    </Setting>
+    <Setting Name="CallUpgrade" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

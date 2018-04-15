@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CargoIWBPos" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include  id="WmsDateTime" schemaLocation="WmsDateTime.xsd"/>
+
+  <!--Сущность CargoIWBPos-->
+  <xs:element name="TENTCARGOIWBPOS" type="CargoIWBPosType"/>
+  
+  <!--Описание типа CargoIWBPos-->
+  <xs:complexType name="CargoIWBPosType">
+    <xs:sequence>
+      <!--ID записи-->
+      <!--<xs:element name="CARGOIWBPOSID" type="xs:integer"/>-->
+      <!--Груз-->
+      <xs:element name="CARGOIWBID_R" type="xs:integer" nillable="false"/>
+      <!--Количество-->
+      <xs:element name="CARGOIWBPOSCOUNT" type="xs:integer" nillable="false"/>
+      <!--Тип грузового места-->
+      <xs:element name="TETYPECODE_R" nillable="false">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Тип позиции-->
+      <xs:element name="CARGOIWBPOSTYPE" nillable="false">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Квалификация-->
+      <xs:element name="QLFCODE_R " nillable="false">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+            <xs:enumeration value="QLFNORMAL"/>
+            <xs:enumeration value="QLFRETURN"/>
+            <xs:enumeration value="QLFQUALITY"/>
+            <xs:enumeration value="QLFDEFECT"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Описание-->
+      <xs:element name="CARGOIWBPOSDESC">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1024"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Приходная накладная-->
+      <xs:element name="IWBID_R" type="xs:integer"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

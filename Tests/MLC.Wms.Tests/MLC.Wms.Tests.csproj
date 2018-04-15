@@ -1,0 +1,473 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{04CCC9A2-799F-4C7D-B4CB-D38C09A3BF6E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MLC.Wms.Tests</RootNamespace>
+    <AssemblyName>MLC.Wms.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'TST1|AnyCPU'">
+    <OutputPath>bin\TST1\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BLToolkit.4">
+      <HintPath>..\..\..\Packages\BLToolkit.4.2.0\lib\net40-full\BLToolkit.4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CalcEngine">
+      <HintPath>..\..\..\Libraries\CalcEngine\CalcEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentAssertions">
+      <HintPath>..\..\..\Packages\FluentAssertions.4.2.2\lib\net40\FluentAssertions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentAssertions.Core">
+      <HintPath>..\..\..\Packages\FluentAssertions.4.2.2\lib\net40\FluentAssertions.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks">
+      <HintPath>..\..\..\Packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions">
+      <HintPath>..\..\..\Packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop">
+      <HintPath>..\..\..\Packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Moq">
+      <HintPath>..\..\..\Packages\Moq.4.2.1510.2205\lib\net40\Moq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\..\Packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO">
+      <HintPath>..\..\..\Packages\Microsoft.Bcl.1.1.10\lib\net40\System.IO.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime">
+      <HintPath>..\..\..\Packages\Microsoft.Bcl.1.1.10\lib\net40\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>..\..\..\Packages\Microsoft.Bcl.1.1.10\lib\net40\System.Threading.Tasks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Integration\BLOBTransferTest.cs" />
+    <Compile Include="Integration\EditableListBusinessObjectTest.cs" />
+    <Compile Include="Integration\EditablePartnerTest.cs" />
+    <Compile Include="Integration\Entities\AddressBookTest.cs" />
+    <Compile Include="Integration\Entities\AdjustmentReasonTest.cs" />
+    <Compile Include="Integration\Entities\Area2BlockingTest.cs" />
+    <Compile Include="Integration\Entities\AreaTest.cs" />
+    <Compile Include="Integration\Entities\AreaTypeTest.cs" />
+    <Compile Include="Integration\Entities\Art2GroupTest.cs" />
+    <Compile Include="Integration\Entities\ArtGroupTest.cs" />
+    <Compile Include="Integration\Entities\ArtPriceTest.cs" />
+    <Compile Include="Integration\Entities\ArtTest.cs" />
+    <Compile Include="Integration\Entities\BarcodeTest.cs" />
+    <Compile Include="Integration\Entities\BillCalcConfigDetailTest.cs" />
+    <Compile Include="Integration\Entities\BillCalcEventConfigTest.cs" />
+    <Compile Include="Integration\Entities\BillCalcVerificationTest.cs" />
+    <Compile Include="Integration\Entities\BillContractTest.cs" />
+    <Compile Include="Integration\Entities\BillEvent2BillerTest.cs" />
+    <Compile Include="Integration\Entities\BillEvent2OperationTest.cs" />
+    <Compile Include="Integration\Entities\BillEventKind2BillerTest.cs" />
+    <Compile Include="Integration\Entities\BillOperation2ContractTest.cs" />
+    <Compile Include="Integration\Entities\BillOperationCauseTest.cs" />
+    <Compile Include="Integration\Entities\BillScale2O2CTest.cs" />
+    <Compile Include="Integration\Entities\BillScaleTest.cs" />
+    <Compile Include="Integration\Entities\BillScaleValueTest.cs" />
+    <Compile Include="Integration\Entities\BillScaleValueTypeTest.cs" />
+    <Compile Include="Integration\Entities\BillSpecialFuncEntityTest.cs" />
+    <Compile Include="Integration\Entities\BillSpecialFuncParamsTest.cs" />
+    <Compile Include="Integration\Entities\BillSpecialFunctionTest.cs" />
+    <Compile Include="Integration\Entities\BillStrategyParamsTest.cs" />
+    <Compile Include="Integration\Entities\BillStrategyTest.cs" />
+    <Compile Include="Integration\Entities\BillStrategyUseTest.cs" />
+    <Compile Include="Integration\Entities\BillStrategyUseValuesTest.cs" />
+    <Compile Include="Integration\Entities\BillTariffTest.cs" />
+    <Compile Include="Integration\Entities\BillTransactionDetailTest.cs" />
+    <Compile Include="Integration\Entities\BillTransactionTest.cs" />
+    <Compile Include="Integration\Entities\BillTransactionTypeTest.cs" />
+    <Compile Include="Integration\Entities\BillTransactionWDetailTest.cs" />
+    <Compile Include="Integration\Entities\BillTransactionWTest.cs" />
+    <Compile Include="Integration\Entities\BillUserParams2O2CTest.cs" />
+    <Compile Include="Integration\Entities\BillUserParamsTest.cs" />
+    <Compile Include="Integration\Entities\BillUserParamsTypeApplyTest.cs" />
+    <Compile Include="Integration\Entities\BillUserParamsTypeTest.cs" />
+    <Compile Include="Integration\Entities\BillUserParamsValueTest.cs" />
+    <Compile Include="Integration\Entities\BillWorkAct2Op2CTest.cs" />
+    <Compile Include="Integration\Entities\BillWorkActDetailExTest.cs" />
+    <Compile Include="Integration\Entities\BillWorkActDetailTest.cs" />
+    <Compile Include="Integration\Entities\BillWorkActTest.cs" />
+    <Compile Include="Integration\Entities\BlackListTest.cs" />
+    <Compile Include="Integration\Entities\BPBatchSelectTest.cs" />
+    <Compile Include="Integration\Entities\BPBatchTest.cs" />
+    <Compile Include="Integration\Entities\BPLogTest.cs" />
+    <Compile Include="Integration\Entities\BPProcessTest.cs" />
+    <Compile Include="Integration\Entities\BPTriggerTest.cs" />
+    <Compile Include="Integration\Entities\BPWorkflowTest.cs" />
+    <Compile Include="Integration\Entities\Calendar2MandantTest.cs" />
+    <Compile Include="Integration\Entities\CalendarTest.cs" />
+    <Compile Include="Integration\Entities\CargoIWBPosTest.cs" />
+    <Compile Include="Integration\Entities\CargoIWBTest.cs" />
+    <Compile Include="Integration\Entities\BillOperationClassTest.cs" />
+    <Compile Include="Integration\Entities\BillOperationTest.cs" />
+    <Compile Include="Integration\Entities\CargoOWBTest.cs" />
+    <Compile Include="Integration\Entities\ClientSessionTest.cs" />
+    <Compile Include="Integration\Entities\ClientTest.cs" />
+    <Compile Include="Integration\Entities\ClientTypeTest.cs" />
+    <Compile Include="Integration\Entities\CommActTest.cs" />
+    <Compile Include="Integration\Entities\Config2ObjectTest.cs" />
+    <Compile Include="Integration\Entities\CP2MandantTest.cs" />
+    <Compile Include="Integration\Entities\CstReqCustomsTest.cs" />
+    <Compile Include="Integration\Entities\CustomParamTest.cs" />
+    <Compile Include="Integration\Entities\CustomParamValueTest.cs" />
+    <Compile Include="Integration\Entities\Dashboard2UserTest.cs" />
+    <Compile Include="Integration\Entities\DashboardTest.cs" />
+    <Compile Include="Integration\Entities\EcomClientTest.cs" />
+    <Compile Include="Integration\Entities\Employee2OWBTest.cs" />
+    <Compile Include="Integration\Entities\EmployeeTest.cs" />
+    <Compile Include="Integration\Entities\Entity2GCTest.cs" />
+    <Compile Include="Integration\Entities\EntityFileTest.cs" />
+    <Compile Include="Integration\Entities\EntityLinkTest.cs" />
+    <Compile Include="Integration\Entities\EpsConfigTest.cs" />
+    <Compile Include="Integration\Entities\EpsJobTest.cs" />
+    <Compile Include="Integration\Entities\EpsTask2JobTest.cs" />
+    <Compile Include="Integration\Entities\EpsTaskTest.cs" />
+    <Compile Include="Integration\Entities\EventHeaderTest.cs" />
+    <Compile Include="Integration\Entities\EventKind2MandantTest.cs" />
+    <Compile Include="Integration\Entities\EventKindTest.cs" />
+    <Compile Include="Integration\Entities\ExpiryDateTest.cs" />
+    <Compile Include="Integration\Entities\ExternalTrafficTest.cs" />
+    <Compile Include="Integration\Entities\GCTest.cs" />
+    <Compile Include="Integration\Entities\FactoryTest.cs" />
+    <Compile Include="Integration\Entities\GateTest.cs" />
+    <Compile Include="Integration\Entities\GlobalParamTest.cs" />
+    <Compile Include="Integration\Entities\GlobalParamValueTest.cs" />
+    <Compile Include="Integration\Entities\InputPlPosTest.cs" />
+    <Compile Include="Integration\Entities\InternalTrafficTest.cs" />
+    <Compile Include="Integration\Entities\InvGroupTest.cs" />
+    <Compile Include="Integration\Entities\InvReqPosTest.cs" />
+    <Compile Include="Integration\Entities\InvReqTest.cs" />
+    <Compile Include="Integration\Entities\InvSnapShotTest.cs" />
+    <Compile Include="Integration\Entities\InvTaskGroupTest.cs" />
+    <Compile Include="Integration\Entities\InvTaskStepTest.cs" />
+    <Compile Include="Integration\Entities\InvTaskTest.cs" />
+    <Compile Include="Integration\Entities\InvTest.cs" />
+    <Compile Include="Integration\Entities\IsoCountryTest.cs" />
+    <Compile Include="Integration\Entities\IsoCurrencyTest.cs" />
+    <Compile Include="Integration\Entities\IWB2CargoTest.cs" />
+    <Compile Include="Integration\Entities\IWBPosTest.cs" />
+    <Compile Include="Integration\Entities\IWBTest.cs" />
+    <Compile Include="Integration\Entities\KitPosTest.cs" />
+    <Compile Include="Integration\Entities\KitTest.cs" />
+    <Compile Include="Integration\Entities\KitTypeTest.cs" />
+    <Compile Include="Integration\Entities\LabelParamsTest.cs" />
+    <Compile Include="Integration\Entities\LabelParamsValueTest.cs" />
+    <Compile Include="Integration\Entities\LabelTest.cs" />
+    <Compile Include="Integration\Entities\LabelUseTest.cs" />
+    <Compile Include="Integration\Entities\MandantTest.cs" />
+    <Compile Include="Integration\Entities\MeasureTest.cs" />
+    <Compile Include="Integration\Entities\MeasureTypeTest.cs" />
+    <Compile Include="Integration\Entities\MgRouteDateSelectTest.cs" />
+    <Compile Include="Integration\Entities\MgRouteSelectTest.cs" />
+    <Compile Include="Integration\Entities\MgRouteTest.cs" />
+    <Compile Include="Integration\Entities\MinSelectTest.cs" />
+    <Compile Include="Integration\Entities\MinTest.cs" />
+    <Compile Include="Integration\Entities\MiTest.cs" />
+    <Compile Include="Integration\Entities\MIUseTest.cs" />
+    <Compile Include="Integration\Entities\MMSelectTest.cs" />
+    <Compile Include="Integration\Entities\MMTest.cs" />
+    <Compile Include="Integration\Entities\MMUseTest.cs" />
+    <Compile Include="Integration\Entities\MotionArea2GroupTest.cs" />
+    <Compile Include="Integration\Entities\MotionAreaGroupTest.cs" />
+    <Compile Include="Integration\Entities\MotionAreaGroupTrTest.cs" />
+    <Compile Include="Integration\Entities\MotionAreaTest.cs" />
+    <Compile Include="Integration\Entities\MPLSelectTest.cs" />
+    <Compile Include="Integration\Entities\MPLTest.cs" />
+    <Compile Include="Integration\Entities\MPLUseTest.cs" />
+    <Compile Include="Integration\Entities\MRSelectTest.cs" />
+    <Compile Include="Integration\Entities\MRTest.cs" />
+    <Compile Include="Integration\Entities\MRUseTest.cs" />
+    <Compile Include="Integration\Entities\MSCSelectTest.cs" />
+    <Compile Include="Integration\Entities\MSCTest.cs" />
+    <Compile Include="Integration\Entities\MSCTypeTest.cs" />
+    <Compile Include="Integration\Entities\Object2ConfigTest.cs" />
+    <Compile Include="Integration\Entities\ObjectConfigTest.cs" />
+    <Compile Include="Integration\Entities\ObjectLookUpTest.cs" />
+    <Compile Include="Integration\Entities\ObjectTreeMenuTest.cs" />
+    <Compile Include="Integration\Entities\ObjectValidTest.cs" />
+    <Compile Include="Integration\Entities\OperationStageTest.cs" />
+    <Compile Include="Integration\Entities\OutputParamTest.cs" />
+    <Compile Include="Integration\Entities\OutputTaskTest.cs" />
+    <Compile Include="Integration\Entities\OutputTest.cs" />
+    <Compile Include="Integration\Entities\OutTest.cs" />
+    <Compile Include="Integration\Entities\OWB2CargoTest.cs" />
+    <Compile Include="Integration\Entities\OWBPosTest.cs" />
+    <Compile Include="Integration\Entities\OwbTest.cs" />
+    <Compile Include="Integration\Entities\ParkingTest.cs" />
+    <Compile Include="Integration\Entities\Partner2GroupTest.cs" />
+    <Compile Include="Integration\Entities\PartnerColorTest.cs" />
+    <Compile Include="Integration\Entities\PartnerGroupTest.cs" />
+    <Compile Include="Integration\Entities\PartnerTest.cs" />
+    <Compile Include="Integration\Entities\PattCalcDataSourceTest.cs" />
+    <Compile Include="Integration\Entities\PattCalcFieldTest.cs" />
+    <Compile Include="Integration\Entities\PattCalcParamTest.cs" />
+    <Compile Include="Integration\Entities\PattCalcWhereTest.cs" />
+    <Compile Include="Integration\Entities\PattTDataSourceTest.cs" />
+    <Compile Include="Integration\Entities\PattTFieldEntityTest.cs" />
+    <Compile Include="Integration\Entities\PattTFieldSectionTest.cs" />
+    <Compile Include="Integration\Entities\PattTFieldTest.cs" />
+    <Compile Include="Integration\Entities\PattTParamsTest.cs" />
+    <Compile Include="Integration\Entities\PattTWhereEntityTest.cs" />
+    <Compile Include="Integration\Entities\PattTWhereSectionTest.cs" />
+    <Compile Include="Integration\Entities\Place2BlockingTest.cs" />
+    <Compile Include="Integration\Entities\PlaceClassTest.cs" />
+    <Compile Include="Integration\Entities\PlaceTest.cs" />
+    <Compile Include="Integration\Entities\PlaceTypeTest.cs" />
+    <Compile Include="Integration\Entities\PLPosTest.cs" />
+    <Compile Include="Integration\Entities\PLTest.cs" />
+    <Compile Include="Integration\Entities\PM2ArtTest.cs" />
+    <Compile Include="Integration\Entities\PM2OperationTest.cs" />
+    <Compile Include="Integration\Entities\PMConfigTest.cs" />
+    <Compile Include="Integration\Entities\PMMethod2OperationTest.cs" />
+    <Compile Include="Integration\Entities\PMMethodTest.cs" />
+    <Compile Include="Integration\Entities\PMTest.cs" />
+    <Compile Include="Integration\Entities\PrinterLogicalTest.cs" />
+    <Compile Include="Integration\Entities\PrinterPhysicalTest.cs" />
+    <Compile Include="Integration\Entities\PrintStreamConfigTest.cs" />
+    <Compile Include="Integration\Entities\Product2BlockingTest.cs" />
+    <Compile Include="Integration\Entities\ProductTest.cs" />
+    <Compile Include="Integration\Entities\PurposeVisitTest.cs" />
+    <Compile Include="Integration\Entities\Qlf2MandantTest.cs" />
+    <Compile Include="Integration\Entities\QlfDetail2MandantTest.cs" />
+    <Compile Include="Integration\Entities\QlfDetailTest.cs" />
+    <Compile Include="Integration\Entities\QlfTest.cs" />
+    <Compile Include="Integration\Entities\QResTest.cs" />
+    <Compile Include="Integration\Entities\QSupplyChainTest.cs" />
+    <Compile Include="Integration\Entities\ReceiveAreaTest.cs" />
+    <Compile Include="Integration\Entities\Report2EntityTest.cs" />
+    <Compile Include="Integration\Entities\Report2ReportTest.cs" />
+    <Compile Include="Integration\Entities\Report2UserTest.cs" />
+    <Compile Include="Integration\Entities\ReportDataBufferTest.cs" />
+    <Compile Include="Integration\Entities\ReportFileTest.cs" />
+    <Compile Include="Integration\Entities\ReportFilterTest.cs" />
+    <Compile Include="Integration\Entities\ReportRedefinitionTest.cs" />
+    <Compile Include="Integration\Entities\ReportTest.cs" />
+    <Compile Include="Integration\Entities\Res2SupplyChainTest.cs" />
+    <Compile Include="Integration\Entities\ResTest.cs" />
+    <Compile Include="Integration\Entities\Right2GroupTest.cs" />
+    <Compile Include="Integration\Entities\RightGroupTest.cs" />
+    <Compile Include="Integration\Entities\RightTest.cs" />
+    <Compile Include="Integration\Entities\RouteTest.cs" />
+    <Compile Include="Integration\Entities\RuleConfigTest.cs" />
+    <Compile Include="Integration\Entities\RuleExecParamTest.cs" />
+    <Compile Include="Integration\Entities\RuleExecTest.cs" />
+    <Compile Include="Integration\Entities\RuleParamTest.cs" />
+    <Compile Include="Integration\Entities\RuleTest.cs" />
+    <Compile Include="Integration\Entities\ScheduleTest.cs" />
+    <Compile Include="Integration\Entities\Segment2BlockingTest.cs" />
+    <Compile Include="Integration\Entities\SegmentTest.cs" />
+    <Compile Include="Integration\Entities\SegmentTypeTest.cs" />
+    <Compile Include="Integration\Entities\SequenceTest.cs" />
+    <Compile Include="Integration\Entities\SiteTest.cs" />
+    <Compile Include="Integration\Entities\SKU2PartnerTest.cs" />
+    <Compile Include="Integration\Entities\SKU2TTETest.cs" />
+    <Compile Include="Integration\Entities\SKUTest.cs" />
+    <Compile Include="Integration\Entities\BillAnalyticsTest.cs" />
+    <Compile Include="Integration\Entities\BillCalcConfigTest.cs" />
+    <Compile Include="Integration\Entities\BillBillerTest.cs" />
+    <Compile Include="Integration\Entities\BillBillEntityTest.cs" />
+    <Compile Include="Integration\Entities\BillBiller2MandantTest.cs" />
+    <Compile Include="Integration\Entities\State2OperationTest.cs" />
+    <Compile Include="Integration\Entities\StateMachineTest.cs" />
+    <Compile Include="Integration\Entities\StatusTest.cs" />
+    <Compile Include="Integration\Entities\SupplyAreaTest.cs" />
+    <Compile Include="Integration\Entities\SupplyChainTest.cs" />
+    <Compile Include="Integration\Entities\SysArchInstTest.cs" />
+    <Compile Include="Integration\Entities\SysArchTest.cs" />
+    <Compile Include="Integration\Entities\SysEnumTest.cs" />
+    <Compile Include="Integration\Entities\SysEventTest.cs" />
+    <Compile Include="Integration\Entities\SysObjectTest.cs" />
+    <Compile Include="Integration\Entities\SysServiceTest.cs" />
+    <Compile Include="Integration\Entities\TE2BlockingTest.cs" />
+    <Compile Include="Integration\Entities\TETest.cs" />
+    <Compile Include="Integration\Entities\TEType2MandantTest.cs" />
+    <Compile Include="Integration\Entities\TEType2PlaceClassTest.cs" />
+    <Compile Include="Integration\Entities\TEType2TETypeTest.cs" />
+    <Compile Include="Integration\Entities\TEType2TruckTypeTest.cs" />
+    <Compile Include="Integration\Entities\TETypeTest.cs" />
+    <Compile Include="Integration\Entities\TransitDataTest.cs" />
+    <Compile Include="Integration\Entities\TransitTest.cs" />
+    <Compile Include="Integration\Entities\TransportTaskTest.cs" />
+    <Compile Include="Integration\Entities\TransportTaskTypeTest.cs" />
+    <Compile Include="Integration\Entities\Truck2MotionAreaGroupTest.cs" />
+    <Compile Include="Integration\Entities\TruckTest.cs" />
+    <Compile Include="Integration\Entities\TruckTypeTest.cs" />
+    <Compile Include="Integration\Entities\UIButtonTest.cs" />
+    <Compile Include="Integration\Entities\User2GroupTest.cs" />
+    <Compile Include="Integration\Entities\User2MandantTest.cs" />
+    <Compile Include="Integration\Entities\UserEnumTest.cs" />
+    <Compile Include="Integration\Entities\UserGroupTest.cs" />
+    <Compile Include="Integration\Entities\UserTest.cs" />
+    <Compile Include="Integration\Entities\VATTypeTest.cs" />
+    <Compile Include="Integration\Entities\VehiclePassTest.cs" />
+    <Compile Include="Integration\Entities\VehicleTest.cs" />
+    <Compile Include="Integration\Entities\W2E2WorkingTest.cs" />
+    <Compile Include="Integration\Entities\WeightControlTest.cs" />
+    <Compile Include="Integration\Entities\Work2EntityTest.cs" />
+    <Compile Include="Integration\Entities\Worker2GroupTest.cs" />
+    <Compile Include="Integration\Entities\Worker2WarehouseTest.cs" />
+    <Compile Include="Integration\Entities\WorkerGroupTest.cs" />
+    <Compile Include="Integration\Entities\WorkerPassTest.cs" />
+    <Compile Include="Integration\Entities\WorkerTest.cs" />
+    <Compile Include="Integration\Entities\WorkGroupTest.cs" />
+    <Compile Include="Integration\Entities\WorkingTest.cs" />
+    <Compile Include="Integration\Entities\WorkTest.cs" />
+    <Compile Include="Integration\Entities\WTSelectTest.cs" />
+    <Compile Include="Integration\Entities\WTVTest.cs" />
+    <Compile Include="Integration\Entities\_BaseEntityTest.cs" />
+    <Compile Include="Integration\Entities\CarTypeTest.cs" />
+    <Compile Include="Integration\Entities\ProductBlockingTest.cs" />
+    <Compile Include="Integration\Entities\WarehouseTest.cs" />
+    <Compile Include="Integration\GlobalParamTest.cs" />
+    <Compile Include="Integration\SysObjectTest.cs" />
+    <Compile Include="Integration\Workflow\TestActivity.cs" />
+    <Compile Include="Integration\Workflow\WorkflowTest.cs" />
+    <Compile Include="Integration\EntityTestsSetUpClass.cs" />
+    <Compile Include="Probe\XmlSerializeOfList.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Unit\CacheTest.cs" />
+    <Compile Include="Unit\CalcEngine.cs" />
+    <Compile Include="Integration\DataFieldHelperTest.cs" />
+    <Compile Include="Unit\GlobalMacrlosesTest.cs" />
+    <Compile Include="Unit\PlaceCheckHashTest.cs" />
+    <Compile Include="Unit\TestExpressions.cs" />
+    <Compile Include="Unit\ValidateStrategiesTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Integration\sql\fill.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\APS\wmsMLC.APS.wmsSDCL\db.ODAC.config">
+      <Link>db.ODAC.config</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Activities\wmsMLC.Activities.General\wmsMLC.Activities.General.csproj">
+      <Project>{98EC024C-6439-44B1-8B1E-29E457B2201F}</Project>
+      <Name>wmsMLC.Activities.General</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Business\wmsMLC.Business.Managers\wmsMLC.Business.Managers.csproj">
+      <Project>{19243B19-DEC2-49C1-83A1-C1BFC861C9E3}</Project>
+      <Name>wmsMLC.Business.Managers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Business\wmsMLC.Business.Objects\wmsMLC.Business.Objects.csproj">
+      <Project>{67D93016-602C-462B-BE46-9FDFA9ED2566}</Project>
+      <Name>wmsMLC.Business.Objects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Business\wmsMLC.Business\wmsMLC.Business.csproj">
+      <Project>{DE1F83E8-8785-475F-9D0E-19AF3F12C684}</Project>
+      <Name>wmsMLC.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\General\wmsMLC.General.BL\wmsMLC.General.BL.csproj">
+      <Project>{DCD24E7C-7328-4D5F-9796-F77312E13EA3}</Project>
+      <Name>wmsMLC.General.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\General\wmsMLC.General.DAL.Oracle\wmsMLC.General.DAL.Oracle.csproj">
+      <Project>{232A6DA0-3D04-4F84-8C51-9ECA469EF638}</Project>
+      <Name>wmsMLC.General.DAL.Oracle</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\General\wmsMLC.General.DAL\wmsMLC.General.DAL.csproj">
+      <Project>{32CF6C98-D476-446B-AC2B-8A36E6430D91}</Project>
+      <Name>wmsMLC.General.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\General\wmsMLC.General.Types\wmsMLC.General.Types.csproj">
+      <Project>{C095CABB-A2BC-45F2-9592-9E75E909622B}</Project>
+      <Name>wmsMLC.General.Types</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\General\wmsMLC.General\wmsMLC.General.csproj">
+      <Project>{123BA357-AAC6-4E30-8AF9-9CD944BF25DF}</Project>
+      <Name>wmsMLC.General</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Integration\sql\delete.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+  <Import Project="..\..\..\Packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\..\Packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

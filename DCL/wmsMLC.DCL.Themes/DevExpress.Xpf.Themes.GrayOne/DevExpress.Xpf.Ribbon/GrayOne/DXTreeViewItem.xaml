@@ -1,0 +1,189 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon" xmlns:dxrt="http://schemas.devexpress.com/winfx/2008/xaml/ribbon/themekeys" xmlns:dxcn="http://schemas.devexpress.com/winfx/2008/xaml/core/internal">
+
+    <!--BEGIN WPF-->
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/DevExpress.Xpf.Ribbon.v15.2;component/Themes/Generic/DXTreeViewItem.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <!--END WPF-->
+
+    <ControlTemplate x:Key="{dxrt:DXTreeViewItemThemeKey ResourceKey=ExpanderTemplate}" TargetType="{x:Type dxr:RibbonCheckedBorderControl}">
+        <Grid x:Name="Root" Background="Transparent" Width="14" Height="14" SnapsToDevicePixels="True">
+            <Path x:Name="GlyphExpanded" Stretch="Fill" Fill="#FF80838F" Data="F1 M 258,219L 264,219L 264,213L 258,219 Z " Width="6" Height="6" Visibility="Collapsed" />
+            <Path x:Name="GlyphCollapsed" Stretch="Fill" Fill="#FF80838F" Data="F1 M 252,218L 256,214L 252,210L 252,218 Z " Width="4" Height="8" />
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CheckedStates">
+                    <VisualState x:Name="Unchecked" />
+                    <VisualState x:Name="Checked">
+                        <Storyboard>                            
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="GlyphCollapsed" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Collapsed" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="GlyphExpanded" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Visible" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Hover" />
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Grid>
+    </ControlTemplate>
+
+    <Style x:Key="{dxrt:DXTreeViewItemThemeKey ResourceKey=ExpanderStyle}" TargetType="{x:Type dxr:RibbonCheckedBorderControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxrt:DXTreeViewItemThemeKey ResourceKey=ExpanderTemplate}}" />
+        <Setter Property="Margin" Value="4" />
+    </Style>
+
+    <Style x:Key="{dxrt:DXTreeViewItemThemeKey ResourceKey=ItemsPresenterStyle}" TargetType="{x:Type ItemsPresenter}">
+        <Setter Property="Margin" Value="20,0,0,0" />
+    </Style>
+
+    <Style x:Key="{dxrt:DXTreeViewItemThemeKey ResourceKey=ContentStyle}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Margin" Value="2" />
+        <Setter Property="Foreground" Value="#FF201F35" />
+    </Style>
+
+    <Style x:Key="{dxrt:DXTreeViewItemThemeKey ResourceKey=GlyphStyle}" TargetType="{x:Type Image}">
+        <Setter Property="Margin" Value="2" />
+    </Style>
+
+    <!-- For Removing -->
+    <Style x:Key="{dxrt:DXTreeViewItemThemeKey ResourceKey=GlyphContainerStyle}" TargetType="{x:Type ContentControl}" />
+
+    <ControlTemplate x:Key="{dxrt:DXTreeViewItemThemeKey ResourceKey=BorderTemplate}" TargetType="{x:Type dxr:RibbonCheckedBorderControl}">
+        <Grid SnapsToDevicePixels="True">
+            <Border x:Name="PART_Normal" />
+            <Border x:Name="PART_Hover" BorderThickness="1" CornerRadius="2" Padding="1" Opacity="0">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFF4F6FE" Offset="0" />
+                        <GradientStop Color="#FFF4F6FE" Offset="1" />
+                        <GradientStop Color="#FFECEFF7" Offset="0.25" />
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Border.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFCECFD5" Offset="0" />
+                        <GradientStop Color="#FFCECFD5" Offset="1" />
+                        <GradientStop Color="#FFACAFB8" Offset="0.25" /> 
+                    </LinearGradientBrush>
+                </Border.BorderBrush>
+                <Border CornerRadius="1">
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFE5EBFF" Offset="0" />
+                            <GradientStop Color="#FFE4EBFD" Offset="1" />
+                            <GradientStop Color="#FFDEE6FE" Offset="0.25" />
+                        </LinearGradientBrush>
+                    </Border.Background>
+                </Border>
+            </Border>
+            <Border x:Name="PART_Pressed" BorderThickness="1" CornerRadius="2" Padding="1" Opacity="0">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFF4F6FE" Offset="0" />
+                        <GradientStop Color="#FFF4F6FE" Offset="1" />
+                        <GradientStop Color="#FFECEFF7" Offset="0.25" />
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Border.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFAEAFB5" Offset="0" />
+                        <GradientStop Color="#FFAEAFB5" Offset="1" />
+                        <GradientStop Color="#FF8C8F98" Offset="0.25" />
+                    </LinearGradientBrush>
+                </Border.BorderBrush>
+                <Border CornerRadius="1">
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFE7EDFF" Offset="0" />
+                            <GradientStop Color="#FFDEE6FE" Offset="1" />
+                            <GradientStop Color="#FFD2DEFC" Offset="0.25" />
+                        </LinearGradientBrush>
+                    </Border.Background>
+                </Border>
+            </Border>
+            <ContentControl Content="{TemplateBinding Content}" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" />
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="PART_Hover" Storyboard.TargetProperty="Opacity" Duration="0" To="0" />
+                            <DoubleAnimation Storyboard.TargetName="PART_Pressed" Storyboard.TargetProperty="Opacity" Duration="0" To="0" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Hover">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="PART_Hover" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <DoubleAnimation Storyboard.TargetName="PART_Pressed" Storyboard.TargetProperty="Opacity" Duration="0" To="0" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="PART_Hover" Storyboard.TargetProperty="Opacity" Duration="0" To="0" />
+                            <DoubleAnimation Storyboard.TargetName="PART_Pressed" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Checked">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="PART_Hover" Storyboard.TargetProperty="Opacity" Duration="0" To="0" />
+                            <DoubleAnimation Storyboard.TargetName="PART_Pressed" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Focused">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="PART_Hover" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <DoubleAnimation Storyboard.TargetName="PART_Pressed" Storyboard.TargetProperty="Opacity" Duration="0" To="0" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Grid>
+    </ControlTemplate>
+
+    <Style x:Key="{dxrt:DXTreeViewItemThemeKey ResourceKey=BorderStyle}" TargetType="{x:Type dxr:RibbonCheckedBorderControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxrt:DXTreeViewItemThemeKey ResourceKey=BorderTemplate}}" />
+    </Style>
+
+    <!--GroupItem-->
+
+    <Style x:Key="{dxrt:DXTreeViewGroupItemThemeKey ResourceKey=ItemsPresenterStyle}" TargetType="{x:Type ItemsPresenter}">
+        <Setter Property="Margin" Value="1" />
+    </Style>
+
+    <Style x:Key="{dxrt:DXTreeViewGroupItemThemeKey ResourceKey=ContentStyle}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#FF201F35" />
+    </Style>
+
+    <ControlTemplate x:Key="{dxrt:DXTreeViewGroupItemThemeKey ResourceKey=BorderTemplate}" TargetType="{x:Type dxr:RibbonCheckedBorderControl}">
+        <Grid>
+            <Grid Background="#FFFFFFFF">
+                <Grid.OpacityMask>
+                    <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                        <GradientStop Color="#00FFFFFF" Offset="0" />
+                        <GradientStop Color="#00FFFFFF" Offset="1" />
+                        <GradientStop Color="#FFFFFFFF" Offset="0.5" />
+                    </LinearGradientBrush>
+                </Grid.OpacityMask>
+                <Grid.Effect>
+                    <DropShadowEffect x:Name="Shadow" Direction="270" ShadowDepth="1" BlurRadius="5" Opacity="0.15" />
+                </Grid.Effect>
+                <Border Margin="1,1,1,2">
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFFFFFFF" Offset="0" />
+                            <GradientStop Color="#FFF9FAFB" Offset="1" />
+                            <GradientStop Color="#FFE2E4EA" Offset="0.5" />
+                        </LinearGradientBrush>
+                    </Border.Background>
+                </Border>
+                <Border x:Name="Separator" Background="#FF9DA0AA" Height="1" VerticalAlignment="Bottom" />
+            </Grid>
+            <ContentControl Content="{TemplateBinding Content}" Margin="1" />
+        </Grid>
+    </ControlTemplate>
+
+    <Style x:Key="{dxrt:DXTreeViewGroupItemThemeKey ResourceKey=BorderStyle}" TargetType="{x:Type dxr:RibbonCheckedBorderControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxrt:DXTreeViewGroupItemThemeKey ResourceKey=BorderTemplate}}" />
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="wmsMLC.DCL.General.ViewModels.Menu.BarItem" Collapsed="true">
+    <Position X="6.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAgIAAAAwAAEBAQBAAAAAQAAAQAAAAACAAAIAQAAAA=</HashCode>
+      <FileName>ViewModels\Menu\BarItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="wmsMLC.DCL.General.ViewModels.Menu.CheckCommandMenuItem" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAACAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>ViewModels\Menu\CheckCommandMenuItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="wmsMLC.DCL.General.ViewModels.Menu.CommandMenuItem" Collapsed="true">
+    <Position X="1.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACQAQAAAAARAAQAQAAgAAAAAAAABAAAAA=</HashCode>
+      <FileName>ViewModels\Menu\CommandMenuItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="wmsMLC.DCL.General.ViewModels.Menu.CommonMenuItemBase" Collapsed="true">
+    <Position X="1.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAABAAAAJBAAAAAgAgQAAQAgAABAQAAgQAQ=</HashCode>
+      <FileName>ViewModels\Menu\CommonMenuItemBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="wmsMLC.DCL.General.ViewModels.Menu.ListMenuItem" Collapsed="true">
+    <Position X="2.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgIAAAAQAAABAAAAAAAEQAAAAAAgAAEAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\Menu\ListMenuItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="wmsMLC.DCL.General.ViewModels.Menu.MenuItemBase" Collapsed="true">
+    <Position X="2.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAEAAQAAAgAAAAEAAAAAAACIAAIAQAAAA=</HashCode>
+      <FileName>ViewModels\Menu\MenuItemBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="wmsMLC.DCL.General.ViewModels.Menu.MenuViewModelBase" Collapsed="true">
+    <Position X="2.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAACAAAAQEAAEAgAQAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>ViewModels\Menu\MenuViewModelBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="wmsMLC.DCL.General.ViewModels.Menu.SeparatorMenuItem" Collapsed="true">
+    <Position X="4.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\Menu\SeparatorMenuItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="wmsMLC.DCL.General.ViewModels.Menu.SubListMenuItem" Collapsed="true">
+    <Position X="2.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\Menu\SubListMenuItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="wmsMLC.DCL.General.ViewModels.Menu.GlyphSizeType">
+    <Position X="9.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIABgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\Menu\BarItem.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="wmsMLC.DCL.General.ViewModels.Menu.GlyphAlignmentType">
+    <Position X="9.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAIAAAACACAAAAAAAA=</HashCode>
+      <FileName>ViewModels\Menu\CommonMenuItemBase.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="wmsMLC.DCL.General.ViewModels.Menu.DisplayModeType">
+    <Position X="9.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAIAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\Menu\CommonMenuItemBase.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

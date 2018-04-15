@@ -1,0 +1,3963 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfArtWrapper xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>22</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE>35</ARTSIZE>
+    <ARTNAME>8680367385068</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>2K3872Z6</ARTHOSTREF>
+    <ARTDESCEXT />
+    <ARTDESC>AYK,ECOLE</ARTDESC>
+    <ARTCOLOR>8XN</ARTCOLOR>
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>0</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>WKK</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>WKK_OSN</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>22</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>WKK_OSN</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>0</ART2GROUPREBINDING>
+        <MandantCode>WKK</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>22</MANDANTID>
+        <SKUNAME>8680367385068 (шт 1)</SKUNAME>
+        <SKUDESC>AYK,ECOLE - шт</SKUDESC>
+        <MEASURECODE_R>PCE</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <BarcodeList>
+          <BarcodeWrapper>
+            <UpdateNullValues>false</UpdateNullValues>
+            <BARCODE2ENTITY>SKU</BARCODE2ENTITY>
+            <BARCODEID xsi:nil="true" />
+            <BARCODEVALUE>8680367385068</BARCODEVALUE>
+          </BarcodeWrapper>
+        </BarcodeList>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>1000000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>22</MANDANTID>
+            <SKU2TTETETYPECODE>CRT400x600x400</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>WKK</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK />
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL />
+    <BEFOREPROCESSINGWFCODE />
+    <COUNTRYCODE_R />
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>22</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE>36</ARTSIZE>
+    <ARTNAME>8680367389448</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>2K3872Z6</ARTHOSTREF>
+    <ARTDESCEXT />
+    <ARTDESC>AYK,ECOLE</ARTDESC>
+    <ARTCOLOR>8XN</ARTCOLOR>
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>0</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>WKK</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>WKK_OSN</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>22</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>WKK_OSN</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>0</ART2GROUPREBINDING>
+        <MandantCode>WKK</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>22</MANDANTID>
+        <SKUNAME>8680367389448 (шт 1)</SKUNAME>
+        <SKUDESC>AYK,ECOLE - шт</SKUDESC>
+        <MEASURECODE_R>PCE</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <BarcodeList>
+          <BarcodeWrapper>
+            <UpdateNullValues>false</UpdateNullValues>
+            <BARCODE2ENTITY>SKU</BARCODE2ENTITY>
+            <BARCODEID xsi:nil="true" />
+            <BARCODEVALUE>8680367389448</BARCODEVALUE>
+          </BarcodeWrapper>
+        </BarcodeList>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>1000000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>22</MANDANTID>
+            <SKU2TTETETYPECODE>CRT400x600x400</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>WKK</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK />
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL />
+    <BEFOREPROCESSINGWFCODE />
+    <COUNTRYCODE_R />
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>22</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE>37</ARTSIZE>
+    <ARTNAME>8680367389455</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>2K3872Z6</ARTHOSTREF>
+    <ARTDESCEXT />
+    <ARTDESC>AYK,ECOLE</ARTDESC>
+    <ARTCOLOR>8XN</ARTCOLOR>
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>0</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>WKK</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>WKK_OSN</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>22</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>WKK_OSN</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>0</ART2GROUPREBINDING>
+        <MandantCode>WKK</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>22</MANDANTID>
+        <SKUNAME>8680367389455 (шт 1)</SKUNAME>
+        <SKUDESC>AYK,ECOLE - шт</SKUDESC>
+        <MEASURECODE_R>PCE</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <BarcodeList>
+          <BarcodeWrapper>
+            <UpdateNullValues>false</UpdateNullValues>
+            <BARCODE2ENTITY>SKU</BARCODE2ENTITY>
+            <BARCODEID xsi:nil="true" />
+            <BARCODEVALUE>8680367389455</BARCODEVALUE>
+          </BarcodeWrapper>
+        </BarcodeList>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>1000000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>22</MANDANTID>
+            <SKU2TTETETYPECODE>CRT400x600x400</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>WKK</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK />
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL />
+    <BEFOREPROCESSINGWFCODE />
+    <COUNTRYCODE_R />
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>22</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE>38</ARTSIZE>
+    <ARTNAME>8680367389462</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>2K3872Z6</ARTHOSTREF>
+    <ARTDESCEXT />
+    <ARTDESC>AYK,ECOLE</ARTDESC>
+    <ARTCOLOR>8XN</ARTCOLOR>
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>0</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>WKK</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>WKK_OSN</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>22</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>WKK_OSN</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>0</ART2GROUPREBINDING>
+        <MandantCode>WKK</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>22</MANDANTID>
+        <SKUNAME>8680367389462 (шт 1)</SKUNAME>
+        <SKUDESC>AYK,ECOLE - шт</SKUDESC>
+        <MEASURECODE_R>PCE</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <BarcodeList>
+          <BarcodeWrapper>
+            <UpdateNullValues>false</UpdateNullValues>
+            <BARCODE2ENTITY>SKU</BARCODE2ENTITY>
+            <BARCODEID xsi:nil="true" />
+            <BARCODEVALUE>8680367389462</BARCODEVALUE>
+          </BarcodeWrapper>
+        </BarcodeList>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>1000000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>22</MANDANTID>
+            <SKU2TTETETYPECODE>CRT400x600x400</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>WKK</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK />
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL />
+    <BEFOREPROCESSINGWFCODE />
+    <COUNTRYCODE_R />
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>22</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE>39</ARTSIZE>
+    <ARTNAME>8680367389479</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>2K3872Z6</ARTHOSTREF>
+    <ARTDESCEXT />
+    <ARTDESC>AYK,ECOLE</ARTDESC>
+    <ARTCOLOR>8XN</ARTCOLOR>
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>0</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>WKK</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>WKK_OSN</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>22</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>WKK_OSN</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>0</ART2GROUPREBINDING>
+        <MandantCode>WKK</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>22</MANDANTID>
+        <SKUNAME>8680367389479 (шт 1)</SKUNAME>
+        <SKUDESC>AYK,ECOLE - шт</SKUDESC>
+        <MEASURECODE_R>PCE</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <BarcodeList>
+          <BarcodeWrapper>
+            <UpdateNullValues>false</UpdateNullValues>
+            <BARCODE2ENTITY>SKU</BARCODE2ENTITY>
+            <BARCODEID xsi:nil="true" />
+            <BARCODEVALUE>8680367389479</BARCODEVALUE>
+          </BarcodeWrapper>
+        </BarcodeList>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>1000000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>22</MANDANTID>
+            <SKU2TTETETYPECODE>CRT400x600x400</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>WKK</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK />
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL />
+    <BEFOREPROCESSINGWFCODE />
+    <COUNTRYCODE_R />
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>22</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE>35</ARTSIZE>
+    <ARTNAME>8680367509198</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>2K5011Z6</ARTHOSTREF>
+    <ARTDESCEXT />
+    <ARTDESC>AYK,FIYONK--</ARTDESC>
+    <ARTCOLOR>G99</ARTCOLOR>
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>0</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>WKK</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>WKK_OSN</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>22</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>WKK_OSN</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>0</ART2GROUPREBINDING>
+        <MandantCode>WKK</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>22</MANDANTID>
+        <SKUNAME>8680367509198 (шт 1)</SKUNAME>
+        <SKUDESC>AYK,FIYONK-- - шт</SKUDESC>
+        <MEASURECODE_R>PCE</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <BarcodeList>
+          <BarcodeWrapper>
+            <UpdateNullValues>false</UpdateNullValues>
+            <BARCODE2ENTITY>SKU</BARCODE2ENTITY>
+            <BARCODEID xsi:nil="true" />
+            <BARCODEVALUE>8680367509198</BARCODEVALUE>
+          </BarcodeWrapper>
+        </BarcodeList>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>1000000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>22</MANDANTID>
+            <SKU2TTETETYPECODE>CRT400x600x400</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>WKK</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK />
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL />
+    <BEFOREPROCESSINGWFCODE />
+    <COUNTRYCODE_R />
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>22</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE>35</ARTSIZE>
+    <ARTNAME>8680367803210</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>2K7577Z6</ARTHOSTREF>
+    <ARTDESCEXT />
+    <ARTDESC>AYK,CELINE---</ARTDESC>
+    <ARTCOLOR>920</ARTCOLOR>
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>0</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>WKK</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>WKK_OSN</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>22</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>WKK_OSN</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>0</ART2GROUPREBINDING>
+        <MandantCode>WKK</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>22</MANDANTID>
+        <SKUNAME>8680367803210 (шт 1)</SKUNAME>
+        <SKUDESC>AYK,CELINE--- - шт</SKUDESC>
+        <MEASURECODE_R>PCE</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <BarcodeList>
+          <BarcodeWrapper>
+            <UpdateNullValues>false</UpdateNullValues>
+            <BARCODE2ENTITY>SKU</BARCODE2ENTITY>
+            <BARCODEID xsi:nil="true" />
+            <BARCODEVALUE>8680367803210</BARCODEVALUE>
+          </BarcodeWrapper>
+        </BarcodeList>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>1000000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>22</MANDANTID>
+            <SKU2TTETETYPECODE>CRT400x600x400</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>WKK</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK />
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL />
+    <BEFOREPROCESSINGWFCODE />
+    <COUNTRYCODE_R />
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>22</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE>37</ARTSIZE>
+    <ARTNAME>8680367803395</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>2K7588Z6</ARTHOSTREF>
+    <ARTDESCEXT />
+    <ARTDESC>AYKS,CANSU---</ARTDESC>
+    <ARTCOLOR>493</ARTCOLOR>
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>0</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>WKK</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>WKK_OSN</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>22</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>WKK_OSN</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>0</ART2GROUPREBINDING>
+        <MandantCode>WKK</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>22</MANDANTID>
+        <SKUNAME>8680367803395 (шт 1)</SKUNAME>
+        <SKUDESC>AYKS,CANSU--- - шт</SKUDESC>
+        <MEASURECODE_R>PCE</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <BarcodeList>
+          <BarcodeWrapper>
+            <UpdateNullValues>false</UpdateNullValues>
+            <BARCODE2ENTITY>SKU</BARCODE2ENTITY>
+            <BARCODEID xsi:nil="true" />
+            <BARCODEVALUE>8680367803395</BARCODEVALUE>
+          </BarcodeWrapper>
+        </BarcodeList>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>1000000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>22</MANDANTID>
+            <SKU2TTETETYPECODE>CRT400x600x400</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>WKK</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK />
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL />
+    <BEFOREPROCESSINGWFCODE />
+    <COUNTRYCODE_R />
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>22</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE>36</ARTSIZE>
+    <ARTNAME>8680367803531</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>2K7585Z6</ARTHOSTREF>
+    <ARTDESCEXT />
+    <ARTDESC>AYKS,SPACE</ARTDESC>
+    <ARTCOLOR>1G3</ARTCOLOR>
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>0</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>WKK</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>WKK_OSN</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>22</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>WKK_OSN</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>0</ART2GROUPREBINDING>
+        <MandantCode>WKK</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>22</MANDANTID>
+        <SKUNAME>8680367803531 (шт 1)</SKUNAME>
+        <SKUDESC>AYKS,SPACE - шт</SKUDESC>
+        <MEASURECODE_R>PCE</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <BarcodeList>
+          <BarcodeWrapper>
+            <UpdateNullValues>false</UpdateNullValues>
+            <BARCODE2ENTITY>SKU</BARCODE2ENTITY>
+            <BARCODEID xsi:nil="true" />
+            <BARCODEVALUE>8680367803531</BARCODEVALUE>
+          </BarcodeWrapper>
+        </BarcodeList>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>1000000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>22</MANDANTID>
+            <SKU2TTETETYPECODE>CRT400x600x400</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>WKK</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK />
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL />
+    <BEFOREPROCESSINGWFCODE />
+    <COUNTRYCODE_R />
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>22</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE>39</ARTSIZE>
+    <ARTNAME>8680682470043</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>3K3189Z6</ARTHOSTREF>
+    <ARTDESCEXT />
+    <ARTDESC>BOT,MIMOZA</ARTDESC>
+    <ARTCOLOR>L77</ARTCOLOR>
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>0</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>WKK</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>WKK_OSN</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>22</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>WKK_OSN</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>0</ART2GROUPREBINDING>
+        <MandantCode>WKK</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>22</MANDANTID>
+        <SKUNAME>8680682470043 (шт 1)</SKUNAME>
+        <SKUDESC>BOT,MIMOZA - шт</SKUDESC>
+        <MEASURECODE_R>PCE</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <BarcodeList>
+          <BarcodeWrapper>
+            <UpdateNullValues>false</UpdateNullValues>
+            <BARCODE2ENTITY>SKU</BARCODE2ENTITY>
+            <BARCODEID xsi:nil="true" />
+            <BARCODEVALUE>8680682470043</BARCODEVALUE>
+          </BarcodeWrapper>
+        </BarcodeList>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>1000000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>22</MANDANTID>
+            <SKU2TTETETYPECODE>CRT400x600x400</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>WKK</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK />
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL />
+    <BEFOREPROCESSINGWFCODE />
+    <COUNTRYCODE_R />
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>22</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE>33</ARTSIZE>
+    <ARTNAME>8681044939253</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>5YB274Z4</ARTHOSTREF>
+    <ARTDESCEXT />
+    <ARTDESC>AYKS,ROOM</ARTDESC>
+    <ARTCOLOR>1L1</ARTCOLOR>
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>0</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>WKK</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>WKK_OSN</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>22</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>WKK_OSN</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>0</ART2GROUPREBINDING>
+        <MandantCode>WKK</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>22</MANDANTID>
+        <SKUNAME>8681044939253 (шт 1)</SKUNAME>
+        <SKUDESC>AYKS,ROOM - шт</SKUDESC>
+        <MEASURECODE_R>PCE</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <BarcodeList>
+          <BarcodeWrapper>
+            <UpdateNullValues>false</UpdateNullValues>
+            <BARCODE2ENTITY>SKU</BARCODE2ENTITY>
+            <BARCODEID xsi:nil="true" />
+            <BARCODEVALUE>8681044939253</BARCODEVALUE>
+          </BarcodeWrapper>
+        </BarcodeList>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>1000000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>22</MANDANTID>
+            <SKU2TTETETYPECODE>CRT400x600x400</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>WKK</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK />
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL />
+    <BEFOREPROCESSINGWFCODE />
+    <COUNTRYCODE_R />
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>22</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE>36</ARTSIZE>
+    <ARTNAME>8681169135622</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>5K4294Z6</ARTHOSTREF>
+    <ARTDESCEXT />
+    <ARTDESC>AYKS,SNEAK</ARTDESC>
+    <ARTCOLOR>1L1</ARTCOLOR>
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>0</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>WKK</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>WKK_OSN</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>22</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>WKK_OSN</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>0</ART2GROUPREBINDING>
+        <MandantCode>WKK</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>22</MANDANTID>
+        <SKUNAME>8681169135622 (шт 1)</SKUNAME>
+        <SKUDESC>AYKS,SNEAK - шт</SKUDESC>
+        <MEASURECODE_R>PCE</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <BarcodeList>
+          <BarcodeWrapper>
+            <UpdateNullValues>false</UpdateNullValues>
+            <BARCODE2ENTITY>SKU</BARCODE2ENTITY>
+            <BARCODEID xsi:nil="true" />
+            <BARCODEVALUE>8681169135622</BARCODEVALUE>
+          </BarcodeWrapper>
+        </BarcodeList>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>1000000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>22</MANDANTID>
+            <SKU2TTETETYPECODE>CRT400x600x400</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>WKK</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK />
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL />
+    <BEFOREPROCESSINGWFCODE />
+    <COUNTRYCODE_R />
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>22</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE>37</ARTSIZE>
+    <ARTNAME>8681169156597</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>5K4294Z6</ARTHOSTREF>
+    <ARTDESCEXT />
+    <ARTDESC>AYKS,SNEAK</ARTDESC>
+    <ARTCOLOR>1L1</ARTCOLOR>
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>0</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>WKK</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>WKK_OSN</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>22</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>WKK_OSN</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>0</ART2GROUPREBINDING>
+        <MandantCode>WKK</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>22</MANDANTID>
+        <SKUNAME>8681169156597 (шт 1)</SKUNAME>
+        <SKUDESC>AYKS,SNEAK - шт</SKUDESC>
+        <MEASURECODE_R>PCE</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <BarcodeList>
+          <BarcodeWrapper>
+            <UpdateNullValues>false</UpdateNullValues>
+            <BARCODE2ENTITY>SKU</BARCODE2ENTITY>
+            <BARCODEID xsi:nil="true" />
+            <BARCODEVALUE>8681169156597</BARCODEVALUE>
+          </BarcodeWrapper>
+        </BarcodeList>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>1000000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>22</MANDANTID>
+            <SKU2TTETETYPECODE>CRT400x600x400</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>WKK</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK />
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL />
+    <BEFOREPROCESSINGWFCODE />
+    <COUNTRYCODE_R />
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>22</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE>38</ARTSIZE>
+    <ARTNAME>8681169156603</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>5K4294Z6</ARTHOSTREF>
+    <ARTDESCEXT />
+    <ARTDESC>AYKS,SNEAK</ARTDESC>
+    <ARTCOLOR>1L1</ARTCOLOR>
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>0</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>WKK</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>WKK_OSN</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>22</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>WKK_OSN</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>0</ART2GROUPREBINDING>
+        <MandantCode>WKK</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>22</MANDANTID>
+        <SKUNAME>8681169156603 (шт 1)</SKUNAME>
+        <SKUDESC>AYKS,SNEAK - шт</SKUDESC>
+        <MEASURECODE_R>PCE</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <BarcodeList>
+          <BarcodeWrapper>
+            <UpdateNullValues>false</UpdateNullValues>
+            <BARCODE2ENTITY>SKU</BARCODE2ENTITY>
+            <BARCODEID xsi:nil="true" />
+            <BARCODEVALUE>8681169156603</BARCODEVALUE>
+          </BarcodeWrapper>
+        </BarcodeList>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>1000000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>22</MANDANTID>
+            <SKU2TTETETYPECODE>CRT400x600x400</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>WKK</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK />
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL />
+    <BEFOREPROCESSINGWFCODE />
+    <COUNTRYCODE_R />
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>22</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE>39</ARTSIZE>
+    <ARTNAME>8681169156610</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>5K4294Z6</ARTHOSTREF>
+    <ARTDESCEXT />
+    <ARTDESC>AYKS,SNEAK</ARTDESC>
+    <ARTCOLOR>1L1</ARTCOLOR>
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>0</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>WKK</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>WKK_OSN</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>22</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>WKK_OSN</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>0</ART2GROUPREBINDING>
+        <MandantCode>WKK</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>22</MANDANTID>
+        <SKUNAME>8681169156610 (шт 1)</SKUNAME>
+        <SKUDESC>AYKS,SNEAK - шт</SKUDESC>
+        <MEASURECODE_R>PCE</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <BarcodeList>
+          <BarcodeWrapper>
+            <UpdateNullValues>false</UpdateNullValues>
+            <BARCODE2ENTITY>SKU</BARCODE2ENTITY>
+            <BARCODEID xsi:nil="true" />
+            <BARCODEVALUE>8681169156610</BARCODEVALUE>
+          </BarcodeWrapper>
+        </BarcodeList>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>1000000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>22</MANDANTID>
+            <SKU2TTETETYPECODE>CRT400x600x400</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>WKK</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK />
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL />
+    <BEFOREPROCESSINGWFCODE />
+    <COUNTRYCODE_R />
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>22</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE>35</ARTSIZE>
+    <ARTNAME>8680367235943</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>2K2558Z6</ARTHOSTREF>
+    <ARTDESCEXT />
+    <ARTDESC>AYK,BATI</ARTDESC>
+    <ARTCOLOR>661</ARTCOLOR>
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>0</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>WKK</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>WKK_OSN</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>22</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>WKK_OSN</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>0</ART2GROUPREBINDING>
+        <MandantCode>WKK</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>22</MANDANTID>
+        <SKUNAME>8680367235943 (шт 1)</SKUNAME>
+        <SKUDESC>AYK,BATI - шт</SKUDESC>
+        <MEASURECODE_R>PCE</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <BarcodeList>
+          <BarcodeWrapper>
+            <UpdateNullValues>false</UpdateNullValues>
+            <BARCODE2ENTITY>SKU</BARCODE2ENTITY>
+            <BARCODEID xsi:nil="true" />
+            <BARCODEVALUE>8680367235943</BARCODEVALUE>
+          </BarcodeWrapper>
+        </BarcodeList>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>1000000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>22</MANDANTID>
+            <SKU2TTETETYPECODE>CRT400x600x400</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>WKK</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK />
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL />
+    <BEFOREPROCESSINGWFCODE />
+    <COUNTRYCODE_R />
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>22</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE>35</ARTSIZE>
+    <ARTNAME>8680367385068</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>2K3872Z6</ARTHOSTREF>
+    <ARTDESCEXT />
+    <ARTDESC>AYK,ECOLE</ARTDESC>
+    <ARTCOLOR>8XN</ARTCOLOR>
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>0</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>WKK</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>WKK_OSN</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>22</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>WKK_OSN</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>0</ART2GROUPREBINDING>
+        <MandantCode>WKK</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>22</MANDANTID>
+        <SKUNAME>8680367385068 (шт 1)</SKUNAME>
+        <SKUDESC>AYK,ECOLE - шт</SKUDESC>
+        <MEASURECODE_R>PCE</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <BarcodeList>
+          <BarcodeWrapper>
+            <UpdateNullValues>false</UpdateNullValues>
+            <BARCODE2ENTITY>SKU</BARCODE2ENTITY>
+            <BARCODEID xsi:nil="true" />
+            <BARCODEVALUE>8680367385068</BARCODEVALUE>
+          </BarcodeWrapper>
+        </BarcodeList>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>1000000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>22</MANDANTID>
+            <SKU2TTETETYPECODE>CRT400x600x400</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>WKK</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK />
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL />
+    <BEFOREPROCESSINGWFCODE />
+    <COUNTRYCODE_R />
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>22</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE>35</ARTSIZE>
+    <ARTNAME>8680367509198</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>2K5011Z6</ARTHOSTREF>
+    <ARTDESCEXT />
+    <ARTDESC>AYK,FIYONK--</ARTDESC>
+    <ARTCOLOR>G99</ARTCOLOR>
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>0</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>WKK</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>WKK_OSN</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>22</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>WKK_OSN</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>0</ART2GROUPREBINDING>
+        <MandantCode>WKK</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>22</MANDANTID>
+        <SKUNAME>8680367509198 (шт 1)</SKUNAME>
+        <SKUDESC>AYK,FIYONK-- - шт</SKUDESC>
+        <MEASURECODE_R>PCE</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <BarcodeList>
+          <BarcodeWrapper>
+            <UpdateNullValues>false</UpdateNullValues>
+            <BARCODE2ENTITY>SKU</BARCODE2ENTITY>
+            <BARCODEID xsi:nil="true" />
+            <BARCODEVALUE>8680367509198</BARCODEVALUE>
+          </BarcodeWrapper>
+        </BarcodeList>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>1000000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>22</MANDANTID>
+            <SKU2TTETETYPECODE>CRT400x600x400</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>WKK</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK />
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL />
+    <BEFOREPROCESSINGWFCODE />
+    <COUNTRYCODE_R />
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>22</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE>35</ARTSIZE>
+    <ARTNAME>8680367800783</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>2K7585Z6</ARTHOSTREF>
+    <ARTDESCEXT />
+    <ARTDESC>AYKS,SPACE</ARTDESC>
+    <ARTCOLOR>1G3</ARTCOLOR>
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>0</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>WKK</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>WKK_OSN</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>22</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>WKK_OSN</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>0</ART2GROUPREBINDING>
+        <MandantCode>WKK</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>22</MANDANTID>
+        <SKUNAME>8680367800783 (шт 1)</SKUNAME>
+        <SKUDESC>AYKS,SPACE - шт</SKUDESC>
+        <MEASURECODE_R>PCE</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <BarcodeList>
+          <BarcodeWrapper>
+            <UpdateNullValues>false</UpdateNullValues>
+            <BARCODE2ENTITY>SKU</BARCODE2ENTITY>
+            <BARCODEID xsi:nil="true" />
+            <BARCODEVALUE>8680367800783</BARCODEVALUE>
+          </BarcodeWrapper>
+        </BarcodeList>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>1000000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>22</MANDANTID>
+            <SKU2TTETETYPECODE>CRT400x600x400</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>WKK</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK />
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL />
+    <BEFOREPROCESSINGWFCODE />
+    <COUNTRYCODE_R />
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>22</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE>34</ARTSIZE>
+    <ARTNAME>8680367800813</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>2K7588Z6</ARTHOSTREF>
+    <ARTDESCEXT />
+    <ARTDESC>AYKS,CANSU---</ARTDESC>
+    <ARTCOLOR>493</ARTCOLOR>
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>0</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>WKK</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>WKK_OSN</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>22</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>WKK_OSN</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>0</ART2GROUPREBINDING>
+        <MandantCode>WKK</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>22</MANDANTID>
+        <SKUNAME>8680367800813 (шт 1)</SKUNAME>
+        <SKUDESC>AYKS,CANSU--- - шт</SKUDESC>
+        <MEASURECODE_R>PCE</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <BarcodeList>
+          <BarcodeWrapper>
+            <UpdateNullValues>false</UpdateNullValues>
+            <BARCODE2ENTITY>SKU</BARCODE2ENTITY>
+            <BARCODEID xsi:nil="true" />
+            <BARCODEVALUE>8680367800813</BARCODEVALUE>
+          </BarcodeWrapper>
+        </BarcodeList>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>1000000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>22</MANDANTID>
+            <SKU2TTETETYPECODE>CRT400x600x400</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>WKK</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK />
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL />
+    <BEFOREPROCESSINGWFCODE />
+    <COUNTRYCODE_R />
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>22</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE>35</ARTSIZE>
+    <ARTNAME>8680367803371</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>2K7588Z6</ARTHOSTREF>
+    <ARTDESCEXT />
+    <ARTDESC>AYKS,CANSU---</ARTDESC>
+    <ARTCOLOR>493</ARTCOLOR>
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>0</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>WKK</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>WKK_OSN</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>22</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>WKK_OSN</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>0</ART2GROUPREBINDING>
+        <MandantCode>WKK</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>22</MANDANTID>
+        <SKUNAME>8680367803371 (шт 1)</SKUNAME>
+        <SKUDESC>AYKS,CANSU--- - шт</SKUDESC>
+        <MEASURECODE_R>PCE</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <BarcodeList>
+          <BarcodeWrapper>
+            <UpdateNullValues>false</UpdateNullValues>
+            <BARCODE2ENTITY>SKU</BARCODE2ENTITY>
+            <BARCODEID xsi:nil="true" />
+            <BARCODEVALUE>8680367803371</BARCODEVALUE>
+          </BarcodeWrapper>
+        </BarcodeList>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>1000000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>22</MANDANTID>
+            <SKU2TTETETYPECODE>CRT400x600x400</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>WKK</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK />
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL />
+    <BEFOREPROCESSINGWFCODE />
+    <COUNTRYCODE_R />
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>22</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE>36</ARTSIZE>
+    <ARTNAME>8680367803388</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>2K7588Z6</ARTHOSTREF>
+    <ARTDESCEXT />
+    <ARTDESC>AYKS,CANSU---</ARTDESC>
+    <ARTCOLOR>493</ARTCOLOR>
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>0</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>WKK</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>WKK_OSN</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>22</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>WKK_OSN</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>0</ART2GROUPREBINDING>
+        <MandantCode>WKK</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>22</MANDANTID>
+        <SKUNAME>8680367803388 (шт 1)</SKUNAME>
+        <SKUDESC>AYKS,CANSU--- - шт</SKUDESC>
+        <MEASURECODE_R>PCE</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <BarcodeList>
+          <BarcodeWrapper>
+            <UpdateNullValues>false</UpdateNullValues>
+            <BARCODE2ENTITY>SKU</BARCODE2ENTITY>
+            <BARCODEID xsi:nil="true" />
+            <BARCODEVALUE>8680367803388</BARCODEVALUE>
+          </BarcodeWrapper>
+        </BarcodeList>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>1000000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>22</MANDANTID>
+            <SKU2TTETETYPECODE>CRT400x600x400</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>WKK</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK />
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL />
+    <BEFOREPROCESSINGWFCODE />
+    <COUNTRYCODE_R />
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>22</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE>37</ARTSIZE>
+    <ARTNAME>8680367803395</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>2K7588Z6</ARTHOSTREF>
+    <ARTDESCEXT />
+    <ARTDESC>AYKS,CANSU---</ARTDESC>
+    <ARTCOLOR>493</ARTCOLOR>
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>0</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>WKK</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>WKK_OSN</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>22</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>WKK_OSN</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>0</ART2GROUPREBINDING>
+        <MandantCode>WKK</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>22</MANDANTID>
+        <SKUNAME>8680367803395 (шт 1)</SKUNAME>
+        <SKUDESC>AYKS,CANSU--- - шт</SKUDESC>
+        <MEASURECODE_R>PCE</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <BarcodeList>
+          <BarcodeWrapper>
+            <UpdateNullValues>false</UpdateNullValues>
+            <BARCODE2ENTITY>SKU</BARCODE2ENTITY>
+            <BARCODEID xsi:nil="true" />
+            <BARCODEVALUE>8680367803395</BARCODEVALUE>
+          </BarcodeWrapper>
+        </BarcodeList>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>1000000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>22</MANDANTID>
+            <SKU2TTETETYPECODE>CRT400x600x400</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>WKK</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK />
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL />
+    <BEFOREPROCESSINGWFCODE />
+    <COUNTRYCODE_R />
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>22</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE>38</ARTSIZE>
+    <ARTNAME>8680367803401</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>2K7588Z6</ARTHOSTREF>
+    <ARTDESCEXT />
+    <ARTDESC>AYKS,CANSU---</ARTDESC>
+    <ARTCOLOR>493</ARTCOLOR>
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>0</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>WKK</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>WKK_OSN</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>22</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>WKK_OSN</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>0</ART2GROUPREBINDING>
+        <MandantCode>WKK</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>22</MANDANTID>
+        <SKUNAME>8680367803401 (шт 1)</SKUNAME>
+        <SKUDESC>AYKS,CANSU--- - шт</SKUDESC>
+        <MEASURECODE_R>PCE</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <BarcodeList>
+          <BarcodeWrapper>
+            <UpdateNullValues>false</UpdateNullValues>
+            <BARCODE2ENTITY>SKU</BARCODE2ENTITY>
+            <BARCODEID xsi:nil="true" />
+            <BARCODEVALUE>8680367803401</BARCODEVALUE>
+          </BarcodeWrapper>
+        </BarcodeList>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>1000000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>22</MANDANTID>
+            <SKU2TTETETYPECODE>CRT400x600x400</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>WKK</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK />
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL />
+    <BEFOREPROCESSINGWFCODE />
+    <COUNTRYCODE_R />
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>22</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE>36</ARTSIZE>
+    <ARTNAME>8680367803531</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>2K7585Z6</ARTHOSTREF>
+    <ARTDESCEXT />
+    <ARTDESC>AYKS,SPACE</ARTDESC>
+    <ARTCOLOR>1G3</ARTCOLOR>
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>0</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>WKK</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>WKK_OSN</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>22</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>WKK_OSN</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>0</ART2GROUPREBINDING>
+        <MandantCode>WKK</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>22</MANDANTID>
+        <SKUNAME>8680367803531 (шт 1)</SKUNAME>
+        <SKUDESC>AYKS,SPACE - шт</SKUDESC>
+        <MEASURECODE_R>PCE</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <BarcodeList>
+          <BarcodeWrapper>
+            <UpdateNullValues>false</UpdateNullValues>
+            <BARCODE2ENTITY>SKU</BARCODE2ENTITY>
+            <BARCODEID xsi:nil="true" />
+            <BARCODEVALUE>8680367803531</BARCODEVALUE>
+          </BarcodeWrapper>
+        </BarcodeList>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>1000000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>22</MANDANTID>
+            <SKU2TTETETYPECODE>CRT400x600x400</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>WKK</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK />
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL />
+    <BEFOREPROCESSINGWFCODE />
+    <COUNTRYCODE_R />
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>22</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE>36</ARTSIZE>
+    <ARTNAME>8681169134014</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>5K1070Z6</ARTHOSTREF>
+    <ARTDESCEXT />
+    <ARTDESC>AYKS,RUNNER-</ARTDESC>
+    <ARTCOLOR>1L1</ARTCOLOR>
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>0</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>WKK</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>WKK_OSN</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>22</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>WKK_OSN</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>0</ART2GROUPREBINDING>
+        <MandantCode>WKK</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>22</MANDANTID>
+        <SKUNAME>8681169134014 (шт 1)</SKUNAME>
+        <SKUDESC>AYKS,RUNNER- - шт</SKUDESC>
+        <MEASURECODE_R>PCE</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <BarcodeList>
+          <BarcodeWrapper>
+            <UpdateNullValues>false</UpdateNullValues>
+            <BARCODE2ENTITY>SKU</BARCODE2ENTITY>
+            <BARCODEID xsi:nil="true" />
+            <BARCODEVALUE>8681169134014</BARCODEVALUE>
+          </BarcodeWrapper>
+        </BarcodeList>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>1000000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>22</MANDANTID>
+            <SKU2TTETETYPECODE>CRT400x600x400</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>WKK</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK />
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL />
+    <BEFOREPROCESSINGWFCODE />
+    <COUNTRYCODE_R />
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>22</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE>39</ARTSIZE>
+    <ARTNAME>8681169156559</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>5K1070Z6</ARTHOSTREF>
+    <ARTDESCEXT />
+    <ARTDESC>AYKS,RUNNER-</ARTDESC>
+    <ARTCOLOR>1L1</ARTCOLOR>
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>0</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>WKK</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>WKK_OSN</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>22</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>WKK_OSN</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>0</ART2GROUPREBINDING>
+        <MandantCode>WKK</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>22</MANDANTID>
+        <SKUNAME>8681169156559 (шт 1)</SKUNAME>
+        <SKUDESC>AYKS,RUNNER- - шт</SKUDESC>
+        <MEASURECODE_R>PCE</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <BarcodeList>
+          <BarcodeWrapper>
+            <UpdateNullValues>false</UpdateNullValues>
+            <BARCODE2ENTITY>SKU</BARCODE2ENTITY>
+            <BARCODEID xsi:nil="true" />
+            <BARCODEVALUE>8681169156559</BARCODEVALUE>
+          </BarcodeWrapper>
+        </BarcodeList>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>1000000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>22</MANDANTID>
+            <SKU2TTETETYPECODE>CRT400x600x400</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>WKK</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK />
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL />
+    <BEFOREPROCESSINGWFCODE />
+    <COUNTRYCODE_R />
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>22</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE>3y</ARTSIZE>
+    <ARTNAME>8681044514238</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>5K0780Z4</ARTHOSTREF>
+    <ARTDESCEXT />
+    <ARTDESC>HRK,KP.MODA</ARTDESC>
+    <ARTCOLOR>5WY</ARTCOLOR>
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>0</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>WKK</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>WKK_OSN</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>22</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>WKK_OSN</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>0</ART2GROUPREBINDING>
+        <MandantCode>WKK</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>22</MANDANTID>
+        <SKUNAME>8681044514238 (шт 1)</SKUNAME>
+        <SKUDESC>HRK,KP.MODA - шт</SKUDESC>
+        <MEASURECODE_R>PCE</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <BarcodeList>
+          <BarcodeWrapper>
+            <UpdateNullValues>false</UpdateNullValues>
+            <BARCODE2ENTITY>SKU</BARCODE2ENTITY>
+            <BARCODEID xsi:nil="true" />
+            <BARCODEVALUE>8681044514238</BARCODEVALUE>
+          </BarcodeWrapper>
+        </BarcodeList>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>1000000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>22</MANDANTID>
+            <SKU2TTETETYPECODE>CRT400x600x400</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>WKK</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK />
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL />
+    <BEFOREPROCESSINGWFCODE />
+    <COUNTRYCODE_R />
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>22</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE>4y</ARTSIZE>
+    <ARTNAME>8681044784549</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>5K0780Z4</ARTHOSTREF>
+    <ARTDESCEXT />
+    <ARTDESC>HRK,KP.MODA</ARTDESC>
+    <ARTCOLOR>5WY</ARTCOLOR>
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>0</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>WKK</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>WKK_OSN</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>22</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>WKK_OSN</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>0</ART2GROUPREBINDING>
+        <MandantCode>WKK</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>22</MANDANTID>
+        <SKUNAME>8681044784549 (шт 1)</SKUNAME>
+        <SKUDESC>HRK,KP.MODA - шт</SKUDESC>
+        <MEASURECODE_R>PCE</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <BarcodeList>
+          <BarcodeWrapper>
+            <UpdateNullValues>false</UpdateNullValues>
+            <BARCODE2ENTITY>SKU</BARCODE2ENTITY>
+            <BARCODEID xsi:nil="true" />
+            <BARCODEVALUE>8681044784549</BARCODEVALUE>
+          </BarcodeWrapper>
+        </BarcodeList>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>1000000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>22</MANDANTID>
+            <SKU2TTETETYPECODE>CRT400x600x400</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>WKK</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK />
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL />
+    <BEFOREPROCESSINGWFCODE />
+    <COUNTRYCODE_R />
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>22</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE>5y</ARTSIZE>
+    <ARTNAME>8681044784556</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>5K0780Z4</ARTHOSTREF>
+    <ARTDESCEXT />
+    <ARTDESC>HRK,KP.MODA</ARTDESC>
+    <ARTCOLOR>5WY</ARTCOLOR>
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>0</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>WKK</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>WKK_OSN</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>22</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>WKK_OSN</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>0</ART2GROUPREBINDING>
+        <MandantCode>WKK</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>22</MANDANTID>
+        <SKUNAME>8681044784556 (шт 1)</SKUNAME>
+        <SKUDESC>HRK,KP.MODA - шт</SKUDESC>
+        <MEASURECODE_R>PCE</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <BarcodeList>
+          <BarcodeWrapper>
+            <UpdateNullValues>false</UpdateNullValues>
+            <BARCODE2ENTITY>SKU</BARCODE2ENTITY>
+            <BARCODEID xsi:nil="true" />
+            <BARCODEVALUE>8681044784556</BARCODEVALUE>
+          </BarcodeWrapper>
+        </BarcodeList>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>1000000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>22</MANDANTID>
+            <SKU2TTETETYPECODE>CRT400x600x400</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>WKK</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK />
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL />
+    <BEFOREPROCESSINGWFCODE />
+    <COUNTRYCODE_R />
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>22</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE>7y</ARTSIZE>
+    <ARTNAME>8681044784570</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>5K0780Z4</ARTHOSTREF>
+    <ARTDESCEXT />
+    <ARTDESC>HRK,KP.MODA</ARTDESC>
+    <ARTCOLOR>5WY</ARTCOLOR>
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>0</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>WKK</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>WKK_OSN</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>22</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>WKK_OSN</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>0</ART2GROUPREBINDING>
+        <MandantCode>WKK</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>22</MANDANTID>
+        <SKUNAME>8681044784570 (шт 1)</SKUNAME>
+        <SKUDESC>HRK,KP.MODA - шт</SKUDESC>
+        <MEASURECODE_R>PCE</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <BarcodeList>
+          <BarcodeWrapper>
+            <UpdateNullValues>false</UpdateNullValues>
+            <BARCODE2ENTITY>SKU</BARCODE2ENTITY>
+            <BARCODEID xsi:nil="true" />
+            <BARCODEVALUE>8681044784570</BARCODEVALUE>
+          </BarcodeWrapper>
+        </BarcodeList>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>1000000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>22</MANDANTID>
+            <SKU2TTETETYPECODE>CRT400x600x400</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>WKK</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK />
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL />
+    <BEFOREPROCESSINGWFCODE />
+    <COUNTRYCODE_R />
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>22</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE>8y</ARTSIZE>
+    <ARTNAME>8681044784587</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>5K0780Z4</ARTHOSTREF>
+    <ARTDESCEXT />
+    <ARTDESC>HRK,KP.MODA</ARTDESC>
+    <ARTCOLOR>5WY</ARTCOLOR>
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>0</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>WKK</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>WKK_OSN</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>22</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>WKK_OSN</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>0</ART2GROUPREBINDING>
+        <MandantCode>WKK</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>22</MANDANTID>
+        <SKUNAME>8681044784587 (шт 1)</SKUNAME>
+        <SKUDESC>HRK,KP.MODA - шт</SKUDESC>
+        <MEASURECODE_R>PCE</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <BarcodeList>
+          <BarcodeWrapper>
+            <UpdateNullValues>false</UpdateNullValues>
+            <BARCODE2ENTITY>SKU</BARCODE2ENTITY>
+            <BARCODEID xsi:nil="true" />
+            <BARCODEVALUE>8681044784587</BARCODEVALUE>
+          </BarcodeWrapper>
+        </BarcodeList>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>1000000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>22</MANDANTID>
+            <SKU2TTETETYPECODE>CRT400x600x400</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>WKK</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK />
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL />
+    <BEFOREPROCESSINGWFCODE />
+    <COUNTRYCODE_R />
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>22</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE>9y</ARTSIZE>
+    <ARTNAME>8681044784600</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>5K0780Z4</ARTHOSTREF>
+    <ARTDESCEXT />
+    <ARTDESC>HRK,KP.MODA</ARTDESC>
+    <ARTCOLOR>5WY</ARTCOLOR>
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>0</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>WKK</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>WKK_OSN</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>22</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>WKK_OSN</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>0</ART2GROUPREBINDING>
+        <MandantCode>WKK</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>22</MANDANTID>
+        <SKUNAME>8681044784600 (шт 1)</SKUNAME>
+        <SKUDESC>HRK,KP.MODA - шт</SKUDESC>
+        <MEASURECODE_R>PCE</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <BarcodeList>
+          <BarcodeWrapper>
+            <UpdateNullValues>false</UpdateNullValues>
+            <BARCODE2ENTITY>SKU</BARCODE2ENTITY>
+            <BARCODEID xsi:nil="true" />
+            <BARCODEVALUE>8681044784600</BARCODEVALUE>
+          </BarcodeWrapper>
+        </BarcodeList>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>1000000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>22</MANDANTID>
+            <SKU2TTETETYPECODE>CRT400x600x400</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>WKK</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK />
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL />
+    <BEFOREPROCESSINGWFCODE />
+    <COUNTRYCODE_R />
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>22</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE>4y</ARTSIZE>
+    <ARTNAME>8681044852842</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>5K1599Z4</ARTHOSTREF>
+    <ARTDESCEXT />
+    <ARTDESC>MNT,HERRY</ARTDESC>
+    <ARTCOLOR>804</ARTCOLOR>
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>0</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>WKK</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>WKK_OSN</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>22</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>WKK_OSN</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>0</ART2GROUPREBINDING>
+        <MandantCode>WKK</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>22</MANDANTID>
+        <SKUNAME>8681044852842 (шт 1)</SKUNAME>
+        <SKUDESC>MNT,HERRY - шт</SKUDESC>
+        <MEASURECODE_R>PCE</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <BarcodeList>
+          <BarcodeWrapper>
+            <UpdateNullValues>false</UpdateNullValues>
+            <BARCODE2ENTITY>SKU</BARCODE2ENTITY>
+            <BARCODEID xsi:nil="true" />
+            <BARCODEVALUE>8681044852842</BARCODEVALUE>
+          </BarcodeWrapper>
+        </BarcodeList>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>1000000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>22</MANDANTID>
+            <SKU2TTETETYPECODE>CRT400x600x400</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>WKK</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK />
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL />
+    <BEFOREPROCESSINGWFCODE />
+    <COUNTRYCODE_R />
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>22</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE>5y</ARTSIZE>
+    <ARTNAME>8681044852859</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>5K1599Z4</ARTHOSTREF>
+    <ARTDESCEXT />
+    <ARTDESC>MNT,HERRY</ARTDESC>
+    <ARTCOLOR>804</ARTCOLOR>
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>0</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>WKK</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>WKK_OSN</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>22</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>WKK_OSN</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>0</ART2GROUPREBINDING>
+        <MandantCode>WKK</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>22</MANDANTID>
+        <SKUNAME>8681044852859 (шт 1)</SKUNAME>
+        <SKUDESC>MNT,HERRY - шт</SKUDESC>
+        <MEASURECODE_R>PCE</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <BarcodeList>
+          <BarcodeWrapper>
+            <UpdateNullValues>false</UpdateNullValues>
+            <BARCODE2ENTITY>SKU</BARCODE2ENTITY>
+            <BARCODEID xsi:nil="true" />
+            <BARCODEVALUE>8681044852859</BARCODEVALUE>
+          </BarcodeWrapper>
+        </BarcodeList>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>1000000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>22</MANDANTID>
+            <SKU2TTETETYPECODE>CRT400x600x400</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>WKK</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK />
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL />
+    <BEFOREPROCESSINGWFCODE />
+    <COUNTRYCODE_R />
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>22</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE>6y</ARTSIZE>
+    <ARTNAME>8681044852866</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>5K1599Z4</ARTHOSTREF>
+    <ARTDESCEXT />
+    <ARTDESC>MNT,HERRY</ARTDESC>
+    <ARTCOLOR>804</ARTCOLOR>
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>0</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>WKK</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>WKK_OSN</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>22</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>WKK_OSN</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>0</ART2GROUPREBINDING>
+        <MandantCode>WKK</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>22</MANDANTID>
+        <SKUNAME>8681044852866 (шт 1)</SKUNAME>
+        <SKUDESC>MNT,HERRY - шт</SKUDESC>
+        <MEASURECODE_R>PCE</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <BarcodeList>
+          <BarcodeWrapper>
+            <UpdateNullValues>false</UpdateNullValues>
+            <BARCODE2ENTITY>SKU</BARCODE2ENTITY>
+            <BARCODEID xsi:nil="true" />
+            <BARCODEVALUE>8681044852866</BARCODEVALUE>
+          </BarcodeWrapper>
+        </BarcodeList>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>1000000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>22</MANDANTID>
+            <SKU2TTETETYPECODE>CRT400x600x400</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>WKK</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK />
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL />
+    <BEFOREPROCESSINGWFCODE />
+    <COUNTRYCODE_R />
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>22</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE>7y</ARTSIZE>
+    <ARTNAME>8681044852873</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>5K1599Z4</ARTHOSTREF>
+    <ARTDESCEXT />
+    <ARTDESC>MNT,HERRY</ARTDESC>
+    <ARTCOLOR>804</ARTCOLOR>
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>0</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>WKK</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>WKK_OSN</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>22</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>WKK_OSN</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>0</ART2GROUPREBINDING>
+        <MandantCode>WKK</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>22</MANDANTID>
+        <SKUNAME>8681044852873 (шт 1)</SKUNAME>
+        <SKUDESC>MNT,HERRY - шт</SKUDESC>
+        <MEASURECODE_R>PCE</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <BarcodeList>
+          <BarcodeWrapper>
+            <UpdateNullValues>false</UpdateNullValues>
+            <BARCODE2ENTITY>SKU</BARCODE2ENTITY>
+            <BARCODEID xsi:nil="true" />
+            <BARCODEVALUE>8681044852873</BARCODEVALUE>
+          </BarcodeWrapper>
+        </BarcodeList>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>1000000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>22</MANDANTID>
+            <SKU2TTETETYPECODE>CRT400x600x400</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>WKK</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK />
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL />
+    <BEFOREPROCESSINGWFCODE />
+    <COUNTRYCODE_R />
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>22</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE>8y</ARTSIZE>
+    <ARTNAME>8681044852880</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>5K1599Z4</ARTHOSTREF>
+    <ARTDESCEXT />
+    <ARTDESC>MNT,HERRY</ARTDESC>
+    <ARTCOLOR>804</ARTCOLOR>
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>0</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>WKK</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>WKK_OSN</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>22</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>WKK_OSN</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>0</ART2GROUPREBINDING>
+        <MandantCode>WKK</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>22</MANDANTID>
+        <SKUNAME>8681044852880 (шт 1)</SKUNAME>
+        <SKUDESC>MNT,HERRY - шт</SKUDESC>
+        <MEASURECODE_R>PCE</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <BarcodeList>
+          <BarcodeWrapper>
+            <UpdateNullValues>false</UpdateNullValues>
+            <BARCODE2ENTITY>SKU</BARCODE2ENTITY>
+            <BARCODEID xsi:nil="true" />
+            <BARCODEVALUE>8681044852880</BARCODEVALUE>
+          </BarcodeWrapper>
+        </BarcodeList>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>1000000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>22</MANDANTID>
+            <SKU2TTETETYPECODE>CRT400x600x400</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>WKK</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK />
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL />
+    <BEFOREPROCESSINGWFCODE />
+    <COUNTRYCODE_R />
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>22</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE>9+</ARTSIZE>
+    <ARTNAME>8681044852897</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>5K1599Z4</ARTHOSTREF>
+    <ARTDESCEXT />
+    <ARTDESC>MNT,HERRY</ARTDESC>
+    <ARTCOLOR>804</ARTCOLOR>
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>0</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>WKK</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>WKK_OSN</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>22</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>WKK_OSN</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>0</ART2GROUPREBINDING>
+        <MandantCode>WKK</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>22</MANDANTID>
+        <SKUNAME>8681044852897 (шт 1)</SKUNAME>
+        <SKUDESC>MNT,HERRY - шт</SKUDESC>
+        <MEASURECODE_R>PCE</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <BarcodeList>
+          <BarcodeWrapper>
+            <UpdateNullValues>false</UpdateNullValues>
+            <BARCODE2ENTITY>SKU</BARCODE2ENTITY>
+            <BARCODEID xsi:nil="true" />
+            <BARCODEVALUE>8681044852897</BARCODEVALUE>
+          </BarcodeWrapper>
+        </BarcodeList>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>1000000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>22</MANDANTID>
+            <SKU2TTETETYPECODE>CRT400x600x400</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>WKK</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK />
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL />
+    <BEFOREPROCESSINGWFCODE />
+    <COUNTRYCODE_R />
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>22</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE>9y</ARTSIZE>
+    <ARTNAME>8681044852903</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>5K1599Z4</ARTHOSTREF>
+    <ARTDESCEXT />
+    <ARTDESC>MNT,HERRY</ARTDESC>
+    <ARTCOLOR>804</ARTCOLOR>
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>0</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>WKK</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>WKK_OSN</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>22</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>WKK_OSN</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>0</ART2GROUPREBINDING>
+        <MandantCode>WKK</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>22</MANDANTID>
+        <SKUNAME>8681044852903 (шт 1)</SKUNAME>
+        <SKUDESC>MNT,HERRY - шт</SKUDESC>
+        <MEASURECODE_R>PCE</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <BarcodeList>
+          <BarcodeWrapper>
+            <UpdateNullValues>false</UpdateNullValues>
+            <BARCODE2ENTITY>SKU</BARCODE2ENTITY>
+            <BARCODEID xsi:nil="true" />
+            <BARCODEVALUE>8681044852903</BARCODEVALUE>
+          </BarcodeWrapper>
+        </BarcodeList>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>1000000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>22</MANDANTID>
+            <SKU2TTETETYPECODE>CRT400x600x400</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>WKK</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK />
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL />
+    <BEFOREPROCESSINGWFCODE />
+    <COUNTRYCODE_R />
+  </ArtWrapper>
+</ArrayOfArtWrapper>

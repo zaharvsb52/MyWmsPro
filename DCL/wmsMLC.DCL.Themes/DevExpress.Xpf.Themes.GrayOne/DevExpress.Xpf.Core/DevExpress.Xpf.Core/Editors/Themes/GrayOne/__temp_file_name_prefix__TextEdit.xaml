@@ -1,0 +1,108 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxet="http://schemas.devexpress.com/winfx/2008/xaml/editors/themekeys" xmlns:dxeh="http://schemas.devexpress.com/winfx/2008/xaml/editors/internal" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <!--BEGIN WPF-->
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/GrayOne/Brushes.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/GrayOne/ErrorPresenter.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/GrayOne/TextEditBase.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Generic/TextEdit.xaml" />
+  </ResourceDictionary.MergedDictionaries>
+  <!--END WPF-->
+  <SolidColorBrush x:Key="{dxet:TextEditThemeKey ResourceKey=NullTextForeground}" Color="#BF201F35" />
+  <!--BEGIN TOSLONLY REPLACE 'TextBox'dxec:SLTextBox'-->
+  <Style x:Key="{dxet:TextEditThemeKey ResourceKey=TextStyle}" TargetType="{x:Type TextBox}" BasedOn="{StaticResource BaseTextStyle}" />
+  <Style x:Key="{dxet:TextEditThemeKey ResourceKey=TextInplaceStyle}" TargetType="{x:Type TextBox}" BasedOn="{StaticResource BaseTextInplaceStyle}">
+    <Setter Property="dxeh:EditorMarginHelper.Margin" Value="2,2,2,2,0,2,2,2" />
+  </Style>
+  <Style BasedOn="{StaticResource BaseTextBlockStyle}" x:Key="{dxet:TextEditThemeKey ResourceKey=TextBlockStyle}" TargetType="{x:Type TextBlock}">
+    <Setter Property="Margin" Value="5,3,5,3" />
+  </Style>
+  <Style BasedOn="{StaticResource BaseTextBlockInplaceStyle}" x:Key="{dxet:TextEditThemeKey ResourceKey=TextBlockInplaceStyle}" TargetType="{x:Type TextBlock}">
+    <Setter Property="dxeh:EditorMarginHelper.Margin" Value="4,2,4,2,2,2,4,2" />
+  </Style>
+  <ControlTemplate x:Key="{dxet:TextEditThemeKey ResourceKey=DisplayInplaceTemplate}">
+    <TextBlock x:Name="PART_Editor" Style="{DynamicResource {dxet:TextEditThemeKey ResourceKey=TextBlockInplaceStyle}}" dxcore_unique_xmlns:FocusHelper2.Focusable="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\TextEdit.xaml;30;10" />
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxet:TextEditThemeKey ResourceKey=EditNonEditableTemplate}">
+    <TextBlock x:Name="PART_Editor" Style="{DynamicResource {dxet:TextEditThemeKey ResourceKey=TextBlockStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\TextEdit.xaml;34;10">
+      <!--BEGIN WPF-->
+      <TextBlock.FocusVisualStyle>
+        <Style>
+          <Setter Property="Control.Template">
+            <Setter.Value>
+              <ControlTemplate />
+            </Setter.Value>
+          </Setter>
+        </Style>
+      </TextBlock.FocusVisualStyle>
+      <!--END WPF-->
+    </TextBlock>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxet:TextEditThemeKey ResourceKey=EditNonEditableInplaceTemplate}">
+    <TextBlock x:Name="PART_Editor" Style="{DynamicResource {dxet:TextEditThemeKey ResourceKey=TextBlockInplaceStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\TextEdit.xaml;50;10" />
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxet:TextEditThemeKey ResourceKey=EditInplaceTemplate}">
+    <TextBox x:Name="PART_Editor" Style="{DynamicResource {dxet:TextEditThemeKey ResourceKey=TextInplaceStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\TextEdit.xaml;54;10" />
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxet:TextEditThemeKey ResourceKey=EditTemplate}">
+    <TextBox x:Name="PART_Editor" Style="{DynamicResource {dxet:TextEditThemeKey ResourceKey=TextStyle}}" dxeh:EditorMarginHelper.Margin="3,3,3,3,0,3,3,3" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\TextEdit.xaml;58;10" />
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxet:TextEditThemeKey ResourceKey=EmptyBorderTemplate}" TargetType="{x:Type ContentControl}">
+    <Border x:Name="TextEditEmptyBorder" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\TextEdit.xaml;62;10">
+      <ContentPresenter Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" ContentStringFormat="{TemplateBinding ContentStringFormat}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\TextEdit.xaml;63;14" />
+    </Border>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxet:TextEditThemeKey ResourceKey=ErrorControlTemplate}" TargetType="{x:Type dxe:ErrorControl}">
+    <ContentPresenter x:Name="Content" Margin="3,0,3,0" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" ContentTemplate="{TemplateBinding ContentTemplate}" RenderTransformOrigin="0.5,0.5" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\TextEdit.xaml;68;10">
+      <ContentPresenter.RenderTransform>
+        <ScaleTransform />
+      </ContentPresenter.RenderTransform>
+    </ContentPresenter>
+    <ControlTemplate.Triggers>
+      <Trigger Property="HasContent" Value="True">
+        <Trigger.EnterActions>
+          <BeginStoryboard x:Name="showErrorStoryboard">
+            <Storyboard>
+              <DoubleAnimation BeginTime="00:00:00" Duration="00:00:00.2" Storyboard.TargetName="Content" Storyboard.TargetProperty="Opacity" From="0" To="1" />
+              <DoubleAnimation BeginTime="00:00:00" Duration="00:00:00.1" Storyboard.TargetName="Content" Storyboard.TargetProperty="RenderTransform.ScaleX" From="1" To="1.2" />
+              <DoubleAnimation BeginTime="00:00:00.1" Duration="00:00:00.1" Storyboard.TargetName="Content" Storyboard.TargetProperty="RenderTransform.ScaleX" From="1.2" To="1" />
+              <DoubleAnimation BeginTime="00:00:00" Duration="00:00:00.1" Storyboard.TargetName="Content" Storyboard.TargetProperty="RenderTransform.ScaleY" From="1" To="1.2" />
+              <DoubleAnimation BeginTime="00:00:00.1" Duration="00:00:00.1" Storyboard.TargetName="Content" Storyboard.TargetProperty="RenderTransform.ScaleY" From="1.2" To="1" />
+            </Storyboard>
+          </BeginStoryboard>
+        </Trigger.EnterActions>
+        <Trigger.ExitActions>
+          <BeginStoryboard x:Name="hideErrorStoryboard">
+            <Storyboard>
+              <DoubleAnimation BeginTime="00:00:00" Duration="00:00:00" Storyboard.TargetName="Content" Storyboard.TargetProperty="Opacity" To="0" />
+            </Storyboard>
+          </BeginStoryboard>
+        </Trigger.ExitActions>
+      </Trigger>
+      <EventTrigger RoutedEvent="dxdobj:DataObjectBase.Reset" xmlns:dxdobj="clr-namespace:DevExpress.Xpf.Core;assembly=DevExpress.Xpf.Core.v12.2">
+        <SkipStoryboardToFill BeginStoryboardName="showErrorStoryboard" />
+        <SkipStoryboardToFill BeginStoryboardName="hideErrorStoryboard" />
+      </EventTrigger>
+    </ControlTemplate.Triggers>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxet:TextEditThemeKey ResourceKey=BorderTemplate}" TargetType="{x:Type ContentControl}">
+    <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\TextEdit.xaml;102;10">
+      <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup x:Name="InternalFocusStates">
+          <VisualState x:Name="InternalFocused">
+            <Storyboard>
+              <DoubleAnimation Storyboard.TargetName="FocusElement" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="InternalUnfocused" />
+        </VisualStateGroup>
+      </VisualStateManager.VisualStateGroups>
+      <Border Background="{StaticResource TextEdit.Background}" BorderBrush="{StaticResource TextEdit.BorderBrush}" BorderThickness="1" CornerRadius="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\TextEdit.xaml;113;14" />
+      <Grid x:Name="FocusElement" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\TextEdit.xaml;114;14">
+        <Rectangle Style="{StaticResource TextEditFocusTemplate}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\TextEdit.xaml;115;18" />
+        <Border Background="{TemplateBinding Background}" BorderBrush="{StaticResource TextEdit.HoverState.BorderBrush}" BorderThickness="1" CornerRadius="1" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\TextEdit.xaml;116;18" />
+      </Grid>
+      <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\TextEdit.xaml;118;14" />
+    </Grid>
+  </ControlTemplate>
+  <!--END TOSLONLY REPLACE 'TextBox'dxec:SLTextBox'-->
+</ResourceDictionary>

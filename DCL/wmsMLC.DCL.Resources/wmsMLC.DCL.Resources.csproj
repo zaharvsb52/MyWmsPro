@@ -1,0 +1,775 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D126F979-3E89-4A0F-AD21-9ED5C99C8AC2}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>wmsMLC.DCL.Resources</RootNamespace>
+    <AssemblyName>wmsMLC.DCL.Resources</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+    <CodeContractsAssemblyMode>1</CodeContractsAssemblyMode>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeContractsEnableRuntimeChecking>False</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>True</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>True</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>True</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>True</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>True</CodeContractsRedundantAssumptions>
+    <CodeContractsAssertsToContractsCheckBox>True</CodeContractsAssertsToContractsCheckBox>
+    <CodeContractsRedundantTests>True</CodeContractsRedundantTests>
+    <CodeContractsMissingPublicRequiresAsWarnings>True</CodeContractsMissingPublicRequiresAsWarnings>
+    <CodeContractsMissingPublicEnsuresAsWarnings>False</CodeContractsMissingPublicEnsuresAsWarnings>
+    <CodeContractsInferRequires>True</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferEnsuresAutoProperties>True</CodeContractsInferEnsuresAutoProperties>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestAssumptionsForCallees>False</CodeContractsSuggestAssumptionsForCallees>
+    <CodeContractsSuggestRequires>False</CodeContractsSuggestRequires>
+    <CodeContractsNecessaryEnsures>True</CodeContractsNecessaryEnsures>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsSuggestReadonly>True</CodeContractsSuggestReadonly>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths />
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsSQLServerOption />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsSkipAnalysisIfCannotConnectToCache>False</CodeContractsSkipAnalysisIfCannotConnectToCache>
+    <CodeContractsFailBuildOnWarnings>False</CodeContractsFailBuildOnWarnings>
+    <CodeContractsBeingOptimisticOnExternal>True</CodeContractsBeingOptimisticOnExternal>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>DoNotBuild</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeContractsEnableRuntimeChecking>False</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>True</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>True</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>True</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>True</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>True</CodeContractsRedundantAssumptions>
+    <CodeContractsAssertsToContractsCheckBox>True</CodeContractsAssertsToContractsCheckBox>
+    <CodeContractsRedundantTests>True</CodeContractsRedundantTests>
+    <CodeContractsMissingPublicRequiresAsWarnings>True</CodeContractsMissingPublicRequiresAsWarnings>
+    <CodeContractsMissingPublicEnsuresAsWarnings>False</CodeContractsMissingPublicEnsuresAsWarnings>
+    <CodeContractsInferRequires>True</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferEnsuresAutoProperties>True</CodeContractsInferEnsuresAutoProperties>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestAssumptionsForCallees>False</CodeContractsSuggestAssumptionsForCallees>
+    <CodeContractsSuggestRequires>False</CodeContractsSuggestRequires>
+    <CodeContractsNecessaryEnsures>True</CodeContractsNecessaryEnsures>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsSuggestReadonly>True</CodeContractsSuggestReadonly>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths />
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsSQLServerOption />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsSkipAnalysisIfCannotConnectToCache>False</CodeContractsSkipAnalysisIfCannotConnectToCache>
+    <CodeContractsFailBuildOnWarnings>False</CodeContractsFailBuildOnWarnings>
+    <CodeContractsBeingOptimisticOnExternal>True</CodeContractsBeingOptimisticOnExternal>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>DoNotBuild</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'TST1|AnyCPU'">
+    <OutputPath>bin\TST1\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO">
+      <HintPath>..\..\..\Packages\Microsoft.Bcl.1.1.10\lib\net40\System.IO.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime">
+      <HintPath>..\..\..\Packages\Microsoft.Bcl.1.1.10\lib\net40\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>..\..\..\Packages\Microsoft.Bcl.1.1.10\lib\net40\System.Threading.Tasks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WPFLocalizeExtension">
+      <HintPath>..\..\..\Libraries\WPFLocalizeExtension\WPFLocalizeExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="XAMLMarkupExtensions">
+      <HintPath>..\..\..\Libraries\WPFLocalizeExtension\XAMLMarkupExtensions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Version\AssemblyInfoGlobal.cs">
+      <Link>Properties\AssemblyInfoGlobal.cs</Link>
+    </Compile>
+    <Compile Include="BugReportResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BugReportResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="DeveloperExceptionResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeveloperExceptionResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ExceptionResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExceptionResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ImageResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ImageResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocalizationResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ResourceHelper.cs" />
+    <Compile Include="StringResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StringResources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BugReportResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>BugReportResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeveloperExceptionResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>DeveloperExceptionResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExceptionResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ExceptionResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageResources.resx">
+      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ImageResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LocalizationResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StringResources.en-US.resx" />
+    <EmbeddedResource Include="StringResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>StringResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Error64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MailReport16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MailReport32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MailReport64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Russian.frl" />
+    <None Include="Resources\status_anim.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mcl.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SplashScreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Key128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wms32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLOpenFolder16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLOpenFolder32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLPartner16.png" />
+    <None Include="Resources\DCLPartner32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLMandant16.png" />
+    <None Include="Resources\DCLMandant32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLTeType16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLTeType32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLDefaultTree16.png" />
+    <None Include="Resources\DCLDefaultTree32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLAddNew16.png" />
+    <None Include="Resources\DCLAddNew32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLDelete16.png" />
+    <None Include="Resources\DCLDelete32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLSave16.png" />
+    <None Include="Resources\DCLSave32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLEdit16.png" />
+    <None Include="Resources\DCLEdit32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLFilter16.png" />
+    <None Include="Resources\DCLFilter32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLFilterRefresh16.png" />
+    <None Include="Resources\DCLFilterRefresh32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLDuplicateTab16.png" />
+    <None Include="Resources\DCLDuplicateTab32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLViewSave16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLViewSave32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLViewClear16.png" />
+    <None Include="Resources\DCLViewClear32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLDefault16.png" />
+    <None Include="Resources\DCLDefault32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\General\wmsMLC.General.PL.WPF\wmsMLC.General.PL.WPF.csproj">
+      <Project>{4312ae52-c3d5-435a-a174-93bc9d14b7c1}</Project>
+      <Name>wmsMLC.General.PL.WPF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\General\wmsMLC.General\wmsMLC.General.csproj">
+      <Project>{123ba357-aac6-4e30-8af9-9cd944bf25df}</Project>
+      <Name>wmsMLC.General</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLArea2Blocking16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLArea2Blocking32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLHistory16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLHistory32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLSysMsgNone32.png" />
+    <None Include="Resources\DCLSysMsgNotReaded32.png" />
+    <None Include="Resources\DCLSysMsgReaded32.png" />
+    <None Include="Resources\DCLSysMsgReceived32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLBusinessProcess16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLBusinessProcess32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DClFilterApply16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLFilterApply32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DClFilterCancel16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DClFilterCancel32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DClFilterDefault16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DClFilterDefault32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DClFilterLaod16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DClFilterLaod32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DClFilterRemove16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DClFilterRemove32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DClFilterSave16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DClFilterSave32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLPrintAndPreview16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLPrintAndPreview32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLPrintPreview16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLPrintPreview32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLAppearanceStyle16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLAppearanceStyle32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLMultiReport16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLViewSaveDB16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLViewSaveDB32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLSwap16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLSwap32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLDownload16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLDownload32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLUnload16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLUnload32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLQuickLink32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLQuickLink16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLSaveAndClose16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLSaveAndClose32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLWFDesigner16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLWFDesigner32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLCustomLayer16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLCustomLayer32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLWFCompile16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLWFCompile32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLSaveAndContinue16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLSaveAndContinue32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLDetail16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLJournal16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLPackingPanel16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLPackingPanel32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLCreatePack16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLCreatePack32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLClosePack16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLClosePack32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLOpenPack16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLOpenPack32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLPacked16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLPacked32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLPackWeight16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLPackWeight32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLMoveLeftArrow16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLMoveLeftArrow32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLAllMoveLeftArrow16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLAllMoveLeftArrow32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLAllMoveUpArrow16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLAllMoveUpArrow32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLMoveUpArrow16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLMoveUpArrow32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLExportData16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLExportData32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLOlapData16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLOlapData32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLPickBegin16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLPickBegin32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLPickReturn16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLPickReturn32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLPickComplete16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLPickComplete32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLBatchProcessFull16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLBatchProcessFull32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLBatchProcessParse16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLBatchProcessParse32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLBatchProcessApply16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLBatchProcessApply32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLPmConfigurator16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLPmConfigurator32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLGridRowEdit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wms16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Core.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLGridEditBegin16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLGridEditBegin32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLGridEditEnd16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLGridEditEnd32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLWorkClose16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLWorkClose32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLWorkOpen16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLWorkOpen32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLPackDelete32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLPackDelete16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLPackDeleteAll16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLPackDeleteAll32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLCollapsePack16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLCollapsePack32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLExpandPack16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLExpandPack32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLPackTE16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLPackTE32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLReturnTE16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLReturnTE32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLDashboardDesigner16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLDashboardDesigner32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLConnect16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLConnect32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLWFOpen16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLWFOpen32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLWFOpenReadOnly16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLWFOpenReadOnly32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLPutIn16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLPutIn32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DCLChangeOvxSku16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DCLChangeOvxSku32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DCLStartAcceptance16.png" />
+    <Resource Include="Resources\DCLStartAcceptance32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLWorkTimeControl16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLWorkTimeControl32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLAccept16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLAccept32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLCloneMaster16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLCloneMaster32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLCloneSimple16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLCloneSimple32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCLReading_16x16.png" />
+    <None Include="Resources\DCLReading_32x32.png" />
+    <None Include="Resources\DCLReset_16x16.png" />
+    <None Include="Resources\DCLReset_32x32.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\..\..\Packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\..\Packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\..\Packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,81 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" xmlns:dxbt="http://schemas.devexpress.com/winfx/2008/xaml/bars/themekeys" xmlns:dxbc="http://schemas.devexpress.com/winfx/2008/xaml/bars/internal" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys">
+
+    <dxb:SubMenuScrollingVisibilityConverter x:Key="menuScrollingVisibilityConverter" />
+    
+    <ItemsPanelTemplate x:Key="{dxbt:SubMenuBarControlThemeKey ResourceKey=ItemsPanelTemplate}">
+        <!--BEGIN WPF-->
+        <!--<dxb:SubMenuClientPanel IsItemsHost="True" Orientation="Vertical" />-->
+        <dxb:SubMenuClientPanel IsItemsHost="True" />
+        <!--END WPF-->
+        <!--ONLY SL
+        <dxb:SubMenuClientPanel/>
+        ONLY SL-->
+    </ItemsPanelTemplate>
+
+    <Style x:Key="{dxbt:SubMenuBarControlThemeKey ResourceKey=DropIndicatorStyle}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxbt:SubMenuBarControlThemeKey ResourceKey=DropIndicatorTemplate}}" />
+    </Style>
+    
+    <Style x:Key="{dxbt:SubMenuBarControlThemeKey ResourceKey=ScrollViewerStyle}" TargetType="{x:Type dxb:SubMenuScrollViewer}">
+        <!--BEGIN WPF-->
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="ClipToBounds" Value="True" />
+        <!--END WPF-->
+        <!--ONLY SL
+        <Setter Property="dx:FrameworkElementHelper.IsClipped" Value="True"/>
+        ONLY SL-->
+    </Style>
+    
+    <ControlTemplate x:Key="{dxbt:SubMenuBarControlThemeKey ResourceKey=ControlTemplate}" TargetType="{x:Type dxb:SubMenuBarControl}">
+        <ContentControl Style="{DynamicResource {dxbt:BarControlThemeKey ResourceKey=MenuContentStyle}}">
+            <!--ONLY SL<dx:ThemeManager.ApplyApplicationTheme>True</dx:ThemeManager.ApplyApplicationTheme>ONLY SL-->
+            <Grid Background="Transparent">
+                <Grid>
+                    <ContentControl SnapsToDevicePixels="True" x:Name="PART_ContentSide" Template="{DynamicResource {dxbt:SubMenuBarControlThemeKey ResourceKey=ContentSideBorderTemplate}}" Visibility="{TemplateBinding ContentSideVisibility}" IsTabStop="False" />
+                    <Grid HorizontalAlignment="Left">
+                        <Border SnapsToDevicePixels="True" Margin="{Binding Path=GlyphPadding, RelativeSource={RelativeSource TemplatedParent}}" HorizontalAlignment="Left" Width="{Binding Path=MaxGlyphSize.Width, RelativeSource={RelativeSource TemplatedParent}}" />
+                    </Grid>
+                </Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <RepeatButton x:Name="PART_UpButton" Style="{DynamicResource {dxbt:SubMenuBarControlThemeKey ResourceKey=ScrollUpButtonStyle}}" Grid.Row="0" Grid.Column="1" Focusable="false" Visibility="Collapsed" IsTabStop="False" />
+                    <dxc:LayoutTransformPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" Focusable="false">
+                        <RepeatButton x:Name="PART_LeftButton" Style="{DynamicResource {dxbt:SubMenuBarControlThemeKey ResourceKey=ScrollUpButtonStyle}}" Grid.Row="1" Grid.Column="0" Focusable="false" Visibility="Collapsed" IsTabStop="False" />
+                    </dxc:LayoutTransformPanel>                    
+                    <dxb:SubMenuScrollViewer x:Name="PART_ScrollViewer" Grid.Row="1" Grid.Column="1" Style="{DynamicResource {dxbt:SubMenuBarControlThemeKey ResourceKey=ScrollViewerStyle}}">
+                        <Grid>
+                            <!--<Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>-->
+                            <dxb:GlyphSidePanel SnapsToDevicePixels="True" x:Name="PART_GlyphSide" HorizontalAlignment="Stretch" Visibility="{TemplateBinding GlyphSideVisibility}" />
+                            <!--<dx:CompatibilityAdornerContainer x:Name="PART_Adorner" Grid.Column="1">-->
+                            <dxc:CompatibilityAdornerContainer x:Name="PART_Adorner">
+                                <ItemsPresenter x:Name="PART_ItemsPresenter" />
+                            </dxc:CompatibilityAdornerContainer>
+                        </Grid>
+                    </dxb:SubMenuScrollViewer>
+                    <dxc:LayoutTransformPanel Grid.Row="1" Grid.Column="2" Orientation="Horizontal" Focusable="false">
+                        <RepeatButton x:Name="PART_RightButton" Style="{DynamicResource {dxbt:SubMenuBarControlThemeKey ResourceKey=ScrollDownButtonStyle}}" Focusable="false" Visibility="Collapsed" IsTabStop="False" />
+                    </dxc:LayoutTransformPanel>
+                    <RepeatButton x:Name="PART_DownButton" Style="{DynamicResource {dxbt:SubMenuBarControlThemeKey ResourceKey=ScrollDownButtonStyle}}" Grid.Row="2" Grid.Column="1" Focusable="false" Visibility="Collapsed" IsTabStop="False" />
+                </Grid>
+            </Grid>
+        </ContentControl>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxbt:MenuBarControlThemeKey ResourceKey=ControlTemplate}" TargetType="{x:Type dxb:MenuBarControl}">
+        <Border Background="{TemplateBinding Background}">
+            <dxc:DXContentPresenter x:Name="PART_LinksPresenter" />
+        </Border>
+    </ControlTemplate>
+</ResourceDictionary>

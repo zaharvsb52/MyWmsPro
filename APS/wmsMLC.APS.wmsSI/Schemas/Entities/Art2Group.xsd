@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Art2Group" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!--Сущность Art2Group-->
+  <xs:element name="TENTART2GROUP" type="Art2GroupType"/>
+  
+  <!--Описание типа Art2GroupType-->
+  <xs:complexType name="Art2GroupType">
+    <xs:sequence>
+      <!--Код группы артикулов -->
+      <xs:element name="ARTGROUPCODE_R" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Приоритет-->
+      <xs:element name="ART2GROUPPRIORITY" type="xs:integer" nillable="false" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

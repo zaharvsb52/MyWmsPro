@@ -1,0 +1,33 @@
+﻿<mv:ObjectViewBase x:Class="wmsMLC.DCL.Main.Views.ObjectView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:controls="clr-namespace:wmsMLC.DCL.Main.Views.Controls"
+    xmlns:lex="http://wpflocalizeextension.codeplex.com"
+    xmlns:mv="clr-namespace:wmsMLC.DCL.Main.Views"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="600">
+
+    <mv:ObjectViewBase.Resources>
+        <dx:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+    </mv:ObjectViewBase.Resources>
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <mv:MenuView x:Name="MmenuView" Menu="{Binding Menu, IsAsync=True, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+        <CheckBox Grid.Row="1" Margin="5,2,2,2"  x:Name ="saveAndContinue" Content="{lex:LocExtension Key=wmsMLC.DCL.Resources:StringResources:NotClearInputData}" Visibility="{Binding IsVisibleMenuSaveAndContinue, Converter={StaticResource BoolToVisibilityConverter}, FallbackValue=Collapsed}" Command="{Binding NotClearInputDataCommand}" />
+        <controls:CustomDataLayoutControl Grid.Row="2"
+            x:Name="objectDataLayout"
+            Orientation="Vertical"
+            AllowAvailableItemsDuringCustomization="True"
+            IsCustomization="{Binding DataContext.IsCustomization, ElementName=LayoutRoot, Mode=TwoWay}"/>
+        <controls:CustomWaitIndicator Grid.Row="0" Grid.RowSpan="3" DeferedVisibility="{Binding Path=WaitIndicatorVisible, IsAsync=True}" />
+    </Grid>
+</mv:ObjectViewBase>

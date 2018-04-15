@@ -1,0 +1,86 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxet="http://schemas.devexpress.com/winfx/2008/xaml/editors/themekeys" xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <Style x:Key="{dxet:FilterPanelControlBaseThemeKey ResourceKey=FilterPanelBorderStyle}" TargetType="Border">
+    <Setter Property="Background" Value="#FFEBECEF" />
+    <Setter Property="BorderBrush" Value="#FFCACBD3" />
+  </Style>
+  <Style x:Key="{dxet:FilterPanelControlBaseThemeKey ResourceKey=FilterPanelEnableFilterStyle}" TargetType="{x:Type dxe:CheckEdit}">
+    <Setter Property="Margin" Value="6,5,6,6" />
+  </Style>
+  <Style x:Key="{dxet:FilterPanelControlBaseThemeKey ResourceKey=FilterPanelTextStyle}" TargetType="{x:Type dxe:TextEdit}">
+    <Setter Property="Margin" Value="0,2,0,2" />
+  </Style>
+  <ControlTemplate x:Key="{dxet:FilterPanelControlBaseThemeKey ResourceKey=ClearFilterButtonTemplate}" TargetType="{x:Type Button}">
+    <Grid Background="Transparent" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\FilterPanelControlBase.xaml;17;10">
+      <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup x:Name="CommonStates">
+          <VisualState x:Name="Normal" />
+          <VisualState x:Name="MouseOver">
+            <Storyboard>
+              <ColorAnimation Storyboard.TargetName="path1" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF201F35" />
+              <ColorAnimation Storyboard.TargetName="path2" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FFF0F0F0" />
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="Pressed">
+            <Storyboard>
+              <ColorAnimation Storyboard.TargetName="path1" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF201F35" />
+              <ColorAnimation Storyboard.TargetName="path2" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FFD0D0D0" />
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="Disabled" />
+        </VisualStateGroup>
+      </VisualStateManager.VisualStateGroups>
+      <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="16" Height="16" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\FilterPanelControlBase.xaml;36;14">
+        <Path x:Name="path1" Fill="#FF80838F" Stretch="Fill" Data="F1M1212,770C1216.42,770 1220,773.582 1220,778 1220,782.418 1216.42,786 1212,786 1207.58,786 1204,782.418 1204,778 1204,773.582 1207.58,770 1212,770z" Width="16" Height="16" HorizontalAlignment="Center" VerticalAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\FilterPanelControlBase.xaml;37;18" />
+        <Path x:Name="path2" Fill="#FFE0E0E0" Stretch="Fill" Data="F1M1218,775L1215,778 1218,781 1216,783 1213,780 1210,783 1208,781 1211,778 1208,775 1210,773 1213,776 1216,773 1218,775z" HorizontalAlignment="Center" VerticalAlignment="Center" Width="10" Height="10" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\FilterPanelControlBase.xaml;38;18" />
+      </Grid>
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxet:FilterPanelControlBaseThemeKey ResourceKey=FilterControlButtonTemplate}" TargetType="{x:Type Button}">
+    <Grid Background="Transparent" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\FilterPanelControlBase.xaml;44;10">
+      <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup x:Name="CommonStates">
+          <VisualState x:Name="Normal" />
+          <VisualState x:Name="MouseOver">
+            <Storyboard>
+              <ColorAnimation Storyboard.TargetName="path" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF201F35" />
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="Pressed">
+            <Storyboard>
+              <ColorAnimation Storyboard.TargetName="path" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF201F35" />
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="Disabled" />
+        </VisualStateGroup>
+      </VisualStateManager.VisualStateGroups>
+      <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="16" Height="16" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\FilterPanelControlBase.xaml;61;14">
+        <Path x:Name="path" Stretch="Fill" Fill="#FF80838F" HorizontalAlignment="Center" VerticalAlignment="Center" Width="14" Height="14" Data="F1 M 640,394C 643,394 645,396 645,399L 636,408L 631,408L 631,403L 640,394 Z M 642,400C 642,399.713 641.946,399.426 641.849,399.151L 635.846,405.154C 635.945,405.43 636,405.716 636,406L 642,400 Z M 640.517,397.483L 634.513,403.487C 634.907,403.748 635.253,404.095 635.511,404.489L 641.517,398.483C 641.259,398.088 640.912,397.741 640.517,397.483 Z M 639,397L 633,403C 633.287,403 633.573,403.054 633.848,403.152L 639.85,397.15C 639.574,397.053 639.288,397 639,397 Z M 635,407C 635,405.49 633.49,404 632,404L 632,407L 635,407 Z " dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\FilterPanelControlBase.xaml;62;18" />
+      </Grid>
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxet:FilterPanelControlBaseThemeKey ResourceKey=MRUComboBoxTemplate}">
+    <dxcore_unique_xmlns:DXDockPanel dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\FilterPanelControlBase.xaml;68;10">
+      <Path dxcore_unique_xmlns:DXDockPanel.Dock="Right" Stretch="Fill" Fill="{TemplateBinding Foreground}" Data="F1 M 605,479L 598,479L 601,485L 602,485L 605,479 Z " Width="5" Height="4" Margin="3,2,3,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\FilterPanelControlBase.xaml;69;14">
+        <Path.Visibility>
+          <Binding Path="(dxe:BaseEdit.OwnerEdit).ShowEditorButtons" RelativeSource="{RelativeSource TemplatedParent}">
+            <Binding.Converter>
+              <dxcore_unique_xmlns:BooleanToVisibilityConverter />
+            </Binding.Converter>
+          </Binding>
+        </Path.Visibility>
+      </Path>
+      <TextBlock Text="{Binding Path=(dxe:BaseEdit.OwnerEdit).EditValue, RelativeSource={RelativeSource TemplatedParent}}" TextTrimming="WordEllipsis" TextDecorations="{Binding Path=(dxe:BaseEdit.OwnerEdit).TextDecorations, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\FilterPanelControlBase.xaml;78;14" />
+    </dxcore_unique_xmlns:DXDockPanel>
+  </ControlTemplate>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.Filtering.FilterPanelCaptionControl}" TargetType="dxe:FilterPanelCaptionControl">
+    <Setter Property="Foreground" Value="#BF201F35" />
+    <Setter Property="Margin" Value="6,0,6,0" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="dxe:FilterPanelCaptionControl">
+          <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\FilterPanelControlBase.xaml;87;22" />
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+</ResourceDictionary>

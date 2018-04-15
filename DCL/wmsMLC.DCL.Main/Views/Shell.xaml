@@ -1,0 +1,27 @@
+﻿<views:BaseDialogWindow x:Class="wmsMLC.DCL.Main.Views.Shell"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:viewModels="clr-namespace:wmsMLC.DCL.Main.ViewModels"
+    xmlns:lex="http://wpflocalizeextension.codeplex.com"
+    xmlns:views="clr-namespace:wmsMLC.DCL.Main.Views"
+    WindowStartupLocation="CenterScreen"
+    ResizeMode="CanResize"
+    WindowState="Maximized"
+    Icon="{lex:LocExtension Key=wmsMLC.DCL.Resources:ImageResources:wms32}"
+    SmallIcon="{lex:LocExtension Key=wmsMLC.DCL.Resources:ImageResources:wms16}"
+    Title="{Binding Title}"
+    ShowIcon="True"
+    ShowTitle="True"
+    SnapsToDevicePixels="True"
+    UseLayoutRounding="True"
+    NotCloseOnEscapeKey="True">
+
+    <views:BaseDialogWindow.DataContext>
+        <viewModels:ShellViewModel />
+    </views:BaseDialogWindow.DataContext>
+    
+    <Grid>
+        <!--<ContentControl p:RegionManager.RegionName="{x:Static g:RegionNames.MainRegion}" />-->
+        <ContentControl Content="{Binding MainView}" />
+    </Grid>
+</views:BaseDialogWindow>

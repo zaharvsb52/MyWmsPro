@@ -1,0 +1,295 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" xmlns:dxgcore="http://schemas.devexpress.com/winfx/2008/xaml/grid" xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" xmlns:dxgt="http://schemas.devexpress.com/winfx/2008/xaml/grid/themekeys" xmlns:dxght="http://schemas.devexpress.com/winfx/2008/xaml/grid/internal" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys">
+    <dx:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    <dx:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverterInverted" Invert="True" />
+    <dxg:SummaryToTextConverter x:Key="SummaryToTextConverter" />
+    <dxg:NewItemRowPositionToVisibilityConverter x:Key="NewItemRowPositionToVisibilityConverter" />
+    <!--<Style x:Key="SearchPanelContentControlStyle" TargetType="ContentControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ContentControl">
+                    <ContentPresenter Content="{TemplateBinding Content}" Margin="{TemplateBinding Padding}" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>-->
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.OuterBorderElement}" TargetType="{x:Type dxg:OuterBorderElement}">
+        <Setter Property="Template" Value="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=OuterBorderElementTemplate}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.ColumnHeaderPanel}" TargetType="{x:Type dxg:ColumnHeaderPanel}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <dxg:ExpandButtonColumnHeader ColumnPosition="{Binding View.ExpandColumnPosition}" Width="{Binding Path=(dxg:GridControl.CurrentView).ActualExpandDetailHeaderWidth, RelativeSource={RelativeSource TemplatedParent}}" Visibility="{Binding Path=(dxg:GridControl.CurrentView).ActualShowDetailButtons, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                        <dxg:GridScrollablePart FixedColumnsDelimiterTemplate="{DynamicResource {dxgt:GridColumnHeaderThemeKey ResourceKey=FixedColumnsDelimiterTemplate}}" ScrollingMargin="{Binding Path=View.ScrollingHeaderVirtualizationMargin}" FixedNoneContentWidth="{Binding Path=FixedNoneContentWidth}" dxg:GridControl.CurrentView="{Binding Path=View}" Grid.Column="1" FixedLeftVisibleColumns="{Binding Path=View.FixedLeftVisibleColumns}" FixedRightVisibleColumns="{Binding Path=View.FixedRightVisibleColumns}" FixedLineWidth="{Binding Path=View.FixedLineWidth}">
+                            <dxg:GridScrollablePart.FitContent>
+                                <dxg:FitColumnHeader ColumnPosition="Right" />
+                            </dxg:GridScrollablePart.FitContent>
+                            <dxg:GridScrollablePart.FixedLeftContent>
+                                <dxg:HeaderItemsControl Focusable="False" ClipToBounds="True" dxg:GridColumn.HeaderPresenterType="Headers" ItemsSource="{Binding Path=FixedLeftCellData}" ItemsPanel="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=FixedLeftHeadersPanelTemplate}}">
+                                </dxg:HeaderItemsControl>
+                            </dxg:GridScrollablePart.FixedLeftContent>
+                            <dxg:GridScrollablePart.FixedRightContent>
+                                <dxg:HeaderItemsControl Focusable="False" ClipToBounds="True" dxg:GridColumn.HeaderPresenterType="Headers" ItemsSource="{Binding Path=FixedRightCellData}" ItemsPanel="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=FixedRightHeadersPanelTemplate}}">
+                                </dxg:HeaderItemsControl>
+                            </dxg:GridScrollablePart.FixedRightContent>
+                            <dxg:GridScrollablePart.FixedNoneContent>
+                                <dxg:HeaderItemsControl Focusable="False" ClipToBounds="True" dxg:GridColumn.HeaderPresenterType="Headers" x:Name="headerItemsControl" ItemsSource="{Binding Path=FixedNoneCellData}" ItemsPanel="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=FixedNoneHeadersPanelTemplate}}">
+                                </dxg:HeaderItemsControl>
+                            </dxg:GridScrollablePart.FixedNoneContent>
+                        </dxg:GridScrollablePart>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <DataTemplate x:Key="{dxgt:TableViewThemeKey ResourceKey=HeadersTemplate}">
+        <dx:MeasurePixelSnapper>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid>
+                    <dxg:IndicatorColumnHeader x:Name="PART_Indicator" ColumnPosition="Left" Width="{Binding Path=(dxg:GridControl.CurrentView).IndicatorHeaderWidth, RelativeSource={RelativeSource TemplatedParent}}" Visibility="{Binding Path=(dxg:GridControl.CurrentView).ActualShowIndicator, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}" dxg:GridControl.CurrentView="{Binding Path=(dxg:GridControl.CurrentView), RelativeSource={RelativeSource TemplatedParent}}">
+                        <dxg:GridViewHitInfoBase.HitTestAcceptor>
+                            <dxght:ColumnButtonTableViewHitTestAcceptor />
+                        </dxg:GridViewHitInfoBase.HitTestAcceptor>
+                    </dxg:IndicatorColumnHeader>
+                    <ContentControl Template="{DynamicResource {dxgt:GridColumnHeaderThemeKey ResourceKey=IndicatorColumnHeaderTemplate}}" dxg:GridControl.CurrentView="{Binding Path=(dxg:GridControl.CurrentView), RelativeSource={RelativeSource TemplatedParent}}" Visibility="{Binding Path=(dxg:GridControl.CurrentView).ActualShowIndicator, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                </Grid>
+                <dxg:ColumnHeaderPanel Grid.Column="1" dxg:GridControl.CurrentView="{Binding Path=(dxg:GridControl.CurrentView), RelativeSource={RelativeSource TemplatedParent}}" />
+                <!--<dxg:VerticalLinesPainter x:Name="linesPainter" LineBrush="{DynamicResource {dxgt:GridColumnHeaderThemeKey ResourceKey=HeadersVerticalLineBrush}}" VerticalLines="{Binding Path=(dxg:GridControl.ActiveView).HeaderVerticalLines, RelativeSource={RelativeSource TemplatedParent}}"/>-->
+            </Grid>
+        </dx:MeasurePixelSnapper>
+    </DataTemplate>
+    <DataTemplate x:Key="{dxgt:GridRowThemeKey ResourceKey=AutoFilterRowItemTemplate}">
+        <dxg:FilterCellContentPresenter RowData="{Binding RowData}" IsFocusedCell="{Binding Path=IsFocusedCell}" Column="{Binding Path=Column}" dxg:GridColumn.NavigationIndex="{Binding Path=Column.(dxg:GridColumn.VisibleIndex)}" Style="{Binding Path=Column.ActualAutoFilterRowCellStyle}" HasRightSibling="{Binding Path=Column.HasRightSibling}" HasLeftSibling="{Binding Path=Column.HasLeftSibling}" ShowVerticalLines="{Binding Path=Column.View.ShowVerticalLines}" Width="{Binding Path=Column.ActualAdditionalRowDataWidth}" SelectionState="{Binding Path=SelectionState}" />
+    </DataTemplate>
+    <DataTemplate x:Key="{dxgt:GridRowThemeKey ResourceKey=NewItemRowItemTemplate}">
+        <dxg:NewItemRowCellContentPresenter RowData="{Binding RowData}" IsFocusedCell="{Binding Path=IsFocusedCell}" Column="{Binding Path=Column}" dxg:GridColumn.NavigationIndex="{Binding Path=Column.(dxg:GridColumn.VisibleIndex)}" Style="{Binding Path=Column.ActualNewItemRowCellStyle}" HasRightSibling="{Binding Path=Column.HasRightSibling}" HasLeftSibling="{Binding Path=Column.HasLeftSibling}" ShowVerticalLines="{Binding Path=Column.View.ShowVerticalLines}" Width="{Binding Path=Column.ActualAdditionalRowDataWidth}" SelectionState="{Binding Path=SelectionState}" />
+    </DataTemplate>
+    <DataTemplate x:Key="{dxgt:TableViewThemeKey ResourceKey=TotalSummaryContainerTemplate}">
+        <dxg:GridTotalSummary DataContext="{Binding Path=DataContext, RelativeSource={RelativeSource TemplatedParent}}" Width="{Binding Path=Column.ActualHeaderWidth}" dxg:GridColumn.VisibleIndex="{Binding Path=Column.(dxg:GridColumn.VisibleIndex)}" dxb:BarManager.DXContextMenu="{Binding Path=Column.View.DataControlMenu}">
+            <dxg:GridViewHitInfoBase.HitTestAcceptor>
+                <dxght:TotalSummaryTableViewHitTestAcceptor />
+            </dxg:GridViewHitInfoBase.HitTestAcceptor>
+        </dxg:GridTotalSummary>
+    </DataTemplate>
+    <DataTemplate x:Key="{dxgt:TotalSummaryThemeKey ResourceKey=FootersTemplate}">
+        <dx:MeasurePixelSnapper>
+            <ContentControl Template="{DynamicResource {dxgt:TotalSummaryThemeKey ResourceKey=FootersContentTemplate}}" dxg:GridControl.CurrentView="{Binding Path=(dxg:GridControl.CurrentView), RelativeSource={RelativeSource TemplatedParent}}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <ContentControl x:Name="PART_Indicator" Width="{Binding Path=(dxg:GridControl.CurrentView).ActualIndicatorWidth, RelativeSource={RelativeSource TemplatedParent}}" Visibility="{Binding Path=(dxg:GridControl.CurrentView).ShowTotalSummaryIndicatorIndent, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                    <ContentControl Grid.Column="1" x:Name="PART_ExpandDetailColumn" Width="{Binding Path=(dxg:GridControl.CurrentView).ActualExpandDetailHeaderWidth, RelativeSource={RelativeSource TemplatedParent}}" Visibility="{Binding Path=(dxg:GridControl.CurrentView).ActualShowDetailButtons, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                    <dxg:GridScrollablePart ScrollingMargin="{Binding Path=View.ScrollingHeaderVirtualizationMargin}" FixedNoneContentWidth="{Binding Path=FixedNoneContentWidth}" dxg:GridControl.CurrentView="{Binding Path=View}" Grid.Column="2" FixedLeftVisibleColumns="{Binding Path=View.FixedLeftVisibleColumns}" FixedRightVisibleColumns="{Binding Path=View.FixedRightVisibleColumns}" FixedLineWidth="{Binding Path=View.FixedLineWidth}">
+                        <dxg:GridScrollablePart.FixedLeftContent>
+                            <dxg:TotalSummaryItemsControl ItemTemplate="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=TotalSummaryContainerTemplate}}" ItemsSource="{Binding FixedLeftCellData}" ItemsPanel="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=FixedLeftNoneDropPanelTemplate}}">
+                            </dxg:TotalSummaryItemsControl>
+                        </dxg:GridScrollablePart.FixedLeftContent>
+                        <dxg:GridScrollablePart.FixedRightContent>
+                            <dxg:TotalSummaryItemsControl ItemTemplate="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=TotalSummaryContainerTemplate}}" ItemsSource="{Binding FixedRightCellData}" ItemsPanel="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=FixedRightNoneDropPanelTemplate}}">
+                            </dxg:TotalSummaryItemsControl>
+                        </dxg:GridScrollablePart.FixedRightContent>
+                        <dxg:GridScrollablePart.FixedNoneContent>
+                            <dxg:TotalSummaryItemsControl ItemTemplate="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=TotalSummaryContainerTemplate}}" x:Name="footerItemsControl" ItemsSource="{Binding FixedNoneCellData}" ItemsPanel="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=FixedNoneDropPanelTemplate}}">
+                            </dxg:TotalSummaryItemsControl>
+                        </dxg:GridScrollablePart.FixedNoneContent>
+                    </dxg:GridScrollablePart>
+                </Grid>
+            </ContentControl>
+        </dx:MeasurePixelSnapper>
+    </DataTemplate>
+    <ControlTemplate x:Key="{dxgt:TableViewThemeKey ResourceKey=ScrollViewerTemplate}">
+        <!--ONLY SL <dxg:ScrollViewerContentDecorator View="{Binding Path=(dxg:GridControl.CurrentView), RelativeSource={RelativeSource TemplatedParent}}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">ONLY SL-->
+        <Grid ClipToBounds="True" SnapsToDevicePixels="true">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <dx:BestFitDecorator x:Name="PART_BestFitControlDecorator" Width="0" Height="0" dxg:GridControl.CurrentView="{Binding Path=(dxg:GridControl.CurrentView), RelativeSource={RelativeSource TemplatedParent}}">
+                <dxg:GridControl.CurrentViewChangedListener>
+                    <dxg:BestFitControlDecoratorInitializer />
+                </dxg:GridControl.CurrentViewChangedListener>
+            </dx:BestFitDecorator>
+            <!--ONLY SL 
+            <dx:PopupContainer x:Name="PART_PopupContainerDecorator" 
+                               dxg:GridControl.CurrentView="{Binding Path=(dxg:GridControl.CurrentView), RelativeSource={RelativeSource TemplatedParent}}">
+                <dxg:GridControl.CurrentViewChangedListener>
+                    <dxg:PopupContainerDecoratorInitializer/>
+                </dxg:GridControl.CurrentViewChangedListener>
+            </dx:PopupContainer>ONLY SL-->
+
+            <dxg:GroupPanelControl x:Name="PART_GroupPanel" Grid.Row="1" Visibility="Collapsed" dxb:BarManager.DXContextMenu="{Binding Path=(dxg:GridControl.CurrentView).DataControlMenu, RelativeSource={RelativeSource TemplatedParent}}" View="{Binding Path=(dxgcore:DataControlBase.CurrentView), RelativeSource={RelativeSource TemplatedParent}}">
+            </dxg:GroupPanelControl>
+
+            <ContentControl Grid.Row="0" x:Name="part_SearchControlContainer" dxg:GridControl.CurrentView="{Binding Path=(dxg:GridControl.CurrentView), RelativeSource={RelativeSource TemplatedParent}}" Visibility="{Binding Path=(dxg:GridControl.CurrentView).ActualShowSearchPanel, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}" Style="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=SearchPanelContentTemplate}}" />
+
+            <ContentPresenter Name="PART_HeadersPanel" Grid.Row="2" Content="{Binding Path=(dxg:GridControl.CurrentView).HeadersData, RelativeSource={RelativeSource TemplatedParent}}" MinHeight="{Binding Path=(dxg:GridControl.CurrentView).HeaderPanelMinHeight, RelativeSource={RelativeSource TemplatedParent}}" ContentTemplate="{Binding Path=(dxg:GridControl.CurrentView).HeaderTemplate, RelativeSource={RelativeSource TemplatedParent}}" Visibility="{Binding Path=(dxg:GridControl.CurrentView).ShowColumnHeaders, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}" dxg:GridControl.CurrentView="{Binding Path=(dxg:GridControl.CurrentView), RelativeSource={RelativeSource TemplatedParent}}">
+                <dxg:GridControl.CurrentViewChangedListener>
+                    <dxg:HeadersPanelInitializer />
+                </dxg:GridControl.CurrentViewChangedListener>
+                <dxg:GridViewHitInfoBase.HitTestAcceptor>
+                    <dxght:ColumnHeaderPanelTableViewHitTestAcceptor />
+                </dxg:GridViewHitInfoBase.HitTestAcceptor>
+            </ContentPresenter>
+            <dxg:AdditionalRowItemsControl Grid.Row="3" Margin="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=RowPresenterGridMargin}}" dxg:GridControl.CurrentView="{Binding Path=(dxg:GridControl.CurrentView), RelativeSource={RelativeSource TemplatedParent}}">
+                <dxg:AutoFilterRowControl x:Name="PART_FilterRow" DataContext="{Binding Path=(dxg:GridControl.CurrentView).AutoFilterRowData, RelativeSource={RelativeSource TemplatedParent}}" RowTemplate="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=FilterRowTemplate}}" ItemTemplate="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=AutoFilterRowItemTemplate}}" IndicatorWidth="{Binding Path=(dxg:GridControl.CurrentView).ActualIndicatorWidth, RelativeSource={RelativeSource TemplatedParent}}" Visibility="{Binding Path=(dxg:GridControl.CurrentView).ShowAutoFilterRow, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}" dxg:GridControl.CurrentView="{Binding Path=(dxg:GridControl.CurrentView), RelativeSource={RelativeSource TemplatedParent}}" />
+                <dxg:NewItemRowControl x:Name="PART_NewItemRow" Visibility="Collapsed" DataContext="{Binding Path=(dxg:GridControl.CurrentView).NewItemRowData, RelativeSource={RelativeSource TemplatedParent}}" RowTemplate="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=NewItemRowTemplate}}" ItemTemplate="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=NewItemRowItemTemplate}}" IndicatorWidth="{Binding Path=(dxg:GridControl.CurrentView).ActualIndicatorWidth, RelativeSource={RelativeSource TemplatedParent}}" dxg:GridControl.CurrentView="{Binding Path=(dxg:GridControl.CurrentView), RelativeSource={RelativeSource TemplatedParent}}">
+                    <dxg:GridControl.CurrentViewChangedListener>
+                        <dxg:NewItemRowInitializer />
+                    </dxg:GridControl.CurrentViewChangedListener>
+                </dxg:NewItemRowControl>
+            </dxg:AdditionalRowItemsControl>
+            <Grid Margin="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=RowPresenterGridMargin}}" Grid.Row="4" x:Name="rowPresenterGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <dx:DXDockPanel>
+                    <ContentPresenter x:Name="PART_FootersPanel" dx:DXDockPanel.Dock="Bottom" Content="{Binding Path=(dxg:GridControl.CurrentView).HeadersData, RelativeSource={RelativeSource TemplatedParent}}" ContentTemplate="{Binding Path=(dxg:GridControl.CurrentView).FooterTemplate, RelativeSource={RelativeSource TemplatedParent}}" dxg:GridControl.CurrentView="{Binding Path=(dxg:GridControl.CurrentView), RelativeSource={RelativeSource TemplatedParent}}" Visibility="{Binding Path=(dxg:GridControl.CurrentView).ShowTotalSummary, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <dxg:GridViewHitInfoBase.HitTestAcceptor>
+                            <dxght:TotalSummaryPanelTableViewHitTestAcceptor />
+                        </dxg:GridViewHitInfoBase.HitTestAcceptor>
+                    </ContentPresenter>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <ContentControl Margin="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=IndicatorMargin}}" Visibility="{Binding Path=(dxg:GridControl.CurrentView).ShowColumnHeaders, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverterInverted}}">
+
+                        </ContentControl>
+                        <ScrollContentPresenter Grid.Row="1" dxg:GridControl.CurrentView="{Binding Path=(dxg:GridControl.CurrentView), RelativeSource={RelativeSource TemplatedParent}}" MinWidth="{Binding Path=(dxg:GridControl.CurrentView).ScrollableAreaMinWidth, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}">
+                            <dxg:FocusRectPresenter.IsVerticalScrollHost>True</dxg:FocusRectPresenter.IsVerticalScrollHost>
+                            <!--BEGIN WPF-->
+                            <ScrollViewer.CanContentScroll>True</ScrollViewer.CanContentScroll>
+                            <ScrollContentPresenter.Name>PART_ScrollContentPresenter</ScrollContentPresenter.Name>
+                            <!--END WPF-->
+                            <!--ONLY SL<ScrollContentPresenter.Name>ScrollContentPresenter</ScrollContentPresenter.Name>ONLY SL-->
+                            <dxg:GridControl.CurrentViewChangedListener>
+                                <dxg:ScrollContentPresenterInitializer />
+                            </dxg:GridControl.CurrentViewChangedListener>
+
+                            <ScrollContentPresenter.Content>
+                                <dxg:DataPresenter x:Name="dataPresenter" dxg:GridControl.CurrentView="{Binding Path=(dxg:GridControl.CurrentView), RelativeSource={RelativeSource TemplatedParent}}" Template="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=DataPresenterTemplate}}">
+                                </dxg:DataPresenter>
+                            </ScrollContentPresenter.Content>
+                            <dxg:GridViewHitInfoBase.HitTestAcceptor>
+                                <dxght:DataAreaTableViewHitTestAcceptor />
+                            </dxg:GridViewHitInfoBase.HitTestAcceptor>
+                        </ScrollContentPresenter>
+                        <ContentControl Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                            <ContentControl.Visibility>
+                                <Binding Path="(dxg:GridControl.CurrentView).WaitIndicatorType" RelativeSource="{RelativeSource TemplatedParent}">
+                                    <Binding.Converter>
+                                        <dx:EnumToObjectConverter DefaultValue="Collapsed">
+                                            <dx:EnumToObjectConverter.Values>
+                                                <dx:EnumObjectProvider x:Key="Panel" Value="Visible" />
+                                            </dx:EnumToObjectConverter.Values>
+                                        </dx:EnumToObjectConverter>
+                                    </Binding.Converter>
+                                </Binding>
+                            </ContentControl.Visibility>
+                            <dx:WaitIndicator DeferedVisibility="{Binding Path=(dxg:GridControl.CurrentView).IsWaitIndicatorVisible, RelativeSource={RelativeSource TemplatedParent}}" Style="{Binding Path=(dxg:GridControl.CurrentView).WaitIndicatorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
+                        </ContentControl>
+                        <dxg:FixedGroupsAdorner Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ParentControl="{Binding Content, ElementName=dataPresenter}" FixedElements="{Binding Content.FixedElements, ElementName=dataPresenter}" />
+                    </Grid>
+
+                </dx:DXDockPanel>
+                <ScrollBar Grid.Column="1" Value="{Binding VerticalOffset, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}" Maximum="{Binding ScrollableHeight, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}" ViewportSize="{Binding ViewportHeight, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}" Visibility="{Binding ComputedVerticalScrollBarVisibility, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}" dxg:GridControl.CurrentView="{Binding Path=(dxg:GridControl.CurrentView), RelativeSource={RelativeSource TemplatedParent}}">
+                    <!--ONLY SL<ScrollBar.IsEnabled>
+                        <Binding Path="(dxg:GridControl.CurrentView).ValidationError" RelativeSource="{RelativeSource TemplatedParent}">
+                            <Binding.Converter>
+                                <dxg:ValidationErrorToIsEnabledConverter/>
+                            </Binding.Converter>
+                        </Binding>
+                    </ScrollBar.IsEnabled>ONLY SL-->
+                    <!--BEGIN WPF-->
+                    <ScrollBar.Name>PART_VerticalScrollBar</ScrollBar.Name>
+                    <!--END WPF-->
+                    <!--ONLY SL<ScrollBar.Name>VerticalScrollBar</ScrollBar.Name>ONLY SL-->
+
+                    <dxg:GridControl.CurrentViewChangedListener>
+                        <dxg:VerticalScrollBarBlendCustomizationExtension />
+                    </dxg:GridControl.CurrentViewChangedListener>
+                    <dxg:GridViewHitInfoBase.HitTestAcceptor>
+                        <dxght:VerticalScrollBarTableViewHitTestAcceptor />
+                    </dxg:GridViewHitInfoBase.HitTestAcceptor>
+                </ScrollBar>
+                <ScrollBar Grid.Row="1" Orientation="Horizontal" Margin="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=HorizontalScrollbarMargin}}" Value="{Binding HorizontalOffset, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}" Maximum="{Binding ScrollableWidth, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}" ViewportSize="{Binding ViewportWidth, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}" Visibility="{Binding ComputedHorizontalScrollBarVisibility, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}">
+                    <!--ONLY SL<ScrollBar.IsEnabled>
+                        <Binding Path="(dxg:GridControl.CurrentView).ValidationError" RelativeSource="{RelativeSource TemplatedParent}">
+                            <Binding.Converter>
+                                <dxg:ValidationErrorToIsEnabledConverter/>
+                            </Binding.Converter>
+                        </Binding>
+                    </ScrollBar.IsEnabled>ONLY SL-->
+                    <!--BEGIN WPF-->
+                    <ScrollBar.Name>PART_HorizontalScrollBar</ScrollBar.Name>
+                    <!--END WPF-->
+                    <!--ONLY SL<ScrollBar.Name>HorizontalScrollBar</ScrollBar.Name>ONLY SL-->
+                    <dxg:GridViewHitInfoBase.HitTestAcceptor>
+                        <dxght:HorizontalScrollBarTableViewHitTestAcceptor />
+                    </dxg:GridViewHitInfoBase.HitTestAcceptor>
+                </ScrollBar>
+                <dxg:FitContentContainer Grid.Row="1" Grid.Column="1">
+                    <Border x:Name="PART_HorizontalScrollCorner" Style="{DynamicResource {dxgt:ScrollBarThemeKey ResourceKey=ScrollingCornerStyle}}">
+                    </Border>
+                </dxg:FitContentContainer>
+            </Grid>
+            <dxg:OuterBorderElement Grid.Row="3" Grid.RowSpan="2" x:Name="outerBorder" ShowColumnHeaders="{Binding Path=(dxg:GridControl.CurrentView).ShowColumnHeaders, RelativeSource={RelativeSource TemplatedParent}}" />
+
+
+            <dxg:FixedTotalSummaryContainerControl Grid.Row="5" Visibility="{Binding Path=(dxg:GridControl.CurrentView).ShowFixedTotalSummary, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}" DataContext="{Binding Path=(dxg:GridControl.CurrentView).HeadersData, RelativeSource={RelativeSource TemplatedParent}}" dxb:BarManager.DXContextMenu="{Binding Path=(dxg:GridControl.CurrentView).DataControlMenu, RelativeSource={RelativeSource TemplatedParent}}" dxg:GridControl.CurrentView="{Binding Path=(dxg:GridControl.CurrentView), RelativeSource={RelativeSource TemplatedParent}}" dxg:GridPopupMenu.GridMenuType="FixedTotalSummary">
+            </dxg:FixedTotalSummaryContainerControl>
+            <dxg:FilterPanelContainer Grid.Row="6" x:Name="PART_FilterPanelContainer" View="{Binding Path=(dxg:GridControl.CurrentView), RelativeSource={RelativeSource TemplatedParent}}" />
+            <!--<dxg:FilterPanelControl Grid.Row="6" x:Name="PART_FilterPanel" 
+                                    DataContext="{Binding Path=(dxg:GridControl.CurrentView), RelativeSource={RelativeSource TemplatedParent}}" 
+                                    Visibility="{Binding Path=ActualShowFilterPanel, Converter={StaticResource BooleanToVisibilityConverter}}"/>-->
+            <dxg:FocusRectPresenter x:Name="PART_FocusRectPresenter" Grid.RowSpan="7" View="{Binding Path=(dxg:GridControl.CurrentView), RelativeSource={RelativeSource TemplatedParent}}" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        </Grid>
+        <!--ONLY SL </dxg:ScrollViewerContentDecorator>ONLY SL-->
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxgt:TableViewThemeKey ResourceKey=ControlTemplate}">
+        <ScrollViewer x:Name="scr" VerticalScrollBarVisibility="{Binding VerticalScrollbarVisibility, RelativeSource={RelativeSource TemplatedParent}}" HorizontalScrollBarVisibility="{Binding HorizontalScrollbarVisibility, RelativeSource={RelativeSource TemplatedParent}}" Focusable="False" dxg:GridControl.CurrentView="{Binding RelativeSource={RelativeSource TemplatedParent}}" Template="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=ScrollViewerTemplate}}">
+            <!--BEGIN WPF-->
+            <ScrollViewer.CanContentScroll>True</ScrollViewer.CanContentScroll>
+            <!--END WPF-->
+            <!--ONLY SL<ScrollViewer.IsTabStop>False</ScrollViewer.IsTabStop>ONLY SL-->
+        </ScrollViewer>
+    </ControlTemplate>
+    <!--BEGIN WPF-->
+    <ControlTemplate x:Key="{dxgt:CardViewThemeKey ResourceKey=ControlTemplate}">
+        <ScrollViewer x:Name="scr3" CanContentScroll="true" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Focusable="False" Template="{DynamicResource {dxgt:CardViewThemeKey ResourceKey=ScrollViewerTemplate}}" dxg:GridControl.CurrentView="{Binding RelativeSource={RelativeSource TemplatedParent}}" />
+    </ControlTemplate>
+    <!--END WPF-->
+    <ControlTemplate x:Key="{dxgt:TableViewThemeKey ResourceKey=ColumnChooserTemplate}">
+        <dx:NonLogicalDecorator>
+            <dxg:ColumnChooserControl Owner="{Binding Path=(dxg:GridControl.ActiveView), RelativeSource={RelativeSource TemplatedParent}}" />
+        </dx:NonLogicalDecorator>
+    </ControlTemplate>
+
+</ResourceDictionary>

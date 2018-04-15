@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <!--Описание телеграммы приходной накладной-->
+  <xs:element name="WMSTELEGRAM">
+    <xs:complexType>
+      <xs:sequence>
+        <!--Уникальный идентификатор телеграммы (GUID)-->
+        <xs:element name="ID" nillable="false">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="128"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <!--Дата отправки телеграммы-->
+        <xs:element name="DATE" type="WmsDateTime" nillable="false" />
+        <!--Тип телеграммы-->
+        <xs:element name="TYPE">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="60"/>
+              <xs:enumeration value="ACTION"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <!--Имя сущности (доп. инфо, требуется обсудить)-->
+        <xs:element name="ENTITY">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="128"/>
+              <xs:enumeration value="TENTIWB"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <!--Код телеграммы-->
+        <xs:element name="TELCODE">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="60"/>
+              <xs:enumeration value="WMS_PROCESS"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <!--Название процесса-->
+        <xs:element name="ACTION">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="128"/>
+              <xs:enumeration value="ImportPurchaseInvoice"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <!--Расположение склада?-->
+        <xs:element name="SITE">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="128"/>
+              <xs:enumeration value="My"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <!--Название склада-->
+        <xs:element name="WAREHOUSE">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="30"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <!--Объекты телеграммы-->
+        <xs:element name="CONTENT">
+          <xs:complexType>
+            <xs:sequence>
+              <!--Список сущности-->
+              <xs:element name="ITEMS">
+                <xs:complexType>
+                  <xs:sequence>
+                    <!--Список приходных накладных-->
+                    <xs:element maxOccurs="unbounded" name="IWB" type="IWBType" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--Описание типа накладной-->
+  <xs:complexType name="IWBType">
+    <xs:sequence>
+      <!--Мандант (ссылка для получения PARTNERID_R)-->
+      <xs:element name="MANDANTHOSTREF" nillable="false">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Имя приходного документа-->
+      <xs:element name="IWBNAME" nillable="false">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="60"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Приоритет документа-->
+      <xs:element name="IWBPRIORITY" type="xs:integer" nillable="false"/>
+      <!--Отправитель (ссылка для получения IWBSENDER)-->
+      <xs:element name="PARTNERHOSTREF_IWBSENDER" nillable="false">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Плательщик (ссылка для получения IWBPAYER)-->
+      <xs:element name="PARTNERHOSTREF_IWBPAYER" nillable="false">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Получатель (ссылка для получения IWBRECIPIENT)-->
+      <xs:element name="PARTNERHOSTREF_IWBRECIPIENT" nillable="false">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Идентификатор в хост-системе-->
+      <xs:element name="IWBHOSTREF" nillable="false">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Позиции-->
+      <xs:element name="IWBPOSL" type="IWBPOSType" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--Описание типа Позиции приходной накладной-->
+  <xs:complexType name="IWBPOSType">
+    <xs:sequence>
+      <!--Номер позиции-->
+      <xs:element name="IWBPOSNUMBER" type="xs:integer" nillable="false"/>
+      <!--Количество SKU-->
+      <xs:element name="IWBPOSCOUNT" type="xs:integer" nillable="false"/>
+      <!--Цвет-->
+      <xs:element name="IWBPOSCOLOR" nillable="false">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="60"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Тон-->
+      <xs:element name="IWBPOSTONE" nillable="false">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="60"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Размер-->
+      <xs:element name="IWBPOSSIZE">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Партия-->
+      <xs:element name="IWBPOSBATCH">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Срок годности-->
+      <xs:element name="IWBPOSEXPIRYDATE" type="WmsDateTime" />
+      <!--Дата производства-->
+      <xs:element name="IWBPOSPRODUCTDATE" type="WmsDateTime" />
+      <!--Серийный номер-->
+      <xs:element name="IWBPOSSERIALNUMBER">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Код фабрики-->
+      <xs:element name="IWBPOSFACTORY">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Квалификация-->
+      <xs:element name="IWBPOSQLF">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Блокировка-->
+      <xs:element name="IWBPOSBLOCKING">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Клиентский артикул-->
+      <xs:element name="IWBPOSARTNAME">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Клиентская ЕИ-->
+      <xs:element name="IWBPOSMEASURE">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Хост-идентификатор-->
+      <xs:element name="IWBPOSHOSTREF">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--ТЕ на которую надо разместить-->
+      <xs:element name="IWBPOSTE">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Стоимость-->
+      <xs:element name="IWBPOSPRICEVALUE" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="WmsDateTime">
+    <xs:restriction base="xs:string">
+      <!-- yyyyMMdd HH:mm:ss-->
+      <xs:pattern value="(\d{4}(0[1-9]|1[0-2])(0[1-9]|[12]\d|3[01]) ([01]\d|2[0-3])(:[0-5]\d){2}?)" />
+    </xs:restriction>
+  </xs:simpleType>  
+</xs:schema>
+
+<!--Необходимые поля
+=========================
+Мандант
+Имя приходного документа
+Приоритет документа
+Отправитель
+Плательщик
+Получатель
+Идентификатор в хост-системе
+
+Позиции приходной накладной
+=================
+Номер позиции
+Цвет
+Тон
+Размер
+Партия
+Срок годности
+Дата производства
+Серийный номер
+Код фабрики
+Квалификация
+Блокировка
+Клиентский артикул
+Клиентская ЕИ
+Хост-идентификатор-->

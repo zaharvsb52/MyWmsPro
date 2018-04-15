@@ -1,0 +1,53 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/StandardControls/Brushes.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/StandardControls/SharedResources.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey ThemeName=GrayOne, FullName=System.Windows.Controls.TextBox}" TargetType="{x:Type TextBox}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Foreground" Value="{StaticResource Text.Foreground}" />
+        <Setter Property="Background" Value="{StaticResource TextBox.Background}" />
+        <Setter Property="CaretBrush" Value="{StaticResource Text.CaretBrush}" />
+        <Setter Property="SelectionBrush" Value="{StaticResource Text.SelectionBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource TextBox.BorderBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Padding" Value="4,3,4,3" />
+        <Setter Property="AllowDrop" Value="True" />
+        <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst" />
+        <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Grid x:Name="Root" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                        <Border x:Name="DefaultState" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="1" />
+                        <Border x:Name="HoverState" Background="{TemplateBinding Background}" BorderBrush="{StaticResource TextBox.HoverState.BorderBrush}" BorderThickness="1" CornerRadius="1" Opacity="0" />
+                        <Rectangle x:Name="FocusState" Style="{StaticResource TextBoxFocusTemplate}" Opacity="0" />
+                        <ScrollViewer x:Name="PART_ContentHost" Padding="{TemplateBinding Padding}" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Root" Property="Opacity" Value="0.35" />
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="True" />
+                                <Condition Property="IsFocused" Value="False" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="DefaultState" Property="Opacity" Value="0" />
+                            <Setter TargetName="HoverState" Property="Opacity" Value="1" />
+                        </MultiTrigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter TargetName="DefaultState" Property="Opacity" Value="0" />
+                            <Setter TargetName="HoverState" Property="Opacity" Value="1" />
+                            <Setter TargetName="FocusState" Property="Opacity" Value="0.25" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

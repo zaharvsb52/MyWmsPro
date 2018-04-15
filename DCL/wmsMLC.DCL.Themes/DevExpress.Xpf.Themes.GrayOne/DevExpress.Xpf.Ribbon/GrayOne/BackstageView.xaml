@@ -1,0 +1,81 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon" xmlns:dxrt="http://schemas.devexpress.com/winfx/2008/xaml/ribbon/themekeys">
+
+    <sys:Boolean x:Key="{dxrt:BackstageThemeKey ResourceKey=DisableDefaultBackgroundGlyph}">True</sys:Boolean>
+
+    <ControlTemplate x:Key="{dxrt:BackstageThemeKey ResourceKey=BackgroundTemplate}" TargetType="{x:Type ContentControl}">
+        <Border Background="#FFFFFFFF" />
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxrt:BackstageThemeKey ResourceKey=TabPaneTemplate}" TargetType="{x:Type ContentControl}">
+        <Border dx:FrameworkElementHelper.IsClipped="True">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFEBECEF" Offset="0" />
+                    <GradientStop Color="#FFD9DAE0" Offset="1" />
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+                <Border Background="Transparent" BorderBrush="#FF000000" BorderThickness="0,0,32,0" Margin="0,0,-32,0">
+                    <Border.OpacityMask>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#3F000000" Offset="0" />
+                            <GradientStop Color="#3F000000" Offset="1" />
+                            <GradientStop Color="#FF000000" Offset="0.5" />
+                        </LinearGradientBrush>
+                    </Border.OpacityMask>
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="0" BlurRadius="32" Opacity="0.5" />
+                    </Border.Effect>
+                </Border>
+                <Border BorderBrush="#FFAEB0B9" BorderThickness="0,0,1,0" Margin="0,0,0,0" HorizontalAlignment="Right">
+                    <Border.OpacityMask>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#7F000000" Offset="0" />
+                            <GradientStop Color="#7F000000" Offset="1" />
+                            <GradientStop Color="#FF000000" Offset="0.5" />
+                        </LinearGradientBrush>
+                    </Border.OpacityMask>
+                </Border>
+                <ContentPresenter />
+            </Grid>
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxrt:BackstageThemeKey ResourceKey=BackstageViewContentHostTemplate}" TargetType="{x:Type dxr:BackstageViewContentHost}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <ContentControl Grid.Column="0" x:Name="PART_Left" Content="{TemplateBinding LeftContent}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" />
+            <ContentControl Grid.Column="1" x:Name="PART_Right" Content="{TemplateBinding RightContent}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" />
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxrt:BackstageThemeKey ResourceKey=ControlPaneTemplate}" TargetType="{x:Type ContentControl}">
+        <ContentPresenter />
+    </ControlTemplate>
+
+    <Style x:Key="{dxrt:BackstageThemeKey ResourceKey=BackgroundGlyphStyle}" TargetType="{x:Type Image}">
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+        <Setter Property="Stretch" Value="None" />
+    </Style>
+
+    <Style x:Key="{dxrt:BackstageThemeKey ResourceKey=BackgroundStyle}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxrt:BackstageThemeKey ResourceKey=BackgroundTemplate}}" />
+    </Style>
+
+    <Style x:Key="{dxrt:BackstageThemeKey ResourceKey=TabPaneStyle}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxrt:BackstageThemeKey ResourceKey=TabPaneTemplate}}" />
+    </Style>
+
+    <Style x:Key="{dxrt:BackstageThemeKey ResourceKey=ControlPaneStyle}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxrt:BackstageThemeKey ResourceKey=ControlPaneTemplate}}" />
+    </Style>
+
+    <Style x:Key="{dxrt:BackstageThemeKey ResourceKey=ItemsPresenterStyle}" TargetType="{x:Type ItemsPresenter}">
+        <Setter Property="Margin" Value="0,1,0,1" />
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,134 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" xmlns:dxbt="http://schemas.devexpress.com/winfx/2008/xaml/bars/themekeys" xmlns:dxcn="http://schemas.devexpress.com/winfx/2008/xaml/core/internal">
+
+    <!--BEGIN WPF-->
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Bars/Themes/GrayOne/Brushes.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <!--END WPF-->
+
+    <ControlTemplate x:Key="{dxbt:FloatingBarPopupThemeKey ResourceKey=BorderTemplate}" TargetType="{x:Type ContentControl}">
+        <Grid x:Name="Root">
+            <Border x:Name="Border" Background="#FFFFFFFF" BorderBrush="#FF9DA0AA" BorderThickness="1" Padding="1" Margin="5">
+                <Border.Effect>
+                    <DropShadowEffect x:Name="Shadow" Direction="270" ShadowDepth="1" BlurRadius="3" Opacity="0.15" />
+                </Border.Effect>
+                <ContentPresenter Content="{TemplateBinding Content}" Margin="1,1,0,0" />
+            </Border>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="AppType">
+                    <VisualState x:Name="Standalone" />
+                    <VisualState x:Name="BrowserHosted" />
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxbt:FloatingBarPopupThemeKey ResourceKey=CaptionBackgroundTemplate}" TargetType="{x:Type ContentControl}">
+        <!--BEGIN WPF-->
+        <Border Cursor="SizeAll" Background="Transparent">
+        <!--END WPF-->
+        <!--ONLY SL
+            <Border Background="Transparent">
+        ONLY SL-->
+            <ContentPresenter />
+        </Border>
+    </ControlTemplate>
+
+    <!--BEGIN WPF-->
+    <ControlTemplate x:Key="{dxbt:FloatingBarPopupThemeKey ResourceKey=SizeGripTemplate}" TargetType="{x:Type Thumb}">
+        <Border Width="2" HorizontalAlignment="Right" />
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxbt:FloatingBarPopupThemeKey ResourceKey=ContentTemplate}" TargetType="{x:Type dxb:FloatingBarPopupContentControl}">
+        <ContentControl x:Name="PART_Border" Template="{DynamicResource {dxbt:FloatingBarPopupThemeKey ResourceKey=BorderTemplate}}">
+            <StackPanel>
+                <ContentControl x:Name="PART_Caption" Template="{DynamicResource {dxbt:FloatingBarPopupThemeKey ResourceKey=CaptionBackgroundTemplate}}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <dxb:DragWidget x:Name="PART_DragWidget" Style="{DynamicResource {dxbt:FloatingBarPopupThemeKey ResourceKey=DragWidgetStyle}}" Grid.ColumnSpan="2" OwnerPoint="0,0" />
+                        <Border ClipToBounds="True">
+                            <TextBlock Text="{Binding Path=DataContext.Caption, RelativeSource={RelativeSource TemplatedParent}}" Style="{DynamicResource {dxbt:FloatingBarPopupThemeKey ResourceKey=CaptionStyle}}" Grid.Column="0" Grid.ColumnSpan="3" />
+                        </Border>
+                        <Button x:Name="PART_CloseButton" Style="{DynamicResource {dxbt:FloatingBarPopupThemeKey ResourceKey=CloseButtonStyle}}" VerticalAlignment="Top" Grid.Column="1" />
+                    </Grid>
+                </ContentControl>
+                <Grid Grid.Row="1">
+                    <dxb:FloatingBarContainerControl x:Name="PART_FloatingBarContainer" />
+                    <Thumb x:Name="PART_SizeGrip" Style="{DynamicResource {dxbt:FloatingBarPopupThemeKey ResourceKey=SizeGripStyle}}" HorizontalAlignment="Right" />
+                </Grid>
+            </StackPanel>
+        </ContentControl>
+    </ControlTemplate>
+
+    <!--END WPF-->
+    <ControlTemplate x:Key="{dxbt:FloatingBarPopupThemeKey ResourceKey=CloseButtonTemplate}" TargetType="{x:Type Button}">
+        <Grid Margin="2,2,2,3">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <ColorAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF201F35" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="PressedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <ColorAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF201F35" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="0.35" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Border x:Name="HoverState" Background="{StaticResource BarItemInPopupMenu.HoverState.Border1}" CornerRadius="2" Opacity="0">
+                <Border x:Name="hover1" Background="{StaticResource BarItemInPopupMenu.HoverState.Border3}" BorderBrush="{StaticResource BarItemInPopupMenu.HoverState.Border2}" BorderThickness="1" Margin="1" CornerRadius="1" />
+            </Border>
+            <Border x:Name="PressedState" Background="{StaticResource BarItemInPopupMenu.PressedState.Border1}" CornerRadius="2" Opacity="0">
+                <Border x:Name="pressed1" Background="{StaticResource BarItemInPopupMenu.PressedState.Border3}" BorderBrush="{StaticResource BarItemInPopupMenu.PressedState.Border2}" BorderThickness="1" Margin="1" CornerRadius="1" />
+            </Border>
+            <Grid Width="17" Height="17">
+                <Path x:Name="Glyph" Stretch="Fill" Fill="#FF80838F" Data="F1 M 76,144L 78,144L 74.5,147.5L 78,151L 76,151L 73.5,148.5L 71,151L 69,151L 72.5,147.5L 69,144L 71,144L 73.5,146.5L 76,144 Z" Width="9" Height="7" />
+            </Grid>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxbt:FloatingBarPopupThemeKey ResourceKey=QuickCustomizationButtonTemplate}" TargetType="{x:Type Button}">
+        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+    </ControlTemplate>
+
+    <Style x:Key="{dxbt:FloatingBarPopupThemeKey ResourceKey=CaptionStyle}" TargetType="{x:Type TextBlock}">
+        <Setter Property="IsHitTestVisible" Value="False" />
+        <Setter Property="Foreground" Value="#FF5D5C6D" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="TextWrapping" Value="NoWrap" />
+        <Setter Property="Margin" Value="5,0,5,0" />
+    </Style>
+
+    <Style x:Key="{dxbt:FloatingBarPopupThemeKey ResourceKey=CloseButtonStyle}" TargetType="{x:Type Button}">
+        <Setter Property="Template" Value="{DynamicResource {dxbt:FloatingBarPopupThemeKey ResourceKey=CloseButtonTemplate}}" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Cursor" Value="Hand" />
+    </Style>
+
+    <Style x:Key="{dxbt:FloatingBarPopupThemeKey ResourceKey=QuickCustomizationButtonStyle}" TargetType="{x:Type Button}">
+        <Setter Property="Template" Value="{DynamicResource {dxbt:FloatingBarPopupThemeKey ResourceKey=QuickCustomizationButtonTemplate}}" />
+        <Setter Property="Foreground" Value="#FF201F35" />
+        <Setter Property="Width" Value="16" />
+        <Setter Property="Height" Value="16" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Content" Value="Y" />
+    </Style>
+
+</ResourceDictionary>

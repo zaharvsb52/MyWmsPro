@@ -1,0 +1,185 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="clr-namespace:DevExpress.Xpf.Core;assembly=DevExpress.Xpf.Core.v12.2" xmlns:dxt="clr-namespace:DevExpress.Xpf.Utils.Themes;assembly=DevExpress.Xpf.Core.v12.2" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <!--BEGIN WPF-->
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/TabControl/Themes/GrayOne/Brushes.xaml" />
+  </ResourceDictionary.MergedDictionaries>
+  <!--END WPF-->
+  <ControlTemplate x:Key="{dxt:DXTabControlHeaderMenuThemeKey ResourceKey=TabControlHeaderMenuItemTemplate}" TargetType="{x:Type dx:TabControlHeaderMenuItem}">
+    <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\GrayOne\Components.xaml;10;10">
+      <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup x:Name="CommonStates">
+          <VisualState x:Name="Normal" />
+          <VisualState x:Name="MouseOver">
+            <Storyboard>
+              <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                  <DiscreteObjectKeyFrame.Value>
+                    <sys:Double>1</sys:Double>
+                  </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+              </ObjectAnimationUsingKeyFrames>
+            </Storyboard>
+          </VisualState>
+        </VisualStateGroup>
+        <VisualStateGroup x:Name="SelectionStates">
+          <VisualState x:Name="Selected">
+            <Storyboard>
+              <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Check" Storyboard.TargetProperty="Opacity">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                  <DiscreteObjectKeyFrame.Value>
+                    <sys:Double>1</sys:Double>
+                  </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+              </ObjectAnimationUsingKeyFrames>
+              <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Icon" Storyboard.TargetProperty="Opacity">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                  <DiscreteObjectKeyFrame.Value>
+                    <sys:Double>0</sys:Double>
+                  </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+              </ObjectAnimationUsingKeyFrames>
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="Unselected">
+            <Storyboard>
+              <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Check" Storyboard.TargetProperty="Opacity">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                  <DiscreteObjectKeyFrame.Value>
+                    <sys:Double>0</sys:Double>
+                  </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+              </ObjectAnimationUsingKeyFrames>
+              <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Icon" Storyboard.TargetProperty="Opacity">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                  <DiscreteObjectKeyFrame.Value>
+                    <sys:Double>1</sys:Double>
+                  </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+              </ObjectAnimationUsingKeyFrames>
+            </Storyboard>
+          </VisualState>
+        </VisualStateGroup>
+      </VisualStateManager.VisualStateGroups>
+      <Border Padding="7,3,8,2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\GrayOne\Components.xaml;65;14">
+        <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\GrayOne\Components.xaml;66;18">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+          <Border Background="Transparent" Margin="-7,-3,0,-2" Grid.Column="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\GrayOne\Components.xaml;71;22" />
+          <Border x:Name="HoverState" Background="{StaticResource TabHeaderButton.HoverState.Border1}" CornerRadius="2" Margin="-6,-2,-7,-1" Padding="1" Grid.ColumnSpan="2" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\GrayOne\Components.xaml;72;22">
+            <Border Background="{StaticResource TabHeaderButton.HoverState.Border3}" BorderBrush="{StaticResource TabHeaderButton.HoverState.Border2}" BorderThickness="1" CornerRadius="1" Padding="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\GrayOne\Components.xaml;73;26" />
+          </Border>
+          <dx:DXContentPresenter x:Name="Icon" Content="{TemplateBinding Icon}" Width="16" Height="16" Margin="0,0,4,0" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\GrayOne\Components.xaml;75;22" />
+          <dx:DXContentPresenter x:Name="Check" Margin="0,0,4,0" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" FlowDirection="LeftToRight" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\GrayOne\Components.xaml;76;22">
+            <dx:DXContentPresenter.Content>
+              <Grid x:Name="ElementCheck" Width="20" Height="20" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\GrayOne\Components.xaml;78;30">
+                <Path Stretch="Fill" Fill="#FF201F35" Data="F1 M 1442,967L 1444,967L 1446,970L 1447,970L 1454,959L 1456,959L 1447,973L 1446,973L 1442,967 Z " Width="14" Height="14" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\GrayOne\Components.xaml;79;34" />
+              </Grid>
+            </dx:DXContentPresenter.Content>
+          </dx:DXContentPresenter>
+          <dx:DXContentPresenter Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" Margin="4,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\GrayOne\Components.xaml;83;22" />
+        </Grid>
+      </Border>
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxt:DXTabControlHeaderMenuThemeKey ResourceKey=TabControlHeaderMenuSeparatorTemplate}" TargetType="{x:Type dx:TabControlHeaderMenuSeparator}">
+    <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\GrayOne\Components.xaml;90;10">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      <Border Background="Yellow" Width="31" Grid.Column="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\GrayOne\Components.xaml;95;14" />
+      <Border Background="Purple" Height="1" Margin="5,0,2,0" Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\GrayOne\Components.xaml;96;14" />
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxt:DXTabControlHeaderMenuThemeKey ResourceKey=TabControlHeaderMenuTemplate}" TargetType="{x:Type ContentControl}">
+    <Border Background="#FFFFFFFF" BorderBrush="#FF9DA0AA" BorderThickness="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\GrayOne\Components.xaml;101;10">
+      <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\GrayOne\Components.xaml;102;14" />
+    </Border>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxt:DXTabControlHeaderMenuThemeKey ResourceKey=ScrollUpButtonTemplate}" TargetType="{x:Type RepeatButton}">
+    <Grid Height="12" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\GrayOne\Components.xaml;107;10">
+      <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup x:Name="CommonStates">
+          <VisualState x:Name="Normal" />
+          <VisualState x:Name="MouseOver" />
+          <VisualState x:Name="Pressed">
+            <Storyboard>
+              <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="Background">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                  <DiscreteObjectKeyFrame.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                      <GradientStop Color="#FFD0D0D0" Offset="0" />
+                      <GradientStop Color="#FFD0D0D0" Offset="1" />
+                    </LinearGradientBrush>
+                  </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+              </ObjectAnimationUsingKeyFrames>
+            </Storyboard>
+          </VisualState>
+        </VisualStateGroup>
+      </VisualStateManager.VisualStateGroups>
+      <Border Background="#14000000" Margin="0,0,0,-1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\GrayOne\Components.xaml;128;14" />
+      <Border x:Name="Root" BorderBrush="#FF979797" BorderThickness="0,0,0,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\GrayOne\Components.xaml;129;14">
+        <Border.Background>
+          <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFFFFFFF" Offset="0" />
+            <GradientStop Color="#FFD0D0D0" Offset="1" />
+          </LinearGradientBrush>
+        </Border.Background>
+        <Border.OpacityMask>
+          <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+            <GradientStop Color="#FFFFFFFF" Offset="0" />
+            <GradientStop Color="#FFFFFFFF" Offset="1" />
+            <GradientStop Color="#FFFFFFFF" Offset="0.5" />
+          </LinearGradientBrush>
+        </Border.OpacityMask>
+        <Path Stretch="Fill" Fill="#FF201F35" Data="F1M1323,792L1327,788 1331,792 1323,792z" Margin="2" Width="8" Height="4" HorizontalAlignment="Center" VerticalAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\GrayOne\Components.xaml;143;18" />
+      </Border>
+      <Border Background="#14FFFFFF" Height="1" VerticalAlignment="Top" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\GrayOne\Components.xaml;145;14" />
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxt:DXTabControlHeaderMenuThemeKey ResourceKey=ScrollDownButtonTemplate}" TargetType="{x:Type RepeatButton}">
+    <Grid Height="12" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\GrayOne\Components.xaml;150;10">
+      <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup x:Name="CommonStates">
+          <VisualState x:Name="Normal" />
+          <VisualState x:Name="MouseOver" />
+          <VisualState x:Name="Pressed">
+            <Storyboard>
+              <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="Background">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                  <DiscreteObjectKeyFrame.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                      <GradientStop Color="#FFD0D0D0" Offset="0" />
+                      <GradientStop Color="#FFD0D0D0" Offset="1" />
+                    </LinearGradientBrush>
+                  </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+              </ObjectAnimationUsingKeyFrames>
+            </Storyboard>
+          </VisualState>
+        </VisualStateGroup>
+      </VisualStateManager.VisualStateGroups>
+      <Border Background="#09000000" Margin="0,-1,0,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\GrayOne\Components.xaml;171;14" />
+      <Border x:Name="Root" BorderBrush="#FFB0B0B0" BorderThickness="0,1,0,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\GrayOne\Components.xaml;172;14">
+        <Border.Background>
+          <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFFFFFFF" Offset="0" />
+            <GradientStop Color="#FFD0D0D0" Offset="1" />
+          </LinearGradientBrush>
+        </Border.Background>
+        <Border.OpacityMask>
+          <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+            <GradientStop Color="#FFFFFFFF" Offset="0" />
+            <GradientStop Color="#FFFFFFFF" Offset="1" />
+            <GradientStop Color="#FFFFFFFF" Offset="0.5" />
+          </LinearGradientBrush>
+        </Border.OpacityMask>
+        <Path Stretch="Fill" Fill="#FF201F35" Data="F1M1316,795L1312,799 1308,795 1316,795z" Margin="2" Width="8" Height="4" HorizontalAlignment="Center" VerticalAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\GrayOne\Components.xaml;186;18" />
+      </Border>
+      <Border Background="#14FFFFFF" Height="1" VerticalAlignment="Top" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\GrayOne\Components.xaml;188;14" />
+    </Grid>
+  </ControlTemplate>
+</ResourceDictionary>

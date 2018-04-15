@@ -1,0 +1,691 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/StandardControls/Brushes.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/StandardControls/SharedResources.xaml" />
+  </ResourceDictionary.MergedDictionaries>
+  <Style x:Key="SliderRepeatButtonStyle" TargetType="{x:Type RepeatButton}">
+    <Setter Property="OverridesDefaultStyle" Value="True" />
+    <Setter Property="IsTabStop" Value="False" />
+    <Setter Property="Focusable" Value="False" />
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type RepeatButton}">
+          <Border Background="{TemplateBinding Background}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;16;22" />
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="SliderThumbStyle" TargetType="{x:Type Thumb}">
+    <Setter Property="Foreground" Value="{x:Null}" />
+    <Setter Property="Background" Value="{x:Null}" />
+    <Setter Property="MinWidth" Value="11" />
+    <Setter Property="MinHeight" Value="11" />
+    <Setter Property="MaxWidth" Value="21" />
+    <Setter Property="MaxHeight" Value="21" />
+    <Setter Property="OverridesDefaultStyle" Value="True" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Thumb}">
+          <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;33;22">
+            <Border x:Name="Shadow" Background="#FF000000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;34;26">
+              <Border.OpacityMask>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                  <GradientStop Color="#00000000" Offset="0" />
+                  <GradientStop Color="#00000000" Offset="1" />
+                  <GradientStop Color="#FF000000" Offset="0.5" />
+                </LinearGradientBrush>
+              </Border.OpacityMask>
+              <Border.Effect>
+                <DropShadowEffect Direction="90" ShadowDepth="0" BlurRadius="3" Opacity="0.5" />
+              </Border.Effect>
+            </Border>
+            <Border x:Name="DefaultState" Background="{StaticResource SliderThumb.DefaultState.Border1}" Padding="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;46;26">
+              <Border Background="{StaticResource SliderThumb.DefaultState.Border3}" BorderBrush="{StaticResource SliderThumb.DefaultState.Border2}" BorderThickness="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;47;30" />
+            </Border>
+            <Border x:Name="HoverState" Background="{StaticResource SliderThumb.HoverState.Border1}" Padding="1" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;49;26">
+              <Border Background="{StaticResource SliderThumb.HoverState.Border3}" BorderBrush="{StaticResource SliderThumb.HoverState.Border2}" BorderThickness="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;50;30" />
+            </Border>
+            <Border x:Name="PressedState" Background="{StaticResource SliderThumb.PressedState.Border1}" Padding="1" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;52;26">
+              <Border Background="{StaticResource SliderThumb.PressedState.Border3}" BorderBrush="{StaticResource SliderThumb.PressedState.Border2}" BorderThickness="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;53;30" />
+            </Border>
+            <Border x:Name="DisabledState" Background="{StaticResource SliderThumb.DisabledState.Border1}" Padding="1" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;55;26">
+              <Border Background="{StaticResource SliderThumb.DisabledState.Border3}" BorderBrush="{StaticResource SliderThumb.DisabledState.Border2}" BorderThickness="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;56;30" />
+            </Border>
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter TargetName="DefaultState" Property="Opacity" Value="0" />
+              <Setter TargetName="HoverState" Property="Opacity" Value="1" />
+              <Setter TargetName="PressedState" Property="Opacity" Value="0" />
+            </Trigger>
+            <Trigger Property="IsDragging" Value="True">
+              <Setter Property="Effect" TargetName="Shadow">
+                <Setter.Value>
+                  <DropShadowEffect Opacity="0" />
+                </Setter.Value>
+              </Setter>
+              <Setter TargetName="DefaultState" Property="Opacity" Value="0" />
+              <Setter TargetName="HoverState" Property="Opacity" Value="0" />
+              <Setter TargetName="PressedState" Property="Opacity" Value="1" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+              <Setter Property="Effect" TargetName="Shadow">
+                <Setter.Value>
+                  <DropShadowEffect Opacity="0" />
+                </Setter.Value>
+              </Setter>
+              <Setter TargetName="DefaultState" Property="Opacity" Value="0" />
+              <Setter TargetName="HoverState" Property="Opacity" Value="0" />
+              <Setter TargetName="PressedState" Property="Opacity" Value="0" />
+              <Setter TargetName="DisabledState" Property="Opacity" Value="1" />
+              <Setter Property="Foreground" Value="{StaticResource Text.DisabledState.Foreground}" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="HorizontalSliderUpThumbStyle" TargetType="{x:Type Thumb}">
+    <Setter Property="Background" Value="{x:Null}" />
+    <Setter Property="Foreground" Value="{x:Null}" />
+    <Setter Property="Width" Value="11" />
+    <Setter Property="MinHeight" Value="11" />
+    <Setter Property="OverridesDefaultStyle" Value="True" />
+    <Setter Property="SnapsToDevicePixels" Value="True" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Thumb}">
+          <Grid x:Name="Root" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;103;22">
+            <Grid.Effect>
+              <DropShadowEffect x:Name="Shadow" Direction="315" ShadowDepth="1" BlurRadius="2" Opacity="0.1" />
+            </Grid.Effect>
+            <Grid x:Name="DefaultState" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;107;26">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+              </Grid.RowDefinitions>
+              <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;112;30">
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.DefaultState.ArrowUp.Border1}" Data="F1 M 146,357L 156,357L 151,352L 146,357 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;113;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.DefaultState.ArrowUp.Border1}" Data="F1 M 146,357L 156,357L 151,352L 146,357 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;114;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.DefaultState.ArrowUp.Border2}" Data="F1 M 147,357L 155,357L 151,353L 147,357 Z" Margin="1,1,1,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;115;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.DefaultState.ArrowUp.Border3}" Data="F1 M 147,357L 155,357L 151,353L 147,357 Z" Margin="2,2,2,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;116;34" />
+              </Grid>
+              <Border Background="{StaticResource SliderThumb.DefaultState.ArrowDown.Border1}" Padding="1,0,1,1" Grid.Row="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;118;30">
+                <Border Background="{StaticResource SliderThumb.DefaultState.ArrowDown.Border2}" Padding="1,0,1,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;119;34">
+                  <Border Background="{StaticResource SliderThumb.DefaultState.ArrowDown.Border3}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;120;38" />
+                </Border>
+              </Border>
+            </Grid>
+            <Grid x:Name="HoverState" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;124;26">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+              </Grid.RowDefinitions>
+              <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;129;30">
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.HoverState.ArrowUp.Border1}" Data="F1 M 146,357L 156,357L 151,352L 146,357 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;130;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.HoverState.ArrowUp.Border1}" Data="F1 M 146,357L 156,357L 151,352L 146,357 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;131;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.HoverState.ArrowUp.Border2}" Data="F1 M 147,357L 155,357L 151,353L 147,357 Z" Margin="1,1,1,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;132;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.HoverState.ArrowUp.Border3}" Data="F1 M 147,357L 155,357L 151,353L 147,357 Z" Margin="2,2,2,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;133;34" />
+              </Grid>
+              <Border Background="{StaticResource SliderThumb.HoverState.ArrowDown.Border1}" Padding="1,0,1,1" Grid.Row="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;135;30">
+                <Border Background="{StaticResource SliderThumb.HoverState.ArrowDown.Border2}" Padding="1,0,1,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;136;34">
+                  <Border Background="{StaticResource SliderThumb.HoverState.ArrowDown.Border3}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;137;38" />
+                </Border>
+              </Border>
+            </Grid>
+            <Grid x:Name="PressedState" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;141;26">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+              </Grid.RowDefinitions>
+              <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;146;30">
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.PressedState.ArrowUp.Border1}" Data="F1 M 146,357L 156,357L 151,352L 146,357 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;147;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.PressedState.ArrowUp.Border1}" Data="F1 M 146,357L 156,357L 151,352L 146,357 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;148;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.PressedState.ArrowUp.Border2}" Data="F1 M 147,357L 155,357L 151,353L 147,357 Z" Margin="1,1,1,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;149;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.PressedState.ArrowUp.Border3}" Data="F1 M 147,357L 155,357L 151,353L 147,357 Z" Margin="2,2,2,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;150;34" />
+              </Grid>
+              <Border Background="{StaticResource SliderThumb.PressedState.ArrowDown.Border1}" Padding="1,0,1,1" Grid.Row="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;152;30">
+                <Border Background="{StaticResource SliderThumb.PressedState.ArrowDown.Border2}" Padding="1,0,1,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;153;34">
+                  <Border Background="{StaticResource SliderThumb.PressedState.ArrowDown.Border3}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;154;38" />
+                </Border>
+              </Border>
+            </Grid>
+            <Grid x:Name="DisabledState" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;158;26">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+              </Grid.RowDefinitions>
+              <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;163;30">
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.DisabledState.ArrowUp.Border1}" Data="F1 M 146,357L 156,357L 151,352L 146,357 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;164;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.DisabledState.ArrowUp.Border1}" Data="F1 M 146,357L 156,357L 151,352L 146,357 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;165;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.DisabledState.ArrowUp.Border2}" Data="F1 M 147,357L 155,357L 151,353L 147,357 Z" Margin="1,1,1,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;166;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.DisabledState.ArrowUp.Border3}" Data="F1 M 147,357L 155,357L 151,353L 147,357 Z" Margin="2,2,2,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;167;34" />
+              </Grid>
+              <Border Background="{StaticResource SliderThumb.DisabledState.ArrowDown.Border1}" Padding="1,0,1,1" Grid.Row="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;169;30">
+                <Border Background="{StaticResource SliderThumb.DisabledState.ArrowDown.Border2}" Padding="1,0,1,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;170;34">
+                  <Border Background="{StaticResource SliderThumb.DisabledState.ArrowDown.Border3}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;171;38" />
+                </Border>
+              </Border>
+            </Grid>
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter TargetName="DefaultState" Property="Opacity" Value="0" />
+              <Setter TargetName="HoverState" Property="Opacity" Value="1" />
+              <Setter TargetName="PressedState" Property="Opacity" Value="0" />
+            </Trigger>
+            <Trigger Property="IsDragging" Value="True">
+              <Setter Property="Effect" TargetName="Root">
+                <Setter.Value>
+                  <DropShadowEffect Opacity="0" />
+                </Setter.Value>
+              </Setter>
+              <Setter TargetName="DefaultState" Property="Opacity" Value="0" />
+              <Setter TargetName="HoverState" Property="Opacity" Value="0" />
+              <Setter TargetName="PressedState" Property="Opacity" Value="1" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+              <Setter Property="Effect" TargetName="Root">
+                <Setter.Value>
+                  <DropShadowEffect Opacity="0" />
+                </Setter.Value>
+              </Setter>
+              <Setter TargetName="DefaultState" Property="Opacity" Value="0" />
+              <Setter TargetName="HoverState" Property="Opacity" Value="0" />
+              <Setter TargetName="PressedState" Property="Opacity" Value="0" />
+              <Setter TargetName="DisabledState" Property="Opacity" Value="1" />
+              <Setter Property="Foreground" Value="{StaticResource Text.DisabledState.Foreground}" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="HorizontalSliderDownThumbStyle" TargetType="{x:Type Thumb}">
+    <Setter Property="Background" Value="{x:Null}" />
+    <Setter Property="Foreground" Value="{x:Null}" />
+    <Setter Property="Width" Value="11" />
+    <Setter Property="MinHeight" Value="11" />
+    <Setter Property="OverridesDefaultStyle" Value="True" />
+    <Setter Property="SnapsToDevicePixels" Value="True" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Thumb}">
+          <Grid x:Name="Root" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;219;22">
+            <Grid.Effect>
+              <DropShadowEffect x:Name="Shadow" Direction="315" ShadowDepth="1" BlurRadius="2" Opacity="0.1" />
+            </Grid.Effect>
+            <Grid x:Name="DefaultState" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;223;26">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+              </Grid.RowDefinitions>
+              <Grid Grid.Row="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;228;30">
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.DefaultState.ArrowDown.Border1}" Data="F1 M 156,345L 166,345L 161,350L 156,345 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;229;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.DefaultState.ArrowDown.Border1}" Data="F1 M 156,345L 166,345L 161,350L 156,345 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;230;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.DefaultState.ArrowDown.Border2}" Data="F1 M 157,345L 165,345L 161,349L 157,345 Z" Margin="1,0,1,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;231;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.DefaultState.ArrowDown.Border3}" Data="F1 M 157,345L 165,345L 161,349L 157,345 Z" Margin="2,0,2,2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;232;34" />
+              </Grid>
+              <Border Background="{StaticResource SliderThumb.DefaultState.ArrowUp.Border1}" Padding="1,1,1,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;234;30">
+                <Border Background="{StaticResource SliderThumb.DefaultState.ArrowUp.Border2}" Padding="1,1,1,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;235;34">
+                  <Border Background="{StaticResource SliderThumb.DefaultState.ArrowUp.Border3}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;236;38" />
+                </Border>
+              </Border>
+            </Grid>
+            <Grid x:Name="HoverState" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;240;26">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+              </Grid.RowDefinitions>
+              <Grid Grid.Row="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;245;30">
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.HoverState.ArrowDown.Border1}" Data="F1 M 156,345L 166,345L 161,350L 156,345 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;246;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.HoverState.ArrowDown.Border1}" Data="F1 M 156,345L 166,345L 161,350L 156,345 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;247;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.HoverState.ArrowDown.Border2}" Data="F1 M 157,345L 165,345L 161,349L 157,345 Z" Margin="1,0,1,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;248;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.HoverState.ArrowDown.Border3}" Data="F1 M 157,345L 165,345L 161,349L 157,345 Z" Margin="2,0,2,2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;249;34" />
+              </Grid>
+              <Border Background="{StaticResource SliderThumb.HoverState.ArrowUp.Border1}" Padding="1,1,1,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;251;30">
+                <Border Background="{StaticResource SliderThumb.HoverState.ArrowUp.Border2}" Padding="1,1,1,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;252;34">
+                  <Border Background="{StaticResource SliderThumb.HoverState.ArrowUp.Border3}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;253;38" />
+                </Border>
+              </Border>
+            </Grid>
+            <Grid x:Name="PressedState" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;257;26">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+              </Grid.RowDefinitions>
+              <Grid Grid.Row="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;262;30">
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.PressedState.ArrowDown.Border1}" Data="F1 M 156,345L 166,345L 161,350L 156,345 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;263;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.PressedState.ArrowDown.Border1}" Data="F1 M 156,345L 166,345L 161,350L 156,345 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;264;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.PressedState.ArrowDown.Border2}" Data="F1 M 157,345L 165,345L 161,349L 157,345 Z" Margin="1,0,1,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;265;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.PressedState.ArrowDown.Border3}" Data="F1 M 157,345L 165,345L 161,349L 157,345 Z" Margin="2,0,2,2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;266;34" />
+              </Grid>
+              <Border Background="{StaticResource SliderThumb.PressedState.ArrowUp.Border1}" Padding="1,1,1,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;268;30">
+                <Border Background="{StaticResource SliderThumb.PressedState.ArrowUp.Border2}" Padding="1,1,1,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;269;34">
+                  <Border Background="{StaticResource SliderThumb.PressedState.ArrowUp.Border3}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;270;38" />
+                </Border>
+              </Border>
+            </Grid>
+            <Grid x:Name="DisabledState" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;274;26">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+              </Grid.RowDefinitions>
+              <Grid Grid.Row="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;279;30">
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.DisabledState.ArrowDown.Border1}" Data="F1 M 156,345L 166,345L 161,350L 156,345 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;280;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.DisabledState.ArrowDown.Border1}" Data="F1 M 156,345L 166,345L 161,350L 156,345 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;281;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.DisabledState.ArrowDown.Border2}" Data="F1 M 157,345L 165,345L 161,349L 157,345 Z" Margin="1,0,1,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;282;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.DisabledState.ArrowDown.Border3}" Data="F1 M 157,345L 165,345L 161,349L 157,345 Z" Margin="2,0,2,2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;283;34" />
+              </Grid>
+              <Border Background="{StaticResource SliderThumb.DisabledState.ArrowUp.Border1}" Padding="1,1,1,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;285;30">
+                <Border Background="{StaticResource SliderThumb.DisabledState.ArrowUp.Border2}" Padding="1,1,1,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;286;34">
+                  <Border Background="{StaticResource SliderThumb.DisabledState.ArrowUp.Border3}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;287;38" />
+                </Border>
+              </Border>
+            </Grid>
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter TargetName="DefaultState" Property="Opacity" Value="0" />
+              <Setter TargetName="HoverState" Property="Opacity" Value="1" />
+              <Setter TargetName="PressedState" Property="Opacity" Value="0" />
+            </Trigger>
+            <Trigger Property="IsDragging" Value="True">
+              <Setter Property="Effect" TargetName="Root">
+                <Setter.Value>
+                  <DropShadowEffect Opacity="0" />
+                </Setter.Value>
+              </Setter>
+              <Setter TargetName="DefaultState" Property="Opacity" Value="0" />
+              <Setter TargetName="HoverState" Property="Opacity" Value="0" />
+              <Setter TargetName="PressedState" Property="Opacity" Value="1" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+              <Setter Property="Effect" TargetName="Root">
+                <Setter.Value>
+                  <DropShadowEffect Opacity="0" />
+                </Setter.Value>
+              </Setter>
+              <Setter TargetName="DefaultState" Property="Opacity" Value="0" />
+              <Setter TargetName="HoverState" Property="Opacity" Value="0" />
+              <Setter TargetName="PressedState" Property="Opacity" Value="0" />
+              <Setter TargetName="DisabledState" Property="Opacity" Value="1" />
+              <Setter Property="Foreground" Value="{StaticResource Text.DisabledState.Foreground}" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="VerticalSliderLeftThumbStyle" TargetType="{x:Type Thumb}">
+    <Setter Property="Background" Value="{x:Null}" />
+    <Setter Property="Foreground" Value="{x:Null}" />
+    <Setter Property="MinWidth" Value="11" />
+    <Setter Property="Height" Value="11" />
+    <Setter Property="OverridesDefaultStyle" Value="True" />
+    <Setter Property="SnapsToDevicePixels" Value="True" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Thumb}">
+          <Grid x:Name="Root" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;336;22">
+            <Grid.Effect>
+              <DropShadowEffect x:Name="Shadow" Direction="315" ShadowDepth="1" BlurRadius="2" Opacity="0.1" />
+            </Grid.Effect>
+            <Grid x:Name="DefaultState" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;340;26">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+              </Grid.ColumnDefinitions>
+              <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;345;30">
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.DefaultState.Border1}" Data="F1 M 149,329L 149,339L 144,334L 149,329 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;346;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.DefaultState.Border1}" Data="F1 M 149,329L 149,339L 144,334L 149,329 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;347;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.DefaultState.Border2}" Data="F1 M 149,330L 149,338L 145,334L 149,330 Z" Margin="1,1,0,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;348;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.DefaultState.Border3}" Data="F1 M 149,330L 149,338L 145,334L 149,330 Z" Margin="2,2,0,2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;349;34" />
+              </Grid>
+              <Border Background="{StaticResource SliderThumb.DefaultState.Border1}" Padding="0,1,1,1" Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;351;30">
+                <Border Background="{StaticResource SliderThumb.DefaultState.Border2}" Padding="0,1,1,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;352;34">
+                  <Border Background="{StaticResource SliderThumb.DefaultState.Border3}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;353;38" />
+                </Border>
+              </Border>
+            </Grid>
+            <Grid x:Name="HoverState" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;357;26">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+              </Grid.ColumnDefinitions>
+              <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;362;30">
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.HoverState.Border1}" Data="F1 M 149,329L 149,339L 144,334L 149,329 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;363;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.HoverState.Border1}" Data="F1 M 149,329L 149,339L 144,334L 149,329 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;364;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.HoverState.Border2}" Data="F1 M 149,330L 149,338L 145,334L 149,330 Z" Margin="1,1,0,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;365;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.HoverState.Border3}" Data="F1 M 149,330L 149,338L 145,334L 149,330 Z" Margin="2,2,0,2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;366;34" />
+              </Grid>
+              <Border Background="{StaticResource SliderThumb.HoverState.Border1}" Padding="0,1,1,1" Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;368;30">
+                <Border Background="{StaticResource SliderThumb.HoverState.Border2}" Padding="0,1,1,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;369;34">
+                  <Border Background="{StaticResource SliderThumb.HoverState.Border3}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;370;38" />
+                </Border>
+              </Border>
+            </Grid>
+            <Grid x:Name="PressedState" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;374;26">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+              </Grid.ColumnDefinitions>
+              <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;379;30">
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.PressedState.Border1}" Data="F1 M 149,329L 149,339L 144,334L 149,329 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;380;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.PressedState.Border1}" Data="F1 M 149,329L 149,339L 144,334L 149,329 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;381;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.PressedState.Border2}" Data="F1 M 149,330L 149,338L 145,334L 149,330 Z" Margin="1,1,0,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;382;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.PressedState.Border3}" Data="F1 M 149,330L 149,338L 145,334L 149,330 Z" Margin="2,2,0,2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;383;34" />
+              </Grid>
+              <Border Background="{StaticResource SliderThumb.PressedState.Border1}" Padding="0,1,1,1" Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;385;30">
+                <Border Background="{StaticResource SliderThumb.PressedState.Border2}" Padding="0,1,1,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;386;34">
+                  <Border Background="{StaticResource SliderThumb.PressedState.Border3}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;387;38" />
+                </Border>
+              </Border>
+            </Grid>
+            <Grid x:Name="DisabledState" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;391;26">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+              </Grid.ColumnDefinitions>
+              <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;396;30">
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.DisabledState.Border1}" Data="F1 M 149,329L 149,339L 144,334L 149,329 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;397;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.DisabledState.Border1}" Data="F1 M 149,329L 149,339L 144,334L 149,329 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;398;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.DisabledState.Border2}" Data="F1 M 149,330L 149,338L 145,334L 149,330 Z" Margin="1,1,0,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;399;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.DisabledState.Border3}" Data="F1 M 149,330L 149,338L 145,334L 149,330 Z" Margin="2,2,0,2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;400;34" />
+              </Grid>
+              <Border Background="{StaticResource SliderThumb.DisabledState.Border1}" Padding="0,1,1,1" Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;402;30">
+                <Border Background="{StaticResource SliderThumb.DisabledState.Border2}" Padding="0,1,1,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;403;34">
+                  <Border Background="{StaticResource SliderThumb.DisabledState.Border3}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;404;38" />
+                </Border>
+              </Border>
+            </Grid>
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter TargetName="DefaultState" Property="Opacity" Value="0" />
+              <Setter TargetName="HoverState" Property="Opacity" Value="1" />
+              <Setter TargetName="PressedState" Property="Opacity" Value="0" />
+            </Trigger>
+            <Trigger Property="IsDragging" Value="True">
+              <Setter Property="Effect" TargetName="Root">
+                <Setter.Value>
+                  <DropShadowEffect Opacity="0" />
+                </Setter.Value>
+              </Setter>
+              <Setter TargetName="DefaultState" Property="Opacity" Value="0" />
+              <Setter TargetName="HoverState" Property="Opacity" Value="0" />
+              <Setter TargetName="PressedState" Property="Opacity" Value="1" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+              <Setter Property="Effect" TargetName="Root">
+                <Setter.Value>
+                  <DropShadowEffect Opacity="0" />
+                </Setter.Value>
+              </Setter>
+              <Setter TargetName="DefaultState" Property="Opacity" Value="0" />
+              <Setter TargetName="HoverState" Property="Opacity" Value="0" />
+              <Setter TargetName="PressedState" Property="Opacity" Value="0" />
+              <Setter TargetName="DisabledState" Property="Opacity" Value="1" />
+              <Setter Property="Foreground" Value="{StaticResource Text.DisabledState.Foreground}" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="VerticalSliderRightThumbStyle" TargetType="{x:Type Thumb}">
+    <Setter Property="Background" Value="{x:Null}" />
+    <Setter Property="Foreground" Value="{x:Null}" />
+    <Setter Property="MinWidth" Value="11" />
+    <Setter Property="Height" Value="11" />
+    <Setter Property="OverridesDefaultStyle" Value="True" />
+    <Setter Property="SnapsToDevicePixels" Value="True" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Thumb}">
+          <Grid x:Name="Root" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;452;22">
+            <Grid.Effect>
+              <DropShadowEffect x:Name="Shadow" Direction="315" ShadowDepth="1" BlurRadius="2" Opacity="0.1" />
+            </Grid.Effect>
+            <Grid x:Name="DefaultState" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;456;26">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+              </Grid.ColumnDefinitions>
+              <Grid Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;461;30">
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.DefaultState.Border1}" Data="F1 M 136.5,320.5L 136.5,330.5L 141.5,325.5L 136.5,320.5 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;462;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.DefaultState.Border1}" Data="F1 M 136.5,320.5L 136.5,330.5L 141.5,325.5L 136.5,320.5 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;463;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.DefaultState.Border2}" Data="F1 M 136.5,321.5L 136.5,329.5L 140.5,325.5L 136.5,321.5 Z" Margin="0,1,1,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;464;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.DefaultState.Border3}" Data="F1 M 136.5,321.5L 136.5,329.5L 140.5,325.5L 136.5,321.5 Z" Margin="0,2,2,2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;465;34" />
+              </Grid>
+              <Border Background="{StaticResource SliderThumb.DefaultState.Border1}" Padding="1,1,0,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;467;30">
+                <Border Background="{StaticResource SliderThumb.DefaultState.Border2}" Padding="1,1,0,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;468;34">
+                  <Border Background="{StaticResource SliderThumb.DefaultState.Border3}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;469;38" />
+                </Border>
+              </Border>
+            </Grid>
+            <Grid x:Name="HoverState" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;473;26">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+              </Grid.ColumnDefinitions>
+              <Grid Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;478;30">
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.HoverState.Border1}" Data="F1 M 136.5,320.5L 136.5,330.5L 141.5,325.5L 136.5,320.5 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;479;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.HoverState.Border1}" Data="F1 M 136.5,320.5L 136.5,330.5L 141.5,325.5L 136.5,320.5 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;480;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.HoverState.Border2}" Data="F1 M 136.5,321.5L 136.5,329.5L 140.5,325.5L 136.5,321.5 Z" Margin="0,1,1,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;481;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.HoverState.Border3}" Data="F1 M 136.5,321.5L 136.5,329.5L 140.5,325.5L 136.5,321.5 Z" Margin="0,2,2,2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;482;34" />
+              </Grid>
+              <Border Background="{StaticResource SliderThumb.HoverState.Border1}" Padding="1,1,0,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;484;30">
+                <Border Background="{StaticResource SliderThumb.HoverState.Border2}" Padding="1,1,0,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;485;34">
+                  <Border Background="{StaticResource SliderThumb.HoverState.Border3}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;486;38" />
+                </Border>
+              </Border>
+            </Grid>
+            <Grid x:Name="PressedState" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;490;26">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+              </Grid.ColumnDefinitions>
+              <Grid Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;495;30">
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.PressedState.Border1}" Data="F1 M 136.5,320.5L 136.5,330.5L 141.5,325.5L 136.5,320.5 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;496;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.PressedState.Border1}" Data="F1 M 136.5,320.5L 136.5,330.5L 141.5,325.5L 136.5,320.5 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;497;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.PressedState.Border2}" Data="F1 M 136.5,321.5L 136.5,329.5L 140.5,325.5L 136.5,321.5 Z" Margin="0,1,1,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;498;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.PressedState.Border3}" Data="F1 M 136.5,321.5L 136.5,329.5L 140.5,325.5L 136.5,321.5 Z" Margin="0,2,2,2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;499;34" />
+              </Grid>
+              <Border Background="{StaticResource SliderThumb.PressedState.Border1}" Padding="1,1,0,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;501;30">
+                <Border Background="{StaticResource SliderThumb.PressedState.Border2}" Padding="1,1,0,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;502;34">
+                  <Border Background="{StaticResource SliderThumb.PressedState.Border3}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;503;38" />
+                </Border>
+              </Border>
+            </Grid>
+            <Grid x:Name="DisabledState" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;507;26">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+              </Grid.ColumnDefinitions>
+              <Grid Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;512;30">
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.DisabledState.Border1}" Data="F1 M 136.5,320.5L 136.5,330.5L 141.5,325.5L 136.5,320.5 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;513;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.DisabledState.Border1}" Data="F1 M 136.5,320.5L 136.5,330.5L 141.5,325.5L 136.5,320.5 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;514;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.DisabledState.Border2}" Data="F1 M 136.5,321.5L 136.5,329.5L 140.5,325.5L 136.5,321.5 Z" Margin="0,1,1,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;515;34" />
+                <Path Stretch="Fill" Fill="{StaticResource SliderThumb.DisabledState.Border3}" Data="F1 M 136.5,321.5L 136.5,329.5L 140.5,325.5L 136.5,321.5 Z" Margin="0,2,2,2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;516;34" />
+              </Grid>
+              <Border Background="{StaticResource SliderThumb.DisabledState.Border1}" Padding="1,1,0,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;518;30">
+                <Border Background="{StaticResource SliderThumb.DisabledState.Border2}" Padding="1,1,0,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;519;34">
+                  <Border Background="{StaticResource SliderThumb.DisabledState.Border3}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;520;38" />
+                </Border>
+              </Border>
+            </Grid>
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter TargetName="DefaultState" Property="Opacity" Value="0" />
+              <Setter TargetName="HoverState" Property="Opacity" Value="1" />
+              <Setter TargetName="PressedState" Property="Opacity" Value="0" />
+            </Trigger>
+            <Trigger Property="IsDragging" Value="True">
+              <Setter Property="Effect" TargetName="Root">
+                <Setter.Value>
+                  <DropShadowEffect Opacity="0" />
+                </Setter.Value>
+              </Setter>
+              <Setter TargetName="DefaultState" Property="Opacity" Value="0" />
+              <Setter TargetName="HoverState" Property="Opacity" Value="0" />
+              <Setter TargetName="PressedState" Property="Opacity" Value="1" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+              <Setter Property="Effect" TargetName="Root">
+                <Setter.Value>
+                  <DropShadowEffect Opacity="0" />
+                </Setter.Value>
+              </Setter>
+              <Setter TargetName="DefaultState" Property="Opacity" Value="0" />
+              <Setter TargetName="HoverState" Property="Opacity" Value="0" />
+              <Setter TargetName="PressedState" Property="Opacity" Value="0" />
+              <Setter TargetName="DisabledState" Property="Opacity" Value="1" />
+              <Setter Property="Foreground" Value="{StaticResource Text.DisabledState.Foreground}" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=System.Windows.Controls.Slider}" TargetType="{x:Type Slider}">
+    <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+    <Setter Property="Background" Value="{x:Null}" />
+    <Setter Property="BorderBrush" Value="{x:Null}" />
+    <Setter Property="Foreground" Value="{StaticResource Slider.Tick.Background}" />
+    <Setter Property="Stylus.IsPressAndHoldEnabled" Value="False" />
+    <Setter Property="SnapsToDevicePixels" Value="True" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Slider}">
+          <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Width="{TemplateBinding Width}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;569;22">
+            <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;570;26">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" MinHeight="{TemplateBinding Slider.MinHeight}" />
+                <RowDefinition Height="Auto" />
+              </Grid.RowDefinitions>
+              <TickBar x:Name="TopTick" Fill="{TemplateBinding Foreground}" Placement="Top" Height="3" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;576;30" />
+              <TickBar x:Name="BottomTick" Fill="{TemplateBinding Foreground}" Placement="Bottom" Height="3" Grid.Row="2" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;577;30" />
+              <Grid VerticalAlignment="Center" Grid.Row="0" Grid.RowSpan="3" Margin="3,0,3,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;578;30">
+                <Grid.OpacityMask>
+                  <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                    <GradientStop Color="#00000000" Offset="0" />
+                    <GradientStop Color="#00000000" Offset="1" />
+                    <GradientStop Color="#BFFFFFFF" Offset="0.5" />
+                  </LinearGradientBrush>
+                </Grid.OpacityMask>
+                <Border Name="TrackBackground" Background="{StaticResource Slider.Track.Background}" BorderBrush="{StaticResource Slider.Track.BorderBrush}" BorderThickness="0,0,0,1" Height="2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;586;34">
+                  <Canvas Margin="-2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;587;38">
+                    <Rectangle x:Name="PART_SelectionRange" Fill="{StaticResource Slider.SelectionRange.Background}" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;588;42" />
+                  </Canvas>
+                </Border>
+                <Border x:Name="FocusState" Height="1" Style="{StaticResource SliderFocusTemplate}" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;591;34" />
+              </Grid>
+              <Track Grid.Row="1" Name="PART_Track" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;593;30">
+                <Track.DecreaseRepeatButton>
+                  <RepeatButton Command="{x:Static Slider.DecreaseLarge}" Style="{StaticResource SliderRepeatButtonStyle}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;595;38" />
+                </Track.DecreaseRepeatButton>
+                <Track.IncreaseRepeatButton>
+                  <RepeatButton Command="{x:Static Slider.IncreaseLarge}" Style="{StaticResource SliderRepeatButtonStyle}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;598;38" />
+                </Track.IncreaseRepeatButton>
+                <Track.Thumb>
+                  <Thumb x:Name="Thumb" Width="11" Style="{StaticResource SliderThumbStyle}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;601;38" />
+                </Track.Thumb>
+              </Track>
+            </Grid>
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="TickPlacement" Value="TopLeft">
+              <Setter TargetName="TopTick" Property="Opacity" Value="1" />
+              <Setter TargetName="Thumb" Property="Style" Value="{StaticResource HorizontalSliderUpThumbStyle}" />
+            </Trigger>
+            <Trigger Property="TickPlacement" Value="BottomRight">
+              <Setter TargetName="BottomTick" Property="Opacity" Value="1" />
+              <Setter TargetName="Thumb" Property="Style" Value="{StaticResource HorizontalSliderDownThumbStyle}" />
+            </Trigger>
+            <Trigger Property="TickPlacement" Value="Both">
+              <Setter TargetName="TopTick" Property="Opacity" Value="1" />
+              <Setter TargetName="BottomTick" Property="Opacity" Value="1" />
+            </Trigger>
+            <Trigger Property="IsSelectionRangeEnabled" Value="True">
+              <Setter TargetName="PART_SelectionRange" Property="Opacity" Value="1" />
+            </Trigger>
+            <Trigger Property="IsFocused" Value="True">
+              <Setter TargetName="FocusState" Property="Opacity" Value="0.5" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+    <Style.Triggers>
+      <Trigger Property="Orientation" Value="Vertical">
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Slider}">
+              <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Height="{TemplateBinding Height}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;635;30">
+                <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;636;34">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" MinWidth="{TemplateBinding Slider.MinWidth}" />
+                    <ColumnDefinition Width="Auto" />
+                  </Grid.ColumnDefinitions>
+                  <TickBar x:Name="LeftTick" Fill="{TemplateBinding Foreground}" Placement="Left" Width="3" Grid.Column="0" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;642;38" />
+                  <TickBar x:Name="RightTick" Fill="{TemplateBinding Foreground}" Placement="Right" Width="3" Grid.Column="2" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;643;38" />
+                  <Grid HorizontalAlignment="Center" Grid.Column="0" Grid.ColumnSpan="3" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;644;38">
+                    <Grid.OpacityMask>
+                      <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#00000000" Offset="0" />
+                        <GradientStop Color="#00000000" Offset="1" />
+                        <GradientStop Color="#BFFFFFFF" Offset="0.5" />
+                      </LinearGradientBrush>
+                    </Grid.OpacityMask>
+                    <Border Name="TrackBackground" Background="{StaticResource Slider.Track.Background}" BorderBrush="{StaticResource Slider.Track.BorderBrush}" BorderThickness="0,0,1,0" Width="2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;652;42">
+                      <Canvas Margin="-2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;653;46">
+                        <Rectangle x:Name="PART_SelectionRange" Fill="{StaticResource Slider.SelectionRange.Background}" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;654;50" />
+                      </Canvas>
+                    </Border>
+                    <Border x:Name="FocusState" Width="1" Style="{StaticResource SliderFocusTemplate}" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;657;42" />
+                  </Grid>
+                  <Track Grid.Column="1" Name="PART_Track" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;659;38">
+                    <Track.DecreaseRepeatButton>
+                      <RepeatButton Command="{x:Static Slider.DecreaseLarge}" Style="{StaticResource SliderRepeatButtonStyle}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;661;46" />
+                    </Track.DecreaseRepeatButton>
+                    <Track.IncreaseRepeatButton>
+                      <RepeatButton Command="{x:Static Slider.IncreaseLarge}" Style="{StaticResource SliderRepeatButtonStyle}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;664;46" />
+                    </Track.IncreaseRepeatButton>
+                    <Track.Thumb>
+                      <Thumb x:Name="Thumb" Height="11" Style="{StaticResource SliderThumbStyle}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Slider.xaml;667;46" />
+                    </Track.Thumb>
+                  </Track>
+                </Grid>
+              </Border>
+              <ControlTemplate.Triggers>
+                <Trigger Property="TickPlacement" Value="TopLeft">
+                  <Setter TargetName="LeftTick" Property="Opacity" Value="1" />
+                  <Setter TargetName="Thumb" Property="Style" Value="{StaticResource VerticalSliderLeftThumbStyle}" />
+                </Trigger>
+                <Trigger Property="TickPlacement" Value="BottomRight">
+                  <Setter TargetName="RightTick" Property="Opacity" Value="1" />
+                  <Setter TargetName="Thumb" Property="Style" Value="{StaticResource VerticalSliderRightThumbStyle}" />
+                </Trigger>
+                <Trigger Property="TickPlacement" Value="Both">
+                  <Setter TargetName="LeftTick" Property="Opacity" Value="1" />
+                  <Setter TargetName="RightTick" Property="Opacity" Value="1" />
+                </Trigger>
+                <Trigger Property="IsSelectionRangeEnabled" Value="True">
+                  <Setter TargetName="PART_SelectionRange" Property="Opacity" Value="1" />
+                </Trigger>
+                <Trigger Property="IsFocused" Value="True">
+                  <Setter TargetName="FocusState" Property="Opacity" Value="0.5" />
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Trigger>
+    </Style.Triggers>
+  </Style>
+</ResourceDictionary>

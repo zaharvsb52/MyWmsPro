@@ -1,0 +1,67 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" xmlns:dxbt="http://schemas.devexpress.com/winfx/2008/xaml/bars/themekeys" xmlns:dxbc="http://schemas.devexpress.com/winfx/2008/xaml/bars/internal" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <ItemsPanelTemplate x:Key="{dxbt:BarControlThemeKey ResourceKey=ItemsPanelTemplate}">
+    <dxb:BarClientPanel IsItemsHost="True" Margin="{DynamicResource {dxbt:BarControlThemeKey ResourceKey=ClientPanelPadding}}" MinHeight="{DynamicResource {dxbt:BarControlThemeKey ResourceKey=ClientPanelMinHeight}}" Background="Transparent" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\BarControl.xaml;4;10" />
+  </ItemsPanelTemplate>
+  <Style x:Key="{dxbt:BarControlThemeKey ResourceKey=ContentExpanderStyle}" TargetType="{x:Type dx:DXExpander}">
+    <Setter Property="HorizontalExpand" Value="FromLeftToRight" />
+    <Setter Property="VerticalExpand" Value="None" />
+    <Setter Property="HorizontalAlignment" Value="Stretch" />
+    <Setter Property="VerticalAlignment" Value="Stretch" />
+    <!--ONLY SL
+        <Setter Property="dx:FrameworkElementHelper.IsClipped" Value="True"/>
+        ONLY SL-->
+  </Style>
+  <Style x:Key="{dxbt:BarControlThemeKey ResourceKey=DragWidgetStyle}" TargetType="{x:Type dxb:DragWidget}">
+    <Setter Property="Template" Value="{DynamicResource {dxbt:BarControlThemeKey ResourceKey=DragWidgetTemplate}}" />
+    <!--BEGIN WPF-->
+    <Setter Property="Cursor" Value="SizeAll" />
+    <!--END WPF-->
+    <!--ONLY SL
+        <Setter Property="dx:FrameworkElementHelper.IsClipped" Value="True"/>
+        ONLY SL-->
+    <!--<Setter Property="dx:CustomCursorController.Cursor" Value="{DynamicResource SizeAllCursor}"/>-->
+  </Style>
+  <Style x:Key="{dxbt:BarControlThemeKey ResourceKey=QuickCustomizationButtonStyle}" TargetType="{x:Type dxb:BarQuickCustomizationButton}">
+    <Setter Property="Template" Value="{DynamicResource {dxbt:BarControlThemeKey ResourceKey=QuickCustomizationButtonTemplate}}" />
+  </Style>
+  <Style x:Key="{dxbt:BarControlThemeKey ResourceKey=QuickCustomizationButtonInMainMenuStyle}" TargetType="{x:Type dxb:BarQuickCustomizationButton}">
+    <Setter Property="Template" Value="{DynamicResource {dxbt:BarControlThemeKey ResourceKey=QuickCustomizationButtonInMainMenuTemplate}}" />
+  </Style>
+  <Style x:Key="{dxbt:BarControlThemeKey ResourceKey=ThumbStyle}" TargetType="{x:Type Thumb}">
+    <Setter Property="Template" Value="{DynamicResource {dxbt:BarControlThemeKey ResourceKey=ThumbTemplate}}" />
+  </Style>
+  <dxcore_unique_xmlns:BoolToVisibilityConverter x:Key="MyConverter" />
+  <ControlTemplate x:Key="{dxbt:BarControlThemeKey ResourceKey=ControlTemplate}" TargetType="{x:Type dxb:BarControl}">
+    <ContentControl x:Name="PART_Bar" Style="{DynamicResource {dxbt:BarControlThemeKey ResourceKey=BarStyle}}" Template="{DynamicResource {dxbt:BarControlThemeKey ResourceKey=BarTemplate}}" Focusable="False" IsTabStop="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\BarControl.xaml;43;10">
+      <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\BarControl.xaml;44;14">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <dxb:DragWidget x:Name="PART_DragWidget" Style="{DynamicResource {dxbt:BarControlThemeKey ResourceKey=DragWidgetStyle}}" Grid.Column="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\BarControl.xaml;51;18" />
+        <ContentControl x:Name="PART_Content" Grid.Column="1" Style="{DynamicResource {dxbt:BarControlThemeKey ResourceKey=BarContentStyle}}" Template="{DynamicResource {dxbt:BarControlThemeKey ResourceKey=BarContentTemplate}}" Focusable="False" IsTabStop="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\BarControl.xaml;52;18">
+          <dxcore_unique_xmlns:DXExpander x:Name="PART_ContentExpander" IsExpanded="True" Style="{DynamicResource {dxbt:BarControlThemeKey ResourceKey=ContentExpanderStyle}}" Focusable="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\BarControl.xaml;53;22">
+            <dxcore_unique_xmlns:CompatibilityAdornerContainer x:Name="PART_Adorner" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\BarControl.xaml;54;26">
+              <ItemsPresenter x:Name="PART_ItemsPresenter" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\BarControl.xaml;55;30" />
+            </dxcore_unique_xmlns:CompatibilityAdornerContainer>
+          </dxcore_unique_xmlns:DXExpander>
+        </ContentControl>
+        <dxb:BarQuickCustomizationButton x:Name="PART_QuickCustomizationButton" Style="{DynamicResource {dxbt:BarControlThemeKey ResourceKey=QuickCustomizationButtonStyle}}" Grid.Column="2" Focusable="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\BarControl.xaml;59;18" />
+        <!--<Thumb x:Name="PART_Thumb" Style="{DynamicResource {dxbt:BarControlThemeKey ResourceKey=ThumbStyle}}" Visibility="{TemplateBinding ActualShowSizeGrip, Converter={StaticResource MyConverter}}" Grid.Column="3"/>-->
+        <Thumb x:Name="PART_Thumb" Style="{DynamicResource {dxbt:BarControlThemeKey ResourceKey=ThumbStyle}}" Grid.Column="3" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\BarControl.xaml;62;18" />
+        <VisualStateManager.VisualStateGroups>
+          <VisualStateGroup x:Name="BarControlState">
+            <VisualState x:Name="Bar" />
+            <VisualState x:Name="MainMenu" />
+            <VisualState x:Name="StatusBar" />
+          </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+      </Grid>
+    </ContentControl>
+  </ControlTemplate>
+  <Style x:Key="{dxbt:BarControlThemeKey ResourceKey=DropIndicatorStyle}" TargetType="{x:Type ContentControl}">
+    <Setter Property="Template" Value="{DynamicResource {dxbt:BarControlThemeKey ResourceKey=DropIndicatorTemplate}}" />
+  </Style>
+</ResourceDictionary>

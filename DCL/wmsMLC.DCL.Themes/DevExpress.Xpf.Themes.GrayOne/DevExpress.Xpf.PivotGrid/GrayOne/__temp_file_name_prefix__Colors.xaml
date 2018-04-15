@@ -1,0 +1,61 @@
+<wpf:ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxpgi="http://schemas.devexpress.com/winfx/2008/xaml/pivotgrid/internal" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <wpf:SolidColorBrush x:Key="{dxpgi:AppearanceThemeKey ResourceKey=ResizingIndicatorBrush}" Color="Black" />
+  <wpf:SolidColorBrush x:Key="{dxpgi:AppearanceThemeKey ResourceKey=DataAreaCuttedTextForeground}" Color="#064DAE" />
+  <wpf:SolidColorBrush x:Key="{dxpgi:AppearanceThemeKey ResourceKey=PivotBackground}" Color="#FFE1E2E7" />
+  <wpf:SolidColorBrush x:Key="{dxpgi:AppearanceThemeKey ResourceKey=PivotBorderBrush}" Color="#FFCACBD3" />
+  <wpf:SolidColorBrush x:Key="{dxpgi:AppearanceThemeKey ResourceKey=HeaderEmptyTextForeground}" Color="#BF201F35" />
+  <wpf:SolidColorBrush x:Key="{dxpgi:AppearanceThemeKey ResourceKey=HeaderNormalGradient}" Color="#FFF2F3F4" />
+  <wpf:SolidColorBrush x:Key="{dxpgi:AppearanceThemeKey ResourceKey=HeaderActiveGradient}" Color="#FFE9EBED" />
+  <wpf:SolidColorBrush x:Key="{dxpgi:AppearanceThemeKey ResourceKey=HeaderControlsColor}" Color="#FF201F35" />
+  <wpf:SolidColorBrush x:Key="{dxpgi:AppearanceThemeKey ResourceKey=FilterColor}" Color="#FF201F35" />
+  <wpf:SolidColorBrush x:Key="{dxpgi:AppearanceThemeKey ResourceKey=FilterMouseOverColor}" Color="#FF201F35" />
+  <wpf:SolidColorBrush x:Key="{dxpgi:AppearanceThemeKey ResourceKey=FieldValueBorderBrush}" Color="#FFCACBD3" />
+  <wpf:SolidColorBrush x:Key="{dxpgi:AppearanceThemeKey ResourceKey=FieldValueOuterBorderBrush}" Color="Green" />
+  <wpf:SolidColorBrush x:Key="{dxpgi:PivotGridThemeKey ResourceKey=FieldListBackgroundBrush}" Color="#FFFFFFFF" />
+  <wpf:SolidColorBrush x:Key="{dxpgi:AppearanceThemeKey ResourceKey=FieldValueBackground}" Color="#FFF2F3F4" />
+  <wpf:SolidColorBrush x:Key="{dxpgi:AppearanceThemeKey ResourceKey=FieldValueSelectedBrush}" Color="#FFE9EBED" />
+  <wpf:SolidColorBrush x:Key="{dxpgi:AppearanceThemeKey ResourceKey=FieldTotalBrush}" Color="#FFF2F3F4" />
+  <wpf:SolidColorBrush x:Key="{dxpgi:AppearanceThemeKey ResourceKey=ValueTotalSelectedBrush}" Color="#FFE9EBED" />
+  <wpf:SolidColorBrush x:Key="{dxpgi:AppearanceThemeKey ResourceKey=ValueSelectedForegroundBrush}" Color="#FF201F35" />
+  <wpf:SolidColorBrush x:Key="{dxpgi:AppearanceThemeKey ResourceKey=CellForegroundBrush}" Color="#FF201F35" />
+  <wpf:SolidColorBrush x:Key="{dxpgi:AppearanceThemeKey ResourceKey=CellTotalForegroundBrush}" Color="#FF201F35" />
+  <wpf:SolidColorBrush x:Key="{dxpgi:AppearanceThemeKey ResourceKey=CellTotalSelectedForegroundBrush}" Color="#FF201F35" />
+  <wpf:SolidColorBrush x:Key="{dxpgi:AppearanceThemeKey ResourceKey=CellSelectedForegroundBrush}" Color="#FF201F35" />
+  <wpf:SolidColorBrush x:Key="{dxpgi:AppearanceThemeKey ResourceKey=ValueForegroundBrush}" Color="#FF201F35" />
+  <wpf:SolidColorBrush x:Key="{dxpgi:AppearanceThemeKey ResourceKey=ValueTotalForegroundBrush}" Color="#FF201F35" />
+  <wpf:SolidColorBrush x:Key="{dxpgi:AppearanceThemeKey ResourceKey=ValueTotalSelectedForegroundBrush}" Color="#FF201F35" />
+  <wpf:SolidColorBrush x:Key="{dxpgi:AppearanceThemeKey ResourceKey=ExpandButtonColor}" Color="Transparent" />
+  <wpf:SolidColorBrush x:Key="{dxpgi:AppearanceThemeKey ResourceKey=ExpandButtonBackground}" Color="Transparent" />
+  <wpf:SolidColorBrush x:Key="{dxpgi:AppearanceThemeKey ResourceKey=ExpandButtonInnerBackground}" Color="Transparent" />
+  <wpf:SolidColorBrush x:Key="{dxpgi:AppearanceThemeKey ResourceKey=CellValueBrush}" Color="#FFFFFFFF" />
+  <wpf:SolidColorBrush x:Key="{dxpgi:AppearanceThemeKey ResourceKey=CellValueBorderBrush}" Color="#FFCACBD3" />
+  <wpf:SolidColorBrush x:Key="{dxpgi:AppearanceThemeKey ResourceKey=CellTotalBrush}" Color="#FFF9FCFF" />
+  <wpf:SolidColorBrush x:Key="{dxpgi:AppearanceThemeKey ResourceKey=CellSelectedBrush}" Color="#FFF1F5FE" />
+  <wpf:SolidColorBrush x:Key="{dxpgi:AppearanceThemeKey ResourceKey=CellTotalSelectedBrush}" Color="#FFE2EAFD" />
+  <wpf:SolidColorBrush x:Key="{dxpgi:AppearanceThemeKey ResourceKey=FocusedDataItemStroke}" Color="#FF9DA0AA" />
+  <wpf:SolidColorBrush x:Key="{dxpgi:AppearanceThemeKey ResourceKey=FieldListDragTextForeground}" Color="#FF201F35" />
+  <wpf:SolidColorBrush x:Key="{dxpgi:AppearanceThemeKey ResourceKey=GroupBorderShadowColor}" Color="Transparent" />
+  <wpf:SolidColorBrush x:Key="{dxpgi:AppearanceThemeKey ResourceKey=GroupButtonFill}" Color="#FF80838F" />
+  <wpf:SolidColorBrush x:Key="{dxpgi:AppearanceThemeKey ResourceKey=GroupBorderBrush}" Color="#FFBFC0C9" />
+  <wpf:SolidColorBrush x:Key="{dxpgi:AppearanceThemeKey ResourceKey=ScrollingCornerGradient}" Color="#FFF5F5F5" />
+  <wpf:LinearGradientBrush x:Key="{dxpgi:AppearanceThemeKey ResourceKey=AreaSeparatorBrush}" EndPoint="1,0.5" StartPoint="0,0.5">
+    <wpf:GradientStop Color="#00C2C4CB" Offset="0" />
+    <wpf:GradientStop Color="#00C2C4CB" Offset="1" />
+    <wpf:GradientStop Color="#FFC2C4CB" Offset="0.5" />
+  </wpf:LinearGradientBrush>
+  <wpf:Style x:Key="{dxpgi:AppearanceThemeKey ResourceKey=EmptyAreaHighlighterStyle}" TargetType="{x:Type Border}">
+    <wpf:Setter Property="Background" Value="#FFE2EAFD" />
+    <wpf:Setter Property="Margin" Value="-3" />
+  </wpf:Style>
+  <wpf:Style x:Key="{dxpgi:AppearanceThemeKey ResourceKey=FieldListDragOverBorderStyle}" TargetType="{x:Type Border}">
+    <wpf:Setter Property="BorderBrush">
+      <wpf:Setter.Value>
+        <wpf:LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+          <wpf:GradientStop Color="#FF7E8FBB" Offset="0" />
+          <wpf:GradientStop Color="#FFAEBDE6" Offset="1" />
+        </wpf:LinearGradientBrush>
+      </wpf:Setter.Value>
+    </wpf:Setter>
+    <wpf:Setter Property="Opacity" Value="0.9" />
+  </wpf:Style>
+</wpf:ResourceDictionary>

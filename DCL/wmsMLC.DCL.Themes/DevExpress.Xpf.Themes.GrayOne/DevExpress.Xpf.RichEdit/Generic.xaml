@@ -1,0 +1,24 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--BEGIN WPF-->
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.RichEdit/Generic/FontComboBoxEdit.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.RichEdit/Generic/RichEditFontSizeComboBoxEdit.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.RichEdit/Generic/RichEditStyleEdit.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.RichEdit/Generic/PageNumberWindow.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.RichEdit/Generic/XpfRichEditCaret.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.RichEdit/Generic/XpfRichEditDragCaret.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.RichEdit/Generic/XpfRichEditFlowSelection.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.RichEdit/Generic/XpfRichEditSizerSelection.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.RichEdit/Generic/XpfRichEditImageSelection.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.RichEdit/Generic/Ruler.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.RichEdit/Generic/RichEditControl.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.RichEdit/Generic/RichEditViewPage.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.RichEdit/Generic/FontSizeListBox.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.RichEdit/Generic/ZoomComboBox.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.RichEdit/Generic/CharacterMapControl.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.RichEdit/Generic/BarItemTemplates.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <!--END WPF-->
+
+</ResourceDictionary>

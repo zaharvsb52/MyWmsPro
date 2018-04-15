@@ -1,0 +1,125 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxp="http://schemas.devexpress.com/winfx/2008/xaml/printing" xmlns:dxpg="http://schemas.devexpress.com/winfx/2008/xaml/pivotgrid" xmlns:dxpgi="http://schemas.devexpress.com/winfx/2008/xaml/pivotgrid/internal" xmlns:dxpgp="http://schemas.devexpress.com/winfx/2008/xaml/pivotgrid/internal" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <dxcore_unique_xmlns:BooleanToVisibilityConverter x:Key="boolToVisibilityConverter" />
+  <dxpgp:MinWidthToMaxWidthConverter x:Key="minWidthToMaxWidthConverter" />
+  <DataTemplate x:Key="{dxpgi:PrintingThemeKey ResourceKey=PageTemplate}">
+    <dxpgp:PivotPrintPageControl DataContext="{Binding Content}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PivotGrid\Generic\PrintingTemplates.xaml;6;10" />
+  </DataTemplate>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.PivotGrid.Printing.PivotPrintPageControl}" TargetType="{x:Type dxpgp:PivotPrintPageControl}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type dxpgp:PivotPrintPageControl}">
+          <StackPanel Orientation="Vertical" MinHeight="{Binding Height, Mode=OneTime}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PivotGrid\Generic\PrintingTemplates.xaml;13;22">
+            <StackPanel Orientation="Horizontal" MinWidth="{Binding Width, Mode=OneTime}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PivotGrid\Generic\PrintingTemplates.xaml;14;26">
+              <StackPanel Orientation="Vertical" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PivotGrid\Generic\PrintingTemplates.xaml;16;30">
+                <dxpgp:PivotPrintHeaderArea Area="FilterArea" x:Name="filters" Margin="0,0,0,3" MaxWidth="{Binding Width, Converter={StaticResource minWidthToMaxWidthConverter}, Mode=OneTime}" Visibility="{Binding FilterHeadersVisible, Converter={StaticResource boolToVisibilityConverter}, Mode=OneTime}" HorizontalAlignment="Left" PivotGrid="{Binding PivotGrid, Mode=OneTime}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PivotGrid\Generic\PrintingTemplates.xaml;18;34" />
+                <Grid x:Name="mainGrid" ShowGridLines="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PivotGrid\Generic\PrintingTemplates.xaml;20;34">
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                  </Grid.RowDefinitions>
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                  </Grid.ColumnDefinitions>
+                  <dxpgp:PivotPrintHeaderArea Grid.Column="0" Grid.Row="0" Area="DataArea" MaxWidth="{Binding Path=RowValuesWidth, Mode=OneTime}" VerticalAlignment="Top" Visibility="{Binding DataHeadersVisible, Converter={StaticResource boolToVisibilityConverter}, Mode=OneTime}" HasBottomBorder="{Binding ShowDataAreaHeadersBottomBorder, Mode=OneTime}" PivotGrid="{Binding PivotGrid, Mode=OneTime}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PivotGrid\Generic\PrintingTemplates.xaml;32;38" />
+                  <dxpgp:PivotPrintHeaderArea Grid.Column="0" Grid.Row="1" Area="RowArea" MaxWidth="{Binding Path=RowValuesWidth, Mode=OneTime}" VerticalAlignment="Bottom" Visibility="{Binding RowHeadersVisible, Converter={StaticResource boolToVisibilityConverter}, Mode=OneTime}" HasTopBorder="{Binding ShowRowAreaHeadersTopBorder, Mode=OneTime}" HasBottomBorder="False" PivotGrid="{Binding PivotGrid, Mode=OneTime}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PivotGrid\Generic\PrintingTemplates.xaml;35;38" />
+                  <dxpgp:PivotPrintFieldValues Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" x:Name="rowFieldValues" IsColumn="False" IsChild="True" PrintItems="{Binding RowItems, Mode=OneTime}" dxpg:PivotGridControl.PivotGrid="{Binding PivotGrid, Mode=OneTime}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PivotGrid\Generic\PrintingTemplates.xaml;37;38" />
+                  <Grid Grid.RowSpan="2" Grid.Row="0" Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PivotGrid\Generic\PrintingTemplates.xaml;39;38">
+                    <Grid.RowDefinitions>
+                      <RowDefinition Height="Auto" />
+                      <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <dxpgp:PivotPrintHeaderArea HasBottomBorder="{Binding ShowColumnAreaHeadersBottomBorder, Mode=OneTime}" Area="ColumnArea" Visibility="{Binding ColumnHeadersVisible, Converter={StaticResource boolToVisibilityConverter}, Mode=OneTime}" PivotGrid="{Binding PivotGrid, Mode=OneTime}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PivotGrid\Generic\PrintingTemplates.xaml;44;42" />
+                    <dxpgp:PivotPrintFieldValues Grid.Row="1" NotHasTopBorder="{Binding ShowColumnAreaHeadersBottomBorder, Mode=OneTime}" x:Name="columnFieldValues" IsColumn="True" IsChild="True" PrintItems="{Binding ColumnItems, Mode=OneTime}" Visibility="{Binding ShowColumnFieldValues, Mode=OneTime}" dxpg:PivotGridControl.PivotGrid="{Binding PivotGrid, Mode=OneTime}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PivotGrid\Generic\PrintingTemplates.xaml;45;42" />
+                  </Grid>
+                  <dxpgp:PivotPrintCells Grid.Row="2" Grid.Column="1" IsChild="True" Left="{Binding Left, Mode=OneTime}" Top="{Binding Top, Mode=OneTime}" Bottom="{Binding Bottom, Mode=OneTime}" Right="{Binding Right, Mode=OneTime}" PageIndex="{Binding Index, Mode=OneTime}" dxpg:PivotGridControl.PivotGrid="{Binding PivotGrid, Mode=OneTime}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PivotGrid\Generic\PrintingTemplates.xaml;48;38" />
+                </Grid>
+              </StackPanel>
+            </StackPanel>
+          </StackPanel>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <dxpgp:PivotGridFieldDataConverter x:Key="pivotGridFieldDataConverter" />
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.PivotGrid.Printing.PrintFieldHeader}" TargetType="{x:Type dxpgp:PrintFieldHeader}">
+    <Setter Property="dxpgp:PrintFieldHeader.Field" Value="{Binding}" />
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type dxpgp:PrintFieldHeader}">
+          <dxpgp:PrintHeaderContentPresenter ContentTemplate="{Binding Path=Field.ActualPrintHeaderTemplate, RelativeSource={RelativeSource TemplatedParent}}" ContentTemplateSelector="{Binding Path=Field.ActualPrintHeaderTemplateSelector, RelativeSource={RelativeSource TemplatedParent}}">
+            <!--BEGIN WPF-->
+            <dxpgp:PrintHeaderContentPresenter.Content>
+              <Binding Mode="OneWay" RelativeSource="{RelativeSource TemplatedParent}" Converter="{StaticResource pivotGridFieldDataConverter}" />
+            </dxpgp:PrintHeaderContentPresenter.Content>
+            <!--END WPF-->
+            <!--ONLY SL
+                         <dxpgp:PrintHeaderContentPresenter.Content><Binding /></dxpgp:PrintHeaderContentPresenter.Content>   
+                         <dxpgp:PrintHeaderContentPresenter.DataContext>
+                            <Binding Mode="OneWay" RelativeSource="{RelativeSource TemplatedParent}" Converter="{StaticResource pivotGridFieldDataConverter}" />
+                        </dxpgp:PrintHeaderContentPresenter.DataContext>
+                        ONLY SL-->
+          </dxpgp:PrintHeaderContentPresenter>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.PivotGrid.Printing.PrintGroupHeader}" TargetType="{x:Type dxpgp:PrintGroupHeader}">
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type dxpgp:PrintGroupHeader}">
+          <ContentControl Name="PART_HeaderButton" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PivotGrid\Generic\PrintingTemplates.xaml;91;22">
+            <Grid x:Name="PART_Panel" Background="Transparent" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PivotGrid\Generic\PrintingTemplates.xaml;92;26" />
+          </ContentControl>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.PivotGrid.Printing.PrintGroupCollapseButton}" TargetType="{x:Type dxpgp:PrintGroupCollapseButton}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type dxpgp:PrintGroupCollapseButton}">
+          <dxcore_unique_xmlns:DXContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PivotGrid\Generic\PrintingTemplates.xaml;103;22" />
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.PivotGrid.Printing.PivotPrintHeaderArea}" TargetType="{x:Type dxpgp:PivotPrintHeaderArea}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type dxpgp:PivotPrintHeaderArea}">
+          <ContentControl x:Name="PART_Container" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PivotGrid\Generic\PrintingTemplates.xaml;113;22">
+            <dxpgp:FieldHeadersPanel HorizontalAlignment="Stretch" x:Name="PART_Panel" Background="Transparent" VerticalAlignment="{TemplateBinding HeadersVAlignment}" />
+          </ContentControl>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.PivotGrid.Printing.TextExporter}" TargetType="{x:Type dxpgp:TextExporter}">
+    <Setter Property="BorderBrush" Value="#808080" />
+    <Setter Property="Padding" Value="4,2,4,2" />
+    <Setter Property="VerticalAlignment" Value="Center" />
+  </Style>
+  <DataTemplate x:Key="{dxpgi:PrintingThemeKey ResourceKey=FieldCellTemplate}">
+    <dxpgp:TextExporter ExportSettings="{Binding Mode=OneTime}" />
+  </DataTemplate>
+  <DataTemplate x:Key="{dxpgi:PrintingThemeKey ResourceKey=FieldCellKpiTemplate}">
+    <dxpgp:ImageExporter ExportSettings="{Binding Mode=OneTime}" dxp:ExportSettings.BorderColor="#808080" dxp:ExportSettings.TargetType="Panel">
+      <dxpgp:ImageExporter.Template>
+        <ControlTemplate TargetType="{x:Type dxpgp:ImageExporter}">
+          <Image Source="{TemplateBinding ImageSource}" MaxWidth="15" MaxHeight="15" Stretch="None" dxp:ExportSettings.TargetType="Image" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PivotGrid\Generic\PrintingTemplates.xaml;135;22" />
+        </ControlTemplate>
+      </dxpgp:ImageExporter.Template>
+    </dxpgp:ImageExporter>
+  </DataTemplate>
+  <DataTemplate x:Key="{dxpgi:PrintingThemeKey ResourceKey=FieldValueTemplate}">
+    <dxpgp:TextExporter ExportSettings="{Binding Mode=OneTime}" />
+  </DataTemplate>
+  <DataTemplate x:Key="{dxpgi:PrintingThemeKey ResourceKey=FieldHeaderTemplate}">
+    <dxe:TextEdit x:Name="TextBlock" IsPrintingMode="True" Padding="{Binding Padding, Mode=OneWay}" EditValue="{Binding DisplayText, Mode=OneWay}" dxp:TextExportSettings.TextWrapping="NoWrap" BorderThickness="{Binding BorderThickness, Mode=OneWay}" Background="#F0F0F0" BorderBrush="#808080" dxp:TextExportSettings.XlsExportNativeFormat="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PivotGrid\Generic\PrintingTemplates.xaml;146;10" />
+  </DataTemplate>
+</ResourceDictionary>

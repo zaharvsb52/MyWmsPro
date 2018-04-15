@@ -1,0 +1,1916 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfArtWrapper xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>70</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE />
+    <ARTNAME>0030563001001</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>0030563</ARTHOSTREF>
+    <ARTDESCEXT>26Г ШОК БАТОНЧИК MILKY WAY</ARTDESCEXT>
+    <ARTDESC>26Г ШОК БАТОНЧИК MILKY WAY</ARTDESC>
+    <ARTCOLOR>Баклажан</ARTCOLOR>
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>181</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTLIFETIMEMEASURE>DAY</ARTLIFETIMEMEASURE>
+    <ARTCOMMERCTIME>10</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>MET</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>MET_1_WHG_ШОКОЛАД</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>70</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>MET_1_WHG_ШОКОЛАД</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>1</ART2GROUPREBINDING>
+        <MandantCode>MET</MandantCode>
+      </Art2GroupWrapper>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>MET_2_WG_ШОКОЛАДНЫЕ БАТОНЧИКИ</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>200</ART2GROUPPRIORITY>
+        <MANDANTID>70</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>MET_2_WG_ШОКОЛАДНЫЕ БАТОНЧИКИ</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>1</ART2GROUPREBINDING>
+        <MandantCode>MET</MandantCode>
+      </Art2GroupWrapper>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>MET_3_WUG_ШОКОЛАДНЫЕ БАТОНЧИКИ</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>300</ART2GROUPPRIORITY>
+        <MANDANTID>70</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>MET_3_WUG_ШОКОЛАДНЫЕ БАТОНЧИКИ</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>1</ART2GROUPREBINDING>
+        <MandantCode>MET</MandantCode>
+      </Art2GroupWrapper>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>MET_EXPIRYDATE</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>50</ART2GROUPPRIORITY>
+        <MANDANTID>70</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>MET_EXPIRYDATE</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>1</ART2GROUPREBINDING>
+        <MandantCode>MET</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>false</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>70</MANDANTID>
+        <SKUNAME>0030563001001 (шт 1)</SKUNAME>
+        <SKUDESC>26Г ШОК БАТОНЧИК MILKY WAY - шт</SKUDESC>
+        <MEASURECODE_R>ШТ</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>false</SKUINDIVISIBLE>
+        <SKUDEFAULT>false</SKUDEFAULT>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>20736</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>15000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>CRT250x350x350</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>20736</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>20736</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>15000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>CRT270x550x300</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>20736</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>20736</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>EURO050</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>20736</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>20736</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>EURO080</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>20736</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>20736</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>EURO180</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>20736</SKU2TTEQUANTITYMAX>
+            <MandantCode />
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>20736</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>20000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>PACK620x380x18</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>20736</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>20736</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>SHELF60x45x40</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>20736</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>20736</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>ZBOX</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>20736</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>false</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL>240</SKUWIDTHCL>
+        <SKUWIDTH>240</SKUWIDTH>
+        <SKUWEIGHTCL>1033</SKUWEIGHTCL>
+        <SKUWEIGHT>1033</SKUWEIGHT>
+        <SKULENGTHCL>120</SKULENGTHCL>
+        <SKULENGTH>120</SKULENGTH>
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL>60</SKUHEIGHTCL>
+        <SKUHEIGHT>60</SKUHEIGHT>
+        <SKUCOUNT>36</SKUCOUNT>
+        <MANDANTID>70</MANDANTID>
+        <SKUNAME>0030563001001 (ме 36)</SKUNAME>
+        <SKUDESC>26Г ШОК БАТОНЧИК MILKY WAY - МЕ 36 ШТ</SKUDESC>
+        <MEASURECODE_R>МЕ</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME>2000000</SKUVOLUME>
+        <SKUVOLUMECL>2000000</SKUVOLUMECL>
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>20736</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>15000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>CRT250x350x350</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>20736</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>20736</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>15000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>CRT270x550x300</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>20736</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>20736</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>EURO050</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>20736</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>20736</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>EURO080</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>20736</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>20736</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>EURO180</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>20736</SKU2TTEQUANTITYMAX>
+            <MandantCode />
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>20736</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>20000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>PACK620x380x18</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>20736</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>20736</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>SHELF60x45x40</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>20736</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>20736</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>ZBOX</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>20736</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK>30563</ARTMARK>
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL>
+      <ArtCpvWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <CPVID_ARTCPV xsi:nil="true" />
+        <CPVPARENT_ARTCPV xsi:nil="true" />
+        <CPVVALUE_ARTCPV>WV428</CPVVALUE_ARTCPV>
+        <CUSTOMPARAMCODE_R_ARTCPV>ARTProviderArtName</CUSTOMPARAMCODE_R_ARTCPV>
+      </ArtCpvWrapper>
+      <ArtCpvWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <CPVID_ARTCPV xsi:nil="true" />
+        <CPVPARENT_ARTCPV xsi:nil="true" />
+        <CPVVALUE_ARTCPV>54500</CPVVALUE_ARTCPV>
+        <CUSTOMPARAMCODE_R_ARTCPV>ARTPartnerHostRef</CUSTOMPARAMCODE_R_ARTCPV>
+      </ArtCpvWrapper>
+    </CUSTOMPARAMVAL>
+    <BEFOREPROCESSINGWFCODE>WfSiBeforeProcessingArtLoad</BEFOREPROCESSINGWFCODE>
+    <!--<COUNTRYCODE_R>FR</COUNTRYCODE_R>-->
+    <COUNTRYCODE_R>Франция</COUNTRYCODE_R>
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>70</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE />
+    <ARTNAME>0030563001003</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>0030563</ARTHOSTREF>
+    <ARTDESCEXT>26Г ШОК БАТОНЧИК MILKY WAY</ARTDESCEXT>
+    <ARTDESC>26Г ШОК БАТОНЧИК MILKY WAY</ARTDESC>
+    <ARTCOLOR />
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>181</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTLIFETIMEMEASURE>DAY</ARTLIFETIMEMEASURE>
+    <ARTCOMMERCTIME>10</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>MET</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>MET_1_WHG_ШОКОЛАД</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>70</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>MET_1_WHG_ШОКОЛАД</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>1</ART2GROUPREBINDING>
+        <MandantCode>MET</MandantCode>
+      </Art2GroupWrapper>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>MET_2_WG_ШОКОЛАДНЫЕ БАТОНЧИКИ</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>200</ART2GROUPPRIORITY>
+        <MANDANTID>70</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>MET_2_WG_ШОКОЛАДНЫЕ БАТОНЧИКИ</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>1</ART2GROUPREBINDING>
+        <MandantCode>MET</MandantCode>
+      </Art2GroupWrapper>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>MET_3_WUG_ШОКОЛАДНЫЕ БАТОНЧИКИ</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>300</ART2GROUPPRIORITY>
+        <MANDANTID>70</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>MET_3_WUG_ШОКОЛАДНЫЕ БАТОНЧИКИ</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>1</ART2GROUPREBINDING>
+        <MandantCode>MET</MandantCode>
+      </Art2GroupWrapper>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>MET_EXPIRYDATE</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>50</ART2GROUPPRIORITY>
+        <MANDANTID>70</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>MET_EXPIRYDATE</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>1</ART2GROUPREBINDING>
+        <MandantCode>MET</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>false</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>70</MANDANTID>
+        <SKUNAME>0030563001003 (шт 1)</SKUNAME>
+        <SKUDESC>26Г ШОК БАТОНЧИК MILKY WAY - шт</SKUDESC>
+        <MEASURECODE_R>ШТ</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>false</SKUINDIVISIBLE>
+        <SKUDEFAULT>false</SKUDEFAULT>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>20736</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>15000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>CRT250x350x350</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>20736</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>20736</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>15000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>CRT270x550x300</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>20736</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>20736</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>EURO050</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>20736</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>20736</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>EURO080</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>20736</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>20736</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>EURO180</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>20736</SKU2TTEQUANTITYMAX>
+            <MandantCode />
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>20736</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>20000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>PACK620x380x18</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>20736</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>20736</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>SHELF60x45x40</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>20736</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>20736</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>ZBOX</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>20736</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>false</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL>80</SKUWIDTHCL>
+        <SKUWIDTH>80</SKUWIDTH>
+        <SKUWEIGHTCL>20</SKUWEIGHTCL>
+        <SKUWEIGHT>20</SKUWEIGHT>
+        <SKULENGTHCL>30</SKULENGTHCL>
+        <SKULENGTH>30</SKULENGTH>
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL>20</SKUHEIGHTCL>
+        <SKUHEIGHT>20</SKUHEIGHT>
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>70</MANDANTID>
+        <SKUNAME>0030563001003 (ме 1)</SKUNAME>
+        <SKUDESC>26Г ШОК БАТОНЧИК MILKY WAY - МЕ 1 ШТ</SKUDESC>
+        <MEASURECODE_R>МЕ</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME>0</SKUVOLUME>
+        <SKUVOLUMECL>0</SKUVOLUMECL>
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>20736</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>15000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>CRT250x350x350</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>20736</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>20736</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>15000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>CRT270x550x300</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>20736</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>20736</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>EURO050</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>20736</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>20736</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>EURO080</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>20736</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>20736</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>EURO180</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>20736</SKU2TTEQUANTITYMAX>
+            <MandantCode />
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>20736</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>20000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>PACK620x380x18</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>20736</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>20736</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>SHELF60x45x40</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>20736</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>20736</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>ZBOX</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>20736</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK>401984</ARTMARK>
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL>
+      <ArtCpvWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <CPVID_ARTCPV xsi:nil="true" />
+        <CPVPARENT_ARTCPV xsi:nil="true" />
+        <CPVVALUE_ARTCPV>WV428</CPVVALUE_ARTCPV>
+        <CUSTOMPARAMCODE_R_ARTCPV>ARTProviderArtName</CUSTOMPARAMCODE_R_ARTCPV>
+      </ArtCpvWrapper>
+      <ArtCpvWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <CPVID_ARTCPV xsi:nil="true" />
+        <CPVPARENT_ARTCPV xsi:nil="true" />
+        <CPVVALUE_ARTCPV>54500</CPVVALUE_ARTCPV>
+        <CUSTOMPARAMCODE_R_ARTCPV>ARTPartnerHostRef</CUSTOMPARAMCODE_R_ARTCPV>
+      </ArtCpvWrapper>
+    </CUSTOMPARAMVAL>
+    <BEFOREPROCESSINGWFCODE>WfSiBeforeProcessingArtLoad</BEFOREPROCESSINGWFCODE>
+    <COUNTRYCODE_R>FR</COUNTRYCODE_R>
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>70</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE />
+    <ARTNAME>0071299002001</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>0071299</ARTHOSTREF>
+    <ARTDESCEXT>МАНГО НЭТТА</ARTDESCEXT>
+    <ARTDESC>МАНГО НЭТТА</ARTDESC>
+    <ARTCOLOR />
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>10</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>MET</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>MET_1_WHG_ФРУКТЫ</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>70</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>MET_1_WHG_ФРУКТЫ</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>1</ART2GROUPREBINDING>
+        <MandantCode>MET</MandantCode>
+      </Art2GroupWrapper>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>MET_2_WG_ЭКЗОТИЧЕСКИЕ ФРУКТЫ И</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>200</ART2GROUPPRIORITY>
+        <MANDANTID>70</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>MET_2_WG_ЭКЗОТИЧЕСКИЕ ФРУКТЫ И ОВОЩИ</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>1</ART2GROUPREBINDING>
+        <MandantCode>MET</MandantCode>
+      </Art2GroupWrapper>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>MET_3_WUG_МАНГО</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>300</ART2GROUPPRIORITY>
+        <MANDANTID>70</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>MET_3_WUG_МАНГО</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>1</ART2GROUPREBINDING>
+        <MandantCode>MET</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>false</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>70</MANDANTID>
+        <SKUNAME>0071299002001 (шт 1)</SKUNAME>
+        <SKUDESC>МАНГО НЭТТА - шт</SKUDESC>
+        <MEASURECODE_R>ШТ</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>false</SKUINDIVISIBLE>
+        <SKUDEFAULT>false</SKUDEFAULT>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>99999</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>15000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>CRT250x350x350</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>99999</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>99999</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>15000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>CRT270x550x300</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>99999</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>99999</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>EURO050</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>99999</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>99999</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>EURO080</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>99999</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>99999</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>EURO180</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>99999</SKU2TTEQUANTITYMAX>
+            <MandantCode />
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>99999</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>20000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>PACK620x380x18</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>99999</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>99999</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>SHELF60x45x40</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>99999</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>99999</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>ZBOX</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>99999</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>false</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL>0</SKUWIDTHCL>
+        <SKUWIDTH>0</SKUWIDTH>
+        <SKUWEIGHTCL>500</SKUWEIGHTCL>
+        <SKUWEIGHT>500</SKUWEIGHT>
+        <SKULENGTHCL>0</SKULENGTHCL>
+        <SKULENGTH>0</SKULENGTH>
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL>0</SKUHEIGHTCL>
+        <SKUHEIGHT>0</SKUHEIGHT>
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>70</MANDANTID>
+        <SKUNAME>0071299002001 (ме 1)</SKUNAME>
+        <SKUDESC>МАНГО НЭТТА - МЕ 1 ШТ</SKUDESC>
+        <MEASURECODE_R>МЕ</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME>0</SKUVOLUME>
+        <SKUVOLUMECL>0</SKUVOLUMECL>
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>99999</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>15000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>CRT250x350x350</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>99999</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>99999</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>15000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>CRT270x550x300</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>99999</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>99999</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>EURO050</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>99999</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>99999</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>EURO080</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>99999</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>99999</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>EURO180</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>99999</SKU2TTEQUANTITYMAX>
+            <MandantCode />
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>99999</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>20000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>PACK620x380x18</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>99999</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>99999</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>SHELF60x45x40</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>99999</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>99999</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>ZBOX</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>99999</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK>546308</ARTMARK>
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL>
+      <ArtCpvWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <CPVID_ARTCPV xsi:nil="true" />
+        <CPVPARENT_ARTCPV xsi:nil="true" />
+        <CPVVALUE_ARTCPV>1</CPVVALUE_ARTCPV>
+        <CUSTOMPARAMCODE_R_ARTCPV>ARTProviderArtName</CUSTOMPARAMCODE_R_ARTCPV>
+      </ArtCpvWrapper>
+      <ArtCpvWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <CPVID_ARTCPV xsi:nil="true" />
+        <CPVPARENT_ARTCPV xsi:nil="true" />
+        <CPVVALUE_ARTCPV>50500</CPVVALUE_ARTCPV>
+        <CUSTOMPARAMCODE_R_ARTCPV>ARTPartnerHostRef</CUSTOMPARAMCODE_R_ARTCPV>
+      </ArtCpvWrapper>
+    </CUSTOMPARAMVAL>
+    <BEFOREPROCESSINGWFCODE>WfSiBeforeProcessingArtLoad</BEFOREPROCESSINGWFCODE>
+    <COUNTRYCODE_R>BR</COUNTRYCODE_R>
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>70</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE />
+    <ARTNAME>0077226001001</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>0077226</ARTHOSTREF>
+    <ARTDESCEXT>STABILO КАРАНДАШИ 12Ц TRIO/ДЛИ</ARTDESCEXT>
+    <ARTDESC>STABILO КАРАНДАШИ 12Ц TRIO/ДЛИ</ARTDESC>
+    <ARTCOLOR />
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>10</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>MET</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>MET_1_WHG_РАСКРАШИВАНИЕ И РИСО</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>70</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>MET_1_WHG_РАСКРАШИВАНИЕ И РИСОВАНИЕ</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>1</ART2GROUPREBINDING>
+        <MandantCode>MET</MandantCode>
+      </Art2GroupWrapper>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>MET_2_WG_РИСОВАНИЕ КАРАНДАШАМИ</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>200</ART2GROUPPRIORITY>
+        <MANDANTID>70</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>MET_2_WG_РИСОВАНИЕ КАРАНДАШАМИ</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>1</ART2GROUPREBINDING>
+        <MandantCode>MET</MandantCode>
+      </Art2GroupWrapper>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>MET_3_WUG_ЦВЕТНЫЕ КАРАНДАШИ</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>300</ART2GROUPPRIORITY>
+        <MANDANTID>70</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>MET_3_WUG_ЦВЕТНЫЕ КАРАНДАШИ</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>1</ART2GROUPREBINDING>
+        <MandantCode>MET</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>false</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>70</MANDANTID>
+        <SKUNAME>0077226001001 (упак 1)</SKUNAME>
+        <SKUDESC>STABILO КАРАНДАШИ 12Ц TRIO/ДЛИ - упак</SKUDESC>
+        <MEASURECODE_R>УПАК</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>false</SKUINDIVISIBLE>
+        <SKUDEFAULT>false</SKUDEFAULT>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>15000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>CRT250x350x350</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>15000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>CRT270x550x300</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>EURO050</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>EURO080</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>EURO180</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode />
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>20000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>PACK620x380x18</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>SHELF60x45x40</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>ZBOX</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>false</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL>200</SKUWIDTHCL>
+        <SKUWIDTH>200</SKUWIDTH>
+        <SKUWEIGHTCL>110</SKUWEIGHTCL>
+        <SKUWEIGHT>110</SKUWEIGHT>
+        <SKULENGTHCL>10</SKULENGTHCL>
+        <SKULENGTH>10</SKULENGTH>
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL>110</SKUHEIGHTCL>
+        <SKUHEIGHT>110</SKUHEIGHT>
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>70</MANDANTID>
+        <SKUNAME>0077226001001 (ме 1)</SKUNAME>
+        <SKUDESC>STABILO КАРАНДАШИ 12Ц TRIO/ДЛИ - МЕ 1 упак</SKUDESC>
+        <MEASURECODE_R>МЕ</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME>0</SKUVOLUME>
+        <SKUVOLUMECL>0</SKUVOLUMECL>
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>15000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>CRT250x350x350</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>15000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>CRT270x550x300</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>EURO050</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>EURO080</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>EURO180</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode />
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>20000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>PACK620x380x18</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>SHELF60x45x40</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>1000</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>ZBOX</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>1000</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK>77226</ARTMARK>
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL>
+      <ArtCpvWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <CPVID_ARTCPV xsi:nil="true" />
+        <CPVPARENT_ARTCPV xsi:nil="true" />
+        <CPVVALUE_ARTCPV>203/12-03</CPVVALUE_ARTCPV>
+        <CUSTOMPARAMCODE_R_ARTCPV>ARTProviderArtName</CUSTOMPARAMCODE_R_ARTCPV>
+      </ArtCpvWrapper>
+      <ArtCpvWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <CPVID_ARTCPV xsi:nil="true" />
+        <CPVPARENT_ARTCPV xsi:nil="true" />
+        <CPVVALUE_ARTCPV>20025</CPVVALUE_ARTCPV>
+        <CUSTOMPARAMCODE_R_ARTCPV>ARTPartnerHostRef</CUSTOMPARAMCODE_R_ARTCPV>
+      </ArtCpvWrapper>
+    </CUSTOMPARAMVAL>
+    <BEFOREPROCESSINGWFCODE>WfSiBeforeProcessingArtLoad</BEFOREPROCESSINGWFCODE>
+    <COUNTRYCODE_R>DE</COUNTRYCODE_R>
+  </ArtWrapper>
+  <ArtWrapper>
+    <UpdateNullValues>false</UpdateNullValues>
+    <MANDANTID>70</MANDANTID>
+    <ARTPICKORDER>0</ARTPICKORDER>
+    <ARTCOMMERCDAY>0</ARTCOMMERCDAY>
+    <ARTTEMPMIN xsi:nil="true" />
+    <ARTTEMPMAX xsi:nil="true" />
+    <ARTSIZE />
+    <ARTNAME>0078757003001</ARTNAME>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTHOSTREF>0078757</ARTHOSTREF>
+    <ARTDESCEXT>ЯБЛОКИ АЙДАРЕД (СЕТКА)</ARTDESCEXT>
+    <ARTDESC>ЯБЛОКИ АЙДАРЕД (СЕТКА)</ARTDESC>
+    <ARTCOLOR />
+    <ARTUPDATE>1</ARTUPDATE>
+    <FACTORYID_R xsi:nil="true" />
+    <ARTLIFETIME>0</ARTLIFETIME>
+    <ARTLIFETIMEREFRESH>0</ARTLIFETIMEREFRESH>
+    <ARTCOMMERCTIME>10</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <MandantCode>MET</MandantCode>
+    <GROUP2ARTL>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>MET_1_WHG_ФРУКТЫ</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>100</ART2GROUPPRIORITY>
+        <MANDANTID>70</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>MET_1_WHG_ФРУКТЫ</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>1</ART2GROUPREBINDING>
+        <MandantCode>MET</MandantCode>
+      </Art2GroupWrapper>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>MET_2_WG_СЕМЕЧКОВЫЕ ФРУКТЫ</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>200</ART2GROUPPRIORITY>
+        <MANDANTID>70</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>MET_2_WG_СЕМЕЧКОВЫЕ ФРУКТЫ</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>1</ART2GROUPREBINDING>
+        <MandantCode>MET</MandantCode>
+      </Art2GroupWrapper>
+      <Art2GroupWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ART2GROUPARTGROUPCODE>MET_3_WUG_ЯБЛОКИ,  КРАСНЫЕ</ART2GROUPARTGROUPCODE>
+        <ART2GROUPID xsi:nil="true" />
+        <ART2GROUPPRIORITY>300</ART2GROUPPRIORITY>
+        <MANDANTID>70</MANDANTID>
+        <ART2GROUPDELETE xsi:nil="true" />
+        <ART2GROUPARTGROUPNAME>MET_3_WUG_ЯБЛОКИ,  КРАСНЫЕ</ART2GROUPARTGROUPNAME>
+        <ART2GROUPREBINDING>1</ART2GROUPREBINDING>
+        <MandantCode>MET</MandantCode>
+      </Art2GroupWrapper>
+    </GROUP2ARTL>
+    <SKUL>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>true</SKUPRIMARY>
+        <SKUCLIENT>false</SKUCLIENT>
+        <SKUWIDTHCL xsi:nil="true" />
+        <SKUWIDTH xsi:nil="true" />
+        <SKUWEIGHTCL xsi:nil="true" />
+        <SKUWEIGHT xsi:nil="true" />
+        <SKULENGTHCL xsi:nil="true" />
+        <SKULENGTH xsi:nil="true" />
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL xsi:nil="true" />
+        <SKUHEIGHT xsi:nil="true" />
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>70</MANDANTID>
+        <SKUNAME>0078757003001 (кг 1)</SKUNAME>
+        <SKUDESC>ЯБЛОКИ АЙДАРЕД (СЕТКА) - кг</SKUDESC>
+        <MEASURECODE_R>КГ</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME xsi:nil="true" />
+        <SKUVOLUMECL xsi:nil="true" />
+        <SKUINDIVISIBLE>false</SKUINDIVISIBLE>
+        <SKUDEFAULT>false</SKUDEFAULT>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>99999</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>15000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>CRT250x350x350</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>99999</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>99999</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>15000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>CRT270x550x300</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>99999</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>99999</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>EURO050</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>99999</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>99999</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>EURO080</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>99999</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>99999</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>EURO180</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>99999</SKU2TTEQUANTITYMAX>
+            <MandantCode />
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>99999</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>20000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>PACK620x380x18</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>99999</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>99999</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>SHELF60x45x40</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>99999</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>99999</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>ZBOX</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>99999</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+      <SKUWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <SKUPRIMARY>false</SKUPRIMARY>
+        <SKUCLIENT>true</SKUCLIENT>
+        <SKUWIDTHCL>300</SKUWIDTHCL>
+        <SKUWIDTH>300</SKUWIDTH>
+        <SKUWEIGHTCL>2000</SKUWEIGHTCL>
+        <SKUWEIGHT>2000</SKUWEIGHT>
+        <SKULENGTHCL>400</SKULENGTHCL>
+        <SKULENGTH>400</SKULENGTH>
+        <SKUID xsi:nil="true" />
+        <SKUHEIGHTCL>280</SKUHEIGHTCL>
+        <SKUHEIGHT>280</SKUHEIGHT>
+        <SKUCOUNT>1</SKUCOUNT>
+        <MANDANTID>70</MANDANTID>
+        <SKUNAME>0078757003001 (ме 1)</SKUNAME>
+        <SKUDESC>ЯБЛОКИ АЙДАРЕД (СЕТКА) - МЕ 1 кг</SKUDESC>
+        <MEASURECODE_R>МЕ</MEASURECODE_R>
+        <SKUPARENT xsi:nil="true" />
+        <SKUVOLUME>34000000</SKUVOLUME>
+        <SKUVOLUMECL>34000000</SKUVOLUMECL>
+        <SKUINDIVISIBLE>true</SKUINDIVISIBLE>
+        <SKUDEFAULT>true</SKUDEFAULT>
+        <TETYPE2SKU>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>99999</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>15000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>CRT250x350x350</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>99999</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>99999</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>15000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>CRT270x550x300</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>99999</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>99999</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>EURO050</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>99999</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>99999</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>EURO080</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>99999</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>true</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>99999</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>EURO180</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>99999</SKU2TTEQUANTITYMAX>
+            <MandantCode />
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>99999</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>20000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>PACK620x380x18</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>99999</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>99999</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>SHELF60x45x40</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>99999</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+          <SKU2TTEWrapper>
+            <UpdateNullValues xsi:nil="true" />
+            <SKU2TTEDEFAULT>false</SKU2TTEDEFAULT>
+            <SKU2TTEWIDTH xsi:nil="true" />
+            <SKU2TTESKUID xsi:nil="true" />
+            <SKU2TTEQUANTITY>99999</SKU2TTEQUANTITY>
+            <SKU2TTEMAXWEIGHT>2000000</SKU2TTEMAXWEIGHT>
+            <SKU2TTELENGTH xsi:nil="true" />
+            <SKU2TTEID xsi:nil="true" />
+            <SKU2TTEHEIGHT xsi:nil="true" />
+            <MANDANTID>70</MANDANTID>
+            <SKU2TTETETYPECODE>ZBOX</SKU2TTETETYPECODE>
+            <SKU2TTEQUANTITYMAX>99999</SKU2TTEQUANTITYMAX>
+            <MandantCode>MET</MandantCode>
+          </SKU2TTEWrapper>
+        </TETYPE2SKU>
+      </SKUWrapper>
+    </SKUL>
+    <BARCODEONLY>0</BARCODEONLY>
+    <ARTBRAND />
+    <ARTMANUFACTURER xsi:nil="true" />
+    <ARTMANUFACTURERCODE />
+    <ARTMARK>320463</ARTMARK>
+    <ARTMODEL />
+    <ARTTYPE />
+    <ARTIWBTYPE />
+    <ARTDANGERLEVEL />
+    <ARTDANGERSUBLEVEL />
+    <CUSTOMPARAMVAL>
+      <ArtCpvWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <CPVID_ARTCPV xsi:nil="true" />
+        <CPVPARENT_ARTCPV xsi:nil="true" />
+        <CPVVALUE_ARTCPV>50500</CPVVALUE_ARTCPV>
+        <CUSTOMPARAMCODE_R_ARTCPV>ARTPartnerHostRef</CUSTOMPARAMCODE_R_ARTCPV>
+      </ArtCpvWrapper>
+    </CUSTOMPARAMVAL>
+    <BEFOREPROCESSINGWFCODE>WfSiBeforeProcessingArtLoad</BEFOREPROCESSINGWFCODE>
+    <COUNTRYCODE_R>SR</COUNTRYCODE_R>
+  </ArtWrapper>
+</ArrayOfArtWrapper>

@@ -1,0 +1,22 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxret="http://schemas.devexpress.com/winfx/2008/xaml/richedit/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <ControlTemplate x:Key="{dxret:RichEditControlThemeKey ResourceKey=PrintLayoutViewPageBorderControlTemplate}" TargetType="{x:Type ContentControl}">
+    <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\GrayOne\RichEditViewPage.xaml;4;10">
+      <Border Background="{TemplateBinding Background}" BorderBrush="#FF8F9096" BorderThickness="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\GrayOne\RichEditViewPage.xaml;5;14">
+        <Border.Effect>
+          <DropShadowEffect x:Name="Shadow" Direction="0" ShadowDepth="0" BlurRadius="8" Opacity="0.25" />
+        </Border.Effect>
+        <ContentPresenter Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" Margin="-1" SnapsToDevicePixels="True" UseLayoutRounding="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\GrayOne\RichEditViewPage.xaml;9;18" />
+      </Border>
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxret:RichEditControlThemeKey ResourceKey=SimpleViewPageBorderControlTemplate}" TargetType="{x:Type ContentControl}">
+    <Border Background="{TemplateBinding Background}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\GrayOne\RichEditViewPage.xaml;15;10">
+      <ContentPresenter Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" SnapsToDevicePixels="True" UseLayoutRounding="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\GrayOne\RichEditViewPage.xaml;16;14" />
+    </Border>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxret:RichEditControlThemeKey ResourceKey=DraftViewPageBorderControlTemplate}" TargetType="{x:Type ContentControl}">
+    <Border Background="{TemplateBinding Background}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\GrayOne\RichEditViewPage.xaml;21;10">
+      <ContentPresenter Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" SnapsToDevicePixels="True" UseLayoutRounding="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\GrayOne\RichEditViewPage.xaml;22;14" />
+    </Border>
+  </ControlTemplate>
+</ResourceDictionary>

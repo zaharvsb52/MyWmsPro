@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfLabelWrapper xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <LabelWrapper>
+    <ARTCODE xsi:nil="true"/>
+    <ARTNAME>315510</ARTNAME>
+    <LABELCODE>BJ_RUS</LABELCODE>
+    <LABELNAME>BJ_RUS</LABELNAME>
+    <LabelParamsL>
+      <LabelParamsWrapper>
+        <LABELCODE_R xsi:nil="true"/>
+        <LABELPARAMSID xsi:nil="true"/>
+        <LABELPARAMSNAME>Название</LABELPARAMSNAME>
+        <LABELPARAMSVALUE>FDT MAT 24H T51</LABELPARAMSVALUE>
+        <UpdateNullValues xsi:nil="true"/>
+        <LABELUSEID_R xsi:nil="true"/>
+      </LabelParamsWrapper>
+      <LabelParamsWrapper>
+        <LABELCODE_R xsi:nil="true"/>
+        <LABELPARAMSID xsi:nil="true"/>
+        <LABELPARAMSNAME>Состав</LABELPARAMSNAME>
+        <LABELPARAMSVALUE>*</LABELPARAMSVALUE>
+        <UpdateNullValues xsi:nil="true"/>
+        <LABELUSEID_R xsi:nil="true"/>
+      </LabelParamsWrapper>
+      <LabelParamsWrapper>
+        <LABELCODE_R xsi:nil="true"/>
+        <LABELPARAMSID xsi:nil="true"/>
+        <LABELPARAMSNAME>Изготовитель</LABELPARAMSNAME>
+        <LABELPARAMSVALUE>*</LABELPARAMSVALUE>
+        <UpdateNullValues xsi:nil="true"/>
+        <LABELUSEID_R xsi:nil="true"/>
+      </LabelParamsWrapper>
+      <LabelParamsWrapper>
+        <LABELCODE_R xsi:nil="true"/>
+        <LABELPARAMSID xsi:nil="true"/>
+        <LABELPARAMSNAME>Импортер</LABELPARAMSNAME>
+        <LABELPARAMSVALUE>ООО "Буржуа Париж", 101000, Москва г, Колпачный пер, дом № 10/7, корпус 8</LABELPARAMSVALUE>
+        <UpdateNullValues xsi:nil="true"/>
+        <LABELUSEID_R xsi:nil="true"/>
+      </LabelParamsWrapper>
+      <LabelParamsWrapper>
+        <LABELCODE_R xsi:nil="true"/>
+        <LABELPARAMSID xsi:nil="true"/>
+        <LABELPARAMSNAME>Объем</LABELPARAMSNAME>
+        <LABELPARAMSVALUE>0</LABELPARAMSVALUE>
+        <UpdateNullValues xsi:nil="true"/>
+        <LABELUSEID_R xsi:nil="true"/>
+      </LabelParamsWrapper>
+      <LabelParamsWrapper>
+        <LABELCODE_R xsi:nil="true"/>
+        <LABELPARAMSID xsi:nil="true"/>
+        <LABELPARAMSNAME>Знак 2 EAC</LABELPARAMSNAME>
+        <LABELPARAMSVALUE>1</LABELPARAMSVALUE>
+        <UpdateNullValues xsi:nil="true"/>
+        <LABELUSEID_R xsi:nil="true"/>
+      </LabelParamsWrapper>
+      <LabelParamsWrapper>
+        <LABELCODE_R xsi:nil="true"/>
+        <LABELPARAMSID xsi:nil="true"/>
+        <LABELPARAMSNAME>Страна-производитель</LABELPARAMSNAME>
+        <LABELPARAMSVALUE>ФРАНЦИЯ</LABELPARAMSVALUE>
+        <UpdateNullValues xsi:nil="true"/>
+        <LABELUSEID_R xsi:nil="true"/>
+      </LabelParamsWrapper>
+      <LabelParamsWrapper>
+        <LABELCODE_R xsi:nil="true"/>
+        <LABELPARAMSID xsi:nil="true"/>
+        <LABELPARAMSNAME>Условия хранения</LABELPARAMSNAME>
+        <LABELPARAMSVALUE>при температуре 5-25С</LABELPARAMSVALUE>
+        <UpdateNullValues xsi:nil="true"/>
+        <LABELUSEID_R xsi:nil="true"/>
+      </LabelParamsWrapper>
+      <LabelParamsWrapper>
+        <LABELCODE_R xsi:nil="true"/>
+        <LABELPARAMSID xsi:nil="true"/>
+        <LABELPARAMSNAME>Способ применения</LABELPARAMSNAME>
+        <LABELPARAMSVALUE>аккуратно нанести на лицо</LABELPARAMSVALUE>
+        <UpdateNullValues xsi:nil="true"/>
+        <LABELUSEID_R xsi:nil="true"/>
+      </LabelParamsWrapper>
+      <LabelParamsWrapper>
+        <LABELCODE_R xsi:nil="true"/>
+        <LABELPARAMSID xsi:nil="true"/>
+        <LABELPARAMSNAME>BJS SAS</LABELPARAMSNAME>
+        <LABELPARAMSVALUE>по заказу "Bourjois SAS", 12-14 rue Victor Noir, 92200 Neuilly sur Seine, France</LABELPARAMSVALUE>
+        <UpdateNullValues xsi:nil="true"/>
+        <LABELUSEID_R xsi:nil="true"/>
+      </LabelParamsWrapper>
+    </LabelParamsL>
+    <MANDANTID>31</MANDANTID>
+    <MandantCode>BJ</MandantCode>
+    <UpdateNullValues xsi:nil="true"/>
+    <PARTNERID_R xsi:nil="true"/>
+    <REPORT_R xsi:nil="true"/>
+  </LabelWrapper>
+</ArrayOfLabelWrapper>

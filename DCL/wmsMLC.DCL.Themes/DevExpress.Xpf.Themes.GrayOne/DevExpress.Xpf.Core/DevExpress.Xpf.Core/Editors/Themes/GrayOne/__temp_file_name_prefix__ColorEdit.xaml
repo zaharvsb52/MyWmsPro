@@ -1,0 +1,110 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxei="http://schemas.devexpress.com/winfx/2008/xaml/editors/internal" xmlns:dxet="http://schemas.devexpress.com/winfx/2008/xaml/editors/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <!--BEGIN WPF-->
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Generic/ColorEdit.xaml" />
+  </ResourceDictionary.MergedDictionaries>
+  <!--END WPF-->
+  <ControlTemplate x:Key="{dxet:ColorEditThemeKey ResourceKey=GalleryItemControlTemplate}" TargetType="{x:Type dxb:GalleryItemControl}">
+    <Border Name="border" Margin="{Binding Path=GroupControl.GroupsControl.GalleryControl.ActualItemMargin, RelativeSource={RelativeSource TemplatedParent}}" BorderThickness="{Binding Path=Item.HideBorderSide, Converter={StaticResource HideBorderSideToThicknessConverter}, ConverterParameter=1, RelativeSource={RelativeSource TemplatedParent}}" BorderBrush="{Binding Path=DataContext.Group.Gallery.(dxe:BaseEdit.OwnerEdit).ChipBorderBrush, RelativeSource={RelativeSource TemplatedParent}}" Width="{Binding Path=Gallery.(dxe:ColorEdit.OwnerEdit).ChipSize, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ChipSizeToSizeConverter}}" Height="{Binding Path=Gallery.(dxe:ColorEdit.OwnerEdit).ChipSize, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ChipSizeToSizeConverter}}" Background="{Binding Path=Item.Color, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ColorToBrushConverter}}" Visibility="{Binding Path=Item.IsVisible, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter = {StaticResource BoolToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorEdit.xaml;10;10">
+      <Border Name="innerBorder" BorderBrush="#FFFFE294" BorderThickness="1" Visibility="Collapsed" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorEdit.xaml;11;14" />
+      <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup x:Name="State">
+          <VisualState x:Name="Normal" />
+          <VisualState x:Name="Hover">
+            <Storyboard>
+              <ObjectAnimationUsingKeyFrames Storyboard.TargetName="border" Storyboard.TargetProperty="BorderBrush">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                  <DiscreteObjectKeyFrame.Value>
+                    <SolidColorBrush Color="#FFEF4810" />
+                  </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+              </ObjectAnimationUsingKeyFrames>
+              <ObjectAnimationUsingKeyFrames Storyboard.TargetName="border" Storyboard.TargetProperty="BorderThickness">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                  <DiscreteObjectKeyFrame.Value>
+                    <Thickness>1</Thickness>
+                  </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+              </ObjectAnimationUsingKeyFrames>
+              <ObjectAnimationUsingKeyFrames Storyboard.TargetName="innerBorder" Storyboard.TargetProperty="Visibility">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                  <DiscreteObjectKeyFrame.Value>
+                    <Visibility>Visible</Visibility>
+                  </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+              </ObjectAnimationUsingKeyFrames>
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="Pressed" />
+          <VisualState x:Name="Checked">
+            <Storyboard>
+              <ObjectAnimationUsingKeyFrames Storyboard.TargetName="border" Storyboard.TargetProperty="BorderBrush">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                  <DiscreteObjectKeyFrame.Value>
+                    <SolidColorBrush Color="#FFF29436" />
+                  </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+              </ObjectAnimationUsingKeyFrames>
+              <ObjectAnimationUsingKeyFrames Storyboard.TargetName="border" Storyboard.TargetProperty="BorderThickness">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                  <DiscreteObjectKeyFrame.Value>
+                    <Thickness>1</Thickness>
+                  </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+              </ObjectAnimationUsingKeyFrames>
+              <ObjectAnimationUsingKeyFrames Storyboard.TargetName="innerBorder" Storyboard.TargetProperty="Visibility">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                  <DiscreteObjectKeyFrame.Value>
+                    <Visibility>Visible</Visibility>
+                  </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+              </ObjectAnimationUsingKeyFrames>
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="HoverChecked">
+            <Storyboard>
+              <Storyboard>
+                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="border" Storyboard.TargetProperty="BorderBrush">
+                  <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                      <SolidColorBrush Color="#FFF29436" />
+                    </DiscreteObjectKeyFrame.Value>
+                  </DiscreteObjectKeyFrame>
+                </ObjectAnimationUsingKeyFrames>
+                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="border" Storyboard.TargetProperty="BorderThickness">
+                  <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                      <Thickness>1</Thickness>
+                    </DiscreteObjectKeyFrame.Value>
+                  </DiscreteObjectKeyFrame>
+                </ObjectAnimationUsingKeyFrames>
+                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="innerBorder" Storyboard.TargetProperty="Visibility">
+                  <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                      <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                  </DiscreteObjectKeyFrame>
+                </ObjectAnimationUsingKeyFrames>
+              </Storyboard>
+            </Storyboard>
+          </VisualState>
+        </VisualStateGroup>
+      </VisualStateManager.VisualStateGroups>
+    </Border>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxet:ColorEditThemeKey ResourceKey=BorderTemplate}" TargetType="{x:Type ContentControl}">
+    <Border BorderBrush="#FF828790" BorderThickness="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorEdit.xaml;99;10">
+      <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorEdit.xaml;100;14" />
+    </Border>
+  </ControlTemplate>
+  <SolidColorBrush x:Key="{dxet:ColorEditThemeKey ResourceKey=Background}" Color="White" />
+  <ControlTemplate x:Key="{dxet:ColorEditThemeKey ResourceKey=GalleryBarItemLinkControlTemplate}" TargetType="{x:Type dxei:GalleryBarItemLinkControl}">
+    <StackPanel Orientation="Vertical" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorEdit.xaml;105;10">
+      <Border Name="topBorder" BorderThickness="0,0,0,1" BorderBrush="#FFC5C5C5" Visibility="{Binding Path=HasTopBorder, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BoolToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorEdit.xaml;106;14" />
+      <Border Background="{DynamicResource ResourceKey={dxet:ColorEditThemeKey ResourceKey=Background}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorEdit.xaml;107;14">
+        <dxb:GalleryControl x:Name="PART_GalleryControl" PlacementTarget="Ribbon" Gallery="{Binding Path=GalleryLink.Item.Gallery, RelativeSource={RelativeSource Mode=TemplatedParent}}" DefaultIsGroupCaptionVisible="False" BorderBrush="White" DesiredColCount="{Binding Path=(dxe:BaseEdit.OwnerEdit).ColumnCount, RelativeSource={RelativeSource Self}}" DefaultItemControlTemplate="{DynamicResource {dxet:ColorEditThemeKey ResourceKey=GalleryItemControlTemplate}}" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="-2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorEdit.xaml;108;18" />
+      </Border>
+      <Border Name="bottomBorder" BorderThickness="0,1,0,0" BorderBrush="#FFC5C5C5" Visibility="{Binding Path=HasBottomBorder, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BoolToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorEdit.xaml;110;14" />
+    </StackPanel>
+  </ControlTemplate>
+</ResourceDictionary>

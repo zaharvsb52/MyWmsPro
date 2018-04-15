@@ -1,0 +1,140 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" xmlns:dxbt="http://schemas.devexpress.com/winfx/2008/xaml/bars/themekeys" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:dxcn="http://schemas.devexpress.com/winfx/2008/xaml/core/internal">
+
+    <sys:Double x:Key="{dxbt:BarSubItemThemeKey ResourceKey=ContentToArrowIndent}">3</sys:Double>
+
+    <ControlTemplate x:Key="{dxbt:BarSubItemThemeKey ResourceKey=ArrowTemplate}" TargetType="{x:Type dxb:ArrowControl}">
+        <Grid Background="Transparent" SnapsToDevicePixels="True">
+            <Border HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Path Stretch="Fill" Fill="{TemplateBinding Foreground}" Data="F1 M 1324,808L 1321,811L 1318,808L 1324,808 Z " Margin="0,1,1,0" Height="3" Width="6" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            </Border>
+        </Grid>
+        <!--BEGIN WPF-->
+        <ControlTemplate.Triggers>
+            <DataTrigger Binding="{Binding Path=IsMouseOver, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxb:BarSubItemLinkControl}}}" Value="True" />
+        </ControlTemplate.Triggers>
+        <!--END WPF-->
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxbt:BarSubItemThemeKey ResourceKey=ArrowTemplateInMainMenu}" TargetType="{x:Type dxb:ArrowControl}">
+        <Grid Background="Transparent" SnapsToDevicePixels="True">
+            <Border HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Path Stretch="Fill" Fill="{TemplateBinding Foreground}" Data="F1 M 1324,808L 1321,811L 1318,808L 1324,808 Z " Margin="0,1,0,0" Height="3" Width="6" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            </Border>
+        </Grid>
+        <!--BEGIN WPF-->
+        <ControlTemplate.Triggers>
+            <DataTrigger Binding="{Binding Path=IsMouseOver, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type dxb:BarSubItemLinkControl}}}" Value="True" />
+        </ControlTemplate.Triggers>
+        <!--END WPF-->
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxbt:BarSubItemThemeKey ResourceKey=ArrowTemplateInMenu}" TargetType="{x:Type dxb:ArrowControl}">
+        <Path Stretch="Fill" Fill="{TemplateBinding Foreground}" Data="F1 M 1514,990L 1514,996L 1517,993L 1514,990 Z " Margin="3" Height="6" Width="3" HorizontalAlignment="Center" VerticalAlignment="Center" />
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxbt:BarSubItemThemeKey ResourceKey=ArrowTemplateInRibbonPageGroup}" TargetType="{x:Type dxb:ArrowControl}">
+        <Grid x:Name="Root" Background="Transparent" Margin="1,0,1,0" SnapsToDevicePixels="True">
+            <Path Stretch="Fill" Fill="{TemplateBinding Foreground}" Data="F1 M 1324,808L 1321,811L 1318,808L 1324,808 Z " Height="3" Width="6" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="ArrowAlignment">
+                    <VisualState x:Name="Right">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="Margin" dxcn:ValueSetter.Thickness="1,0,1,0" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Bottom">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="Margin" dxcn:ValueSetter.Thickness="0" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxbt:BarSubItemThemeKey ResourceKey=NormalArrowTemplateInTextSplitter}" TargetType="{x:Type ContentControl}">
+        <Path Stretch="Fill" Fill="{TemplateBinding Foreground}" Data="F1 M 1324,808L 1321,811L 1318,808L 1324,808 Z " Height="3" Width="6" VerticalAlignment="Center" HorizontalAlignment="Center" SnapsToDevicePixels="True" />
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxbt:BarSubItemThemeKey ResourceKey=SelectedArrowTemplateInTextSplitter}" TargetType="{x:Type ContentControl}">
+        <Path Stretch="Fill" Fill="{TemplateBinding Foreground}" Data="F1 M 1324,808L 1321,811L 1318,808L 1324,808 Z " Height="3" Width="6" VerticalAlignment="Center" HorizontalAlignment="Center" SnapsToDevicePixels="True" />
+    </ControlTemplate>
+
+    <Style x:Key="{dxbt:BarSubItemThemeKey ResourceKey=SelectedTextStyleInTextSplitter}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#FF201F35" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarSubItemThemeKey ResourceKey=NormalTextStyleInTextSplitter}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#FF201F35" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarSubItemThemeKey ResourceKey=BottomSideArrowContainerStyleInTextSplitter}" TargetType="{x:Type ContentControl}">
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarSubItemThemeKey ResourceKey=RightSideArrowContainerStyleInTextSplitter}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Margin" Value="2,1,0,-1" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarSubItemThemeKey ResourceKey=TextSplitterStyleInRibbonPageGroup}" TargetType="{x:Type dxb:TextSplitterControl}">
+        <Setter Property="FirstStringHorizontalAlignment" Value="Center" />
+        <Setter Property="SecondStringHorizontalAlignment" Value="Center" />
+        <Setter Property="SecondStringMargin" Value="0,-3,0,0" />
+        <Setter Property="Margin" Value="0,0,0,0" />
+    </Style>
+
+    <!--ONLY SL
+    <ControlTemplate x:Key="{dxbt:BarSubItemThemeKey ThemeName=GrayOne, ResourceKey=ArrowTemplateInRibbonPageGroup}" TargetType="{x:Type dxb:ArrowControl}">
+    </ControlTemplate>
+    ONLY SL-->
+
+    <Style x:Key="{dxbt:BarSubItemThemeKey ResourceKey=ArrowStyle}" TargetType="{x:Type dxb:BarSubItemArrowControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=ArrowTemplate}}" />
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarSubItemThemeKey ResourceKey=ArrowStyleInMainMenu}" TargetType="{x:Type dxb:BarSubItemArrowControl}" BasedOn="{StaticResource {dxbt:BarSubItemThemeKey ResourceKey=ArrowStyle}}">
+        <Setter Property="Template" Value="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=ArrowTemplateInMainMenu}}" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarSubItemThemeKey ResourceKey=ArrowStyleInStatusBar}" TargetType="{x:Type dxb:BarSubItemArrowControl}" BasedOn="{StaticResource {dxbt:BarSubItemThemeKey ResourceKey=ArrowStyle}}">
+        <Setter Property="Template" Value="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=ArrowTemplate}}" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarSubItemThemeKey ResourceKey=ArrowStyleInMenu}" TargetType="{x:Type dxb:BarSubItemArrowControl}" BasedOn="{StaticResource {dxbt:BarSubItemThemeKey ResourceKey=ArrowStyle}}">
+        <Setter Property="Template" Value="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=ArrowTemplateInMenu}}" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarSubItemThemeKey ResourceKey=ArrowStyleInRibbonPageGroup}" TargetType="{x:Type dxb:BarSubItemArrowControl}" BasedOn="{StaticResource {dxbt:BarSubItemThemeKey ResourceKey=ArrowStyle}}">
+        <Setter Property="Template" Value="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=ArrowTemplateInRibbonPageGroup}}" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarSubItemThemeKey ResourceKey=ArrowStyleInBarButtonGroup}" TargetType="{x:Type dxb:BarSubItemArrowControl}" BasedOn="{StaticResource {dxbt:BarSubItemThemeKey ResourceKey=ArrowStyle}}">
+        <Setter Property="Template" Value="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=ArrowTemplateInRibbonPageGroup}}" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarSubItemThemeKey ResourceKey=ArrowStyleInRibbonQuickAccessToolbar}" TargetType="{x:Type dxb:BarSubItemArrowControl}" BasedOn="{StaticResource {dxbt:BarSubItemThemeKey ResourceKey=ArrowStyle}}">
+        <Setter Property="Template" Value="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=ArrowTemplateInRibbonPageGroup}}" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarSubItemThemeKey ResourceKey=ArrowStyleInRibbonQuickAccessToolbarFooter}" TargetType="{x:Type dxb:BarSubItemArrowControl}" BasedOn="{StaticResource {dxbt:BarSubItemThemeKey ResourceKey=ArrowStyle}}">
+        <Setter Property="Template" Value="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=ArrowTemplateInRibbonPageGroup}}" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarSubItemThemeKey ResourceKey=ArrowStyleInRibbonStatusBarLeft}" TargetType="{x:Type dxb:BarSubItemArrowControl}" BasedOn="{StaticResource {dxbt:BarSubItemThemeKey ResourceKey=ArrowStyle}}">
+        <Setter Property="Template" Value="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=ArrowTemplateInRibbonPageGroup}}" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarSubItemThemeKey ResourceKey=ArrowStyleInRibbonStatusBarRight}" TargetType="{x:Type dxb:BarSubItemArrowControl}" BasedOn="{StaticResource {dxbt:BarSubItemThemeKey ResourceKey=ArrowStyle}}">
+        <Setter Property="Template" Value="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=ArrowTemplateInRibbonPageGroup}}" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarSubItemThemeKey ResourceKey=ArrowStyleInRibbonPageHeader}" TargetType="{x:Type dxb:BarSubItemArrowControl}" BasedOn="{StaticResource {dxbt:BarSubItemThemeKey ResourceKey=ArrowStyle}}">
+        <Setter Property="Template" Value="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=ArrowTemplateInRibbonPageGroup}}" />
+    </Style>
+
+</ResourceDictionary>

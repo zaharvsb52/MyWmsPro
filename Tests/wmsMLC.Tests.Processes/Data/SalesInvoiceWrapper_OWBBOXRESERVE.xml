@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SalesInvoiceWrapper xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <UpdateNullValues>false</UpdateNullValues>
+  <OWBOUTDATEPLAN>2015-06-30T00:00:00</OWBOUTDATEPLAN>
+  <OWBRECIPIENT xsi:nil="true" />
+  <OWBPRIORITY>500</OWBPRIORITY>
+  <OWBID xsi:nil="true" />
+  <MANDANTID>31</MANDANTID>
+  <ADDRESSBOOKID_R xsi:nil="true" />
+  <OWBPRODUCTNEED>NOACTIVATE</OWBPRODUCTNEED>
+  <OWBNAME>036262456789</OWBNAME>
+  <OWBBOXRESERVE>1</OWBBOXRESERVE>
+  <OWBHOSTREF />
+  <OWBPOSL>
+    <OWBPosWrapper>
+      <OWBPOSBOXNUMBER>OX2</OWBPOSBOXNUMBER>
+    </OWBPosWrapper>
+    <OWBPosWrapper>
+      <OWBPOSBOXNUMBER>161-2-14</OWBPOSBOXNUMBER>
+    </OWBPosWrapper>
+    <OWBPosWrapper>
+      <OWBPOSBOXNUMBER>ПОХ-DEMO-B52S</OWBPOSBOXNUMBER>
+    </OWBPosWrapper>
+    <!--<OWBPosWrapper>
+      <OWBPOSBOXNUMBER>OX-04</OWBPOSBOXNUMBER>
+    </OWBPosWrapper>-->
+  </OWBPOSL>
+  <OWBRECIPIENT_NAME>ЗАО "ЧИП И ДИП"</OWBRECIPIENT_NAME>
+  <OWBRECIPIENT_CODE>0055001</OWBRECIPIENT_CODE>
+  <OWBRECIPIENT_INN />
+  <OWBRECIPIENT_OKPO />
+  <OWBRECIPIENT_PHONE />
+  <OWBFACTORY />
+  <OWBCOUNTPOS>11</OWBCOUNTPOS>
+  <OWBDESC />
+  <OWBREPLACEKITS>0</OWBREPLACEKITS>
+  <OWBALLOWBASE>0</OWBALLOWBASE>
+  <OWBHOSTREFDATE xsi:nil="true" />
+  <OWBREPEAT>0</OWBREPEAT>
+  <OWBCREATE_RECIPIENT>1</OWBCREATE_RECIPIENT>
+  <FACTORYID_R xsi:nil="true" />
+  <OWBCONVERTSKU>0</OWBCONVERTSKU>
+  <OWBPAYER_NAME>ЗАО "ЧИП И ДИП"</OWBPAYER_NAME>
+  <OWBPAYER xsi:nil="true" />
+  <OWBTYPE>OWBTYPENORMAL</OWBTYPE>
+  <MandantCode>SPB</MandantCode>
+  <Address>
+    <AddressBookWrapper>
+      <UpdateNullValues>false</UpdateNullValues>
+      <ADDRESSBOOKBUILDING />
+      <ADDRESSBOOKCITY />
+      <ADDRESSBOOKDISTRICT />
+      <ADDRESSBOOKID xsi:nil="true" />
+      <ADDRESSBOOKINDEX xsi:nil="true" />
+      <ADDRESSBOOKTYPECODE>ADR_PHYSICAL</ADDRESSBOOKTYPECODE>
+      <ADDRESSBOOKRAW>ЗАО "ЧИП и ДИП", 129110, г.Москва ул.Гиляровского,д.39,стр.1</ADDRESSBOOKRAW>
+    </AddressBookWrapper>
+  </Address>
+  <CUSTOMPARAMVAL>
+    <OWBCpvWrapper>
+      <UpdateNullValues>false</UpdateNullValues>
+      <CPV2ENTITY_OWBCPV>OWB</CPV2ENTITY_OWBCPV>
+      <CPVID_OWBCPV>-1</CPVID_OWBCPV>
+      <CPVPARENT_OWBCPV xsi:nil="true" />
+      <CUSTOMPARAMCODE_R_OWBCPV>OWBClientInfoL1</CUSTOMPARAMCODE_R_OWBCPV>
+    </OWBCpvWrapper>
+    <OWBCpvWrapper>
+      <UpdateNullValues>false</UpdateNullValues>
+      <CPV2ENTITY_OWBCPV>OWB</CPV2ENTITY_OWBCPV>
+      <CPVID_OWBCPV xsi:nil="true" />
+      <CPVPARENT_OWBCPV xsi:nil="true" />
+      <CPVVALUE_OWBCPV>TORG-12</CPVVALUE_OWBCPV>
+      <CUSTOMPARAMCODE_R_OWBCPV>OWBClientDocNumberOtherL2</CUSTOMPARAMCODE_R_OWBCPV>
+    </OWBCpvWrapper>
+    <OWBCpvWrapper>
+      <UpdateNullValues>false</UpdateNullValues>
+      <CPV2ENTITY_OWBCPV>OWB</CPV2ENTITY_OWBCPV>
+      <CPVID_OWBCPV xsi:nil="true" />
+      <CPVPARENT_OWBCPV xsi:nil="true" />
+      <CPVVALUE_OWBCPV>129678.06</CPVVALUE_OWBCPV>
+      <CUSTOMPARAMCODE_R_OWBCPV>OWBClientCostL2</CUSTOMPARAMCODE_R_OWBCPV>
+    </OWBCpvWrapper>
+  </CUSTOMPARAMVAL>
+  <OWBRECREATE>1</OWBRECREATE>
+  <OWBCHECKMULTIPLE>0</OWBCHECKMULTIPLE>
+  <OWBOWNER xsi:nil="true" />
+  <OWB_HOSTREF_NAME xsi:nil="true" />
+</SalesInvoiceWrapper>

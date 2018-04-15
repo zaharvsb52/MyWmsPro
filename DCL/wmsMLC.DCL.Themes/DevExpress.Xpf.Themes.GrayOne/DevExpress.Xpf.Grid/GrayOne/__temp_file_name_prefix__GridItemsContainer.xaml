@@ -1,0 +1,19 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" xmlns:dxgt="http://schemas.devexpress.com/winfx/2008/xaml/grid/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <!--BEGIN WPF-->
+  <DataTemplate x:Key="{dxgt:CardViewThemeKey ResourceKey=DataRowsTemplate}">
+    <Border x:Name="innerBorder" Background="#FFFFFFFF" BorderBrush="{DynamicResource InnerBorderColorBrush}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\GridItemsContainer.xaml;5;10">
+      <dxg:CardViewDataRowsControl dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\GridItemsContainer.xaml;6;14" />
+    </Border>
+    <DataTemplate.Triggers>
+      <DataTrigger Binding="{Binding Path=(dxg:GridControl.ActiveView).Orientation, RelativeSource={RelativeSource TemplatedParent}}" Value="Horizontal"></DataTrigger>
+      <DataTrigger Binding="{Binding Path=(dxg:GridControl.ActiveView).Orientation, RelativeSource={RelativeSource TemplatedParent}}" Value="Vertical"></DataTrigger>
+      <DataTrigger Binding="{Binding Path=GroupLevel}" Value="0" />
+    </DataTemplate.Triggers>
+  </DataTemplate>
+  <DataTemplate x:Key="{dxgt:CardViewThemeKey ResourceKey=GroupRowsTemplate}">
+    <Border Background="#FFFFFFFF" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\GridItemsContainer.xaml;18;10">
+      <dxg:CardViewGroupRowsControl dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\GridItemsContainer.xaml;19;14" />
+    </Border>
+  </DataTemplate>
+  <!--END WPF-->
+</ResourceDictionary>

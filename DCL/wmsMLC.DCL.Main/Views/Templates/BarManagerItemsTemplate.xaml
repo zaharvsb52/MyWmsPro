@@ -1,0 +1,153 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+    xmlns:helpers="clr-namespace:wmsMLC.DCL.Main.Helpers"
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    xmlns:controls="clr-namespace:wmsMLC.DCL.Main.Views.Controls">
+
+    <helpers:GlyphAlignmentGeneralToMainConverter x:Key="GlyphAlignmentGeneralToMainConverter" />
+    <helpers:GlyphSizeGeneralToMainConverter x:Key="GlyphSizeGeneralToMainConverter" />
+    <helpers:DisplayModeTypeGeneralToMainConverter x:Key="DisplayModeTypeGeneralToMainConverter" />
+    <helpers:BoolToDefaultBooleanConverter x:Key="BoolToDefaultBooleanConverter" />
+
+    <DataTemplate x:Key="commandMenuEditTemplate">
+        <ContentControl SnapsToDevicePixels="True">
+            <dxb:BarEditItem
+                Content="{Binding Caption, Mode=OneWay}"
+                Glyph="{Binding ImageSmall, Mode=OneWay}"
+                LargeGlyph="{Binding ImageLarge, Mode=OneWay}"
+                KeyGesture="{Binding HotKey, Mode=OneWay}"
+                GlyphAlignment="{Binding GlyphAlignment, Converter={StaticResource GlyphAlignmentGeneralToMainConverter}}"
+                GlyphSize="{Binding GlyphSize, Converter={StaticResource GlyphSizeGeneralToMainConverter}}"
+                BarItemDisplayMode="{Binding DisplayMode, Converter={StaticResource DisplayModeTypeGeneralToMainConverter}}"
+                IsVisible="{Binding IsVisible}"
+                IsEnabled="{Binding IsEnable}"
+                EditValue="{Binding EditValue}"
+                Hint="{Binding Hint, Mode=OneWay}">
+                <dxb:BarEditItem.EditSettings>
+                    <dxe:ComboBoxEditSettings ItemsSource="{Binding ComboBoxItems, Mode=OneWay}" />
+                </dxb:BarEditItem.EditSettings>
+            </dxb:BarEditItem>
+        </ContentControl>
+    </DataTemplate>
+    
+    <DataTemplate x:Key="commandMenuItemTemplate">
+        <ContentControl SnapsToDevicePixels="True">
+            <dxb:BarButtonItem
+                Content="{Binding Caption, Mode=OneWay}"
+                Glyph="{Binding ImageSmall, Mode=OneWay}"
+                LargeGlyph="{Binding ImageLarge, Mode=OneWay}"
+                KeyGesture="{Binding HotKey, Mode=OneWay}"
+                GlyphAlignment="{Binding GlyphAlignment, Converter={StaticResource GlyphAlignmentGeneralToMainConverter}}"
+                GlyphSize="{Binding GlyphSize, Converter={StaticResource GlyphSizeGeneralToMainConverter}}"
+                BarItemDisplayMode="{Binding DisplayMode, Converter={StaticResource DisplayModeTypeGeneralToMainConverter}}"
+                Command="{Binding Command}"
+                CommandParameter="{Binding CommandParameter}"
+                IsEnabled="{Binding IsEnable}"
+                IsVisible="{Binding IsVisible}"
+                helpers:Help.Keyword="{Binding Keyword}"
+                Hint="{Binding Hint, Mode=OneWay}"/>
+        </ContentControl>
+    </DataTemplate>
+    
+    <DataTemplate x:Key="commandMenuCheckItemTemplate">
+        <ContentControl SnapsToDevicePixels="True">
+            <dxb:BarCheckItem 
+                Content="{Binding Caption, Mode=OneWay}" 
+                Glyph="{Binding ImageSmall, Mode=OneWay}" 
+                LargeGlyph="{Binding ImageLarge, Mode=OneWay}" 
+                KeyGesture="{Binding HotKey, Mode=OneWay}" 
+                GlyphAlignment="{Binding GlyphAlignment, Converter={StaticResource GlyphAlignmentGeneralToMainConverter}}"
+                BarItemDisplayMode="{Binding DisplayMode, Converter={StaticResource DisplayModeTypeGeneralToMainConverter}}"
+                GlyphSize="{Binding GlyphSize, Converter={StaticResource GlyphSizeGeneralToMainConverter}}"
+                Command="{Binding Command}" 
+                CommandParameter="{Binding CommandParameter}"
+                IsChecked="{Binding IsChecked}"
+                IsEnabled="{Binding IsEnable}"
+                IsVisible="{Binding IsVisible}"
+                Hint="{Binding Hint, Mode=OneWay}"
+                helpers:Help.Keyword="{Binding Keyword}"/>
+        </ContentControl>
+    </DataTemplate>
+
+    <DataTemplate x:Key="listMenuItemTemplate">
+        <ContentControl SnapsToDevicePixels="True">
+            <controls:CustomBarSubItem 
+                Content="{Binding Caption, Mode=OneWay}"
+                Glyph="{Binding ImageSmall, Mode=OneWay}"
+                LargeGlyph="{Binding ImageLarge, Mode=OneWay}"
+                GlyphAlignment="{Binding GlyphAlignment, Converter={StaticResource GlyphAlignmentGeneralToMainConverter}}"
+                BarItemDisplayMode="{Binding DisplayMode, Converter={StaticResource DisplayModeTypeGeneralToMainConverter}}"
+                GlyphSize="{Binding GlyphSize, Converter={StaticResource GlyphSizeGeneralToMainConverter}}"
+                ItemLinksSource="{Binding MenuItems}"
+                ItemTemplate="{StaticResource commandMenuItemTemplate}"
+                Command="{Binding Command}"
+                CommandParameter="{Binding CommandParameter}"
+                IsVisible="{Binding IsVisible}" 
+                IsEnableItems="{Binding IsEnableItems, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, IsAsync=False}">
+                <!--ItemStyle="{Binding MenuItems}"-->
+                <!--IsEnabled="{Binding IsEnable, Mode=TwoWay}"-->
+            </controls:CustomBarSubItem>
+        </ContentControl>
+    </DataTemplate>
+
+    <helpers:MenuItemTemplateSelector x:Key="SubItemTemplateSelector"
+        CommandTemplate="{StaticResource commandMenuItemTemplate}"
+        ListTemplate="{StaticResource listMenuItemTemplate}"
+        CheckCommandTemplate="{StaticResource commandMenuCheckItemTemplate}"
+        EditCommandTemplate="{StaticResource commandMenuEditTemplate}"/> 
+
+    <DataTemplate x:Key="SubListMenuTemplate">
+        <ContentControl SnapsToDevicePixels="True">
+            <controls:CustomBarSubItem 
+                Glyph="{Binding ImageSmall, Mode=OneWay}"
+                UseAsBarItemGlyph="False"
+                Content="{Binding Caption, Mode=OneWay}"
+                LargeGlyph="{Binding ImageLarge, Mode=OneWay}"
+                GlyphAlignment="{Binding GlyphAlignment, Converter={StaticResource GlyphAlignmentGeneralToMainConverter}}"
+                BarItemDisplayMode="{Binding DisplayMode, Converter={StaticResource DisplayModeTypeGeneralToMainConverter}}"
+                GlyphSize="{Binding GlyphSize, Converter={StaticResource GlyphSizeGeneralToMainConverter}}"
+                ItemLinksSource="{Binding MenuItems}"
+                ItemTemplateSelector="{StaticResource SubItemTemplateSelector}"
+                IsVisible="{Binding IsVisible}"
+                Command="{Binding Command}"
+                CommandParameter="{Binding CommandParameter}"
+                IsEnableItems="{Binding IsEnableItems, Mode=TwoWay}">
+                <!--ItemStyle="{Binding MenuItems}"-->
+                <!--IsEnabled= "{Binding IsEnable, Mode=TwoWay}"-->
+            </controls:CustomBarSubItem>
+        </ContentControl>
+    </DataTemplate>
+
+    <DataTemplate x:Key="separatorMenuItemTemplate">
+        <ContentControl SnapsToDevicePixels="True">
+            <dxb:BarItemSeparator />
+        </ContentControl>
+    </DataTemplate>
+
+    <helpers:MenuItemTemplateSelector x:Key="itemTemplateSelector"
+        CommandTemplate="{StaticResource commandMenuItemTemplate}"
+        ListTemplate="{StaticResource listMenuItemTemplate}"
+        SeparatorTemplate="{StaticResource separatorMenuItemTemplate}"
+        CheckCommandTemplate="{StaticResource commandMenuCheckItemTemplate}"
+        EditCommandTemplate="{StaticResource commandMenuEditTemplate}" 
+        SubListMenuTemplate="{StaticResource SubListMenuTemplate}"/>
+
+    <DataTemplate x:Key="barTemplate">
+        <ContentControl SnapsToDevicePixels="True">
+            <controls:CustomBar 
+                ItemLinksSource="{Binding MenuItems}"
+                Caption="{Binding Caption}"
+                ItemTemplateSelector="{StaticResource itemTemplateSelector}" 
+                Visible="{Binding IsVisible}"
+                IsEnabled="{Binding IsEnable}"
+                GlyphSize="{Binding GlyphSize, Converter={StaticResource GlyphSizeGeneralToMainConverter}}"
+                AllowHide="{Binding AllowHide, Converter={StaticResource BoolToDefaultBooleanConverter}}"
+                SerializationName="{Binding Name}"/>
+        </ContentControl>
+    </DataTemplate>
+
+    <Style x:Key="barStyle" TargetType="dxb:Bar">
+        <Setter Property="ItemTemplateSelector" Value="{StaticResource itemTemplateSelector}" />
+    </Style>
+</ResourceDictionary>

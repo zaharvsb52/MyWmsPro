@@ -1,0 +1,208 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" xmlns:dxgt="http://schemas.devexpress.com/winfx/2008/xaml/grid/themekeys" xmlns:dxght="clr-namespace:DevExpress.Xpf.Grid.HitTest;assembly=DevExpress.Xpf.Grid.v15.2" xmlns:dxcn="clr-namespace:DevExpress.Xpf.Core.Native;assembly=DevExpress.Xpf.Core.v15.2">
+
+    <SolidColorBrush x:Key="{dxgt:GridColumnHeaderThemeKey ResourceKey=HeadersVerticalLineBrush}" Color="#FF4C535C" />
+    <SolidColorBrush x:Key="{dxgt:GridColumnHeaderThemeKey ResourceKey=HeaderCaptionForeground}" Color="#FF000000" />
+    <SolidColorBrush x:Key="{dxgt:GridColumnHeaderThemeKey ResourceKey=GroupHeaderCaptionForeground}" Color="#FF000000" />
+
+    <dx:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    <dx:BoolToVisibilityInverseConverter x:Key="BoolToVisibilityInverseConverter" />
+
+    <ControlTemplate x:Key="{dxgt:GridColumnHeaderThemeKey ResourceKey=SortArrowUpTemplate}">
+        <StackPanel VerticalAlignment="Center" SnapsToDevicePixels="True">
+            <Border x:Name="SortBySummaryIndicator" Background="#FF201F35" Margin="0,0,0,1" Width="8" Height="1" Visibility="{Binding IsSortedBySummary, Converter={StaticResource BooleanToVisibilityConverter}}" />
+            <Path Stretch="Fill" Fill="#FF201F35" Data="F1 M 692,437L 700,437L 696,433L 692,437 Z" Height="4" Width="8" />
+        </StackPanel>
+    </ControlTemplate>
+
+    <Style x:Key="{dxgt:GridColumnHeaderThemeKey ResourceKey=SortArrowUpStyle}" TargetType="{x:Type Control}">
+        <Setter Property="Width" Value="12" />
+        <Setter Property="Margin" Value="2,0,-1,1" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+    </Style>
+
+    <ControlTemplate x:Key="{dxgt:GridColumnHeaderThemeKey ResourceKey=SortArrowDownTemplate}">
+        <StackPanel VerticalAlignment="Center" SnapsToDevicePixels="True">
+            <Path Stretch="Fill" Fill="#FF201F35" Data="F1 M 692,427L 700,427L 696,431L 692,427 Z" Height="4" Width="8" />
+            <Border x:Name="SortBySummaryIndicator" Background="#FF201F35" Margin="0,1,0,0" Width="8" Height="1" Visibility="{Binding IsSortedBySummary, Converter={StaticResource BooleanToVisibilityConverter}}" />
+        </StackPanel>
+    </ControlTemplate>
+
+    <Style x:Key="{dxgt:GridColumnHeaderThemeKey ResourceKey=SortArrowDownStyle}" TargetType="{x:Type Control}">
+        <Setter Property="Width" Value="12" />
+        <Setter Property="Margin" Value="2,0,-1,0" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+    </Style>
+
+    <Style x:Key="{dxgt:GridColumnHeaderThemeKey ResourceKey=HeaderCustomizationAreaStyle}" TargetType="{x:Type ContentPresenter}">
+    </Style>
+
+    <Style x:Key="{dxgt:GridColumnHeaderThemeKey ResourceKey=CaptionToArrowIndentBorderStyle}" TargetType="{x:Type Border}">
+        <Setter Property="Width" Value="15" />
+    </Style>
+
+    <ControlTemplate x:Key="{dxgt:GridColumnHeaderThemeKey ResourceKey=ControlTemplate}" TargetType="{x:Type dxg:GridColumnHeaderBase}">
+        <Grid x:Name="grid">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="MouseOver" />
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <DoubleAnimation Duration="00:00:00.0" Storyboard.TargetName="MousePressedElement" Storyboard.TargetProperty="Opacity" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="HasRightSiblingStates">
+                    <VisualState x:Name="HasSibling">
+                        <Storyboard>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="NoSibling">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="Separator" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Collapsed" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="ColumnPositionStates">
+                    <VisualState x:Name="Standalone">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="grid" Storyboard.TargetProperty="VerticalAlignment" dxcn:ValueSetter.VerticalAlignment="Top" />
+                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="Separator" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Collapsed" />
+                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="BottomBorder" Storyboard.TargetProperty="Padding" dxcn:ValueSetter.Thickness="1" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="CaptionToArrowIndent" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Visible" />
+                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="PART_Content" Storyboard.TargetProperty="Margin" dxcn:ValueSetter.Thickness="4,3" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Right">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="Separator" Storyboard.TargetProperty="HorizontalAlignment" dxcn:ValueSetter.HorizontalAlignment="Left" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Left" />
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="HeaderPresenterTypeStates">
+                    <VisualState x:Name="Headers" />
+                    <VisualState x:Name="GroupPanel">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="outerBorder" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Visible" />
+                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="PART_ColumnHeaderContent" Storyboard.TargetProperty="Margin" dxcn:ValueSetter.Thickness="2,0,2,0" />
+                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="PART_ColumnHeaderContent" Storyboard.TargetProperty="VerticalAlignment" dxcn:ValueSetter.VerticalAlignment="Top" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Border x:Name="outerBorder" Visibility="Collapsed">
+                <Border.Margin>
+                    <Binding Path="(dxg:GridColumn.GroupIndex)">
+                        <Binding.Converter>
+                            <dxg:GroupPanelPaddingConverter Offset="5" />
+                        </Binding.Converter>
+                    </Binding>
+                </Border.Margin>
+            </Border>
+            <ContentControl x:Name="PART_ColumnHeaderContent" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" IsTabStop="False" Grid.Row="1">
+                <ContentControl.Foreground>
+                    <SolidColorBrush x:Name="Foreground" Color="#FF201F35" />
+                </ContentControl.Foreground>
+                <Border x:Name="BottomBorder" Background="#FFCACBD3" Padding="0,0,0,1">
+                    <Grid>
+                        <Border x:Name="BackgroundBorder">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Color="#cddeff" Offset="0" />
+                                    <GradientStop Color="#becbe3" Offset="0.3" />
+                                    <GradientStop Color="#e1e6ee" Offset="1" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                        </Border>
+                        <Border x:Name="MouseOverElement" Opacity="0">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FFF8F8F9" Offset="0" />
+                                    <GradientStop Color="#FFF2F3F4" Offset="1" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                        </Border>
+                        <Border x:Name="MousePressedElement" Opacity="0">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FFDCDEE3" Offset="0" />
+                                    <GradientStop Color="#FFE4E6EA" Offset="1" />
+                                    <GradientStop Color="#FFE4E6EA" Offset="0.25" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                        </Border>
+                        <Grid x:Name="PART_Content" Margin="4,3,5,3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid x:Name="PART_HeaderContainer" HorizontalAlignment="Left">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <dxg:HeaderContentControl x:Name="PART_HeaderPresenter" />
+                                <dxg:ColumnHeaderFilterControl Width="13" Grid.Column="1" VerticalAlignment="Top" IsTabStop="False" x:Name="PART_ColumnFilter" Foreground="{Binding Path=Foreground, ElementName=PART_ColumnHeaderContent}">
+                                    <dxg:GridViewHitInfoBase.HitTestAcceptor>
+                                        <Binding Path="(dxg:GridColumn.HeaderPresenterType)" RelativeSource="{RelativeSource TemplatedParent}">
+                                            <Binding.Converter>
+                                                <dx:EnumToObjectConverter>
+                                                    <dx:EnumToObjectConverter.DefaultValue>
+                                                        <dxght:ColumnHeaderFilterButtonTableViewHitTestAcceptor />
+                                                    </dx:EnumToObjectConverter.DefaultValue>
+                                                    <dx:EnumToObjectConverter.Values>
+                                                        <dxght:GroupPanelColumnHeaderFilterButtonTableViewHitTestAcceptor x:Key="GroupPanel" />
+                                                    </dx:EnumToObjectConverter.Values>
+                                                </dx:EnumToObjectConverter>
+                                            </Binding.Converter>
+                                        </Binding>
+                                    </dxg:GridViewHitInfoBase.HitTestAcceptor>
+                                </dxg:ColumnHeaderFilterControl>
+                            </Grid>
+                            <dx:XPFContentPresenter x:Name="PART_HeaderCustomizationArea" Grid.Column="1" Style="{DynamicResource {dxgt:GridColumnHeaderThemeKey ResourceKey=HeaderCustomizationAreaStyle}}" />
+                            <Border x:Name="CaptionToArrowIndent" Grid.Column="2" Style="{DynamicResource {dxgt:GridColumnHeaderThemeKey ResourceKey=CaptionToArrowIndentBorderStyle}}" Visibility="Collapsed" />
+                            <dxg:ColumnHeaderSortIndicatorControl IsTabStop="False" x:Name="PART_SortUpIndicator" Grid.Column="2" Style="{DynamicResource {dxgt:GridColumnHeaderThemeKey ResourceKey=SortArrowUpStyle}}" Template="{DynamicResource {dxgt:GridColumnHeaderThemeKey ResourceKey=SortArrowUpTemplate}}" Visibility="Collapsed" />
+                            <dxg:ColumnHeaderSortIndicatorControl IsTabStop="False" x:Name="PART_SortDownIndicator" Grid.Column="2" Style="{DynamicResource {dxgt:GridColumnHeaderThemeKey ResourceKey=SortArrowDownStyle}}" Template="{DynamicResource {dxgt:GridColumnHeaderThemeKey ResourceKey=SortArrowDownTemplate}}" Visibility="Collapsed" />
+                        </Grid>
+                        <dxg:DesignTimeSelectionControl x:Name="PART_DesignTimeSelection" Grid.RowSpan="2" Visibility="Collapsed" IsTabStop="False" />
+                        <Rectangle x:Name="Separator" Fill="#FFCACBD3" Stroke="{x:Null}" StrokeThickness="0" HorizontalAlignment="Right" Width="1" />
+                    </Grid>
+                </Border>
+            </ContentControl>
+            <dxg:GridThumb Name="PART_HeaderGripper" HorizontalAlignment="Right" Cursor="SizeWE" Grid.Row="1" Visibility="Collapsed" />
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxgt:GridColumnHeaderThemeKey ResourceKey=ColumnFilterTemplate}" TargetType="{x:Type ToggleButton}">
+        <Grid Background="Transparent" Margin="0,-2,0,0" Width="13" Height="13">
+            <Path Stretch="Fill" Fill="#FF80838F" Data="F1 M 1296.5,759C 1298.43,759 1300,759.896 1300,761.014L 1300,762L 1297,765L 1297,768L 1296,768L 1296,765L 1293,762L 1293,761C 1293,759.896 1294.57,759 1296.5,759 Z M 1296.5,760C 1295.12,760 1294,760.448 1294,761C 1294,761.552 1295.12,762 1296.5,762C 1297.88,762 1299,761.552 1299,761C 1299,760.448 1297.88,760 1296.5,760 Z" Width="7" Height="9" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding IsMouseOver, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BoolToVisibilityInverseConverter}}">
+                <Path.Opacity>
+                    <Binding Path="IsChecked" RelativeSource="{RelativeSource TemplatedParent}">
+                        <Binding.Converter>
+                            <dx:BoolToVisibilityViaOpacityConverter Invert="True" />
+                        </Binding.Converter>
+                    </Binding>
+                </Path.Opacity>
+            </Path>
+            <Path Stretch="Fill" Fill="#FF201F35" Data="F1 M 1296.5,759C 1298.43,759 1300,759.896 1300,761.014L 1300,762L 1297,765L 1297,768L 1296,768L 1296,765L 1293,762L 1293,761C 1293,759.896 1294.57,759 1296.5,759 Z M 1296.5,760C 1295.12,760 1294,760.448 1294,761C 1294,761.552 1295.12,762 1296.5,762C 1297.88,762 1299,761.552 1299,761C 1299,760.448 1297.88,760 1296.5,760 Z" Width="7" Height="9" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding IsMouseOver, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Path.Opacity>
+                    <Binding Path="IsPressed" RelativeSource="{RelativeSource TemplatedParent}">
+                        <Binding.Converter>
+                            <dx:BoolToVisibilityViaOpacityConverter Invert="True" />
+                        </Binding.Converter>
+                    </Binding>
+                </Path.Opacity>
+            </Path>
+            <Path Stretch="Fill" Fill="#FF201F35" Data="F1 M 1296.5,759C 1298.43,759 1300,759.896 1300,761.014L 1300,762L 1297,765L 1297,768L 1296,768L 1296,765L 1293,762L 1293,761C 1293,759.896 1294.57,759 1296.5,759 Z M 1296.5,760C 1295.12,760 1294,760.448 1294,761C 1294,761.552 1295.12,762 1296.5,762C 1297.88,762 1299,761.552 1299,761C 1299,760.448 1297.88,760 1296.5,760 Z" Width="7" Height="9" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding IsPressed, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}">
+            </Path>
+            <Path Stretch="Fill" Fill="#FF201F35" Data="F1 M 1296.5,759C 1298.43,759 1300,759.896 1300,761.014L 1300,762L 1297,765L 1297,768L 1296,768L 1296,765L 1293,762L 1293,761C 1293,759.896 1294.57,759 1296.5,759 Z M 1296.5,760C 1295.12,760 1294,760.448 1294,761C 1294,761.552 1295.12,762 1296.5,762C 1297.88,762 1299,761.552 1299,761C 1299,760.448 1297.88,760 1296.5,760 Z" Width="7" Height="9" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}" />
+        </Grid>
+    </ControlTemplate>
+
+</ResourceDictionary>

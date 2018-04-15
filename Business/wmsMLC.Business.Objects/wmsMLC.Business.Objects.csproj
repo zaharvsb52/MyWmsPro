@@ -1,0 +1,525 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{67D93016-602C-462B-BE46-9FDFA9ED2566}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>wmsMLC.Business.Objects</RootNamespace>
+    <AssemblyName>wmsMLC.Business.Objects</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <CodeContractsAssemblyMode>1</CodeContractsAssemblyMode>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeContractsEnableRuntimeChecking>False</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>True</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>True</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>True</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>True</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>True</CodeContractsRedundantAssumptions>
+    <CodeContractsAssertsToContractsCheckBox>True</CodeContractsAssertsToContractsCheckBox>
+    <CodeContractsRedundantTests>True</CodeContractsRedundantTests>
+    <CodeContractsMissingPublicRequiresAsWarnings>True</CodeContractsMissingPublicRequiresAsWarnings>
+    <CodeContractsMissingPublicEnsuresAsWarnings>False</CodeContractsMissingPublicEnsuresAsWarnings>
+    <CodeContractsInferRequires>True</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferEnsuresAutoProperties>True</CodeContractsInferEnsuresAutoProperties>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestAssumptionsForCallees>False</CodeContractsSuggestAssumptionsForCallees>
+    <CodeContractsSuggestRequires>False</CodeContractsSuggestRequires>
+    <CodeContractsNecessaryEnsures>True</CodeContractsNecessaryEnsures>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsSuggestReadonly>True</CodeContractsSuggestReadonly>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths />
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsSQLServerOption />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsSkipAnalysisIfCannotConnectToCache>False</CodeContractsSkipAnalysisIfCannotConnectToCache>
+    <CodeContractsFailBuildOnWarnings>False</CodeContractsFailBuildOnWarnings>
+    <CodeContractsBeingOptimisticOnExternal>True</CodeContractsBeingOptimisticOnExternal>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>DoNotBuild</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeContractsEnableRuntimeChecking>False</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>True</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>True</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>True</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>True</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>True</CodeContractsRedundantAssumptions>
+    <CodeContractsAssertsToContractsCheckBox>True</CodeContractsAssertsToContractsCheckBox>
+    <CodeContractsRedundantTests>True</CodeContractsRedundantTests>
+    <CodeContractsMissingPublicRequiresAsWarnings>True</CodeContractsMissingPublicRequiresAsWarnings>
+    <CodeContractsMissingPublicEnsuresAsWarnings>False</CodeContractsMissingPublicEnsuresAsWarnings>
+    <CodeContractsInferRequires>True</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferEnsuresAutoProperties>True</CodeContractsInferEnsuresAutoProperties>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestAssumptionsForCallees>False</CodeContractsSuggestAssumptionsForCallees>
+    <CodeContractsSuggestRequires>False</CodeContractsSuggestRequires>
+    <CodeContractsNecessaryEnsures>True</CodeContractsNecessaryEnsures>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsSuggestReadonly>True</CodeContractsSuggestReadonly>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths />
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsSQLServerOption />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsSkipAnalysisIfCannotConnectToCache>False</CodeContractsSkipAnalysisIfCannotConnectToCache>
+    <CodeContractsFailBuildOnWarnings>False</CodeContractsFailBuildOnWarnings>
+    <CodeContractsBeingOptimisticOnExternal>True</CodeContractsBeingOptimisticOnExternal>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>DoNotBuild</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'TST1|AnyCPU'">
+    <OutputPath>bin\TST1\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BLToolkit.4, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b1d3f6ab3aadaca3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Packages\BLToolkit.4.2.0\lib\net40-full\BLToolkit.4.dll</HintPath>
+    </Reference>
+    <Reference Include="CalcEngine, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Libraries\CalcEngine\CalcEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Version\AssemblyInfoGlobal.cs">
+      <Link>Properties\AssemblyInfoGlobal.cs</Link>
+    </Compile>
+    <Compile Include="AddressBook.cs" />
+    <Compile Include="AdjustmentReason.cs" />
+    <Compile Include="Area.cs" />
+    <Compile Include="Area2Blocking.cs" />
+    <Compile Include="AreaType.cs" />
+    <Compile Include="BillBillEntity.cs" />
+    <Compile Include="BillBiller2Mandant.cs" />
+    <Compile Include="BillCalcConfig.cs" />
+    <Compile Include="BillCalcConfigDetail.cs" />
+    <Compile Include="BillCalcEventConfig.cs" />
+    <Compile Include="BillCalcVerification.cs" />
+    <Compile Include="BillEvent2Operation.cs" />
+    <Compile Include="BillSpecialFunction.cs" />
+    <Compile Include="BillSpecialFuncEntity.cs" />
+    <Compile Include="BillSpecialFuncParams.cs" />
+    <Compile Include="BillStrategy.cs" />
+    <Compile Include="BillStrategyParams.cs" />
+    <Compile Include="BillStrategyUse.cs" />
+    <Compile Include="BillStrategyUseValues.cs" />
+    <Compile Include="BillUserParams.cs" />
+    <Compile Include="BillUserParams2O2C.cs" />
+    <Compile Include="BillUserParamsType.cs" />
+    <Compile Include="BillUserParamsTypeApply.cs" />
+    <Compile Include="BillUserParamsValue.cs" />
+    <Compile Include="BlackList.cs" />
+    <Compile Include="CargoOWBCpv.cs" />
+    <Compile Include="CstReqCustoms.cs" />
+    <Compile Include="EcomClient.cs" />
+    <Compile Include="Employee.cs" />
+    <Compile Include="Employee2OWB.cs" />
+    <Compile Include="Entity2GCCpv.cs" />
+    <Compile Include="EventKind2Action.cs" />
+    <Compile Include="ExpiryDate.cs" />
+    <Compile Include="IwbPosCpv.cs" />
+    <Compile Include="MPLUseCpv.cs" />
+    <Compile Include="MRCpv.cs" />
+    <Compile Include="AreaTypeCpv.cs" />
+    <Compile Include="AreaTypeGPV.cs" />
+    <Compile Include="Art.cs" />
+    <Compile Include="Art2Group.cs" />
+    <Compile Include="ArtCpv.cs" />
+    <Compile Include="ArtGroup.cs" />
+    <Compile Include="ArtGroupCpv.cs" />
+    <Compile Include="ArtPrice.cs" />
+    <Compile Include="Barcode.cs" />
+    <Compile Include="BillAnalytics.cs" />
+    <Compile Include="BillBiller.cs" />
+    <Compile Include="BillContract.cs" />
+    <Compile Include="BillEvent2Biller.cs" />
+    <Compile Include="BillEventKind2Biller.cs" />
+    <Compile Include="BillOperation.cs" />
+    <Compile Include="BillOperation2Contract.cs" />
+    <Compile Include="BillOperationCause.cs" />
+    <Compile Include="BillOperationClass.cs" />
+    <Compile Include="BillScale.cs" />
+    <Compile Include="BillScale2O2C.cs" />
+    <Compile Include="BillScaleValue.cs" />
+    <Compile Include="BillScaleValueType.cs" />
+    <Compile Include="BillTariff.cs" />
+    <Compile Include="BillTransaction.cs" />
+    <Compile Include="BillTransactionDetail.cs" />
+    <Compile Include="BillTransactionType.cs" />
+    <Compile Include="BillTransactionW.cs" />
+    <Compile Include="BillTransactionWDetail.cs" />
+    <Compile Include="BillWorkAct.cs" />
+    <Compile Include="BillWorkAct2Op2C.cs" />
+    <Compile Include="BillWorkActDetail.cs" />
+    <Compile Include="BillWorkActDetailEx.cs" />
+    <Compile Include="BPBatch.cs" />
+    <Compile Include="BPBatchSelect.cs" />
+    <Compile Include="Calendar.cs" />
+    <Compile Include="Calendar2Mandant.cs" />
+    <Compile Include="CargoIWB.cs" />
+    <Compile Include="CargoIWBPos.cs" />
+    <Compile Include="CargoOWB.cs" />
+    <Compile Include="CarType.cs" />
+    <Compile Include="ClientCpv.cs" />
+    <Compile Include="ClientTypeCpv.cs" />
+    <Compile Include="ClientTypeGpv.cs" />
+    <Compile Include="CommAct.cs" />
+    <Compile Include="CP2Mandant.cs" />
+    <Compile Include="Dashboard.cs" />
+    <Compile Include="Dashboard2User.cs" />
+    <Compile Include="DashboardCpv.cs" />
+    <Compile Include="Entity2GC.cs" />
+    <Compile Include="InvReq.cs" />
+    <Compile Include="InvReqPos.cs" />
+    <Compile Include="MgRoute.cs" />
+    <Compile Include="MgRouteCpv.cs" />
+    <Compile Include="MgRouteDateSelect.cs" />
+    <Compile Include="MgRouteDateSelectCpv.cs" />
+    <Compile Include="MgRouteSelect.cs" />
+    <Compile Include="Min.cs" />
+    <Compile Include="MinCpv.cs" />
+    <Compile Include="MinSelect.cs" />
+    <Compile Include="MMUseCpv.cs" />
+    <Compile Include="MSCType.cs" />
+    <Compile Include="OperationStage.cs" />
+    <Compile Include="OutputBatch.cs" />
+    <Compile Include="GlobalConfig.cs" />
+    <Compile Include="HistoryWrapper.cs" />
+    <Compile Include="InputPlPos.cs" />
+    <Compile Include="Inv.cs" />
+    <Compile Include="InvGroup.cs" />
+    <Compile Include="InvSnapShot.cs" />
+    <Compile Include="InvTask.cs" />
+    <Compile Include="InvTaskGroup.cs" />
+    <Compile Include="InvTaskStep.cs" />
+    <Compile Include="Label.cs" />
+    <Compile Include="LabelParams.cs" />
+    <Compile Include="LabelParamsValue.cs" />
+    <Compile Include="LabelUse.cs" />
+    <Compile Include="MI.cs" />
+    <Compile Include="MIUse.cs" />
+    <Compile Include="BillOperation2ContractCpv.cs" />
+    <Compile Include="BillOperationCauseCpv.cs" />
+    <Compile Include="MSC.cs" />
+    <Compile Include="MSCSelect.cs" />
+    <Compile Include="OWBPosCpv.cs" />
+    <Compile Include="PartnerColor.cs" />
+    <Compile Include="PattCalcDataSource.cs" />
+    <Compile Include="PattCalcField.cs" />
+    <Compile Include="PattCalcParam.cs" />
+    <Compile Include="PattCalcWhere.cs" />
+    <Compile Include="PattTDataSource.cs" />
+    <Compile Include="PattTField.cs" />
+    <Compile Include="PattTFieldEntity.cs" />
+    <Compile Include="PattTFieldSection.cs" />
+    <Compile Include="PattTParams.cs" />
+    <Compile Include="PattTWhereEntity.cs" />
+    <Compile Include="PattTWhereSection.cs" />
+    <Compile Include="PurposeVisit.cs" />
+    <Compile Include="QSupplyChain.cs" />
+    <Compile Include="ReportCpv.cs" />
+    <Compile Include="ReportDataBuffer.cs" />
+    <Compile Include="Res2SupplyChain.cs" />
+    <Compile Include="Route.cs" />
+    <Compile Include="Rule.cs" />
+    <Compile Include="RuleConfig.cs" />
+    <Compile Include="RuleCpv.cs" />
+    <Compile Include="RuleExec.cs" />
+    <Compile Include="RuleExecParam.cs" />
+    <Compile Include="RuleParam.cs" />
+    <Compile Include="SegmentTypeCpv.cs" />
+    <Compile Include="SiteCPV.cs" />
+    <Compile Include="Site.cs" />
+    <Compile Include="CustomParam.cs" />
+    <Compile Include="CustomParamValue.cs" />
+    <Compile Include="EntityLink.cs" />
+    <Compile Include="EpsJobCpv.cs" />
+    <Compile Include="EventKind2Mandant.cs" />
+    <Compile Include="ExternalTrafficCpv.cs" />
+    <Compile Include="Factory.cs" />
+    <Compile Include="IsoCountry.cs" />
+    <Compile Include="IsoCurrency.cs" />
+    <Compile Include="IWBCpv.cs" />
+    <Compile Include="EntityFile.cs" />
+    <Compile Include="IWBPosInput.cs" />
+    <Compile Include="IWBPosQLFDetailDesc.cs" />
+    <Compile Include="MandantCpv.cs" />
+    <Compile Include="MotionAreaGroupTr.cs" />
+    <Compile Include="MPL.cs" />
+    <Compile Include="MPLSelect.cs" />
+    <Compile Include="MPLUse.cs" />
+    <Compile Include="MR.cs" />
+    <Compile Include="MRSelect.cs" />
+    <Compile Include="MRUse.cs" />
+    <Compile Include="Out.cs" />
+    <Compile Include="OWB.cs" />
+    <Compile Include="OWB2Cargo.cs" />
+    <Compile Include="OWBCpv.cs" />
+    <Compile Include="OWBPos.cs" />
+    <Compile Include="Packing.cs" />
+    <Compile Include="Partner2Group.cs" />
+    <Compile Include="PartnerCpv.cs" />
+    <Compile Include="PartnerGroup.cs" />
+    <Compile Include="PL.cs" />
+    <Compile Include="PlaceCpv.cs" />
+    <Compile Include="PLPos.cs" />
+    <Compile Include="PMMethod2Operation.cs" />
+    <Compile Include="Product2Blocking.cs" />
+    <Compile Include="ProductBlockingCpv.cs" />
+    <Compile Include="Qlf.cs" />
+    <Compile Include="Qlf2Mandant.cs" />
+    <Compile Include="QlfDetail.cs" />
+    <Compile Include="QlfDetail2Mandant.cs" />
+    <Compile Include="QRes.cs" />
+    <Compile Include="Report2Report.cs" />
+    <Compile Include="ReportFilter.cs" />
+    <Compile Include="Res.cs" />
+    <Compile Include="SKU2Parnter.cs" />
+    <Compile Include="SKUCpv.cs" />
+    <Compile Include="State2Operation.cs" />
+    <Compile Include="StateMachine.cs" />
+    <Compile Include="SupplyChain.cs" />
+    <Compile Include="SysArch.cs" />
+    <Compile Include="SysArchCpv.cs" />
+    <Compile Include="SysArchInst.cs" />
+    <Compile Include="SysEnum.cs" />
+    <Compile Include="SysEvent.cs" />
+    <Compile Include="SysService.cs" />
+    <Compile Include="SysServiceCpv.cs" />
+    <Compile Include="TEType2Mandant.cs" />
+    <Compile Include="TeTypeCpv.cs" />
+    <Compile Include="TEventParam.cs" />
+    <Compile Include="EventParam.cs" />
+    <Compile Include="EventDetail.cs" />
+    <Compile Include="EventHeader.cs" />
+    <Compile Include="EventKind.cs" />
+    <Compile Include="MM.cs" />
+    <Compile Include="MMSelect.cs" />
+    <Compile Include="MMUse.cs" />
+    <Compile Include="Product.cs" />
+    <Compile Include="PMMethod.cs" />
+    <Compile Include="PMConfig.cs" />
+    <Compile Include="PM.cs" />
+    <Compile Include="PM2Art.cs" />
+    <Compile Include="PM2Operation.cs" />
+    <Compile Include="ClientType.cs" />
+    <Compile Include="Config2Object.cs" />
+    <Compile Include="EpsJobCfg.cs" />
+    <Compile Include="EpsTaskCfg.cs" />
+    <Compile Include="ExternalTraffic.cs" />
+    <Compile Include="Gate.cs" />
+    <Compile Include="InternalTraffic.cs" />
+    <Compile Include="IWB.cs" />
+    <Compile Include="IWBPos.cs" />
+    <Compile Include="IWB2Cargo.cs" />
+    <Compile Include="Kit.cs" />
+    <Compile Include="KitPos.cs" />
+    <Compile Include="KitType.cs" />
+    <Compile Include="MandantGpv.cs" />
+    <Compile Include="MandantHGpv.cs" />
+    <Compile Include="Measure.cs" />
+    <Compile Include="MotionArea.cs" />
+    <Compile Include="MotionArea2Group.cs" />
+    <Compile Include="MotionAreaGroup.cs" />
+    <Compile Include="Object2Config.cs" />
+    <Compile Include="ObjectConfig.cs" />
+    <Compile Include="Parking.cs" />
+    <Compile Include="PartnerGpv.cs" />
+    <Compile Include="Place.cs" />
+    <Compile Include="Place2Blocking.cs" />
+    <Compile Include="PlaceType.cs" />
+    <Compile Include="PrintStreamConfig.cs" />
+    <Compile Include="Processes\BPProcess.cs" />
+    <Compile Include="EpsConfig.cs" />
+    <Compile Include="EpsJob.cs" />
+    <Compile Include="EpsTask.cs" />
+    <Compile Include="EpsTask2Job.cs" />
+    <Compile Include="PrinterLogical.cs" />
+    <Compile Include="PrinterPhysical.cs" />
+    <Compile Include="Processes\ExecutionContext.cs" />
+    <Compile Include="ReceiveArea.cs" />
+    <Compile Include="Report2Entity.cs" />
+    <Compile Include="Report2User.cs" />
+    <Compile Include="ReportCfg.cs" />
+    <Compile Include="ReportRedefinition.cs" />
+    <Compile Include="Schedule.cs" />
+    <Compile Include="ClientSession.cs" />
+    <Compile Include="SKU.cs" />
+    <Compile Include="SKU2TTE.cs" />
+    <Compile Include="SKUBC.cs" />
+    <Compile Include="Status.cs" />
+    <Compile Include="SupplyArea.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="EpsOutput.cs" />
+    <Compile Include="GlobalParam.cs" />
+    <Compile Include="GlobalParamValue.cs" />
+    <Compile Include="Mandant.cs" />
+    <Compile Include="MeasureType.cs" />
+    <Compile Include="ObjectLookUp.cs" />
+    <Compile Include="ObjectTreeMenu.cs" />
+    <Compile Include="ObjectValid.cs" />
+    <Compile Include="OutputParam.cs" />
+    <Compile Include="OutputTask.cs" />
+    <Compile Include="Output.cs" />
+    <Compile Include="Partner.cs" />
+    <Compile Include="PlaceClass.cs" />
+    <Compile Include="ProductBlocking.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report.cs" />
+    <Compile Include="ReportFile.cs" />
+    <Compile Include="Right.cs" />
+    <Compile Include="Right2Group.cs" />
+    <Compile Include="RightGroup.cs" />
+    <Compile Include="Segment.cs" />
+    <Compile Include="Segment2Blocking.cs" />
+    <Compile Include="SegmentType.cs" />
+    <Compile Include="SegmentTypeGPV.cs" />
+    <Compile Include="Sequence.cs" />
+    <Compile Include="SysObject.cs" />
+    <Compile Include="SysObjectExt.cs" />
+    <Compile Include="Client.cs" />
+    <Compile Include="TE.cs" />
+    <Compile Include="TE2Blocking.cs" />
+    <Compile Include="TEType.cs" />
+    <Compile Include="TEType2PlaceClass.cs" />
+    <Compile Include="TEType2TEType.cs" />
+    <Compile Include="TEType2TruckType.cs" />
+    <Compile Include="TETypeGPV.cs" />
+    <Compile Include="Transit.cs" />
+    <Compile Include="TransitData.cs" />
+    <Compile Include="TransportTask.cs" />
+    <Compile Include="TransportTaskType.cs" />
+    <Compile Include="Truck.cs" />
+    <Compile Include="Truck2MotionAreaGroup.cs" />
+    <Compile Include="TruckType.cs" />
+    <Compile Include="TSysParam.cs" />
+    <Compile Include="UIButton.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="User2Group.cs" />
+    <Compile Include="User2Mandant.cs" />
+    <Compile Include="UserEnum.cs" />
+    <Compile Include="UserGroup.cs" />
+    <Compile Include="UserGrp2RightGrp.cs" />
+    <Compile Include="VATType.cs" />
+    <Compile Include="VehiclePass.cs" />
+    <Compile Include="VirtualCalcProperty.cs" />
+    <Compile Include="W2E2Working.cs" />
+    <Compile Include="Warehouse.cs" />
+    <Compile Include="WarehouseCpv.cs" />
+    <Compile Include="WeightControl.cs" />
+    <Compile Include="WMSBusinessCollectionT.cs" />
+    <Compile Include="WMSBusinessObject.cs" />
+    <Compile Include="Vehicle.cs" />
+    <Compile Include="Work.cs" />
+    <Compile Include="Work2Entity.cs" />
+    <Compile Include="WorkCpv.cs" />
+    <Compile Include="Worker.cs" />
+    <Compile Include="Worker2Group.cs" />
+    <Compile Include="Worker2GroupCpv.cs" />
+    <Compile Include="Worker2Warehouse.cs" />
+    <Compile Include="WorkerCpv.cs" />
+    <Compile Include="WorkerGpv.cs" />
+    <Compile Include="WorkerGroup.cs" />
+    <Compile Include="WorkerGroupCpv.cs" />
+    <Compile Include="WorkerPass.cs" />
+    <Compile Include="WorkGroup.cs" />
+    <Compile Include="Working.cs" />
+    <Compile Include="WorkingCpv.cs" />
+    <Compile Include="WTSelect.cs" />
+    <Compile Include="WTV.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\General\wmsMLC.General.BL\wmsMLC.General.BL.csproj">
+      <Project>{dcd24e7c-7328-4d5f-9796-f77312e13ea3}</Project>
+      <Name>wmsMLC.General.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\General\wmsMLC.General\wmsMLC.General.csproj">
+      <Project>{123ba357-aac6-4e30-8af9-9cd944bf25df}</Project>
+      <Name>wmsMLC.General</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\wmsMLC.Business.General\wmsMLC.Business.General.csproj">
+      <Project>{ac7bed6a-2890-48d1-b1e3-c746053cd4db}</Project>
+      <Name>wmsMLC.Business.General</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

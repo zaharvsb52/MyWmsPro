@@ -1,0 +1,16 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" xmlns:dxbt="http://schemas.devexpress.com/winfx/2008/xaml/bars/themekeys" xmlns:dxbc="http://schemas.devexpress.com/winfx/2008/xaml/bars/internal" xmlns:dxcn="http://schemas.devexpress.com/winfx/2008/xaml/core/internal" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <dxcore_unique_xmlns:BooleanToVisibilityConverter x:Key="notInvertedBooleanToVisibilityConverter" Invert="False" />
+  <dxcore_unique_xmlns:BooleanToVisibilityConverter x:Key="invertedBooleanToVisibilityConverter" Invert="True" />
+  <sys:Double x:Key="{dxbt:BarItemThemeKey ResourceKey=DisableStateOpacityValue}">0.35</sys:Double>
+  <Thickness x:Key="{dxbt:BarItemThemeKey ResourceKey=InMenuClientPadding}">0,3,0,3</Thickness>
+  <Thickness x:Key="{dxbt:BarItemThemeKey ResourceKey=InMenuContentMargin}">6,0,14,0</Thickness>
+  <Thickness x:Key="{dxbt:BarItemThemeKey ResourceKey=InMenuKeyGestureMargin}">6,0,14,0</Thickness>
+  <Thickness x:Key="{dxbt:BarCheckItemThemeKey ResourceKey=BorderMarginInMenu}">-2</Thickness>
+  <!--<DataTemplate x:Key="{dxbt:BarItemThemeKey ResourceKey=SnappedContentTemplate}">
+        <dxc:MeasurePixelSnapper SnapperType="Around">
+            <dx:DXContentPresenter Content="{TemplateBinding Content}" ContentTemplate="{Binding Path=Link.ActualContentTemplate, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxb:BarItemLinkControl}}}"/>
+        </dxc:MeasurePixelSnapper>
+    </DataTemplate>-->
+  <sys:Double x:Key="Double.NaN">NaN</sys:Double>
+  <dxb:BooleanToIntegerConverter x:Key="booleanToIntegerConverter" />
+</ResourceDictionary>

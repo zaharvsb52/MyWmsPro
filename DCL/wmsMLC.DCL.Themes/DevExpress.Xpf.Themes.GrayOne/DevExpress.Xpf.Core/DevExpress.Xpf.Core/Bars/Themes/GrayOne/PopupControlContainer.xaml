@@ -1,0 +1,38 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" xmlns:dxbt="http://schemas.devexpress.com/winfx/2008/xaml/bars/themekeys" xmlns:dxcn="http://schemas.devexpress.com/winfx/2008/xaml/core/internal">
+
+    <ControlTemplate x:Key="{dxbt:PopupControlContainerThemeKey ResourceKey=ControlTemplate}" TargetType="{x:Type dxb:PopupContainer}">
+        <dx:DXContentPresenter Background="{TemplateBinding Background}" Content="{TemplateBinding Content}" />
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxbt:PopupControlContainerThemeKey ResourceKey=BorderTemplate}" TargetType="{x:Type dxb:BarPopupBorderControl}">
+        <!--BEGIN WPF-->
+        <Grid x:Name="Root" SnapsToDevicePixels="True">
+            <!--END WPF-->
+            <!--ONLY SL
+            <Grid>
+            ONLY SL-->
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="AppType">
+                    <VisualState x:Name="Standalone" />
+                    <VisualState x:Name="BrowserHosted" />
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <!--BEGIN WPF-->
+            <Border x:Name="Border" Background="#FF9DA0AA" Padding="1" Margin="0,0,3,3">
+                <Border.Effect>
+                    <DropShadowEffect x:Name="Shadow" Direction="315" ShadowDepth="3" BlurRadius="3" Opacity="0.12" />
+                </Border.Effect>
+                <dx:DXContentPresenter Content="{Binding Path=Content, RelativeSource={RelativeSource TemplatedParent}}" />
+            </Border>
+            <!--END WPF-->
+            <!--ONLY SL
+            <Border x:Name="Border" Background="#FF9DA0AA" Padding="1">
+                <Grid>
+                    <dx:DXContentPresenter Content="{Binding Path=Content, RelativeSource={RelativeSource TemplatedParent}}"/>
+                </Grid>
+            </Border>
+            ONLY SL-->
+        </Grid>
+    </ControlTemplate>
+
+</ResourceDictionary>

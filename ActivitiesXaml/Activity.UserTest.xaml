@@ -1,0 +1,36 @@
+<Activity mc:Ignorable="sads sap" x:Class="{x:Null}" sap:VirtualizedContainerService.HintSize="283,586" mva:VisualBasic.Settings="Assembly references and imported namespaces for internal implementation"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:bm="clr-namespace:BLToolkit.Mapping;assembly=BLToolkit.4"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:s="clr-namespace:System;assembly=mscorlib"
+ xmlns:s1="clr-namespace:System;assembly=System"
+ xmlns:s2="clr-namespace:System;assembly=System.Core"
+ xmlns:s3="clr-namespace:System;assembly=System.ServiceModel"
+ xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sxs="clr-namespace:System.Xml.Serialization;assembly=System.Xml"
+ xmlns:wag="clr-namespace:wmsMLC.Activities.General;assembly=wmsMLC.Activities.General"
+ xmlns:wbo="clr-namespace:wmsMLC.Business.Objects;assembly=wmsMLC.Business.Objects"
+ xmlns:wg="clr-namespace:wmsMLC.General;assembly=wmsMLC.General"
+ xmlns:wgb="clr-namespace:wmsMLC.General.BL;assembly=wmsMLC.General.BL"
+ xmlns:wgbv="clr-namespace:wmsMLC.General.BL.Validation;assembly=wmsMLC.General.BL"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Sequence sap:VirtualizedContainerService.HintSize="243,546">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="wbo:User" Default="[new User]" Name="item" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <wag:DynamicAssign x:TypeArguments="wbo:User" sap:VirtualizedContainerService.HintSize="221,60" Object="[item]" PropertyName="LOGIN" Value="[&quot;WorkflowTestName&quot;]" />
+    <wag:DynamicAssign x:TypeArguments="wbo:User" sap:VirtualizedContainerService.HintSize="221,60" Object="[item]" PropertyName="[&quot;USERLASTNAME&quot;]" Value="[&quot;Тестовая фамилия&quot;]" />
+    <wag:DynamicAssign x:TypeArguments="wbo:User" sap:VirtualizedContainerService.HintSize="221,60" Object="[item]" PropertyName="[&quot;USERNAME&quot;]" Value="[&quot;Тестовое имя&quot;]" />
+    <wag:DynamicAssign x:TypeArguments="wbo:User" sap:VirtualizedContainerService.HintSize="221,60" Object="[item]" PropertyName="[&quot;LANGCODE_R&quot;]" Value="[&quot;RUS&quot;]" />
+    <wag:UpdateActivity x:TypeArguments="wbo:User" DisplayName="Update`1" sap:VirtualizedContainerService.HintSize="221,22" Key="[item]" />
+  </Sequence>
+</Activity>

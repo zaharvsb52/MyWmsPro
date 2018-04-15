@@ -1,0 +1,1573 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" xmlns:dxbt="http://schemas.devexpress.com/winfx/2008/xaml/bars/themekeys" xmlns:dxcn="http://schemas.devexpress.com/winfx/2008/xaml/core/internal">
+
+    <!--BEGIN WPF-->
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Bars/Themes/GrayOne/Brushes.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Bars/Themes/GrayOne/BarButtonItem.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Bars/Themes/GrayOne/BarCheckItem.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Bars/Themes/GrayOne/BarEditItem.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Bars/Themes/GrayOne/BarItemSeparator.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Bars/Themes/GrayOne/BarSplitButtonItem.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Bars/Themes/GrayOne/BarSplitCheckItem.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Bars/Themes/GrayOne/BarStaticItem.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Bars/Themes/GrayOne/BarSubItem.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <!--END WPF-->
+
+    <Thickness x:Key="{dxbt:BarItemThemeKey ResourceKey=Margin}">1,0,0,0</Thickness>
+    <Thickness x:Key="{dxbt:BarItemThemeKey ResourceKey=InMenuClientPadding}">0</Thickness>
+    <Thickness x:Key="{dxbt:BarItemThemeKey ResourceKey=InMenuContentMargin}">5,3,15,3</Thickness>
+    <Thickness x:Key="{dxbt:BarItemThemeKey ResourceKey=InMenuKeyGestureMargin}">5,3,15,3</Thickness>
+
+    <ControlTemplate x:Key="{dxbt:BarItemBorderThemeKey ResourceKey=Normal}" TargetType="{x:Type dxb:ItemBorderControl}">
+        <Grid x:Name="Root">
+            <Border x:Name="HoverState" Background="{StaticResource BarItem.HoverState.Border2}" BorderBrush="{StaticResource BarItem.HoverState.Border1}" BorderThickness="1,0,1,0" Opacity="0" />
+            <Border x:Name="PressedState" Background="{StaticResource BarItem.PressedState.Border2}" BorderBrush="{StaticResource BarItem.PressedState.Border1}" BorderThickness="1,0,1,0" Opacity="0" />
+            <Border x:Name="CustomizationState" Background="{StaticResource BarItem.CustomizationState.Border2}" BorderBrush="{StaticResource BarItem.CustomizationState.Border1}" BorderThickness="1" Opacity="0" />
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="HideBorderSide">
+                    <VisualState x:Name="None" />
+                    <VisualState x:Name="Left" />
+                    <VisualState x:Name="Right">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HoverState" Storyboard.TargetProperty="(Border.BorderThickness)" dxcn:ValueSetter.Thickness="1,0,0,0" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PressedState" Storyboard.TargetProperty="(Border.BorderThickness)" dxcn:ValueSetter.Thickness="1,0,0,0" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Top" />
+                    <VisualState x:Name="Bottom" />
+                    <VisualState x:Name="All" />
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="ArrowHideBorderSide">
+                    <VisualState x:Name="ArrowNone" />
+                    <VisualState x:Name="ArrowLeft" />
+                    <VisualState x:Name="ArrowTop" />
+                    <VisualState x:Name="ArrowRight" />
+                    <VisualState x:Name="ArrowBottom" />
+                    <VisualState x:Name="ArrowAll" />
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="ActiveState">
+                    <VisualState x:Name="Active">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Inactive">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="0.5" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="State">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Hover">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="PressedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Checked" />
+                    <VisualState x:Name="HoverChecked" />
+                    <VisualState x:Name="Focused" />
+                    <VisualState x:Name="Customization">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="CustomizationState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxbt:BarItemBorderInRibbonPageGroupThemeKey ResourceKey=Normal}" TargetType="{x:Type dxb:ItemBorderControl}">
+        <Grid x:Name="Root">
+            <Border x:Name="HoverState" Background="{StaticResource BarItemInRibbonPageGroup.HoverState.Border2}" BorderBrush="{StaticResource BarItemInRibbonPageGroup.HoverState.Border1}" BorderThickness="1" CornerRadius="2" Opacity="0" />
+            <Border x:Name="InactiveState" Background="{StaticResource BarItemInRibbonPageGroup.InactiveState.Border2}" BorderThickness="1" CornerRadius="1" Opacity="0" />
+            <Border x:Name="PressedState" Background="{StaticResource BarItemInRibbonPageGroup.PressedState.Border2}" BorderBrush="{StaticResource BarItemInRibbonPageGroup.PressedState.Border1}" BorderThickness="1" CornerRadius="2" Opacity="0" />
+            <Border x:Name="CustomizationState" Background="{StaticResource BarItem.CustomizationState.Border2}" BorderBrush="{StaticResource BarItem.CustomizationState.Border1}" BorderThickness="1" CornerRadius="2" Opacity="0" />
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="HideBorderSide">
+                    <VisualState x:Name="None" />
+                    <VisualState x:Name="Left">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HoverState" Storyboard.TargetProperty="(Border.BorderThickness)" dxcn:ValueSetter.Thickness="1,1,1,1" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PressedState" Storyboard.TargetProperty="(Border.BorderThickness)" dxcn:ValueSetter.Thickness="1,1,1,1" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="InactiveState" Storyboard.TargetProperty="(Border.BorderThickness)" dxcn:ValueSetter.Thickness="1,1,1,1" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HoverState" Storyboard.TargetProperty="(Border.CornerRadius)" dxcn:ValueSetter.CornerRadius="0,2,2,0" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PressedState" Storyboard.TargetProperty="(Border.CornerRadius)" dxcn:ValueSetter.CornerRadius="0,2,2,0" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="InactiveState" Storyboard.TargetProperty="(Border.CornerRadius)" dxcn:ValueSetter.CornerRadius="0,2,2,0" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Right">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HoverState" Storyboard.TargetProperty="(Border.BorderThickness)" dxcn:ValueSetter.Thickness="1,1,0,1" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PressedState" Storyboard.TargetProperty="(Border.BorderThickness)" dxcn:ValueSetter.Thickness="1,1,0,1" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="InactiveState" Storyboard.TargetProperty="(Border.BorderThickness)" dxcn:ValueSetter.Thickness="1,1,0,1" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HoverState" Storyboard.TargetProperty="(Border.CornerRadius)" dxcn:ValueSetter.CornerRadius="2,0,0,2" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PressedState" Storyboard.TargetProperty="(Border.CornerRadius)" dxcn:ValueSetter.CornerRadius="2,0,0,2" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="InactiveState" Storyboard.TargetProperty="(Border.CornerRadius)" dxcn:ValueSetter.CornerRadius="2,0,0,2" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Top">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HoverState" Storyboard.TargetProperty="(Border.BorderThickness)" dxcn:ValueSetter.Thickness="1,1,1,1" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PressedState" Storyboard.TargetProperty="(Border.BorderThickness)" dxcn:ValueSetter.Thickness="1,1,1,1" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="InactiveState" Storyboard.TargetProperty="(Border.BorderThickness)" dxcn:ValueSetter.Thickness="1,1,1,1" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HoverState" Storyboard.TargetProperty="(Border.CornerRadius)" dxcn:ValueSetter.CornerRadius="0,0,2,2" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PressedState" Storyboard.TargetProperty="(Border.CornerRadius)" dxcn:ValueSetter.CornerRadius="0,0,2,2" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="InactiveState" Storyboard.TargetProperty="(Border.CornerRadius)" dxcn:ValueSetter.CornerRadius="0,0,2,2" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Bottom">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HoverState" Storyboard.TargetProperty="(Border.BorderThickness)" dxcn:ValueSetter.Thickness="1,1,1,0" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PressedState" Storyboard.TargetProperty="(Border.BorderThickness)" dxcn:ValueSetter.Thickness="1,1,1,0" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="InactiveState" Storyboard.TargetProperty="(Border.BorderThickness)" dxcn:ValueSetter.Thickness="1,1,1,0" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HoverState" Storyboard.TargetProperty="(Border.CornerRadius)" dxcn:ValueSetter.CornerRadius="2,2,0,0" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PressedState" Storyboard.TargetProperty="(Border.CornerRadius)" dxcn:ValueSetter.CornerRadius="2,2,0,0" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="InactiveState" Storyboard.TargetProperty="(Border.CornerRadius)" dxcn:ValueSetter.CornerRadius="2,2,0,0" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="All" />
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="ArrowHideBorderSide">
+                    <VisualState x:Name="ArrowNone" />
+                    <VisualState x:Name="ArrowLeft" />
+                    <VisualState x:Name="ArrowTop" />
+                    <VisualState x:Name="ArrowRight" />
+                    <VisualState x:Name="ArrowBottom" />
+                    <VisualState x:Name="ArrowAll" />
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="ActiveState">
+                    <VisualState x:Name="Active" />
+                    <VisualState x:Name="Inactive">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="InactiveState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="State">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Hover">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="PressedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Checked" />
+                    <VisualState x:Name="HoverChecked" />
+                    <VisualState x:Name="Focused" />
+                    <VisualState x:Name="Customization">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="CustomizationState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxbt:BarItemBorderInButtonGroupThemeKey ResourceKey=Normal}" TargetType="{x:Type dxb:ItemBorderControl}">
+        <Grid x:Name="Root">
+            <Border x:Name="HoverState" Background="{StaticResource BarItemInRibbonPageGroup.HoverState.Border2}" BorderBrush="{StaticResource BarItemInRibbonPageGroup.HoverState.Border1}" BorderThickness="1" CornerRadius="2" Opacity="0" />
+            <Border x:Name="InactiveState" Background="{StaticResource BarItemInRibbonPageGroup.InactiveState.Border2}" BorderThickness="1" CornerRadius="1" Opacity="0" />
+            <Border x:Name="PressedState" Background="{StaticResource BarItemInRibbonPageGroup.PressedState.Border2}" BorderBrush="{StaticResource BarItemInRibbonPageGroup.PressedState.Border1}" BorderThickness="1" CornerRadius="2" Opacity="0" />
+            <Border x:Name="CustomizationState" Background="{StaticResource BarItem.CustomizationState.Border2}" BorderBrush="{StaticResource BarItem.CustomizationState.Border1}" BorderThickness="1" CornerRadius="2" Opacity="0" />
+             <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="HideBorderSide">
+                    <VisualState x:Name="None" />
+                    <VisualState x:Name="Left">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HoverState" Storyboard.TargetProperty="(Border.BorderThickness)" dxcn:ValueSetter.Thickness="1,1,1,1" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PressedState" Storyboard.TargetProperty="(Border.BorderThickness)" dxcn:ValueSetter.Thickness="1,1,1,1" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="InactiveState" Storyboard.TargetProperty="(Border.BorderThickness)" dxcn:ValueSetter.Thickness="1,1,1,1" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HoverState" Storyboard.TargetProperty="(Border.CornerRadius)" dxcn:ValueSetter.CornerRadius="0,2,2,0" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PressedState" Storyboard.TargetProperty="(Border.CornerRadius)" dxcn:ValueSetter.CornerRadius="0,2,2,0" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="InactiveState" Storyboard.TargetProperty="(Border.CornerRadius)" dxcn:ValueSetter.CornerRadius="0,2,2,0" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Right">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HoverState" Storyboard.TargetProperty="(Border.BorderThickness)" dxcn:ValueSetter.Thickness="1,1,0,1" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PressedState" Storyboard.TargetProperty="(Border.BorderThickness)" dxcn:ValueSetter.Thickness="1,1,0,1" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="InactiveState" Storyboard.TargetProperty="(Border.BorderThickness)" dxcn:ValueSetter.Thickness="1,1,0,1" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HoverState" Storyboard.TargetProperty="(Border.CornerRadius)" dxcn:ValueSetter.CornerRadius="2,0,0,2" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PressedState" Storyboard.TargetProperty="(Border.CornerRadius)" dxcn:ValueSetter.CornerRadius="2,0,0,2" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="InactiveState" Storyboard.TargetProperty="(Border.CornerRadius)" dxcn:ValueSetter.CornerRadius="2,0,0,2" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Top" />
+                    <VisualState x:Name="Bottom" />
+                    <VisualState x:Name="All" />
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="ArrowHideBorderSide">
+                    <VisualState x:Name="ArrowNone" />
+                    <VisualState x:Name="ArrowLeft" />
+                    <VisualState x:Name="ArrowTop" />
+                    <VisualState x:Name="ArrowRight" />
+                    <VisualState x:Name="ArrowBottom" />
+                    <VisualState x:Name="ArrowAll" />
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="ActiveState">
+                    <VisualState x:Name="Active" />
+                    <VisualState x:Name="Inactive">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="InactiveState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="State">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Hover">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="PressedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Checked" />
+                    <VisualState x:Name="HoverChecked" />
+                    <VisualState x:Name="Focused" />
+                    <VisualState x:Name="Customization">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="CustomizationState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxbt:BarItemBorderInMainMenuThemeKey ResourceKey=Normal}" TargetType="{x:Type dxb:ItemBorderControl}">
+        <Grid x:Name="Root">
+            <Border x:Name="HoverState" Background="{StaticResource BarItemInMainMenu.HoverState.Border2}" BorderBrush="{StaticResource BarItemInMainMenu.HoverState.Border1}" BorderThickness="1,0,1,0" Opacity="0" />
+            <Border x:Name="PressedState" Background="{StaticResource BarItemInMainMenu.PressedState.Border2}" BorderBrush="{StaticResource BarItemInMainMenu.PressedState.Border1}" BorderThickness="1,0,1,0" Opacity="0" />
+            <Border x:Name="CustomizationState" Background="{StaticResource BarItem.CustomizationState.Border2}" BorderBrush="{StaticResource BarItem.CustomizationState.Border1}" BorderThickness="1" Opacity="0" />
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="HideBorderSide">
+                    <VisualState x:Name="None" />
+                    <VisualState x:Name="Left" />
+                    <VisualState x:Name="Right">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HoverState" Storyboard.TargetProperty="(Border.BorderThickness)" dxcn:ValueSetter.Thickness="1,0,0,0" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PressedState" Storyboard.TargetProperty="(Border.BorderThickness)" dxcn:ValueSetter.Thickness="1,0,0,0" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Top" />
+                    <VisualState x:Name="Bottom" />
+                    <VisualState x:Name="All" />
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="ArrowHideBorderSide">
+                    <VisualState x:Name="ArrowNone" />
+                    <VisualState x:Name="ArrowLeft" />
+                    <VisualState x:Name="ArrowTop" />
+                    <VisualState x:Name="ArrowRight" />
+                    <VisualState x:Name="ArrowBottom" />
+                    <VisualState x:Name="ArrowAll" />
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="ActiveState">
+                    <VisualState x:Name="Active">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Inactive">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="0.5" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="State">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Hover">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="PressedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Checked" />
+                    <VisualState x:Name="HoverChecked" />
+                    <VisualState x:Name="Focused" />
+                    <VisualState x:Name="Customization">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="CustomizationState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxbt:BarItemBorderInMenuThemeKey ResourceKey=Normal}" TargetType="{x:Type dxb:ItemBorderControl}">
+        <Grid x:Name="Root">
+            <Border x:Name="HoverState" Background="{StaticResource BarItemInPopupMenu.HoverState.Border1}" CornerRadius="2" Opacity="0">
+                <Border x:Name="hover1" Background="{StaticResource BarItemInPopupMenu.HoverState.Border3}" BorderBrush="{StaticResource BarItemInPopupMenu.HoverState.Border2}" BorderThickness="1" Margin="1" CornerRadius="1" />
+            </Border>
+            <Border x:Name="PressedState" Background="{StaticResource BarItemInPopupMenu.PressedState.Border1}" CornerRadius="2" Opacity="0">
+                <Border x:Name="pressed1" Background="{StaticResource BarItemInPopupMenu.PressedState.Border3}" BorderBrush="{StaticResource BarItemInPopupMenu.PressedState.Border2}" BorderThickness="1" Margin="1" CornerRadius="1" />
+            </Border>
+            <Border x:Name="CustomizationState" Background="{StaticResource BarItem.CustomizationState.Border2}" BorderBrush="{StaticResource BarItem.CustomizationState.Border1}" BorderThickness="1" Opacity="0" />
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="HideBorderSide">
+                    <VisualState x:Name="None" />
+                    <VisualState x:Name="Left">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HoverState" Storyboard.TargetProperty="(Border.CornerRadius)" dxcn:ValueSetter.CornerRadius="0,2,2,0" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="hover1" Storyboard.TargetProperty="(Border.CornerRadius)" dxcn:ValueSetter.CornerRadius="0,1,1,0" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PressedState" Storyboard.TargetProperty="(Border.CornerRadius)" dxcn:ValueSetter.CornerRadius="0,2,2,0" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="pressed1" Storyboard.TargetProperty="(Border.CornerRadius)" dxcn:ValueSetter.CornerRadius="0,1,1,0" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Right">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HoverState" Storyboard.TargetProperty="(Border.CornerRadius)" dxcn:ValueSetter.CornerRadius="2,0,0,2" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="hover1" Storyboard.TargetProperty="(Border.CornerRadius)" dxcn:ValueSetter.CornerRadius="1,0,0,1" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="hover1" Storyboard.TargetProperty="(Border.Margin)" dxcn:ValueSetter.Thickness="1,1,0,1" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PressedState" Storyboard.TargetProperty="(Border.CornerRadius)" dxcn:ValueSetter.CornerRadius="2,0,0,2" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="pressed1" Storyboard.TargetProperty="(Border.CornerRadius)" dxcn:ValueSetter.CornerRadius="1,0,0,1" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="pressed1" Storyboard.TargetProperty="(Border.Margin)" dxcn:ValueSetter.Thickness="1,1,0,1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Top" />
+                    <VisualState x:Name="Bottom" />
+                    <VisualState x:Name="All" />
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="ArrowHideBorderSide">
+                    <VisualState x:Name="ArrowNone" />
+                    <VisualState x:Name="ArrowLeft" />
+                    <VisualState x:Name="ArrowTop" />
+                    <VisualState x:Name="ArrowRight" />
+                    <VisualState x:Name="ArrowBottom" />
+                    <VisualState x:Name="ArrowAll" />
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="ActiveState">
+                    <VisualState x:Name="Active">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Inactive">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="0.75" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="State">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Hover">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="PressedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Checked" />
+                    <VisualState x:Name="HoverChecked" />
+                    <VisualState x:Name="Focused" />
+                    <VisualState x:Name="Customization">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="CustomizationState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Grid>
+    </ControlTemplate>
+
+    <!--<Style x:Key="{dxbt:BarItemThemeKey ResourceKey=DisabledContentStyle}" TargetType="{x:Type ContentControl}">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=DisabledContentStyleInMainMenu}" TargetType="{x:Type ContentControl}">
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=DisabledContentStyleInMenu}" TargetType="{x:Type ContentControl}">
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=DisabledContentStyleInApplicationMenu}" TargetType="{x:Type ContentControl}">
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=DisabledContentStyleInStatusBar}" TargetType="{x:Type ContentControl}">
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=HotContentStyle}" TargetType="{x:Type ContentControl}">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=HotContentStyleInMainMenu}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#FF201F35" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=HotContentStyleInMenu}" TargetType="{x:Type ContentControl}">
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=HotContentStyleInApplicationMenu}" TargetType="{x:Type ContentControl}">
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=HotContentStyleInStatusBar}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#FF201F35" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=NormalContentStyle}" TargetType="{x:Type ContentControl}">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=NormalContentStyleInMainMenu}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#FF201F35" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=NormalContentStyleInMenu}" TargetType="{x:Type ContentControl}">
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=NormalContentStyleInApplicationMenu}" TargetType="{x:Type ContentControl}">
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=NormalContentStyleInStatusBar}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#FF201F35" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=PressedContentStyle}" TargetType="{x:Type ContentControl}">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=PressedContentStyleInMainMenu}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#FF201F35" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=PressedContentStyleInMenu}" TargetType="{x:Type ContentControl}">
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=PressedContentStyleInApplicationMenu}" TargetType="{x:Type ContentControl}">
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=PressedContentStyleInStatusBar}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#FF201F35" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=DisabledContentStyleInRibbonStatusBarLeft}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#7F201F35" /> 
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=DisabledContentStyleInRibbonStatusBarRight}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#7F201F35" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=HotContentStyleInRibbonStatusBarLeft}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#FF201F35" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=HotContentStyleInRibbonStatusBarRight}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#FF201F35" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=NormalContentStyleInRibbonStatusBarLeft}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#FF201F35" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=NormalContentStyleInRibbonStatusBarRight}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#FF201F35" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=PressedContentStyleInRibbonStatusBarLeft}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#FF201F35" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=PressedContentStyleInRibbonStatusBarRight}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#FF201F35" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=DisabledContentStyleInRibbonPageGroup}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#7F201F35" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=DisabledContentStyleInButtonGroup}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#7F201F35" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=HotContentStyleInRibbonPageGroup}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#FF201F35" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=HotContentStyleInRibbonToolbar}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#FF201F35" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=HotContentStyleInRibbonToolbarFooter}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#FF201F35" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=HotContentStyleInRibbonPageHeader}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#FF201F35" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=HotContentStyleInButtonGroup}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#FF201F35" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=PressedContentStyleInRibbonPageGroup}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#FF201F35" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=PressedContentStyleInRibbonToolbar}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#FF201F35" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=PressedContentStyleInRibbonToolbarFooter}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#FF201F35" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=PressedContentStyleInRibbonPageHeader}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#FF201F35" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=PressedContentStyleInButtonGroup}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#FF201F35" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=NormalContentStyleInRibbonPageGroup}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#FF201F35" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=NormalContentStyleInRibbonToolbar}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#FF201F35" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=NormalContentStyleInRibbonToolbarFooter}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#FF201F35" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=NormalContentStyleInRibbonPageHeader}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#FF201F35" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=NormalContentStyleInButtonGroup}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#FF201F35" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=DisabledContentStyleInRibbonToolbar}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#7F201F35" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=DisabledContentStyleInRibbonToolbarFooter}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#7F201F35" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=DisabledContentStyleInRibbonPageHeader}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#7F201F35" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=DisabledDescriptionStyleInApplicationMenu}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#7F201F35" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=HotDescriptionStyleInApplicationMenu}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#FF201F35" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=NormalDescriptionStyleInApplicationMenu}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#FF201F35" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=PressedDescriptionStyleInApplicationMenu}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#FF201F35" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=LayoutPanelStyle}" TargetType="{x:Type dxc:Items2Panel}">
+        <Setter Property="HorizontalIndent" Value="2" />
+        <Setter Property="VerticalIndent" Value="2" />
+        <Setter Property="Content1Padding" Value="3" />
+        <Setter Property="Content2Padding" Value="3" />
+        <Setter Property="VerticalPadding" Value="3" />
+        <Setter Property="HorizontalPadding" Value="3" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=LayoutPanelStyleInMainMenu}" TargetType="{x:Type dxc:Items2Panel}">
+        <Setter Property="HorizontalIndent" Value="2" />
+        <Setter Property="VerticalIndent" Value="2" />
+        <Setter Property="Content1Padding" Value="3" />
+        <Setter Property="Content2Padding" Value="3" />
+        <Setter Property="VerticalPadding" Value="3" />
+        <Setter Property="HorizontalPadding" Value="3" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=LayoutPanelStyleInStatusBar}"
+           TargetType="{x:Type dxc:Items2Panel}"
+           BasedOn="{StaticResource {dxbt:BarItemThemeKey ResourceKey=LayoutPanelStyle}}" />
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=LayoutPanelStyleInRibbonPageGroup}" TargetType="{x:Type dxc:Items2Panel}">
+        <Setter Property="HorizontalIndent" Value="3" />
+        <Setter Property="VerticalIndent" Value="3" />
+        <Setter Property="Content1Padding" Value="3" />
+        <Setter Property="Content2Padding" Value="3" />
+        <Setter Property="VerticalPadding" Value="3" />
+        <Setter Property="HorizontalPadding" Value="3" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=LayoutPanelStyleInButtonGroup}" TargetType="{x:Type dxc:Items2Panel}">
+        <Setter Property="HorizontalIndent" Value="1" />
+        <Setter Property="VerticalIndent" Value="1" />
+        <Setter Property="Content1Padding" Value="2" />
+        <Setter Property="Content2Padding" Value="2" />
+        <Setter Property="VerticalPadding" Value="2" />
+        <Setter Property="HorizontalPadding" Value="2" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=LayoutPanelStyleInRibbonPageHeader}"
+           TargetType="{x:Type dxc:Items2Panel}"
+           BasedOn="{StaticResource {dxbt:BarItemThemeKey ResourceKey=LayoutPanelStyleInRibbonPageGroup}}" />
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=LayoutPanelStyleInRibbonToolbar}"
+           TargetType="{x:Type dxc:Items2Panel}"
+           BasedOn="{StaticResource {dxbt:BarItemThemeKey ResourceKey=LayoutPanelStyleInRibbonPageGroup}}" />
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=LayoutPanelStyleInRibbonToolbarFooter}"
+           TargetType="{x:Type dxc:Items2Panel}"
+           BasedOn="{StaticResource {dxbt:BarItemThemeKey ResourceKey=LayoutPanelStyleInRibbonPageGroup}}" />
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=LayoutPanelStyleInRibbonStatusBarLeft}"
+           TargetType="{x:Type dxc:Items2Panel}"
+           BasedOn="{StaticResource {dxbt:BarItemThemeKey ResourceKey=LayoutPanelStyleInRibbonPageGroup}}" />
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=LayoutPanelStyleInRibbonStatusBarRight}"
+           TargetType="{x:Type dxc:Items2Panel}"
+           BasedOn="{StaticResource {dxbt:BarItemThemeKey ResourceKey=LayoutPanelStyleInRibbonPageGroup}}" />
+
+    <Style x:Key="{dxbt:BarSubItemThemeKey ResourceKey=LayoutPanelStyle}"
+           TargetType="{x:Type dxc:Items2Panel}"
+           BasedOn="{StaticResource {dxbt:BarItemThemeKey ResourceKey=LayoutPanelStyle}}">
+    </Style>
+
+    <Style x:Key="{dxbt:BarSubItemThemeKey ResourceKey=LayoutPanelStyleInMainMenu}"
+           TargetType="{x:Type dxc:Items2Panel}"
+           BasedOn="{StaticResource {dxbt:BarItemThemeKey ResourceKey=LayoutPanelStyleInMainMenu}}" />
+
+    <Style x:Key="{dxbt:BarSubItemThemeKey ResourceKey=LayoutPanelStyleInRibbonPageGroup}"
+           TargetType="{x:Type dxc:Items2Panel}"
+           BasedOn="{StaticResource {dxbt:BarItemThemeKey ResourceKey=LayoutPanelStyleInRibbonPageGroup}}" />
+
+    <Style x:Key="{dxbt:BarSubItemThemeKey ResourceKey=LayoutPanelStyleInButtonGroup}"
+           TargetType="{x:Type dxc:Items2Panel}"
+           BasedOn="{StaticResource {dxbt:BarItemThemeKey ResourceKey=LayoutPanelStyleInButtonGroup}}" />
+
+    <Style x:Key="{dxbt:BarSubItemThemeKey ResourceKey=LayoutPanelStyleInRibbonStatusBarLeft}"
+           TargetType="{x:Type dxc:Items2Panel}"
+           BasedOn="{StaticResource {dxbt:BarItemThemeKey ResourceKey=LayoutPanelStyleInRibbonStatusBarLeft}}" />
+
+    <Style x:Key="{dxbt:BarSubItemThemeKey ResourceKey=LayoutPanelStyleInRibbonStatusBarRight}"
+           TargetType="{x:Type dxc:Items2Panel}"
+           BasedOn="{StaticResource {dxbt:BarItemThemeKey ResourceKey=LayoutPanelStyleInRibbonStatusBarRight}}" />
+
+    <Style x:Key="{dxbt:BarSubItemThemeKey ResourceKey=LayoutPanelStyleInRibbonToolbar}"
+           TargetType="{x:Type dxc:Items2Panel}"
+           BasedOn="{StaticResource {dxbt:BarItemThemeKey ResourceKey=LayoutPanelStyleInRibbonToolbar}}" />
+
+    <Style x:Key="{dxbt:BarSubItemThemeKey ResourceKey=LayoutPanelStyleInRibbonToolbarFooter}"
+           TargetType="{x:Type dxc:Items2Panel}"
+           BasedOn="{StaticResource {dxbt:BarItemThemeKey ResourceKey=LayoutPanelStyleInRibbonToolbar}}" />
+
+    <Style x:Key="{dxbt:BarSubItemThemeKey ResourceKey=LayoutPanelStyleInRibbonPageHeader}"
+           TargetType="{x:Type dxc:Items2Panel}"
+           BasedOn="{StaticResource {dxbt:BarItemThemeKey ResourceKey=LayoutPanelStyleInRibbonPageHeader}}" />
+
+    <Style x:Key="{dxbt:BarSubItemThemeKey ResourceKey=LayoutPanelStyleInStatusBar}"
+           TargetType="{x:Type dxc:Items2Panel}"
+           BasedOn="{StaticResource {dxbt:BarItemThemeKey ResourceKey=LayoutPanelStyleInStatusBar}}" />
+
+    <Style x:Key="{dxbt:BarSplitButtonItemThemeKey ResourceKey=LargeArrowBorderStyleInRibbonPageGroup}" TargetType="{x:Type dxb:ItemBorderControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxbt:BarSplitButtonItemThemeKey ResourceKey=LargeArrowBorderTemplateInRibbonPageGroup}}" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarSplitButtonItemThemeKey ResourceKey=LargeContentBorderStyleInRibbonPageGroup}" TargetType="{x:Type dxb:ItemBorderControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxbt:BarSplitButtonItemThemeKey ResourceKey=LargeContentBorderTemplateInRibbonPageGroup}}" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=BorderStyle}" TargetType="{x:Type dxb:ItemBorderControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=BorderTemplate}}" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=BorderStyleInMainMenu}" TargetType="{x:Type dxb:ItemBorderControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=BorderTemplateInMainMenu}}" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=BorderStyleInApplicationMenu}" TargetType="{x:Type dxb:ItemBorderControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=BorderTemplateInMenu}}" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=BorderStyleInStatusBar}" TargetType="{x:Type dxb:ItemBorderControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=BorderTemplate}}" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=BorderStyleInMenu}" TargetType="{x:Type dxb:ItemBorderControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=BorderTemplateInMenu}}" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=BorderStyleInRibbonPageGroup}" TargetType="{x:Type dxb:ItemBorderControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=BorderTemplateInRibbonPageGroup}}" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=BorderStyleInButtonGroup}" TargetType="{x:Type dxb:ItemBorderControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=BorderTemplateInButtonGroup}}" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=BorderStyleInRibbonToolbar}" TargetType="{x:Type dxb:ItemBorderControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=BorderTemplateInRibbonPageGroup}}" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=BorderStyleInRibbonToolbarFooter}" TargetType="{x:Type dxb:ItemBorderControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=BorderTemplateInRibbonPageGroup}}" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=BorderStyleInRibbonPageHeader}" TargetType="{x:Type dxb:ItemBorderControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=BorderTemplateInRibbonPageGroup}}" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=BorderStyleInRibbonStatusBarLeft}" TargetType="{x:Type dxb:ItemBorderControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=BorderTemplateInRibbonPageGroup}}" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarItemThemeKey ResourceKey=BorderStyleInRibbonStatusBarRight}" TargetType="{x:Type dxb:ItemBorderControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=BorderTemplateInRibbonPageGroup}}" />
+    </Style>-->
+
+    <Thickness x:Key="{dxbt:BarEditItemThemeKey ResourceKey=EditContentMargin}">3,1,0,1</Thickness>
+    <Thickness x:Key="{dxbt:BarEditItemThemeKey ResourceKey=InRibbonEditContentMargin}">0,2,0,0</Thickness>
+    <Thickness x:Key="{dxbt:BarStaticItemThemeKey ResourceKey=BorderPadding}">3,0,3,0</Thickness>
+    <Thickness x:Key="{dxbt:BarSubItemThemeKey ResourceKey=ContentMargin}">2,0,2,0</Thickness>
+    <Style x:Key="{dxbt:BarSubItemThemeKey ResourceKey=GlyphBorderStyle}" TargetType="{x:Type dxc:MeasurePixelSnapperContentControl}">
+    </Style>
+
+
+    <Style x:Key="{dxbt:TextSplitterThemeKey ResourceKey=BarSubItem}" TargetType="{x:Type dxb:TextSplitterControl}">
+        <!--Style="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=TextSplitterStyleInRibbonPageGroup}}"-->
+        <Setter Property="FirstStringHorizontalAlignment" Value="Center" />
+        <Setter Property="SecondStringHorizontalAlignment" Value="Center" />
+        <Setter Property="SecondStringMargin" Value="0,-3,0,0" />
+        <Setter Property="Margin" Value="0,0,0,0" />
+        <!--NormalArrowTemplate="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=NormalArrowTemplateInTextSplitter}}"-->
+        <Setter Property="NormalArrowTemplate">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ContentControl}">
+                    <Path Stretch="Fill" Fill="{TemplateBinding Foreground}" Data="F1 M 1324,808L 1321,811L 1318,808L 1324,808 Z " Height="3" Width="6" VerticalAlignment="Center" HorizontalAlignment="Center" SnapsToDevicePixels="True" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <!--SelectedArrowTemplate="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=SelectedArrowTemplateInTextSplitter}}"-->
+        <Setter Property="SelectedArrowTemplate">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ContentControl}">
+                    <Path Stretch="Fill" Fill="{TemplateBinding Foreground}" Data="F1 M 1324,808L 1321,811L 1318,808L 1324,808 Z " Height="3" Width="6" VerticalAlignment="Center" HorizontalAlignment="Center" SnapsToDevicePixels="True" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <!--NormalTextStyle="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=NormalTextStyleInTextSplitter}}"-->
+        <Setter Property="NormalTextStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type ContentControl}">
+                    <Setter Property="Foreground" Value="#FF201F35" />
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <!--SelectedTextStyle="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=SelectedTextStyleInTextSplitter}}"-->
+        <Setter Property="SelectedTextStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type ContentControl}">
+                    <Setter Property="Foreground" Value="#FF201F35" />
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <!--BottomSideArrowContainerStyle="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=BottomSideArrowContainerStyleInTextSplitter}}"-->
+        <Setter Property="BottomSideArrowContainerStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type ContentControl}">
+                    <Setter Property="HorizontalAlignment" Value="Center" />
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <!--RightSideArrowContainerStyle="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=RightSideArrowContainerStyleInTextSplitter}}"-->
+        <Setter Property="RightSideArrowContainerStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type ContentControl}">
+                    <Setter Property="Margin" Value="2,1,0,-1" />
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                </Style>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="{dxbt:TextSplitterThemeKey ResourceKey=BarButtonItem}" TargetType="{x:Type dxb:TextSplitterControl}">
+        <!--Style="{DynamicResource {dxbt:BarButtonItemThemeKey ResourceKey=TextSplitterStyleInRibbonPageGroup}}"-->
+        <Setter Property="FirstStringHorizontalAlignment" Value="Center" />
+        <Setter Property="SecondStringHorizontalAlignment" Value="Center" />
+        <Setter Property="SecondStringMargin" Value="0,-3,0,0" />
+        <Setter Property="Margin" Value="0,0,0,0" />
+        <!--NormalTextStyle="{DynamicResource {dxbt:BarButtonItemThemeKey ResourceKey=NormalTextStyleInTextSplitter}}"-->
+        <Setter Property="NormalTextStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type ContentControl}">
+                    <Setter Property="Foreground" Value="#FF201F35" />
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <!--SelectedTextStyle="{DynamicResource {dxbt:BarButtonItemThemeKey ResourceKey=SelectedTextStyleInTextSplitter}}"-->
+        <Setter Property="SelectedTextStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type ContentControl}">
+                    <Setter Property="Foreground" Value="#FF201F35" />
+                </Style>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="{dxbt:TextSplitterThemeKey ResourceKey=BarCheckItem}" TargetType="{x:Type dxb:TextSplitterControl}">
+        <!--Style="{DynamicResource {dxbt:BarCheckItemThemeKey ResourceKey=TextSplitterStyleInRibbonPageGroup}}"-->
+        <Setter Property="FirstStringHorizontalAlignment" Value="Center" />
+        <Setter Property="SecondStringHorizontalAlignment" Value="Center" />
+        <Setter Property="SecondStringMargin" Value="0,-3,0,0" />
+        <Setter Property="Margin" Value="0,-2,0,0" />
+    <!--NormalTextStyle="{DynamicResource {dxbt:BarCheckItemThemeKey ResourceKey=NormalTextStyleInTextSplitter}}"-->
+        <Setter Property="NormalTextStyle">
+            <Setter.Value>         
+            <Style TargetType="{x:Type ContentControl}">
+                <Setter Property="Foreground" Value="#FF201F35" />
+            </Style>
+        </Setter.Value>
+        </Setter>
+        <!--SelectedTextStyle="{DynamicResource {dxbt:BarCheckItemThemeKey ResourceKey=SelectedTextStyleInTextSplitter}}"-->
+        <Setter Property="SelectedTextStyle">
+            <Setter.Value>
+            <Style TargetType="{x:Type ContentControl}">
+                <Setter Property="Foreground" Value="#FF201F35" />
+            </Style>
+        </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="{dxbt:TextSplitterThemeKey ResourceKey=BarSplitButtonItem}" TargetType="{x:Type dxb:TextSplitterControl}">
+        <!--Style="{DynamicResource {dxbt:BarSplitButtonItemThemeKey ResourceKey=TextSplitterStyleInRibbonPageGroup}}"-->
+        <Setter Property="FirstStringHorizontalAlignment" Value="Center" />
+        <Setter Property="FirstStringMargin" Value="0,0,0,0" />
+        <Setter Property="SecondStringHorizontalAlignment" Value="Center" />
+        <Setter Property="SecondStringMargin" Value="0,-3,0,0" />
+        <!--NormalArrowTemplate="{DynamicResource {dxbt:BarSplitButtonItemThemeKey ResourceKey=NormalArrowTemplateInTextSplitter}}"-->
+        <Setter Property="NormalArrowTemplate">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ContentControl}">
+                    <Path Stretch="Fill" Fill="{TemplateBinding Foreground}" Data="F1M1324,808L1321,811 1318,808 1324,808z" Width="6" Height="3" VerticalAlignment="Center" HorizontalAlignment="Center" SnapsToDevicePixels="True" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <!--SelectedArrowTemplate="{DynamicResource {dxbt:BarSplitButtonItemThemeKey ResourceKey=SelectedArrowTemplateInTextSplitter}}"-->
+        <Setter Property="SelectedArrowTemplate">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ContentControl}">
+                    <Path Stretch="Fill" Fill="{TemplateBinding Foreground}" Data="F1M1324,808L1321,811 1318,808 1324,808z" Width="6" Height="3" VerticalAlignment="Center" HorizontalAlignment="Center" SnapsToDevicePixels="True" />
+                </ControlTemplate>
+
+            </Setter.Value>
+        </Setter>
+        <!--NormalTextStyle="{DynamicResource {dxbt:BarSplitButtonItemThemeKey ResourceKey=NormalTextStyleInTextSplitter}}"-->
+        <Setter Property="NormalTextStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type ContentControl}">
+                    <Setter Property="Foreground" Value="#FF201F35 " />
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <!--SelectedTextStyle="{DynamicResource {dxbt:BarSplitButtonItemThemeKey ResourceKey=SelectedTextStyleInTextSplitter}}"-->
+        <Setter Property="SelectedTextStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type ContentControl}">
+                    <Setter Property="Foreground" Value="#FF201F35" />
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <!--BottomSideArrowContainerStyle="{DynamicResource {dxbt:BarSplitButtonItemThemeKey ResourceKey=BottomSideArrowContainerStyleInTextSplitter}}"-->
+        <Setter Property="BottomSideArrowContainerStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type ContentControl}">
+                    <Setter Property="HorizontalAlignment" Value="Center" />
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <!--RightSideArrowContainerStyle="{DynamicResource {dxbt:BarSplitButtonItemThemeKey ResourceKey=RightSideArrowContainerStyleInTextSplitter}}"-->
+        <Setter Property="RightSideArrowContainerStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type ContentControl}">
+                    <Setter Property="Margin" Value="2,1,0,-1" />
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                </Style>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+    <!--BARBUTTONITEM-->
+    <Style x:Key="{dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInBar}" TargetType="{x:Type dxb:BarItemLayoutPanel}">
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="FirstBorderUseNormalStateOnly" Value="True" />
+        <Setter Property="SecondBorderUseNormalStateOnly" Value="True" />
+        <!--dxbt:BarItemThemeKey ResourceKey=Margin-->
+        <Setter Property="Margin" Value="1,0,0,0" />
+        <!--BEGIN WPF-->
+        <Setter Property="BorderThemeKey" Value="{dxbt:BarItemBorderThemeKey}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="BorderThemeKey" Value="BarItemBorderThemeKey"/>ONLY SL-->
+        <!--
+{dxbt:BarItemThemeKey ResourceKey=LayoutPanelStyle}
+
+GlyphMargin = Conten1Padding;
+CommonContentMargin = Content2Padding;
+
+LeftGlyphMargin = HorizontalPadding.Left, HorizontalPadding.Top, HorizontalIndent, HorizontalPadding.Bottom;
+RightGlyphMargin = HorizontalIndent, HorizontalPadding.Top, HorizontalPadding.Right, HorizontalPadding.Bottom;
+TopGlyphMargin = VerticalPadding.Left, VerticalPadding.Top, VerticalPadding.Right, VerticalIndent;
+BottomGlyphMargin = VerticalPadding.Left, VerticalPadding.Top, VerticalIndent, VerticalPadding.Bottom;
+
+LeftCommonContentMargin = HorizontalPadding.Left, HorizontalPadding.Top, 0, HorizontalPadding.Bottom;
+RightCommonContentMargin = 0, HorizontalPadding.Top, HorizontalPadding.Right, HorizontalPadding.Bottom;
+TopCommonContentMargin = VerticalPadding.Left, VerticalPadding.Top, VerticalPadding.Right, 0;
+BottomCommonContentMargin = VerticalPadding.Left, VerticalPadding.Top, 0, VerticalPadding.Bottom;
+        -->
+        <Setter Property="GlyphMargin" Value="4" />
+        <Setter Property="CommonContentMargin" Value="4,4,4,4" />
+        <Setter Property="LeftGlyphMargin" Value="4,4,3,4" />
+        <Setter Property="RightGlyphMargin" Value="3,4,4,4" />
+        <Setter Property="TopGlyphMargin" Value="4,4,4,3" />
+        <Setter Property="BottomGlyphMargin" Value="4,3,4,4" />
+        <Setter Property="LeftCommonContentMargin" Value="4,4,0,4" />
+        <Setter Property="RightCommonContentMargin" Value="0,4,4,4" />
+        <Setter Property="TopCommonContentMargin" Value="4,4,4,0" />
+        <Setter Property="BottomCommonContentMargin" Value="4,0,4,4" />
+        <!--ITEMPOSITION-->
+    </Style>
+    <Style x:Key="{dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInMainMenu}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInBar}}">
+        <Setter Property="FirstBorderUseNormalStateOnly" Value="True" />
+        <Setter Property="SecondBorderUseNormalStateOnly" Value="True" />
+        <!--BEGIN WPF-->
+        <Setter Property="BorderThemeKey" Value="{dxbt:BarItemBorderInMainMenuThemeKey}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="BorderThemeKey" Value="BarItemBorderInMainMenuThemeKey"/>ONLY SL-->
+    </Style>
+    <Style x:Key="{dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInStatusBar}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInBar}}" />    
+    <Style x:Key="{dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInRibbonPageHeader}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInBar}}" />    
+    <Style x:Key="{dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInRibbonStatusBarLeft}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInBar}}">
+        <!--BEGIN WPF-->
+        <Setter Property="BorderThemeKey" Value="{dxbt:BarItemBorderInRibbonPageGroupThemeKey}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="BorderThemeKey" Value="BarItemBorderInRibbonPageGroupThemeKey"/>ONLY SL-->
+    </Style>
+    <Style x:Key="{dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInRibbonStatusBarRight}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInBar}}">
+        <!--BEGIN WPF-->
+        <Setter Property="BorderThemeKey" Value="{dxbt:BarItemBorderInRibbonPageGroupThemeKey}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="BorderThemeKey" Value="BarItemBorderInRibbonPageGroupThemeKey"/>ONLY SL-->
+    </Style>
+
+    <Style x:Key="{dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInMenu}" TargetType="{x:Type dxb:BarItemLayoutPanel}">
+        <Setter Property="FirstBorderUseNormalStateOnly" Value="True" />
+        <Setter Property="SecondBorderUseNormalStateOnly" Value="True" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <!--dxbt:BarItemThemeKey ResourceKey=Margin-->
+        <Setter Property="Margin" Value="1" />
+        <!--BEGIN WPF-->
+        <Setter Property="BorderThemeKey" Value="{dxbt:BarItemBorderInMenuThemeKey}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="BorderThemeKey" Value="BarItemBorderInMenuThemeKey"/>ONLY SL-->
+        <!--{dxbt:BarItemThemeKey ResourceKey=InMenuClientPadding}-->
+        <Setter Property="CommonMargin" Value="0,3,0,3" />
+        <!--{dxbt:BarItemThemeKey ResourceKey=InMenuContentMargin}-->
+        <Setter Property="ContentMargin" Value="6,0,14,0" />
+        <Setter Property="DescriptionMargin" Value="6,0,14,0" />
+        <!--{dxbt:BarItemThemeKey ResourceKey=InMenuKeyGestureMargin}-->
+        <Setter Property="KeyGestureMargin" Value="6,0,14,0" />
+        <Setter Property="GlyphMargin" Value="{Binding LinksControl.GlyphPadding, RelativeSource={RelativeSource TemplatedParent}}" />
+    </Style>
+    <Style x:Key="{dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInApplicationMenu}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInMenu}}" />
+    <Style x:Key="{dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInDropDownGallery}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInMenu}}" />
+
+    <Style x:Key="{dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInMenuHeader}" TargetType="{x:Type dxb:BarItemLayoutPanel}">
+        <Setter Property="FirstBorderUseNormalStateOnly" Value="True" />
+        <Setter Property="SecondBorderUseNormalStateOnly" Value="True" />
+        <!--dxbt:BarItemThemeKey ResourceKey=Margin-->
+        <Setter Property="Margin" Value="1" />
+        <!--BEGIN WPF-->
+        <Setter Property="BorderThemeKey" Value="{dxbt:BarItemBorderInMenuThemeKey}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="BorderThemeKey" Value="BarItemBorderInMenuThemeKey"/>ONLY SL-->
+        <!--CHECK BELOW:-->
+        <Setter Property="CommonMargin" Value="0,3,0,3" />
+        <!--END CHECK-->
+        <Setter Property="GlyphMargin" Value="{Binding LinksControl.GlyphPadding, RelativeSource={RelativeSource TemplatedParent}}" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInRibbonPageGroup}" TargetType="{x:Type dxb:BarItemLayoutPanel}">
+        <Setter Property="FirstBorderUseNormalStateOnly" Value="True" />
+        <Setter Property="SecondBorderUseNormalStateOnly" Value="True" />
+        <Setter Property="Margin" Value="0" />
+        <!--BEGIN WPF-->
+        <Setter Property="BorderThemeKey" Value="{dxbt:BarItemBorderInRibbonPageGroupThemeKey}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="BorderThemeKey" Value="BarItemBorderInRibbonPageGroupThemeKey"/>ONLY SL-->
+        <Setter Property="GlyphMargin" Value="3" />
+        <!--dxbt:BarItemThemeKey ResourceKey=LayoutPanelStyleInRibbonPageGroup-->
+        <!--see in bar declaration-->
+        <Setter Property="CommonContentMargin" Value="3" />
+        <Setter Property="LeftGlyphMargin" Value="3,3,2,3" />
+        <Setter Property="RightGlyphMargin" Value="2,3,3,3" />
+        <Setter Property="TopGlyphMargin" Value="3,3,3,2" />
+        <Setter Property="BottomGlyphMargin" Value="3,2,3,3" />
+        <Setter Property="LeftCommonContentMargin" Value="3,3,0,3" />
+        <Setter Property="RightCommonContentMargin" Value="0,3,3,3" />
+        <Setter Property="TopCommonContentMargin" Value="3,3,3,0" />
+        <Setter Property="BottomCommonContentMargin" Value="3,0,3,3" />
+        <!--BEGIN WPF-->
+        <Setter Property="TextSplitterStyleKey" Value="{dxbt:TextSplitterThemeKey ResourceKey=BarButtonItem}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="TextSplitterStyleKey" Value="TextSplitterThemeKey_BarButtonItem"/>ONLY SL-->
+    </Style>
+    <Style x:Key="{dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInButtonGroup}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInRibbonPageGroup}}">
+        <!--BEGIN WPF-->
+        <Setter Property="BorderThemeKey" Value="{dxbt:BarItemBorderInButtonGroupThemeKey}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="BorderThemeKey" Value="BarItemBorderInButtonGroupThemeKey"/>ONLY SL-->
+    </Style>
+    <Style x:Key="{dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInQAT}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInRibbonPageGroup}}" />
+    <Style x:Key="{dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInQATFooter}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInRibbonPageGroup}}" />
+
+    <!--BARCHECKITEM-->
+
+    <Style x:Key="{dxbt:BarCheckItemLayoutPanelThemeKey ResourceKey=StyleInBar}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInBar}}" />
+    <Style x:Key="{dxbt:BarCheckItemLayoutPanelThemeKey ResourceKey=StyleInMainMenu}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarCheckItemLayoutPanelThemeKey ResourceKey=StyleInBar}}">
+        <Setter Property="FirstBorderUseNormalStateOnly" Value="True" />
+        <Setter Property="SecondBorderUseNormalStateOnly" Value="True" />
+        <!--BEGIN WPF-->
+        <Setter Property="BorderThemeKey" Value="{dxbt:BarItemBorderInMainMenuThemeKey}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="BorderThemeKey" Value="BarItemBorderInMainMenuThemeKey"/>ONLY SL-->
+    </Style>
+    <Style x:Key="{dxbt:BarCheckItemLayoutPanelThemeKey ResourceKey=StyleInStatusBar}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarCheckItemLayoutPanelThemeKey ResourceKey=StyleInBar}}" />
+    <Style x:Key="{dxbt:BarCheckItemLayoutPanelThemeKey ResourceKey=StyleInRibbonPageHeader}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarCheckItemLayoutPanelThemeKey ResourceKey=StyleInBar}}" />
+    <Style x:Key="{dxbt:BarCheckItemLayoutPanelThemeKey ResourceKey=StyleInRibbonStatusBarLeft}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarCheckItemLayoutPanelThemeKey ResourceKey=StyleInBar}}">
+        <!--BEGIN WPF-->
+        <Setter Property="BorderThemeKey" Value="{dxbt:BarItemBorderInRibbonPageGroupThemeKey}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="BorderThemeKey" Value="BarItemBorderInRibbonPageGroupThemeKey"/>ONLY SL-->
+    </Style>
+    <Style x:Key="{dxbt:BarCheckItemLayoutPanelThemeKey ResourceKey=StyleInRibbonStatusBarRight}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarCheckItemLayoutPanelThemeKey ResourceKey=StyleInBar}}">
+        <!--BEGIN WPF-->
+        <Setter Property="BorderThemeKey" Value="{dxbt:BarItemBorderInRibbonPageGroupThemeKey}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="BorderThemeKey" Value="BarItemBorderInRibbonPageGroupThemeKey"/>ONLY SL-->
+    </Style>
+
+    <Style x:Key="{dxbt:BarCheckItemLayoutPanelThemeKey ResourceKey=StyleInRibbonPageGroup}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInRibbonPageGroup}}">
+        <!--BEGIN WPF-->
+        <Setter Property="TextSplitterStyleKey" Value="{dxbt:TextSplitterThemeKey ResourceKey=BarCheckItem}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="TextSplitterStyleKey" Value="TextSplitterThemeKey_BarCheckItem"/>ONLY SL-->
+    </Style>
+    <Style x:Key="{dxbt:BarCheckItemLayoutPanelThemeKey ResourceKey=StyleInButtonGroup}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarCheckItemLayoutPanelThemeKey ResourceKey=StyleInRibbonPageGroup}}">
+        <!--BEGIN WPF-->
+        <Setter Property="BorderThemeKey" Value="{dxbt:BarItemBorderInButtonGroupThemeKey}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="BorderThemeKey" Value="BarItemBorderInButtonGroupThemeKey"/>ONLY SL-->
+    </Style>
+    <Style x:Key="{dxbt:BarCheckItemLayoutPanelThemeKey ResourceKey=StyleInQAT}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarCheckItemLayoutPanelThemeKey ResourceKey=StyleInRibbonPageGroup}}" />
+    <Style x:Key="{dxbt:BarCheckItemLayoutPanelThemeKey ResourceKey=StyleInQATFooter}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarCheckItemLayoutPanelThemeKey ResourceKey=StyleInRibbonPageGroup}}" />
+
+    <Style x:Key="{dxbt:BarCheckItemLayoutPanelThemeKey ResourceKey=StyleInMenu}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInMenu}}">
+        <Setter Property="FirstBorderUseNormalStateOnly" Value="True" />
+        <Setter Property="SecondBorderUseNormalStateOnly" Value="True" />
+        <Setter Property="GlyphBackgroundTemplate" Value="{StaticResource CheckTriStateTemplate}" />
+        <Setter Property="GlyphBackgroundThickness" Value="-2" />
+    </Style>
+    <Style x:Key="{dxbt:BarCheckItemLayoutPanelThemeKey ResourceKey=StyleInApplicationMenu}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarCheckItemLayoutPanelThemeKey ResourceKey=StyleInMenu}}" />
+    <Style x:Key="{dxbt:BarCheckItemLayoutPanelThemeKey ResourceKey=StyleInDropDownGallery}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarCheckItemLayoutPanelThemeKey ResourceKey=StyleInMenu}}" />
+
+    <Style x:Key="{dxbt:BarCheckItemLayoutPanelThemeKey ResourceKey=StyleInMenuHeader}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInMenuHeader}}">
+        <Setter Property="FirstBorderUseNormalStateOnly" Value="True" />
+        <Setter Property="SecondBorderUseNormalStateOnly" Value="True" />
+        <Setter Property="GlyphBackgroundTemplate" Value="{StaticResource CheckTriStateTemplate}" />
+        <Setter Property="GlyphBackgroundThickness" Value="-2" />
+    </Style>
+    <!--BARSUBITEM-->
+
+    <Style x:Key="{dxbt:BarSubItemLayoutPanelThemeKey ResourceKey=StyleInBar}" TargetType="{x:Type dxb:BarItemLayoutPanel}">
+        <Setter Property="FirstBorderUseNormalStateOnly" Value="True" />
+        <Setter Property="SecondBorderUseNormalStateOnly" Value="True" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <!--dxbt:BarItemThemeKey ResourceKey=Margin-->
+        <Setter Property="Margin" Value="1,0,0,0" />
+        <!--BEGIN WPF-->
+        <Setter Property="BorderThemeKey" Value="{dxbt:BarItemBorderThemeKey}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="BorderThemeKey" Value="BarItemBorderThemeKey"/>ONLY SL-->
+        <!--dxbt:BarSubItemThemeKey ResourceKey=LayoutPanelStyle-->
+        <Setter Property="ContentAndGlyphMargin" Value="4" />
+        <Setter Property="ArrowMargin" Value="8,4,8,4" />
+        <Setter Property="LeftContentAndGlyphMargin" Value="4,4,0,4" />
+        <Setter Property="RightContentAndGlyphMargin" Value="3,4,5,4" />
+        <Setter Property="TopContentAndGlyphMargin" Value="8,4,5,3" />
+        <Setter Property="BottomContentAndGlyphMargin" Value="8,3,5,4" />
+
+        <!--left, right + {dxbt:BarSubItemThemeKey ResourceKey=ContentToArrowIndent}-->
+        <Setter Property="LeftArrowMargin" Value="8,4,4,4" />
+        <Setter Property="RightArrowMargin" Value="4,4,5,4" />
+        <Setter Property="TopArrowMargin" Value="8,4,5,0" />
+        <Setter Property="BottomArrowMargin" Value="8,0,5,4" />
+        <!--dxbt:BarSubItemThemeKey ResourceKey=ContentMargin-->
+        <Setter Property="CommonContentMargin" Value="4,0,4,0" />
+        <!--BEGIN WPF-->
+        <Setter Property="ArrowThemeKey" Value="{dxbt:BarSubItemThemeKey ResourceKey=ArrowTemplate}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="ArrowThemeKey" Value="BarSubItemThemeKey_ArrowTemplate"/>ONLY SL-->
+    </Style>
+    <Style x:Key="{dxbt:BarSubItemLayoutPanelThemeKey ResourceKey=StyleInMainMenu}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarSubItemLayoutPanelThemeKey ResourceKey=StyleInBar}}">
+        <Setter Property="FirstBorderUseNormalStateOnly" Value="True" />
+        <Setter Property="SecondBorderUseNormalStateOnly" Value="True" />
+        <!--BEGIN WPF-->
+        <Setter Property="BorderThemeKey" Value="{dxbt:BarItemBorderInMainMenuThemeKey}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="BorderThemeKey" Value="BarItemBorderInMainMenuThemeKey"/>ONLY SL-->
+    </Style>
+    <Style x:Key="{dxbt:BarSubItemLayoutPanelThemeKey ResourceKey=StyleInStatusBar}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarSubItemLayoutPanelThemeKey ResourceKey=StyleInBar}}" />
+    <Style x:Key="{dxbt:BarSubItemLayoutPanelThemeKey ResourceKey=StyleInRibbonPageHeader}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarSubItemLayoutPanelThemeKey ResourceKey=StyleInBar}}" />
+    <Style x:Key="{dxbt:BarSubItemLayoutPanelThemeKey ResourceKey=StyleInRibbonStatusBarLeft}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarSubItemLayoutPanelThemeKey ResourceKey=StyleInBar}}">
+        <!--BEGIN WPF-->
+        <Setter Property="BorderThemeKey" Value="{dxbt:BarItemBorderInRibbonPageGroupThemeKey}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="BorderThemeKey" Value="BarItemBorderInRibbonPageGroupThemeKey"/>ONLY SL-->
+    </Style>
+    <Style x:Key="{dxbt:BarSubItemLayoutPanelThemeKey ResourceKey=StyleInRibbonStatusBarRight}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarSubItemLayoutPanelThemeKey ResourceKey=StyleInBar}}">
+        <!--BEGIN WPF-->
+        <Setter Property="BorderThemeKey" Value="{dxbt:BarItemBorderInRibbonPageGroupThemeKey}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="BorderThemeKey" Value="BarItemBorderInRibbonPageGroupThemeKey"/>ONLY SL-->
+    </Style>
+
+    <Style x:Key="{dxbt:BarSubItemLayoutPanelThemeKey ResourceKey=StyleInMenu}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInMenu}}">
+        <Setter Property="FirstBorderUseNormalStateOnly" Value="True" />
+        <Setter Property="SecondBorderUseNormalStateOnly" Value="True" />
+        <!--BEGIN WPF-->
+        <Setter Property="ArrowThemeKey" Value="{dxbt:BarSubItemThemeKey ResourceKey=ArrowTemplateInMenu}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="ArrowThemeKey" Value="BarSubItemThemeKey_ArrowTemplateInMenu"/>ONLY SL-->
+        <Setter Property="ArrowMargin" Value="0,0,2,0" />
+    </Style>
+    <Style x:Key="{dxbt:BarSubItemLayoutPanelThemeKey ResourceKey=StyleInApplicationMenu}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarSubItemLayoutPanelThemeKey ResourceKey=StyleInMenu}}" />
+    <Style x:Key="{dxbt:BarSubItemLayoutPanelThemeKey ResourceKey=StyleInDropDownGallery}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarSubItemLayoutPanelThemeKey ResourceKey=StyleInMenu}}" />
+
+    <Style x:Key="{dxbt:BarSubItemLayoutPanelThemeKey ResourceKey=StyleInMenuHeader}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInMenuHeader}}">
+        <Setter Property="FirstBorderUseNormalStateOnly" Value="True" />
+        <Setter Property="SecondBorderUseNormalStateOnly" Value="True" />
+        <!--BEGIN WPF-->
+        <Setter Property="ArrowThemeKey" Value="{dxbt:BarSubItemThemeKey ResourceKey=ArrowTemplate}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="ArrowThemeKey" Value="BarSubItemThemeKey_ArrowTemplate"/>ONLY SL-->
+    </Style>
+    <Style x:Key="{dxbt:BarSubItemLayoutPanelThemeKey ResourceKey=StyleInRibbonPageGroup}" TargetType="{x:Type dxb:BarItemLayoutPanel}">
+        <Setter Property="FirstBorderUseNormalStateOnly" Value="True" />
+        <Setter Property="SecondBorderUseNormalStateOnly" Value="True" />
+        <Setter Property="Margin" Value="0" />
+        <!--BEGIN WPF-->
+        <Setter Property="BorderThemeKey" Value="{dxbt:BarItemBorderInRibbonPageGroupThemeKey}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="BorderThemeKey" Value="BarItemBorderInRibbonPageGroupThemeKey"/>ONLY SL-->
+        <!--BEGIN WPF-->
+        <Setter Property="TextSplitterStyleKey" Value="{dxbt:TextSplitterThemeKey ResourceKey=BarSubItem}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="TextSplitterStyleKey" Value="TextSplitterThemeKey_BarSubItem"/>ONLY SL-->
+        <Setter Property="GlyphMargin" Value="0" />
+
+        <Setter Property="LeftGlyphMargin" Value="0,0,2,0" />
+        <Setter Property="RightGlyphMargin" Value="2,0,0,0" />
+        <Setter Property="TopGlyphMargin" Value="0,0,0,2" />
+        <Setter Property="BottomGlyphMargin" Value="0,2,0,0" />
+        <Setter Property="TopCommonContentMargin" Value="3,0,3,0" />
+        <Setter Property="BottomCommonContentMargin" Value="3,0,3,0" />
+        <Setter Property="LeftContentAndGlyphMargin" Value="3,3,6,3" />
+        <Setter Property="RightContentAndGlyphMargin" Value="6,3,3,3" />
+        <Setter Property="TopContentAndGlyphMargin" Value="8,3,3,3" />
+        <Setter Property="BottomContentAndGlyphMargin" Value="8,3,3,3" />
+
+        <!--left, right + {dxbt:BarSubItemThemeKey ResourceKey=ContentToArrowIndent}-->
+        <Setter Property="LeftArrowMargin" Value="3,4,0,4" />
+        <Setter Property="RightArrowMargin" Value="0,4,7,4" />
+        <Setter Property="TopArrowMargin" Value="8,4,3,0" />
+        <Setter Property="BottomArrowMargin" Value="8,0,3,4" />
+
+        <!--ITEMPOSITION-->
+        <!--
+        Style="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=TextSplitterStyleInRibbonPageGroup}}"
+        NormalArrowTemplate="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=NormalArrowTemplateInTextSplitter}}"                     
+        SelectedArrowTemplate="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=SelectedArrowTemplateInTextSplitter}}"
+        NormalTextStyle="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=NormalTextStyleInTextSplitter}}"
+        SelectedTextStyle="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=SelectedTextStyleInTextSplitter}}"
+        BottomSideArrowContainerStyle="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=BottomSideArrowContainerStyleInTextSplitter}}"
+        RightSideArrowContainerStyle="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=RightSideArrowContainerStyleInTextSplitter}}"
+        -->
+
+        <!--BEGIN WPF-->
+        <Setter Property="ArrowThemeKey" Value="{dxbt:BarSubItemThemeKey ResourceKey=ArrowTemplate}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="ArrowThemeKey" Value="BarSubItemThemeKey_ArrowTemplate"/>ONLY SL-->
+    </Style>
+    <Style x:Key="{dxbt:BarSubItemLayoutPanelThemeKey ResourceKey=StyleInButtonGroup}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarSubItemLayoutPanelThemeKey ResourceKey=StyleInRibbonPageGroup}}">
+        <!--BEGIN WPF-->
+        <Setter Property="BorderThemeKey" Value="{dxbt:BarItemBorderInButtonGroupThemeKey}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="BorderThemeKey" Value="BarItemBorderInButtonGroupThemeKey"/>ONLY SL-->
+    </Style>
+    <Style x:Key="{dxbt:BarSubItemLayoutPanelThemeKey ResourceKey=StyleInQAT}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarSubItemLayoutPanelThemeKey ResourceKey=StyleInRibbonPageGroup}}" />
+    <Style x:Key="{dxbt:BarSubItemLayoutPanelThemeKey ResourceKey=StyleInQATFooter}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarSubItemLayoutPanelThemeKey ResourceKey=StyleInRibbonPageGroup}}" />
+
+    <!--BARSPLITBUTTONITEM-->
+
+    <Style x:Key="{dxbt:BarSplitButtonItemLayoutPanelThemeKey ResourceKey=StyleInBar}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInBar}}">
+        <Setter Property="FirstBorderUseNormalStateOnly" Value="True" />
+        <Setter Property="SecondBorderUseNormalStateOnly" Value="True" />
+        <!--BEGIN WPF-->
+        <Setter Property="ArrowThemeKey" Value="{dxbt:BarSplitButtonItemThemeKey ResourceKey=ArrowTemplate}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="ArrowThemeKey" Value="BarSplitButtonItemThemeKey_ArrowTemplate"/>ONLY SL-->
+        <Setter Property="RightArrowMargin" Value="0,2,0,0" />
+        <Setter Property="LeftArrowMargin" Value="0,2,0,0" />
+    </Style>
+    <Style x:Key="{dxbt:BarSplitButtonItemLayoutPanelThemeKey ResourceKey=StyleInMainMenu}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarSplitButtonItemLayoutPanelThemeKey ResourceKey=StyleInBar}}">
+        <Setter Property="FirstBorderUseNormalStateOnly" Value="True" />
+        <Setter Property="SecondBorderUseNormalStateOnly" Value="True" />
+        <!--BEGIN WPF-->
+        <Setter Property="BorderThemeKey" Value="{dxbt:BarItemBorderInMainMenuThemeKey}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="BorderThemeKey" Value="BarItemBorderInMainMenuThemeKey"/>ONLY SL-->
+    </Style>
+    <Style x:Key="{dxbt:BarSplitButtonItemLayoutPanelThemeKey ResourceKey=StyleInStatusBar}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarSplitButtonItemLayoutPanelThemeKey ResourceKey=StyleInBar}}" />
+    <Style x:Key="{dxbt:BarSplitButtonItemLayoutPanelThemeKey ResourceKey=StyleInRibbonPageHeader}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarSplitButtonItemLayoutPanelThemeKey ResourceKey=StyleInBar}}" />
+    <Style x:Key="{dxbt:BarSplitButtonItemLayoutPanelThemeKey ResourceKey=StyleInRibbonStatusBarLeft}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarSplitButtonItemLayoutPanelThemeKey ResourceKey=StyleInBar}}">
+        <!--BEGIN WPF-->
+        <Setter Property="BorderThemeKey" Value="{dxbt:BarItemBorderInRibbonPageGroupThemeKey}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="BorderThemeKey" Value="BarItemBorderInRibbonPageGroupThemeKey"/>ONLY SL-->
+    </Style>
+    <Style x:Key="{dxbt:BarSplitButtonItemLayoutPanelThemeKey ResourceKey=StyleInRibbonStatusBarRight}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarSplitButtonItemLayoutPanelThemeKey ResourceKey=StyleInBar}}">
+        <!--BEGIN WPF-->
+        <Setter Property="BorderThemeKey" Value="{dxbt:BarItemBorderInRibbonPageGroupThemeKey}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="BorderThemeKey" Value="BarItemBorderInRibbonPageGroupThemeKey"/>ONLY SL-->
+    </Style>
+
+    <Style x:Key="{dxbt:BarSplitButtonItemLayoutPanelThemeKey ResourceKey=StyleInRibbonPageGroup}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInRibbonPageGroup}}">
+        <!--BEGIN WPF-->
+        <Setter Property="ArrowThemeKey" Value="{dxbt:BarSplitButtonItemThemeKey ResourceKey=ArrowTemplate}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="ArrowThemeKey" Value="BarSplitButtonItemThemeKey_ArrowTemplate"/>ONLY SL-->
+        <!--BEGIN WPF-->
+        <Setter Property="TextSplitterStyleKey" Value="{dxbt:TextSplitterThemeKey ResourceKey=BarSplitButtonItem}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="TextSplitterStyleKey" Value="TextSplitterThemeKey_BarSplitButtonItem"/>ONLY SL-->
+        <Setter Property="BottomCommonContentMargin" Value="4,0,4,0" />
+        <Setter Property="TopGlyphMargin" Value="3,3,2,3" />
+    </Style>
+    <Style x:Key="{dxbt:BarSplitButtonItemLayoutPanelThemeKey ResourceKey=StyleInButtonGroup}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarSplitButtonItemLayoutPanelThemeKey ResourceKey=StyleInRibbonPageGroup}}">
+        <Setter Property="FirstBorderUseNormalStateOnly" Value="True" />
+        <Setter Property="SecondBorderUseNormalStateOnly" Value="True" />
+        <!--BEGIN WPF-->
+        <Setter Property="ArrowThemeKey" Value="{dxbt:BarSplitButtonItemThemeKey ResourceKey=ArrowTemplateInBarButtonGroup}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="ArrowThemeKey" Value="BarSplitButtonItemThemeKey_ArrowTemplateInBarButtonGroup"/>ONLY SL-->
+        <!--BEGIN WPF-->
+        <Setter Property="BorderThemeKey" Value="{dxbt:BarItemBorderInButtonGroupThemeKey}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="BorderThemeKey" Value="BarItemBorderInButtonGroupThemeKey"/>ONLY SL-->
+    </Style>
+    <Style x:Key="{dxbt:BarSplitButtonItemLayoutPanelThemeKey ResourceKey=StyleInQAT}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarSplitButtonItemLayoutPanelThemeKey ResourceKey=StyleInRibbonPageGroup}}" />
+    <Style x:Key="{dxbt:BarSplitButtonItemLayoutPanelThemeKey ResourceKey=StyleInQATFooter}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarSplitButtonItemLayoutPanelThemeKey ResourceKey=StyleInRibbonPageGroup}}" />
+
+    <Style x:Key="{dxbt:BarSplitButtonItemLayoutPanelThemeKey ResourceKey=StyleInMenu}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInMenu}}">
+        <Setter Property="FirstBorderUseNormalStateOnly" Value="True" />
+        <Setter Property="SecondBorderUseNormalStateOnly" Value="True" />
+        <!--BEGIN WPF-->
+        <Setter Property="ArrowThemeKey" Value="{dxbt:BarSplitButtonItemThemeKey ResourceKey=ArrowTemplateInMenu}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="ArrowThemeKey" Value="BarSplitButtonItemThemeKey_ArrowTemplateInMenu"/>ONLY SL-->
+    </Style>
+    <Style x:Key="{dxbt:BarSplitButtonItemLayoutPanelThemeKey ResourceKey=StyleInApplicationMenu}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarSplitButtonItemLayoutPanelThemeKey ResourceKey=StyleInMenu}}" />
+    <Style x:Key="{dxbt:BarSplitButtonItemLayoutPanelThemeKey ResourceKey=StyleInDropDownGallery}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarSplitButtonItemLayoutPanelThemeKey ResourceKey=StyleInMenu}}" />
+
+    <Style x:Key="{dxbt:BarSplitButtonItemLayoutPanelThemeKey ResourceKey=StyleInMenuHeader}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInMenuHeader}}">
+        <Setter Property="FirstBorderUseNormalStateOnly" Value="True" />
+        <Setter Property="SecondBorderUseNormalStateOnly" Value="True" />
+        <!--BEGIN WPF-->
+        <Setter Property="ArrowThemeKey" Value="{dxbt:BarSplitButtonItemThemeKey ResourceKey=ArrowTemplate}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="ArrowThemeKey" Value="BarSplitButtonItemThemeKey_ArrowTemplate"/>ONLY SL-->
+    </Style>
+
+    <!--BARSPLITCHECKITEM-->
+
+    <Style x:Key="{dxbt:BarSplitCheckItemLayoutPanelThemeKey ResourceKey=StyleInBar}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarSplitButtonItemLayoutPanelThemeKey ResourceKey=StyleInBar}}" />
+    <Style x:Key="{dxbt:BarSplitCheckItemLayoutPanelThemeKey ResourceKey=StyleInMainMenu}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarSplitCheckItemLayoutPanelThemeKey ResourceKey=StyleInBar}}">
+        <Setter Property="FirstBorderUseNormalStateOnly" Value="True" />
+        <Setter Property="SecondBorderUseNormalStateOnly" Value="True" />
+        <!--BEGIN WPF-->
+        <Setter Property="BorderThemeKey" Value="{dxbt:BarItemBorderInMainMenuThemeKey}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="BorderThemeKey" Value="BarItemBorderInMainMenuThemeKey"/>ONLY SL-->
+    </Style>
+    <Style x:Key="{dxbt:BarSplitCheckItemLayoutPanelThemeKey ResourceKey=StyleInStatusBar}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarSplitCheckItemLayoutPanelThemeKey ResourceKey=StyleInBar}}" />
+    <Style x:Key="{dxbt:BarSplitCheckItemLayoutPanelThemeKey ResourceKey=StyleInRibbonPageHeader}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarSplitCheckItemLayoutPanelThemeKey ResourceKey=StyleInBar}}" />
+    <Style x:Key="{dxbt:BarSplitCheckItemLayoutPanelThemeKey ResourceKey=StyleInRibbonStatusBarLeft}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarSplitCheckItemLayoutPanelThemeKey ResourceKey=StyleInBar}}">
+        <!--BEGIN WPF-->
+        <Setter Property="BorderThemeKey" Value="{dxbt:BarItemBorderInRibbonPageGroupThemeKey}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="BorderThemeKey" Value="BarItemBorderInRibbonPageGroupThemeKey"/>ONLY SL-->
+    </Style>
+    <Style x:Key="{dxbt:BarSplitCheckItemLayoutPanelThemeKey ResourceKey=StyleInRibbonStatusBarRight}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarSplitCheckItemLayoutPanelThemeKey ResourceKey=StyleInBar}}">
+        <!--BEGIN WPF-->
+        <Setter Property="BorderThemeKey" Value="{dxbt:BarItemBorderInRibbonPageGroupThemeKey}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="BorderThemeKey" Value="BarItemBorderInRibbonPageGroupThemeKey"/>ONLY SL-->
+    </Style>
+
+    <Style x:Key="{dxbt:BarSplitCheckItemLayoutPanelThemeKey ResourceKey=StyleInRibbonPageGroup}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarSplitButtonItemLayoutPanelThemeKey ResourceKey=StyleInRibbonPageGroup}}" />
+    <Style x:Key="{dxbt:BarSplitCheckItemLayoutPanelThemeKey ResourceKey=StyleInButtonGroup}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarSplitCheckItemLayoutPanelThemeKey ResourceKey=StyleInRibbonPageGroup}}">
+        <!--BEGIN WPF-->
+        <Setter Property="BorderThemeKey" Value="{dxbt:BarItemBorderInButtonGroupThemeKey}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="BorderThemeKey" Value="BarItemBorderInButtonGroupThemeKey"/>ONLY SL-->
+    </Style>
+    <Style x:Key="{dxbt:BarSplitCheckItemLayoutPanelThemeKey ResourceKey=StyleInQAT}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarSplitCheckItemLayoutPanelThemeKey ResourceKey=StyleInRibbonPageGroup}}" />
+    <Style x:Key="{dxbt:BarSplitCheckItemLayoutPanelThemeKey ResourceKey=StyleInQATFooter}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarSplitCheckItemLayoutPanelThemeKey ResourceKey=StyleInRibbonPageGroup}}" />
+
+    <Style x:Key="{dxbt:BarSplitCheckItemLayoutPanelThemeKey ResourceKey=StyleInMenu}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarSplitButtonItemLayoutPanelThemeKey ResourceKey=StyleInMenu}}" />
+    <Style x:Key="{dxbt:BarSplitCheckItemLayoutPanelThemeKey ResourceKey=StyleInApplicationMenu}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarSplitCheckItemLayoutPanelThemeKey ResourceKey=StyleInMenu}}" />
+    <Style x:Key="{dxbt:BarSplitCheckItemLayoutPanelThemeKey ResourceKey=StyleInDropDownGallery}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarSplitCheckItemLayoutPanelThemeKey ResourceKey=StyleInMenu}}" />
+
+    <Style x:Key="{dxbt:BarSplitCheckItemLayoutPanelThemeKey ResourceKey=StyleInMenuHeader}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarSplitButtonItemLayoutPanelThemeKey ResourceKey=StyleInMenuHeader}}" />
+
+    <!--BAREDITITEM-->
+
+    <Style x:Key="{dxbt:BarEditItemLayoutPanelThemeKey ResourceKey=StyleInBar}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInBar}}">
+        <Setter Property="FirstBorderUseNormalStateOnly" Value="True" />
+        <Setter Property="SecondBorderUseNormalStateOnly" Value="True" />
+        <Setter Property="ContentMargin" Value="0,0,6,0" />
+        <Setter Property="Content2Margin" Value="6,0,0,0" />
+        <Setter Property="AdditionalContentMargin" Value="0" />
+        <Setter Property="Margin" Value="1,0,0,0" />
+        <Setter Property="CommonMargin" Value="0" />
+        <Setter Property="CommonContentMargin" Value="8,0,8,0" />
+    </Style>
+    <Style x:Key="{dxbt:BarEditItemLayoutPanelThemeKey ResourceKey=StyleInMainMenu}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarEditItemLayoutPanelThemeKey ResourceKey=StyleInBar}}">
+        <Setter Property="FirstBorderUseNormalStateOnly" Value="True" />
+        <Setter Property="SecondBorderUseNormalStateOnly" Value="True" />
+        <!--BEGIN WPF-->
+        <Setter Property="BorderThemeKey" Value="{dxbt:BarItemBorderInMainMenuThemeKey}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="BorderThemeKey" Value="BarItemBorderInMainMenuThemeKey"/>ONLY SL-->
+    </Style>
+    <Style x:Key="{dxbt:BarEditItemLayoutPanelThemeKey ResourceKey=StyleInStatusBar}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarEditItemLayoutPanelThemeKey ResourceKey=StyleInBar}}" />
+    <Style x:Key="{dxbt:BarEditItemLayoutPanelThemeKey ResourceKey=StyleInRibbonPageHeader}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarEditItemLayoutPanelThemeKey ResourceKey=StyleInBar}}" />
+    <Style x:Key="{dxbt:BarEditItemLayoutPanelThemeKey ResourceKey=StyleInRibbonStatusBarLeft}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarEditItemLayoutPanelThemeKey ResourceKey=StyleInBar}}">
+        <Setter Property="CommonMargin" Value="0,0,4,0" />
+    </Style>
+    <Style x:Key="{dxbt:BarEditItemLayoutPanelThemeKey ResourceKey=StyleInRibbonStatusBarRight}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarEditItemLayoutPanelThemeKey ResourceKey=StyleInBar}}">
+        <Setter Property="CommonMargin" Value="0,0,4,0" />
+    </Style>
+    <Style x:Key="{dxbt:BarEditItemLayoutPanelThemeKey ResourceKey=StyleInRibbonPageGroup}" TargetType="{x:Type dxb:BarItemLayoutPanel}">
+        <Setter Property="FirstBorderUseNormalStateOnly" Value="True" />
+        <Setter Property="SecondBorderUseNormalStateOnly" Value="True" />
+        <!--BEGIN WPF-->
+        <Setter Property="BorderThemeKey" Value="{dxbt:BarItemBorderInRibbonPageGroupThemeKey}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="BorderThemeKey" Value="BarItemBorderInRibbonPageGroupThemeKey"/>ONLY SL-->
+        <Setter Property="CommonMargin" Value="4,0,4,0" />
+        <Setter Property="AdditionalContentMargin" Value="0,0,0,0" />
+        <Setter Property="ContentMargin" Value="0,0,4,0" />
+        <Setter Property="GlyphMargin" Value="0,0,0,0" />
+        <Setter Property="Content2Margin" Value="4,0,0,0" />
+    </Style>
+    <Style x:Key="{dxbt:BarEditItemLayoutPanelThemeKey ResourceKey=StyleInButtonGroup}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarEditItemLayoutPanelThemeKey ResourceKey=StyleInRibbonPageGroup}}">
+        <!--BEGIN WPF-->
+        <Setter Property="BorderThemeKey" Value="{dxbt:BarItemBorderInButtonGroupThemeKey}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="BorderThemeKey" Value="BarItemBorderInButtonGroupThemeKey"/>ONLY SL-->        
+    </Style>
+    <Style x:Key="{dxbt:BarEditItemLayoutPanelThemeKey ResourceKey=StyleInQAT}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarEditItemLayoutPanelThemeKey ResourceKey=StyleInRibbonPageGroup}}">
+        <Setter Property="CommonMargin" Value="0,0,4,0" />
+    </Style>
+    <Style x:Key="{dxbt:BarEditItemLayoutPanelThemeKey ResourceKey=StyleInQATFooter}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarEditItemLayoutPanelThemeKey ResourceKey=StyleInRibbonPageGroup}}">
+        <Setter Property="CommonMargin" Value="0,0,4,0" />
+    </Style>
+
+    <Style x:Key="{dxbt:BarEditItemLayoutPanelThemeKey ResourceKey=StyleInMenu}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInMenu}}">
+        <Setter Property="FirstBorderUseNormalStateOnly" Value="True" />
+        <Setter Property="SecondBorderUseNormalStateOnly" Value="True" />
+        <Setter Property="CommonMargin" Value="0" />
+        <Setter Property="Content2Margin" Value="4,0,4,0" />
+    </Style>
+    <Style x:Key="{dxbt:BarEditItemLayoutPanelThemeKey ResourceKey=StyleInApplicationMenu}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarEditItemLayoutPanelThemeKey ResourceKey=StyleInMenu}}" />
+    <Style x:Key="{dxbt:BarEditItemLayoutPanelThemeKey ResourceKey=StyleInDropDownGallery}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarEditItemLayoutPanelThemeKey ResourceKey=StyleInMenu}}" />
+
+    <Style x:Key="{dxbt:BarEditItemLayoutPanelThemeKey ResourceKey=StyleInMenuHeader}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInMenuHeader}}" />
+
+    <!--BARSTATICITEM-->
+
+    <Style x:Key="{dxbt:BarStaticItemLayoutPanelThemeKey ResourceKey=StyleInBar}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInBar}}">
+        <Setter Property="FirstBorderUseNormalStateOnly" Value="True" />
+        <Setter Property="SecondBorderUseNormalStateOnly" Value="True" />
+        <Setter Property="AdditionalContentMargin" Value="6,0,0,0" />
+        <Setter Property="CommonMargin" Value="0" />
+        <Setter Property="CommonContentMargin" Value="8,0,8,0" />
+    </Style>
+    <Style x:Key="{dxbt:BarStaticItemLayoutPanelThemeKey ResourceKey=StyleInMainMenu}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarStaticItemLayoutPanelThemeKey ResourceKey=StyleInBar}}">
+        <Setter Property="FirstBorderUseNormalStateOnly" Value="True" />
+        <Setter Property="SecondBorderUseNormalStateOnly" Value="True" />
+        <!--BEGIN WPF-->
+        <Setter Property="BorderThemeKey" Value="{dxbt:BarItemBorderInMainMenuThemeKey}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="BorderThemeKey" Value="BarItemBorderInMainMenuThemeKey"/>ONLY SL-->
+    </Style>
+    <Style x:Key="{dxbt:BarStaticItemLayoutPanelThemeKey ResourceKey=StyleInStatusBar}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarStaticItemLayoutPanelThemeKey ResourceKey=StyleInBar}}" />
+    <Style x:Key="{dxbt:BarStaticItemLayoutPanelThemeKey ResourceKey=StyleInRibbonPageHeader}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarStaticItemLayoutPanelThemeKey ResourceKey=StyleInBar}}" />
+    <Style x:Key="{dxbt:BarStaticItemLayoutPanelThemeKey ResourceKey=StyleInRibbonStatusBarLeft}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarStaticItemLayoutPanelThemeKey ResourceKey=StyleInBar}}" />
+    <Style x:Key="{dxbt:BarStaticItemLayoutPanelThemeKey ResourceKey=StyleInRibbonStatusBarRight}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarStaticItemLayoutPanelThemeKey ResourceKey=StyleInBar}}" />
+    <Style x:Key="{dxbt:BarStaticItemLayoutPanelThemeKey ResourceKey=StyleInRibbonPageGroup}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInBar}}" />
+    <Style x:Key="{dxbt:BarStaticItemLayoutPanelThemeKey ResourceKey=StyleInButtonGroup}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarStaticItemLayoutPanelThemeKey ResourceKey=StyleInRibbonPageGroup}}">
+        <!--BEGIN WPF-->
+        <Setter Property="BorderThemeKey" Value="{dxbt:BarItemBorderInButtonGroupThemeKey}" />
+        <!--END WPF-->
+        <!--ONLY SL<Setter Property="BorderThemeKey" Value="BarItemBorderInButtonGroupThemeKey"/>ONLY SL-->
+    </Style>
+    <Style x:Key="{dxbt:BarStaticItemLayoutPanelThemeKey ResourceKey=StyleInQAT}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarStaticItemLayoutPanelThemeKey ResourceKey=StyleInRibbonPageGroup}}" />
+    <Style x:Key="{dxbt:BarStaticItemLayoutPanelThemeKey ResourceKey=StyleInQATFooter}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarStaticItemLayoutPanelThemeKey ResourceKey=StyleInRibbonPageGroup}}" />
+
+    <Style x:Key="{dxbt:BarStaticItemLayoutPanelThemeKey ResourceKey=StyleInMenu}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInMenu}}">
+        <Setter Property="FirstBorderUseNormalStateOnly" Value="True" />
+        <Setter Property="SecondBorderUseNormalStateOnly" Value="True" />
+        <Setter Property="CommonMargin" Value="0" />
+        <Setter Property="Content2Margin" Value="4,0,4,0" />
+    </Style>
+    <Style x:Key="{dxbt:BarStaticItemLayoutPanelThemeKey ResourceKey=StyleInApplicationMenu}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarStaticItemLayoutPanelThemeKey ResourceKey=StyleInMenu}}" />
+    <Style x:Key="{dxbt:BarStaticItemLayoutPanelThemeKey ResourceKey=StyleInDropDownGallery}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarStaticItemLayoutPanelThemeKey ResourceKey=StyleInMenu}}" />
+
+    <Style x:Key="{dxbt:BarStaticItemLayoutPanelThemeKey ResourceKey=StyleInMenuHeader}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInMenuHeader}}" />
+
+    <!--END-->
+
+    <dxb:FontSettings x:Key="{dxbt:BarItemFontThemeKey ResourceKey=BarItemFontSettings}" />
+    <dxb:FontSettings x:Key="{dxbt:BarItemFontThemeKey ResourceKey=BarItemFontSettingsInMainMenu}" Normal="#FF201F35" Hover="#FF201F35" Pressed="#FF201F35" />
+    <dxb:FontSettings x:Key="{dxbt:BarItemFontThemeKey ResourceKey=BarItemFontSettingsInMenu}" />
+    <dxb:FontSettings x:Key="{dxbt:BarItemFontThemeKey ResourceKey=BarItemFontSettingsInApplicationMenu}" />
+    <dxb:FontSettings x:Key="{dxbt:BarItemFontThemeKey ResourceKey=BarItemFontSettingsInStatusBar}" Normal="#FF201F35" Hover="#FF201F35" Pressed="#FF201F35" />
+    <dxb:FontSettings x:Key="{dxbt:BarItemFontThemeKey ResourceKey=BarItemFontSettingsInRibbonStatusBarLeft}" Normal="#FF201F35" Hover="#FF201F35" Pressed="#FF201F35" Disabled="#7F201F35" />
+    <dxb:FontSettings x:Key="{dxbt:BarItemFontThemeKey ResourceKey=BarItemFontSettingsInRibbonStatusBarRight}" Normal="#FF201F35" Hover="#FF201F35" Pressed="#FF201F35" Disabled="#7F201F35" />
+    <dxb:FontSettings x:Key="{dxbt:BarItemFontThemeKey ResourceKey=BarItemFontSettingsInRibbonPageGroup}" Normal="#FF201F35" Hover="#FF201F35" Pressed="#FF201F35" Disabled="#7F201F35" />
+    <dxb:FontSettings x:Key="{dxbt:BarItemFontThemeKey ResourceKey=BarItemFontSettingsInRibbonToolbar}" Normal="#FF201F35" Hover="#FF201F35" Pressed="#FF201F35" Disabled="#7F201F35" />
+    <dxb:FontSettings x:Key="{dxbt:BarItemFontThemeKey ResourceKey=BarItemFontSettingsInRibbonToolbarFooter}" Normal="#FF201F35" Hover="#FF201F35" Pressed="#FF201F35" Disabled="#7F201F35" />
+    <dxb:FontSettings x:Key="{dxbt:BarItemFontThemeKey ResourceKey=BarItemFontSettingsInRibbonPageHeader}" Normal="#FF201F35" Hover="#FF201F35" Pressed="#FF201F35" Disabled="#7F201F35" />
+    <dxb:FontSettings x:Key="{dxbt:BarItemFontThemeKey ResourceKey=BarItemFontSettingsInButtonGroup}" Normal="#FF201F35" Hover="#FF201F35" Pressed="#FF201F35" Disabled="#7F201F35" />
+    <dxb:FontSettings x:Key="{dxbt:BarItemFontThemeKey ResourceKey=BarItemDescriptionStyleInApplicationMenu}" Normal="#FF201F35" Hover="#FF201F35" Pressed="#FF201F35" Disabled="#7F201F35" />
+    <dxb:FontSettings x:Key="{dxbt:BarItemFontThemeKey ResourceKey=BarButtonItemTextStyleInTextSplitter}" Normal="#FF201F35" />
+    <dxb:FontSettings x:Key="{dxbt:BarItemFontThemeKey ResourceKey=BarCheckItemTextStyleInTextSplitter}" Normal="#FF201F35" />
+    <dxb:FontSettings x:Key="{dxbt:BarItemFontThemeKey ResourceKey=BarSplitButtonItemTextStyleInTextSplitter}" Normal="#FF201F35 " />
+    <dxb:FontSettings x:Key="{dxbt:BarItemFontThemeKey ResourceKey=BarSubItemTextStyleInTextSplitter}" Normal="#FF201F35" />
+    
+</ResourceDictionary>

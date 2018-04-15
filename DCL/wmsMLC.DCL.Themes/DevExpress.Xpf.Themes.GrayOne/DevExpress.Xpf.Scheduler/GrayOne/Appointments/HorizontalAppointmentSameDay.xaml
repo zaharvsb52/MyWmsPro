@@ -1,0 +1,24 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxscht="http://schemas.devexpress.com/winfx/2008/xaml/scheduler/themekeys" xmlns:dxschd="http://schemas.devexpress.com/winfx/2008/xaml/scheduler/internal">
+
+    <DataTemplate x:Key="{dxscht:SchedulerViewThemeKey ResourceKey=HorizontalAppointmentSameDayContentTemplate}">
+        <dxschd:HorizontalAppointmentContentPanel VerticalAlignment="Center">
+            <dxschd:HorizontalAppointmentStartClockControl VerticalAlignment="Center" ViewInfo="{Binding}" />
+            <dxschd:HorizontalAppointmentEndClockControl VerticalAlignment="Center" ViewInfo="{Binding}" />
+            <dxschd:AppointmentImagesControl Orientation="Horizontal" ViewInfo="{Binding}" />
+            <TextBlock Text="{Binding Subject}" TextWrapping="NoWrap" TextAlignment="Left" VerticalAlignment="Center" Margin="1,0,2,0" Foreground="{DynamicResource {dxscht:SchedulerViewThemeKey ResourceKey=AppointmentForegroundColor}}">
+                <!--BEGIN WPF-->
+                <TextBlock.TextTrimming>
+                    <TextTrimming>CharacterEllipsis</TextTrimming>    
+                </TextBlock.TextTrimming>
+                <!--END WPF-->
+            </TextBlock>
+            <TextBlock Text="{Binding Location}" TextWrapping="NoWrap" TextAlignment="Left" VerticalAlignment="Center" Foreground="{DynamicResource {dxscht:SchedulerViewThemeKey ResourceKey=AppointmentForegroundColor}}">
+                <!--BEGIN WPF-->
+                <TextBlock.TextTrimming>
+                    <TextTrimming>CharacterEllipsis</TextTrimming>    
+                </TextBlock.TextTrimming>
+                <!--END WPF-->
+            </TextBlock>
+        </dxschd:HorizontalAppointmentContentPanel>
+    </DataTemplate>
+</ResourceDictionary>

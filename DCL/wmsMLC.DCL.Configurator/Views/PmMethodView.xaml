@@ -1,0 +1,86 @@
+﻿<UserControl x:Class="wmsMLC.DCL.Configurator.Views.PmMethodView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" 
+    xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+    xmlns:mvvmx="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+    xmlns:lex="clr-namespace:WPFLocalizeExtension.Extensions;assembly=WPFLocalizeExtension"
+    xmlns:controls="clr-namespace:wmsMLC.DCL.Configurator.Views.Controls"
+    xmlns:views="clr-namespace:wmsMLC.DCL.Configurator.Views"
+    mc:Ignorable="d" 
+    d:DesignHeight="300" d:DesignWidth="300">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <mvvmx:BooleanToVisibilityConverter x:Key="BoolToVis" Inverse="False"/>
+            <views:ObjectToVisibilityConverter x:Key="ObjectToVis" /> 
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <dxlc:LayoutControl Padding="2" ScrollBars="Auto">
+        <dxlc:LayoutGroup Orientation="Vertical">
+            <dxlc:LayoutGroup Orientation="Vertical" View="GroupBox" Header="{Binding PmName, UpdateSourceTrigger=PropertyChanged}">
+                <dxlc:LayoutItem Label="{lex:LocExtension Key=wmsMLC.DCL.Configurator:Resources:ColumnHeaderEntity}">
+                    <dxe:TextEdit IsReadOnly="True" EditValue="{Binding SelectedItem.OjectEntityCode, UpdateSourceTrigger=PropertyChanged}"/>
+                </dxlc:LayoutItem>
+                <dxlc:LayoutItem Label="{lex:LocExtension Key=wmsMLC.DCL.Configurator:Resources:ColumnHeaderAttribute}">
+                    <dxe:TextEdit IsReadOnly="True" EditValue="{Binding SelectedItem.ObjectName, UpdateSourceTrigger=PropertyChanged}"/>
+                </dxlc:LayoutItem>
+                <dxlc:LayoutItem Label="{lex:LocExtension Key=wmsMLC.DCL.Configurator:Resources:LabelCaptionOperation}">
+                    <dxe:TextEdit IsReadOnly="True" EditValue="{Binding OperationName, UpdateSourceTrigger=PropertyChanged}"/>
+                </dxlc:LayoutItem>
+            </dxlc:LayoutGroup>
+
+            <dxlc:LayoutGroup Orientation="Vertical" View="GroupBox" VerticalAlignment="Stretch" Header="{lex:LocExtension Key=wmsMLC.DCL.Configurator:Resources:LabelCaptionMethods}">
+                <dxlc:LayoutGroup Orientation="Vertical" View="Group">
+                    <dxlc:LayoutItem Visibility="{Binding IsMethodsUnavailable, Converter={StaticResource BoolToVis}, FallbackValue=Collapsed}">
+                        <dxe:TextEdit IsReadOnly="True" EditValue="{lex:LocExtension Key=wmsMLC.DCL.Configurator:Resources:PmMethodIsUnavailable}"/>
+                    </dxlc:LayoutItem>
+                    <dxlc:LayoutItem Visibility="{Binding IsMethodsNotVisible, Converter={StaticResource BoolToVis}, FallbackValue=Visible}">
+                        <dxe:TextEdit IsReadOnly="True"/>
+                    </dxlc:LayoutItem>
+                    <dxlc:LayoutItem VerticalAlignment="Top" MinHeight="50" MaxHeight="300" HorizontalAlignment="Stretch">
+                        <controls:ConfiguratorListBoxEdit x:Name="PmMethodListBox" AllowNullInput="True" ShowCustomItems="False" SelectionMode="Single"
+                            Visibility="{Binding IsMethodsVisible, Converter={StaticResource BoolToVis}, FallbackValue=Collapsed}"
+                            SelectedItem="{Binding Path=SelectedMethod, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                            ItemsSource="{Binding Path=ItemsSource, UpdateSourceTrigger=PropertyChanged}"
+                            PreviewKeyDown="OnPreviewKeyDown"
+                            MouseDoubleClick="OnMouseDoubleClick"
+                            ItemsSourceChanged="OnItemsSourceChanged">
+                            <dxe:ListBoxEdit.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <dxe:CheckEdit IsThreeState="False" IsChecked="{Binding IsChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                        <TextBlock Margin="5,0,0,0" VerticalAlignment="Center" Text="{Binding Method.PMMETHODNAME}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </dxe:ListBoxEdit.ItemTemplate>
+                        </controls:ConfiguratorListBoxEdit>
+                    </dxlc:LayoutItem>
+                    <dxlc:LayoutGroup Orientation="Vertical" View="GroupBox" Header="{Binding PmByProductHeader}" Visibility="{Binding SelectedMethod, Converter={StaticResource ObjectToVis}, FallbackValue=Collapsed}" HorizontalAlignment="Stretch">
+                        <dxlc:LayoutItem Label="{lex:LocExtension Key=wmsMLC.DCL.Configurator:Resources:LabelCaptionPmConfigByProduct}" 
+                            IsEnabled="{Binding IsEnabledByProduct, FallbackValue=False}"
+                            Visibility="{Binding VisibilityByProduct, Converter={StaticResource BoolToVis}, FallbackValue=Collapsed}">
+                            <dxe:CheckEdit EditValue="{Binding PmConfigByProduct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+                        </dxlc:LayoutItem>
+                        <dxlc:LayoutItem Label="{lex:LocExtension Key=wmsMLC.DCL.Configurator:Resources:LabelCaptionPmConfigByInputMask}" 
+                            IsEnabled="{Binding IsEnabledByInputMask, FallbackValue=False}"
+                            Visibility="{Binding VisibilityByInputMask, Converter={StaticResource BoolToVis}, FallbackValue=Collapsed}">
+                            <dxe:MemoEdit EditValue="{Binding PmConfigByInputMask, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                                ShowIcon="False" AllowNullInput="True" IsTextEditable="True"
+                                TextWrapping="Wrap" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Top" MemoTextWrapping="Wrap"
+                                PopupFooterButtons="None"/>
+                        </dxlc:LayoutItem>
+                        <dxlc:LayoutItem Label="{lex:LocExtension Key=wmsMLC.DCL.Configurator:Resources:LabelCaptionPmConfigByInputMass}" 
+                            IsEnabled="{Binding IsEnabledByInputMass, FallbackValue=False}"
+                            Visibility="{Binding VisibilityByInputMass, Converter={StaticResource BoolToVis}, FallbackValue=Collapsed}">
+                            <dxe:CheckEdit EditValue="{Binding PmConfigByInputMass, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+                        </dxlc:LayoutItem>
+                    </dxlc:LayoutGroup>
+                </dxlc:LayoutGroup>
+            </dxlc:LayoutGroup>
+        </dxlc:LayoutGroup>
+    </dxlc:LayoutControl>
+</UserControl>

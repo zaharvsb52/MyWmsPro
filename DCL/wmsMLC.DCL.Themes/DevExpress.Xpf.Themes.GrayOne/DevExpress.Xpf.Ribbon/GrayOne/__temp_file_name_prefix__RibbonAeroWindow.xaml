@@ -1,0 +1,73 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon" xmlns:dxrt="http://schemas.devexpress.com/winfx/2008/xaml/ribbon/themekeys" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <sys:Double x:Key="{dxrt:DXRibbonAeroWindowThemeKey ResourceKey=AeroBorderSize}">5</sys:Double>
+  <Thickness x:Key="{dxrt:DXRibbonAeroWindowThemeKey ResourceKey=AeroWindowResizeBorderThickness}">7</Thickness>
+  <ControlTemplate x:Key="{dxrt:DXRibbonAeroWindowThemeKey ResourceKey=AeroWindowHeaderBorderTemplate}" TargetType="{x:Type ContentControl}">
+    <Border x:Name="FloatingContainerHeader" CornerRadius="0" Background="Transparent" MinHeight="27" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\RibbonAeroWindow.xaml;5;10" />
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxrt:DXRibbonAeroWindowThemeKey ResourceKey=AeroWindowContentTemplate}" TargetType="{x:Type ContentControl}">
+    <Border x:Name="border" Background="#7FFFFFFF" Padding="1,1,1,1" CornerRadius="0,0,3,3" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\RibbonAeroWindow.xaml;9;10">
+      <Border Padding="1,0,1,1" CornerRadius="0,0,1,1" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\RibbonAeroWindow.xaml;10;14">
+        <Border.Background>
+          <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+            <GradientStop Color="#FFA8AAB4" />
+            <GradientStop Color="#7F000000" Offset="1" />
+          </LinearGradientBrush>
+        </Border.Background>
+        <Grid Background="{DynamicResource {dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerBackground}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\RibbonAeroWindow.xaml;17;18">
+          <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\RibbonAeroWindow.xaml;18;22" />
+        </Grid>
+      </Border>
+    </Border>
+  </ControlTemplate>
+  <Style x:Key="{dxrt:DXRibbonAeroWindowThemeKey ResourceKey=AeroWindowContentStyle}" TargetType="{x:Type ContentControl}">
+    <Setter Property="Margin" Value="5,0,5,5" />
+  </Style>
+  <ControlTemplate x:Key="{dxrt:DXRibbonAeroWindowThemeKey ResourceKey=AeroWindowBodyTemplate}" TargetType="{x:Type ContentControl}">
+    <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\RibbonAeroWindow.xaml;29;10" />
+  </ControlTemplate>
+  <Style x:Key="{dxrt:DXRibbonAeroWindowThemeKey ResourceKey=AeroWindowBodyStyle}" TargetType="{x:Type ContentControl}"></Style>
+  <Style x:Key="{dxrt:DXRibbonAeroWindowThemeKey ResourceKey=AeroWindowControlBoxStyle}" TargetType="{x:Type ContentControl}">
+    <Setter Property="Margin" Value="2,0,0,2" />
+    <Setter Property="VerticalAlignment" Value="Top" />
+  </Style>
+  <ControlTemplate x:Key="{dxrt:DXRibbonAeroWindowThemeKey ResourceKey=AeroWindowControlBoxTemplate}" TargetType="{x:Type ContentControl}">
+    <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\RibbonAeroWindow.xaml;40;10" />
+  </ControlTemplate>
+  <Style x:Key="{dxrt:DXRibbonAeroWindowThemeKey ResourceKey=AeroWindowCaptionStyle}" TargetType="{x:Type ContentControl}">
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="HorizontalAlignment" Value="Left" />
+    <Setter Property="Margin" Value="6,3,6,3" />
+    <Setter Property="Foreground" Value="#FF000000" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="ContentControl">
+          <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\RibbonAeroWindow.xaml;50;22">
+            <Border Background="White" CornerRadius="6" Opacity="0.3" Margin="-2,0,-2,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\RibbonAeroWindow.xaml;51;26">
+              <Border.Effect>
+                <BlurEffect Radius="10" />
+              </Border.Effect>
+            </Border>
+            <TextBlock x:Name="PART_Text" Background="{x:Null}" Foreground="Black" Text="{Binding Path=(dxc:FloatingContainer.FloatingContainer).Caption, RelativeSource={RelativeSource AncestorType=ContentPresenter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\RibbonAeroWindow.xaml;56;26" />
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <DataTemplate x:Key="{dxrt:DXRibbonAeroWindowThemeKey ResourceKey=AeroWindowCaptionTemplate}">
+    <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\RibbonAeroWindow.xaml;63;10">
+      <dxb:ContentViewport KeepPositiveLeftContentPosition="True" ClipToBounds="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\RibbonAeroWindow.xaml;64;14">
+        <TextBlock x:Name="TitleTextBlock" Foreground="#FFD4E4F8" Text="{Binding}" TextWrapping="Wrap" Margin="6,3,6,3" VerticalAlignment="Center" IsHitTestVisible="False" HorizontalAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\RibbonAeroWindow.xaml;65;18" />
+      </dxb:ContentViewport>
+    </Grid>
+  </DataTemplate>
+  <Style x:Key="{dxrt:DXRibbonAeroWindowThemeKey ResourceKey=AeroWindowIconAndCaptionAreaStyle}" TargetType="{x:Type ContentControl}">
+    <Setter Property="VerticalAlignment" Value="Top" />
+  </Style>
+  <Style x:Key="{dxrt:DXRibbonAeroWindowThemeKey ResourceKey=AeroWindowIconStyle}" TargetType="{x:Type Image}">
+    <Setter Property="VerticalAlignment" Value="Top" />
+    <Setter Property="Width" Value="Auto" />
+    <Setter Property="Height" Value="Auto" />
+    <Setter Property="Margin" Value="7,7,0,3" />
+    <Setter Property="Stretch" Value="None" />
+  </Style>
+</ResourceDictionary>

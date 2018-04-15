@@ -1,0 +1,1639 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" xmlns:ve="http://schemas.devexpress.com/winfx/2008/xaml/docking/visualelements" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/docking/themekeys" xmlns:dxcn="http://schemas.devexpress.com/winfx/2008/xaml/core/internal">
+
+    <!-- MDIButton -->
+    <ControlTemplate x:Key="{dxt:MDIButtonElementsThemeKey ResourceKey=ButtonBorder}" TargetType="dxb:ItemBorderControl">
+        <Grid Height="17" Width="17">
+            <Border x:Name="HoverState" CornerRadius="2" BorderThickness="1" Padding="1" Opacity="0">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFF4F6FE" Offset="0" />
+                        <GradientStop Color="#FFF4F6FE" Offset="1" />
+                        <GradientStop Color="#FFECEFF7" Offset="0.25" />
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Border.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFCECFD5" Offset="0" />
+                        <GradientStop Color="#FFCECFD5" Offset="1" />
+                        <GradientStop Color="#FFACAFB8" Offset="0.25" /> 
+                    </LinearGradientBrush>
+                </Border.BorderBrush>
+                <Border CornerRadius="1">
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFE5EBFF" Offset="0" />
+                            <GradientStop Color="#FFE4EBFD" Offset="1" />
+                            <GradientStop Color="#FFDEE6FE" Offset="0.25" />
+                        </LinearGradientBrush>
+                    </Border.Background>
+                </Border>
+            </Border>
+            <Border x:Name="PressedState" CornerRadius="2" BorderThickness="1" Padding="1" Opacity="0">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFF4F6FE" Offset="0" />
+                        <GradientStop Color="#FFF4F6FE" Offset="1" />
+                        <GradientStop Color="#FFECEFF7" Offset="0.25" />
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Border.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFAEAFB5" Offset="0" />
+                        <GradientStop Color="#FFAEAFB5" Offset="1" />
+                        <GradientStop Color="#FF8C8F98" Offset="0.25" />
+                    </LinearGradientBrush>
+                </Border.BorderBrush>
+                <Border CornerRadius="1">
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFE7EDFF" Offset="0" />
+                            <GradientStop Color="#FFDEE6FE" Offset="1" />
+                            <GradientStop Color="#FFD2DEFC" Offset="0.25" />
+                        </LinearGradientBrush>
+                    </Border.Background>
+                </Border>
+            </Border>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="HideBorderSide">
+                    <VisualState x:Name="None" />
+                    <VisualState x:Name="Left" />
+                    <VisualState x:Name="Right" />
+                    <VisualState x:Name="Top" />
+                    <VisualState x:Name="Bottom" />
+                    <VisualState x:Name="All" />
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="ArrowHideBorderSide">
+                    <VisualState x:Name="ArrowNone" />
+                    <VisualState x:Name="ArrowLeft" />
+                    <VisualState x:Name="ArrowTop" />
+                    <VisualState x:Name="ArrowRight" />
+                    <VisualState x:Name="ArrowBottom" />
+                    <VisualState x:Name="ArrowAll" />
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="ActiveState">
+                    <VisualState x:Name="Active" />
+                    <VisualState x:Name="Inactive" />
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="State">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Hover">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="PressedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Checked" />
+                    <VisualState x:Name="HoverChecked" />
+                    <VisualState x:Name="Focused" />
+                    <VisualState x:Name="Customization" />
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Grid>
+    </ControlTemplate>
+
+    <Style x:Key="{dxt:MDIButtonElementsThemeKey ResourceKey=ButtonBorderStyle}" TargetType="dxb:ItemBorderControl">
+        <Setter Property="Template" Value="{DynamicResource {dxt:MDIButtonElementsThemeKey ResourceKey=ButtonBorder}}" />
+    </Style>
+
+    <DataTemplate x:Key="{dxt:GlyphElementsThemeKey ResourceKey=MDIButtonClose}">
+        <Path x:Name="Glyph" Stretch="Fill" Fill="#FF201F35" Data="F1 M 76,144L 78,144L 74.5,147.5L 78,151L 76,151L 73.5,148.5L 71,151L 69,151L 72.5,147.5L 69,144L 71,144L 73.5,146.5L 76,144 Z" Width="10" Height="7" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxt:GlyphElementsThemeKey ResourceKey=MDIButtonRestore}">
+        <Path Stretch="Fill" Fill="#FF201F35" Data="F1 M 133,48.0001L 135,48.0001L 135,44.9999L 141,44.9999L 141,49.9999L 140,49.9999L 140,49L 140,47L 136,47L 136,48.0001L 139,48.0001L 139,53.0001L 133,53.0001L 133,48.0001 Z M 134,50.0002L 134,52.0002L 138,52.0002L 138,50.0002L 134,50.0002 Z" Width="8" Height="8" />      
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxt:GlyphElementsThemeKey ResourceKey=MDIButtonMinimize}">
+        <Rectangle Fill="#FF201F35" StrokeThickness="0" Margin="0,0,0,3" Width="7" Height="2" VerticalAlignment="Bottom" />
+    </DataTemplate>
+
+    <!-- GroupBox Button -->
+    <Style TargetType="ve:GroupBoxControlBoxButton" x:Key="GroupPane_ExpandButton">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ve:GroupBoxControlBoxButton">
+                        <Grid x:Name="Button" Background="Transparent" Width="14" Height="14" Margin="2" ve:DockPane.HitTestType="ExpandButton">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="PressedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="ExpandedStates">
+                                    <VisualState x:Name="Expanded" />
+                                    <VisualState x:Name="Collapsed">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="GlyphClose" Storyboard.TargetProperty="(Control.Visibility)" dxcn:ValueSetter.Visibility="Collapsed" />
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="GlyphOpen" Storyboard.TargetProperty="(Control.Visibility)" dxcn:ValueSetter.Visibility="Visible" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border x:Name="HoverState" CornerRadius="2" Padding="1" Opacity="0">
+                                <Border.Background>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFD6D8DC" Offset="0" />
+                                        <GradientStop Color="#FFC7C9CF" Offset="1" />
+                                        <GradientStop Color="#FFA8ABB4" Offset="0.25" />
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Border BorderThickness="1" CornerRadius="1" Padding="1">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE8EDFF" Offset="0" />
+                                            <GradientStop Color="#FFE1E8FE" Offset="1" />
+                                            <GradientStop Color="#FFD3DEFC" Offset="0.25" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <Border.BorderBrush>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFF6F8FF" Offset="0" />
+                                            <GradientStop Color="#FFF1F5FF" Offset="1" />
+                                            <GradientStop Color="#FFEAEFFE" Offset="0.25" />
+                                        </LinearGradientBrush>
+                                    </Border.BorderBrush>
+                                </Border>
+                            </Border>
+                            <Border x:Name="PressedState" CornerRadius="2" Padding="1" Opacity="0">
+                                <Border.Background>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FF8A8D98" Offset="0" />
+                                        <GradientStop Color="#FFB0B2BA" Offset="1" />
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Border BorderThickness="1" CornerRadius="1" Padding="1">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFBDBEC7" Offset="0" />
+                                            <GradientStop Color="#FFC7C8D0" Offset="1" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <Border.BorderBrush>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFB1B3BC" Offset="0" />
+                                            <GradientStop Color="#FFC4C6CE" Offset="1" />
+                                        </LinearGradientBrush>
+                                    </Border.BorderBrush>
+                                </Border>
+                            </Border>
+                            <Grid x:Name="GlyphClose" Width="8" Height="5">
+                                <Path Stretch="Fill" Fill="#BFFFFFFF" Data="F1 M 1668.5,814L 1668.5,815L 1666.5,815L 1664.5,813L 1662.5,815L 1660.5,815L 1660.5,814L 1664.5,810L 1668.5,814 Z " Margin="0,1,0,-1" />
+                                <Path x:Name="PathClose" Stretch="Fill" Fill="#FF80838F" Data="F1 M 1668.5,814L 1668.5,815L 1666.5,815L 1664.5,813L 1662.5,815L 1660.5,815L 1660.5,814L 1664.5,810L 1668.5,814 Z " />
+                            </Grid>
+                            <Grid x:Name="GlyphOpen" Width="8" Height="5" Margin="0,0,0,-1" Visibility="Collapsed">
+                                <Path Stretch="Fill" Fill="#BFFFFFFF" Data="F1 M 1668.5,818L 1668.5,817L 1666.5,817L 1664.5,819L 1662.5,817L 1660.5,817L 1660.5,818L 1664.5,822L 1668.5,818 Z " Margin="0,1,0,-1" />
+                                <Path x:Name="PathOpen" Stretch="Fill" Fill="#FF80838F" Data="F1 M 1668.5,818L 1668.5,817L 1666.5,817L 1664.5,819L 1662.5,817L 1660.5,817L 1660.5,818L 1664.5,822L 1668.5,818 Z " />
+                            </Grid>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <DataTemplate x:Key="{dxt:GroupPaneElementsThemeKey ResourceKey=ExpandButton}">
+        <ve:GroupBoxControlBoxButton x:Name="PART_Button" Style="{StaticResource GroupPane_ExpandButton}" />
+    </DataTemplate>
+
+    <!-- LayoutPanel Buttons -->
+    <Style x:Key="DockPane_PinButton" TargetType="ve:DockPaneControlBoxButton">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ve:DockPaneControlBoxButton">
+                        <Grid x:Name="Root" ve:DockPane.HitTestType="PinButton">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                                            <ColorAnimation Storyboard.TargetName="PinnedPath" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF000000" />
+                                            <ColorAnimation Storyboard.TargetName="UnpinnedPath" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF000000" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="PressedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                                            <ColorAnimation Storyboard.TargetName="PinnedPath" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF000000" />
+                                            <ColorAnimation Storyboard.TargetName="UnpinnedPath" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF000000" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="0.35" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="PinnedStates">
+                                    <VisualState x:Name="Unpinned" />
+                                    <VisualState x:Name="Pinned">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.Visibility)" Storyboard.TargetName="PinnedPath">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.Visibility)" Storyboard.TargetName="UnpinnedPath">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Collapsed</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border x:Name="HoverState" CornerRadius="2" BorderThickness="1" Padding="1" Opacity="0">
+                                <Border.Background>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFF4F6FE" Offset="0" />
+                                        <GradientStop Color="#FFF4F6FE" Offset="1" />
+                                        <GradientStop Color="#FFECEFF7" Offset="0.25" />
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Border.BorderBrush>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFCECFD5" Offset="0" />
+                                        <GradientStop Color="#FFCECFD5" Offset="1" />
+                                        <GradientStop Color="#FFACAFB8" Offset="0.25" /> 
+                                    </LinearGradientBrush>
+                                </Border.BorderBrush>
+                                <Border CornerRadius="1">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE5EBFF" Offset="0" />
+                                            <GradientStop Color="#FFE4EBFD" Offset="1" />
+                                            <GradientStop Color="#FFDEE6FE" Offset="0.25" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                </Border>
+                            </Border>
+                            <Border x:Name="PressedState" CornerRadius="2" BorderThickness="1" Padding="1" Opacity="0">
+                                <Border.Background>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFF4F6FE" Offset="0" />
+                                        <GradientStop Color="#FFF4F6FE" Offset="1" />
+                                        <GradientStop Color="#FFECEFF7" Offset="0.25" />
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Border.BorderBrush>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFAEAFB5" Offset="0" />
+                                        <GradientStop Color="#FFAEAFB5" Offset="1" />
+                                        <GradientStop Color="#FF8C8F98" Offset="0.25" />
+                                    </LinearGradientBrush>
+                                </Border.BorderBrush>
+                                <Border CornerRadius="1">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE7EDFF" Offset="0" />
+                                            <GradientStop Color="#FFDEE6FE" Offset="1" />
+                                            <GradientStop Color="#FFD2DEFC" Offset="0.25" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                </Border>
+                            </Border>
+                            <Grid Width="17" Height="17">
+                                <Path x:Name="PinnedPath" Fill="#FF80838F" Stretch="Fill" Data="F1M1252,785L1252,786 1257,786 1257,791 1252,791 1252,792 1251,792 1251,789 1248,789 1248,788 1251,788 1251,785 1252,785z M1256,787L1252,787 1252,788 1256,788 1256,787z" Width="9" Height="7" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed" />
+                                <Path x:Name="UnpinnedPath" Fill="#FF80838F" Stretch="Fill" Data="F1M1265,788L1266,788 1266,783 1271,783 1271,788 1272,788 1272,789 1269,789 1269,792 1268,792 1268,789 1265,789 1265,788z M1267,784L1267,788 1268,788 1268,784 1267,784z" Margin="0,1,0,0" Width="7" Height="9" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Grid>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="DockPane_CloseButton" TargetType="ve:ControlBoxButton">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ve:ControlBoxButton">
+                        <Grid x:Name="Root" ve:DockPane.HitTestType="CloseButton">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                                            <ColorAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF000000" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="PressedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                                            <ColorAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF000000" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="0.35" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border x:Name="HoverState" CornerRadius="2" BorderThickness="1" Padding="1" Opacity="0">
+                                <Border.Background>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFF4F6FE" Offset="0" />
+                                        <GradientStop Color="#FFF4F6FE" Offset="1" />
+                                        <GradientStop Color="#FFECEFF7" Offset="0.25" />
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Border.BorderBrush>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFCECFD5" Offset="0" />
+                                        <GradientStop Color="#FFCECFD5" Offset="1" />
+                                        <GradientStop Color="#FFACAFB8" Offset="0.25" /> 
+                                    </LinearGradientBrush>
+                                </Border.BorderBrush>
+                                <Border CornerRadius="1">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE5EBFF" Offset="0" />
+                                            <GradientStop Color="#FFE4EBFD" Offset="1" />
+                                            <GradientStop Color="#FFDEE6FE" Offset="0.25" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                </Border>
+                            </Border>
+                            <Border x:Name="PressedState" CornerRadius="2" BorderThickness="1" Padding="1" Opacity="0">
+                                <Border.Background>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFF4F6FE" Offset="0" />
+                                        <GradientStop Color="#FFF4F6FE" Offset="1" />
+                                        <GradientStop Color="#FFECEFF7" Offset="0.25" />
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Border.BorderBrush>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFAEAFB5" Offset="0" />
+                                        <GradientStop Color="#FFAEAFB5" Offset="1" />
+                                        <GradientStop Color="#FF8C8F98" Offset="0.25" />
+                                    </LinearGradientBrush>
+                                </Border.BorderBrush>
+                                <Border CornerRadius="1">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE7EDFF" Offset="0" />
+                                            <GradientStop Color="#FFDEE6FE" Offset="1" />
+                                            <GradientStop Color="#FFD2DEFC" Offset="0.25" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                </Border>
+                            </Border>
+                            <Grid Width="17" Height="17">
+                                <Path x:Name="Glyph" Stretch="Fill" Fill="#FF80838F" Data="F1 M 76,144L 78,144L 74.5,147.5L 78,151L 76,151L 73.5,148.5L 71,151L 69,151L 72.5,147.5L 69,144L 71,144L 73.5,146.5L 76,144 Z" Width="9" Height="7" />
+                            </Grid>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <DataTemplate x:Key="{dxt:DockPaneElementsThemeKey ResourceKey=CloseButton}">
+        <ve:ControlBoxButton x:Name="PART_Button" Style="{StaticResource DockPane_CloseButton}" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxt:DockPaneElementsThemeKey ResourceKey=PinButton}">
+        <ve:DockPaneControlBoxButton x:Name="PART_Button" Style="{StaticResource DockPane_PinButton}" />
+    </DataTemplate>
+
+    <!-- FloatGroup Buttons -->
+    <Style x:Key="FloatPane_CloseButton" TargetType="ve:ControlBoxButton">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ve:ControlBoxButton">
+                        <Grid x:Name="Button" ve:DockPane.HitTestType="CloseButton" Background="Transparent">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                                            <ColorAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF201F35" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="PressedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                                            <ColorAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF201F35" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="0.35" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border x:Name="HoverState" Background="#FFACAEB6" CornerRadius="2" Opacity="0">
+                                <Border Background="#FFF4F4F6" CornerRadius="1" Margin="1">
+                                    <Border Margin="0,1,0,0">
+                                        <Border.Background>
+                                            <RadialGradientBrush>
+                                                <RadialGradientBrush.RelativeTransform>
+                                                    <TransformGroup>
+                                                        <TranslateTransform X="0" Y="0.5" />
+                                                    </TransformGroup>
+                                                </RadialGradientBrush.RelativeTransform>
+                                                <GradientStop Color="#FFFFFFFF" Offset="0" />
+                                                <GradientStop Color="#FFE3E5E9" Offset="1" />
+                                            </RadialGradientBrush>
+                                        </Border.Background>
+                                    </Border>
+                                </Border>
+                            </Border>
+                            <Border x:Name="PressedState" Background="#FF9FA2AB" CornerRadius="2" Opacity="0">
+                                <Border CornerRadius="1" Margin="1">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFC7C8CD" Offset="0" />
+                                            <GradientStop Color="#FFC8C9CF" Offset="1" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <Border Margin="1">
+                                        <Border.Background>
+                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                <GradientStop Color="#FFD5D6D9" Offset="0" />
+                                                <GradientStop Color="#FFD1D2D8" Offset="1" />
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                    </Border>
+                                </Border>
+                            </Border>
+                            <Path x:Name="Glyph" Stretch="Fill" Fill="#FF80838F" Data="F1 M 112,158L 115,154.5L 112,151L 115,151L 116.5,152.75L 118,151L 121,151L 118,154.5L 121,158L 118,158L 116.5,156.25L 115,158L 112,158 Z" Width="9" Height="7" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="FloatPane_MaximizeButton" TargetType="ve:ControlBoxButton">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ve:ControlBoxButton">
+                        <Grid x:Name="Root" ve:DockPane.HitTestType="MaximizeButton" Background="Transparent">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                                            <ColorAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="(Rectangle.Stroke).(SolidColorBrush.Color)" Duration="0" To="#FF201F35" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="PressedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                                            <ColorAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="(Rectangle.Stroke).(SolidColorBrush.Color)" Duration="0" To="#FF201F35" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="0.35" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border x:Name="HoverState" Background="#FFACAEB6" CornerRadius="2" Opacity="0">
+                                <Border Background="#FFF4F4F6" CornerRadius="1" Margin="1">
+                                    <Border Margin="0,1,0,0">
+                                        <Border.Background>
+                                            <RadialGradientBrush>
+                                                <RadialGradientBrush.RelativeTransform>
+                                                    <TransformGroup>
+                                                        <TranslateTransform X="0" Y="0.5" />
+                                                    </TransformGroup>
+                                                </RadialGradientBrush.RelativeTransform>
+                                                <GradientStop Color="#FFFFFFFF" Offset="0" />
+                                                <GradientStop Color="#FFE3E5E9" Offset="1" />
+                                            </RadialGradientBrush>
+                                        </Border.Background>
+                                    </Border>
+                                </Border>
+                            </Border>
+                            <Border x:Name="PressedState" Background="#FF9FA2AB" CornerRadius="2" Opacity="0">
+                                <Border CornerRadius="1" Margin="1">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFC7C8CD" Offset="0" />
+                                            <GradientStop Color="#FFC8C9CF" Offset="1" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <Border Margin="1">
+                                        <Border.Background>
+                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                <GradientStop Color="#FFD5D6D9" Offset="0" />
+                                                <GradientStop Color="#FFD1D2D8" Offset="1" />
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                    </Border>
+                                </Border>
+                            </Border>
+                            <Rectangle x:Name="Glyph" Stroke="#FF80838F" StrokeThickness="2" Width="9" Height="7" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="FloatPane_RestoreButton" TargetType="ve:ControlBoxButton">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ve:ControlBoxButton">
+                        <Grid x:Name="Root" ve:DockPane.HitTestType="RestoreButton" Background="Transparent">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                                            <ColorAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF201F35" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="PressedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                                            <ColorAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF201F35" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="0.35" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border x:Name="HoverState" Background="#FFACAEB6" CornerRadius="2" Opacity="0">
+                                <Border Background="#FFF4F4F6" CornerRadius="1" Margin="1">
+                                    <Border Margin="0,1,0,0">
+                                        <Border.Background>
+                                            <RadialGradientBrush>
+                                                <RadialGradientBrush.RelativeTransform>
+                                                    <TransformGroup>
+                                                        <TranslateTransform X="0" Y="0.5" />
+                                                    </TransformGroup>
+                                                </RadialGradientBrush.RelativeTransform>
+                                                <GradientStop Color="#FFFFFFFF" Offset="0" />
+                                                <GradientStop Color="#FFE3E5E9" Offset="1" />
+                                            </RadialGradientBrush>
+                                        </Border.Background>
+                                    </Border>
+                                </Border>
+                            </Border>
+                            <Border x:Name="PressedState" Background="#FF9FA2AB" CornerRadius="2" Opacity="0">
+                                <Border CornerRadius="1" Margin="1">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFC7C8CD" Offset="0" />
+                                            <GradientStop Color="#FFC8C9CF" Offset="1" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <Border Margin="1">
+                                        <Border.Background>
+                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                <GradientStop Color="#FFD5D6D9" Offset="0" />
+                                                <GradientStop Color="#FFD1D2D8" Offset="1" />
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                    </Border>
+                                </Border>
+                            </Border>
+                            <Path x:Name="Glyph" Stretch="Fill" Fill="#FF80838F" Data="F1 M 133,48.0001L 135,48.0001L 135,44.9999L 141,44.9999L 141,49.9999L 140,49.9999L 140,49L 140,47L 136,47L 136,48.0001L 139,48.0001L 139,53.0001L 133,53.0001L 133,48.0001 Z M 134,50.0002L 134,52.0002L 138,52.0002L 138,50.0002L 134,50.0002 Z" Width="8" Height="8" Margin="1,1,0,0" />  
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <DataTemplate x:Key="{dxt:FloatPaneElementsThemeKey ResourceKey=CloseButton}">
+        <ve:ControlBoxButton x:Name="PART_Button" Style="{StaticResource FloatPane_CloseButton}" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxt:FloatPaneElementsThemeKey ResourceKey=MaximizeButton}">
+        <ve:ControlBoxButton x:Name="PART_Button" Style="{StaticResource FloatPane_MaximizeButton}" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxt:FloatPaneElementsThemeKey ResourceKey=RestoreButton}">
+        <ve:ControlBoxButton x:Name="PART_Button" Style="{StaticResource FloatPane_RestoreButton}" />
+    </DataTemplate>
+
+    <!-- Document Buttons -->
+    <Style x:Key="Document_CloseButton" TargetType="ve:ControlBoxButton">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ve:ControlBoxButton">
+                        <Grid x:Name="Root" Background="Transparent" Margin="1" ve:DockPane.HitTestType="CloseButton">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="NormalState">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="HoverState">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="PressedState">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Root" Duration="0" To="0.35" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border x:Name="NormalState" Background="#FFACAEB6" CornerRadius="2" Visibility="Collapsed">
+                                <Border Background="#FFF3F3F6" CornerRadius="1" Margin="1">
+                                    <Border Margin="0,1,0,0">
+                                        <Border.Background>
+                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                <GradientStop Color="#FFE4E5E9" Offset="0" />
+                                                <GradientStop Color="#FFCDCED4" Offset="1" />
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                    </Border>
+                                </Border>
+                            </Border>
+                            <Border x:Name="HoverState" Background="#FFACAEB6" CornerRadius="2" Visibility="Collapsed">
+                                <Border Background="#FFF4F4F6" CornerRadius="1" Margin="1">
+                                    <Border Margin="0,1,0,0">
+                                        <Border.Background>
+                                            <RadialGradientBrush>
+                                                <RadialGradientBrush.RelativeTransform>
+                                                    <TransformGroup>
+                                                        <TranslateTransform X="0" Y="0.5" />
+                                                    </TransformGroup>
+                                                </RadialGradientBrush.RelativeTransform>
+                                                <GradientStop Color="#FFFFFFFF" Offset="0" />
+                                                <GradientStop Color="#FFE3E5E9" Offset="1" />
+                                            </RadialGradientBrush>
+                                        </Border.Background>
+                                    </Border>
+                                </Border>
+                            </Border>
+                            <Border x:Name="PressedState" Background="#FF9FA2AB" CornerRadius="2" Visibility="Collapsed">
+                                <Border CornerRadius="1" Margin="1">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFC7C8CD" Offset="0" />
+                                            <GradientStop Color="#FFC8C9CF" Offset="1" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <Border Margin="1">
+                                        <Border.Background>
+                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                <GradientStop Color="#FFD5D6D9" Offset="0" />
+                                                <GradientStop Color="#FFD1D2D8" Offset="1" />
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                    </Border>
+                                </Border>
+                            </Border>
+                            <Grid x:Name="Glyph" HorizontalAlignment="Center" VerticalAlignment="Center" Width="9" Height="7">
+                                <Path Stretch="Fill" Fill="#7FFFFFFF" Data="F1 M 168,57L 168,58L 169,58L 169,59L 170,59L 170,60L 171,60L 171,61L 170,61L 170,62L 169,62L 169,63L 168,63L 168,64L 171,64L 171,63L 172,63L 172,62L 173,62L 173,63L 174,63L 174,64L 177,64L 177,63L 176,63L 176,62L 175,62L 175,61L 174,61L 174,60L 175,60L 175,59L 176,59L 176,58L 177,58L 177,57L 174,57L 174,58L 173,58L 173,59L 172,59L 172,58L 171,58L 171,57L 168,57 Z" Margin="0,1,0,-1" />
+                                <Path Stretch="Fill" Fill="#FF80838F" Data="F1 M 168,57L 168,58L 169,58L 169,59L 170,59L 170,60L 171,60L 171,61L 170,61L 170,62L 169,62L 169,63L 168,63L 168,64L 171,64L 171,63L 172,63L 172,62L 173,62L 173,63L 174,63L 174,64L 177,64L 177,63L 176,63L 176,62L 175,62L 175,61L 174,61L 174,60L 175,60L 175,59L 176,59L 176,58L 177,58L 177,57L 174,57L 174,58L 173,58L 173,59L 172,59L 172,58L 171,58L 171,57L 168,57 Z" />
+                            </Grid>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Document_MaximizeButton" TargetType="ve:ControlBoxButton">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ve:ControlBoxButton">
+                        <Grid x:Name="Root" Background="Transparent" Margin="1" ve:DockPane.HitTestType="MaximizeButton">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="NormalState">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="HoverState">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="PressedState">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Root" Duration="0" To="0.35" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border x:Name="NormalState" Background="#FFACAEB6" CornerRadius="2" Visibility="Collapsed">
+                                <Border Background="#FFF3F3F6" CornerRadius="1" Margin="1">
+                                    <Border Margin="0,1,0,0">
+                                        <Border.Background>
+                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                <GradientStop Color="#FFE4E5E9" Offset="0" />
+                                                <GradientStop Color="#FFCDCED4" Offset="1" />
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                    </Border>
+                                </Border>
+                            </Border>
+                            <Border x:Name="HoverState" Background="#FFACAEB6" CornerRadius="2" Visibility="Collapsed">
+                                <Border Background="#FFF4F4F6" CornerRadius="1" Margin="1">
+                                    <Border Margin="0,1,0,0">
+                                        <Border.Background>
+                                            <RadialGradientBrush>
+                                                <RadialGradientBrush.RelativeTransform>
+                                                    <TransformGroup>
+                                                        <TranslateTransform X="0" Y="0.5" />
+                                                    </TransformGroup>
+                                                </RadialGradientBrush.RelativeTransform>
+                                                <GradientStop Color="#FFFFFFFF" Offset="0" />
+                                                <GradientStop Color="#FFE3E5E9" Offset="1" />
+                                            </RadialGradientBrush>
+                                        </Border.Background>
+                                    </Border>
+                                </Border>
+                            </Border>
+                            <Border x:Name="PressedState" Background="#FF9FA2AB" CornerRadius="2" Visibility="Collapsed">
+                                <Border CornerRadius="1" Margin="1">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFC7C8CD" Offset="0" />
+                                            <GradientStop Color="#FFC8C9CF" Offset="1" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <Border Margin="1">
+                                        <Border.Background>
+                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                <GradientStop Color="#FFD5D6D9" Offset="0" />
+                                                <GradientStop Color="#FFD1D2D8" Offset="1" />
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                    </Border>
+                                </Border>
+                            </Border>
+                            <Grid x:Name="Glyph" Width="9" Height="7" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Rectangle Stroke="#7FFFFFFF" StrokeThickness="2" Margin="0,1,0,-1" />
+                                <Rectangle Stroke="#FF80838F" StrokeThickness="2" />
+                            </Grid>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Document_MinimizeButton" TargetType="ve:ControlBoxButton">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ve:ControlBoxButton">
+                        <Grid x:Name="Root" Background="Transparent" Margin="1" ve:DockPane.HitTestType="MinimizeButton">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="NormalState">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="HoverState">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="PressedState">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Root" Duration="0" To="0.35" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border x:Name="NormalState" Background="#FFACAEB6" CornerRadius="2" Visibility="Collapsed">
+                                <Border Background="#FFF3F3F6" CornerRadius="1" Margin="1">
+                                    <Border Margin="0,1,0,0">
+                                        <Border.Background>
+                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                <GradientStop Color="#FFE4E5E9" Offset="0" />
+                                                <GradientStop Color="#FFCDCED4" Offset="1" />
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                    </Border>
+                                </Border>
+                            </Border>
+                            <Border x:Name="HoverState" Background="#FFACAEB6" CornerRadius="2" Visibility="Collapsed">
+                                <Border Background="#FFF4F4F6" CornerRadius="1" Margin="1">
+                                    <Border Margin="0,1,0,0">
+                                        <Border.Background>
+                                            <RadialGradientBrush>
+                                                <RadialGradientBrush.RelativeTransform>
+                                                    <TransformGroup>
+                                                        <TranslateTransform X="0" Y="0.5" />
+                                                    </TransformGroup>
+                                                </RadialGradientBrush.RelativeTransform>
+                                                <GradientStop Color="#FFFFFFFF" Offset="0" />
+                                                <GradientStop Color="#FFE3E5E9" Offset="1" />
+                                            </RadialGradientBrush>
+                                        </Border.Background>
+                                    </Border>
+                                </Border>
+                            </Border>
+                            <Border x:Name="PressedState" Background="#FF9FA2AB" CornerRadius="2" Visibility="Collapsed">
+                                <Border CornerRadius="1" Margin="1">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFC7C8CD" Offset="0" />
+                                            <GradientStop Color="#FFC8C9CF" Offset="1" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <Border Margin="1">
+                                        <Border.Background>
+                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                <GradientStop Color="#FFD5D6D9" Offset="0" />
+                                                <GradientStop Color="#FFD1D2D8" Offset="1" />
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                    </Border>
+                                </Border>
+                            </Border>
+                            <Grid x:Name="Glyph" Width="9" Height="9" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Rectangle Fill="#7FFFFFFF" StrokeThickness="0" Width="9" Height="3" VerticalAlignment="Bottom" />
+                                <Rectangle Fill="#FF80838F" StrokeThickness="0" Width="9" Height="2" VerticalAlignment="Bottom" Margin="0,-1,0,1" />
+                            </Grid>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Document_RestoreButton" TargetType="ve:ControlBoxButton">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ve:ControlBoxButton">
+                        <Grid x:Name="Root" Background="Transparent" Margin="1" ve:DockPane.HitTestType="RestoreButton">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="NormalState">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="HoverState">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="PressedState">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Root" Duration="0" To="0.35" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border x:Name="NormalState" Background="#FFACAEB6" CornerRadius="2" Visibility="Collapsed">
+                                <Border Background="#FFF3F3F6" CornerRadius="1" Margin="1">
+                                    <Border Margin="0,1,0,0">
+                                        <Border.Background>
+                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                <GradientStop Color="#FFE4E5E9" Offset="0" />
+                                                <GradientStop Color="#FFCDCED4" Offset="1" />
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                    </Border>
+                                </Border>
+                            </Border>
+                            <Border x:Name="HoverState" Background="#FFACAEB6" CornerRadius="2" Visibility="Collapsed">
+                                <Border Background="#FFF4F4F6" CornerRadius="1" Margin="1">
+                                    <Border Margin="0,1,0,0">
+                                        <Border.Background>
+                                            <RadialGradientBrush>
+                                                <RadialGradientBrush.RelativeTransform>
+                                                    <TransformGroup>
+                                                        <TranslateTransform X="0" Y="0.5" />
+                                                    </TransformGroup>
+                                                </RadialGradientBrush.RelativeTransform>
+                                                <GradientStop Color="#FFFFFFFF" Offset="0" />
+                                                <GradientStop Color="#FFE3E5E9" Offset="1" />
+                                            </RadialGradientBrush>
+                                        </Border.Background>
+                                    </Border>
+                                </Border>
+                            </Border>
+                            <Border x:Name="PressedState" Background="#FF9FA2AB" CornerRadius="2" Visibility="Collapsed">
+                                <Border CornerRadius="1" Margin="1">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFC7C8CD" Offset="0" />
+                                            <GradientStop Color="#FFC8C9CF" Offset="1" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <Border Margin="1">
+                                        <Border.Background>
+                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                <GradientStop Color="#FFD5D6D9" Offset="0" />
+                                                <GradientStop Color="#FFD1D2D8" Offset="1" />
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                    </Border>
+                                </Border>
+                            </Border>
+                            <Grid x:Name="Glyph" Width="11" Height="9" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Rectangle Stroke="#7FFFFFFF" Height="6" Width="8" VerticalAlignment="Top" HorizontalAlignment="Right" StrokeThickness="2" Margin="0,1,0,-1" />
+                                <Rectangle Stroke="#FF80838F" Height="6" Width="8" VerticalAlignment="Top" HorizontalAlignment="Right" StrokeThickness="2" />
+                                <Rectangle Fill="#FFCDCED4" Height="6" Width="8" VerticalAlignment="Bottom" HorizontalAlignment="Left" StrokeThickness="2" />
+                                <Rectangle Stroke="#7FFFFFFF" Height="6" Width="8" VerticalAlignment="Bottom" HorizontalAlignment="Left" StrokeThickness="2" Margin="0,1,0,-1" />
+                                <Rectangle Stroke="#FF80838F" Height="6" Width="8" VerticalAlignment="Bottom" HorizontalAlignment="Left" StrokeThickness="2" />
+                            </Grid>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <DataTemplate x:Key="{dxt:DocumentElementsThemeKey ResourceKey=CloseButton}">
+        <ve:ControlBoxButton x:Name="PART_Button" Style="{StaticResource Document_CloseButton}" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxt:DocumentElementsThemeKey ResourceKey=MaximizeButton}">
+        <ve:ControlBoxButton x:Name="PART_Button" Style="{StaticResource Document_MaximizeButton}" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxt:DocumentElementsThemeKey ResourceKey=MinimizeButton}">
+        <ve:ControlBoxButton x:Name="PART_Button" Style="{StaticResource Document_MinimizeButton}" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxt:DocumentElementsThemeKey ResourceKey=RestoreButton}">
+        <ve:ControlBoxButton x:Name="PART_Button" Style="{StaticResource Document_RestoreButton}" />
+    </DataTemplate>
+
+    <!-- DocumentGroup Buttons -->
+    <Style x:Key="DocumentPane_CloseButton" TargetType="ve:ControlBoxButton">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ve:ControlBoxButton">
+                        <Grid ve:DockPane.HitTestType="CloseButton">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF201F35" />
+                                            <DoubleAnimation Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF201F35" />
+                                            <DoubleAnimation Storyboard.TargetName="PressedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="Opacity" Duration="0" To="0.35" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border x:Name="HoverState" CornerRadius="2" BorderThickness="1" Padding="1" Opacity="0">
+                                <Border.Background>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFF4F6FE" Offset="0" />
+                                        <GradientStop Color="#FFF4F6FE" Offset="1" />
+                                        <GradientStop Color="#FFECEFF7" Offset="0.25" />
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Border.BorderBrush>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFCECFD5" Offset="0" />
+                                        <GradientStop Color="#FFCECFD5" Offset="1" />
+                                        <GradientStop Color="#FFACAFB8" Offset="0.25" /> 
+                                    </LinearGradientBrush>
+                                </Border.BorderBrush>
+                                <Border CornerRadius="1">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE5EBFF" Offset="0" />
+                                            <GradientStop Color="#FFE4EBFD" Offset="1" />
+                                            <GradientStop Color="#FFDEE6FE" Offset="0.25" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                </Border>
+                            </Border>
+                            <Border x:Name="PressedState" CornerRadius="2" BorderThickness="1" Padding="1" Opacity="0">
+                                <Border.Background>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFF4F6FE" Offset="0" />
+                                        <GradientStop Color="#FFF4F6FE" Offset="1" />
+                                        <GradientStop Color="#FFECEFF7" Offset="0.25" />
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Border.BorderBrush>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFAEAFB5" Offset="0" />
+                                        <GradientStop Color="#FFAEAFB5" Offset="1" />
+                                        <GradientStop Color="#FF8C8F98" Offset="0.25" />
+                                    </LinearGradientBrush>
+                                </Border.BorderBrush>
+                                <Border CornerRadius="1">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE7EDFF" Offset="0" />
+                                            <GradientStop Color="#FFDEE6FE" Offset="1" />
+                                            <GradientStop Color="#FFD2DEFC" Offset="0.25" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                </Border>
+                            </Border>
+                            <!-- button panel krestik -->
+                            <Path x:Name="Glyph" Stretch="Fill" Fill="#FF80838F" Data="F1 M 76,144L 78,144L 74.5,147.5L 78,151L 76,151L 73.5,148.5L 71,151L 69,151L 72.5,147.5L 69,144L 71,144L 73.5,146.5L 76,144 Z" Width="10" Height="7" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+
+    
+    <Style x:Key="DocumentPane_ScrollPrevButton" TargetType="ve:ControlBoxButton">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ve:ControlBoxButton">
+                        <Grid ve:DockPane.HitTestType="ScrollPrevButton">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="Red" />
+                                            <DoubleAnimation Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                        <ColorAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="White" />
+                                            <DoubleAnimation Storyboard.TargetName="PressedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                        <ColorAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="Silver" />
+                                            <DoubleAnimation Storyboard.TargetName="Glyph"  Storyboard.TargetProperty="Opacity" Duration="0" To="0.35" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border x:Name="HoverState" CornerRadius="2" BorderThickness="1" Padding="1" Opacity="0">
+                                <Border.Background>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFF4F6FE" Offset="0" />
+                                        <GradientStop Color="#FFF4F6FE" Offset="1" />
+                                        <GradientStop Color="#FFECEFF7" Offset="0.25" />
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Border.BorderBrush>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFCECFD5" Offset="0" />
+                                        <GradientStop Color="#FFCECFD5" Offset="1" />
+                                        <GradientStop Color="#FFACAFB8" Offset="0.25" /> 
+                                    </LinearGradientBrush>
+                                </Border.BorderBrush>
+                                <Border CornerRadius="1">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE5EBFF" Offset="0" />
+                                            <GradientStop Color="#FFE4EBFD" Offset="1" />
+                                            <GradientStop Color="#FFDEE6FE" Offset="0.25" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                </Border>
+                            </Border>
+                            <Border x:Name="PressedState" CornerRadius="2" BorderThickness="1" Padding="1" Opacity="0">
+                                <Border.Background>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFF4F6FE" Offset="0" />
+                                        <GradientStop Color="#FFF4F6FE" Offset="1" />
+                                        <GradientStop Color="#FFECEFF7" Offset="0.25" />
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Border.BorderBrush>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFAEAFB5" Offset="0" />
+                                        <GradientStop Color="#FFAEAFB5" Offset="1" />
+                                        <GradientStop Color="#FF8C8F98" Offset="0.25" />
+                                    </LinearGradientBrush>
+                                </Border.BorderBrush>
+                                <Border CornerRadius="1">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE7EDFF" Offset="0" />
+                                            <GradientStop Color="#FFDEE6FE" Offset="1" />
+                                            <GradientStop Color="#FFD2DEFC" Offset="0.25" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                </Border>
+                            </Border>
+                            <!-- left arrow -->
+                            <Path x:Name="Glyph" Stretch="Fill" Fill="Orange" Data="F1 M 1235,898L 1231,894L 1235,890L 1235,898 Z" Margin="0,0,2,0" Width="4" Height="8" />                            
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="DocumentPane_ScrollNextButton" TargetType="ve:ControlBoxButton">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ve:ControlBoxButton">
+                        <Grid ve:DockPane.HitTestType="ScrollNextButton">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="Red" />
+                                            <DoubleAnimation Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="White" />
+                                            <DoubleAnimation Storyboard.TargetName="PressedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="Silver" />
+                                            <DoubleAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="Opacity" Duration="0" To="0.35" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border x:Name="HoverState" CornerRadius="2" BorderThickness="1" Padding="1" Opacity="0">
+                                <Border.Background>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFF4F6FE" Offset="0" />
+                                        <GradientStop Color="#FFF4F6FE" Offset="1" />
+                                        <GradientStop Color="#FFECEFF7" Offset="0.25" />
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Border.BorderBrush>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFCECFD5" Offset="0" />
+                                        <GradientStop Color="#FFCECFD5" Offset="1" />
+                                        <GradientStop Color="#FFACAFB8" Offset="0.25" /> 
+                                    </LinearGradientBrush>
+                                </Border.BorderBrush>
+                                <Border CornerRadius="1">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE5EBFF" Offset="0" />
+                                            <GradientStop Color="#FFE4EBFD" Offset="1" />
+                                            <GradientStop Color="#FFDEE6FE" Offset="0.25" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                </Border>
+                            </Border>
+                            <Border x:Name="PressedState" CornerRadius="2" BorderThickness="1" Padding="1" Opacity="0">
+                                <Border.Background>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFF4F6FE" Offset="0" />
+                                        <GradientStop Color="#FFF4F6FE" Offset="1" />
+                                        <GradientStop Color="#FFECEFF7" Offset="0.25" />
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Border.BorderBrush>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFAEAFB5" Offset="0" />
+                                        <GradientStop Color="#FFAEAFB5" Offset="1" />
+                                        <GradientStop Color="#FF8C8F98" Offset="0.25" />
+                                    </LinearGradientBrush>
+                                </Border.BorderBrush>
+                                <Border CornerRadius="1">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE7EDFF" Offset="0" />
+                                            <GradientStop Color="#FFDEE6FE" Offset="1" />
+                                            <GradientStop Color="#FFD2DEFC" Offset="0.25" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                </Border>
+                            </Border>
+                            <!-- right arrow -->
+                            <Path x:Name="Glyph" Stretch="Fill" Fill="Orange" Data="F1 M 1230,900L 1234,904L 1230,908L 1230,900 Z" Margin="2,0,0,0" Width="4" Height="8" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="DocumentPane_DropDownButton" TargetType="ve:ControlBoxButton">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ve:ControlBoxButton">
+                        <Grid ve:DockPane.HitTestType="DropDownButton">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF201F35" />
+                                            <DoubleAnimation Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF201F35" />
+                                            <DoubleAnimation Storyboard.TargetName="PressedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="Opacity" Duration="0" To="0.35" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border x:Name="HoverState" CornerRadius="2" BorderThickness="1" Padding="1" Opacity="0">
+                                <Border.Background>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFF4F6FE" Offset="0" />
+                                        <GradientStop Color="#FFF4F6FE" Offset="1" />
+                                        <GradientStop Color="#FFECEFF7" Offset="0.25" />
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Border.BorderBrush>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFCECFD5" Offset="0" />
+                                        <GradientStop Color="#FFCECFD5" Offset="1" />
+                                        <GradientStop Color="#FFACAFB8" Offset="0.25" /> 
+                                    </LinearGradientBrush>
+                                </Border.BorderBrush>
+                                <Border CornerRadius="1">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE5EBFF" Offset="0" />
+                                            <GradientStop Color="#FFE4EBFD" Offset="1" />
+                                            <GradientStop Color="#FFDEE6FE" Offset="0.25" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                </Border>
+                            </Border>
+                            <Border x:Name="PressedState" CornerRadius="2" BorderThickness="1" Padding="1" Opacity="0">
+                                <Border.Background>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFF4F6FE" Offset="0" />
+                                        <GradientStop Color="#FFF4F6FE" Offset="1" />
+                                        <GradientStop Color="#FFECEFF7" Offset="0.25" />
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Border.BorderBrush>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFAEAFB5" Offset="0" />
+                                        <GradientStop Color="#FFAEAFB5" Offset="1" />
+                                        <GradientStop Color="#FF8C8F98" Offset="0.25" />
+                                    </LinearGradientBrush>
+                                </Border.BorderBrush>
+                                <Border CornerRadius="1">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE7EDFF" Offset="0" />
+                                            <GradientStop Color="#FFDEE6FE" Offset="1" />
+                                            <GradientStop Color="#FFD2DEFC" Offset="0.25" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                </Border>
+                            </Border>
+                            <!-- button arrow down -->
+                            <Path x:Name="Glyph" Stretch="Fill" Fill="#FF80838F" Data="F1 M 692,427L 700,427L 696,431L 692,427 Z" Margin="0,1,0,0" Width="8" Height="4" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="DocumentPane_RestoreButton" TargetType="ve:ControlBoxButton">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ve:ControlBoxButton">
+                        <Grid x:Name="Button" ve:DockPane.HitTestType="RestoreButton">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF201F35" />
+                                            <DoubleAnimation Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF201F35" />
+                                            <DoubleAnimation Storyboard.TargetName="PressedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="Opacity" Duration="0" To="0.35" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border x:Name="HoverState" CornerRadius="2" BorderThickness="1" Padding="1" Opacity="0">
+                                <Border.Background>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFF4F6FE" Offset="0" />
+                                        <GradientStop Color="#FFF4F6FE" Offset="1" />
+                                        <GradientStop Color="#FFECEFF7" Offset="0.25" />
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Border.BorderBrush>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFCECFD5" Offset="0" />
+                                        <GradientStop Color="#FFCECFD5" Offset="1" />
+                                        <GradientStop Color="#FFACAFB8" Offset="0.25" /> 
+                                    </LinearGradientBrush>
+                                </Border.BorderBrush>
+                                <Border CornerRadius="1">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE5EBFF" Offset="0" />
+                                            <GradientStop Color="#FFE4EBFD" Offset="1" />
+                                            <GradientStop Color="#FFDEE6FE" Offset="0.25" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                </Border>
+                            </Border>
+                            <Border x:Name="PressedState" CornerRadius="2" BorderThickness="1" Padding="1" Opacity="0">
+                                <Border.Background>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFF4F6FE" Offset="0" />
+                                        <GradientStop Color="#FFF4F6FE" Offset="1" />
+                                        <GradientStop Color="#FFECEFF7" Offset="0.25" />
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Border.BorderBrush>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFAEAFB5" Offset="0" />
+                                        <GradientStop Color="#FFAEAFB5" Offset="1" />
+                                        <GradientStop Color="#FF8C8F98" Offset="0.25" />
+                                    </LinearGradientBrush>
+                                </Border.BorderBrush>
+                                <Border CornerRadius="1">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE7EDFF" Offset="0" />
+                                            <GradientStop Color="#FFDEE6FE" Offset="1" />
+                                            <GradientStop Color="#FFD2DEFC" Offset="0.25" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                </Border>
+                            </Border>
+                            <Path x:Name="Glyph" Stretch="Fill" Fill="#FF80838F" Data="F1 M 133,48.0001L 135,48.0001L 135,44.9999L 141,44.9999L 141,49.9999L 140,49.9999L 140,49L 140,47L 136,47L 136,48.0001L 139,48.0001L 139,53.0001L 133,53.0001L 133,48.0001 Z M 134,50.0002L 134,52.0002L 138,52.0002L 138,50.0002L 134,50.0002 Z" Width="8" Height="8" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <DataTemplate x:Key="{dxt:DocumentPaneElementsThemeKey ResourceKey=CloseButton}">
+        <ve:ControlBoxButton x:Name="PART_Button" Style="{StaticResource DocumentPane_CloseButton}" Margin="1,0,0,0" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxt:DocumentPaneElementsThemeKey ResourceKey=ScrollPrevButton}">
+        <ve:ControlBoxButton x:Name="PART_Button" Style="{StaticResource DocumentPane_ScrollPrevButton}" Margin="1,0,0,0" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxt:DocumentPaneElementsThemeKey ResourceKey=ScrollNextButton}">
+        <ve:ControlBoxButton x:Name="PART_Button" Style="{StaticResource DocumentPane_ScrollNextButton}" Margin="1,0,0,0" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxt:DocumentPaneElementsThemeKey ResourceKey=DropDownButton}">
+        <ve:ControlBoxButton x:Name="PART_Button" Style="{StaticResource DocumentPane_DropDownButton}" Margin="1,0,0,0" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxt:DocumentPaneElementsThemeKey ResourceKey=RestoreButton}">
+        <ve:ControlBoxButton x:Name="PART_Button" Style="{StaticResource DocumentPane_RestoreButton}" Margin="1,0,0,0" />
+    </DataTemplate>
+
+    <!-- Document Page Buttons -->
+    <Style x:Key="Document_ClosePageButton" TargetType="ve:ControlBoxButton">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ve:ControlBoxButton">
+                        <Grid x:Name="Root" ve:DockPane.HitTestType="CloseButton">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="PressedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="0.35" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border x:Name="HoverState" CornerRadius="2" BorderThickness="1" Padding="1" Opacity="0">
+                                <Border.Background>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFF4F6FE" Offset="0" />
+                                        <GradientStop Color="#FFF4F6FE" Offset="1" />
+                                        <GradientStop Color="#FFECEFF7" Offset="0.25" />
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Border.BorderBrush>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFCECFD5" Offset="0" />
+                                        <GradientStop Color="#FFCECFD5" Offset="1" />
+                                        <GradientStop Color="#FFACAFB8" Offset="0.25" /> 
+                                    </LinearGradientBrush>
+                                </Border.BorderBrush>
+                                <Border CornerRadius="1">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE5EBFF" Offset="0" />
+                                            <GradientStop Color="#FFE4EBFD" Offset="1" />
+                                            <GradientStop Color="#FFDEE6FE" Offset="0.25" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                </Border>
+                            </Border>
+                            <Border x:Name="PressedState" CornerRadius="2" BorderThickness="1" Padding="1" Opacity="0">
+                                <Border.Background>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFF4F6FE" Offset="0" />
+                                        <GradientStop Color="#FFF4F6FE" Offset="1" />
+                                        <GradientStop Color="#FFECEFF7" Offset="0.25" />
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Border.BorderBrush>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFAEAFB5" Offset="0" />
+                                        <GradientStop Color="#FFAEAFB5" Offset="1" />
+                                        <GradientStop Color="#FF8C8F98" Offset="0.25" />
+                                    </LinearGradientBrush>
+                                </Border.BorderBrush>
+                                <Border CornerRadius="1">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE7EDFF" Offset="0" />
+                                            <GradientStop Color="#FFDEE6FE" Offset="1" />
+                                            <GradientStop Color="#FFD2DEFC" Offset="0.25" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                </Border>
+                            </Border>
+                            <!-- button krestik -->
+                            <Path x:Name="Glyph" Stretch="Fill" Fill="#FF80838F" Data="F1 M 76,144L 78,144L 74.5,147.5L 78,151L 76,151L 73.5,148.5L 71,151L 69,151L 72.5,147.5L 69,144L 71,144L 73.5,146.5L 76,144 Z" Width="9" Height="7" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <DataTemplate x:Key="{dxt:DocumentElementsThemeKey ResourceKey=ClosePageButton}">
+        <ve:ControlBoxButton x:Name="PART_Button" Style="{StaticResource Document_ClosePageButton}" />
+    </DataTemplate>
+
+</ResourceDictionary>

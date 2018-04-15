@@ -1,0 +1,572 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Проверять режим UPDATEEXISTCPV ! -->
+<SalesInvoiceWrapper xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <UpdateNullValues>false</UpdateNullValues>
+  <OWBOUTDATEPLAN>2015-06-30T00:00:00</OWBOUTDATEPLAN>
+  <OWBRECIPIENT xsi:nil="true" />
+  <OWBPRIORITY>500</OWBPRIORITY>
+  <OWBID xsi:nil="true" />
+  <MANDANTID>29</MANDANTID>
+  <ADDRESSBOOKID_R xsi:nil="true" />
+  <OWBPRODUCTNEED>NOACTIVATE</OWBPRODUCTNEED>
+  <OWBNAME>036262</OWBNAME>
+  <UPDATEEXISTCPV>0</UPDATEEXISTCPV>
+  <OWBAUTORES>1</OWBAUTORES>
+  <OWBHOSTREF />
+  <OWBPOSL>
+    <OWBPosWrapper>
+      <UpdateNullValues>false</UpdateNullValues>
+      <OWBPOSPRODUCTDATE xsi:nil="true" />
+      <OWBPOSEXPIRYDATE xsi:nil="true" />
+      <SKUID_R xsi:nil="true" />
+      <OWBPOSNUMBER>1</OWBPOSNUMBER>
+      <OWBPOSID xsi:nil="true" />
+      <OWBPOSCOUNT>140.00</OWBPOSCOUNT>
+      <OWBID_R xsi:nil="true" />
+      <MANDANTID>29</MANDANTID>
+      <OWBPOSPRICEVALUE xsi:nil="true" />
+      <QLFCODE_R>QLFNORMAL</QLFCODE_R>
+      <OWBPOSSERIALNUMBER />
+      <OWBPOSMEASURE />
+      <OWBPOSHOSTREF />
+      <OWBPOSFACTORY />
+      <OWBPOSBATCH />
+      <OWBPOSARTNAME>04114113412</OWBPOSARTNAME>
+      <OWBPOSLOT />
+      <OWBPOSCOUNT2SKU xsi:nil="true" />
+      <FACTORYID_R xsi:nil="true" />
+      <OWBPOSOWNER xsi:nil="true" />
+      <OWBPOSRESERVED xsi:nil="true" />
+      <OWBPOSWANTAGE xsi:nil="true" />
+      <OWBPOSCHECKMULTIPLE>1</OWBPOSCHECKMULTIPLE>
+      <CUSTOMPARAMVAL>
+        <OWBPosCpvWrapper>
+          <UpdateNullValues>false</UpdateNullValues>
+          <CPV2ENTITY_OWBPOSCPV>OWBPOS</CPV2ENTITY_OWBPOSCPV>
+          <CPVID_OWBPOSCPV>-1</CPVID_OWBPOSCPV>
+          <CPVPARENT_OWBPOSCPV xsi:nil="true" />
+          <CPVVALUE_OWBPOSCPV></CPVVALUE_OWBPOSCPV>
+          <CUSTOMPARAMCODE_R_OWBPOSCPV>OWBPOSClientInfo</CUSTOMPARAMCODE_R_OWBPOSCPV>
+        </OWBPosCpvWrapper>
+        <OWBPosCpvWrapper>
+          <UpdateNullValues>false</UpdateNullValues>
+          <CPV2ENTITY_OWBPOSCPV>OWBPOS</CPV2ENTITY_OWBPOSCPV>
+          <CPVID_OWBPOSCPV>-2</CPVID_OWBPOSCPV>
+          <CPVPARENT_OWBPOSCPV>-1</CPVPARENT_OWBPOSCPV>
+          <CPVVALUE_OWBPOSCPV></CPVVALUE_OWBPOSCPV>
+          <CUSTOMPARAMCODE_R_OWBPOSCPV>OWBPOSECommerce</CUSTOMPARAMCODE_R_OWBPOSCPV>
+        </OWBPosCpvWrapper>
+
+        <OWBPosCpvWrapper>
+          <UpdateNullValues>false</UpdateNullValues>
+          <CPV2ENTITY_OWBPOSCPV>OWBPOS</CPV2ENTITY_OWBPOSCPV>
+          <CPVID_OWBPOSCPV xsi:nil="true" />
+          <CPVPARENT_OWBPOSCPV>-2</CPVPARENT_OWBPOSCPV>
+          <CPVVALUE_OWBPOSCPV>1234567890</CPVVALUE_OWBPOSCPV>
+          <CUSTOMPARAMCODE_R_OWBPOSCPV>OWBPOSPriceTotal</CUSTOMPARAMCODE_R_OWBPOSCPV>
+        </OWBPosCpvWrapper>
+        <OWBPosCpvWrapper>
+          <UpdateNullValues>false</UpdateNullValues>
+          <CPV2ENTITY_OWBPOSCPV>OWBPOS</CPV2ENTITY_OWBPOSCPV>
+          <CPVID_OWBPOSCPV xsi:nil="true" />
+          <CPVPARENT_OWBPOSCPV>-2</CPVPARENT_OWBPOSCPV>
+          <CPVVALUE_OWBPOSCPV>500</CPVVALUE_OWBPOSCPV>
+          <CUSTOMPARAMCODE_R_OWBPOSCPV>OWBPOSTotalCostVAT</CUSTOMPARAMCODE_R_OWBPOSCPV>
+        </OWBPosCpvWrapper>
+      </CUSTOMPARAMVAL>
+    </OWBPosWrapper>
+    <OWBPosWrapper>
+      <UpdateNullValues>false</UpdateNullValues>
+      <OWBPOSPRODUCTDATE xsi:nil="true" />
+      <OWBPOSEXPIRYDATE xsi:nil="true" />
+      <SKUID_R xsi:nil="true" />
+      <OWBPOSNUMBER>3</OWBPOSNUMBER>
+      <OWBPOSID xsi:nil="true" />
+      <OWBPOSCOUNT>120.00</OWBPOSCOUNT>
+      <OWBID_R xsi:nil="true" />
+      <MANDANTID>29</MANDANTID>
+      <OWBPOSPRICEVALUE xsi:nil="true" />
+      <QLFCODE_R>QLFNORMAL</QLFCODE_R>
+      <OWBPOSSERIALNUMBER />
+      <OWBPOSMEASURE />
+      <OWBPOSHOSTREF />
+      <OWBPOSFACTORY />
+      <OWBPOSBATCH />
+      <OWBPOSARTNAME>04103301112</OWBPOSARTNAME>
+      <OWBPOSLOT />
+      <OWBPOSCOUNT2SKU xsi:nil="true" />
+      <FACTORYID_R xsi:nil="true" />
+      <OWBPOSOWNER xsi:nil="true" />
+      <OWBPOSRESERVED xsi:nil="true" />
+      <OWBPOSWANTAGE xsi:nil="true" />
+      <OWBPOSCHECKMULTIPLE>1</OWBPOSCHECKMULTIPLE>
+      <CUSTOMPARAMVAL>
+        <OWBPosCpvWrapper>
+          <UpdateNullValues>false</UpdateNullValues>
+          <CPV2ENTITY_OWBPOSCPV>OWBPOS</CPV2ENTITY_OWBPOSCPV>
+          <CPVID_OWBPOSCPV>-1</CPVID_OWBPOSCPV>
+          <CPVPARENT_OWBPOSCPV xsi:nil="true" />
+          <CPVVALUE_OWBPOSCPV></CPVVALUE_OWBPOSCPV>
+          <CUSTOMPARAMCODE_R_OWBPOSCPV>OWBPOSClientInfo</CUSTOMPARAMCODE_R_OWBPOSCPV>
+        </OWBPosCpvWrapper>
+        <OWBPosCpvWrapper>
+          <UpdateNullValues>false</UpdateNullValues>
+          <CPV2ENTITY_OWBPOSCPV>OWBPOS</CPV2ENTITY_OWBPOSCPV>
+          <CPVID_OWBPOSCPV>-2</CPVID_OWBPOSCPV>
+          <CPVPARENT_OWBPOSCPV>-1</CPVPARENT_OWBPOSCPV>
+          <CPVVALUE_OWBPOSCPV></CPVVALUE_OWBPOSCPV>
+          <CUSTOMPARAMCODE_R_OWBPOSCPV>OWBPOSECommerce</CUSTOMPARAMCODE_R_OWBPOSCPV>
+        </OWBPosCpvWrapper>
+
+        <OWBPosCpvWrapper>
+          <UpdateNullValues>false</UpdateNullValues>
+          <CPV2ENTITY_OWBPOSCPV>OWBPOS</CPV2ENTITY_OWBPOSCPV>
+          <CPVID_OWBPOSCPV xsi:nil="true" />
+          <CPVPARENT_OWBPOSCPV>-2</CPVPARENT_OWBPOSCPV>
+          <CPVVALUE_OWBPOSCPV>444555666</CPVVALUE_OWBPOSCPV>
+          <CUSTOMPARAMCODE_R_OWBPOSCPV>OWBPOSPriceTotal</CUSTOMPARAMCODE_R_OWBPOSCPV>
+        </OWBPosCpvWrapper>
+        <OWBPosCpvWrapper>
+          <UpdateNullValues>false</UpdateNullValues>
+          <CPV2ENTITY_OWBPOSCPV>OWBPOS</CPV2ENTITY_OWBPOSCPV>
+          <CPVID_OWBPOSCPV xsi:nil="true" />
+          <CPVPARENT_OWBPOSCPV>-2</CPVPARENT_OWBPOSCPV>
+          <CPVVALUE_OWBPOSCPV>12</CPVVALUE_OWBPOSCPV>
+          <CUSTOMPARAMCODE_R_OWBPOSCPV>OWBPOSTotalCostVAT</CUSTOMPARAMCODE_R_OWBPOSCPV>
+        </OWBPosCpvWrapper>
+      </CUSTOMPARAMVAL>
+    </OWBPosWrapper>
+    <OWBPosWrapper>
+      <UpdateNullValues>false</UpdateNullValues>
+      <OWBPOSPRODUCTDATE xsi:nil="true" />
+      <OWBPOSEXPIRYDATE xsi:nil="true" />
+      <SKUID_R xsi:nil="true" />
+      <OWBPOSNUMBER>4</OWBPOSNUMBER>
+      <OWBPOSID xsi:nil="true" />
+      <OWBPOSCOUNT>24.00</OWBPOSCOUNT>
+      <OWBID_R xsi:nil="true" />
+      <MANDANTID>29</MANDANTID>
+      <OWBPOSPRICEVALUE xsi:nil="true" />
+      <QLFCODE_R>QLFNORMAL</QLFCODE_R>
+      <OWBPOSSERIALNUMBER />
+      <OWBPOSMEASURE />
+      <OWBPOSHOSTREF />
+      <OWBPOSFACTORY />
+      <OWBPOSBATCH />
+      <OWBPOSARTNAME>04903301124</OWBPOSARTNAME>
+      <OWBPOSLOT />
+      <OWBPOSCOUNT2SKU xsi:nil="true" />
+      <FACTORYID_R xsi:nil="true" />
+      <OWBPOSOWNER xsi:nil="true" />
+      <OWBPOSRESERVED xsi:nil="true" />
+      <OWBPOSWANTAGE xsi:nil="true" />
+      <OWBPOSCHECKMULTIPLE>1</OWBPOSCHECKMULTIPLE>
+      <OWBPOSGROUPCHECK>NL_PR  ,     SPB_BVA</OWBPOSGROUPCHECK>
+      <!--<OWBPOSGROUPCHECK>SPB_BVA</OWBPOSGROUPCHECK>-->
+    </OWBPosWrapper>
+    <OWBPosWrapper>
+      <UpdateNullValues>false</UpdateNullValues>
+      <OWBPOSPRODUCTDATE xsi:nil="true" />
+      <OWBPOSEXPIRYDATE xsi:nil="true" />
+      <SKUID_R xsi:nil="true" />
+      <OWBPOSNUMBER>5</OWBPOSNUMBER>
+      <OWBPOSID xsi:nil="true" />
+      <OWBPOSCOUNT>180.00</OWBPOSCOUNT>
+      <OWBID_R xsi:nil="true" />
+      <MANDANTID>29</MANDANTID>
+      <OWBPOSPRICEVALUE xsi:nil="true" />
+      <QLFCODE_R>QLFNORMAL</QLFCODE_R>
+      <OWBPOSSERIALNUMBER />
+      <OWBPOSMEASURE />
+      <OWBPOSHOSTREF />
+      <OWBPOSFACTORY />
+      <OWBPOSBATCH />
+      <OWBPOSARTNAME>02006113414</OWBPOSARTNAME>
+      <OWBPOSLOT />
+      <OWBPOSCOUNT2SKU xsi:nil="true" />
+      <FACTORYID_R xsi:nil="true" />
+      <OWBPOSOWNER xsi:nil="true" />
+      <OWBPOSRESERVED xsi:nil="true" />
+      <OWBPOSWANTAGE xsi:nil="true" />
+      <OWBPOSCHECKMULTIPLE>1</OWBPOSCHECKMULTIPLE>
+    </OWBPosWrapper>
+    <OWBPosWrapper>
+      <UpdateNullValues>false</UpdateNullValues>
+      <OWBPOSPRODUCTDATE xsi:nil="true" />
+      <OWBPOSEXPIRYDATE xsi:nil="true" />
+      <SKUID_R xsi:nil="true" />
+      <OWBPOSNUMBER>6</OWBPOSNUMBER>
+      <OWBPOSID xsi:nil="true" />
+      <OWBPOSCOUNT>96.00</OWBPOSCOUNT>
+      <OWBID_R xsi:nil="true" />
+      <MANDANTID>29</MANDANTID>
+      <OWBPOSPRICEVALUE xsi:nil="true" />
+      <QLFCODE_R>QLFNORMAL</QLFCODE_R>
+      <OWBPOSSERIALNUMBER />
+      <OWBPOSMEASURE />
+      <OWBPOSHOSTREF />
+      <OWBPOSFACTORY />
+      <OWBPOSBATCH />
+      <OWBPOSARTNAME>02014101412</OWBPOSARTNAME>
+      <OWBPOSLOT />
+      <OWBPOSCOUNT2SKU xsi:nil="true" />
+      <FACTORYID_R xsi:nil="true" />
+      <OWBPOSOWNER xsi:nil="true" />
+      <OWBPOSRESERVED xsi:nil="true" />
+      <OWBPOSWANTAGE xsi:nil="true" />
+      <OWBPOSCHECKMULTIPLE>1</OWBPOSCHECKMULTIPLE>
+    </OWBPosWrapper>
+    <OWBPosWrapper>
+      <UpdateNullValues>false</UpdateNullValues>
+      <OWBPOSPRODUCTDATE xsi:nil="true" />
+      <OWBPOSEXPIRYDATE xsi:nil="true" />
+      <SKUID_R xsi:nil="true" />
+      <OWBPOSNUMBER>7</OWBPOSNUMBER>
+      <OWBPOSID xsi:nil="true" />
+      <OWBPOSCOUNT>240.00</OWBPOSCOUNT>
+      <OWBID_R xsi:nil="true" />
+      <MANDANTID>29</MANDANTID>
+      <OWBPOSPRICEVALUE xsi:nil="true" />
+      <QLFCODE_R>QLFNORMAL</QLFCODE_R>
+      <OWBPOSSERIALNUMBER />
+      <OWBPOSMEASURE />
+      <OWBPOSHOSTREF />
+      <OWBPOSFACTORY />
+      <OWBPOSBATCH />
+      <OWBPOSARTNAME>02020101412</OWBPOSARTNAME>
+      <OWBPOSLOT />
+      <OWBPOSCOUNT2SKU xsi:nil="true" />
+      <FACTORYID_R xsi:nil="true" />
+      <OWBPOSOWNER xsi:nil="true" />
+      <OWBPOSRESERVED xsi:nil="true" />
+      <OWBPOSWANTAGE xsi:nil="true" />
+      <OWBPOSCHECKMULTIPLE>1</OWBPOSCHECKMULTIPLE>
+    </OWBPosWrapper>
+    <OWBPosWrapper>
+      <UpdateNullValues>false</UpdateNullValues>
+      <OWBPOSPRODUCTDATE xsi:nil="true" />
+      <OWBPOSEXPIRYDATE xsi:nil="true" />
+      <SKUID_R xsi:nil="true" />
+      <OWBPOSNUMBER>8</OWBPOSNUMBER>
+      <OWBPOSID xsi:nil="true" />
+      <OWBPOSCOUNT>130.00</OWBPOSCOUNT>
+      <OWBID_R xsi:nil="true" />
+      <MANDANTID>29</MANDANTID>
+      <OWBPOSPRICEVALUE xsi:nil="true" />
+      <QLFCODE_R>QLFNORMAL</QLFCODE_R>
+      <OWBPOSSERIALNUMBER />
+      <OWBPOSMEASURE />
+      <OWBPOSHOSTREF />
+      <OWBPOSFACTORY />
+      <OWBPOSBATCH />
+      <OWBPOSARTNAME>06106301404</OWBPOSARTNAME>
+      <OWBPOSLOT />
+      <OWBPOSCOUNT2SKU xsi:nil="true" />
+      <FACTORYID_R xsi:nil="true" />
+      <OWBPOSOWNER xsi:nil="true" />
+      <OWBPOSRESERVED xsi:nil="true" />
+      <OWBPOSWANTAGE xsi:nil="true" />
+      <OWBPOSCHECKMULTIPLE>1</OWBPOSCHECKMULTIPLE>
+    </OWBPosWrapper>
+    <OWBPosWrapper>
+      <UpdateNullValues>false</UpdateNullValues>
+      <OWBPOSPRODUCTDATE xsi:nil="true" />
+      <OWBPOSEXPIRYDATE xsi:nil="true" />
+      <SKUID_R xsi:nil="true" />
+      <OWBPOSNUMBER>11</OWBPOSNUMBER>
+      <OWBPOSID xsi:nil="true" />
+      <OWBPOSCOUNT>10.00</OWBPOSCOUNT>
+      <OWBID_R xsi:nil="true" />
+      <MANDANTID>29</MANDANTID>
+      <OWBPOSPRICEVALUE xsi:nil="true" />
+      <QLFCODE_R>QLFNORMAL</QLFCODE_R>
+      <OWBPOSSERIALNUMBER />
+      <OWBPOSMEASURE />
+      <OWBPOSHOSTREF />
+      <OWBPOSFACTORY />
+      <OWBPOSBATCH />
+      <OWBPOSARTNAME>58399201402</OWBPOSARTNAME>
+      <OWBPOSLOT />
+      <OWBPOSCOUNT2SKU xsi:nil="true" />
+      <FACTORYID_R xsi:nil="true" />
+      <OWBPOSOWNER xsi:nil="true" />
+      <OWBPOSRESERVED xsi:nil="true" />
+      <OWBPOSWANTAGE xsi:nil="true" />
+      <OWBPOSCHECKMULTIPLE>1</OWBPOSCHECKMULTIPLE>
+    </OWBPosWrapper>
+    <OWBPosWrapper>
+      <UpdateNullValues>false</UpdateNullValues>
+      <OWBPOSPRODUCTDATE xsi:nil="true" />
+      <OWBPOSEXPIRYDATE xsi:nil="true" />
+      <SKUID_R xsi:nil="true" />
+      <OWBPOSNUMBER>14</OWBPOSNUMBER>
+      <OWBPOSID xsi:nil="true" />
+      <OWBPOSCOUNT>260.00</OWBPOSCOUNT>
+      <OWBID_R xsi:nil="true" />
+      <MANDANTID>29</MANDANTID>
+      <OWBPOSPRICEVALUE xsi:nil="true" />
+      <QLFCODE_R>QLFNORMAL</QLFCODE_R>
+      <OWBPOSSERIALNUMBER />
+      <OWBPOSMEASURE />
+      <OWBPOSHOSTREF />
+      <OWBPOSFACTORY />
+      <OWBPOSBATCH />
+      <OWBPOSARTNAME>06430101401</OWBPOSARTNAME>
+      <OWBPOSLOT />
+      <OWBPOSCOUNT2SKU xsi:nil="true" />
+      <FACTORYID_R xsi:nil="true" />
+      <OWBPOSOWNER xsi:nil="true" />
+      <OWBPOSRESERVED xsi:nil="true" />
+      <OWBPOSWANTAGE xsi:nil="true" />
+      <OWBPOSCHECKMULTIPLE>1</OWBPOSCHECKMULTIPLE>
+    </OWBPosWrapper>
+    <OWBPosWrapper>
+      <UpdateNullValues>false</UpdateNullValues>
+      <OWBPOSPRODUCTDATE xsi:nil="true" />
+      <OWBPOSEXPIRYDATE xsi:nil="true" />
+      <SKUID_R xsi:nil="true" />
+      <OWBPOSNUMBER>16</OWBPOSNUMBER>
+      <OWBPOSID xsi:nil="true" />
+      <OWBPOSCOUNT>130.00</OWBPOSCOUNT>
+      <OWBID_R xsi:nil="true" />
+      <MANDANTID>29</MANDANTID>
+      <OWBPOSPRICEVALUE xsi:nil="true" />
+      <QLFCODE_R>QLFNORMAL</QLFCODE_R>
+      <OWBPOSSERIALNUMBER />
+      <OWBPOSMEASURE />
+      <OWBPOSHOSTREF />
+      <OWBPOSFACTORY />
+      <OWBPOSBATCH />
+      <OWBPOSARTNAME>06206301401</OWBPOSARTNAME>
+      <OWBPOSLOT />
+      <OWBPOSCOUNT2SKU xsi:nil="true" />
+      <FACTORYID_R xsi:nil="true" />
+      <OWBPOSOWNER xsi:nil="true" />
+      <OWBPOSRESERVED xsi:nil="true" />
+      <OWBPOSWANTAGE xsi:nil="true" />
+      <OWBPOSCHECKMULTIPLE>1</OWBPOSCHECKMULTIPLE>
+    </OWBPosWrapper>
+    <OWBPosWrapper>
+      <UpdateNullValues>false</UpdateNullValues>
+      <OWBPOSPRODUCTDATE xsi:nil="true" />
+      <OWBPOSEXPIRYDATE xsi:nil="true" />
+      <SKUID_R xsi:nil="true" />
+      <OWBPOSNUMBER>22</OWBPOSNUMBER>
+      <OWBPOSID xsi:nil="true" />
+      <OWBPOSCOUNT>60.00</OWBPOSCOUNT>
+      <OWBID_R xsi:nil="true" />
+      <MANDANTID>29</MANDANTID>
+      <OWBPOSPRICEVALUE xsi:nil="true" />
+      <QLFCODE_R>QLFNORMAL</QLFCODE_R>
+      <OWBPOSSERIALNUMBER />
+      <OWBPOSMEASURE />
+      <OWBPOSHOSTREF />
+      <OWBPOSFACTORY />
+      <OWBPOSBATCH />
+      <OWBPOSARTNAME>00792000402</OWBPOSARTNAME>
+      <OWBPOSLOT />
+      <OWBPOSCOUNT2SKU xsi:nil="true" />
+      <FACTORYID_R xsi:nil="true" />
+      <OWBPOSOWNER xsi:nil="true" />
+      <OWBPOSRESERVED xsi:nil="true" />
+      <OWBPOSWANTAGE xsi:nil="true" />
+      <OWBPOSCHECKMULTIPLE>1</OWBPOSCHECKMULTIPLE>
+    </OWBPosWrapper>
+  </OWBPOSL>
+  <OWBRECIPIENT_NAME>ООО "РИМАРК"</OWBRECIPIENT_NAME>
+  <!--<OWBRECIPIENT_CODE>22332201B</OWBRECIPIENT_CODE>-->
+  <OWBRECIPIENT_INN />
+  <OWBRECIPIENT_OKPO />
+  <OWBRECIPIENT_PHONE />
+  <OWBFACTORY />
+  <OWBCARRIERCODE>0252050</OWBCARRIERCODE>
+  <OWBCOUNTPOS>11</OWBCOUNTPOS>
+  <OWBDESC />
+  <OWBREPLACEKITS>0</OWBREPLACEKITS>
+  <OWBALLOWBASE>0</OWBALLOWBASE>
+  <OWBHOSTREFDATE xsi:nil="true" />
+  <OWBREPEAT>0</OWBREPEAT>
+  <OWBCREATE_RECIPIENT>1</OWBCREATE_RECIPIENT>
+  <FACTORYID_R xsi:nil="true" />
+  <OWBCONVERTSKU>0</OWBCONVERTSKU>
+  <!--<OWBPAYER_NAME>ЗАО "ЧИП И ДИП"</OWBPAYER_NAME>-->
+  <OWBCREATE_PAYER>1</OWBCREATE_PAYER>
+  <OWBPAYER xsi:nil="true" />
+  <OWBTYPE>OWBTYPENORMAL</OWBTYPE>
+  <MandantCode>SPB</MandantCode>
+  <OWBCLIENTRECIPIENT>
+    <UpdateNullValues>false</UpdateNullValues>
+    <ClientLastName>ЕФИМОВИЧ</ClientLastName>
+    <ClientName>КРИСТИНА ИГОРЕВНА</ClientName>
+    <ClientMiddleName />
+    <ClientPhoneMobile>+7 (985) 341-72-76</ClientPhoneMobile>
+    <ClientPhoneWork />
+    <ClientPhoneInternal />
+    <ClientPhoneHome />
+    <ClientEmail>k.efimovich@lcvesta.com</ClientEmail>
+    <ClientHostRef>ЛК ВЕСТА ООО (105450) []</ClientHostRef>
+    <AddressL>
+      <AddressBookWrapper>
+        <UpdateNullValues>false</UpdateNullValues>
+        <ADDRESSBOOKBUILDING />
+        <ADDRESSBOOKCITY>МОСКВА Д-362</ADDRESSBOOKCITY>
+        <ADDRESSBOOKCOUNTRY>Russia</ADDRESSBOOKCOUNTRY>
+        <ADDRESSBOOKDISTRICT />
+        <ADDRESSBOOKID xsi:nil="true" />
+        <ADDRESSBOOKINDEXSTR>117587</ADDRESSBOOKINDEXSTR>
+        <ADDRESSBOOKSTREET>ВАРШАВСКОЕ ШОССЕ 125Ж/6/1а</ADDRESSBOOKSTREET>
+        <ADDRESSBOOKTYPECODE>ADR_PHYSICAL</ADDRESSBOOKTYPECODE>
+      </AddressBookWrapper>
+    </AddressL>
+  </OWBCLIENTRECIPIENT>
+  <Address>
+    <AddressBookWrapper>
+      <UpdateNullValues>false</UpdateNullValues>
+      <ADDRESSBOOKBUILDING />
+      <ADDRESSBOOKCITY />
+      <ADDRESSBOOKDISTRICT />
+      <ADDRESSBOOKID xsi:nil="true" />
+      <ADDRESSBOOKREGION />
+      <ADDRESSBOOKSTREET />
+      <ADDRESSBOOKTYPECODE>ADR_PHYSICAL</ADDRESSBOOKTYPECODE>
+      <ADDRESSBOOKRAW>ТК "БайкалСервис"</ADDRESSBOOKRAW>
+    </AddressBookWrapper>
+    <!--<AddressBookWrapper>
+      <UpdateNullValues>false</UpdateNullValues>
+      <ADDRESSBOOKBUILDING />
+      <ADDRESSBOOKCITY />
+      <ADDRESSBOOKDISTRICT />
+      <ADDRESSBOOKID xsi:nil="true" />
+      <ADDRESSBOOKINDEXSTR>999111</ADDRESSBOOKINDEXSTR>
+      <ADDRESSBOOKTYPECODE>ADR_PHYSICAL</ADDRESSBOOKTYPECODE>
+      <ADDRESSBOOKRAW>ЗАО "ЧИП и ДИП", 999111, г.Нью Васюки, ул.Гиляровского,д.39,стр.1</ADDRESSBOOKRAW>
+    </AddressBookWrapper>
+  <AddressBookWrapper>
+      <UpdateNullValues>false</UpdateNullValues>
+      <ADDRESSBOOKBUILDING />
+      <ADDRESSBOOKCITY />
+      <ADDRESSBOOKDISTRICT />
+      <ADDRESSBOOKID xsi:nil="true" />
+      <ADDRESSBOOKINDEXSTR>123362</ADDRESSBOOKINDEXSTR>
+      <ADDRESSBOOKTYPECODE>ADR_LEGAL</ADDRESSBOOKTYPECODE>
+      <ADDRESSBOOKRAW>ЗАО "ЧИП и ДИП", 123362, г.Нью Йорк ул.Гиляровского,д.39,стр.1</ADDRESSBOOKRAW>
+    </AddressBookWrapper>-->
+  </Address>
+  <CUSTOMPARAMVAL>
+    <OWBCpvWrapper>
+      <UpdateNullValues>false</UpdateNullValues>
+      <CPV2ENTITY_OWBCPV>OWB</CPV2ENTITY_OWBCPV>
+      <CPVID_OWBCPV xsi:nil="true" />
+      <CPVPARENT_OWBCPV>-1</CPVPARENT_OWBCPV>
+      <CPVVALUE_OWBCPV>ЛЕРУА МЕРЛЕН ИСПЫТАТЕЛЕЙ</CPVVALUE_OWBCPV>
+      <CUSTOMPARAMCODE_R_OWBCPV>OWBClientFinalRecipientL2</CUSTOMPARAMCODE_R_OWBCPV>
+    </OWBCpvWrapper>
+
+    <OWBCpvWrapper>
+      <UpdateNullValues>false</UpdateNullValues>
+      <CPV2ENTITY_OWBCPV>OWB</CPV2ENTITY_OWBCPV>
+      <CPVID_OWBCPV>-1</CPVID_OWBCPV>
+      <CPVPARENT_OWBCPV xsi:nil="true" />
+      <CUSTOMPARAMCODE_R_OWBCPV>OWBClientInfoL1</CUSTOMPARAMCODE_R_OWBCPV>
+    </OWBCpvWrapper>
+    <OWBCpvWrapper>
+      <UpdateNullValues>false</UpdateNullValues>
+      <CPV2ENTITY_OWBCPV>OWB</CPV2ENTITY_OWBCPV>
+      <CPVID_OWBCPV>-2</CPVID_OWBCPV>
+      <CPVPARENT_OWBCPV>-1</CPVPARENT_OWBCPV>
+      <CUSTOMPARAMCODE_R_OWBCPV>OWBClientServices</CUSTOMPARAMCODE_R_OWBCPV>
+    </OWBCpvWrapper>
+    <OWBCpvWrapper>
+      <UpdateNullValues>false</UpdateNullValues>
+      <CPV2ENTITY_OWBCPV>OWB</CPV2ENTITY_OWBCPV>
+      <CPVID_OWBCPV>-12</CPVID_OWBCPV>
+      <CPVPARENT_OWBCPV>-2</CPVPARENT_OWBCPV>
+      <CUSTOMPARAMCODE_R_OWBCPV>OWBClientService</CUSTOMPARAMCODE_R_OWBCPV>
+    </OWBCpvWrapper>
+    <OWBCpvWrapper>
+      <UpdateNullValues>false</UpdateNullValues>
+      <CPV2ENTITY_OWBCPV>OWB</CPV2ENTITY_OWBCPV>
+      <CPVID_OWBCPV xsi:nil="true" />
+      <CPVPARENT_OWBCPV>-12</CPVPARENT_OWBCPV>
+      <CPVVALUE_OWBCPV>99265560822</CPVVALUE_OWBCPV>
+      <CUSTOMPARAMCODE_R_OWBCPV>OWBClSvcArtCode</CUSTOMPARAMCODE_R_OWBCPV>
+    </OWBCpvWrapper>
+    <OWBCpvWrapper>
+      <UpdateNullValues>false</UpdateNullValues>
+      <CPV2ENTITY_OWBCPV>OWB</CPV2ENTITY_OWBCPV>
+      <CPVID_OWBCPV xsi:nil="true" />
+      <CPVPARENT_OWBCPV>-12</CPVPARENT_OWBCPV>
+      <CPVVALUE_OWBCPV>7</CPVVALUE_OWBCPV>
+      <CUSTOMPARAMCODE_R_OWBCPV>OWBClSvcCount</CUSTOMPARAMCODE_R_OWBCPV>
+    </OWBCpvWrapper>
+    <OWBCpvWrapper>
+      <UpdateNullValues>false</UpdateNullValues>
+      <CPV2ENTITY_OWBCPV>OWB</CPV2ENTITY_OWBCPV>
+      <CPVID_OWBCPV xsi:nil="true" />
+      <CPVPARENT_OWBCPV>-12</CPVPARENT_OWBCPV>
+      <CPVVALUE_OWBCPV>RUB</CPVVALUE_OWBCPV>
+      <CUSTOMPARAMCODE_R_OWBCPV>OWBClSvcCurrency</CUSTOMPARAMCODE_R_OWBCPV>
+    </OWBCpvWrapper>
+    <OWBCpvWrapper>
+      <UpdateNullValues>false</UpdateNullValues>
+      <CPV2ENTITY_OWBCPV>OWB</CPV2ENTITY_OWBCPV>
+      <CPVID_OWBCPV xsi:nil="true" />
+      <CPVPARENT_OWBCPV>-12</CPVPARENT_OWBCPV>
+      <CPVVALUE_OWBCPV>3-1CHR4J3I</CPVVALUE_OWBCPV>
+      <CUSTOMPARAMCODE_R_OWBCPV>OWBClSvcHostRef</CUSTOMPARAMCODE_R_OWBCPV>
+    </OWBCpvWrapper>
+    <OWBCpvWrapper>
+      <UpdateNullValues>false</UpdateNullValues>
+      <CPV2ENTITY_OWBCPV>OWB</CPV2ENTITY_OWBCPV>
+      <CPVID_OWBCPV xsi:nil="true" />
+      <CPVPARENT_OWBCPV>-12</CPVPARENT_OWBCPV>
+      <CPVVALUE_OWBCPV>2</CPVVALUE_OWBCPV>
+      <CUSTOMPARAMCODE_R_OWBCPV>OWBClSvcOWBPOS</CUSTOMPARAMCODE_R_OWBCPV>
+    </OWBCpvWrapper>
+    <OWBCpvWrapper>
+      <UpdateNullValues>false</UpdateNullValues>
+      <CPV2ENTITY_OWBCPV>OWB</CPV2ENTITY_OWBCPV>
+      <CPVID_OWBCPV xsi:nil="true" />
+      <CPVPARENT_OWBCPV>-12</CPVPARENT_OWBCPV>
+      <CPVVALUE_OWBCPV>11.77</CPVVALUE_OWBCPV>
+      <CUSTOMPARAMCODE_R_OWBCPV>OWBClSvcPrice</CUSTOMPARAMCODE_R_OWBCPV>
+    </OWBCpvWrapper>
+    <OWBCpvWrapper>
+      <UpdateNullValues>false</UpdateNullValues>
+      <CPV2ENTITY_OWBCPV>OWB</CPV2ENTITY_OWBCPV>
+      <CPVID_OWBCPV xsi:nil="true" />
+      <CPVPARENT_OWBCPV xsi:nil="true" />
+      <CPVVALUE_OWBCPV>3-105559038836</CPVVALUE_OWBCPV>
+      <CUSTOMPARAMCODE_R_OWBCPV>OWBClientDocRefOtherL1</CUSTOMPARAMCODE_R_OWBCPV>
+    </OWBCpvWrapper>
+    <OWBCpvWrapper>
+      <UpdateNullValues>false</UpdateNullValues>
+      <CPV2ENTITY_OWBCPV>OWB</CPV2ENTITY_OWBCPV>
+      <CPVID_OWBCPV xsi:nil="true" />
+      <CPVPARENT_OWBCPV xsi:nil="true" />
+      <CPVVALUE_OWBCPV>08/02/2015 00:00:00</CPVVALUE_OWBCPV>
+      <CUSTOMPARAMCODE_R_OWBCPV>OWBClientReceiptDatePlanL2</CUSTOMPARAMCODE_R_OWBCPV>
+    </OWBCpvWrapper>
+
+    <OWBCpvWrapper>
+      <UpdateNullValues>false</UpdateNullValues>
+      <CPV2ENTITY_OWBCPV>OWB</CPV2ENTITY_OWBCPV>
+      <CPVID_OWBCPV>-3</CPVID_OWBCPV>
+      <CPVPARENT_OWBCPV xsi:nil="true" />
+      <CPVVALUE_OWBCPV></CPVVALUE_OWBCPV>
+      <CUSTOMPARAMCODE_R_OWBCPV>OWBECommerce</CUSTOMPARAMCODE_R_OWBCPV>
+    </OWBCpvWrapper>
+    <OWBCpvWrapper>
+      <UpdateNullValues>false</UpdateNullValues>
+      <CPV2ENTITY_OWBCPV>OWB</CPV2ENTITY_OWBCPV>
+      <CPVID_OWBCPV xsi:nil="true" />
+      <CPVPARENT_OWBCPV>-3</CPVPARENT_OWBCPV>
+      <CPVVALUE_OWBCPV>False</CPVVALUE_OWBCPV>
+      <CUSTOMPARAMCODE_R_OWBCPV>OWBIsDanger</CUSTOMPARAMCODE_R_OWBCPV>
+    </OWBCpvWrapper>
+  </CUSTOMPARAMVAL>
+  <OWBRECREATE>1</OWBRECREATE>
+  <OWBCHECKMULTIPLE>0</OWBCHECKMULTIPLE>
+  <OWBOWNER xsi:nil="true" />
+  <OWB_HOSTREF_NAME xsi:nil="true" />
+</SalesInvoiceWrapper>

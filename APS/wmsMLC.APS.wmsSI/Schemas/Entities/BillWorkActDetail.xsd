@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="BillWorkActDetail" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include  id="WmsDateTime" schemaLocation="WmsDateTime.xsd"/>
+
+  <!--Сущность BillWorkActDetail-->
+  <xs:element name="TENTBILLWORKACTDETAIL" type="BillWorkActDetailType"/>
+  
+  <!--Описание типа BillWorkActDetail-->
+  <xs:complexType name="BillWorkActDetailType">
+    <xs:sequence>
+      <!--ID записи-->
+      <xs:element name="WORKACTDETAILID" type="xs:integer"/>
+      <!--Акт-->
+      <xs:element name="WORKACTID_R" type="xs:integer" nillable="false" minOccurs="1" maxOccurs="1"/>
+      <!--Транзакция-->
+      <xs:element name="TRANSACTIONID_R" type="xs:integer" nillable="false" minOccurs="1" maxOccurs="1"/>
+      <!--Признак ручного добавления-->
+      <xs:element name="WORKACTDETAILMANUAL" nillable="false">
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:totalDigits value="1"/>
+            <xs:maxInclusive value="1"/>
+            <xs:minInclusive value="0"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Основание1-->
+      <xs:element name="WORKACTDETAILCAUSE1">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Основание2-->
+      <xs:element name="WORKACTDETAILCAUSE2">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Основание3-->
+      <xs:element name="WORKACTDETAILCAUSE3">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Основание4-->
+      <xs:element name="WORKACTDETAILCAUSE4">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Основание5-->
+      <xs:element name="WORKACTDETAILCAUSE5">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Основание6-->
+      <xs:element name="WORKACTDETAILCAUSE6">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Основание7-->
+      <xs:element name="WORKACTDETAILCAUSE7">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Основание8-->
+      <xs:element name="WORKACTDETAILCAUSE8">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Основание9-->
+      <xs:element name="WORKACTDETAILCAUSE9">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Основание10-->
+      <xs:element name="WORKACTDETAILCAUSE10">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Сумма1-->
+      <xs:element name="WORKACTDETAILSUM1" type="xs:double"/>
+      <!--Сумма2-->
+      <xs:element name="WORKACTDETAILSUM2" type="xs:double"/>
+      <!--Сумма3-->
+      <xs:element name="WORKACTDETAILSUM3" type="xs:double"/>
+      <!--Сумма4-->
+      <xs:element name="WORKACTDETAILSUM4" type="xs:double"/>
+      <!--Сумма5-->
+      <xs:element name="WORKACTDETAILSUM5" type="xs:double"/>
+      <!--Сумма6-->
+      <xs:element name="WORKACTDETAILSUM6" type="xs:double"/>
+      <!--Сумма7-->
+      <xs:element name="WORKACTDETAILSUM7" type="xs:double"/>
+      <!--Сумма8-->
+      <xs:element name="WORKACTDETAILSUM8" type="xs:double"/>
+      <!--Сумма9-->
+      <xs:element name="WORKACTDETAILSUM9" type="xs:double"/>
+      <!--Сумма10-->
+      <xs:element name="WORKACTDETAILSUM10" type="xs:double"/>
+      <!--Количество-->
+      <xs:element name="WORKACTDETAILCOUNT" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

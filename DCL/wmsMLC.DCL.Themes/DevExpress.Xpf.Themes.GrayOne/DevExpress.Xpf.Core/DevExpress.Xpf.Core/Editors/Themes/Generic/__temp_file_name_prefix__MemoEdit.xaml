@@ -1,0 +1,111 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxcn="http://schemas.devexpress.com/winfx/2008/xaml/core/internal" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxep="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxepc="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxet="http://schemas.devexpress.com/winfx/2008/xaml/editors/themekeys" xmlns:help="http://schemas.devexpress.com/winfx/2008/xaml/editors/internal" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <!--PROCESS SETTERS WITH BINDING-->
+  <!--BEGIN WPF-->
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Generic/TextEdit.xaml" />
+  </ResourceDictionary.MergedDictionaries>
+  <!--END WPF-->
+  <Style x:Key="{dxet:MemoEditThemeKey ResourceKey=MemoStyle}" TargetType="dxe:TextEdit">
+    <Setter Property="MaxLength" Value="{Binding Path=Tag.MaxLength, RelativeSource={RelativeSource TemplatedParent}}" />
+    <Setter Property="IsReadOnly" Value="{Binding Path=Tag.IsReadOnly, RelativeSource={RelativeSource TemplatedParent}}" />
+    <Setter Property="VerticalContentAlignment" Value="Top" />
+    <Setter Property="ShowBorder" Value="False" />
+    <Setter Property="Foreground" Value="{Binding Path=Tag.Foreground, RelativeSource={RelativeSource TemplatedParent}}" />
+    <Setter Property="TextWrapping" Value="{Binding Path=Tag.MemoTextWrapping, RelativeSource={RelativeSource TemplatedParent}}" />
+    <Setter Property="AcceptsReturn" Value="{Binding Path=Tag.MemoAcceptsReturn, RelativeSource={RelativeSource TemplatedParent}}" />
+    <Setter Property="SelectAllOnGotFocus" Value="False" />
+    <!--BEGIN WPF-->
+    <Setter Property="AcceptsTab" Value="{Binding Path=Tag.MemoAcceptsTab, RelativeSource={RelativeSource TemplatedParent}}" />
+    <!--END WPF-->
+    <Setter Property="VerticalScrollBarVisibility" Value="{Binding Path=Tag.MemoVerticalScrollBarVisibility, RelativeSource={RelativeSource TemplatedParent}}" />
+    <Setter Property="HorizontalScrollBarVisibility" Value="{Binding Path=Tag.MemoHorizontalScrollBarVisibility, RelativeSource={RelativeSource TemplatedParent}}" />
+  </Style>
+  <ControlTemplate x:Key="{dxet:MemoEditThemeKey ResourceKey=PopupContentTemplate}" TargetType="ContentControl">
+    <Grid Style="{DynamicResource {dxet:MemoEditThemeKey ResourceKey=MemoBackgroundStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\MemoEdit.xaml;26;10">
+      <dxepc:TextEdit x:Name="PART_PopupContent" Style="{DynamicResource {dxet:MemoEditThemeKey ResourceKey=MemoStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\MemoEdit.xaml;27;14" />
+    </Grid>
+  </ControlTemplate>
+  <dxcore_unique_xmlns:EmbeddedResourceImageConverter x:Key="EmbeddedResourceImageConverter" />
+  <dxepc:MemoEditIconIndexConverter x:Key="MemoEditIconIndexConverter" />
+  <ControlTemplate x:Key="{dxet:MemoEditThemeKey ResourceKey=DisplayIconTemplate}">
+    <Grid x:Name="PART_Editor" Background="Transparent" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\MemoEdit.xaml;34;10">
+      <TextBlock x:Name="HeightHolder" Text=" " dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\MemoEdit.xaml;35;14" />
+      <dxcn:MultiContentControl x:Name="PART_Icon" VisibleChildIndex="{Binding Path=(dxe:BaseEdit.OwnerEdit).Text, Converter={StaticResource MemoEditIconIndexConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\MemoEdit.xaml;36;14">
+        <!--BEGIN WPF-->
+        <dxcore_unique_xmlns:PixelSnapper HorizontalAlignment="Center" VerticalAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\MemoEdit.xaml;38;18">
+          <Image Stretch="None" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\MemoEdit.xaml;39;22">
+            <Image.Source>
+              <BitmapImage UriSource="{dx:UtilsResource Editors/Images/memo-empty.png}" />
+            </Image.Source>
+          </Image>
+        </dxcore_unique_xmlns:PixelSnapper>
+        <dxcore_unique_xmlns:PixelSnapper HorizontalAlignment="Center" VerticalAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\MemoEdit.xaml;45;18">
+          <Image Stretch="None" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\MemoEdit.xaml;46;22">
+            <Image.Source>
+              <BitmapImage UriSource="{dx:UtilsResource Editors/Images/memo.png}" />
+            </Image.Source>
+          </Image>
+        </dxcore_unique_xmlns:PixelSnapper>
+        <!--END WPF-->
+        <!--ONLY SL
+                <Image Stretch="None" Source="{Binding Source=DevExpress.Xpf.Core.Editors.Images.memo-empty.png, Converter={StaticResource EmbeddedResourceImageConverter}}"/>
+                <Image Stretch="None" Source="{Binding Source=DevExpress.Xpf.Core.Editors.Images.memo.png, Converter={StaticResource EmbeddedResourceImageConverter}}"/>
+                ONLY SL-->
+      </dxcn:MultiContentControl>
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxet:MemoEditThemeKey ResourceKey=EditNonEditableIconInplaceTemplate}">
+    <Grid x:Name="PART_Editor" Background="Transparent" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\MemoEdit.xaml;61;10">
+      <TextBlock x:Name="HeightHolder" Text=" " dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\MemoEdit.xaml;62;14" />
+      <dxcn:MultiContentControl x:Name="PART_Icon" VisibleChildIndex="{Binding Path=(dxe:BaseEdit.OwnerEdit).Text, Converter={StaticResource MemoEditIconIndexConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\MemoEdit.xaml;63;14">
+        <!--BEGIN WPF-->
+        <dxcore_unique_xmlns:PixelSnapper HorizontalAlignment="Center" VerticalAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\MemoEdit.xaml;65;18">
+          <Image Stretch="None" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\MemoEdit.xaml;66;22">
+            <Image.Source>
+              <BitmapImage UriSource="{dx:UtilsResource Editors/Images/memo-empty.png}" />
+            </Image.Source>
+          </Image>
+        </dxcore_unique_xmlns:PixelSnapper>
+        <dxcore_unique_xmlns:PixelSnapper HorizontalAlignment="Center" VerticalAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\MemoEdit.xaml;72;18">
+          <Image Stretch="None" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\MemoEdit.xaml;73;22">
+            <Image.Source>
+              <BitmapImage UriSource="{dx:UtilsResource Editors/Images/memo.png}" />
+            </Image.Source>
+          </Image>
+        </dxcore_unique_xmlns:PixelSnapper>
+        <!--END WPF-->
+        <!--ONLY SL
+                <Image Stretch="None" Source="{Binding Source=DevExpress.Xpf.Core.Editors.Images.memo-empty.png, Converter={StaticResource EmbeddedResourceImageConverter}}"/>
+                <Image Stretch="None" Source="{Binding Source=DevExpress.Xpf.Core.Editors.Images.memo.png, Converter={StaticResource EmbeddedResourceImageConverter}}"/>
+                ONLY SL-->
+      </dxcn:MultiContentControl>
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxet:MemoEditThemeKey ResourceKey=EditNonEditableIconTemplate}">
+    <Grid Margin="2" x:Name="PART_Editor" Background="Transparent" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\MemoEdit.xaml;88;10">
+      <TextBlock x:Name="HeightHolder" Text=" " dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\MemoEdit.xaml;89;14" />
+      <dxcn:MultiContentControl x:Name="PART_Icon" VisibleChildIndex="{Binding Path=(dxe:BaseEdit.OwnerEdit).Text, Converter={StaticResource MemoEditIconIndexConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\MemoEdit.xaml;90;14">
+        <!--BEGIN WPF-->
+        <dxcore_unique_xmlns:PixelSnapper HorizontalAlignment="Center" VerticalAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\MemoEdit.xaml;92;18">
+          <Image Stretch="None" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\MemoEdit.xaml;93;22">
+            <Image.Source>
+              <BitmapImage UriSource="{dx:UtilsResource Editors/Images/memo-empty.png}" />
+            </Image.Source>
+          </Image>
+        </dxcore_unique_xmlns:PixelSnapper>
+        <dxcore_unique_xmlns:PixelSnapper HorizontalAlignment="Center" VerticalAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\MemoEdit.xaml;99;18">
+          <Image Stretch="None" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\MemoEdit.xaml;100;22">
+            <Image.Source>
+              <BitmapImage UriSource="{dx:UtilsResource Editors/Images/memo.png}" />
+            </Image.Source>
+          </Image>
+        </dxcore_unique_xmlns:PixelSnapper>
+        <!--END WPF-->
+        <!--ONLY SL
+                <Image Stretch="None" Source="{Binding Source=DevExpress.Xpf.Core.Editors.Images.memo-empty.png, Converter={StaticResource EmbeddedResourceImageConverter}}"/>
+                <Image Stretch="None" Source="{Binding Source=DevExpress.Xpf.Core.Editors.Images.memo.png, Converter={StaticResource EmbeddedResourceImageConverter}}"/>
+                ONLY SL-->
+      </dxcn:MultiContentControl>
+    </Grid>
+  </ControlTemplate>
+</ResourceDictionary>

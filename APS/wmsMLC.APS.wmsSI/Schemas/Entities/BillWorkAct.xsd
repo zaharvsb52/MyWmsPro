@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="BillWorkAct" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">  
+  <xs:include  id="WmsDateTime" schemaLocation="WmsDateTime.xsd"/>
+  <xs:include  id="BillWorkActDetail" schemaLocation="BillWorkActDetail.xsd"/>
+  
+  <!--Сущность BillWorkAct-->
+  <xs:element name="TENTBILLWORKACT" type="BillWorkActType"/>
+  
+  <!--Описание типа BillWorkAct-->
+  <xs:complexType name="BillWorkActType">
+    <xs:sequence>
+      <!--ID записи-->
+      <xs:element name="WORKACTID" type="xs:integer"/>
+      <!--Договор-->
+      <xs:element name="CONTRACTID_R" type="xs:integer" nillable="false" minOccurs="1" maxOccurs="1"/>
+      <!--Дата начала расчетного периода-->
+      <xs:element name="WORKACTDATEFROM" type="WmsDateTime" nillable="false" minOccurs="1" maxOccurs="1"/>
+      <!--Дата окончания расчетного периода-->
+      <xs:element name="WORKACTDATETILL" type="WmsDateTime" nillable="false" minOccurs="1" maxOccurs="1"/>
+      <!--Дата акта-->
+      <xs:element name="WORKACTDATE" type="WmsDateTime" nillable="false" minOccurs="1" maxOccurs="1"/>
+      <!--Сумма по акту-->
+      <xs:element name="WORKACTTOTALAMOUNT" type="xs:double"/>
+      <!--Дата фиксации-->
+      <xs:element name="WORKACTFIXDATE" type="WmsDateTime"/>
+      <!--Дата проводки-->
+      <xs:element name="WORKACTPOSTINGDATE" type="WmsDateTime"/>
+      <!--Хост идентификатор-->
+      <xs:element name="WORKACTHOSTREF">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Детализация-->
+      <xs:element name="BILLWORKACTDETAILL">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="TENTBILLWORKACTDETAIL" type="BillWorkActDetailType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

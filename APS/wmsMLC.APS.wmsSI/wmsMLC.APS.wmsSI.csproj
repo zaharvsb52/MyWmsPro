@@ -1,0 +1,439 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3AFAB82D-059D-4173-95C3-428B465FE43C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>wmsMLC.APS.wmsSI</RootNamespace>
+    <AssemblyName>wmsMLC.APS.wmsSI</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'TST1|AnyCPU'">
+    <OutputPath>bin\TST1\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BLToolkit.4, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b1d3f6ab3aadaca3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Packages\BLToolkit.4.2.0\lib\net40-full\BLToolkit.4.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Oracle.DataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Libraries\Oracle\x64\Oracle.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Version\AssemblyInfoGlobal.cs">
+      <Link>Properties\AssemblyInfoGlobal.cs</Link>
+    </Compile>
+    <Compile Include="Helpers\AddressHelper.cs" />
+    <Compile Include="Helpers\ArtLoadHelper.cs" />
+    <Compile Include="Helpers\BarcodeHelper.cs" />
+    <Compile Include="Helpers\MessageHelper.cs" />
+    <Compile Include="Helpers\ReceiptLoadHelper.cs" />
+    <Compile Include="Helpers\TransitDataWrapperEqualityComparer.cs" />
+    <Compile Include="Helpers\CpvHelper.cs" />
+    <Compile Include="Helpers\Art2GroupWrapperEqualityComparer.cs" />
+    <Compile Include="Helpers\ShipmentLoadHelper.cs" />
+    <Compile Include="IntegrationService_ArtLabelsLoad.cs" />
+    <Compile Include="IntegrationService_ArtPackageLoad.cs" />
+    <Compile Include="IntegrationService_BillingLoad.cs" />
+    <Compile Include="IntegrationService_KitLoad.cs" />
+    <Compile Include="IntegrationService_PartnerLoad.cs" />
+    <Compile Include="IntegrationService_ShipmentLoad.cs" />
+    <Compile Include="IntegrationService_StatusArrival.cs" />
+    <Compile Include="IntegrationService_StatusOrder.cs" />
+    <Compile Include="IntegrationService_Reserve.cs" />
+    <Compile Include="IntegrationService_Tests.cs" />
+    <Compile Include="IIntegrationService.cs" />
+    <Compile Include="IntegrationService_TrafficLoad.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="IntegrationService.cs" />
+    <Compile Include="IntegrationServiceHost.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IntegrationServiceHostFactory.cs" />
+    <Compile Include="IntegrationService_ReceiptLoad.cs" />
+    <Compile Include="Messages\ReserveRequest.cs" />
+    <Compile Include="Messages\ReserveResponse.cs" />
+    <Compile Include="Messages\ReserveStates.cs" />
+    <Compile Include="Wrappers\AddressBookWrapper.cs" />
+    <Compile Include="Wrappers\Art2GroupWrapper.cs" />
+    <Compile Include="Wrappers\ArtCpvWrapper.cs" />
+    <Compile Include="Wrappers\ArtGroupWrapper.cs" />
+    <Compile Include="Wrappers\ArtPriceWrapper.cs" />
+    <Compile Include="Wrappers\ArtWrapper.cs" />
+    <Compile Include="Wrappers\BarcodeWrapper.cs" />
+    <Compile Include="Wrappers\BaseWrapper.cs" />
+    <Compile Include="Wrappers\BillAnalyticsWrapper.cs" />
+    <Compile Include="Wrappers\BillContractWrapper.cs" />
+    <Compile Include="Wrappers\BillOperation2ContractWrapper.cs" />
+    <Compile Include="Wrappers\BillOperationCauseWrapper.cs" />
+    <Compile Include="Wrappers\BillScale2O2CWrapper.cs" />
+    <Compile Include="Wrappers\BillTariffWrapper.cs" />
+    <Compile Include="Wrappers\BillWorkActDetailExWrapper.cs" />
+    <Compile Include="Wrappers\BillWorkActDetailWrapper.cs" />
+    <Compile Include="Wrappers\CargoIWBPosWrapper.cs" />
+    <Compile Include="Wrappers\CargoIWBWrapper.cs" />
+    <Compile Include="Wrappers\CargoOWBWrapper.cs" />
+    <Compile Include="Wrappers\CarTypeWrapper.cs" />
+    <Compile Include="Wrappers\CustomParamValueWrapper.cs" />
+    <Compile Include="Wrappers\CustomParamWrapper.cs" />
+    <Compile Include="Wrappers\EcomClientWrapper.cs" />
+    <Compile Include="Wrappers\ErrorWrapper.cs" />
+    <Compile Include="Wrappers\GlobalParamValueWrapper.cs" />
+    <Compile Include="Wrappers\GlobalParamWrapper.cs" />
+    <Compile Include="Wrappers\IBaseWrapper.cs" />
+    <Compile Include="Wrappers\IWBPosCpvWrapper.cs" />
+    <Compile Include="Wrappers\OWBPosCpvWrapper.cs" />
+    <Compile Include="Wrappers\InternalTrafficWrapper.cs" />
+    <Compile Include="Wrappers\IWB2CargoWrapper.cs" />
+    <Compile Include="Wrappers\IWBCpvWrapper.cs" />
+    <Compile Include="Wrappers\IWBPosWrapper.cs" />
+    <Compile Include="Wrappers\KitPosWrapper.cs" />
+    <Compile Include="Wrappers\KitTypeWrapper.cs" />
+    <Compile Include="Wrappers\KitWrapper.cs" />
+    <Compile Include="Wrappers\LabelParamsWrapper.cs" />
+    <Compile Include="Wrappers\LabelWrapper.cs" />
+    <Compile Include="Wrappers\MandantGpvWrapper.cs" />
+    <Compile Include="Wrappers\MandantWrapper.cs" />
+    <Compile Include="Wrappers\OWBCpvWrapper.cs" />
+    <Compile Include="Wrappers\OWBPosWrapper.cs" />
+    <Compile Include="Wrappers\PartnerGpvWrapper.cs" />
+    <Compile Include="Wrappers\PurchaseInvoiceWrapper.cs" />
+    <Compile Include="Wrappers\ParkingWrapper.cs" />
+    <Compile Include="Wrappers\PartnerWrapper.cs" />
+    <Compile Include="Wrappers\RequestWrapper.cs" />
+    <Compile Include="Wrappers\SalesInvoiceWrapper.cs" />
+    <Compile Include="Wrappers\SKU2TTEWrapper.cs" />
+    <Compile Include="Wrappers\SKUWrapper.cs" />
+    <Compile Include="Wrappers\TransitDataWrapper.cs" />
+    <Compile Include="Wrappers\TransitWrapper.cs" />
+    <Compile Include="Wrappers\VehicleWrapper.cs" />
+    <Compile Include="Wrappers\BillWorkActWrapper.cs" />
+    <Compile Include="Wrappers\WorkerGpvWrapper.cs" />
+    <Compile Include="Wrappers\WorkerPassWrapper.cs" />
+    <Compile Include="Wrappers\WorkerWrapper.cs" />
+    <Compile Include="Wrappers\YExternalTrafficWrapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Business\wmsMLC.Business.General\wmsMLC.Business.General.csproj">
+      <Project>{AC7BED6A-2890-48D1-B1E3-C746053CD4DB}</Project>
+      <Name>wmsMLC.Business.General</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Business\wmsMLC.Business.Managers\wmsMLC.Business.Managers.csproj">
+      <Project>{19243B19-DEC2-49C1-83A1-C1BFC861C9E3}</Project>
+      <Name>wmsMLC.Business.Managers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Business\wmsMLC.Business.Objects\wmsMLC.Business.Objects.csproj">
+      <Project>{67D93016-602C-462B-BE46-9FDFA9ED2566}</Project>
+      <Name>wmsMLC.Business.Objects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Business\wmsMLC.Business\wmsMLC.Business.csproj">
+      <Project>{de1f83e8-8785-475f-9d0e-19af3f12c684}</Project>
+      <Name>wmsMLC.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\General\wmsMLC.General.Services.Service\wmsMLC.General.Services.Service.csproj">
+      <Project>{3EB67AF3-4C72-4D0A-B999-1049DFE1B3DB}</Project>
+      <Name>wmsMLC.General.Services.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\General\wmsMLC.General.Services\wmsMLC.General.Services.csproj">
+      <Project>{750846A6-2C6D-4715-884C-D24CE3BC3BC1}</Project>
+      <Name>wmsMLC.General.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\General\wmsMLC.General.BL\wmsMLC.General.BL.csproj">
+      <Project>{DCD24E7C-7328-4D5F-9796-F77312E13EA3}</Project>
+      <Name>wmsMLC.General.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\General\wmsMLC.General.DAL\wmsMLC.General.DAL.csproj">
+      <Project>{32CF6C98-D476-446B-AC2B-8A36E6430D91}</Project>
+      <Name>wmsMLC.General.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\General\wmsMLC.General.Types\wmsMLC.General.Types.csproj">
+      <Project>{C095CABB-A2BC-45F2-9592-9E75E909622B}</Project>
+      <Name>wmsMLC.General.Types</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\General\wmsMLC.General\wmsMLC.General.csproj">
+      <Project>{123BA357-AAC6-4E30-8AF9-9CD944BF25DF}</Project>
+      <Name>wmsMLC.General</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MLC.WebClient\MLC.WebClient.csproj">
+      <Project>{E3DF40C5-76A3-46BF-B043-596C811C3ECD}</Project>
+      <Name>MLC.WebClient</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\wmsMLC.APS.wmsSDCL\DAL.Oracle.config">
+      <Link>DAL.Oracle.config</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\wmsMLC.APS.wmsSDCL\DAL.Service.config">
+      <Link>DAL.Service.config</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\wmsMLC.APS.wmsSDCL\db.ODAC.config">
+      <Link>db.ODAC.config</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\wmsMLC.APS.wmsSDCL\log4net.config">
+      <Link>log4net.config</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <!--SubType>Designer</SubType-->
+    </None>
+    <None Include="app.PRD.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="app.TST1.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="app.DEV.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Schemas\Entities\AddressBook.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Schemas\Entities\Art2Group.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\Entities\Art.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\Entities\ArtPrice.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\Entities\BarCode.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\Entities\BillWorkAct.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\Entities\BillWorkActDetail.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\Entities\CargoIWB.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\Entities\CargoIWBPos.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\Entities\CarType.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\Entities\CustomParam.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\Entities\CustomParamValue.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\Entities\GlobalParam.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\Entities\GlobalParamValue.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\Entities\IWB.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\Entities\IWB2Cargo.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\Entities\IWBPos.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\Entities\Parking.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\Entities\Partner.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\Entities\PartnerWrapper.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\Entities\PurchaseInvoiceWrapper.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\Entities\YExternalTrafficWrapper.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\Processes\PurchaseInvoice.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\Entities\SKU.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\Entities\SKU2TTE.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\Entities\Vehicle.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\Entities\WmsDateTime.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\Entities\Worker.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\Entities\WorkerPass.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\Entities\YInternalTraffic.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\Processes\ArtLoad.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\Processes\CargoIWBLoad.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\Processes\CargoIWBPosLoad.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\Processes\CarTypeLoad.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\Processes\IWB2CargoLoad.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\Processes\IWBLoad.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\Processes\PartnerLoad.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\Processes\TelegramTemplate.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\Processes\TEMove.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\Entities\YExternalTraffic.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\Processes\VehicleLoad.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\Processes\YExternalTrafficLoad.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\Processes\YExternalTrafficLoadObsolete.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Inbound\ArtLoad.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Inbound\CargoIWBLoad.xml" />
+    <Content Include="Inbound\CargoIWBPosLoad.xml" />
+    <Content Include="Inbound\CarTypeLoad.xml" />
+    <Content Include="Inbound\IWB2CargoLoad.xml" />
+    <Content Include="Inbound\PartnerLoad.xml" />
+    <Content Include="Inbound\PurchaseInvoice.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Inbound\TEmove.xml" />
+    <Content Include="Inbound\YExternalTrafficObsolete.xml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>if exist "$(ProjectDir)app.$(ENV).config" copy "$(ProjectDir)app.$(ENV).config" "$(TargetDir)$(TargetFileName).config"
+if exist "$(ProjectDir)SI\SI.$(ENV).config" copy "$(ProjectDir)\SI\SI.$(ENV).config" "$(TargetDir)\SI\SI.config"
+if exist "$(ProjectDir)SI\SI.$(ENV).config" copy "$(ProjectDir)\SI\SI.$(ENV).config" "$(ProjectDir)\SI\SI.config"</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

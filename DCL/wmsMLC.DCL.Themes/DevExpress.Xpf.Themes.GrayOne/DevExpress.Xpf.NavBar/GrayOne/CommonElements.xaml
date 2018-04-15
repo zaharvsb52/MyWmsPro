@@ -1,0 +1,695 @@
+<!--ONLY SL
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxn="clr-namespace:DevExpress.Xpf.NavBar" xmlns:xpf="clr-namespace:DevExpress.Xpf.NavBar.Platform" xmlns:xpfCore="clr-namespace:DevExpress.Xpf.Core.WPFCompatibility;assembly=DevExpress.Xpf.Core.v15.2" xmlns:dxcn="clr-namespace:DevExpress.Xpf.Core.Native;assembly=DevExpress.Xpf.Core.v15.2">
+ONLY SL-->
+
+<!--BEGIN WPF-->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxn="http://schemas.devexpress.com/winfx/2008/xaml/navbar" xmlns:dxnt="http://schemas.devexpress.com/winfx/2008/xaml/navbar/themekeys" xmlns:dxcn="http://schemas.devexpress.com/winfx/2008/xaml/core/internal" xmlns:xpf="clr-namespace:DevExpress.Xpf.NavBar.Platform;assembly=DevExpress.Xpf.NavBar.v15.2">
+
+    <Storyboard x:Key="{dxnt:CommonElementsThemeKey ResourceKey=DefaultCollapsingStoryboard}">
+        <DoubleAnimation Storyboard.TargetName="PART_DXExpander" Storyboard.TargetProperty="AnimationProgress" Duration="0:0:0.5" To="0" />
+    </Storyboard>
+
+    <Storyboard x:Key="{dxnt:CommonElementsThemeKey ResourceKey=DefaultExpandingStoryboard}">
+        <DoubleAnimation Storyboard.TargetName="PART_DXExpander" Storyboard.TargetProperty="AnimationProgress" Duration="0:0:0.5" To="1" />
+    </Storyboard>
+    <!--END WPF-->
+
+    <dx:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+    <dxn:ScrollUpCommandProvider x:Key="ScrollUpCommandProvider" />
+    <dxn:ScrollDownCommandProvider x:Key="ScrollDownCommandProvider" />
+
+    <SolidColorBrush x:Key="PanelBackground" Color="#FFEBECEF" /> 
+
+    <ControlTemplate x:Key="{dxnt:CommonElementsThemeKey ResourceKey=ScrollUpButtonTemplate}" TargetType="dxn:NavBarRepeatButton">
+        <dx:LayoutTransformPanel x:Name="Root" Orientation="{TemplateBinding Orientation}">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <ColorAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF201F35" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="PressedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <ColorAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF201F35" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="0.35" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Grid Background="#FFFFFFFF">
+                <Grid.OpacityMask>
+                    <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                        <GradientStop Color="#00FFFFFF" Offset="0" />
+                        <GradientStop Color="#00FFFFFF" Offset="1" />
+                        <GradientStop Color="#FFFFFFFF" Offset="0.5" />
+                    </LinearGradientBrush>
+                </Grid.OpacityMask>
+                <Grid.Effect>
+                    <DropShadowEffect x:Name="Shadow" Direction="270" ShadowDepth="3" BlurRadius="5" Opacity="0.12" />
+                </Grid.Effect>
+                <Border x:Name="HoverState" Background="#FFCBD6F3" Opacity="0" />
+                <Border x:Name="PressedState" Background="#FFCED2D9" Opacity="0" />
+                <Border x:Name="Separator" Background="#FF868995" Height="1" VerticalAlignment="Bottom" />
+                <Path x:Name="Glyph" Fill="#FF80838F" Stretch="Fill" Data="F1M1323,792L1327,788 1331,792 1323,792z" Width="8" Height="4" Margin="3" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Grid>
+        </dx:LayoutTransformPanel>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxnt:CommonElementsThemeKey ResourceKey=ScrollDownButtonTemplate}" TargetType="dxn:NavBarRepeatButton">
+        <dx:LayoutTransformPanel x:Name="Root" Orientation="{TemplateBinding Orientation}">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <ColorAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF201F35" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="PressedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <ColorAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF201F35" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="0.35" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Grid Background="#FFFFFFFF">
+                <Grid.OpacityMask>
+                    <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                        <GradientStop Color="#00FFFFFF" Offset="0" />
+                        <GradientStop Color="#00FFFFFF" Offset="1" />
+                        <GradientStop Color="#FFFFFFFF" Offset="0.5" />
+                    </LinearGradientBrush>
+                </Grid.OpacityMask>
+                <Grid.Effect>
+                    <DropShadowEffect x:Name="Shadow" Direction="90" ShadowDepth="3" BlurRadius="5" Opacity="0.12" />
+                </Grid.Effect>
+                <Border x:Name="HoverState" Background="#FFCBD6F3" Opacity="0" />
+                <Border x:Name="PressedState" Background="#FFCED2D9" Opacity="0" />
+                <Border x:Name="Separator" Background="#FF868995" Height="1" VerticalAlignment="Top" />
+                <Path x:Name="Glyph" Fill="#FF80838F" Stretch="Fill" Data="F1M1316,795L1312,799 1308,795 1316,795z" Width="8" Height="4" Margin="3" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Grid>
+        </dx:LayoutTransformPanel>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxnt:CommonElementsThemeKey ResourceKey=ScrollUpGroupButtonTemplate}" TargetType="dxn:NavBarRepeatButton">
+        <dx:LayoutTransformPanel x:Name="Root" Orientation="{TemplateBinding ItemsPanelOrientation}">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <ColorAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF201F35" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="PressedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <ColorAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF201F35" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="0.35" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Grid Background="#FFFFFFFF">
+                <Grid.OpacityMask>
+                    <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                        <GradientStop Color="#00FFFFFF" Offset="0" />
+                        <GradientStop Color="#00FFFFFF" Offset="1" />
+                        <GradientStop Color="#FFFFFFFF" Offset="0.5" />
+                    </LinearGradientBrush>
+                </Grid.OpacityMask>
+                <Grid.Effect>
+                    <DropShadowEffect x:Name="Shadow" Direction="270" ShadowDepth="3" BlurRadius="5" Opacity="0.12" />
+                </Grid.Effect>
+                <Border x:Name="HoverState" Background="#FFCBD6F3" Opacity="0" />
+                <Border x:Name="PressedState" Background="#FFCED2D9" Opacity="0" />
+                <Border x:Name="Separator" Background="#FF868995" Height="1" VerticalAlignment="Bottom" />
+                <Path x:Name="Glyph" Fill="#FF80838F" Stretch="Fill" Data="F1M1323,792L1327,788 1331,792 1323,792z" Width="8" Height="4" Margin="3" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Grid>
+        </dx:LayoutTransformPanel>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxnt:CommonElementsThemeKey ResourceKey=ScrollDownGroupButtonTemplate}" TargetType="dxn:NavBarRepeatButton">
+        <dx:LayoutTransformPanel x:Name="Root" Orientation="{TemplateBinding ItemsPanelOrientation}">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <ColorAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF201F35" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="PressedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <ColorAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF201F35" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="0.35" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Grid Background="#FFFFFFFF">
+                <Grid.OpacityMask>
+                    <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                        <GradientStop Color="#00FFFFFF" Offset="0" />
+                        <GradientStop Color="#00FFFFFF" Offset="1" />
+                        <GradientStop Color="#FFFFFFFF" Offset="0.5" />
+                    </LinearGradientBrush>
+                </Grid.OpacityMask>
+                <Grid.Effect>
+                    <DropShadowEffect x:Name="Shadow" Direction="90" ShadowDepth="3" BlurRadius="5" Opacity="0.12" />
+                </Grid.Effect>
+                <Border x:Name="HoverState" Background="#FFCBD6F3" Opacity="0" />
+                <Border x:Name="PressedState" Background="#FFCED2D9" Opacity="0" />
+                <Border x:Name="Separator" Background="#FF868995" Height="1" VerticalAlignment="Top" />
+                <Path x:Name="Glyph" Fill="#FF80838F" Stretch="Fill" Data="F1M1316,795L1312,799 1308,795 1316,795z" Width="8" Height="4" Margin="3" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Grid>
+        </dx:LayoutTransformPanel>
+    </ControlTemplate>
+
+    <DataTemplate x:Key="{dxnt:CommonElementsThemeKey ResourceKey=HeaderTemplate}">
+        <dxn:ImageAndTextDecorator x:Name="groupContent" ImageFallbackSize="24" DockingLeftImageMargin="4,3,0,3" DockingLeftContentMargin="4,3,4,3" DockingRightImageMargin="0,3,4,3" DockingRightContentMargin="4,3,4,3" DockingBottomImageMargin="4,-3,4,3" DockingBottomContentMargin="4,3,4,3" DockingTopImageMargin="4,3,4,-3" DockingTopContentMargin="4,3,4,3" DisplayModeImageMargin="3" DisplayModeTextMargin="3" ImageDocking="{Binding Path=(dxn:NavBarViewBase.LayoutSettings).ImageDocking, RelativeSource={RelativeSource TemplatedParent}}" ImageSource="{Binding Path=ImageSource}" ImageStyle="{DynamicResource {dxnt:NavBarGroupControlThemeKey ResourceKey=GroupImageStyle}}" ContentSource="{Binding Path=Header}" ContentStyle="{DynamicResource {dxnt:NavBarGroupControlThemeKey ResourceKey=GroupTextStyle}}" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxnt:CommonElementsThemeKey ResourceKey=ItemContentTemplate}">
+        <dxn:ImageAndTextDecorator x:Name="itemContent" ImageFallbackSize="16" DockingLeftImageMargin="4,3,0,3" DockingLeftContentMargin="4,3,4,3" DockingRightImageMargin="0,3,4,3" DockingRightContentMargin="4,3,4,3" DockingBottomImageMargin="4,-3,4,3" DockingBottomContentMargin="4,3,4,3" DockingTopImageMargin="4,3,4,-3" DockingTopContentMargin="4,3,4,3" DisplayModeImageMargin="3" DisplayModeTextMargin="3" ImageDocking="{Binding Path=(dxn:NavBarViewBase.LayoutSettings).ImageDocking, RelativeSource={RelativeSource TemplatedParent}}" ImageSource="{Binding Path=ImageSource}" ImageStyle="{DynamicResource {dxnt:NavBarItemControlThemeKey ResourceKey=ItemImageStyle}}" ContentSource="{Binding Path=Content}" ContentStyle="{DynamicResource {dxnt:NavBarItemControlThemeKey ResourceKey=ItemTextStyle}}" />
+    </DataTemplate>
+
+    <ControlTemplate x:Key="{dxnt:CommonElementsThemeKey ResourceKey=ItemTemplate}" TargetType="dxn:NavBarItemControl">
+        <Grid Margin="0,0,0,1">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup Name="CommonStates">
+                    <VisualState Name="Normal" />
+                    <VisualState Name="MouseOverState">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="Hover" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />                            
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState Name="PressedState">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="Pressed" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <DoubleAnimation Storyboard.TargetName="States" Storyboard.TargetProperty="(Grid.Effect).(DropShadowEffect.Opacity)" Duration="0" To="0" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="DisabledStates">
+                    <VisualState x:Name="EnabledState" />
+                    <VisualState x:Name="DisabledState">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="0" To="0.35" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="SelectedStates">
+                    <VisualState x:Name="Unselected" />
+                    <VisualState x:Name="Selected">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="SelectedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Grid x:Name="States">
+                <Grid.OpacityMask>
+                    <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                        <GradientStop Color="#00FFFFFF" Offset="0" />
+                        <GradientStop Color="#00FFFFFF" Offset="1" />
+                        <GradientStop Color="#FFFFFFFF" Offset="0.5" />
+                    </LinearGradientBrush>
+                </Grid.OpacityMask>
+                <Grid.Effect>
+                    <DropShadowEffect x:Name="Shadow" Direction="0" ShadowDepth="0" BlurRadius="5" Opacity="0.15" />
+                </Grid.Effect>
+                <Border x:Name="Hover" Background="#FFF0F3FB" BorderBrush="#FFAFB1BA" BorderThickness="0,1,0,1" Opacity="0">
+                    <Border Background="#FFE3E9F9" Margin="0,1,0,1" />
+                </Border>
+                <Border x:Name="Pressed" Background="#FFC8CAD1" BorderBrush="#FFACAEB7" BorderThickness="0,1,0,1" Opacity="0">
+                    <Border Background="#FFDADCE2" Margin="0,1,0,0" />
+                </Border>
+                <Border x:Name="SelectedState" Background="#FFFAFAFB" BorderBrush="#FFACAEB7" BorderThickness="0,1,0,1" Opacity="0" />
+            </Grid>
+            <dxn:ImageAndTextContentPresenter x:Name="item" ImageFallbackSize="16" Content="{TemplateBinding Content}" ContentTemplate="{Binding Path=Template}" Style="{DynamicResource {dxnt:NavBarItemControlThemeKey ResourceKey=ItemStyle}}" Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource TemplatedParent}}" dx:FocusHelper2.Focusable="False">
+                <!--ONLY SL
+                <dxn:ImageAndTextContentPresenter.ContentTemplateSelector>
+                    <Binding Path="ContentTemplateSelector" RelativeSource="{RelativeSource Mode=TemplatedParent}"/>
+                </dxn:ImageAndTextContentPresenter.ContentTemplateSelector>
+                ONLY SL-->
+            </dxn:ImageAndTextContentPresenter>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxnt:ExplorerBarThemeKey ResourceKey=ExpandButtonTemplate}" TargetType="{x:Type dxn:ExplorerBarExpandButton}">
+        <Grid x:Name="Root" Background="Transparent" Width="18" Height="18" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <ColorAnimation Storyboard.TargetName="PathOpen" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF201F35" />
+                            <ColorAnimation Storyboard.TargetName="PathClose" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF201F35" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="PressedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <ColorAnimation Storyboard.TargetName="PathOpen" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF201F35" />
+                            <ColorAnimation Storyboard.TargetName="PathClose" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF201F35" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <Storyboard>
+                            <!--BEGIN WPF-->
+                            <DoubleAnimation Duration="0" To="0.35" Storyboard.TargetProperty="Opacity" />
+                            <!--END WPF-->
+                            <!--ONLY SL<DoubleAnimation Duration="0" To="0.35" Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity"/>ONLY SL-->
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="ExpandStates">
+                    <VisualState x:Name="Expanded" />
+                    <VisualState x:Name="Collapsed">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="GlyphClose" Storyboard.TargetProperty="(Control.Visibility)" dxcn:ValueSetter.Visibility="Collapsed" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="GlyphOpen" Storyboard.TargetProperty="(Control.Visibility)" dxcn:ValueSetter.Visibility="Visible" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Border x:Name="HoverState" CornerRadius="2" Padding="1" Opacity="0">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFD6D8DC" Offset="0" />
+                        <GradientStop Color="#FFC7C9CF" Offset="1" />
+                        <GradientStop Color="#FFA8ABB4" Offset="0.25" />
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Border BorderThickness="1" CornerRadius="1" Padding="1">
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFE8EDFF" Offset="0" />
+                            <GradientStop Color="#FFE1E8FE" Offset="1" />
+                            <GradientStop Color="#FFD3DEFC" Offset="0.25" />
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <Border.BorderBrush>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFF6F8FF" Offset="0" />
+                            <GradientStop Color="#FFF1F5FF" Offset="1" />
+                            <GradientStop Color="#FFEAEFFE" Offset="0.25" />
+                        </LinearGradientBrush>
+                    </Border.BorderBrush>
+                </Border>
+            </Border>
+            <Border x:Name="PressedState" CornerRadius="2" Padding="1" Opacity="0">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF8A8D98" Offset="0" />
+                        <GradientStop Color="#FFB0B2BA" Offset="1" />
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Border BorderThickness="1" CornerRadius="1" Padding="1">
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFBDBEC7" Offset="0" />
+                            <GradientStop Color="#FFC7C8D0" Offset="1" />
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <Border.BorderBrush>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFB1B3BC" Offset="0" />
+                            <GradientStop Color="#FFC4C6CE" Offset="1" />
+                        </LinearGradientBrush>
+                    </Border.BorderBrush>
+                </Border>
+            </Border>
+            <Grid x:Name="GlyphClose" Width="8" Height="5">
+                <Path Stretch="Fill" Fill="#BFFFFFFF" Data="F1 M 1668.5,814L 1668.5,815L 1666.5,815L 1664.5,813L 1662.5,815L 1660.5,815L 1660.5,814L 1664.5,810L 1668.5,814 Z " Margin="0,1,0,-1" />
+                <Path x:Name="PathClose" Stretch="Fill" Fill="#FF80838F" Data="F1 M 1668.5,814L 1668.5,815L 1666.5,815L 1664.5,813L 1662.5,815L 1660.5,815L 1660.5,814L 1664.5,810L 1668.5,814 Z " />
+            </Grid>
+            <Grid x:Name="GlyphOpen" Width="8" Height="5" Visibility="Collapsed">
+                <Path Stretch="Fill" Fill="#BFFFFFFF" Data="F1 M 1668.5,818L 1668.5,817L 1666.5,817L 1664.5,819L 1662.5,817L 1660.5,817L 1660.5,818L 1664.5,822L 1668.5,818 Z " Margin="0,1,0,-1" />
+                <Path x:Name="PathOpen" Stretch="Fill" Fill="#FF80838F" Data="F1 M 1668.5,818L 1668.5,817L 1666.5,817L 1664.5,819L 1662.5,817L 1660.5,817L 1660.5,818L 1664.5,822L 1668.5,818 Z " />
+            </Grid>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxnt:CommonElementsThemeKey ResourceKey=GroupHeaderTemplate}" TargetType="dxn:NavBarGroupHeader">
+        <Grid x:Name="Root">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup Name="ViewAnimationProgressGroupPositionStates">
+                    <VisualState Name="ExplorerBarFirst" />
+                    <VisualState Name="ExplorerBarFirst0">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="Root" Storyboard.TargetProperty="Margin">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Thickness>0,0,0,3</Thickness>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState Name="ExplorerBarMiddle" />
+                    <VisualState Name="ExplorerBarMiddle0">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="Root" Storyboard.TargetProperty="Margin">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Thickness>0,0,0,3</Thickness>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState Name="ExplorerBarLast" />
+                    <VisualState Name="ExplorerBarLast0">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="Root" Storyboard.TargetProperty="Margin">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Thickness>0,0,0,3</Thickness>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState Name="ExplorerBarSingle" />
+                    <VisualState Name="ExplorerBarSingle0">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="Root" Storyboard.TargetProperty="Margin">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Thickness>0,0,0,3</Thickness>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState Name="SideBarFirst" />
+                    <VisualState Name="SideBarFirst0">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="Root" Storyboard.TargetProperty="Margin">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Thickness>0,0,0,3</Thickness>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState Name="SideBarMiddle" />
+                    <VisualState Name="SideBarMiddle0">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="Root" Storyboard.TargetProperty="Margin">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Thickness>0,0,0,3</Thickness>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState Name="SideBarLast" />
+                    <VisualState Name="SideBarLast0">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="Root" Storyboard.TargetProperty="Margin">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Thickness>0,0,0,3</Thickness>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState Name="SideBarSingle" />
+                </VisualStateGroup>
+                <VisualStateGroup Name="SideBarCommonStates">
+                    <VisualState Name="IsMouseOverHeader" />
+                    <VisualState Name="IsPressedHeader" />
+                    <VisualState Name="Normal" />
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Grid>            
+                <Border BorderThickness="1" CornerRadius="1">
+                    <Border.Effect>
+                        <DropShadowEffect x:Name="Shadow" Direction="270" ShadowDepth="1" BlurRadius="3" Opacity="0.1" />
+                    </Border.Effect>
+                    <Border.BorderBrush>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#7FB8BAC2" Offset="0" />
+                            <GradientStop Color="#FFB8BAC2" Offset="1" />
+                        </LinearGradientBrush>
+                    </Border.BorderBrush>
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFFFFFFF" Offset="0" />
+                            <GradientStop Color="#FFF8F8FA" Offset="1" />
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <Border Margin="1">
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFFDFDFD" Offset="0" />
+                                <GradientStop Color="#FFF0F1F3" Offset="1" />
+                                <GradientStop Color="#FFE9EBEF" Offset="0.25" />
+                            </LinearGradientBrush>
+                        </Border.Background>
+                    </Border>
+                </Border>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid Margin="1">
+                    <dxn:ImageAndTextContentPresenter x:Name="groupHeaderLabel" Grid.Column="0" ImageFallbackSize="24" Content="{Binding Converter={dxn:FrameworkElementInfoSLCompatibilityConverter ConvertToInfo=True}}" Style="{DynamicResource {dxnt:NavBarGroupControlThemeKey ResourceKey=HeaderStyle}}" Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource TemplatedParent}}">
+                        <!--ONLY SL<dxn:ImageAndTextContentPresenter.ContentTemplateSelector>
+                            <Binding Path="ActualHeaderTemplateSelector"/>
+                        </dxn:ImageAndTextContentPresenter.ContentTemplateSelector>ONLY SL-->
+                    </dxn:ImageAndTextContentPresenter>
+                    <dx:PixelSnapper Grid.Column="1" Margin="2" VerticalAlignment="Center">
+                        <Grid>
+                            <dxn:ExplorerBarExpandButton x:Name="explorerBarExpandButton" dxcn:RoutedCommandHelper.CommandParameter="{Binding}" />
+                            <dxn:NavPaneExpandButton x:Name="navPaneExpandButton" dxcn:RoutedCommandHelper.CommandParameter="{Binding}" Visibility="Collapsed" />
+                        </Grid>
+                    </dx:PixelSnapper>
+                </Grid>
+            </Grid>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxnt:CommonElementsThemeKey ResourceKey=ScrollableContentControlTemplate}" TargetType="dxn:ScrollableContentControl">
+        <xpf:XPFDockPanel LastChildFill="True">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup Name="OrientationStates">
+                    <VisualState Name="Vertical" />
+                    <VisualState Name="Horizontal">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="Up" Storyboard.TargetProperty="(xpf:XPFDockPanel.Dock)">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <!--BEGIN WPF-->
+                                        <Dock>Left</Dock>
+                                        <!--END WPF-->
+                                        <!--ONLY SL<dx:Dock>Left</dx:Dock>ONLY SL-->
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="Down" Storyboard.TargetProperty="(xpf:XPFDockPanel.Dock)">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <!--BEGIN WPF-->
+                                        <Dock>Right</Dock>
+                                        <!--END WPF-->
+                                        <!--ONLY SL<dx:Dock>Right</dx:Dock>ONLY SL-->
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup Name="AllowScrollStates">
+                    <VisualState Name="AllowScrollFalse">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="Up" Storyboard.TargetProperty="Visibility">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Visibility>Collapsed</Visibility>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="Down" Storyboard.TargetProperty="Visibility">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Visibility>Collapsed</Visibility>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState Name="AllowScrollTrue" />
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <dxn:NavBarRepeatButton x:Name="Up" Interval="100" xpf:XPFDockPanel.Dock="Top" Focusable="{Binding Path=NavBar.View.Focusable}" Orientation="{Binding Path=NavBar.View.Orientation}" ClickMode="{Binding Path=NavBar.View.(dxn:ScrollingSettings.ClickMode)}" dxcn:RoutedCommandHelper.Command="{StaticResource ScrollUpCommandProvider}" dxcn:RoutedCommandHelper.CommandTarget="{Binding ElementName=Scroller}" Template="{Binding Path=ButtonUpTemplate, RelativeSource={RelativeSource TemplatedParent}}" />
+            <dxn:NavBarRepeatButton x:Name="Down" Interval="100" xpf:XPFDockPanel.Dock="Bottom" Focusable="{Binding Path=NavBar.View.Focusable}" Orientation="{Binding Path=NavBar.View.Orientation}" ClickMode="{Binding Path=NavBar.View.(dxn:ScrollingSettings.ClickMode)}" dxcn:RoutedCommandHelper.Command="{StaticResource ScrollDownCommandProvider}" dxcn:RoutedCommandHelper.CommandTarget="{Binding ElementName=Scroller}" Template="{Binding Path=ButtonDownTemplate, RelativeSource={RelativeSource TemplatedParent}}" />
+            <dxn:NavBarSmoothScroller x:Name="Scroller" xpf:XPFDockPanel.Dock="Top" Orientation="{Binding Path=Orientation, RelativeSource={RelativeSource TemplatedParent}}" ScrollSpeed="{Binding Path=NavBar.View.(dxn:ScrollingSettings.ScrollSpeed)}" ButtonUp="{Binding ElementName=Up}" ButtonDown="{Binding ElementName=Down}">
+                <!--BEGIN WPF-->
+                <dxn:NavBarSmoothScroller.IsManipulationEnabled>
+                    <Binding Path="NavBar.View.IsManipulationEnabled" />
+                </dxn:NavBarSmoothScroller.IsManipulationEnabled>
+                <dxn:NavBarSmoothScroller.Acceleration>
+                    <Binding Path="NavBar.View.(dxn:ScrollingSettings.AccelerationRatio)" />
+                </dxn:NavBarSmoothScroller.Acceleration>
+                <dxn:NavBarSmoothScroller.Deceleration>
+                    <Binding Path="NavBar.View.(dxn:ScrollingSettings.DecelerationRatio)" />
+                </dxn:NavBarSmoothScroller.Deceleration>
+                <!--END WPF-->
+                <ContentPresenter x:Name="contentPresenter" />
+            </dxn:NavBarSmoothScroller>
+        </xpf:XPFDockPanel>
+        <ControlTemplate.Triggers>
+            <DataTrigger Binding="{Binding Path=NavBar.View.NavBarViewKind}" Value="ExplorerBar" />
+            <DataTrigger Binding="{Binding Path=NavBar.View.NavBarViewKind}" Value="NavigationPane" />
+            <DataTrigger Binding="{Binding Path=NavBar.View.NavBarViewKind}" Value="SideBar" />
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    
+    <!--ONLY SL
+    <dxn:NavBarViewKindToObjectConverter x:Key="navBarViewKindToObjectConverter">
+        <dxn:NavBarViewKindToObjectConverter.ExplorerBarValue>
+            <Thickness>1</Thickness>
+        </dxn:NavBarViewKindToObjectConverter.ExplorerBarValue>
+        <dxn:NavBarViewKindToObjectConverter.NavigationPaneValue>
+            <Thickness>1</Thickness>
+        </dxn:NavBarViewKindToObjectConverter.NavigationPaneValue>
+        <dxn:NavBarViewKindToObjectConverter.SideBarValue>
+            <Thickness>0</Thickness>
+        </dxn:NavBarViewKindToObjectConverter.SideBarValue>
+    </dxn:NavBarViewKindToObjectConverter>
+    ONLY SL-->
+
+    <ControlTemplate x:Key="{dxnt:CommonElementsThemeKey ResourceKey=ScrollessContentControlTemplate}" TargetType="dxn:ScrollableContentControl">
+        <Border>
+            <!--ONLY SL<ContentPresenter x:Name="contentPresenter" Margin="{Binding Path=NavBar.View.NavBarViewKind, Converter={StaticResource navBarViewKindToObjectConverter}}" />ONLY SL-->
+            <!--BEGIN WPF-->
+            <ContentPresenter x:Name="contentPresenter" />
+            <!--END WPF-->
+        </Border>
+        <!--BEGIN WPF-->
+        <ControlTemplate.Triggers>
+            <DataTrigger Binding="{Binding Path=NavBar.View.NavBarViewKind}" Value="ExplorerBar" />
+            <DataTrigger Binding="{Binding Path=NavBar.View.NavBarViewKind}" Value="NavigationPane" />
+            <DataTrigger Binding="{Binding Path=NavBar.View.NavBarViewKind}" Value="SideBar" />
+        </ControlTemplate.Triggers>
+        <!--END WPF-->
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxnt:CommonElementsThemeKey ResourceKey=GroupItemsContainerTemplate}" TargetType="dxn:GroupItemsContainer">
+        <Grid>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup Name="NavPaneBorderStates">
+                    <VisualState Name="HideBottomBorder" />
+                    <VisualState Name="ShowBottomBorder">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Border" Storyboard.TargetProperty="Padding" dxcn:ValueSetter.Thickness="1,1,0,1" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup Name="NavBarViewKindStates">
+                    <VisualState Name="NavBarViewKindExplorerBar" />
+                    <VisualState Name="NavBarViewKindSideBar" />
+                    <VisualState Name="NavBarViewKindNavigationPane" />
+                </VisualStateGroup>
+                <VisualStateGroup Name="ExplorerBarItemsOrContentEmptyStates">
+                    <VisualState Name="ExplorerBarItemsOrContentNotEmpty" />
+                    <VisualState Name="ExplorerBarItemsOrContentEmpty">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="Border" Storyboard.TargetProperty="Height">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <sys:Double>30</sys:Double>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup Name="ViewGroupPositionAnimationProgressStates">
+                    <VisualState Name="ExplorerBarFirst" />
+                    <VisualState Name="ExplorerBarFirst0" />
+                    <VisualState Name="ExplorerBarMiddle" />
+                    <VisualState Name="ExplorerBarMiddle0" />
+                    <VisualState Name="ExplorerBarLast" />
+                    <VisualState Name="ExplorerBarLast0" />
+                    <VisualState Name="ExplorerBarSingle" />
+                    <VisualState Name="ExplorerBarSingle0" />
+                    <VisualState Name="SideBarFirst" />
+                    <VisualState Name="SideBarFirst0" />
+                    <VisualState Name="SideBarMiddle" />
+                    <VisualState Name="SideBarMiddle0" />
+                    <VisualState Name="SideBarSingle" />
+                    <VisualState Name="SideBarSingleScrollModeNormal" />
+                    <VisualState Name="SideBarLast">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="scrollControl" Storyboard.TargetProperty="Margin" dxcn:ValueSetter.Thickness="0,0,0,-1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState Name="SideBarLastScrollModeNormal">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Border" Storyboard.TargetProperty="Padding" dxcn:ValueSetter.Thickness="1,0,1,1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState Name="SideBarLast0" />
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <dx:LayoutTransformPanel Orientation="{Binding Path=NavBar.View.Orientation}">
+                <Border x:Name="Border">
+                    <Border x:Name="Background">
+                        <dxn:ScrollControl x:Name="scrollControl" ScrollButtonsControlTemplate="{DynamicResource {dxnt:CommonElementsThemeKey ResourceKey=SmoothScrollTemplate}}" ScrollBarControlTemplate="{DynamicResource {dxnt:CommonElementsThemeKey ResourceKey=NormalScrollTemplate}}" dx:FocusHelper2.Focusable="False">
+                            <!--ONLY SL<dx:BackgroundPanel.PatchForeground>True</dx:BackgroundPanel.PatchForeground>ONLY SL-->
+                            <ContentPresenter x:Name="Content" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" />
+                        </dxn:ScrollControl>
+                    </Border>
+                </Border>
+            </dx:LayoutTransformPanel>
+        </Grid>
+    </ControlTemplate>
+
+    <Thickness x:Key="{dxnt:CommonElementsThemeKey ResourceKey=GroupContentMargin}">0</Thickness>
+    <Thickness x:Key="{dxnt:NavBarGroupControlThemeKey ResourceKey=NavBarItemsControlMargin}">1,1,1,0</Thickness>
+    <FontWeight x:Key="{dxnt:CommonElementsThemeKey ResourceKey=GroupFontWeight}">Normal</FontWeight>
+    <FontWeight x:Key="{dxnt:CommonElementsThemeKey ResourceKey=ItemFontWeight}">Normal</FontWeight>
+    <SolidColorBrush x:Key="{dxnt:CommonElementsThemeKey ResourceKey=GroupForegroundBrush}" Color="#FF201F35" />
+    <SolidColorBrush x:Key="{dxnt:CommonElementsThemeKey ResourceKey=ItemForegroundBrush}" Color="#FF201F35" />
+    <SolidColorBrush x:Key="{dxnt:CommonElementsThemeKey ResourceKey=ItemForegroundBrushInPopup}" Color="#FF201F35" />
+    <SolidColorBrush x:Key="{dxnt:NavigationPaneButtonPanelThemeKey ResourceKey=GroupForegroundBrush}" Color="#FF201F35" />
+    <SolidColorBrush x:Key="{dxnt:NavigationPaneGroupClientThemeKey ResourceKey=CollapsedGroupForegroundBrush}" Color="#FF201F35" />
+
+</ResourceDictionary>

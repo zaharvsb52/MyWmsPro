@@ -1,0 +1,24 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="{dxc:ThemePartLoader Path=/DevExpress.Xpf.Core/DevExpress.Xpf.Core.xaml}" />
+    <dxcore_unique_xmlns:ThemePartResourceDictionary Key="{dx:ThemePartKey AssemblyName=DevExpress.Xpf.Carousel, Path=/DevExpress.Xpf.Carousel/Themes/GenericResources.xaml}" />
+    <dxcore_unique_xmlns:ThemePartResourceDictionary Key="{dx:ThemePartKey AssemblyName=DevExpress.Xpf.Carousel, Path=/DevExpress.Xpf.Carousel/Themes/GrayOne.xaml}" />
+    <dxcore_unique_xmlns:ThemePartResourceDictionary Key="{dx:ThemePartKey AssemblyName=DevExpress.Xpf.Charts, Path=/DevExpress.Xpf.Charts/Generic.XAML}" />
+    <dxcore_unique_xmlns:ThemePartResourceDictionary Key="{dx:ThemePartKey AssemblyName=DevExpress.Xpf.Charts, Path=/DevExpress.Xpf.Charts/GrayOne.XAML}" />
+    <dxcore_unique_xmlns:ThemePartResourceDictionary Key="{dx:ThemePartKey AssemblyName=DevExpress.Xpf.LayoutControl, Path=/DevExpress.Xpf.LayoutControl/Styles.Wpf.xaml}" />
+    <dxcore_unique_xmlns:ThemePartResourceDictionary Key="{dx:ThemePartKey AssemblyName=DevExpress.Xpf.Docking, Path=/DevExpress.Xpf.Docking/Generic.XAML}" />
+    <dxcore_unique_xmlns:ThemePartResourceDictionary Key="{dx:ThemePartKey AssemblyName=DevExpress.Xpf.Docking, Path=/DevExpress.Xpf.Docking/GrayOne.XAML}" />
+    <dxcore_unique_xmlns:ThemePartResourceDictionary Key="{dx:ThemePartKey AssemblyName=DevExpress.Xpf.Grid, Path=/DevExpress.Xpf.Grid/Generic.XAML}" />
+    <dxcore_unique_xmlns:ThemePartResourceDictionary Key="{dx:ThemePartKey AssemblyName=DevExpress.Xpf.NavBar, Path=/DevExpress.Xpf.NavBar/Generic.xaml}" />
+    <dxcore_unique_xmlns:ThemePartResourceDictionary Key="{dx:ThemePartKey AssemblyName=DevExpress.Xpf.NavBar, Path=/DevExpress.Xpf.NavBar/GrayOne.XAML}" />
+    <dxcore_unique_xmlns:ThemePartResourceDictionary Key="{dx:ThemePartKey AssemblyName=DevExpress.Xpf.Printing, Path=/DevExpress.Xpf.Printing/GrayOne.XAML}" />
+    <dxcore_unique_xmlns:ThemePartResourceDictionary Key="{dx:ThemePartKey AssemblyName=DevExpress.Xpf.Ribbon, Path=/DevExpress.Xpf.Ribbon/Generic.XAML}" />
+    <dxcore_unique_xmlns:ThemePartResourceDictionary Key="{dx:ThemePartKey AssemblyName=DevExpress.Xpf.Ribbon, Path=/DevExpress.Xpf.Ribbon/GrayOne.XAML}" />
+    <dxcore_unique_xmlns:ThemePartResourceDictionary Key="{dx:ThemePartKey AssemblyName=DevExpress.Xpf.PivotGrid, Path=/DevExpress.Xpf.PivotGrid/Generic.XAML}" />
+    <dxcore_unique_xmlns:ThemePartResourceDictionary Key="{dx:ThemePartKey AssemblyName=DevExpress.Xpf.PivotGrid, Path=/DevExpress.Xpf.PivotGrid/GrayOne.XAML}" />
+    <dxcore_unique_xmlns:ThemePartResourceDictionary Key="{dx:ThemePartKey AssemblyName=DevExpress.Xpf.RichEdit, Path=/DevExpress.Xpf.RichEdit/GrayOne.xaml}" />
+    <dxcore_unique_xmlns:ThemePartResourceDictionary Key="{dx:ThemePartKey AssemblyName=DevExpress.Xpf.RichEdit, Path=/DevExpress.Xpf.RichEdit/Generic.xaml}" />
+    <dxcore_unique_xmlns:ThemePartResourceDictionary Key="{dx:ThemePartKey AssemblyName=DevExpress.Xpf.Scheduler, Path=/DevExpress.Xpf.Scheduler/Generic.xaml}" />
+    <dxcore_unique_xmlns:ThemePartResourceDictionary Key="{dx:ThemePartKey AssemblyName=DevExpress.Xpf.Scheduler, Path=/DevExpress.Xpf.Scheduler/GrayOne.xaml}" />
+  </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

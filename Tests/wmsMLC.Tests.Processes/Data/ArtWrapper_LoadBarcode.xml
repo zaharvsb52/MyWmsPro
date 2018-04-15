@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfArtWrapper xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ArtWrapper>
+    <ARTABCD>B</ARTABCD>
+    <ARTCODE xsi:nil="true"/>
+    <ARTCOLOR/>
+    <ARTCOLORTONE xsi:nil="true"/>
+    <ARTCOMMERCTIME>0</ARTCOMMERCTIME>
+    <ARTCOMMERCTIMEMEASURE>DAY</ARTCOMMERCTIMEMEASURE>
+    <ARTDESC/>
+    <ARTDESCEXT/>
+    <ARTHOSTREF/>
+    <ARTINPUTDATEMETHOD>DAY</ARTINPUTDATEMETHOD>
+    <ARTNAME>0076083</ARTNAME>
+    <ARTSIZE/>
+    <ARTTEMPMAX xsi:nil="true"/>
+    <ARTTEMPMIN xsi:nil="true"/>
+    <ARTUPDATE>1</ARTUPDATE>
+    <MANDANTID>70</MANDANTID>
+    <MandantCode>MET</MandantCode>
+    <BARCODEONLY>1</BARCODEONLY>
+    <SKUL>
+      <SKUWrapper>
+        <ARTCODE_R xsi:nil="true"/>
+        <ArtPriceList xsi:nil="true"/>
+        <BarcodeList>
+          <BarcodeWrapper>
+            <BARCODE2ENTITY>SKU</BARCODE2ENTITY>
+            <BARCODEID xsi:nil="true"/>
+            <!--<BARCODEKEY xsi:nil="true"/>-->
+            <BARCODEVALUE>05410076224906</BARCODEVALUE>
+            <UpdateNullValues xsi:nil="true"/>
+          </BarcodeWrapper>
+        </BarcodeList>
+        <MANDANTID>70</MANDANTID>
+        <MEASURECODE_R>MU</MEASURECODE_R>
+        <SKUCLIENT>1</SKUCLIENT>
+        <SKUCOUNT>1</SKUCOUNT>
+        <SKUDEFAULT>0</SKUDEFAULT>
+        <SKUDESC> - метро-ед</SKUDESC>
+        <SKUINDIVISIBLE>0</SKUINDIVISIBLE>
+        <SKUNAME>0076083 (метро-ед 1)</SKUNAME>
+        <SKUPRIMARY>1</SKUPRIMARY>
+        <UpdateNullValues xsi:nil="true"/>
+      </SKUWrapper>
+    </SKUL>
+    <UpdateNullValues xsi:nil="true"/>
+  </ArtWrapper>
+</ArrayOfArtWrapper>

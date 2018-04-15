@@ -1,0 +1,44 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Core.DragIconControl}" TargetType="{x:Type local:DragIconControl}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="local:DragIconControl">
+          <Image x:Name="icon" Stretch="None" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\Generic\DragIconControl.xaml;6;22">
+            <!--ONLY SL
+                        <Image.Source>
+                            <Binding Path="DragType" RelativeSource="{RelativeSource TemplatedParent}">
+                                <Binding.Converter>
+                                    <local:EnumToObjectConverter>
+                                        <local:EnumToObjectConverter.AdditionalConverter>
+                                            <local:EmbeddedResourceImageConverter/>
+                                        </local:EnumToObjectConverter.AdditionalConverter>
+                                        <local:EnumToObjectConverter.Values>
+                                            <local:EnumObjectProvider x:Key="Remove" Value="DevExpress.Xpf.Core.Core.Images.DragRemove.png"/>
+                                            <local:EnumObjectProvider x:Key="Copy" Value="DevExpress.Xpf.Core.Core.Images.DragCopy.png"/>
+                                        </local:EnumToObjectConverter.Values>
+                                    </local:EnumToObjectConverter>
+                                </Binding.Converter>
+                            </Binding>
+                        </Image.Source>ONLY SL-->
+          </Image>
+          <ControlTemplate.Triggers>
+            <Trigger Property="DragType" Value="Remove">
+              <Setter Property="Source" TargetName="icon">
+                <Setter.Value>
+                  <Binding Source="DevExpress.Xpf.Core.Core.Images.DragRemove.png" Converter="{local:EmbeddedResourceImageConverter}" />
+                </Setter.Value>
+              </Setter>
+            </Trigger>
+            <Trigger Property="DragType" Value="Copy">
+              <Setter Property="Source" TargetName="icon">
+                <Setter.Value>
+                  <Binding Source="DevExpress.Xpf.Core.Core.Images.DragCopy.png" Converter="{local:EmbeddedResourceImageConverter}" />
+                </Setter.Value>
+              </Setter>
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+</ResourceDictionary>

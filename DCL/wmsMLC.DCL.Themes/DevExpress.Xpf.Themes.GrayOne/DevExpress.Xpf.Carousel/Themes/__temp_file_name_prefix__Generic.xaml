@@ -1,0 +1,6 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="{dx:CarouselResource Themes/DeepBlue.xaml}" />
+    <ResourceDictionary Source="{dx:CarouselResource Themes/GenericResources.xaml}" />
+  </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

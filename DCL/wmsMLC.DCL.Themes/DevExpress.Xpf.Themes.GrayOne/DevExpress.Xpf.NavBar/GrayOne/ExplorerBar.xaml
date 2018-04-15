@@ -1,0 +1,52 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxn="http://schemas.devexpress.com/winfx/2008/xaml/navbar" xmlns:dxnt="http://schemas.devexpress.com/winfx/2008/xaml/navbar/themekeys" xmlns:dxcn="http://schemas.devexpress.com/winfx/2008/xaml/core/internal">
+
+    <dxn:IsActiveToAnimationProgressConverter x:Key="IsActiveToAnimationProgressConverter" />
+
+    <ControlTemplate x:Key="{dxnt:ExplorerBarThemeKey ResourceKey=ExplorerBarGroupTemplate}" TargetType="dxn:NavBarGroupControl">
+        <StackPanel Orientation="{Binding Path=NavBar.View.Orientation}" dxn:NavBarAnimationOptions.AnimationProgress="{Binding Path=AnimationProgress, ElementName=PART_DXExpander}">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="OrientationStates">
+                    <VisualState x:Name="Vertical" />
+                    <VisualState x:Name="Horizontal">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_DXExpander" Storyboard.TargetProperty="HorizontalAlignment">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <HorizontalAlignment>Stretch</HorizontalAlignment>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_DXExpander" Storyboard.TargetProperty="VerticalAlignment" dxcn:ValueSetter.VerticalAlignment="Stretch" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <dx:LayoutTransformPanel Orientation="{Binding Path=NavBar.View.Orientation}">
+                <dxn:NavBarGroupHeader x:Name="groupHeader" Style="{Binding Path=ActualVisualStyle}" AnimationProgress="{Binding Path=AnimationProgress, ElementName=PART_DXExpander}" Template="{Binding Path=ActualGroupHeaderTemplate}" />
+            </dx:LayoutTransformPanel>
+            <dx:DXExpander x:Name="PART_DXExpander" HorizontalAlignment="Stretch" VerticalAlignment="Top" MinWidth="{Binding Path=NavBar.View.(dxn:NavBarAnimationOptions.MinWidth)}" MinHeight="{Binding Path=NavBar.View.(dxn:NavBarAnimationOptions.MinHeight)}" HorizontalExpand="{Binding Path=NavBar.View.(dxn:NavBarAnimationOptions.HorizontalExpand)}" VerticalExpand="{Binding Path=NavBar.View.(dxn:NavBarAnimationOptions.VerticalExpand)}" StretchChild="{Binding Path=NavBar.View.(dxn:NavBarAnimationOptions.StretchChild)}" AnimationProgress="{Binding Path=IsExpanded, Mode=OneTime, Converter={StaticResource IsActiveToAnimationProgressConverter}}" dxn:NavBarAnimationOptions.IsExpanded="{Binding Path=IsExpanded}" dxn:NavBarAnimationOptions.AnimationProgress="{Binding Path=(dxn:NavBarAnimationOptions.AnimationProgress)}" dxn:NavBarAnimationOptions.ExpandStoryboard="{Binding Path=NavBar.View.(dxn:NavBarAnimationOptions.ExpandStoryboard)}" dxn:NavBarAnimationOptions.CollapseStoryboard="{Binding Path=NavBar.View.(dxn:NavBarAnimationOptions.CollapseStoryboard)}" dxn:NavBarAnimationOptions.IsAnimationEnabled="{Binding AnimateGroupExpansion}">
+                <!--ONLY SL
+                <dx:FrameworkElementHelper.IsClipped>
+                    <sys:Boolean>True</sys:Boolean>
+                </dx:FrameworkElementHelper.IsClipped>
+                ONLY SL-->
+                <dxn:GroupItemsContainer AnimationProgress="{Binding Path=AnimationProgress, ElementName=PART_DXExpander}" dx:FocusHelper2.Focusable="False">
+                    <dx:LayoutTransformPanel Orientation="{Binding Path=NavBar.View.Orientation}" Clockwise="True">
+                        <dx:XPFContentPresenter Name="groupHeaderContentPresenter" Content="{Binding Converter={dxn:FrameworkElementInfoSLCompatibilityConverter}}" Style="{DynamicResource {dxnt:CommonElementsThemeKey ResourceKey=DefaultGroupControlPresenterStyle}}">
+                            <!--ONLY SL<dx:XPFContentPresenter.ContentTemplate>
+                                <Binding Path="ActualGroupContentTemplate" RelativeSource="{RelativeSource Mode=TemplatedParent}"/>
+                            </dx:XPFContentPresenter.ContentTemplate>
+                            ONLY SL-->
+                        </dx:XPFContentPresenter>
+                    </dx:LayoutTransformPanel>
+                </dxn:GroupItemsContainer>
+            </dx:DXExpander>
+        </StackPanel>
+        <ControlTemplate.Triggers>
+            <DataTrigger Binding="{Binding Path=DisplaySource}" Value="Content">
+                <Setter Property="ContentTemplate" TargetName="groupHeaderContentPresenter" Value="{DynamicResource {dxnt:CommonElementsThemeKey ResourceKey=GroupContainerTemplate}}" />
+            </DataTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+</ResourceDictionary>

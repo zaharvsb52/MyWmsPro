@@ -1,0 +1,60 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" xmlns:dxgt="http://schemas.devexpress.com/winfx/2008/xaml/grid/themekeys" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <ControlTemplate x:Key="{dxgt:GroupRowThemeKey ResourceKey=GroupRowsControlContainerTemplate}" TargetType="{x:Type ContentControl}">
+    <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\RowsControl.xaml;3;10" />
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxgt:GroupRowThemeKey ResourceKey=GroupRowsControlTemplate}">
+    <ContentControl Template="{DynamicResource {dxgt:GroupRowThemeKey ResourceKey=GroupRowsControlContainerTemplate}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\RowsControl.xaml;7;10">
+      <dxg:RowsItemsControl ItemsSource="{Binding Path=Items}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\RowsControl.xaml;8;14">
+        <dxg:RowsItemsControl.ItemsPanel>
+          <ControlTemplate>
+            <dxcore_unique_xmlns:StackVisibleIndexPanel Orientation="Vertical" ArrangeAccordingToVisibleIndex="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\RowsControl.xaml;11;26" />
+          </ControlTemplate>
+        </dxg:RowsItemsControl.ItemsPanel>
+      </dxg:RowsItemsControl>
+    </ContentControl>
+  </ControlTemplate>
+  <!--BEGIN WPF-->
+  <ControlTemplate x:Key="{dxgt:CardViewThemeKey ResourceKey=DataRowsControlContainerTemplate}" TargetType="{x:Type ContentControl}">
+    <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\RowsControl.xaml;19;10" />
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxgt:CardViewThemeKey ResourceKey=GroupRowsControlContainerTemplate}" TargetType="{x:Type ContentControl}">
+    <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\RowsControl.xaml;23;10" />
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxgt:CardViewThemeKey ResourceKey=DataRowsControlTemplate}">
+    <ContentControl Template="{DynamicResource {dxgt:CardViewThemeKey ResourceKey=DataRowsControlContainerTemplate}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\RowsControl.xaml;27;4">
+      <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\RowsControl.xaml;28;5">
+        <dxg:RowsItemsControl ItemsSource="{Binding Path=Items}" x:Name="cardsItemsControl" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\RowsControl.xaml;29;18">
+          <dxg:RowsItemsControl.ItemsPanel>
+            <ControlTemplate>
+              <dxcore_unique_xmlns:CardsPanel Style="{DynamicResource {dxgt:CardViewThemeKey ResourceKey=CardsPanelStyle}}" ArrangeAccordingToVisibleIndex="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\RowsControl.xaml;32;9" />
+            </ControlTemplate>
+          </dxg:RowsItemsControl.ItemsPanel>
+        </dxg:RowsItemsControl>
+        <dxcore_unique_xmlns:CachedItemsControl x:Name="separatorsItemsControl" ItemsSource="{Binding Path=Panel.CardsSeparators, ElementName=cardsItemsControl}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\RowsControl.xaml;36;6">
+          <dxcore_unique_xmlns:CachedItemsControl.ItemsPanel>
+            <ControlTemplate>
+              <Canvas dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\RowsControl.xaml;39;9" />
+            </ControlTemplate>
+          </dxcore_unique_xmlns:CachedItemsControl.ItemsPanel>
+          <dxcore_unique_xmlns:CachedItemsControl.ItemTemplate>
+            <DataTemplate>
+              <dxg:CardsResizer Margin="{Binding Margin}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\RowsControl.xaml;44;30" />
+            </DataTemplate>
+          </dxcore_unique_xmlns:CachedItemsControl.ItemTemplate>
+        </dxcore_unique_xmlns:CachedItemsControl>
+      </Grid>
+    </ContentControl>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxgt:CardViewThemeKey ResourceKey=GroupRowsControlTemplate}">
+    <ContentControl Template="{DynamicResource {dxgt:CardViewThemeKey ResourceKey=GroupRowsControlContainerTemplate}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\RowsControl.xaml;53;4">
+      <dxg:RowsItemsControl ItemsSource="{Binding Path=Items}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\RowsControl.xaml;54;14">
+        <dxg:RowsItemsControl.ItemsPanel>
+          <ControlTemplate>
+            <dxcore_unique_xmlns:StackVisibleIndexPanel ArrangeAccordingToVisibleIndex="True" Orientation="{Binding Path=Orientation, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxg:CardView}}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\RowsControl.xaml;57;8" />
+          </ControlTemplate>
+        </dxg:RowsItemsControl.ItemsPanel>
+      </dxg:RowsItemsControl>
+    </ContentControl>
+  </ControlTemplate>
+  <!--END WPF-->
+</ResourceDictionary>

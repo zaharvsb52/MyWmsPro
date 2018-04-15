@@ -1,0 +1,49 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    xmlns:dxet="http://schemas.devexpress.com/winfx/2008/xaml/editors/themekeys"
+    xmlns:h="clr-namespace:wmsMLC.DCL.Main.Helpers"
+    xmlns:controls="clr-namespace:wmsMLC.DCL.Main.Views.Controls">
+    
+    <!--
+    <h:ErrorContentConverter x:Key="ErrorContentToErrorTypeConverter" GetValueTag="ErrorType" Separator=";" />
+    <h:ErrorContentConverter x:Key="ErrorContentConverter" GetValueTag="ErrorContent" Separator=";" />
+
+    <DataTemplate x:Key="errorPopupTemplate">
+        <TextBlock Text="{Binding Path=ErrorContent, Converter={StaticResource ErrorContentConverter}}" />
+    </DataTemplate>
+    <Style TargetType="{x:Type dxe:ErrorControl}" BasedOn="{StaticResource {x:Type dxe:ErrorControl}}">
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Content.ErrorContent, Converter={StaticResource ErrorContentToErrorTypeConverter}, RelativeSource={RelativeSource Self}}" Value="Critical">
+                <Setter Property="ContentTemplate" Value="{DynamicResource {dxet:ErrorTypesThemeKey ResourceKey=Critical}}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Content.ErrorContent, Converter={StaticResource ErrorContentToErrorTypeConverter}, RelativeSource={RelativeSource Self}}" Value="Warning">
+                <Setter Property="ContentTemplate" Value="{DynamicResource {dxet:ErrorTypesThemeKey ResourceKey=Warning}}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Content.ErrorContent, Converter={StaticResource ErrorContentToErrorTypeConverter}, RelativeSource={RelativeSource Self}}" Value="Information">
+                <Setter Property="ContentTemplate" Value="{DynamicResource {dxet:ErrorTypesThemeKey ResourceKey=Information}}" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+    <Style TargetType="{x:Type dxe:TextEdit}" BasedOn="{StaticResource textEditBaseStyle}" x:Name="textEditErrorStyle">
+        <Setter Property="ErrorToolTipContentTemplate" Value="{StaticResource errorPopupTemplate}" />
+    </Style>
+    <Style TargetType="{x:Type dxe:DateEdit}">
+        <Setter Property="ErrorToolTipContentTemplate" Value="{StaticResource errorPopupTemplate}" />
+    </Style>
+    <Style TargetType="{x:Type dxe:ButtonEdit}">
+        <Setter Property="ErrorToolTipContentTemplate" Value="{StaticResource errorPopupTemplate}" />
+    </Style>
+    <Style TargetType="{x:Type controls:CustomLabelItem}">
+        <Setter Property="ErrorToolTipContentTemplate" Value="{StaticResource errorPopupTemplate}" />
+    </Style>
+
+    <Style TargetType="{x:Type controls:CustomComboBoxEdit}">
+        <Setter Property="ErrorToolTipContentTemplate" Value="{StaticResource errorPopupTemplate}" />
+    </Style>
+
+    <Style TargetType="{x:Type controls:CustomLookUpEdit}">
+        <Setter Property="ErrorToolTipContentTemplate" Value="{StaticResource errorPopupTemplate}" />
+    </Style>
+    -->
+</ResourceDictionary>

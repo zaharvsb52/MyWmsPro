@@ -1,0 +1,27 @@
+﻿<views:ObjectViewBase x:Class="wmsMLC.DCL.Content.Views.ArtView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:views="clr-namespace:wmsMLC.DCL.Main.Views;assembly=wmsMLC.DCL.Main"
+    xmlns:controls="clr-namespace:wmsMLC.DCL.Main.Views.Controls;assembly=wmsMLC.DCL.Main"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="600">
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <views:MenuView x:Name="MainMenuView" Menu="{Binding Menu, IsAsync=True, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+        <controls:CustomDataLayoutControl Grid.Row="1"
+                x:Name="ObjectDataLayout"
+                Orientation="Vertical"
+                AllowAvailableItemsDuringCustomization="True"
+                IsCustomization="{Binding DataContext.IsCustomization, ElementName=LayoutRoot, Mode=TwoWay}">
+        </controls:CustomDataLayoutControl>
+        
+        <controls:CustomWaitIndicator Grid.Row="0" Grid.RowSpan="2" DeferedVisibility="{Binding Path=WaitIndicatorVisible, IsAsync=True}" />
+    </Grid>
+</views:ObjectViewBase>

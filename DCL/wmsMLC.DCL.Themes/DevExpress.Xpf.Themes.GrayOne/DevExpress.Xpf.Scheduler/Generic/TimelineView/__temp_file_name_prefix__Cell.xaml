@@ -1,0 +1,35 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxsch="http://schemas.devexpress.com/winfx/2008/xaml/scheduler" xmlns:dxscht="http://schemas.devexpress.com/winfx/2008/xaml/scheduler/themekeys" xmlns:dxschd="http://schemas.devexpress.com/winfx/2008/xaml/scheduler/internal" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <!--TimelineViewDayTemplate-->
+  <Style x:Key="{dxscht:TimelineViewThemeKey ResourceKey=CellStyle}" TargetType="{x:Type dxschd:VisualSingleTimelineCell}">
+    <Setter Property="AppointmentPadding" Value="1" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type dxschd:VisualSingleTimelineCell}">
+          <Grid SnapsToDevicePixels="True" UseLayoutRounding="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Generic\TimelineView\Cell.xaml;9;22">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <dxschd:CellBorder Grid.Row="0" Grid.RowSpan="2" DefaultBorderThickness="1" BorderBrush="{TemplateBinding BorderBrush}" ElementPosition="{Binding Path=(dxschd:SchedulerItemsControl.ElementPosition), RelativeSource={RelativeSource TemplatedParent}}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True" UseLayoutRounding="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Generic\TimelineView\Cell.xaml;14;26" />
+            <dxschd:CellContent x:Name="PART_CONTENT" Background="Transparent" Grid.Row="1" dxsch:SchedulerControl.HitTestType="Cell" IsHitTestVisible="True" ElementPosition="{Binding Path=(dxschd:SchedulerItemsControl.ElementPosition), RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Generic\TimelineView\Cell.xaml;15;26" />
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="ContentTemplate">
+      <Setter.Value>
+        <DataTemplate></DataTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="BackgroundBrushSelector">
+      <Setter.Value>
+        <dxschd:TimelineViewCellBackgroundBrushSelector />
+      </Setter.Value>
+    </Setter>
+    <Setter Property="BorderBrushSelector">
+      <Setter.Value>
+        <dxschd:TimelineViewCellBorderBrushSelector />
+      </Setter.Value>
+    </Setter>
+  </Style>
+</ResourceDictionary>

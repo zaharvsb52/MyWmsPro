@@ -1,0 +1,590 @@
+<Activity mc:Ignorable="sads sap" x:Class="{x:Null}"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:bm="clr-namespace:BLToolkit.Mapping;assembly=BLToolkit.4"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mv="clr-namespace:Microsoft.VisualBasic;assembly=Microsoft.VisualBasic"
+ xmlns:mv1="clr-namespace:Microsoft.VisualBasic;assembly=System"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:s="clr-namespace:System;assembly=mscorlib"
+ xmlns:s1="clr-namespace:System;assembly=System"
+ xmlns:s2="clr-namespace:System;assembly=System.Core"
+ xmlns:s3="clr-namespace:System;assembly=System.ServiceModel"
+ xmlns:s4="clr-namespace:System;assembly=System.ComponentModel.Composition"
+ xmlns:s5="clr-namespace:System;assembly=System.Runtime"
+ xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Core"
+ xmlns:scg1="clr-namespace:System.Collections.Generic;assembly=System"
+ xmlns:scg2="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:scg3="clr-namespace:System.Collections.Generic;assembly=System.ServiceModel"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:sco1="clr-namespace:System.Collections.ObjectModel;assembly=System"
+ xmlns:sl="clr-namespace:System.Linq;assembly=System.Core"
+ xmlns:sle="clr-namespace:System.Linq.Expressions;assembly=System.Core"
+ xmlns:sw="clr-namespace:System.Windows;assembly=WindowsBase"
+ xmlns:sw1="clr-namespace:System.Windows;assembly=PresentationCore"
+ xmlns:sw2="clr-namespace:System.Windows;assembly=PresentationFramework"
+ xmlns:sxs="clr-namespace:System.Xml.Serialization;assembly=System.Xml"
+ xmlns:wab="clr-namespace:wmsMLC.Activities.Business;assembly=wmsMLC.Activities.Business"
+ xmlns:wada="clr-namespace:wmsMLC.Activities.Dialogs.Activities;assembly=wmsMLC.Activities.Dialogs"
+ xmlns:wag="clr-namespace:wmsMLC.Activities.General;assembly=wmsMLC.Activities.General"
+ xmlns:wav="clr-namespace:wmsMLC.Activities.ViewInteraction;assembly=wmsMLC.Activities.ViewInteraction"
+ xmlns:wbm="clr-namespace:wmsMLC.Business.Managers;assembly=wmsMLC.Business.Managers"
+ xmlns:wbmp="clr-namespace:wmsMLC.Business.Managers.Processes;assembly=wmsMLC.Business.Managers"
+ xmlns:wbo="clr-namespace:wmsMLC.Business.Objects;assembly=wmsMLC.Business.Objects"
+ xmlns:wdg="clr-namespace:wmsMLC.DCL.General;assembly=wmsMLC.DCL.General"
+ xmlns:wdgv="clr-namespace:wmsMLC.DCL.General.ViewModels;assembly=wmsMLC.DCL.General"
+ xmlns:wg="clr-namespace:wmsMLC.General;assembly=wmsMLC.General"
+ xmlns:wgb="clr-namespace:wmsMLC.General.BL;assembly=wmsMLC.General.BL"
+ xmlns:wgbv="clr-namespace:wmsMLC.General.BL.Validation;assembly=wmsMLC.General.BL"
+ xmlns:wgpm="clr-namespace:wmsMLC.General.PL.Model;assembly=wmsMLC.General.PL"
+ xmlns:wgpw="clr-namespace:wmsMLC.General.PL.WPF;assembly=wmsMLC.General.PL.WPF"
+ xmlns:wgpwg="clr-namespace:wmsMLC.General.PL.WPF.General;assembly=wmsMLC.General.PL.WPF"
+ xmlns:wgpwv="clr-namespace:wmsMLC.General.PL.WPF.ViewModels;assembly=wmsMLC.General.PL.WPF"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="BpContext" Type="InOutArgument(wgb:BpContext)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>654,676</sap:VirtualizedContainerService.HintSize>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces for internal implementation</mva:VisualBasic.Settings>
+  <Flowchart sap:VirtualizedContainerService.HintSize="614,636">
+    <Flowchart.Variables>
+      <Variable x:TypeArguments="s:Exception" Name="exception" />
+      <Variable x:TypeArguments="sco:Collection(s:Exception)" Name="exceptionList" />
+      <Variable x:TypeArguments="x:Boolean" Name="APIResult" />
+    </Flowchart.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+        <av:Size x:Key="ShapeSize">60,75</av:Size>
+        <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,144.5</av:PointCollection>
+      </scg2:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Flowchart.StartNode>
+      <x:Reference>__ReferenceID22</x:Reference>
+    </Flowchart.StartNode>
+    <FlowStep x:Name="__ReferenceID22">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">178,144.5</av:Point>
+          <av:Size x:Key="ShapeSize">244,51</av:Size>
+        </scg2:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch DisplayName="Безопасный блок" sap:VirtualizedContainerService.HintSize="1032,1964">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg2:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <TryCatch.Try>
+          <Flowchart DisplayName="Выполнение бизнес процесса" sap:VirtualizedContainerService.HintSize="1014,1777">
+            <Flowchart.Variables>
+              <Variable x:TypeArguments="wdgv:ExpandoObjectViewModelBase" Name="teModel" />
+              <Variable x:TypeArguments="x:String" Name="layout" />
+              <Variable x:TypeArguments="x:Boolean" Name="dialogResult" />
+              <Variable x:TypeArguments="x:String" Name="teCode" />
+              <Variable x:TypeArguments="x:Object" Name="teTypeCode" />
+              <Variable x:TypeArguments="x:Int32" Name="teExist" />
+              <Variable x:TypeArguments="scg2:List(wbo:TEType)" Name="teTypeList" />
+              <Variable x:TypeArguments="wdgv:ExpandoObjectViewModelBase" Name="teTypeModel" />
+              <Variable x:TypeArguments="x:Boolean" Default="False" Name="teTypeCodeExist" />
+              <Variable x:TypeArguments="x:String" Name="currentPlace" />
+              <Variable x:TypeArguments="wbo:Client" Name="currentClient" />
+              <Variable x:TypeArguments="wbo:TE" Name="box" />
+              <Variable x:TypeArguments="av:MessageBoxResult" Name="msgResult" />
+              <Variable x:TypeArguments="s:Nullable(x:Boolean)" Name="mesResult" />
+              <Variable x:TypeArguments="x:Boolean" Name="printLabel" />
+              <Variable x:TypeArguments="wbm:PrintReportStatus" Name="reportStatus" />
+              <Variable x:TypeArguments="x:String" Name="teCodeStr" />
+              <Variable x:TypeArguments="x:String" Name="errormess" />
+              <Variable x:TypeArguments="x:String" Name="TeCodeVar" />
+              <Variable x:TypeArguments="scg2:List(wbo:TEType2Mandant)" Name="TEType2MandantLst" />
+              <Variable x:TypeArguments="x:String" Name="filter" />
+              <Variable x:TypeArguments="x:Boolean" Name="IsTeExist" />
+              <Variable x:TypeArguments="x:Object" Name="teCodeObj" />
+              <Variable x:TypeArguments="x:String" Name="optionalFilter" />
+            </Flowchart.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <av:Point x:Key="ShapeLocation">390,0</av:Point>
+                <av:Size x:Key="ShapeSize">60,75</av:Size>
+                <x:Double x:Key="Width">1000</x:Double>
+                <x:Double x:Key="Height">1741</x:Double>
+                <av:PointCollection x:Key="ConnectorLocation">420,75 420,90</av:PointCollection>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg2:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Flowchart.StartNode>
+              <x:Reference>__ReferenceID21</x:Reference>
+            </Flowchart.StartNode>
+            <FlowStep x:Name="__ReferenceID4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">340,471</av:Point>
+                  <av:Size x:Key="ShapeSize">200,57</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">440,528 440,559</av:PointCollection>
+                </scg2:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <wada:CreateExpandoObjectViewModelActivity DisplayName="Создать модель объекта" sap:VirtualizedContainerService.HintSize="200,57" Layout="[layout]" LayoutSettingsFileSuffix="469e2f06-e43b-4264-a20d-9825eefc59f8" LayoutValue="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;CustomDataLayoutControl ID=&quot;objectDataLayout&quot; Orientation=&quot;Vertical&quot;&gt;&lt;Element ID=&quot;TECODE&quot; Label=&quot;&quot; /&gt;&lt;Element ID=&quot;PRINTLABEL&quot; Label=&quot;&quot; /&gt;&lt;AvailableItems /&gt;&lt;/CustomDataLayoutControl&gt;" Result="[teModel]" ShowCustomizeMenu="False">
+                <wada:CreateExpandoObjectViewModelActivity.Fields>
+                  <wgpm:ValueDataField BackGroundColor="{x:Null}" BindingPath="{x:Null}" DependentFields="{x:Null}" DisplayFormat="{x:Null}" DisplayTextConverter="{x:Null}" EnableCreate="{x:Null}" EnableEdit="{x:Null}" EventName="{x:Null}" FieldName="{x:Null}" HotKey="{x:Null}" ImageName="{x:Null}" KeyLink="{x:Null}" LookupCode="{x:Null}" LookupFilterExt="{x:Null}" LookupVarFilterExt="{x:Null}" MaxLength="{x:Null}" SourceName="{x:Null}" AllowAddNewValue="False" Caption="ТЕ" CloseDialog="False" Description="ШК ТЕ-упаковки с этикетки" FieldType="x:String" IsChangeLookupCode="False" IsEnabled="True" IsLabelFontWeightBold="False" IsMemoView="False" IsOnPropertyChange="False" IsRequired="False" LabelPosition="Left" LookupButtonEnabled="True" Name="TECODE" Order="0" SetFocus="False" Value="teCode" Visible="True" />
+                  <wgpm:ValueDataField BackGroundColor="{x:Null}" BindingPath="{x:Null}" DependentFields="{x:Null}" DisplayFormat="{x:Null}" DisplayTextConverter="{x:Null}" EnableCreate="{x:Null}" EnableEdit="{x:Null}" EventName="{x:Null}" FieldName="{x:Null}" HotKey="{x:Null}" ImageName="{x:Null}" KeyLink="{x:Null}" LookupCode="{x:Null}" LookupFilterExt="{x:Null}" LookupVarFilterExt="{x:Null}" MaxLength="{x:Null}" SourceName="{x:Null}" AllowAddNewValue="False" Caption="Печатать этикетку" CloseDialog="False" Description="Печатать этикетку для короба" FieldType="x:Boolean" IsChangeLookupCode="False" IsEnabled="True" IsLabelFontWeightBold="False" IsMemoView="False" IsOnPropertyChange="False" IsRequired="False" LabelPosition="Left" LookupButtonEnabled="True" Name="PRINTLABEL" Order="0" SetFocus="False" Value="printLabel" Visible="True" />
+                </wada:CreateExpandoObjectViewModelActivity.Fields>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg2:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </wada:CreateExpandoObjectViewModelActivity>
+              <FlowStep.Next>
+                <FlowStep x:Name="__ReferenceID1">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:Point x:Key="ShapeLocation">340,559</av:Point>
+                      <av:Size x:Key="ShapeSize">200,22</av:Size>
+                      <av:PointCollection x:Key="ConnectorLocation">440,581 440,610</av:PointCollection>
+                    </scg2:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <wav:ShowCustomObjectViewModelActivity x:TypeArguments="wdgv:ExpandoObjectViewModelBase" DialogHeight="[Nothing]" DialogResult="[dialogResult]" DialogWidth="40%" DisplayName="Показать модель для ТЕ" DoNotLoadSettings="True" sap:VirtualizedContainerService.HintSize="200,22" InsertFromAvailableItems="False" Layout="[layout]" Model="[teModel]" Title="Укажите код ТЕ (иначе будет сгенерировано автоматически)">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg2:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </wav:ShowCustomObjectViewModelActivity>
+                  <FlowStep.Next>
+                    <FlowStep x:Name="__ReferenceID3">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                          <av:Point x:Key="ShapeLocation">319,610</av:Point>
+                          <av:Size x:Key="ShapeSize">242,60</av:Size>
+                          <av:PointCollection x:Key="ConnectorLocation">440,670 440,700</av:PointCollection>
+                        </scg2:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Assign DisplayName="Получим код ТЕ" sap:VirtualizedContainerService.HintSize="242,60">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Object">[teCodeObj]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Object">[teModel("TECODE")]</InArgument>
+                        </Assign.Value>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg2:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Assign>
+                      <FlowStep.Next>
+                        <FlowStep x:Name="__ReferenceID7">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                              <av:Point x:Key="ShapeLocation">319,700</av:Point>
+                              <av:Size x:Key="ShapeSize">242,60</av:Size>
+                              <av:PointCollection x:Key="ConnectorLocation">440,760 440,786.5</av:PointCollection>
+                            </scg2:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign DisplayName="Печатать этикетку или нет" sap:VirtualizedContainerService.HintSize="242,60">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Boolean">[printLabel]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Boolean">[teModel.Get(Of Boolean)("PRINTLABEL")]</InArgument>
+                            </Assign.Value>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg2:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </Assign>
+                          <FlowStep.Next>
+                            <FlowDecision x:Name="__ReferenceID2" Condition="[dialogResult = false]" sap:VirtualizedContainerService.HintSize="70,87">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <av:Point x:Key="ShapeLocation">405,786.5</av:Point>
+                                  <av:Size x:Key="ShapeSize">70,87</av:Size>
+                                  <x:String x:Key="TrueLabel">Отмена</x:String>
+                                  <x:String x:Key="FalseLabel">ОК</x:String>
+                                  <av:PointCollection x:Key="FalseConnector">475,830 540,830 540,900</av:PointCollection>
+                                </scg2:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <FlowDecision.False>
+                                <FlowStep x:Name="__ReferenceID18">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <av:Point x:Key="ShapeLocation">419,900</av:Point>
+                                      <av:Size x:Key="ShapeSize">242,60</av:Size>
+                                      <av:PointCollection x:Key="ConnectorLocation">540,960 540,989</av:PointCollection>
+                                    </scg2:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Assign sap:VirtualizedContainerService.HintSize="242,60">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:String">[teCode]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:String">[BPH.ConvertTo(Of String)(teCodeObj)]</InArgument>
+                                    </Assign.Value>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg2:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </Assign>
+                                  <FlowStep.Next>
+                                    <FlowStep x:Name="__ReferenceID8">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <av:Point x:Key="ShapeLocation">440,989</av:Point>
+                                          <av:Size x:Key="ShapeSize">200,22</av:Size>
+                                          <av:PointCollection x:Key="ConnectorLocation">540,1011 540,1041 480,1041 480,1066.5</av:PointCollection>
+                                        </scg2:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <wab:CreateTeActivity AutoTeType="True" DisplayName="Создать ТЕ" ExceptionResult="[exception]" Exist="[IsTeExist]" Filter="[iif (string.IsNullOrEmpty(optionalFilter), &#xA;string.Format(&quot;tetypecode in (select /*+ INDEX (te FK_CURRENTPLACE_TE) INDEX(p FK_TE_PRODUCT)*/ tt2m.tetypecode_r from wmstetype2mandant tt2m inner join WMSPRODUCT p on tt2m.partnerid_r = p.PARTNERID_R inner join WMSTE te on p.TECODE_R = te.TECODE where te.TECURRENTPLACE ='{0}' )&quot;, &#xA;currentPlace), string.Format(&quot;tetypecode in (select /*+ INDEX (te FK_CURRENTPLACE_TE) INDEX(p FK_TE_PRODUCT)*/ tt2m.tetypecode_r from wmstetype2mandant tt2m inner join WMSPRODUCT p on tt2m.partnerid_r = p.PARTNERID_R inner join WMSTE te on p.TECODE_R = te.TECODE where te.TECURRENTPLACE ='{0}' ) and {1}&quot;, currentPlace, optionalFilter)&#xA;).ToString]" FontSize="12" Height="[Nothing]" sap:VirtualizedContainerService.HintSize="200,22" IsPack="True" Length="[Nothing]" Mandants="[Nothing]" OutTe="[box]" PlaceCode="[currentPlace]" Result="[DialogResult]" SuspendNotifyCollectionChanged="True" TareWeight="[Nothing]" TeCode="[teCode]" TeTypeCode="[Nothing]" Weight="[Nothing]" Width="[Nothing]">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg2:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </wab:CreateTeActivity>
+                                      <FlowStep.Next>
+                                        <FlowDecision x:Name="__ReferenceID9" Condition="[dialogResult]" sap:VirtualizedContainerService.HintSize="70,87">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              <av:Point x:Key="ShapeLocation">445,1066.5</av:Point>
+                                              <av:Size x:Key="ShapeSize">70,87</av:Size>
+                                              <av:PointCollection x:Key="TrueConnector">445,1110 360,1110 360,1206.5</av:PointCollection>
+                                              <av:PointCollection x:Key="FalseConnector">515,1110 740,1110 740,1246.5</av:PointCollection>
+                                            </scg2:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <FlowDecision.True>
+                                            <FlowDecision x:Name="__ReferenceID10" Condition="[IsTeExist]" sap:VirtualizedContainerService.HintSize="70,87">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  <av:Point x:Key="ShapeLocation">325,1206.5</av:Point>
+                                                  <av:Size x:Key="ShapeSize">70,87</av:Size>
+                                                  <av:PointCollection x:Key="FalseConnector">395,1250 450,1250 450,1356.5</av:PointCollection>
+                                                  <av:PointCollection x:Key="TrueConnector">325,1250 295,1250 295,1100 280,1100</av:PointCollection>
+                                                </scg2:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <FlowDecision.True>
+                                                <FlowStep x:Name="__ReferenceID11">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <av:Point x:Key="ShapeLocation">80,1089</av:Point>
+                                                      <av:Size x:Key="ShapeSize">200,22</av:Size>
+                                                      <av:PointCollection x:Key="ConnectorLocation">80,1100 50,1100 50,570 340,570</av:PointCollection>
+                                                    </scg2:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <wav:ShowMessageBoxActivity Buttons="OK" DefaultResult="OK" DisplayName="ТЕ уже есть в системе" sap:VirtualizedContainerService.HintSize="200,22" Image="Warning" Message="[string.Format(&quot;ТЕ с кодом '{0}' уже существует.{1}Укажите другой код ТЕ&quot;, teCode, System.Environment.NewLine)]" Result="None" Title="Код ТЕ">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg2:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                  </wav:ShowMessageBoxActivity>
+                                                  <FlowStep.Next>
+                                                    <x:Reference>__ReferenceID1</x:Reference>
+                                                  </FlowStep.Next>
+                                                </FlowStep>
+                                              </FlowDecision.True>
+                                              <FlowDecision.False>
+                                                <FlowDecision x:Name="__ReferenceID17" Condition="[printLabel]" sap:VirtualizedContainerService.HintSize="70,87">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      <av:Point x:Key="ShapeLocation">415,1356.5</av:Point>
+                                                      <av:Size x:Key="ShapeSize">70,87</av:Size>
+                                                      <av:PointCollection x:Key="FalseConnector">485,1400 600,1400 600,1563</av:PointCollection>
+                                                      <av:PointCollection x:Key="TrueConnector">415,1400 290,1400 290,1451.5</av:PointCollection>
+                                                    </scg2:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <FlowDecision.True>
+                                                    <FlowStep x:Name="__ReferenceID16">
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <av:Point x:Key="ShapeLocation">190,1451.5</av:Point>
+                                                          <av:Size x:Key="ShapeSize">200,57</av:Size>
+                                                          <av:PointCollection x:Key="ConnectorLocation">290,1508.5 290,1586.5</av:PointCollection>
+                                                        </scg2:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                      <wab:CreatePrintEpsOutput Barcode="{x:Null}" MandantCode="{x:Null}" DisplayName="Распечатаем этикетку" sap:VirtualizedContainerService.HintSize="200,57" ReportCode="TeLabel" Result="[reportStatus]">
+                                                        <wab:CreatePrintEpsOutput.Parameters>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="TECODE">[box.GetKey(of String)]</InArgument>
+                                                        </wab:CreatePrintEpsOutput.Parameters>
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg2:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                      </wab:CreatePrintEpsOutput>
+                                                      <FlowStep.Next>
+                                                        <FlowDecision x:Name="__ReferenceID15" Condition="[reportStatus.HasError]" sap:VirtualizedContainerService.HintSize="70,87">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                              <av:Point x:Key="ShapeLocation">255,1586.5</av:Point>
+                                                              <av:Size x:Key="ShapeSize">70,87</av:Size>
+                                                              <av:PointCollection x:Key="FalseConnector">325,1630 491,1630</av:PointCollection>
+                                                              <av:PointCollection x:Key="TrueConnector">255,1630 150,1630 150,1719</av:PointCollection>
+                                                            </scg2:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <FlowDecision.True>
+                                                            <FlowStep x:Name="__ReferenceID14">
+                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                  <av:Point x:Key="ShapeLocation">50,1719</av:Point>
+                                                                  <av:Size x:Key="ShapeSize">200,22</av:Size>
+                                                                  <av:PointCollection x:Key="ConnectorLocation">250,1730 600,1730 600,1697</av:PointCollection>
+                                                                </scg2:Dictionary>
+                                                              </sap:WorkflowViewStateService.ViewState>
+                                                              <wav:ShowExceptionMessageActivity Buttons="OK" DefaultResult="OK" DisplayName="Покажем ошибку" Error="[Nothing]" ErrorList="[Nothing]" ForceError="False" sap:VirtualizedContainerService.HintSize="200,22" Image="Warning" Message="[string.Format(&quot;Не удалось распечатать этикетку для короба {0}{1}Причина: {2}&quot;, box.GetKey(of String), System.Environment.NewLine, reportStatus.Error)]" Result="[msgResult]" Title="Ошибка при печати этикетки">
+                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                  <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                  </scg2:Dictionary>
+                                                                </sap:WorkflowViewStateService.ViewState>
+                                                              </wav:ShowExceptionMessageActivity>
+                                                              <FlowStep.Next>
+                                                                <x:Reference>__ReferenceID0</x:Reference>
+                                                              </FlowStep.Next>
+                                                            </FlowStep>
+                                                          </FlowDecision.True>
+                                                          <FlowDecision.False>
+                                                            <x:Reference>__ReferenceID0</x:Reference>
+                                                          </FlowDecision.False>
+                                                        </FlowDecision>
+                                                      </FlowStep.Next>
+                                                    </FlowStep>
+                                                  </FlowDecision.True>
+                                                  <FlowDecision.False>
+                                                    <x:Reference>__ReferenceID0</x:Reference>
+                                                  </FlowDecision.False>
+                                                </FlowDecision>
+                                              </FlowDecision.False>
+                                            </FlowDecision>
+                                          </FlowDecision.True>
+                                          <FlowDecision.False>
+                                            <FlowDecision x:Name="__ReferenceID12" Condition="[exception is Nothing]" sap:VirtualizedContainerService.HintSize="70,87">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  <av:Point x:Key="ShapeLocation">705,1246.5</av:Point>
+                                                  <av:Size x:Key="ShapeSize">70,87</av:Size>
+                                                  <av:PointCollection x:Key="TrueConnector">705,1290 600,1290 600,1563</av:PointCollection>
+                                                  <av:PointCollection x:Key="FalseConnector">775,1290 900,1290 900,1439</av:PointCollection>
+                                                </scg2:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <FlowDecision.True>
+                                                <FlowStep x:Name="__ReferenceID0">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <av:Point x:Key="ShapeLocation">491,1563</av:Point>
+                                                      <av:Size x:Key="ShapeSize">218,134</av:Size>
+                                                    </scg2:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <InvokeMethod sap:VirtualizedContainerService.HintSize="218,134" MethodName="Set">
+                                                    <InvokeMethod.GenericTypeArguments>
+                                                      <x:Type Type="wbo:TE" />
+                                                    </InvokeMethod.GenericTypeArguments>
+                                                    <InvokeMethod.TargetObject>
+                                                      <InArgument x:TypeArguments="wgb:BpContext">[BpContext]</InArgument>
+                                                    </InvokeMethod.TargetObject>
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg2:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <InArgument x:TypeArguments="x:String">BOX</InArgument>
+                                                    <InArgument x:TypeArguments="wbo:TE">[box]</InArgument>
+                                                  </InvokeMethod>
+                                                </FlowStep>
+                                              </FlowDecision.True>
+                                              <FlowDecision.False>
+                                                <FlowStep x:Name="__ReferenceID13">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <av:Point x:Key="ShapeLocation">800,1439</av:Point>
+                                                      <av:Size x:Key="ShapeSize">200,22</av:Size>
+                                                    </scg2:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <wav:ShowExceptionMessageActivity Buttons="OK" DefaultResult="OK" DisplayName="Покажем ошибку" Error="[exception]" ErrorList="[Nothing]" ForceError="False" sap:VirtualizedContainerService.HintSize="200,22" Image="Warning" Message="[string.Format(&quot;Не удалось создать короб с кодом ТЕ = '{0}', типом ТЕ = '{1}' и местом = '{2}'.{3}Повторить процесс?{3}Причина:&quot;, teCode, teTypeCode, currentPlace, System.Environment.NewLine)]" Result="[msgResult]" Title="Ошибка при создании короба">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg2:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                  </wav:ShowExceptionMessageActivity>
+                                                </FlowStep>
+                                              </FlowDecision.False>
+                                            </FlowDecision>
+                                          </FlowDecision.False>
+                                        </FlowDecision>
+                                      </FlowStep.Next>
+                                    </FlowStep>
+                                  </FlowStep.Next>
+                                </FlowStep>
+                              </FlowDecision.False>
+                            </FlowDecision>
+                          </FlowStep.Next>
+                        </FlowStep>
+                      </FlowStep.Next>
+                    </FlowStep>
+                  </FlowStep.Next>
+                </FlowStep>
+              </FlowStep.Next>
+            </FlowStep>
+            <x:Reference>__ReferenceID1</x:Reference>
+            <x:Reference>__ReferenceID2</x:Reference>
+            <x:Reference>__ReferenceID3</x:Reference>
+            <FlowStep x:Name="__ReferenceID5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">20,389</av:Point>
+                  <av:Size x:Key="ShapeSize">200,22</av:Size>
+                </scg2:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <wav:ShowMessageBoxActivity Buttons="OK" DefaultResult="OK" DisplayName="Ошибка настройки клиента" sap:VirtualizedContainerService.HintSize="200,22" Image="Warning" Message="[string.Format(&quot;Не указано текущее место упаковки.{0}Процесс будет прерван!&quot;, System.Environment.NewLine)]" Result="None" Title="Конфигурация клиента">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg2:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </wav:ShowMessageBoxActivity>
+            </FlowStep>
+            <FlowStep x:Name="__ReferenceID21">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">299,90</av:Point>
+                  <av:Size x:Key="ShapeSize">242,60</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">420,150 420,180</av:PointCollection>
+                </scg2:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign sap:VirtualizedContainerService.HintSize="242,60">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[currentPlace]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[BpContext.Get(Of String)("CURRENTPLACE")]</InArgument>
+                </Assign.Value>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg2:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Assign>
+              <FlowStep.Next>
+                <FlowStep x:Name="__ReferenceID20">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:Point x:Key="ShapeLocation">299,180</av:Point>
+                      <av:Size x:Key="ShapeSize">242,60</av:Size>
+                      <av:PointCollection x:Key="ConnectorLocation">420,240 420,260</av:PointCollection>
+                    </scg2:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="242,60">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[optionalFilter]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[BpContext.Get(Of String)("OPTIONALFILTER")]</InArgument>
+                    </Assign.Value>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg2:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Assign>
+                  <FlowStep.Next>
+                    <FlowStep x:Name="__ReferenceID19">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                          <av:Point x:Key="ShapeLocation">299,260</av:Point>
+                          <av:Size x:Key="ShapeSize">242,60</av:Size>
+                          <av:PointCollection x:Key="ConnectorLocation">420,320 420,356.5</av:PointCollection>
+                        </scg2:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Assign sap:VirtualizedContainerService.HintSize="242,60">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[teCode]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[BpContext.Get(Of String)("TECODE")]</InArgument>
+                        </Assign.Value>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg2:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Assign>
+                      <FlowStep.Next>
+                        <FlowDecision x:Name="__ReferenceID6" Condition="[string.IsNullOrEmpty(currentPlace)]" sap:VirtualizedContainerService.HintSize="70,87" True="{x:Reference __ReferenceID5}" False="{x:Reference __ReferenceID4}">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <av:Point x:Key="ShapeLocation">385,356.5</av:Point>
+                              <av:Size x:Key="ShapeSize">70,87</av:Size>
+                              <av:PointCollection x:Key="TrueConnector">385,400 220,400</av:PointCollection>
+                              <x:String x:Key="TrueLabel">Место не указано</x:String>
+                              <x:String x:Key="FalseLabel">ОК</x:String>
+                              <av:PointCollection x:Key="FalseConnector">455,400 570,400 570,499.5 540,499.5</av:PointCollection>
+                            </scg2:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </FlowDecision>
+                      </FlowStep.Next>
+                    </FlowStep>
+                  </FlowStep.Next>
+                </FlowStep>
+              </FlowStep.Next>
+            </FlowStep>
+            <x:Reference>__ReferenceID6</x:Reference>
+            <x:Reference>__ReferenceID7</x:Reference>
+            <x:Reference>__ReferenceID8</x:Reference>
+            <x:Reference>__ReferenceID9</x:Reference>
+            <x:Reference>__ReferenceID10</x:Reference>
+            <x:Reference>__ReferenceID11</x:Reference>
+            <x:Reference>__ReferenceID12</x:Reference>
+            <x:Reference>__ReferenceID13</x:Reference>
+            <x:Reference>__ReferenceID0</x:Reference>
+            <x:Reference>__ReferenceID14</x:Reference>
+            <x:Reference>__ReferenceID15</x:Reference>
+            <x:Reference>__ReferenceID16</x:Reference>
+            <x:Reference>__ReferenceID17</x:Reference>
+            <x:Reference>__ReferenceID18</x:Reference>
+            <x:Reference>__ReferenceID19</x:Reference>
+            <x:Reference>__ReferenceID20</x:Reference>
+          </Flowchart>
+        </TryCatch.Try>
+        <TryCatch.Catches>
+          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1018,21">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg2:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ActivityAction x:TypeArguments="s:Exception">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="s:Exception" Name="bpException" />
+              </ActivityAction.Argument>
+              <Sequence sap:VirtualizedContainerService.HintSize="222,208">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg2:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <wag:WriteLog4NetActivity DisplayName="Запись ошибки в лог" Error="[bpException.Message]" sap:VirtualizedContainerService.HintSize="200,22" Level="Error" />
+                <wav:ShowExceptionMessageActivity Buttons="OK" DefaultResult="OK" DisplayName="Вывод ошбки(ок) пользователю" Error="[bpException]" ErrorList="[exceptionList]" ForceError="False" sap:VirtualizedContainerService.HintSize="200,22" Image="Warning" Message="Произошла одна или несколько ошибок:" Title="Ошибка выполнения бизнес процесса" />
+              </Sequence>
+            </ActivityAction>
+          </Catch>
+        </TryCatch.Catches>
+      </TryCatch>
+    </FlowStep>
+  </Flowchart>
+</Activity>

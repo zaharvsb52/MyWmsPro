@@ -1,0 +1,52 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <ControlTemplate x:Key="{dxt:SuperTipThemeKey ResourceKey=ItemTemplate}" TargetType="{x:Type dx:SuperTipItemControl}">
+    <dxcore_unique_xmlns:Items2Panel Style="{TemplateBinding ActualLayoutStyle}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\Generic\SuperTip.xaml;4;10">
+      <dxcore_unique_xmlns:Items2Panel.Content1>
+        <dxcore_unique_xmlns:PixelSnapper dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\Generic\SuperTip.xaml;6;18">
+          <Image x:Name="PART_Glyph" Source="{Binding Path=Item.Glyph, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\Generic\SuperTip.xaml;7;22" />
+        </dxcore_unique_xmlns:PixelSnapper>
+      </dxcore_unique_xmlns:Items2Panel.Content1>
+      <dxcore_unique_xmlns:Items2Panel.Content2>
+        <ContentControl x:Name="PART_Content" Foreground="{TemplateBinding Foreground}" Style="{TemplateBinding ContentStyle}" Content="{Binding Path=Item.Content, RelativeSource={RelativeSource TemplatedParent}}" ContentTemplate="{TemplateBinding ActualContentTemplate}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\Generic\SuperTip.xaml;11;18" />
+      </dxcore_unique_xmlns:Items2Panel.Content2>
+    </dxcore_unique_xmlns:Items2Panel>
+  </ControlTemplate>
+  <!--BEGIN WPF-->
+  <ControlTemplate x:Key="{dxt:SuperTipThemeKey ResourceKey=SeparatorTemplate}" TargetType="dx:SuperTipItemControlSeparator">
+    <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\Generic\SuperTip.xaml;18;10">
+      <ContentControl Style="{TemplateBinding ContentStyle}" ContentTemplate="{TemplateBinding ActualContentTemplate}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\Generic\SuperTip.xaml;19;14" />
+    </Grid>
+  </ControlTemplate>
+  <!--END WPF-->
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Core.SuperTipItemControl}" TargetType="{x:Type dx:SuperTipItemControl}">
+    <Setter Property="ContentStyle" Value="{DynamicResource {dxt:SuperTipThemeKey ResourceKey=ItemContentStyle}}" />
+    <Setter Property="ContentTemplate" Value="{DynamicResource {dxt:SuperTipThemeKey ResourceKey=ItemContentTemplate}}" />
+    <Setter Property="Template" Value="{DynamicResource {dxt:SuperTipThemeKey ResourceKey=ItemTemplate}}" />
+    <Setter Property="LayoutStyle" Value="{DynamicResource {dxt:SuperTipThemeKey ResourceKey=ItemLayoutStyle}}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Core.SuperTipItemControlSeparator}" TargetType="{x:Type dx:SuperTipItemControlSeparator}">
+    <!--BEGIN WPF-->
+    <Setter Property="ContentStyle" Value="{DynamicResource {dxt:SuperTipThemeKey ResourceKey=SeparatorContentStyle}}" />
+    <Setter Property="ContentTemplate" Value="{DynamicResource {dxt:SuperTipThemeKey ResourceKey=SeparatorContentTemplate}}" />
+    <!--END WPF-->
+    <Setter Property="Template" Value="{DynamicResource {dxt:SuperTipThemeKey ResourceKey=SeparatorTemplate}}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Core.SuperTipHeaderItemControl}" TargetType="{x:Type dx:SuperTipHeaderItemControl}">
+    <Setter Property="ContentStyle" Value="{DynamicResource {dxt:SuperTipThemeKey ResourceKey=HeaderContentStyle}}" />
+    <Setter Property="ContentTemplate" Value="{DynamicResource {dxt:SuperTipThemeKey ResourceKey=HeaderContentTemplate}}" />
+    <Setter Property="Template" Value="{DynamicResource {dxt:SuperTipThemeKey ResourceKey=ItemTemplate}}" />
+    <Setter Property="LayoutStyle" Value="{DynamicResource {dxt:SuperTipThemeKey ResourceKey=HeaderLayoutStyle}}" />
+  </Style>
+  <ItemsPanelTemplate x:Key="{dxt:SuperTipThemeKey ResourceKey=PanelTemplate}">
+    <dxcore_unique_xmlns:SuperTipPanel dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\Generic\SuperTip.xaml;47;10" />
+  </ItemsPanelTemplate>
+  <ControlTemplate x:Key="{dxt:SuperTipThemeKey ResourceKey=Template}" TargetType="dx:SuperTipControl">
+    <ContentControl Template="{DynamicResource {dxt:SuperTipThemeKey ResourceKey=BorderTemplate}}" Foreground="{TemplateBinding Foreground}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\Generic\SuperTip.xaml;51;10">
+      <ItemsPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\Generic\SuperTip.xaml;52;14" />
+    </ContentControl>
+  </ControlTemplate>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Core.SuperTipControl}" TargetType="{x:Type dx:SuperTipControl}">
+    <Setter Property="Template" Value="{DynamicResource {dxt:SuperTipThemeKey ResourceKey=Template}}" />
+    <Setter Property="ItemsPanel" Value="{DynamicResource {dxt:SuperTipThemeKey ResourceKey=PanelTemplate}}" />
+  </Style>
+</ResourceDictionary>

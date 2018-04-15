@@ -1,0 +1,59 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxrec="http://schemas.devexpress.com/winfx/2008/xaml/richedit/internal" xmlns:dxret="http://schemas.devexpress.com/winfx/2008/xaml/richedit/themekeys" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys">
+
+
+    <!--RichEditViewPage-->
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.RichEdit.Controls.Internal.RichEditViewPage}" TargetType="{x:Type dxrec:RichEditViewPage}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="dxrec:RichEditViewPage">
+                    <ContentControl Background="{TemplateBinding Background}" SnapsToDevicePixels="True" UseLayoutRounding="True" Focusable="False" Template="{DynamicResource {dxret:RichEditControlThemeKey ResourceKey=PrintLayoutViewPageBorderControlTemplate}}">
+                        <Canvas x:Name="SuperRoot" SnapsToDevicePixels="True" UseLayoutRounding="True">
+                            <Grid x:Name="Root" SnapsToDevicePixels="True" UseLayoutRounding="True" />
+                        </Canvas>
+                    </ContentControl>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Foreground" Value="Black"></Setter>
+        <!--BEGIN WPF-->
+        <Setter Property="Focusable" Value="False" />
+        <!--END WPF-->
+    </Style>
+
+    <!--SimpleViewPage-->
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.RichEdit.Controls.Internal.SimpleViewPage}" TargetType="{x:Type dxrec:SimpleViewPage}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="dxrec:SimpleViewPage">
+                    <ContentControl Background="{TemplateBinding Background}" SnapsToDevicePixels="True" UseLayoutRounding="True" Focusable="False" Template="{DynamicResource {dxret:RichEditControlThemeKey ResourceKey=SimpleViewPageBorderControlTemplate}}">
+                        <Canvas x:Name="SuperRoot" SnapsToDevicePixels="True" UseLayoutRounding="True">
+                            <Grid x:Name="Root" SnapsToDevicePixels="True" UseLayoutRounding="True" />
+                        </Canvas>
+                    </ContentControl>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <!--BEGIN WPF-->
+        <Setter Property="Focusable" Value="False" />
+        <!--END WPF-->
+    </Style>
+
+    <!--DraftViewPage-->
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.RichEdit.Controls.Internal.DraftViewPage}" TargetType="{x:Type dxrec:DraftViewPage}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="dxrec:DraftViewPage">
+                    <ContentControl Background="{TemplateBinding Background}" SnapsToDevicePixels="True" UseLayoutRounding="True" Focusable="False" Template="{DynamicResource {dxret:RichEditControlThemeKey ResourceKey=DraftViewPageBorderControlTemplate}}">
+                        <Canvas x:Name="SuperRoot" SnapsToDevicePixels="True" UseLayoutRounding="True">
+                            <Grid x:Name="Root" SnapsToDevicePixels="True" UseLayoutRounding="True" />
+                        </Canvas>
+                    </ContentControl>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <!--BEGIN WPF-->
+        <Setter Property="Focusable" Value="False" />
+        <!--END WPF-->
+    </Style>
+
+</ResourceDictionary>

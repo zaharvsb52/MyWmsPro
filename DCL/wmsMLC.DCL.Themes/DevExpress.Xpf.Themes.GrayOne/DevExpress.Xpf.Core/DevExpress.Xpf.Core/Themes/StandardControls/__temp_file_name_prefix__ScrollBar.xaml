@@ -1,0 +1,253 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/StandardControls/Brushes.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/StandardControls/SharedResources.xaml" />
+  </ResourceDictionary.MergedDictionaries>
+  <Style x:Key="HorizontalScrollBarPageButtonStyle" TargetType="{x:Type RepeatButton}">
+    <Setter Property="OverridesDefaultStyle" Value="True" />
+    <Setter Property="IsTabStop" Value="False" />
+    <Setter Property="Focusable" Value="False" />
+    <Setter Property="MinHeight" Value="0" />
+    <Setter Property="MinWidth" Value="0" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type RepeatButton}">
+          <Rectangle x:Name="PageButtonBackground" Fill="Transparent" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollBar.xaml;17;22" />
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsPressed" Value="True">
+              <Setter Property="Fill" Value="{StaticResource ScrollBar.Horizontal.PageButton.Background}" TargetName="PageButtonBackground" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="VerticalScrollBarPageButtonStyle" TargetType="{x:Type RepeatButton}">
+    <Setter Property="OverridesDefaultStyle" Value="True" />
+    <Setter Property="IsTabStop" Value="False" />
+    <Setter Property="Focusable" Value="False" />
+    <Setter Property="MinWidth" Value="0" />
+    <Setter Property="MinHeight" Value="0" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type RepeatButton}">
+          <Rectangle x:Name="PageButtonBackground" Fill="Transparent" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollBar.xaml;36;22" />
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsPressed" Value="True">
+              <Setter Property="Fill" Value="{StaticResource ScrollBar.Vertical.PageButton.Background}" TargetName="PageButtonBackground" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="ScrollBarHorizontalButtonStyle" TargetType="{x:Type RepeatButton}">
+    <Setter Property="OverridesDefaultStyle" Value="True" />
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="Foreground" Value="Transparent" />
+    <Setter Property="BorderBrush" Value="Transparent" />
+    <Setter Property="BorderThickness" Value="2" />
+    <Setter Property="MinWidth" Value="0" />
+    <Setter Property="MinHeight" Value="0" />
+    <Setter Property="IsTabStop" Value="False" />
+    <Setter Property="Focusable" Value="False" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type RepeatButton}">
+          <Grid x:Name="Root" Background="Transparent" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollBar.xaml;60;22">
+            <Path x:Name="Path" Stretch="Fill" Fill="{StaticResource ScrollBar.HoverState.Path.Background}" Data="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" Width="3" Height="6" HorizontalAlignment="Center" VerticalAlignment="Center" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollBar.xaml;61;26" />
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+              <Setter TargetName="Root" Property="Opacity" Value="0.5" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="ScrollBarVerticalButtonStyle" TargetType="{x:Type RepeatButton}">
+    <Setter Property="OverridesDefaultStyle" Value="True" />
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="Foreground" Value="Transparent" />
+    <Setter Property="BorderBrush" Value="Transparent" />
+    <Setter Property="BorderThickness" Value="2" />
+    <Setter Property="MinWidth" Value="0" />
+    <Setter Property="MinHeight" Value="0" />
+    <Setter Property="IsTabStop" Value="False" />
+    <Setter Property="Focusable" Value="False" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type RepeatButton}">
+          <Grid x:Name="Root" Background="Transparent" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollBar.xaml;85;22">
+            <Path x:Name="Path" Stretch="Fill" Fill="{StaticResource ScrollBar.HoverState.Path.Background}" Data="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" Width="6" Height="3" HorizontalAlignment="Center" VerticalAlignment="Center" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollBar.xaml;86;26" />
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+              <Setter TargetName="Root" Property="Opacity" Value="0.5" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="ScrollBarThumbHorizontal" TargetType="{x:Type Thumb}">
+    <Setter Property="MinWidth" Value="7" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Thumb}">
+          <Grid x:Name="Root" Background="Transparent" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollBar.xaml;103;22">
+            <Grid Height="7" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollBar.xaml;104;26">
+              <Border x:Name="DefaultState" Background="{StaticResource ScrollBar.Horizontal.DefaultState.Border2}" BorderBrush="{StaticResource ScrollBar.Horizontal.DefaultState.Border1}" BorderThickness="1" CornerRadius="4" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollBar.xaml;105;30" />
+              <Border x:Name="HoverState" Background="{StaticResource ScrollBar.Horizontal.HoverState.Border2}" BorderBrush="{StaticResource ScrollBar.Horizontal.HoverState.Border1}" BorderThickness="1" CornerRadius="4" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollBar.xaml;106;30" />
+              <Border x:Name="DraggingState" Background="{StaticResource ScrollBar.Horizontal.DraggingState.Border2}" BorderBrush="{StaticResource ScrollBar.Horizontal.DraggingState.Border1}" BorderThickness="1" CornerRadius="4" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollBar.xaml;107;30" />
+            </Grid>
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter TargetName="DefaultState" Property="Opacity" Value="0" />
+              <Setter TargetName="HoverState" Property="Opacity" Value="1" />
+              <Setter TargetName="DraggingState" Property="Opacity" Value="0" />
+            </Trigger>
+            <Trigger Property="IsDragging" Value="True">
+              <Setter TargetName="DefaultState" Property="Opacity" Value="0" />
+              <Setter TargetName="HoverState" Property="Opacity" Value="0" />
+              <Setter TargetName="DraggingState" Property="Opacity" Value="1" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+              <Setter TargetName="Root" Property="Opacity" Value="0" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="ScrollBarThumbVertical" TargetType="{x:Type Thumb}">
+    <Setter Property="MinHeight" Value="7" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Thumb}">
+          <Grid x:Name="Root" Background="Transparent" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollBar.xaml;134;22">
+            <Grid Width="7" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollBar.xaml;135;26">
+              <Border x:Name="DefaultState" Background="{StaticResource ScrollBar.Vertical.DefaultState.Border2}" BorderBrush="{StaticResource ScrollBar.Vertical.DefaultState.Border1}" BorderThickness="1" CornerRadius="4" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollBar.xaml;136;30" />
+              <Border x:Name="HoverState" Background="{StaticResource ScrollBar.Vertical.HoverState.Border2}" BorderBrush="{StaticResource ScrollBar.Vertical.HoverState.Border1}" BorderThickness="1" CornerRadius="4" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollBar.xaml;137;30" />
+              <Border x:Name="DraggingState" Background="{StaticResource ScrollBar.Vertical.DraggingState.Border2}" BorderBrush="{StaticResource ScrollBar.Vertical.DraggingState.Border1}" BorderThickness="1" CornerRadius="4" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollBar.xaml;138;30" />
+            </Grid>
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter TargetName="DefaultState" Property="Opacity" Value="0" />
+              <Setter TargetName="HoverState" Property="Opacity" Value="1" />
+              <Setter TargetName="DraggingState" Property="Opacity" Value="0" />
+            </Trigger>
+            <Trigger Property="IsDragging" Value="True">
+              <Setter TargetName="DefaultState" Property="Opacity" Value="0" />
+              <Setter TargetName="HoverState" Property="Opacity" Value="0" />
+              <Setter TargetName="DraggingState" Property="Opacity" Value="1" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+              <Setter TargetName="Root" Property="Opacity" Value="0" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=System.Windows.Controls.Primitives.ScrollBar}" TargetType="{x:Type ScrollBar}">
+    <Setter Property="Background" Value="{StaticResource ScrollBar.Vertical.Background}" />
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="Width" Value="17" />
+    <Setter Property="MinWidth" Value="13" />
+    <Setter Property="Stylus.IsPressAndHoldEnabled" Value="False" />
+    <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type ScrollBar}">
+          <Grid Background="{TemplateBinding Background}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollBar.xaml;171;22">
+            <Grid.RowDefinitions>
+              <RowDefinition MaxHeight="{DynamicResource {x:Static SystemParameters.VerticalScrollBarButtonHeightKey}}" />
+              <RowDefinition Height="0.00001*" />
+              <RowDefinition MaxHeight="{DynamicResource {x:Static SystemParameters.VerticalScrollBarButtonHeightKey}}" />
+            </Grid.RowDefinitions>
+            <Grid Margin="1" Grid.Row="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollBar.xaml;177;26">
+              <RepeatButton x:Name="RepeatButtonUp" Command="{x:Static ScrollBar.LineUpCommand}" Content="{StaticResource UpArrowGeometry}" Style="{StaticResource ScrollBarVerticalButtonStyle}" Visibility="Collapsed" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollBar.xaml;178;30" />
+              <Path x:Name="UpArrow" Stretch="Fill" Fill="{StaticResource ScrollBar.DefaultState.Path.Background}" Data="{StaticResource UpArrowGeometry}" Width="6" Height="3" HorizontalAlignment="Center" VerticalAlignment="Center" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollBar.xaml;179;30" />
+            </Grid>
+            <Track x:Name="PART_Track" Grid.Row="1" IsDirectionReversed="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollBar.xaml;181;26">
+              <Track.DecreaseRepeatButton>
+                <RepeatButton Command="{x:Static ScrollBar.PageUpCommand}" Style="{StaticResource VerticalScrollBarPageButtonStyle}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollBar.xaml;183;34" />
+              </Track.DecreaseRepeatButton>
+              <Track.IncreaseRepeatButton>
+                <RepeatButton Command="{x:Static ScrollBar.PageDownCommand}" Style="{StaticResource VerticalScrollBarPageButtonStyle}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollBar.xaml;186;34" />
+              </Track.IncreaseRepeatButton>
+              <Track.Thumb>
+                <Thumb Style="{StaticResource ScrollBarThumbVertical}" Margin="2,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollBar.xaml;189;34" />
+              </Track.Thumb>
+            </Track>
+            <Grid Margin="1" Grid.Row="2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollBar.xaml;192;26">
+              <RepeatButton x:Name="RepeatButtonDown" Command="{x:Static ScrollBar.LineDownCommand}" Content="{StaticResource DownArrowGeometry}" Style="{StaticResource ScrollBarVerticalButtonStyle}" Visibility="Collapsed" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollBar.xaml;193;30" />
+              <Path x:Name="DownArrow" Stretch="Fill" Fill="{StaticResource ScrollBar.DefaultState.Path.Background}" Data="{StaticResource DownArrowGeometry}" Width="6" Height="3" HorizontalAlignment="Center" VerticalAlignment="Center" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollBar.xaml;194;30" />
+            </Grid>
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter TargetName="UpArrow" Property="Visibility" Value="Collapsed" />
+              <Setter TargetName="DownArrow" Property="Visibility" Value="Collapsed" />
+              <Setter TargetName="RepeatButtonUp" Property="Visibility" Value="Visible" />
+              <Setter TargetName="RepeatButtonDown" Property="Visibility" Value="Visible" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+    <Style.Triggers>
+      <Trigger Property="Orientation" Value="Horizontal">
+        <Setter Property="Background" Value="{StaticResource ScrollBar.Horizontal.Background}" />
+        <Setter Property="Width" Value="Auto" />
+        <Setter Property="MinWidth" Value="0" />
+        <Setter Property="Height" Value="17" />
+        <Setter Property="MinHeight" Value="13" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type ScrollBar}">
+              <Grid Background="{TemplateBinding Background}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollBar.xaml;218;30">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition MaxWidth="{DynamicResource {x:Static SystemParameters.HorizontalScrollBarButtonWidthKey}}" />
+                  <ColumnDefinition Width="0.00001*" />
+                  <ColumnDefinition MaxWidth="{DynamicResource {x:Static SystemParameters.HorizontalScrollBarButtonWidthKey}}" />
+                </Grid.ColumnDefinitions>
+                <Grid Margin="1" Grid.Column="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollBar.xaml;224;34">
+                  <RepeatButton x:Name="RepeatButtonLeft" Command="{x:Static ScrollBar.LineLeftCommand}" Content="{StaticResource LeftArrowGeometry}" Style="{StaticResource ScrollBarHorizontalButtonStyle}" Visibility="Collapsed" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollBar.xaml;225;38" />
+                  <Path x:Name="LeftArrow" Stretch="Fill" Fill="{StaticResource ScrollBar.DefaultState.Path.Background}" Data="{StaticResource LeftArrowGeometry}" Width="3" Height="6" HorizontalAlignment="Center" VerticalAlignment="Center" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollBar.xaml;226;38" />
+                </Grid>
+                <Track Grid.Column="1" x:Name="PART_Track" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollBar.xaml;228;34">
+                  <Track.DecreaseRepeatButton>
+                    <RepeatButton Command="{x:Static ScrollBar.PageLeftCommand}" Style="{StaticResource HorizontalScrollBarPageButtonStyle}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollBar.xaml;230;42" />
+                  </Track.DecreaseRepeatButton>
+                  <Track.IncreaseRepeatButton>
+                    <RepeatButton Command="{x:Static ScrollBar.PageRightCommand}" Style="{StaticResource HorizontalScrollBarPageButtonStyle}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollBar.xaml;233;42" />
+                  </Track.IncreaseRepeatButton>
+                  <Track.Thumb>
+                    <Thumb Margin="0,1,0,1" Style="{StaticResource ScrollBarThumbHorizontal}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollBar.xaml;236;42" />
+                  </Track.Thumb>
+                </Track>
+                <Grid Margin="1" Grid.Column="2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollBar.xaml;239;34">
+                  <RepeatButton x:Name="RepeatButtonRight" Style="{StaticResource ScrollBarHorizontalButtonStyle}" Command="{x:Static ScrollBar.LineRightCommand}" Content="{StaticResource RightArrowGeometry}" Visibility="Collapsed" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollBar.xaml;240;38" />
+                  <Path x:Name="RightArrow" Stretch="Fill" Fill="{StaticResource ScrollBar.DefaultState.Path.Background}" Data="{StaticResource RightArrowGeometry}" Width="3" Height="6" HorizontalAlignment="Center" VerticalAlignment="Center" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollBar.xaml;241;38" />
+                </Grid>
+              </Grid>
+              <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                  <Setter TargetName="RightArrow" Property="Visibility" Value="Collapsed" />
+                  <Setter TargetName="LeftArrow" Property="Visibility" Value="Collapsed" />
+                  <Setter TargetName="RepeatButtonRight" Property="Visibility" Value="Visible" />
+                  <Setter TargetName="RepeatButtonLeft" Property="Visibility" Value="Visible" />
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Trigger>
+    </Style.Triggers>
+  </Style>
+</ResourceDictionary>

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CargoIWB" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include  id="AddressBook" schemaLocation="AddressBook.xsd"/>
+  <xs:include  id="WmsDateTime" schemaLocation="WmsDateTime.xsd"/>
+  <xs:include  id="CargoIWBPos" schemaLocation="CargoIWBPos.xsd"/>
+
+  <!--Сущность CargoIWB-->
+  <xs:element name="TENTCARGOIWB" type="CargoIWBType"/>
+  
+  <!--Описание типа CargoIWB-->
+  <xs:complexType name="CargoIWBType">
+    <xs:sequence>
+      <!--ID записи-->
+      <xs:element name="CARGOIWBID" type="xs:integer"/>
+      <!--Рейс-->
+      <xs:element name="EXTERNALTRAFFICID_R" type="xs:integer"/>
+      <!--Нетто груза -->
+      <xs:element name="CARGOIWBNET" type="xs:integer"/>
+      <!--Брутто груза -->
+      <xs:element name="CARGOIWBBRUTTO" type="xs:integer"/>
+      <!--Объем груза -->
+      <xs:element name="CARGOIWBVOLUME" type="xs:integer"/>
+      <!--Количество грузовых мест -->
+      <xs:element name="CARGOIWBCOUNT" type="xs:integer"/>      
+      <!--Адрес места загрузки-->
+      <xs:element name="CARGOIWBLOADADDRESS" type="AddressBookType"/>
+      <!--Начало загрузки-->
+      <xs:element name="CARGOIWBLOADBEGIN" type="WmsDateTime" />
+      <!--Окончание загрузки-->
+      <xs:element name="CARGOIWBLOADEND" type="WmsDateTime" />
+      <!--Номер пломбы-->
+      <xs:element name="CARGOIWBSTAMP">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Номер контейнера-->
+      <xs:element name="CARGOIWBCONTAINER">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Груз по документу-->
+      <xs:element name="CARGOIWBPOSLCLIENT">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="TENTCARGOIWBPOS" type="CargoIWBPosType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--Груз по факту-->
+      <xs:element name="CARGOIWBPOSLFACT">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="TENTCARGOIWBPOS" type="CargoIWBPosType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

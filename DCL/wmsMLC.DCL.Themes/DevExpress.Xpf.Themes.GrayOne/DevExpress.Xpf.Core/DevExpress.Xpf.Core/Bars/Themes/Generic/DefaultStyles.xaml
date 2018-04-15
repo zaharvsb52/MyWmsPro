@@ -1,0 +1,505 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" xmlns:dxbt="http://schemas.devexpress.com/winfx/2008/xaml/bars/themekeys" xmlns:dxbc="http://schemas.devexpress.com/winfx/2008/xaml/bars/internal" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys">
+
+    <Style x:Key="SubMenuBarControlDefaultStyle" TargetType="{x:Type dxb:SubMenuBarControl}">
+        <Setter Property="ItemsPanel" Value="{DynamicResource {dxbt:SubMenuBarControlThemeKey ResourceKey=ItemsPanelTemplate}}" />
+        <Setter Property="Template" Value="{DynamicResource {dxbt:SubMenuBarControlThemeKey ResourceKey=ControlTemplate}}" />
+        <Setter Property="DropIndicatorStyle" Value="{DynamicResource {dxbt:SubMenuBarControlThemeKey ResourceKey=DropIndicatorStyle}}" />
+        <Setter Property="GlyphPadding" Value="{DynamicResource {dxbt:SubMenuBarControlThemeKey ResourceKey=GlyphPadding}}" />
+        <Setter Property="MenuHeaderStatesHolder" Value="{DynamicResource {dxbt:BarItemLinkMenuHeaderThemeKey ResourceKey=StatesHolder}}" />
+        <Setter Property="MinHeight" Value="22" />
+        <!--BEGIN WPF-->
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <!--END WPF-->
+    </Style>
+    <Style x:Key="MenuBarControlDefaultStyle" TargetType="{x:Type dxb:MenuBarControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxbt:MenuBarControlThemeKey ResourceKey=ControlTemplate}}" />
+    </Style>
+
+    <Style x:Key="BarControlDefaultStyle" TargetType="{x:Type dxb:BarControl}">
+        <Setter Property="Focusable" Value="false" />
+        <Setter Property="ItemsPanel" Value="{DynamicResource {dxbt:BarControlThemeKey ResourceKey=ItemsPanelTemplate}}" />
+        <Setter Property="Template" Value="{DynamicResource {dxbt:BarControlThemeKey ResourceKey=ControlTemplate}}" />
+        <Setter Property="dxb:BarControlTemplateProvider.BarContentStyle" Value="{DynamicResource {dxbt:BarControlThemeKey ResourceKey=BarContentStyle}}" />
+        <Setter Property="dxb:BarControlTemplateProvider.BarContentTemplate" Value="{DynamicResource {dxbt:BarControlThemeKey ResourceKey=BarContentTemplate}}" />
+        <Setter Property="dxb:BarControlTemplateProvider.BarStyle" Value="{DynamicResource {dxbt:BarControlThemeKey ResourceKey=BarStyle}}" />
+        <Setter Property="dxb:BarControlTemplateProvider.FloatingBarStyle" Value="{DynamicResource {dxbt:BarControlThemeKey ResourceKey=FloatingBarStyle}}" />
+        <Setter Property="dxb:BarControlTemplateProvider.BarTemplate" Value="{DynamicResource {dxbt:BarControlThemeKey ResourceKey=BarTemplate}}" />
+        <Setter Property="dxb:BarControlTemplateProvider.MainMenuContentStyle" Value="{DynamicResource {dxbt:BarControlThemeKey ResourceKey=MainMenuContentStyle}}" />
+        <Setter Property="dxb:BarControlTemplateProvider.MainMenuContentTemplate" Value="{DynamicResource {dxbt:BarControlThemeKey ResourceKey=MainMenuContentTemplate}}" />
+        <Setter Property="dxb:BarControlTemplateProvider.MainMenuStyle" Value="{DynamicResource {dxbt:BarControlThemeKey ResourceKey=MainMenuStyle}}" />
+        <Setter Property="dxb:BarControlTemplateProvider.MainMenuTemplate" Value="{DynamicResource {dxbt:BarControlThemeKey ResourceKey=MainMenuTemplate}}" />
+        <Setter Property="dxb:BarControlTemplateProvider.StatusBarContentStyle" Value="{DynamicResource {dxbt:BarControlThemeKey ResourceKey=StatusBarContentStyle}}" />
+        <Setter Property="dxb:BarControlTemplateProvider.StatusBarContentTemplate" Value="{DynamicResource {dxbt:BarControlThemeKey ResourceKey=StatusBarContentTemplate}}" />
+        <Setter Property="dxb:BarControlTemplateProvider.StatusBarStyle" Value="{DynamicResource {dxbt:BarControlThemeKey ResourceKey=StatusBarStyle}}" />
+        <Setter Property="dxb:BarControlTemplateProvider.StatusBarTemplate" Value="{DynamicResource {dxbt:BarControlThemeKey ResourceKey=StatusBarTemplate}}" />
+        <Setter Property="dxb:BarControlTemplateProvider.QuickCustomizationButtonStyle" Value="{DynamicResource {dxbt:BarControlThemeKey ResourceKey=QuickCustomizationButtonStyle}}" />
+        <Setter Property="dxb:BarControlTemplateProvider.QuickCustomizationButtonStyleInMainMenu" Value="{DynamicResource {dxbt:BarControlThemeKey ResourceKey=QuickCustomizationButtonInMainMenuStyle}}" />
+        <Setter Property="DropIndicatorStyle" Value="{DynamicResource {dxbt:BarControlThemeKey ResourceKey=DropIndicatorStyle}}" />
+        <Setter Property="Focusable" Value="false" />
+    </Style>
+    <Style x:Key="BarContainerControlDefaultStyle" TargetType="{x:Type dxb:BarContainerControl}">
+        <Setter Property="ItemsPanel" Value="{DynamicResource {dxbt:BarContainerControlThemeKey ResourceKey=ItemsPanelTemplate}}" />
+        <Setter Property="Template" Value="{DynamicResource {dxbt:BarContainerControlThemeKey ResourceKey=ControlTemplate}}" />
+        <Setter Property="dxb:BarContainerControlTemplateProvider.BorderTemplate" Value="{DynamicResource {dxbt:BarContainerControlThemeKey ResourceKey=BorderTemplate}}" />
+        <Setter Property="dxb:BarContainerControlTemplateProvider.EmptyBorderTemplate" Value="{DynamicResource {dxbt:BarContainerControlThemeKey ResourceKey=EmptyBorderTemplate}}" />
+        <Setter Property="dxb:BarContainerControlTemplateProvider.BackgroundTemplate" Value="{DynamicResource {dxbt:BarContainerControlThemeKey ResourceKey=BackgroundTemplate}}" />
+        <Setter Property="dxb:BarContainerControlTemplateProvider.HorizontalPadding" Value="{DynamicResource {dxbt:BarContainerControlThemeKey ResourceKey=HorizontalPadding}}" />
+        <Setter Property="dxb:BarContainerControlTemplateProvider.VerticalPadding" Value="{DynamicResource {dxbt:BarContainerControlThemeKey ResourceKey=VerticalPadding}}" />
+        <Setter Property="Focusable" Value="false" />
+        <Setter Property="Padding" Value="{Binding ActualPadding, RelativeSource={RelativeSource Mode=Self}}" />
+    </Style>
+    <Style x:Key="FloatingBarPopupDefaultStyle" TargetType="{x:Type dxb:FloatingBarPopup}">
+        <!--BEGIN WPF-->
+        <Setter Property="StaysOpen" Value="True" />
+        <Setter Property="Placement" Value="Relative" />
+        <Setter Property="MinWidth" Value="10" />
+        <Setter Property="MinHeight" Value="10" />
+        <Setter Property="AllowsTransparency" Value="True" />
+        <!--END WPF-->
+        <!--ONLY SL
+        <Setter Property="Placement2" Value="Relative"/>
+        ONLY SL-->
+    </Style>
+    <Style x:Key="FloatingBarPopupContentControlDefaultStyle" TargetType="{x:Type dxb:FloatingBarPopupContentControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxbt:FloatingBarPopupThemeKey ResourceKey=ContentTemplate}}" />
+        <Setter Property="DragWidgetStyle" Value="{DynamicResource {dxbt:FloatingBarPopupThemeKey ResourceKey=DragWidgetStyle}}" />
+        <Setter Property="SizeGripStyle" Value="{DynamicResource {dxbt:FloatingBarPopupThemeKey ResourceKey=SizeGripStyle}}" />
+        <Setter Property="CloseButtonStyle" Value="{DynamicResource {dxbt:FloatingBarPopupThemeKey ResourceKey=CloseButtonStyle}}" />
+        <Setter Property="QuickCustomizationButtonStyle" Value="{DynamicResource {dxbt:FloatingBarPopupThemeKey ResourceKey=QuickCustomizationButtonStyle}}" />
+        <Setter Property="CaptionStyle" Value="{DynamicResource {dxbt:FloatingBarPopupThemeKey ResourceKey=CaptionStyle}}" />
+    </Style>
+
+    <Style x:Key="ItemBorderControlDefaultStyle" TargetType="{x:Type dxb:ItemBorderControl}">
+        <Setter Property="Focusable" Value="False" />
+    </Style>
+    <Style x:Key="BarItemLinkControlDefaultStyle" TargetType="{x:Type dxb:BarItemLinkControl}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type dxb:BarItemLinkControl}">
+                    <dxb:BarItemLayoutPanel x:Name="PART_LayoutPanel" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <!--<Setter Property="dxb:BarItemLinkControlTemplateProvider.BorderStyleInBar" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=BorderStyle}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.BorderStyleInMainMenu" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=BorderStyleInMainMenu}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.BorderStyleInStatusBar" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=BorderStyleInStatusBar}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.BorderStyleInMenu" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=BorderStyleInMenu}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.BorderStyleInApplicationMenu" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=BorderStyleInApplicationMenu}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.BorderStyleInRibbonPageGroup" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=BorderStyleInRibbonPageGroup}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.BorderStyleInButtonGroup" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=BorderStyleInButtonGroup}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.BorderStyleInQuickAccessToolbar" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=BorderStyleInRibbonToolbar}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.BorderStyleInQuickAccessToolbarFooter" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=BorderStyleInRibbonToolbarFooter}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.BorderStyleInRibbonPageHeader" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=BorderStyleInRibbonPageHeader}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.BorderStyleInRibbonStatusBarLeft" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=BorderStyleInRibbonStatusBarLeft}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.BorderStyleInRibbonStatusBarRight" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=BorderStyleInRibbonStatusBarRight}}"/>
+
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.NormalContentStyleInBar" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=NormalContentStyle}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.HotContentStyleInBar" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=HotContentStyle}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.PressedContentStyleInBar" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=PressedContentStyle}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.DisabledContentStyleInBar" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=DisabledContentStyle}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.LayoutPanelStyleInBar" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=LayoutPanelStyle}}"/>
+
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.NormalContentStyleInStatusBar" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=NormalContentStyleInStatusBar}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.HotContentStyleInStatusBar" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=HotContentStyleInStatusBar}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.PressedContentStyleInStatusBar" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=PressedContentStyleInStatusBar}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.DisabledContentStyleInStatusBar" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=DisabledContentStyleInStatusBar}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.LayoutPanelStyleInStatusBar" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=LayoutPanelStyleInStatusBar}}"/>
+
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.NormalContentStyleInMainMenu" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=NormalContentStyleInMainMenu}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.HotContentStyleInMainMenu" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=HotContentStyleInMainMenu}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.PressedContentStyleInMainMenu" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=PressedContentStyleInMainMenu}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.DisabledContentStyleInMainMenu" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=DisabledContentStyleInMainMenu}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.LayoutPanelStyleInMainMenu" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=LayoutPanelStyleInMainMenu}}"/>
+
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.NormalContentStyleInMenu" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=NormalContentStyleInMenu}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.HotContentStyleInMenu" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=HotContentStyleInMenu}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.PressedContentStyleInMenu" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=PressedContentStyleInMenu}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.DisabledContentStyleInMenu" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=DisabledContentStyleInMenu}}"/>
+
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.NormalContentStyleInApplicationMenu" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=NormalContentStyleInApplicationMenu}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.HotContentStyleInApplicationMenu" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=HotContentStyleInApplicationMenu}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.PressedContentStyleInApplicationMenu" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=PressedContentStyleInApplicationMenu}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.DisabledContentStyleInApplicationMenu" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=DisabledContentStyleInApplicationMenu}}"/>
+
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.NormalDescriptionStyleInApplicationMenu" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=NormalDescriptionStyleInApplicationMenu}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.HotDescriptionStyleInApplicationMenu" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=HotDescriptionStyleInApplicationMenu}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.PressedDescriptionStyleInApplicationMenu" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=PressedDescriptionStyleInApplicationMenu}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.DisabledDescriptionStyleInApplicationMenu" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=DisabledDescriptionStyleInApplicationMenu}}"/>
+
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.NormalContentStyleInRibbonPageGroup" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=NormalContentStyleInRibbonPageGroup}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.HotContentStyleInRibbonPageGroup" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=HotContentStyleInRibbonPageGroup}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.PressedContentStyleInRibbonPageGroup" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=PressedContentStyleInRibbonPageGroup}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.DisabledContentStyleInRibbonPageGroup" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=DisabledContentStyleInRibbonPageGroup}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.LayoutPanelStyleInRibbonPageGroup" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=LayoutPanelStyleInRibbonPageGroup}}"/>
+
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.NormalContentStyleInButtonGroup" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=NormalContentStyleInButtonGroup}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.HotContentStyleInButtonGroup" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=HotContentStyleInButtonGroup}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.PressedContentStyleInButtonGroup" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=PressedContentStyleInButtonGroup}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.DisabledContentStyleInButtonGroup" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=DisabledContentStyleInButtonGroup}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.LayoutPanelStyleInButtonGroup" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=LayoutPanelStyleInButtonGroup}}"/>
+
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.NormalContentStyleInQuickAccessToolbar" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=NormalContentStyleInRibbonToolbar}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.HotContentStyleInQuickAccessToolbar" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=HotContentStyleInRibbonToolbar}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.PressedContentStyleInQuickAccessToolbar" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=PressedContentStyleInRibbonToolbar}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.DisabledContentStyleInQuickAccessToolbar" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=DisabledContentStyleInRibbonToolbar}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.LayoutPanelStyleInQuickAccessToolbar" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=LayoutPanelStyleInRibbonToolbar}}"/>
+
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.NormalContentStyleInQuickAccessToolbarFooter" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=NormalContentStyleInRibbonToolbarFooter}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.HotContentStyleInQuickAccessToolbarFooter" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=HotContentStyleInRibbonToolbarFooter}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.PressedContentStyleInQuickAccessToolbarFooter" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=PressedContentStyleInRibbonToolbarFooter}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.DisabledContentStyleInQuickAccessToolbarFooter" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=DisabledContentStyleInRibbonToolbarFooter}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.LayoutPanelStyleInQuickAccessToolbarFooter" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=LayoutPanelStyleInRibbonToolbarFooter}}"/>
+
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.NormalContentStyleInRibbonPageHeader" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=NormalContentStyleInRibbonPageHeader}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.HotContentStyleInRibbonPageHeader" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=HotContentStyleInRibbonPageHeader}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.PressedContentStyleInRibbonPageHeader" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=PressedContentStyleInRibbonPageHeader}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.DisabledContentStyleInRibbonPageHeader" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=DisabledContentStyleInRibbonPageHeader}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.LayoutPanelStyleInRibbonPageHeader" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=LayoutPanelStyleInRibbonPageHeader}}"/>
+
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.NormalContentStyleInRibbonStatusBarLeft" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=NormalContentStyleInRibbonStatusBarLeft}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.HotContentStyleInRibbonStatusBarLeft" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=HotContentStyleInRibbonStatusBarLeft}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.PressedContentStyleInRibbonStatusBarLeft" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=PressedContentStyleInRibbonStatusBarLeft}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.DisabledContentStyleInRibbonStatusBarLeft" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=DisabledContentStyleInRibbonStatusBarLeft}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.LayoutPanelStyleInRibbonStatusBarLeft" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=LayoutPanelStyleInRibbonStatusBarLeft}}"/>
+
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.NormalContentStyleInRibbonStatusBarRight" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=NormalContentStyleInRibbonStatusBarRight}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.HotContentStyleInRibbonStatusBarRight" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=HotContentStyleInRibbonStatusBarRight}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.PressedContentStyleInRibbonStatusBarRight" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=PressedContentStyleInRibbonStatusBarRight}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.DisabledContentStyleInRibbonStatusBarRight" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=DisabledContentStyleInRibbonStatusBarRight}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.LayoutPanelStyleInRibbonStatusBarRight" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=LayoutPanelStyleInRibbonStatusBarRight}}"/>
+        
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.NormalContentStyleInStatusBar" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=NormalContentStyleInStatusBar}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.HotContentStyleInStatusBar" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=HotContentStyleInStatusBar}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.DisabledContentStyleInStatusBar" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=DisabledContentStyleInStatusBar}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.LayoutPanelStyleInStatusBar" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=LayoutPanelStyleInStatusBar}}"/>
+        
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.DisableStateOpacity" Value="{DynamicResource {dxbt:BarItemThemeKey ResourceKey=DisableStateOpacityValue}}"/>-->
+    </Style>
+    <Style x:Key="BarButtonItemLinkControlDefaultStyle" TargetType="{x:Type dxb:BarButtonItemLinkControl}" BasedOn="{StaticResource BarItemLinkControlDefaultStyle}">
+        <!--<Setter Property="dxb:BarItemLinkControlTemplateProvider.Template" Value="{DynamicResource {dxbt:BarButtonItemThemeKey ResourceKey=Template}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.TemplateInMenu" Value="{DynamicResource {dxbt:BarButtonItemThemeKey ResourceKey=InMenuTemplate}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.TemplateInMenuHorizontal" Value="{DynamicResource {dxbt:BarButtonItemThemeKey ResourceKey=InMenuHorizontalTemplate}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.TemplateInRibbonPageGroup" Value="{DynamicResource {dxbt:BarButtonItemThemeKey ResourceKey=InRibbonPageGroupTemplate}}"/>-->
+        <!--BEGIN WPF-->
+        <!--<Setter Property="FocusVisualStyle" Value="{x:Null}" />-->
+        <!--END WPF-->
+        <!--<Setter Property="Focusable" Value="False" />-->
+    </Style>   
+    <Style x:Key="BarSubItemLinkControlDefaultStyle" TargetType="{x:Type dxb:BarSubItemLinkControl}" BasedOn="{StaticResource BarItemLinkControlDefaultStyle}">
+        <!--<Setter Property="dxb:ArrowTemplateProvider.ArrowStyleInBar" Value="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=ArrowStyle}}"/>
+        <Setter Property="dxb:ArrowTemplateProvider.ArrowStyleInMainMenu" Value="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=ArrowStyleInMainMenu}}"/>
+        <Setter Property="dxb:ArrowTemplateProvider.ArrowStyleInMenu" Value="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=ArrowStyleInMenu}}"/>
+        <Setter Property="dxb:ArrowTemplateProvider.ArrowStyleInStatusBar" Value="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=ArrowStyleInStatusBar}}"/>
+        <Setter Property="dxb:ArrowTemplateProvider.ArrowStyleInRibbonPageGroup" Value="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=ArrowStyleInRibbonPageGroup}}"/>
+        <Setter Property="dxb:ArrowTemplateProvider.ArrowStyleInButtonGroup" Value="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=ArrowStyleInBarButtonGroup}}"/>
+        <Setter Property="dxb:ArrowTemplateProvider.ArrowStyleInQuickAccessToolbar" Value="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=ArrowStyleInRibbonQuickAccessToolbar}}"/>
+        <Setter Property="dxb:ArrowTemplateProvider.ArrowStyleInQuickAccessToolbarFooter" Value="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=ArrowStyleInRibbonQuickAccessToolbarFooter}}"/>
+        <Setter Property="dxb:ArrowTemplateProvider.ArrowStyleInRibbonPageHeader" Value="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=ArrowStyleInRibbonPageHeader}}"/>
+        <Setter Property="dxb:ArrowTemplateProvider.ArrowStyleInRibbonStatusBarLeft" Value="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=ArrowStyleInRibbonStatusBarLeft}}"/>
+        <Setter Property="dxb:ArrowTemplateProvider.ArrowStyleInRibbonStatusBarRight" Value="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=ArrowStyleInRibbonStatusBarRight}}"/>
+
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.LayoutPanelStyleInBar" Value="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=LayoutPanelStyle}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.LayoutPanelStyleInMainMenu" Value="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=LayoutPanelStyleInMainMenu}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.LayoutPanelStyleInStatusBar" Value="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=LayoutPanelStyleInStatusBar}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.LayoutPanelStyleInRibbonPageGroup" Value="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=LayoutPanelStyleInRibbonPageGroup}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.LayoutPanelStyleInButtonGroup" Value="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=LayoutPanelStyleInButtonGroup}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.LayoutPanelStyleInQuickAccessToolbar" Value="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=LayoutPanelStyleInRibbonToolbar}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.LayoutPanelStyleInQuickAccessToolbarFooter" Value="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=LayoutPanelStyleInRibbonToolbar}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.LayoutPanelStyleInRibbonPageHeader" Value="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=LayoutPanelStyleInRibbonPageHeader}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.LayoutPanelStyleInRibbonStatusBarLeft" Value="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=LayoutPanelStyleInRibbonStatusBarLeft}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.LayoutPanelStyleInRibbonStatusBarRight" Value="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=LayoutPanelStyleInRibbonStatusBarRight}}"/>-->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type dxb:BarItemLinkControl}">
+                    <Grid>
+                        <dxb:BarItemLayoutPanel x:Name="PART_LayoutPanel" />
+                        <dxb:PopupMenuBase x:Name="PART_Popup" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <!--<Setter Property="dxb:BarItemLinkControlTemplateProvider.Template" Value="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=Template}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.TemplateInMenu" Value="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=InMenuTemplate}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.TemplateInMenuHorizontal" Value="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=InMenuHorizontalTemplate}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.TemplateInRibbonPageGroup" Value="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=InRibbonPageGroupTemplate}}"/>-->
+        <!--BEGIN WPF-->
+        <!--<Setter Property="FocusVisualStyle" Value="{x:Null}" />-->
+        <!--END WPF-->
+        <!--<Setter Property="Focusable" Value="False" />-->
+        <!--<Setter Property="ContentToArrowIndent" Value="{DynamicResource {dxbt:BarSubItemThemeKey ResourceKey=ContentToArrowIndent}}" />-->
+    </Style>
+    <Style x:Key="BarSplitButtonItemLinkControlDefaultStyle" TargetType="{x:Type dxb:BarSplitButtonItemLinkControl}" BasedOn="{StaticResource BarItemLinkControlDefaultStyle}">
+        <!--<Setter Property="dxb:BarSplitButtonItemLinkControlTemplateProvider.ArrowLayoutPanelStyleInBar" Value="{DynamicResource {dxbt:BarSplitButtonItemThemeKey ResourceKey=ArrowLayoutPanelStyle}}"/>
+        <Setter Property="dxb:BarSplitButtonItemLinkControlTemplateProvider.ArrowLayoutPanelStyleInMainMenu" Value="{DynamicResource {dxbt:BarSplitButtonItemThemeKey ResourceKey=ArrowLayoutPanelStyleInMainMenu}}"/>
+        <Setter Property="dxb:BarSplitButtonItemLinkControlTemplateProvider.ArrowLayoutPanelStyleInMenu" Value="{DynamicResource {dxbt:BarSplitButtonItemThemeKey ResourceKey=ArrowLayoutPanelStyleInMainMenu}}"/>
+        <Setter Property="dxb:BarSplitButtonItemLinkControlTemplateProvider.ArrowLayoutPanelStyleInStatusBar" Value="{DynamicResource {dxbt:BarSplitButtonItemThemeKey ResourceKey=ArrowLayoutPanelStyleInStatusBar}}"/>
+        <Setter Property="dxb:BarSplitButtonItemLinkControlTemplateProvider.ArrowLayoutPanelStyleInRibbonPageGroup" Value="{DynamicResource {dxbt:BarSplitButtonItemThemeKey ResourceKey=ArrowLayoutPanelStyleInRibbonPageGroup}}"/>
+        <Setter Property="dxb:BarSplitButtonItemLinkControlTemplateProvider.ArrowLayoutPanelStyleInButtonGroup" Value="{DynamicResource {dxbt:BarSplitButtonItemThemeKey ResourceKey=ArrowLayoutPanelStyleInBarButtonGroup}}"/>
+        <Setter Property="dxb:BarSplitButtonItemLinkControlTemplateProvider.ArrowLayoutPanelStyleInQuickAccessToolbar" Value="{DynamicResource {dxbt:BarSplitButtonItemThemeKey ResourceKey=ArrowLayoutPanelStyleInRibbonToolbar}}"/>
+        <Setter Property="dxb:BarSplitButtonItemLinkControlTemplateProvider.ArrowLayoutPanelStyleInRibbonStatusBarLeft" Value="{DynamicResource {dxbt:BarSplitButtonItemThemeKey ResourceKey=ArrowLayoutPanelStyleInRibbonStatusBarLeft}}"/>
+        <Setter Property="dxb:BarSplitButtonItemLinkControlTemplateProvider.ArrowLayoutPanelStyleInRibbonStatusBarRight" Value="{DynamicResource {dxbt:BarSplitButtonItemThemeKey ResourceKey=ArrowLayoutPanelStyleInRibbonStatusBarRight}}"/>
+
+        <Setter Property="dxb:ArrowTemplateProvider.ArrowStyleInBar" Value="{DynamicResource {dxbt:BarSplitButtonItemThemeKey ResourceKey=ArrowStyle}}"/>
+        <Setter Property="dxb:ArrowTemplateProvider.ArrowStyleInMainMenu" Value="{DynamicResource {dxbt:BarSplitButtonItemThemeKey ResourceKey=ArrowStyleInMainMenu}}"/>
+        <Setter Property="dxb:ArrowTemplateProvider.ArrowStyleInMenu" Value="{DynamicResource {dxbt:BarSplitButtonItemThemeKey ResourceKey=ArrowStyleInMenu}}"/>
+        <Setter Property="dxb:ArrowTemplateProvider.ArrowStyleInStatusBar" Value="{DynamicResource {dxbt:BarSplitButtonItemThemeKey ResourceKey=ArrowStyleInStatusBar}}"/>
+        <Setter Property="dxb:ArrowTemplateProvider.ArrowStyleInRibbonPageGroup" Value="{DynamicResource {dxbt:BarSplitButtonItemThemeKey ResourceKey=ArrowStyleInRibbonPageGroup}}"/>
+        <Setter Property="dxb:ArrowTemplateProvider.ArrowStyleInButtonGroup" Value="{DynamicResource {dxbt:BarSplitButtonItemThemeKey ResourceKey=ArrowStyleInBarButtonGroup}}"/>
+        <Setter Property="dxb:ArrowTemplateProvider.ArrowStyleInQuickAccessToolbar" Value="{DynamicResource {dxbt:BarSplitButtonItemThemeKey ResourceKey=ArrowStyleInRibbonQuickAccessToolbar}}"/>
+        <Setter Property="dxb:ArrowTemplateProvider.ArrowStyleInQuickAccessToolbarFooter" Value="{DynamicResource {dxbt:BarSplitButtonItemThemeKey ResourceKey=ArrowStyleInRibbonQuickAccessToolbarFooter}}"/>
+        <Setter Property="dxb:ArrowTemplateProvider.ArrowStyleInRibbonPageHeader" Value="{DynamicResource {dxbt:BarSplitButtonItemThemeKey ResourceKey=ArrowStyleInRibbonPageHeader}}"/>
+        <Setter Property="dxb:ArrowTemplateProvider.ArrowStyleInRibbonStatusBarLeft" Value="{DynamicResource {dxbt:BarSplitButtonItemThemeKey ResourceKey=ArrowStyleInRibbonStatusBarLeft}}"/>
+        <Setter Property="dxb:ArrowTemplateProvider.ArrowStyleInRibbonStatusBarRight" Value="{DynamicResource {dxbt:BarSplitButtonItemThemeKey ResourceKey=ArrowStyleInRibbonStatusBarRight}}"/>
+        
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.Template" Value="{DynamicResource {dxbt:BarSplitButtonItemThemeKey ResourceKey=Template}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.TemplateInMenu" Value="{DynamicResource {dxbt:BarSplitButtonItemThemeKey ResourceKey=InMenuTemplate}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.TemplateInMenuHorizontal" Value="{DynamicResource {dxbt:BarSplitButtonItemThemeKey ResourceKey=InMenuHorizontalTemplate}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.TemplateInRibbonPageGroup" Value="{DynamicResource {dxbt:BarSplitButtonItemThemeKey ResourceKey=InPageGroupTemplate}}"/>-->
+        <!--BEGIN WPF-->
+        <!--<Setter Property="FocusVisualStyle" Value="{x:Null}" />-->
+        <!--END WPF-->
+        <!--<Setter Property="Focusable" Value="False" />-->
+    </Style>
+    <Style x:Key="BarCheckItemLinkControlDefaultStyle" TargetType="{x:Type dxb:BarCheckItemLinkControl}" BasedOn="{StaticResource BarItemLinkControlDefaultStyle}">
+        <!--<Setter Property="dxb:BarItemLinkControlTemplateProvider.Template" Value="{DynamicResource {dxbt:BarCheckItemThemeKey ResourceKey=Template}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.TemplateInMenu" Value="{DynamicResource {dxbt:BarCheckItemThemeKey ResourceKey=InMenuTemplate}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.TemplateInMenuHorizontal" Value="{DynamicResource {dxbt:BarCheckItemThemeKey ResourceKey=InMenuHorizontalTemplate}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.TemplateInRibbonPageGroup" Value="{DynamicResource {dxbt:BarCheckItemThemeKey ResourceKey=InRibbonPageGroupTemplate}}"/>-->
+        <!--BEGIN WPF-->
+        <!--<Setter Property="FocusVisualStyle" Value="{x:Null}" />-->
+        <!--END WPF-->
+        <!--<Setter Property="Focusable" Value="False" />-->
+    </Style>
+    <Style x:Key="BarEditItemLinkControlDefaultStyle" TargetType="{x:Type dxb:BarEditItemLinkControl}" BasedOn="{StaticResource BarItemLinkControlDefaultStyle}">
+        <!--<Setter Property="dxb:BarItemLinkControlTemplateProvider.NormalContentStyleInMenu" Value="{DynamicResource {dxbt:BarEditItemThemeKey ResourceKey=NormalContentStyleInMenu}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.HotContentStyleInMenu" Value="{DynamicResource {dxbt:BarEditItemThemeKey ResourceKey=HotContentStyleInMenu}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.PressedContentStyleInMenu" Value="{DynamicResource {dxbt:BarEditItemThemeKey ResourceKey=PressedContentStyleInMenu}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.DisabledContentStyleInMenu" Value="{DynamicResource {dxbt:BarEditItemThemeKey ResourceKey=DisabledContentStyleInMenu}}"/>
+        
+        <Setter Property="dxb:BarEditItemLinkControlTemplateProvider.EditAndContentLayoutPanelStyleInBar" Value="{DynamicResource ResourceKey={dxbt:BarEditItemThemeKey ResourceKey=LayoutPanelStyle}}"/>
+        <Setter Property="dxb:BarEditItemLinkControlTemplateProvider.EditAndContentLayoutPanelStyleInMainMenu" Value="{DynamicResource ResourceKey={dxbt:BarEditItemThemeKey ResourceKey=LayoutPanelStyleInMainMenu}}"/>
+        <Setter Property="dxb:BarEditItemLinkControlTemplateProvider.EditAndContentLayoutPanelStyleInStatusBar" Value="{DynamicResource ResourceKey={dxbt:BarEditItemThemeKey ResourceKey=LayoutPanelStyleInStatusBar}}"/>
+        <Setter Property="dxb:BarEditItemLinkControlTemplateProvider.EditAndContentLayoutPanelStyleInMenu" Value="{DynamicResource ResourceKey={dxbt:BarEditItemThemeKey ResourceKey=LayoutPanelStyleInMenu}}"/>
+        <Setter Property="dxb:BarEditItemLinkControlTemplateProvider.EditAndContentLayoutPanelStyleInButtonGroup" Value="{DynamicResource ResourceKey={dxbt:BarEditItemThemeKey ResourceKey=LayoutPanelStyleInButtonGroup}}"/>
+        <Setter Property="dxb:BarEditItemLinkControlTemplateProvider.EditAndContentLayoutPanelStyleInRibbonPageHeader" Value="{DynamicResource ResourceKey={dxbt:BarEditItemThemeKey ResourceKey=LayoutPanelStyleInRibbonPageHeader}}"/>
+        <Setter Property="dxb:BarEditItemLinkControlTemplateProvider.EditAndContentLayoutPanelStyleInQuickAccessToolbar" Value="{DynamicResource ResourceKey={dxbt:BarEditItemThemeKey ResourceKey=LayoutPanelStyleInRibbonToolbar}}"/>
+        <Setter Property="dxb:BarEditItemLinkControlTemplateProvider.EditAndContentLayoutPanelStyleInRibbonStatusBarLeft" Value="{DynamicResource ResourceKey={dxbt:BarEditItemThemeKey ResourceKey=LayoutPanelStyleInRibbonStatusBarLeft}}"/>
+        <Setter Property="dxb:BarEditItemLinkControlTemplateProvider.EditAndContentLayoutPanelStyleInRibbonStatusBarRight" Value="{DynamicResource ResourceKey={dxbt:BarEditItemThemeKey ResourceKey=LayoutPanelStyleInRibbonStatusBarRight}}"/>
+        
+        <Setter Property="dxb:BarEditItemLinkControlTemplateProvider.NormalEditStyleInBar" Value="{DynamicResource {dxbt:BarEditItemThemeKey ResourceKey=NormalEditStyle}}"/>
+        <Setter Property="dxb:BarEditItemLinkControlTemplateProvider.HotEditStyleInBar" Value="{DynamicResource {dxbt:BarEditItemThemeKey ResourceKey=HotEditStyle}}"/>
+        <Setter Property="dxb:BarEditItemLinkControlTemplateProvider.PressedEditStyleInBar" Value="{DynamicResource {dxbt:BarEditItemThemeKey ResourceKey=PressedEditStyle}}"/>
+        <Setter Property="dxb:BarEditItemLinkControlTemplateProvider.DisabledEditStyleInBar" Value="{DynamicResource {dxbt:BarEditItemThemeKey ResourceKey=DisabledEditStyle}}"/>
+
+        <Setter Property="dxb:BarEditItemLinkControlTemplateProvider.NormalEditStyleInMainMenu" Value="{DynamicResource {dxbt:BarEditItemThemeKey ResourceKey=NormalEditStyleInMainMenu}}"/>
+        <Setter Property="dxb:BarEditItemLinkControlTemplateProvider.HotEditStyleInMainMenu" Value="{DynamicResource {dxbt:BarEditItemThemeKey ResourceKey=HotEditStyleInMainMenu}}"/>
+        <Setter Property="dxb:BarEditItemLinkControlTemplateProvider.PressedEditStyleInMainMenu" Value="{DynamicResource {dxbt:BarEditItemThemeKey ResourceKey=PressedEditStyleInMainMenu}}"/>
+        <Setter Property="dxb:BarEditItemLinkControlTemplateProvider.DisabledEditStyleInMainMenu" Value="{DynamicResource {dxbt:BarEditItemThemeKey ResourceKey=DisabledEditStyleInMainMenu}}"/>
+
+        <Setter Property="dxb:BarEditItemLinkControlTemplateProvider.NormalEditStyleInMenu" Value="{DynamicResource {dxbt:BarEditItemThemeKey ResourceKey=NormalEditStyleInMenu}}"/>
+        <Setter Property="dxb:BarEditItemLinkControlTemplateProvider.HotEditStyleInMenu" Value="{DynamicResource {dxbt:BarEditItemThemeKey ResourceKey=HotEditStyleInMenu}}"/>
+        <Setter Property="dxb:BarEditItemLinkControlTemplateProvider.PressedEditStyleInMenu" Value="{DynamicResource {dxbt:BarEditItemThemeKey ResourceKey=PressedEditStyleInMenu}}"/>
+        <Setter Property="dxb:BarEditItemLinkControlTemplateProvider.DisabledEditStyleInMenu" Value="{DynamicResource {dxbt:BarEditItemThemeKey ResourceKey=DisabledEditStyleInMenu}}"/>
+
+        <Setter Property="dxb:BarEditItemLinkControlTemplateProvider.NormalEditStyleInButtonGroup" Value="{DynamicResource {dxbt:BarEditItemThemeKey ResourceKey=NormalEditStyleInButtonGroup}}"/>
+        <Setter Property="dxb:BarEditItemLinkControlTemplateProvider.HotEditStyleInButtonGroup" Value="{DynamicResource {dxbt:BarEditItemThemeKey ResourceKey=HotEditStyleInButtonGroup}}"/>
+        <Setter Property="dxb:BarEditItemLinkControlTemplateProvider.PressedEditStyleInButtonGroup" Value="{DynamicResource {dxbt:BarEditItemThemeKey ResourceKey=PressedEditStyleInButtonGroup}}"/>
+        <Setter Property="dxb:BarEditItemLinkControlTemplateProvider.DisabledEditStyleInButtonGroup" Value="{DynamicResource {dxbt:BarEditItemThemeKey ResourceKey=DisabledEditStyleInButtonGroup}}"/>
+        
+        <Setter Property="dxb:BarEditItemLinkControlTemplateProvider.NormalEditStyleInStatusBar" Value="{DynamicResource {dxbt:BarEditItemThemeKey ResourceKey=NormalEditStyleInStatusBar}}"/>
+        <Setter Property="dxb:BarEditItemLinkControlTemplateProvider.HotEditStyleInStatusBar" Value="{DynamicResource {dxbt:BarEditItemThemeKey ResourceKey=HotEditStyleInStatusBar}}"/>
+        <Setter Property="dxb:BarEditItemLinkControlTemplateProvider.PressedEditStyleInStatusBar" Value="{DynamicResource {dxbt:BarEditItemThemeKey ResourceKey=PressedEditStyleInStatusBar}}"/>
+        <Setter Property="dxb:BarEditItemLinkControlTemplateProvider.DisabledEditStyleInStatusBar" Value="{DynamicResource {dxbt:BarEditItemThemeKey ResourceKey=DisabledEditStyleInStatusBar}}"/>
+
+        <Setter Property="dxb:BarEditItemLinkControlTemplateProvider.NormalEditStyleInRibbonPageGroup" Value="{DynamicResource {dxbt:BarEditItemThemeKey ResourceKey=NormalEditStyleInRibbonPageGroup}}"/>
+
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.Template" Value="{DynamicResource {dxbt:BarEditItemThemeKey ResourceKey=Template}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.TemplateInMenu" Value="{DynamicResource {dxbt:BarEditItemThemeKey ResourceKey=InMenuTemplate}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.TemplateInRibbonPageGroup" Value="{DynamicResource {dxbt:BarEditItemThemeKey ResourceKey=Template}}"/>
+
+        <Setter Property="EditContentMargin" Value="{DynamicResource {dxbt:BarEditItemThemeKey ResourceKey=EditContentMargin}}"/>-->
+        <!--BEGIN WPF-->
+        <!--<Setter Property="FocusVisualStyle" Value="{x:Null}" />-->
+        <!--END WPF-->
+        <!--<Setter Property="Focusable" Value="True" />-->
+    </Style>
+    <dxc:BooleanToVisibilityConverter x:Key="boolToVisibilityConverter" />    
+    <Style x:Key="BarStaticItemLinkControlDefaultStyle" TargetType="{x:Type dxb:BarStaticItemLinkControl}" BasedOn="{StaticResource BarItemLinkControlDefaultStyle}">
+        <!--<Setter Property="dxb:BarItemLinkControlTemplateProvider.Template" Value="{DynamicResource {dxbt:BarStaticItemThemeKey ResourceKey=Template}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.TemplateInMenu" Value="{DynamicResource {dxbt:BarStaticItemThemeKey ResourceKey=InMenuTemplate}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.TemplateInRibbonPageGroup" Value="{DynamicResource {dxbt:BarStaticItemThemeKey ResourceKey=Template}}"/>-->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Grid>
+                        <ContentControl Template="{DynamicResource {dxbt:BarStaticItemThemeKey ResourceKey=BorderTemplate}}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="{Binding ShowBorder, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource boolToVisibilityConverter}}" />
+                        <Border Padding="{Binding ActualBorderPadding, RelativeSource={RelativeSource TemplatedParent}}">
+                            <dxb:BarItemLayoutPanel x:Name="PART_LayoutPanel" />
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="BorderPadding" Value="{DynamicResource {dxbt:BarStaticItemThemeKey ResourceKey=BorderPadding}}" />
+    </Style>
+    <Style x:Key="BarItemLinkSeparatorControlDefaultStyle" TargetType="{x:Type dxb:BarItemLinkSeparatorControl}">
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.Template" Value="{DynamicResource {dxbt:BarItemSeparatorThemeKey ResourceKey=Template}}" />
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.TemplateInMenu" Value="{DynamicResource {dxbt:BarItemSeparatorThemeKey ResourceKey=InMenuTemplate}}" />
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.TemplateInRibbonStatusBarLeftPart" Value="{DynamicResource {dxbt:BarItemSeparatorThemeKey ResourceKey=InRibbonStatusBarLeftPartTemplate}}" />
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.TemplateInRibbonStatusBarRightPart" Value="{DynamicResource {dxbt:BarItemSeparatorThemeKey ResourceKey=InRibbonStatusBarRightPartTemplate}}" />
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.TemplateInStatusBar" Value="{DynamicResource {dxbt:BarItemSeparatorThemeKey ResourceKey=InStatusBarTemplate}}" />
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.TemplateInRibbonPageGroup" Value="{DynamicResource {dxbt:BarItemSeparatorThemeKey ResourceKey=InRibbonPageGroupTemplate}}" />
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.TemplateInRibbonPageHeader" Value="{DynamicResource {dxbt:BarItemSeparatorThemeKey ResourceKey=InRibbonPageHeaderTemplate}}" />
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.TemplateInRibbonQuickAccessToolbar" Value="{DynamicResource {dxbt:BarItemSeparatorThemeKey ResourceKey=InRibbonQuickAccessToolbarTemplate}}" />
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.TemplateInRibbonQuickAccessToolbarFooter" Value="{DynamicResource {dxbt:BarItemSeparatorThemeKey ResourceKey=InRibbonQuickAccessToolbarFooterTemplate}}" />
+        <Setter Property="Focusable" Value="false" />
+        <Setter Property="Background" Value="#FF7B7B7B" />
+    </Style>
+
+    <Style x:Key="BarItemLinkMenuHeaderControlDefaultStyle" TargetType="{x:Type dxb:BarItemLinkMenuHeaderControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxbt:BarItemLinkMenuHeaderThemeKey ResourceKey=Template}}" />        
+    </Style>
+
+    <Style x:Key="BarSplitCheckItemLinkControlDefaultStyle" TargetType="{x:Type dxb:BarSplitCheckItemLinkControl}" BasedOn="{StaticResource BarSplitButtonItemLinkControlDefaultStyle}">
+        <!--<Setter Property="dxb:BarItemLinkControlTemplateProvider.Template" Value="{DynamicResource {dxbt:BarSplitCheckItemThemeKey ResourceKey=Template}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.TemplateInMenu" Value="{DynamicResource {dxbt:BarSplitCheckItemThemeKey ResourceKey=InMenuTemplate}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.TemplateInMenuHorizontal" Value="{DynamicResource {dxbt:BarSplitCheckItemThemeKey ResourceKey=InMenuHorizontalTemplate}}"/>
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.TemplateInRibbonPageGroup" Value="{DynamicResource {dxbt:BarSplitCheckItemThemeKey ResourceKey=InPageGroupTemplate}}"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Focusable" Value="False" />-->
+    </Style>
+    
+
+    <Style x:Key="BarItemDragElementContentDefaultStyle" TargetType="{x:Type dxbc:BarItemDragElementContent}">
+        <Setter Property="Template" Value="{DynamicResource {dxbt:CustomizationThemeKey ResourceKey=DragElementTemplate}}" />
+    </Style>
+    <Style x:Key="BarDragElementPopupDefaultStyle" TargetType="{x:Type dxbc:BarDragElementPopup}">
+        <Setter Property="IsHitTestVisible" Value="False" />
+        <!--BEGIN WPF-->
+        <Setter Property="Placement" Value="Relative" />
+        <Setter Property="AllowsTransparency" Value="True" />
+        <!--END WPF-->
+        <!--ONLY SL
+        <Setter Property="Placement2" Value="Relative"/>
+        ONLY SL-->
+        <Setter Property="CursorOffset" Value="8,8" />
+    </Style>
+
+    <Style x:Key="BarPopupBaseDefaultStyle" TargetType="{x:Type dxb:BarPopupBase}">
+        <Setter Property="AllowsTransparency" Value="True" />
+        <Setter Property="MinWidth" Value="80" />
+    </Style>
+    <Style x:Key="PopupContainerDefaultStyle" TargetType="{x:Type dxb:PopupContainer}">
+        <Setter Property="Template" Value="{DynamicResource {dxbt:PopupControlContainerThemeKey ResourceKey=ControlTemplate}}" />
+    </Style>
+    <Style x:Key="BarPopupBorderControlDefaultStyle" TargetType="{x:Type dxb:BarPopupBorderControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxbt:PopupControlContainerThemeKey ResourceKey=BorderTemplate}}" />        
+        <!--BEGIN WPF-->
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Margin" Value="0,0,0,20" />
+        <!--END WPF-->
+    </Style>
+
+    <!--BEGIN WPF-->
+    <Style x:Key="BarItemListDefaultStyle" TargetType="{x:Type dxbc:BarItemList}">
+        <Setter Property="BorderBrush" Value="{x:Null}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Template" Value="{DynamicResource {dxt:ListBoxThemeKey ResourceKey=ControlTemplate}}">
+        </Setter>
+    </Style>
+    <Style x:Key="BarItemListItemDefaultStyle" TargetType="{x:Type dxbc:BarItemListItem}">
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="HorizontalContentAlignment" Value="{Binding Path=HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
+        <Setter Property="VerticalContentAlignment" Value="{Binding Path=VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Padding" Value="3,0,3,0" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Template" Value="{DynamicResource {dxbt:CustomizationThemeKey ResourceKey=BarListItemTemplate}}" />
+    </Style>
+    <!--END WPF-->
+
+    <Style x:Key="GalleryControlDefaultStyle" TargetType="{x:Type dxb:GalleryControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxbt:GalleryControlThemeKey ResourceKey=StandaloneControlTemplate}}" />
+        <Setter Property="DefaultItemMargin" Value="{DynamicResource {dxbt:GalleryItemControlThemeKey ResourceKey=DefaultItemMargin}}" />
+        <Setter Property="DefaultItemGlyphMargin" Value="{DynamicResource {dxbt:GalleryItemControlThemeKey ResourceKey=DefaultGlyphMargin}}" />
+        <Setter Property="DefaultItemCaptionMargin" Value="{DynamicResource {dxbt:GalleryItemControlThemeKey ResourceKey=DefaultCaptionMargin}}" />
+        <Setter Property="DefaultItemDescriptionMargin" Value="{DynamicResource {dxbt:GalleryItemControlThemeKey ResourceKey=DefaultDescriptionMargin}}" />
+        <Setter Property="DefaultGroupCaptionMargin" Value="{DynamicResource {dxbt:GalleryItemGroupControlThemeKey ResourceKey=DefaultGroupCaptionMargin}}" />
+        <Setter Property="DefaultGroupItemsMargin" Value="{DynamicResource {dxbt:GalleryItemGroupControlThemeKey ResourceKey=DefaultGroupItemsMargin}}" />
+        <Setter Property="ItemCaptionTextStyle" Value="{DynamicResource {dxbt:GalleryItemControlThemeKey ResourceKey=DefaultItemCaptionTextStyle}}" />
+        <Setter Property="ItemDescriptionTextStyle" Value="{DynamicResource {dxbt:GalleryItemControlThemeKey ResourceKey=DefaultItemDescriptionTextStyle}}" />
+        <Setter Property="GroupCaptionTextStyle" Value="{DynamicResource {dxbt:GalleryItemControlThemeKey ResourceKey=DefaultGroupCaptionTextStyle}}" />
+        <Setter Property="NormalFilterCaptionTextStyle" Value="{DynamicResource {dxbt:GalleryItemControlThemeKey ResourceKey=DefaultNormalFilterCaptionTextStyle}}" />
+        <Setter Property="SelectedFilterCaptionTextStyle" Value="{DynamicResource {dxbt:GalleryItemControlThemeKey ResourceKey=DefaultSelectedFilterCaptionTextStyle}}" />
+        <Setter Property="HintTextStyle" Value="{DynamicResource {dxbt:GalleryItemControlThemeKey ResourceKey=DefaultHintTextStyle}}" />
+        <Setter Property="HintCaptionTextStyle" Value="{DynamicResource {dxbt:GalleryItemControlThemeKey ResourceKey=DefaultHintCaptionTextStyle}}" />
+        <Setter Property="DefaultItemGlyphBorderTemplate" Value="{DynamicResource {dxbt:GalleryItemControlThemeKey ResourceKey=StandaloneGlyphBorderTemplate}}" />
+        <Setter Property="DefaultItemBorderTemplate" Value="{DynamicResource {dxbt:GalleryItemControlThemeKey ResourceKey=StandaloneBorderTemplate}}" />
+        <Setter Property="DefaultItemControlTemplate" Value="{DynamicResource {dxbt:GalleryItemControlThemeKey ResourceKey=DefaultControlTemplate}}" />
+        <Setter Property="DefaultItemGlyphBorderPadding" Value="{DynamicResource {dxbt:GalleryItemControlThemeKey ResourceKey=DefaultGlyphBorderPadding}}" />
+        <Setter Property="DefaultGroupCaptionControlTemplate" Value="{DynamicResource {dxbt:GalleryItemGroupControlThemeKey ResourceKey=CaptionTemplate}}" />
+        <Setter Property="DefaultFilterControlTemplate" Value="{DynamicResource {dxbt:GalleryControlThemeKey ResourceKey=StandaloneCaptionTemplate}}" />
+        <Setter Property="ItemCaptionTextStyleSelector" Value="{DynamicResource {dxbt:GalleryControlThemeKey ResourceKey=StandaloneCaptionTextStyleSelector}}" />
+        <Setter Property="ItemDescriptionTextStyleSelector" Value="{DynamicResource {dxbt:GalleryControlThemeKey ResourceKey=StandaloneDescriptionTextStyleSelector}}" />
+    </Style>
+    <Style x:Key="GalleryItemControlDefaultStyle" TargetType="{x:Type dxb:GalleryItemControl}">
+        <!--BEGIN WPF-->
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <!--END WPF-->
+    </Style>
+    <Style x:Key="GalleryItemGroupControlDefaultStyle" TargetType="{x:Type dxb:GalleryItemGroupControl}">
+        <Setter Property="Focusable" Value="false" />
+        <Setter Property="ItemsPanel" Value="{DynamicResource {dxbt:GalleryItemGroupControlThemeKey ResourceKey=ItemsPanelTemplate}}" />
+        <Setter Property="Template" Value="{DynamicResource {dxbt:GalleryItemGroupControlThemeKey ResourceKey=ControlTemplate}}" />
+        <!--BEGIN WPF-->
+        <Setter Property="ItemsSource" Value="{Binding Path=Group.Items, RelativeSource={RelativeSource Self}}" />
+        <!--END WPF-->
+    </Style>
+    <Style x:Key="GalleryItemGroupsControlDefaultStyle" TargetType="{x:Type dxb:GalleryItemGroupsControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxbt:GalleryItemGroupsControlThemeKey ResourceKey=ControlTemplate}}" />
+        <Setter Property="ItemsPanel" Value="{DynamicResource {dxbt:GalleryItemGroupsControlThemeKey ResourceKey=ItemsPanelTemplate}}" />
+    </Style>
+    <Style x:Key="GalleryItemHoverToolTipDefaultStyle" TargetType="{x:Type dxb:GalleryItemHoverToolTip}">
+        <Setter Property="Template" Value="{DynamicResource {dxbt:GalleryItemControlThemeKey ResourceKey=HoverToolTipTemplate}}" />
+    </Style>
+    <Style x:Key="GalleryDefaultStyle" TargetType="{x:Type dxb:Gallery}">
+        <!--ONLY SL
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="dxb:Gallery">
+                    <Grid>
+                        <ContentPresenter/>
+                        <dxc:LogicalChildContainer x:Name="PART_LogicalChildContainer" Visibility="Visible"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>        
+        ONLY SL-->
+    </Style>
+    <Style x:Key="GalleryItemGroupDefaultStyle" TargetType="{x:Type dxb:GalleryItemGroup}">
+        <!--ONLY SL
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="dxb:GalleryItemGroup">
+                    <Grid>
+                        <ContentPresenter/>
+                        <dxc:LogicalChildContainer x:Name="PART_LogicalChildContainer" Visibility="Visible"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>        
+        ONLY SL-->
+    </Style>
+    
+    <Style x:Key="TextSplitterControlDefaultStyle" TargetType="{x:Type dxb:TextSplitterControl}">
+        <!--<Setter Property="Template" Value="{DynamicResource {dxbt:TextSplitterControlThemeKey ResourceKey=Template}}" />-->
+        <Setter Property="Focusable" Value="False" />
+    </Style>
+    <Style x:Key="GlyphSideControlDefaultStyle" TargetType="{x:Type dxb:GlyphSideControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxbt:GlyphSideControlThemeKey ResourceKey=Template}}" />        
+    </Style>
+    <Style x:Key="PopupMenuColumnSplitterDefaultStyle" TargetType="{x:Type dxb:PopupMenuColumnSplitter}">
+        <Setter Property="Template" Value="{DynamicResource {dxbt:SubMenuBarControlThemeKey ResourceKey=PopupMenuColumnSplitterTemplate}}" />
+    </Style>
+</ResourceDictionary>

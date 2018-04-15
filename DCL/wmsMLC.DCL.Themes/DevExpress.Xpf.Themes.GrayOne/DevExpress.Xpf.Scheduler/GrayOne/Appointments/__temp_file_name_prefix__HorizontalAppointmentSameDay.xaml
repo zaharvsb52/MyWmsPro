@@ -1,0 +1,23 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxscht="http://schemas.devexpress.com/winfx/2008/xaml/scheduler/themekeys" xmlns:dxschd="http://schemas.devexpress.com/winfx/2008/xaml/scheduler/internal" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <DataTemplate x:Key="{dxscht:SchedulerViewThemeKey ResourceKey=HorizontalAppointmentSameDayContentTemplate}">
+    <dxschd:HorizontalAppointmentContentPanel VerticalAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\GrayOne\Appointments\HorizontalAppointmentSameDay.xaml;4;10">
+      <dxschd:HorizontalAppointmentStartClockControl VerticalAlignment="Center" ViewInfo="{Binding}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\GrayOne\Appointments\HorizontalAppointmentSameDay.xaml;5;14" />
+      <dxschd:HorizontalAppointmentEndClockControl VerticalAlignment="Center" ViewInfo="{Binding}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\GrayOne\Appointments\HorizontalAppointmentSameDay.xaml;6;14" />
+      <dxschd:AppointmentImagesControl Orientation="Horizontal" ViewInfo="{Binding}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\GrayOne\Appointments\HorizontalAppointmentSameDay.xaml;7;14" />
+      <TextBlock Text="{Binding Subject}" TextWrapping="NoWrap" TextAlignment="Left" VerticalAlignment="Center" Margin="1,0,2,0" Foreground="{DynamicResource {dxscht:SchedulerViewThemeKey ResourceKey=AppointmentForegroundColor}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\GrayOne\Appointments\HorizontalAppointmentSameDay.xaml;8;14">
+        <!--BEGIN WPF-->
+        <TextBlock.TextTrimming>
+          <TextTrimming>CharacterEllipsis</TextTrimming>
+        </TextBlock.TextTrimming>
+        <!--END WPF-->
+      </TextBlock>
+      <TextBlock Text="{Binding Location}" TextWrapping="NoWrap" TextAlignment="Left" VerticalAlignment="Center" Foreground="{DynamicResource {dxscht:SchedulerViewThemeKey ResourceKey=AppointmentForegroundColor}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\GrayOne\Appointments\HorizontalAppointmentSameDay.xaml;15;14">
+        <!--BEGIN WPF-->
+        <TextBlock.TextTrimming>
+          <TextTrimming>CharacterEllipsis</TextTrimming>
+        </TextBlock.TextTrimming>
+        <!--END WPF-->
+      </TextBlock>
+    </dxschd:HorizontalAppointmentContentPanel>
+  </DataTemplate>
+</ResourceDictionary>

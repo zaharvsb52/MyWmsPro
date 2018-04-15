@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="PartnerWrapper" nillable="true" type="PartnerWrapper" />
+  <xs:complexType name="PartnerWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="PARTNERLOCKED" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="PARTNERDATECONTRACT" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="PARTNERID" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="MANDANTID" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PARTNERSETTLEMENTACCOUNT" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PARTNERPHONE" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PARTNEROKVED" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PARTNEROKPO" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PARTNEROGRN" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PARTNERNAME" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PARTNERKPP" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PARTNERINN" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PARTNERHOSTREF" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PARTNERFULLNAME" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PARTNERFAX" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PARTNEREMAIL" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PARTNERCORRESPONDENTACCOUNT" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PARTNERCONTRACT" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PARTNERCODE" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PARTNERBIK" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MandantCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ADDRESS" type="ArrayOfAddressBookWrapper" />
+      <xs:element minOccurs="0" maxOccurs="1" name="GPVs" type="ArrayOfGlobalParamValueWrapper" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfAddressBookWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AddressBookWrapper" nillable="true" type="AddressBookWrapper" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AddressBookWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ADDRESSBOOKAPARTMENT" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ADDRESSBOOKBUILDING" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ADDRESSBOOKCITY" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ADDRESSBOOKCOUNTRY" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ADDRESSBOOKDISTRICT" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ADDRESSBOOKID" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ADDRESSBOOKINDEX" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ADDRESSBOOKREGION" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ADDRESSBOOKSTREET" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ADDRESSBOOKTYPECODE" type="AddressBookType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="AddressBookType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ADR_PHYSICAL" />
+      <xs:enumeration value="ADR_LEGAL" />
+      <xs:enumeration value="ADR_POST" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ArrayOfGlobalParamValueWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GlobalParamValueWrapper" nillable="true" type="GlobalParamValueWrapper" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GlobalParamValueWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="GLOBALPARAMCODE_R" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="GPARAMID" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="GPARAMVAL2ENTITY" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="GPARAMVALKEY" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="GPARAMVALVALUE" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

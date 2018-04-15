@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="IWBPos" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include  id="WmsDateTime" schemaLocation="WmsDateTime.xsd"/>
+
+  <!--Сущность IWBPos-->
+  <xs:element name="TENTIWBPOS" type="IWBPosType"/>
+  
+  <!--Описание типа IWBPos-->
+  <xs:complexType name="IWBPosType">
+    <xs:sequence>
+      <!--ID записи-->
+      <xs:element name="IWBPOSID" type="xs:integer"/>
+      <!--Приходная накладная-->
+      <xs:element name="IWBID_R" type="xs:integer" nillable="false"/>
+      <!--Номер позиции-->
+      <xs:element name="IWBPOSNUMBER" type="xs:integer" nillable="false"/>
+      <!--SKU-->
+      <xs:element name="SKUID_R" type="xs:integer" nillable="false"/>
+      <!--Количество SKU-->
+      <xs:element name="IWBPOSCOUNT" type="xs:integer" nillable="false"/>
+      <!--Статус-->
+      <xs:element name="STATUSCODE_R" nillable="false">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Цвет-->
+      <xs:element name="IWBPOSCOLOR">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="60"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Тон-->
+      <xs:element name="IWBPOSTONE">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="60"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Размер-->
+      <xs:element name="IWBPOSSIZE">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Партия-->
+      <xs:element name="IWBPOSBATCH">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Срок годности-->
+      <xs:element name="IWBPOSEXPIRYDATE" type="WmsDateTime"/>
+      <!--Дата производства-->
+      <xs:element name="IWBPOSPRODUCTDATE" type="WmsDateTime"/>
+      <!--Серийный номер-->
+      <xs:element name="IWBPOSSERIALNUMBER">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Код фабрики-->
+      <xs:element name="IWBPOSFACTORY">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Квалификация-->
+      <xs:element name="QLFCODE_R">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Блокировка-->
+      <xs:element name="IWBPOSBLOCKING">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Клиентский артикул-->
+      <xs:element name="IWBPOSARTNAME">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Клиентская ЕИ-->
+      <xs:element name="IWBPOSMEASURE">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Добавлена вручную-->
+      <xs:element name="IWBPOSMANUAL" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:totalDigits value="1"/>
+            <xs:maxInclusive value="1"/>
+            <xs:minInclusive value="0"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Хост-идентификатор-->
+      <xs:element name="IWBPOSHOSTREF">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Мандант-->
+      <xs:element name="MANDANTID" type="xs:integer"/>
+      <!--ТЕ на которую надо разместить-->
+      <xs:element name="IWBPOSTE">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Стоимость-->
+      <xs:element name="IWBPOSPRICEVALUE" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

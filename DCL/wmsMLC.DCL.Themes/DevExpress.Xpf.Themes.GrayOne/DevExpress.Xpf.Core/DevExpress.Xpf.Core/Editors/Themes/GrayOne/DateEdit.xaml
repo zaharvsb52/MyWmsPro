@@ -1,0 +1,407 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxet="http://schemas.devexpress.com/winfx/2008/xaml/editors/themekeys" xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxepc="http://schemas.devexpress.com/winfx/2008/xaml/editors">
+
+    <!--BEGIN WPF-->
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/TransferStyles.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/GrayOne/Brushes.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/GrayOne/PopupBaseEdit.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Generic/DateEdit.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <!--END WPF-->
+
+    <!--BEGIN TOSLONLY REPLACE 'RepeatButton'wpfcompatibility:SLRepeatButton'-->
+
+    <dxc:EditorStringIdConverter x:Key="EditorStringIdConverter" />
+
+    <!-- Button -->
+
+    <ControlTemplate x:Key="{dxet:DateEditThemeKey ResourceKey=ClearButtonTemplate}" TargetType="{x:Type Button}">
+        <Grid x:Name="Root" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+            <Grid x:Name="DefaultState">
+                <Border Background="{StaticResource ButtonTemplate.DefaultState.Border2}" BorderBrush="{StaticResource ButtonTemplate.DefaultState.Border1}" BorderThickness="1" CornerRadius="2">
+                    <Border Background="{StaticResource ButtonTemplate.DefaultState.Border3}" Margin="1" CornerRadius="1" />
+                </Border>
+            </Grid>
+            <Grid x:Name="HoverState" Opacity="0">
+                <Border Background="{StaticResource ButtonTemplate.HoverState.Border2}" BorderBrush="{StaticResource ButtonTemplate.HoverState.Border1}" BorderThickness="1" CornerRadius="2">
+                    <Border Background="{StaticResource ButtonTemplate.HoverState.Border3}" Margin="1" CornerRadius="1" />
+                </Border>
+            </Grid>
+            <Grid x:Name="PressedState" Opacity="0">
+                <Border Background="{StaticResource ButtonTemplate.PressedState.Border2}" BorderBrush="{StaticResource ButtonTemplate.PressedState.Border1}" BorderThickness="1" CornerRadius="2">
+                    <Border Background="{StaticResource ButtonTemplate.PressedState.Border3}" Margin="1" CornerRadius="1" />
+                </Border>
+            </Grid>
+            <Grid x:Name="FocusState" Opacity="0">
+                <Rectangle Style="{StaticResource ButtonTemplateFocusTemplate}" />
+            </Grid>
+            <Grid Margin="2">
+                <ContentPresenter Margin="{TemplateBinding Padding}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+            </Grid>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="DefaultState" Property="Opacity" Value="0" />
+                <Setter TargetName="HoverState" Property="Opacity" Value="1" />
+                <Setter TargetName="PressedState" Property="Opacity" Value="0" />
+            </Trigger>
+            <Trigger Property="IsFocused" Value="True">
+                <Setter TargetName="FocusState" Property="Opacity" Value="1" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter TargetName="DefaultState" Property="Opacity" Value="0" />
+                <Setter TargetName="HoverState" Property="Opacity" Value="0" />
+                <Setter TargetName="PressedState" Property="Opacity" Value="1" />
+                <Setter TargetName="FocusState" Property="Opacity" Value="0" />
+            </Trigger>
+            <Trigger Property="Button.IsDefaulted" Value="True">
+                <Setter TargetName="FocusState" Property="Opacity" Value="1" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter TargetName="Root" Property="Opacity" Value="0.5" />
+            </Trigger>
+            <Trigger Property="ToggleButton.IsChecked" Value="True">
+                <Setter TargetName="DefaultState" Property="Opacity" Value="0" />
+                <Setter TargetName="HoverState" Property="Opacity" Value="0" />
+                <Setter TargetName="PressedState" Property="Opacity" Value="1" />
+                <Setter TargetName="FocusState" Property="Opacity" Value="0" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    
+    <!-- --> 
+
+    <ControlTemplate x:Key="{dxet:DateEditThemeKey ResourceKey=LeftArrowTemplate}" TargetType="{x:Type RepeatButton}">
+        <Grid Width="16" Height="16" SnapsToDevicePixels="True">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="PressedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled" />
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Border x:Name="HoverState" Background="{StaticResource ListBoxEditItem.HoverSelection.Border1}" CornerRadius="2" Padding="1" Opacity="0">
+                <Border Background="{StaticResource ListBoxEditItem.HoverSelection.Border3}" BorderBrush="{StaticResource ListBoxEditItem.HoverSelection.Border2}" BorderThickness="1" CornerRadius="1" Padding="1" />
+            </Border>
+            <Border x:Name="PressedState" Background="{StaticResource ListBoxEditItem.Selection.Border1}" CornerRadius="2" Padding="1" Opacity="0">
+                <Border Background="{StaticResource ListBoxEditItem.Selection.Border3}" BorderBrush="{StaticResource ListBoxEditItem.Selection.Border2}" BorderThickness="1" CornerRadius="1" Padding="1" />
+            </Border>
+            <Path Stretch="Fill" Fill="#FF201F35" Data="F1M1334,811L1330,807 1334,803 1334,811z" Width="4" Height="8" />
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxet:DateEditThemeKey ResourceKey=RightArrowTemplate}" TargetType="{x:Type RepeatButton}">
+        <Grid Width="16" Height="16" SnapsToDevicePixels="True">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="PressedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled" />
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Border x:Name="HoverState" Background="{StaticResource ListBoxEditItem.HoverSelection.Border1}" CornerRadius="2" Padding="1" Opacity="0">
+                <Border Background="{StaticResource ListBoxEditItem.HoverSelection.Border3}" BorderBrush="{StaticResource ListBoxEditItem.HoverSelection.Border2}" BorderThickness="1" CornerRadius="1" Padding="1" />
+            </Border>
+            <Border x:Name="PressedState" Background="{StaticResource ListBoxEditItem.Selection.Border1}" CornerRadius="2" Padding="1" Opacity="0">
+                <Border Background="{StaticResource ListBoxEditItem.Selection.Border3}" BorderBrush="{StaticResource ListBoxEditItem.Selection.Border2}" BorderThickness="1" CornerRadius="1" Padding="1" />
+            </Border>
+            <Path Stretch="Fill" Fill="#FF201F35" Data="F1M1340,804L1344,808 1340,812 1340,804z" Width="4" Height="8" />
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxet:DateEditThemeKey ResourceKey=MonthInfoDelimeter}">
+        <Border Background="#FFE3E3E3" Height="1" Margin="0,4,0,4" SnapsToDevicePixels="True" />
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxet:DateEditThemeKey ResourceKey=HeaderButtonTemplate}" TargetType="{x:Type Button}">
+        <Grid>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Content" Storyboard.TargetProperty="Foreground" Duration="0">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <SolidColorBrush Color="#FF0066CC" />
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <dxc:ContentContainer x:Name="Content" Foreground="#FF201F35">
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" />
+            </dxc:ContentContainer>
+        </Grid>
+    </ControlTemplate>
+
+    <Style x:Key="{dxet:DateEditThemeKey ResourceKey=HeaderButtonStyle}" TargetType="{x:Type Button}">
+        <Setter Property="Template" Value="{DynamicResource {dxet:DateEditThemeKey ResourceKey=HeaderButtonTemplate}}" />
+        <Setter Property="dx:FocusHelper2.Focusable" Value="False" />
+        <Setter Property="dx:FocusHelper2.Focusable" Value="False" />
+    </Style>
+
+    <Style x:Key="{dxet:DateEditThemeKey ResourceKey=LeftArrowStyle}" TargetType="{x:Type RepeatButton}">
+        <Setter Property="ClickMode" Value="Press" />
+        <Setter Property="Delay" Value="400" />
+        <Setter Property="Interval" Value="400" />
+        <Setter Property="Template" Value="{DynamicResource {dxet:DateEditThemeKey ResourceKey=LeftArrowTemplate}}" />
+        <Setter Property="dx:FocusHelper2.Focusable" Value="False" />
+    </Style>
+
+    <Style x:Key="{dxet:DateEditThemeKey ResourceKey=RightArrowStyle}" TargetType="{x:Type RepeatButton}">
+        <Setter Property="ClickMode" Value="Press" />
+        <Setter Property="Delay" Value="400" />
+        <Setter Property="Interval" Value="400" />
+        <Setter Property="Template" Value="{DynamicResource {dxet:DateEditThemeKey ResourceKey=RightArrowTemplate}}" />
+        <Setter Property="dx:FocusHelper2.Focusable" Value="False" />
+    </Style>
+
+    <ControlTemplate x:Key="{dxet:DateEditThemeKey ResourceKey=CurrentDateButtonTemplate}" TargetType="{x:Type Button}">
+        <ContentPresenter HorizontalAlignment="Center" Content="{Binding Path=Content, RelativeSource={RelativeSource TemplatedParent}}" />
+    </ControlTemplate>
+
+    <Style x:Key="{dxet:DateEditThemeKey ResourceKey=CurrentDateButtonStyle}" TargetType="{x:Type Button}" BasedOn="{StaticResource {dxet:DateEditThemeKey ResourceKey=HeaderButtonStyle}}">
+        <Setter Property="Template" Value="{DynamicResource {dxet:DateEditThemeKey ResourceKey=CurrentDateButtonTemplate}}" />
+    </Style>
+
+    <Style x:Key="{dxet:DateEditThemeKey ResourceKey=ClearButtonStyle}" TargetType="{x:Type Button}">
+        <Setter Property="Template" Value="{DynamicResource {dxet:DateEditThemeKey ResourceKey=ClearButtonTemplate}}" />
+        <Setter Property="Margin" Value="0,10,0,10" />
+        <Setter Property="dx:FocusHelper2.Focusable" Value="false" />
+    </Style>
+
+    <ControlTemplate x:Key="{dxet:DateEditThemeKey ResourceKey=CalendarTemplate}" TargetType="{x:Type dxepc:DateEditCalendar}">
+        <Border Background="#FFFFFFFF" SnapsToDevicePixels="True">
+            <StackPanel>
+                <Border BorderThickness="0,0,0,1" Visibility="Visible">
+                    <Button x:Name="PART_Today" Foreground="#FF201F35" Margin="4,4,4,0" Style="{DynamicResource {dxet:DateEditThemeKey IsVisibleInBlend=True, ResourceKey=HeaderButtonStyle}}" Content="{Binding Path=DateTimeText, RelativeSource={RelativeSource TemplatedParent}}" />
+                </Border>
+                <Border Visibility="Visible">
+                    <Grid Margin="4,4,4,0" Background="#FFFFFFFF">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <RepeatButton x:Name="PART_LeftArrow" Margin="2,0,0,0" Style="{DynamicResource {dxet:DateEditThemeKey IsVisibleInBlend=True, ResourceKey=LeftArrowStyle}}" Grid.Column="0" />
+                        <Button x:Name="PART_CurrentDate" Margin="0,2,0,2" Style="{DynamicResource {dxet:DateEditThemeKey IsVisibleInBlend=True, ResourceKey=CurrentDateButtonStyle}}" Content="{Binding Path=CurrentDateText, RelativeSource={RelativeSource TemplatedParent}}" Grid.Column="1" />
+                        <RepeatButton x:Name="PART_RightArrow" Margin="0,0,2,0" Style="{DynamicResource {dxet:DateEditThemeKey IsVisibleInBlend=True, ResourceKey=RightArrowStyle}}" Grid.Column="2" />
+                    </Grid>
+                </Border>
+                <Border>
+                    <Grid Margin="12,4,12,8">
+                        <dxepc:DateEditCalendarContent IsEnabled="False" Opacity="0" Template="{TemplateBinding MonthInfoTemplate}" State="Month" />
+                        <dxepc:DateEditCalendarContent IsEnabled="False" Opacity="0" Template="{TemplateBinding YearInfoTemplate}" State="Year" />
+                        <dxepc:DateEditCalendarContent IsEnabled="False" Opacity="0" Template="{TemplateBinding YearsInfoTemplate}" State="Years" />
+                        <dxepc:DateEditCalendarContent IsEnabled="False" Opacity="0" Template="{TemplateBinding YearsGroupInfoTemplate}" State="YearsGroup" />
+                        <dxepc:DateEditCalendarTransferControl x:Name="PART_CalendarTransferContent" Style="{TemplateBinding CalendarTransferStyle}" Visibility="Visible" />
+                    </Grid>
+                </Border>
+                <Border Visibility="Visible">
+                    <Button x:Name="PART_Clear" Margin="0,0,0,8" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{DynamicResource {dxet:DateEditThemeKey IsVisibleInBlend=True, ResourceKey=ClearButtonStyle}}" Content="{Binding Path=IsTabStop, RelativeSource={RelativeSource Self}, ConverterParameter=Clear, Converter={StaticResource EditorStringIdConverter}}" />
+                </Border>
+            </StackPanel>
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxet:DateEditThemeKey ResourceKey=CellButtonTemplate}" TargetType="{x:Type Button}">
+        <Grid Background="#00000000">
+            <Border x:Name="Focused" BorderBrush="#FFB1C5FA" BorderThickness="1" Visibility="Collapsed">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFE7EDFF" Offset="0" />
+                        <GradientStop Color="#FFDEE6FE" Offset="1" />
+                        <GradientStop Color="#FFD2DEFC" Offset="0.25" />
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+            <Border x:Name="Hover" Background="#FF6699FF" CornerRadius="1" Padding="1" Visibility="Collapsed" />
+            <Border x:Name="Today" BorderBrush="#FF6699FF" BorderThickness="1" CornerRadius="1" Padding="1" Visibility="Collapsed" />
+            <dxc:ContentContainer x:Name="ButtonContent" Foreground="#FF201F35">
+                <ContentPresenter Margin="4,0,4,0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" />
+            </dxc:ContentContainer>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup>
+                    <VisualState x:Name="CellNormalState">
+                    </VisualState>
+                    <VisualState x:Name="CellTodayState">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Today" Storyboard.TargetProperty="Visibility" Duration="0">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Visibility>Visible</Visibility>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="CellFocusedState">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Focused" Storyboard.TargetProperty="Visibility" Duration="0">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Visibility>Visible</Visibility>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="CellInactiveState">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonContent" Storyboard.TargetProperty="Foreground" Duration="0">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <SolidColorBrush Color="#FFB3B3B3" />
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Grid>
+    </ControlTemplate>
+
+    <Style x:Key="{dxet:DateEditThemeKey ResourceKey=WeekdayNameStyle}" TargetType="{x:Type TextBlock}">
+    </Style>
+
+    <Style x:Key="{dxet:DateEditThemeKey ResourceKey=WeekNumbersStyle}" TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="#FFB3B3B3" />
+        <Setter Property="TextElement.FontSize" Value="9" />
+        <Setter Property="Margin" Value="0,3,12,0" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="{dxet:DateEditThemeKey ResourceKey=WeekdayAbbreviationStyle}" TargetType="{x:Type TextBlock}">
+        <Setter Property="HorizontalAlignment" Value="Center" />
+    </Style>
+
+    <ControlTemplate x:Key="{dxet:DateEditThemeKey ResourceKey=WeekNumberDelimeter}">
+        <Border Background="#FFE4E4E4" Height="1" />
+    </ControlTemplate>
+
+    <Style x:Key="{dxet:DateEditThemeKey ResourceKey=CellButtonStyle}" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="#FFFFFFFF" />
+        <Setter Property="Template" Value="{DynamicResource {dxet:DateEditThemeKey ResourceKey=CellButtonTemplate}}" />
+    </Style>
+
+    <ControlTemplate x:Key="{dxet:DateEditThemeKey ResourceKey=YearInfoTemplate}">
+        <Grid x:Name="PART_ContentGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxet:DateEditThemeKey ResourceKey=MonthInfoTemplate}">
+        <Grid x:Name="PART_ContentGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <ContentControl Grid.Row="1" Grid.ColumnSpan="7" Grid.Column="2" Template="{DynamicResource {dxet:DateEditThemeKey ResourceKey=MonthInfoDelimeter}}" />
+            <ContentControl x:Name="WeekNumberDelimeter" Grid.Row="2" Grid.RowSpan="6" Grid.Column="1" Template="{DynamicResource {dxet:DateEditThemeKey ResourceKey=WeekNumberDelimeter}}" Visibility="Collapsed" />
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxet:DateEditThemeKey ResourceKey=PopupContentTemplate}" TargetType="{x:Type ContentControl}">
+        <dxepc:DateEditCalendar dxc:FocusHelper2.Focusable="False" SnapsToDevicePixels="True" />
+    </ControlTemplate>
+
+    <!--ONLY SL
+        <Style x:Key="DateEditCalendarTransferStyle" TargetType="dxepc:DateEditCalendarTransferControl">
+        <Setter Property="dx:FrameworkElementHelper.IsClipped" Value="True"/>
+        <Setter Property="dx:FocusHelper2.Focusable" Value="False"/>
+        <Setter Property="PreviousControlTemplate">
+            <Setter.Value>
+                <ControlTemplate TargetType="dx:TransitionContentControl">
+                    <ContentPresenter Name="ContentPresenter"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ControlTemplate">
+            <Setter.Value>
+                <ControlTemplate TargetType="dx:TransitionContentControl">
+                    <ContentPresenter Name="ContentPresenter"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="dxepc:DateEditCalendarTransferControl">
+                    <Grid>
+                        <dx:TransitionContentControl x:Name="PreviousContentPresenter"
+                                              Content="{TemplateBinding PreviousContent}"
+                                              Template="{TemplateBinding PreviousControlTemplate}"
+                                              ContentTemplate="{TemplateBinding ContentTemplate}"
+                                              IsPreviousContent="True"/>
+                        <dx:TransitionContentControl x:Name="ContentPresenter"
+                                              Content="{TemplateBinding CurrentContent}"
+                                              Template="{TemplateBinding ControlTemplate}"
+                                              ContentTemplate="{TemplateBinding ContentTemplate}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="dxepc:DateEditCalendar">
+        <Setter Property="Template" Value="{StaticResource DateEditThemeKey_CalendarTemplate}"/>
+        <Setter Property="WeekdayAbbreviationStyle" Value="{StaticResource DateEditThemeKey_WeekdayAbbreviationStyle}"/>
+        <Setter Property="WeekNumbersStyle" Value="{StaticResource DateEditThemeKey_WeekNumbersStyle}"/>
+        <Setter Property="MonthInfoTemplate" Value="{StaticResource DateEditThemeKey_MonthInfoTemplate}"/>
+        <Setter Property="YearInfoTemplate" Value="{StaticResource DateEditThemeKey_YearInfoTemplate}"/>
+        <Setter Property="YearsInfoTemplate" Value="{StaticResource DateEditThemeKey_YearInfoTemplate}"/>
+        <Setter Property="YearsGroupInfoTemplate" Value="{StaticResource DateEditThemeKey_YearInfoTemplate}"/>
+        <Setter Property="CalendarTransferStyle" Value="{StaticResource DateEditCalendarTransferStyle}"/>
+    </Style>
+    ONLY SL-->
+
+    <!--END TOSLONLY REPLACE 'RepeatButton'wpfcompatibility:SLRepeatButton'-->
+
+</ResourceDictionary>

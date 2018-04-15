@@ -1,0 +1,66 @@
+﻿<controls:CustomWindow x:Class="wmsMLC.General.PL.WPF.Components.Controls.Rcl.CustomMessageBox"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:controls="clr-namespace:wmsMLC.General.PL.WPF.Components.Controls.Rcl"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:lex="http://wpflocalizeextension.codeplex.com"
+    mc:Ignorable="d"
+    ShowInTaskbar="False"
+    ShowTitle="False"
+    Topmost="True"
+    SizeToContent="Manual"
+    d:DesignHeight="300" d:DesignWidth="300">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Image x:Name="image"/>
+        <controls:CustomTextBlock x:Name="tCaption" Grid.Row="0" Grid.Column="1" Margin="2" VerticalAlignment="Center"/>
+        <controls:CustomTextEdit  x:Name="tText" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="5,0,5,5" IsReadOnly="True" 
+            SelectAllOnGotFocus="False" ShowErrorToolTip="False" ShowNullText="False" ShowNullTextForEmptyValue="False" ShowTooltipForTrimmedText="False"
+            VerticalContentAlignment="Top" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
+
+        <Grid Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Right" Margin="5">
+            <Grid x:Name="okGrid" Visibility="Collapsed">
+                <controls:CustomButton x:Name="PART_OkButton" MinWidth="65" Margin="6,0,0,0" IsNotMenuButton="True" HotKey="Escape" Text="{lex:LocExtension Key=wmsMLC.RCL.Resources:StringResources:Close}" Click="OnOkButtonClick" />
+            </Grid>
+            <Grid x:Name="okCancelGrid" Visibility="Collapsed">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <controls:CustomButton x:Name="PART_OkButton1" MinWidth="65" Margin="6,0,0,0" IsNotMenuButton="True" HotKey="Enter" Text="{dx:DXMessageBoxStringId StringId=Ok}" Click="OnOkButtonClick" />
+                <controls:CustomButton Grid.Column="1" x:Name="PART_CancelButton" MinWidth="65" Margin="6,0,0,0" IsNotMenuButton="True" HotKey="Escape" Text="{dx:DXMessageBoxStringId StringId=Cancel}" Click="OnCancelButtonClick" />
+            </Grid>
+            <Grid x:Name="yesNoGrid" Visibility="Collapsed">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <controls:CustomButton x:Name="PART_YesButton" MinWidth="65" Margin="6,0,0,0" IsNotMenuButton="True" HotKey="Enter" Text="{dx:DXMessageBoxStringId StringId=Yes}" Click="OnYesButtonClick" />
+                <controls:CustomButton Grid.Column="1" x:Name="PART_NoButton" MinWidth="65" Margin="6,0,0,0" IsNotMenuButton="True" HotKey="Escape" Text="{dx:DXMessageBoxStringId StringId=No}" Click="OnNoButtonClick" />
+            </Grid>
+            <Grid x:Name="yesNoCancelGrid" Visibility="Collapsed">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <controls:CustomButton x:Name="PART_YesButton1" MinWidth="65" Margin="6,0,0,0" IsNotMenuButton="True" HotKey="Enter" Text="{dx:DXMessageBoxStringId StringId=Yes}" Click="OnYesButtonClick" />
+                <controls:CustomButton Grid.Column="1" x:Name="PART_NoButton1" MinWidth="65" Margin="6,0,0,0" IsNotMenuButton="True" HotKey="Escape" Text="{dx:DXMessageBoxStringId StringId=No}" Click="OnNoButtonClick"/>
+                <controls:CustomButton Grid.Column="2" x:Name="PART_CancelButton1" MinWidth="65" Margin="6,0,0,0" IsNotMenuButton="True" Text="{dx:DXMessageBoxStringId StringId=Cancel}" Click="OnCancelButtonClick"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</controls:CustomWindow>

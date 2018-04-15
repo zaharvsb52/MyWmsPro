@@ -1,0 +1,254 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxrec="http://schemas.devexpress.com/winfx/2008/xaml/richedit/internal" xmlns:dxret="http://schemas.devexpress.com/winfx/2008/xaml/richedit/themekeys" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys">
+
+    <!--BEGIN WPF-->
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.RichEdit/GrayOne/Colors.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <!--END WPF-->
+
+    <ControlTemplate x:Key="{dxret:RichEditRulerThemeKey ResourceKey=ActiveAreaControlTemplate}" TargetType="dxrec:RulerActiveAreaControl">
+        <Border Background="#FFC4C6CC" Padding="1">
+            <Border Background="#FFFFFFFF" />
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxret:RichEditRulerThemeKey ResourceKey=HorizontalSpaceAreaControlTemplate}" TargetType="dxrec:HorizontalRulerSpaceAreaControl">
+        <Border Background="#FFC4C6CC" Padding="1">
+            <Border Background="{StaticResource RulerSpaceAreaBrush}" />
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxret:RichEditRulerThemeKey ResourceKey=VerticalSpaceAreaControlTemplate}" TargetType="dxrec:VerticalRulerSpaceAreaControl">
+        <Border Background="#FFC4C6CC" Padding="1">
+            <Border Background="{StaticResource RulerSpaceAreaBrush}" />
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxret:RichEditRulerThemeKey ResourceKey=TickMarkControlTemplate}" TargetType="dxrec:RulerTickMarkControl">
+        <Border Background="{StaticResource RulerTickMarkBrush}" />
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxret:RichEditRulerThemeKey ResourceKey=DefaultTabControlTemplate}" TargetType="dxrec:DefaultTabControl">
+        <Border Background="{StaticResource RulerDefaultTabMarkBrush}" />
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxret:RichEditRulerThemeKey ResourceKey=DisabledHotZoneControlTemplate}" TargetType="dxrec:DisabledHotZoneControl">
+        <Border Background="#FF0000FF" Width="9" Height="7" />
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxret:RichEditRulerThemeKey ResourceKey=LeftIndentHotZoneControlTemplate}" TargetType="dxrec:HorizontalHotZoneControl">
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Grid Height="7" Width="9" Visibility="{TemplateBinding EnabledVisibility}">
+                <Path Stretch="Fill" Fill="{StaticResource RulerIndentHotZoneBorderBrush}" Data="F1 M 547,359L 551,355L 552,355L 556,359L 556,362L 547,362L 547,359 Z" UseLayoutRounding="False" />
+                <Path Stretch="Fill" Fill="{StaticResource RulerIndentHotZoneBackgroundBrush}" Data="F1 M 548,359L 551,356L 552,356L 555,359L 555,361L 548,361L 548,359 Z" Margin="1" UseLayoutRounding="False" />
+            </Grid>
+            <Grid Height="7" Width="9" Visibility="{TemplateBinding DisabledVisibility}" Opacity="0.5">
+                <Path Stretch="Fill" Fill="{StaticResource RulerIndentHotZoneBorderBrush}" Data="F1 M 547,359L 551,355L 552,355L 556,359L 556,362L 547,362L 547,359 Z" UseLayoutRounding="False" />
+                <Path Stretch="Fill" Fill="{StaticResource RulerIndentHotZoneBackgroundBrush}" Data="F1 M 548,359L 551,356L 552,356L 555,359L 555,361L 548,361L 548,359 Z" Margin="1" UseLayoutRounding="False" />
+            </Grid>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxret:RichEditRulerThemeKey ResourceKey=FirstLineIndentHotZoneControlTemplate}" TargetType="dxrec:FirstLineIndentHotZoneControl">
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Grid Height="7" Width="9" Margin="0,3,0,0" Visibility="{TemplateBinding EnabledVisibility}">
+                <Path Stretch="Fill" Fill="{StaticResource RulerIndentHotZoneBorderBrush}" Data="F1 M 572,353L 568,357L 567,357L 563,353L 563,350L 572,350L 572,353 Z" UseLayoutRounding="False" />
+                <Path Stretch="Fill" Fill="{StaticResource RulerIndentHotZoneBackgroundBrush}" Data="F1 M 571,353L 568,356L 567,356L 564,353L 564,351L 571,351L 571,353 Z" Margin="1" UseLayoutRounding="False" />
+            </Grid>
+            <Grid Height="7" Width="9" Margin="0,3,0,0" Visibility="{TemplateBinding DisabledVisibility}" Opacity="0.5">
+                <Path Stretch="Fill" Fill="{StaticResource RulerIndentHotZoneBorderBrush}" Data="F1 M 572,353L 568,357L 567,357L 563,353L 563,350L 572,350L 572,353 Z" UseLayoutRounding="False" />
+                <Path Stretch="Fill" Fill="{StaticResource RulerIndentHotZoneBackgroundBrush}" Data="F1 M 571,353L 568,356L 567,356L 564,353L 564,351L 571,351L 571,353 Z" Margin="1" UseLayoutRounding="False" />
+            </Grid>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxret:RichEditRulerThemeKey ResourceKey=LeftIndentBottomHotZoneControlTemplate}" TargetType="dxrec:LeftIndentBottomHotZoneControl">
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Grid Height="6" Width="9" Visibility="{TemplateBinding EnabledVisibility}">
+                <Path Stretch="Fill" Fill="{StaticResource RulerIndentHotZoneBorderBrush}" Data="F1 M 518,356L 527,356L 527,362L 518,362L 518,356 Z" UseLayoutRounding="False" />
+                <Path Stretch="Fill" Fill="{StaticResource RulerIndentHotZoneBackgroundBrush}" Data="F1 M 519,356L 526,356L 526,361L 519,361L 519,356 Z" Margin="1,0,1,1" UseLayoutRounding="False" />
+            </Grid>
+            <Grid Height="6" Width="9" Opacity="0.5" Visibility="{TemplateBinding DisabledVisibility}">
+                <Path Stretch="Fill" Fill="{StaticResource RulerIndentHotZoneBorderBrush}" Data="F1 M 518,356L 527,356L 527,362L 518,362L 518,356 Z" UseLayoutRounding="False" />
+                <Path Stretch="Fill" Fill="{StaticResource RulerIndentHotZoneBackgroundBrush}" Data="F1 M 519,356L 526,356L 526,361L 519,361L 519,356 Z" Margin="1,0,1,1" UseLayoutRounding="False" />
+            </Grid>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxret:RichEditRulerThemeKey ResourceKey=RightTabHotZoneControlTemplate}" TargetType="dxrec:RightTabHotZoneControl">
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Grid Height="8" Width="8" Margin="0,-1,0,0" Visibility="{TemplateBinding EnabledVisibility}">
+                <Path Stretch="Fill" Fill="{StaticResource RulerTabHotZoneBrush}" Data="F1 M 511,330L 513,330L 513,336L 508,336L 508,334L 511,334L 511,330 Z" Width="5" Height="6" VerticalAlignment="Bottom" HorizontalAlignment="Right" UseLayoutRounding="False" />
+            </Grid>
+            <Grid Height="8" Width="8" Margin="0,-1,0,0" Opacity="0.5" Visibility="{TemplateBinding DisabledVisibility}">
+                <Path Stretch="Fill" Fill="{StaticResource RulerTabHotZoneBrush}" Data="F1 M 511,330L 513,330L 513,336L 508,336L 508,334L 511,334L 511,330 Z" Width="5" Height="6" VerticalAlignment="Bottom" HorizontalAlignment="Right" UseLayoutRounding="False" />
+            </Grid>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxret:RichEditRulerThemeKey ResourceKey=LeftTabHotZoneControlTemplate}" TargetType="dxrec:LeftTabHotZoneControl">
+        <Grid>
+            <Grid Height="8" Width="8" Margin="0,1,0,0" Visibility="{TemplateBinding EnabledVisibility}">
+                <Path Stretch="Fill" Fill="{StaticResource RulerTabHotZoneBrush}" Data="F1 M 517,330L 515,330L 515,336L 520,336L 520,334L 517,334L 517,330 Z" Width="5" Height="6" HorizontalAlignment="Left" VerticalAlignment="Top" UseLayoutRounding="False" />
+            </Grid>
+            <Grid Height="8" Width="8" Margin="0,1,0,0" Opacity="0.5" Visibility="{TemplateBinding DisabledVisibility}">
+                <Path Stretch="Fill" Fill="{StaticResource RulerTabHotZoneBrush}" Data="F1 M 517,330L 515,330L 515,336L 520,336L 520,334L 517,334L 517,330 Z" Width="5" Height="6" HorizontalAlignment="Left" VerticalAlignment="Top" UseLayoutRounding="False" />
+            </Grid>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxret:RichEditRulerThemeKey ResourceKey=HorizontalTableHotZoneControlTemplate}" TargetType="dxrec:HorizontalTableHotZoneControl">
+        <Grid Margin="0,2,0,0">
+            <Grid Visibility="{TemplateBinding EnabledVisibility}" Height="11" Width="7">
+                <Path Stretch="Fill" Fill="{StaticResource RulerTableHotZoneBackgroundBrush}" Data="F1 M 546,238L 549,238C 550.105,238 551,238.896 551,240L 551,247C 551,248.105 550.105,249 549,249L 546,249C 544.895,249 544,248.105 544,247L 544,240C 544,238.896 544.895,238 546,238 Z " />
+                <Path Stretch="Fill" Fill="{StaticResource RulerTableHotZoneBorderBrush}" Data="F1 M 546,239L 547,239L 547,240L 548,240L 548,239L 549,239L 549,240L 548,240L 548,241L 547,241L 547,242L 548,242L 548,241L 549,241L 549,240L 550,240L 550,241L 549,241L 549,242L 550,242L 550,243L 549,243L 549,244L 550,244L 550,245L 549,245L 549,244L 548,244L 548,245L 547,245L 547,244L 548,244L 548,243L 549,243L 549,242L 548,242L 548,243L 547,243L 547,244L 546,244L 546,245L 545,245L 545,244L 546,244L 546,243L 547,243L 547,242L 546,242L 546,243L 545,243L 545,242L 546,242L 546,241L 547,241L 547,240L 546,240L 546,241L 545,241L 545,240L 546,240L 546,239 Z M 546,245L 547,245L 547,246L 548,246L 548,245L 549,245L 549,246L 548,246L 548,247L 547,247L 547,248L 546,248L 546,247L 547,247L 547,246L 546,246L 546,247L 545,247L 545,246L 546,246L 546,245 Z M 549,246L 550,246L 550,247L 549,247L 549,248L 548,248L 548,247L 549,247L 549,246 Z " Margin="1" />
+            </Grid>
+            <Grid Visibility="{TemplateBinding DisabledVisibility}" Width="11" Height="7">
+                <Path Stretch="Fill" Fill="{StaticResource RulerTableHotZoneBackgroundBrush}" Data="F1 M 546,238L 549,238C 550.105,238 551,238.896 551,240L 551,247C 551,248.105 550.105,249 549,249L 546,249C 544.895,249 544,248.105 544,247L 544,240C 544,238.896 544.895,238 546,238 Z " />
+                <Path Stretch="Fill" Fill="{StaticResource RulerTableHotZoneBorderBrush}" Data="F1 M 546,239L 547,239L 547,240L 548,240L 548,239L 549,239L 549,240L 548,240L 548,241L 547,241L 547,242L 548,242L 548,241L 549,241L 549,240L 550,240L 550,241L 549,241L 549,242L 550,242L 550,243L 549,243L 549,244L 550,244L 550,245L 549,245L 549,244L 548,244L 548,245L 547,245L 547,244L 548,244L 548,243L 549,243L 549,242L 548,242L 548,243L 547,243L 547,244L 546,244L 546,245L 545,245L 545,244L 546,244L 546,243L 547,243L 547,242L 546,242L 546,243L 545,243L 545,242L 546,242L 546,241L 547,241L 547,240L 546,240L 546,241L 545,241L 545,240L 546,240L 546,239 Z M 546,245L 547,245L 547,246L 548,246L 548,245L 549,245L 549,246L 548,246L 548,247L 547,247L 547,248L 546,248L 546,247L 547,247L 547,246L 546,246L 546,247L 545,247L 545,246L 546,246L 546,245 Z M 549,246L 550,246L 550,247L 549,247L 549,248L 548,248L 548,247L 549,247L 549,246 Z " Margin="1" />
+            </Grid>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxret:RichEditRulerThemeKey ResourceKey=CenterTabHotZoneControlTemplate}" TargetType="dxrec:CenterTabHotZoneControl">
+        <Grid>
+            <Grid Height="8" Width="8" Margin="0,-1,0,0" Visibility="{TemplateBinding EnabledVisibility}">
+                <Path Stretch="Fill" Fill="{StaticResource RulerTabHotZoneBrush}" Data="F1 M 538,330L 540,330L 540,334L 543,334L 543,336L 540,336L 535,336L 535,334L 538,334L 538,330 Z" Width="8" Height="6" HorizontalAlignment="Center" VerticalAlignment="Bottom" UseLayoutRounding="False" />
+            </Grid>
+            <Grid Height="8" Width="8" Margin="0,-1,0,0" Visibility="{TemplateBinding DisabledVisibility}" Opacity="0.5">
+                <Path Stretch="Fill" Fill="{StaticResource RulerTabHotZoneBrush}" Data="F1 M 538,330L 540,330L 540,334L 543,334L 543,336L 540,336L 535,336L 535,334L 538,334L 538,330 Z" Width="8" Height="6" HorizontalAlignment="Center" VerticalAlignment="Bottom" UseLayoutRounding="False" />
+            </Grid>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxret:RichEditRulerThemeKey ResourceKey=DecimalTabHotZoneControlTemplate}" TargetType="dxrec:DecimalTabHotZoneControl">
+        <Grid>
+            <Grid Height="8" Width="8" Margin="0,-1,0,0" Visibility="{TemplateBinding EnabledVisibility}">
+                <Path Stretch="Fill" Fill="{StaticResource RulerTabHotZoneBrush}" Data="F1 M 548,330L 550,330L 550,334L 553,334L 553,336L 550,336L 545,336L 545,334L 548,334L 548,330 Z M 551,331L 553,331L 553,333L 551,333L 551,331 Z" Width="8" Height="6" HorizontalAlignment="Center" VerticalAlignment="Bottom" UseLayoutRounding="False" />
+            </Grid>
+            <Grid Height="8" Width="8" Margin="0,-1,0,0" Visibility="{TemplateBinding DisabledVisibility}" Opacity="0.5">
+                <Path Stretch="Fill" Fill="{StaticResource RulerTabHotZoneBrush}" Data="F1 M 548,330L 550,330L 550,334L 553,334L 553,336L 550,336L 545,336L 545,334L 548,334L 548,330 Z M 551,331L 553,331L 553,333L 551,333L 551,331 Z" Width="8" Height="6" HorizontalAlignment="Center" VerticalAlignment="Bottom" UseLayoutRounding="False" />
+            </Grid>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxret:RichEditRulerThemeKey ResourceKey=TabTypeToggleBackgroundControlTemplate}" TargetType="dxrec:TabTypeToggleBackgroundControl">
+        <Grid>
+            <Border Background="{StaticResource RulerBackgroundBrush}" BorderBrush="{StaticResource RulerBorderBrush}" Opacity="0.35" />
+            <Border Background="{StaticResource RulerBackgroundBrush}" BorderBrush="{StaticResource RulerBorderBrush}" BorderThickness="0,0,1,0" Opacity="0.35" />
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxret:RichEditRulerThemeKey ResourceKey=TabTypeToggleHotZoneControlTemplate}" TargetType="dxrec:TabTypeToggleHotZoneControl">
+        <Border Background="{StaticResource TabTypeToggleHotZoneControlTemplateBackgroundBrush}" Padding="1">
+            <Border Background="#FFFFFFFF" />
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxret:RichEditRulerThemeKey ResourceKey=HorizontalRulerBackgroundControlTemplate}" TargetType="{x:Type ContentControl}">
+        <Border Background="{StaticResource RulerBackgroundBrush}" BorderBrush="{StaticResource RulerBorderBrush}" BorderThickness="0,0,0,1" Opacity="0.35" />
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxret:RichEditRulerThemeKey ResourceKey=VerticalRulerBackgroundControlTemplate}" TargetType="{x:Type ContentControl}">
+        <Border Background="{StaticResource RulerBackgroundBrush}" BorderBrush="{StaticResource RulerBorderBrush}" BorderThickness="0,0,1,0" Opacity="0.35" />
+    </ControlTemplate>
+
+    <Style x:Key="{dxret:RichEditRulerThemeKey ResourceKey=HorizontalRulerContentStyle}" TargetType="{x:Type Canvas}">
+        <Setter Property="Margin" Value="0,5,0,6" />
+    </Style>
+
+    <Style x:Key="{dxret:RichEditRulerThemeKey ResourceKey=VerticalRulerContentStyle}" TargetType="{x:Type Canvas}">
+        <Setter Property="Margin" Value="5,0,6,0" />
+    </Style>
+
+    <Style x:Key="{dxret:RichEditRulerThemeKey ResourceKey=HorizontalRulerShadowStyle}" TargetType="{x:Type Border}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Height" Value="6" />
+    </Style>
+
+    <Style x:Key="{dxret:RichEditRulerThemeKey ResourceKey=VerticalRulerShadowStyle}" TargetType="{x:Type Border}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Width" Value="6" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.RichEdit.Controls.Internal.RulerActiveAreaControl}" TargetType="{x:Type dxrec:RulerActiveAreaControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxret:RichEditRulerThemeKey ResourceKey=ActiveAreaControlTemplate}}" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.RichEdit.Controls.Internal.HorizontalRulerSpaceAreaControl}" TargetType="{x:Type dxrec:HorizontalRulerSpaceAreaControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxret:RichEditRulerThemeKey ResourceKey=HorizontalSpaceAreaControlTemplate}}" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.RichEdit.Controls.Internal.VerticalRulerSpaceAreaControl}" TargetType="{x:Type dxrec:VerticalRulerSpaceAreaControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxret:RichEditRulerThemeKey ResourceKey=VerticalSpaceAreaControlTemplate}}" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.RichEdit.Controls.Internal.RulerTickMarkControl}" TargetType="{x:Type dxrec:RulerTickMarkControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxret:RichEditRulerThemeKey ResourceKey=TickMarkControlTemplate}}" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.RichEdit.Controls.Internal.RulerNumberTickMarkControl}" TargetType="{x:Type dxrec:RulerNumberTickMarkControl}">
+        <Setter Property="Foreground" Value="#FF6E6E6E" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="FontFamily" Value="Arial" />
+        <Setter Property="FontStyle" Value="Normal" />
+        <Setter Property="FontWeight" Value="Normal" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.RichEdit.Controls.Internal.DefaultTabControl}" TargetType="{x:Type dxrec:DefaultTabControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxret:RichEditRulerThemeKey ResourceKey=DefaultTabControlTemplate}}" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.RichEdit.Controls.Internal.DisabledHotZoneControl}" TargetType="{x:Type dxrec:DisabledHotZoneControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxret:RichEditRulerThemeKey ResourceKey=DisabledHotZoneControlTemplate}}" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.RichEdit.Controls.Internal.LeftIndentHotZoneControl}" TargetType="{x:Type dxrec:LeftIndentHotZoneControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxret:RichEditRulerThemeKey ResourceKey=LeftIndentHotZoneControlTemplate}}" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.RichEdit.Controls.Internal.RightIndentHotZoneControl}" TargetType="{x:Type dxrec:RightIndentHotZoneControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxret:RichEditRulerThemeKey ResourceKey=LeftIndentHotZoneControlTemplate}}" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.RichEdit.Controls.Internal.FirstLineIndentHotZoneControl}" TargetType="{x:Type dxrec:FirstLineIndentHotZoneControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxret:RichEditRulerThemeKey ResourceKey=FirstLineIndentHotZoneControlTemplate}}" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.RichEdit.Controls.Internal.LeftIndentBottomHotZoneControl}" TargetType="{x:Type dxrec:LeftIndentBottomHotZoneControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxret:RichEditRulerThemeKey ResourceKey=LeftIndentBottomHotZoneControlTemplate}}" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.RichEdit.Controls.Internal.RightTabHotZoneControl}" TargetType="{x:Type dxrec:RightTabHotZoneControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxret:RichEditRulerThemeKey ResourceKey=RightTabHotZoneControlTemplate}}" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.RichEdit.Controls.Internal.LeftTabHotZoneControl}" TargetType="{x:Type dxrec:LeftTabHotZoneControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxret:RichEditRulerThemeKey ResourceKey=LeftTabHotZoneControlTemplate}}" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.RichEdit.Controls.Internal.HorizontalTableHotZoneControl}" TargetType="{x:Type dxrec:HorizontalTableHotZoneControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxret:RichEditRulerThemeKey ResourceKey=HorizontalTableHotZoneControlTemplate}}" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.RichEdit.Controls.Internal.CenterTabHotZoneControl}" TargetType="{x:Type dxrec:CenterTabHotZoneControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxret:RichEditRulerThemeKey ResourceKey=CenterTabHotZoneControlTemplate}}" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.RichEdit.Controls.Internal.DecimalTabHotZoneControl}" TargetType="{x:Type dxrec:DecimalTabHotZoneControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxret:RichEditRulerThemeKey ResourceKey=DecimalTabHotZoneControlTemplate}}" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.RichEdit.Controls.Internal.TabTypeToggleBackgroundControl}" TargetType="{x:Type dxrec:TabTypeToggleBackgroundControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxret:RichEditRulerThemeKey ResourceKey=TabTypeToggleBackgroundControlTemplate}}" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.RichEdit.Controls.Internal.TabTypeToggleHotZoneControl}" TargetType="{x:Type dxrec:TabTypeToggleHotZoneControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxret:RichEditRulerThemeKey ResourceKey=TabTypeToggleHotZoneControlTemplate}}" />
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="BarCode" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  
+  <!--Сущность BarCode-->
+  <xs:element name="TENTBARCODE" type="BarCodeType"/>
+
+  <!--Штрих-коды-->
+  <xs:complexType name="BarCodeType">
+    <xs:sequence>
+      <!--ID записи-->
+      <xs:element name="BARCODEID" type="xs:integer"/>
+      <!--Связь с сущностью-->
+      <xs:element name="BARCODE2ENTITY" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Код экземпляра сущности-->
+      <xs:element name="BARCODEKEY" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--ШК-->
+      <xs:element name="BARCODEVALUE" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

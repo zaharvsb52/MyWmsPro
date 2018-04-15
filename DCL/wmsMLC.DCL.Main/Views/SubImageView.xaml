@@ -1,0 +1,34 @@
+﻿<views:CustomUserControl x:Class="wmsMLC.DCL.Main.Views.SubImageView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mvvmx="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+    xmlns:views="clr-namespace:wmsMLC.General.PL.WPF.Views;assembly=wmsMLC.General.PL.WPF"
+    xmlns:views1="clr-namespace:wmsMLC.DCL.Main.Views"
+    xmlns:controls="clr-namespace:wmsMLC.DCL.Main.Views.Controls"
+    mc:Ignorable="d" 
+    d:DesignHeight="150" d:DesignWidth="150">
+
+    <views:CustomUserControl.Resources>
+        <mvvmx:BooleanToVisibilityConverter x:Key="InvertBoolToVis" Inverse="True"/>
+    </views:CustomUserControl.Resources>
+    
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <views1:MenuView Menu="{Binding Menu}" Visibility="{Binding ShowMenu, Converter={StaticResource InvertBoolToVis}}"/>
+        <controls:CustomImageEdit Grid.Row="1" x:Name="ImageEditControl" HorizontalAlignment="Left" MinHeight="200" MinWidth="200"
+            HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Stretch="Uniform"
+            IsReadOnly="{Binding IsReadOnly}"
+            ShowMenu="{Binding ShowMenu}" 
+            EditValue="{Binding Source, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+            ImageLoading="OnImageLoadingImageLoading"
+            MenuPopupOpened="OnMenuPopupOpened"
+            EditValueChanged="OnEditValueChanged"/>
+    </Grid>
+</views:CustomUserControl>

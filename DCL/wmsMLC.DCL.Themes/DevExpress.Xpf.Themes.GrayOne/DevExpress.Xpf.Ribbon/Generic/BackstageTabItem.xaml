@@ -1,0 +1,11 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon" xmlns:dxrt="http://schemas.devexpress.com/winfx/2008/xaml/ribbon/themekeys" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys">
+
+    <ControlTemplate x:Key="{dxrt:BackstageTabItemThemeKey ResourceKey=ControlTemplate}" TargetType="{x:Type dxr:BackstageTabItem}">
+        <dxr:RibbonCheckedBorderControl Style="{TemplateBinding BorderStyle}" UseAppFocusValue="True" AppFocusValue="{TemplateBinding IsSelected}" IsChecked="{TemplateBinding IsSelected}">
+            <ContentControl x:Name="PART_Content" Style="{TemplateBinding ContentStyle}" Grid.Column="1" IsTabStop="False">
+                <ContentControl Style="{TemplateBinding ActualTextStyle}" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" IsTabStop="False" />
+                </ContentControl>            
+        </dxr:RibbonCheckedBorderControl>
+    </ControlTemplate>
+
+</ResourceDictionary>

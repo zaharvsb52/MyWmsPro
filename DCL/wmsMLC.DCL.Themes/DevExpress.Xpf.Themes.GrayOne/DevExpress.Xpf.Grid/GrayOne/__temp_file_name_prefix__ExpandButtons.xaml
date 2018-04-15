@@ -1,0 +1,87 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxgt="http://schemas.devexpress.com/winfx/2008/xaml/grid/themekeys" xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <dxcore_unique_xmlns:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+  <dxcore_unique_xmlns:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverterInverted" Invert="True" />
+  <ControlTemplate x:Key="{dxgt:GroupRowThemeKey ResourceKey=ExpandButtonTemplate}" TargetType="{x:Type dx:ToggleStateButton}">
+    <!-- old Path -->
+    <!--<Grid Background="Transparent" SnapsToDevicePixels="True">
+            <Path x:Name="GlyphExpanded" Stretch="Fill" Fill="#FF201F35" Data="F1 M 211,186L 205,186L 208,189L 211,186 Z" Width="8" Height="4" Margin="0,0,2,2" Visibility="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}" />
+            <Path x:Name="GlyphCollapsed" Stretch="Fill" Fill="#FF201F35" Data="F1 M 252,218L 256,214L 252,210L 252,218 Z " Width="4" Height="8" Visibility="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverterInverted}}" />
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="MouseOver" />
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Grid>-->
+    <Border x:Name="border" Width="11" Height="11" CornerRadius="1" Padding="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\ExpandButtons.xaml;20;10">
+      <Border.Background>
+        <LinearGradientBrush EndPoint="0.78,0.914" StartPoint="0.22,0.086">
+          <!-- Zalivka samogo bordera -->
+          <GradientStop Color="#ecedee" Offset="0" />
+          <!-- #FF9CA4AB #FF4C535C #FFBEC6D4 c4c9cf d7dadd-->
+          <GradientStop Color="#d7dadd" Offset="1" />
+        </LinearGradientBrush>
+      </Border.Background>
+      <Border CornerRadius="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\ExpandButtons.xaml;27;14">
+        <Border.Background>
+          <LinearGradientBrush EndPoint="0.829,0.877" StartPoint="0.171,0.123">
+            <!-- zalivka vnutrenney ploshagi -->
+            <GradientStop Color="White" Offset="0" />
+            <GradientStop Color="#cddeff" Offset="1" />
+          </LinearGradientBrush>
+        </Border.Background>
+        <Grid Width="5" Height="5" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\ExpandButtons.xaml;34;18">
+          <!-- #FF3B4249  #FF3B4249-->
+          <!-- otobrazenie pri razvernutom soderzanii -->
+          <Rectangle Stretch="Fill" Fill="#98a1c4" HorizontalAlignment="Center" VerticalAlignment="Center" Width="5" Height="1" x:Name="rectangle" Visibility="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\ExpandButtons.xaml;36;22" />
+          <!-- otobrazenie pri svernutom soderzanii -->
+          <Path Stretch="Fill" Fill="Orange" Data="F1 M 1256,774L 1257,774L 1257,776L 1259,776L 1259,777L 1257,777L 1257,779L 1256,779L 1256,777L 1254,777L 1254,776L 1256,776L 1256,774 Z " HorizontalAlignment="Center" VerticalAlignment="Center" Width="5" Height="5" x:Name="path" Visibility="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverterInverted}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\ExpandButtons.xaml;38;22" />
+        </Grid>
+      </Border>
+    </Border>
+  </ControlTemplate>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.BackgroundBorderControl}" TargetType="{x:Type dxg:BackgroundBorderControl}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type dxg:BackgroundBorderControl}">
+          <Border Background="White" x:Name="PART_DetailButtonBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\ExpandButtons.xaml;48;22">
+            <ContentPresenter dxcore_unique_xmlns:FrameworkElementHelper.IsVisible="{Binding Path=(dxg:GridDetailExpandButtonContainer.IsDetailButtonVisible), RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\ExpandButtons.xaml;49;26" />
+          </Border>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <ControlTemplate x:Key="{dxgt:GroupRowThemeKey ResourceKey=ExpandDetailButtonTemplate}" TargetType="{x:Type dx:ToggleStateButton}">
+    <dxg:BackgroundBorderControl dxg:GridDetailExpandButtonContainer.IsDetailButtonVisible="{Binding Path=(dxg:GridDetailExpandButtonContainer.IsDetailButtonVisible), RelativeSource={RelativeSource TemplatedParent}}">
+      <Grid Height="9" Width="9" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\ExpandButtons.xaml;57;14">
+        <Rectangle Fill="#FF656874" Margin="1,1,-1,-1" Opacity="0.1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\ExpandButtons.xaml;58;18" />
+        <Rectangle Margin="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\ExpandButtons.xaml;59;18">
+          <Rectangle.Fill>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+              <GradientStop Color="#FFCFD1D7" Offset="0" />
+              <GradientStop Color="#FFAEAFB4" Offset="1" />
+            </LinearGradientBrush>
+          </Rectangle.Fill>
+        </Rectangle>
+        <Path Stretch="Fill" Visibility="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}" Fill="#FF201F35" Data="F1 M 145,63L 154,63L 154,72L 145,72L 145,63 Z M 146,64.0001L 146,71.0001L 153,71.0001L 153,64.0001L 146,64.0001 Z M 147,67.0001L 152,67.0001L 152,68.0001L 147,68.0001L 147,67.0001 Z " dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\ExpandButtons.xaml;67;18" />
+        <Path Stretch="Fill" Visibility="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverterInverted}}" Fill="#FF201F35" Data="F1 M 135,67L 137,67L 137,65L 138,65L 138,67L 140,67L 140,68L 138,68L 138,70L 137,70L 137,68L 135,68L 135,67 Z M 133,63.0001L 142,63.0001L 142,72.0001L 133,72.0001L 133,63.0001 Z M 134,64.0001L 134,71.0001L 141,71.0001L 141,64.0001L 134,64.0001 Z " dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\GrayOne\ExpandButtons.xaml;68;18" />
+      </Grid>
+    </dxg:BackgroundBorderControl>
+  </ControlTemplate>
+  <Style x:Key="{dxgt:GroupRowThemeKey ResourceKey=ExpandButtonStyle}" TargetType="{x:Type dx:ToggleStateButton}">
+    <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+    <Setter Property="Focusable" Value="False" />
+    <Setter Property="Width" Value="13" />
+    <Setter Property="Height" Value="13" />
+    <Setter Property="HorizontalContentAlignment" Value="Center" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="Template" Value="{DynamicResource {dxgt:GroupRowThemeKey ResourceKey=ExpandButtonTemplate}}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.GridToggleStateButton}" TargetType="{x:Type dxg:GridToggleStateButton}">
+    <Setter Property="Focusable" Value="false" />
+    <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+    <Setter Property="HorizontalContentAlignment" Value="Center" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="Template" Value="{DynamicResource {dxgt:GroupRowThemeKey ResourceKey=ExpandDetailButtonTemplate}}" />
+  </Style>
+</ResourceDictionary>

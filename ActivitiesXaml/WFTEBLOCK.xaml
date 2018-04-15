@@ -1,0 +1,401 @@
+<Activity mc:Ignorable="sads sap" x:Class="{x:Null}"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:bm="clr-namespace:BLToolkit.Mapping;assembly=BLToolkit.4"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:mvc="clr-namespace:Microsoft.VisualBasic.CompilerServices;assembly=Microsoft.VisualBasic"
+ xmlns:s="clr-namespace:System;assembly=mscorlib"
+ xmlns:s1="clr-namespace:System;assembly=System"
+ xmlns:s2="clr-namespace:System;assembly=System.Core"
+ xmlns:s3="clr-namespace:System;assembly=System.ServiceModel"
+ xmlns:s4="clr-namespace:System;assembly=Microsoft.CompilerServices.AsyncTargetingPack.Net4"
+ xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:scg1="clr-namespace:System.Collections.Generic;assembly=System"
+ xmlns:scg2="clr-namespace:System.Collections.Generic;assembly=System.Core"
+ xmlns:scg3="clr-namespace:System.Collections.Generic;assembly=System.ServiceModel"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:sco1="clr-namespace:System.Collections.ObjectModel;assembly=System"
+ xmlns:sw="clr-namespace:System.Windows;assembly=PresentationCore"
+ xmlns:sw1="clr-namespace:System.Windows;assembly=WindowsBase"
+ xmlns:sw2="clr-namespace:System.Windows;assembly=PresentationFramework"
+ xmlns:sxs="clr-namespace:System.Xml.Serialization;assembly=System.Xml"
+ xmlns:wab="clr-namespace:wmsMLC.Activities.Business;assembly=wmsMLC.Activities.Business"
+ xmlns:wada="clr-namespace:wmsMLC.Activities.Dialogs.Activities;assembly=wmsMLC.Activities.Dialogs"
+ xmlns:wag="clr-namespace:wmsMLC.Activities.General;assembly=wmsMLC.Activities.General"
+ xmlns:wagh="clr-namespace:wmsMLC.Activities.General.Helpers;assembly=wmsMLC.Activities.General"
+ xmlns:wav="clr-namespace:wmsMLC.Activities.ViewInteraction;assembly=wmsMLC.Activities.ViewInteraction"
+ xmlns:wbmp="clr-namespace:wmsMLC.Business.Managers.Processes;assembly=wmsMLC.Business.Managers"
+ xmlns:wbo="clr-namespace:wmsMLC.Business.Objects;assembly=wmsMLC.Business.Objects"
+ xmlns:wdg="clr-namespace:wmsMLC.DCL.General;assembly=wmsMLC.DCL.General"
+ xmlns:wdgh="clr-namespace:wmsMLC.DCL.General.Helpers;assembly=wmsMLC.DCL.General"
+ xmlns:wdgv="clr-namespace:wmsMLC.DCL.General.ViewModels;assembly=wmsMLC.DCL.General"
+ xmlns:wdms="clr-namespace:wmsMLC.DCL.Main.Services;assembly=wmsMLC.DCL.Main"
+ xmlns:wg="clr-namespace:wmsMLC.General;assembly=wmsMLC.General"
+ xmlns:wgb="clr-namespace:wmsMLC.General.BL;assembly=wmsMLC.General.BL"
+ xmlns:wgbv="clr-namespace:wmsMLC.General.BL.Validation;assembly=wmsMLC.General.BL"
+ xmlns:wgd="clr-namespace:wmsMLC.General.DAL;assembly=wmsMLC.General.DAL"
+ xmlns:wgpm="clr-namespace:wmsMLC.General.PL.Model;assembly=wmsMLC.General.PL"
+ xmlns:wgpw="clr-namespace:wmsMLC.General.PL.WPF;assembly=wmsMLC.General.PL.WPF"
+ xmlns:wgpwg="clr-namespace:wmsMLC.General.PL.WPF.General;assembly=wmsMLC.General.PL.WPF"
+ xmlns:wgpwv="clr-namespace:wmsMLC.General.PL.WPF.ViewModels;assembly=wmsMLC.General.PL.WPF"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="BpContext" Type="InArgument(wgb:BpContext)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>894,1167</sap:VirtualizedContainerService.HintSize>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces for internal implementation</mva:VisualBasic.Settings>
+  <Flowchart DisplayName="Блокирование ТЕ" sap:VirtualizedContainerService.HintSize="854,1127">
+    <Flowchart.Variables>
+      <Variable x:TypeArguments="x:String" Default="[string.Empty]" Name="errorMessage" />
+      <Variable x:TypeArguments="wdgv:ExpandoObjectViewModelBase" Name="blockModel" />
+      <Variable x:TypeArguments="x:Boolean" Name="dialogResult" />
+      <Variable x:TypeArguments="x:Object" Name="blockCode" />
+      <Variable x:TypeArguments="s:Exception" Name="exception" />
+      <Variable x:TypeArguments="sco:Collection(s:Exception)" Default="[new Collection(Of Exception)]" Name="exceptionList" />
+      <Variable x:TypeArguments="av:MessageBoxResult" Name="errorDialogResult" />
+      <Variable x:TypeArguments="wbo:TE[]" Name="Items" />
+      <Variable x:TypeArguments="x:String" Name="Layout" />
+    </Flowchart.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        <av:Point x:Key="ShapeLocation">260,2.5</av:Point>
+        <av:Size x:Key="ShapeSize">60,75</av:Size>
+        <av:PointCollection x:Key="ConnectorLocation">290,77.5 290,107.5 530,107.5 530,139</av:PointCollection>
+        <x:Double x:Key="Width">840</x:Double>
+        <x:Double x:Key="Height">1091</x:Double>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Flowchart.StartNode>
+      <x:Reference>__ReferenceID15</x:Reference>
+    </Flowchart.StartNode>
+    <FlowStep x:Name="__ReferenceID3">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">630,1069</av:Point>
+          <av:Size x:Key="ShapeSize">200,22</av:Size>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <wav:ShowMessageBoxActivity Buttons="OK" DefaultResult="OK" DisplayName="Сообщение о завершении" sap:VirtualizedContainerService.HintSize="200,22" Image="Asterisk" Message="Блокировка завершена" Result="OK" Title="Блокирование ТЕ">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </wav:ShowMessageBoxActivity>
+    </FlowStep>
+    <FlowStep x:Name="__ReferenceID5">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">458,754.5</av:Point>
+          <av:Size x:Key="ShapeSize">244,51</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">580,805.5 580,876.5</av:PointCollection>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ForEach x:TypeArguments="wbo:TE" DisplayName="Пройдемся по списку ТЕ для блокирования" sap:VirtualizedContainerService.HintSize="244,51" Values="[Items]">
+        <ActivityAction x:TypeArguments="wbo:TE">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="wbo:TE" Name="item" />
+          </ActivityAction.Argument>
+          <Flowchart DisplayName="Запуск API блокировки" sap:VirtualizedContainerService.HintSize="614,636">
+            <Flowchart.Variables>
+              <Variable x:TypeArguments="x:Boolean" Name="blockResult" />
+            </Flowchart.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+                <av:Size x:Key="ShapeSize">60,75</av:Size>
+                <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,121.5</av:PointCollection>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Flowchart.StartNode>
+              <x:Reference>__ReferenceID2</x:Reference>
+            </Flowchart.StartNode>
+            <FlowStep x:Name="__ReferenceID2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">200,121.5</av:Point>
+                  <av:Size x:Key="ShapeSize">200,57</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">300,178.5 300,206.5</av:PointCollection>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <wab:ExecuteProcedureActivity DisplayName="Запуск API процедуры" Exception="[exception]" sap:VirtualizedContainerService.HintSize="200,57" Result="[blockResult]" TimeOut="[Nothing]" Value="[&quot;BlockTE&quot;]">
+                <wab:ExecuteProcedureActivity.Parameters>
+                  <InArgument x:TypeArguments="x:String" x:Key="key">[item.GetKey(Of String)]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="blockingCode">[blockModel.Get(Of String)("blocking")]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="description">[blockModel.Get(Of String)("description")]</InArgument>
+                  <OutArgument x:TypeArguments="x:Object" x:Key="blockingID">[blockCode]</OutArgument>
+                </wab:ExecuteProcedureActivity.Parameters>
+              </wab:ExecuteProcedureActivity>
+              <FlowStep.Next>
+                <FlowDecision x:Name="__ReferenceID0" Condition="[blockResult = false]" sap:VirtualizedContainerService.HintSize="70,87">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <av:Point x:Key="ShapeLocation">265,206.5</av:Point>
+                      <av:Size x:Key="ShapeSize">70,87</av:Size>
+                      <x:String x:Key="TrueLabel">Произошла ошибка</x:String>
+                      <x:String x:Key="FalseLabel">Блокировка успешна идем дальше</x:String>
+                      <av:PointCollection x:Key="TrueConnector">265,250 170,250 170,319</av:PointCollection>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <FlowDecision.True>
+                    <FlowStep x:Name="__ReferenceID1">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <av:Point x:Key="ShapeLocation">70,319</av:Point>
+                          <av:Size x:Key="ShapeSize">200,22</av:Size>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <AddToCollection x:TypeArguments="s:Exception" Collection="[exceptionList]" DisplayName="Запомним ошибку" sap:VirtualizedContainerService.HintSize="200,22" Item="[exception]" />
+                    </FlowStep>
+                  </FlowDecision.True>
+                </FlowDecision>
+              </FlowStep.Next>
+            </FlowStep>
+            <x:Reference>__ReferenceID0</x:Reference>
+            <x:Reference>__ReferenceID1</x:Reference>
+          </Flowchart>
+        </ActivityAction>
+      </ForEach>
+      <FlowStep.Next>
+        <FlowDecision x:Name="__ReferenceID8" Condition="[exceptionList.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="70,87">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <av:Point x:Key="ShapeLocation">545,876.5</av:Point>
+              <av:Size x:Key="ShapeSize">70,87</av:Size>
+              <x:String x:Key="TrueLabel">Если были ошибки</x:String>
+              <x:String x:Key="FalseLabel">Ошибок небыло</x:String>
+              <av:PointCollection x:Key="FalseConnector">615,920 730,920 730,999</av:PointCollection>
+              <av:PointCollection x:Key="TrueConnector">545,920 390,920 390,999</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <FlowDecision.True>
+            <FlowStep x:Name="__ReferenceID11">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">290,999</av:Point>
+                  <av:Size x:Key="ShapeSize">200,22</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">390,1021 390,1069</av:PointCollection>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <wab:RefreshEntityActivity DisplayName="Обновление менеджеров сущностей" sap:VirtualizedContainerService.HintSize="200,22" IsEnabled="True">
+                <wab:RefreshEntityActivity.EntityTypes>
+                  <wgpm:ValueDataField BindingPath="{x:Null}" Caption="{x:Null}" DependentFields="{x:Null}" Description="{x:Null}" DisplayFormat="{x:Null}" EnableCreate="{x:Null}" EnableEdit="{x:Null}" EventName="{x:Null}" FieldName="{x:Null}" FieldType="{x:Null}" KeyLink="{x:Null}" LookupCode="{x:Null}" LookupFilterExt="{x:Null}" LookupVarFilterExt="{x:Null}" MaxLength="{x:Null}" SourceName="{x:Null}" Value="{x:Null}" AllowAddNewValue="False" CloseDialog="False" IsChangeLookupCode="False" IsEnabled="True" IsLabelFontWeightBold="False" IsMemoView="False" IsRequired="False" LabelPosition="Left" LookupButtonEnabled="True" Name="TE2BLOCKING" Order="0" SetFocus="False" Visible="True" />
+                </wab:RefreshEntityActivity.EntityTypes>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </wab:RefreshEntityActivity>
+              <FlowStep.Next>
+                <FlowStep x:Name="__ReferenceID9">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:Point x:Key="ShapeLocation">290,1069</av:Point>
+                      <av:Size x:Key="ShapeSize">200,22</av:Size>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <wav:ShowExceptionMessageActivity Buttons="OK" DefaultResult="OK" DisplayName="Отобразим ошибки" Error="[Nothing]" ErrorList="[exceptionList]" ForceError="False" sap:VirtualizedContainerService.HintSize="200,22" Image="Warning" Message="Произошли следующие ошибки:" Result="[errorDialogResult]" Title="Блокирование ТЕ">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </wav:ShowExceptionMessageActivity>
+                </FlowStep>
+              </FlowStep.Next>
+            </FlowStep>
+          </FlowDecision.True>
+          <FlowDecision.False>
+            <FlowStep x:Name="__ReferenceID10">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">630,999</av:Point>
+                  <av:Size x:Key="ShapeSize">200,22</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">730,1021 730,1069</av:PointCollection>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <wab:RefreshEntityActivity DisplayName="Обновление менеджеров сущностей" sap:VirtualizedContainerService.HintSize="200,22" IsEnabled="True">
+                <wab:RefreshEntityActivity.EntityTypes>
+                  <wgpm:ValueDataField BindingPath="{x:Null}" Caption="{x:Null}" DependentFields="{x:Null}" Description="{x:Null}" DisplayFormat="{x:Null}" EnableCreate="{x:Null}" EnableEdit="{x:Null}" EventName="{x:Null}" FieldName="{x:Null}" FieldType="{x:Null}" KeyLink="{x:Null}" LookupCode="{x:Null}" LookupFilterExt="{x:Null}" LookupVarFilterExt="{x:Null}" MaxLength="{x:Null}" SourceName="{x:Null}" Value="{x:Null}" AllowAddNewValue="False" CloseDialog="False" IsChangeLookupCode="False" IsEnabled="True" IsLabelFontWeightBold="False" IsMemoView="False" IsRequired="False" LabelPosition="Left" LookupButtonEnabled="True" Name="TE2BLOCKING" Order="0" SetFocus="False" Visible="True" />
+                </wab:RefreshEntityActivity.EntityTypes>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </wab:RefreshEntityActivity>
+              <FlowStep.Next>
+                <x:Reference>__ReferenceID3</x:Reference>
+              </FlowStep.Next>
+            </FlowStep>
+          </FlowDecision.False>
+        </FlowDecision>
+      </FlowStep.Next>
+    </FlowStep>
+    <FlowStep x:Name="__ReferenceID14">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">190,221.5</av:Point>
+          <av:Size x:Key="ShapeSize">200,57</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">290,278.5 290,349</av:PointCollection>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <wada:CreateExpandoObjectViewModelActivity LayoutValue="{x:Null}" DisplayName="Создадим поля для запроса" sap:VirtualizedContainerService.HintSize="200,57" Layout="[Layout]" LayoutSettingsFileSuffix="222b096a-3cbf-4cd8-b5b8-d5e5f396b7a4" Result="[blockModel]" ShowCustomizeMenu="False">
+        <wada:CreateExpandoObjectViewModelActivity.Fields>
+          <wgpm:ValueDataField BindingPath="{x:Null}" DependentFields="{x:Null}" Description="{x:Null}" DisplayFormat="{x:Null}" EnableCreate="{x:Null}" EnableEdit="{x:Null}" EventName="{x:Null}" FieldName="{x:Null}" KeyLink="{x:Null}" LabelPosition="{x:Null}" LookupFilterExt="{x:Null}" LookupVarFilterExt="{x:Null}" MaxLength="{x:Null}" SourceName="{x:Null}" Value="{x:Null}" AllowAddNewValue="False" Caption="Блокировка" CloseDialog="False" FieldType="x:String" IsChangeLookupCode="False" IsEnabled="True" IsLabelFontWeightBold="False" IsMemoView="False" IsRequired="False" LookupButtonEnabled="True" LookupCode="_PRODUCTBLOCKING_TE" Name="blocking" Order="0" SetFocus="False" Visible="True" />
+          <wgpm:ValueDataField BindingPath="{x:Null}" DependentFields="{x:Null}" Description="{x:Null}" DisplayFormat="{x:Null}" EnableCreate="{x:Null}" EnableEdit="{x:Null}" EventName="{x:Null}" FieldName="{x:Null}" KeyLink="{x:Null}" LabelPosition="{x:Null}" LookupCode="{x:Null}" LookupFilterExt="{x:Null}" LookupVarFilterExt="{x:Null}" MaxLength="{x:Null}" SourceName="{x:Null}" Value="{x:Null}" AllowAddNewValue="False" Caption="Описание" CloseDialog="False" FieldType="x:String" IsChangeLookupCode="False" IsEnabled="True" IsLabelFontWeightBold="False" IsMemoView="False" IsRequired="False" LookupButtonEnabled="True" Name="description" Order="0" SetFocus="False" Visible="True" />
+        </wada:CreateExpandoObjectViewModelActivity.Fields>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </wada:CreateExpandoObjectViewModelActivity>
+      <FlowStep.Next>
+        <FlowStep x:Name="__ReferenceID4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">190,349</av:Point>
+              <av:Size x:Key="ShapeSize">200,22</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">290,371 290,426.5</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <wav:ShowCustomObjectViewModelActivity x:TypeArguments="wdgv:ExpandoObjectViewModelBase" DialogHeight="[Nothing]" DialogResult="[dialogResult]" DialogWidth="30%" DisplayName="Показать модель" DoNotLoadSettings="False" sap:VirtualizedContainerService.HintSize="200,22" InsertFromAvailableItems="False" Layout="[Layout]" Model="[blockModel]" Title="Блокировка ТЕ">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </wav:ShowCustomObjectViewModelActivity>
+          <FlowStep.Next>
+            <FlowDecision x:Name="__ReferenceID6" Condition="[dialogResult = False]" sap:VirtualizedContainerService.HintSize="70,87">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <av:Point x:Key="ShapeLocation">255,426.5</av:Point>
+                  <av:Size x:Key="ShapeSize">70,87</av:Size>
+                  <x:String x:Key="TrueLabel">Пользователь прервал блокировку</x:String>
+                  <x:String x:Key="FalseLabel">Пользователь подтвердил блокировку</x:String>
+                  <av:PointCollection x:Key="TrueConnector">255,470 100,470 100,539</av:PointCollection>
+                  <av:PointCollection x:Key="FalseConnector">325,470 460,470 460,536.5</av:PointCollection>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <FlowDecision.True>
+                <FlowStep x:Name="__ReferenceID7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:Point x:Key="ShapeLocation">0,539</av:Point>
+                      <av:Size x:Key="ShapeSize">200,22</av:Size>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <wav:ShowMessageBoxActivity Buttons="OK" DefaultResult="OK" DisplayName="Прекращение блокировки" sap:VirtualizedContainerService.HintSize="200,22" Image="Asterisk" Message="Прервано пользователем" Result="OK" Title="Блокировка ТЕ">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </wav:ShowMessageBoxActivity>
+                </FlowStep>
+              </FlowDecision.True>
+              <FlowDecision.False>
+                <FlowDecision x:Name="__ReferenceID13" Condition="[blockModel(&quot;blocking&quot;) is Nothing]" sap:VirtualizedContainerService.HintSize="70,87">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <av:Point x:Key="ShapeLocation">425,536.5</av:Point>
+                      <av:Size x:Key="ShapeSize">70,87</av:Size>
+                      <av:PointCollection x:Key="FalseConnector">495,580 580,580 580,754.5</av:PointCollection>
+                      <av:PointCollection x:Key="TrueConnector">425,580 220,580 220,689</av:PointCollection>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <FlowDecision.True>
+                    <FlowStep x:Name="__ReferenceID12">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <av:Point x:Key="ShapeLocation">120,689</av:Point>
+                          <av:Size x:Key="ShapeSize">200,22</av:Size>
+                          <av:PointCollection x:Key="ConnectorLocation">120,700 0,700 0,360 190,360</av:PointCollection>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <wav:ShowMessageBoxActivity Buttons="OK" DefaultResult="OK" DisplayName="Ругаемся" sap:VirtualizedContainerService.HintSize="200,22" Image="Question" Message="Укажите блокировку!" Result="OK" Title="Блокировка">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </wav:ShowMessageBoxActivity>
+                      <FlowStep.Next>
+                        <x:Reference>__ReferenceID4</x:Reference>
+                      </FlowStep.Next>
+                    </FlowStep>
+                  </FlowDecision.True>
+                  <FlowDecision.False>
+                    <x:Reference>__ReferenceID5</x:Reference>
+                  </FlowDecision.False>
+                </FlowDecision>
+              </FlowDecision.False>
+            </FlowDecision>
+          </FlowStep.Next>
+        </FlowStep>
+      </FlowStep.Next>
+    </FlowStep>
+    <x:Reference>__ReferenceID6</x:Reference>
+    <x:Reference>__ReferenceID7</x:Reference>
+    <x:Reference>__ReferenceID8</x:Reference>
+    <x:Reference>__ReferenceID9</x:Reference>
+    <x:Reference>__ReferenceID4</x:Reference>
+    <FlowStep>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">169,120</av:Point>
+          <av:Size x:Key="ShapeSize">242,60</av:Size>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Assign sap:VirtualizedContainerService.HintSize="242,60">
+        <Assign.To>
+          <OutArgument x:TypeArguments="wbo:TE[]">[Items]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="wbo:TE[]">[BpContext.GetArray(Of TE)("Items")]</InArgument>
+        </Assign.Value>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Assign>
+    </FlowStep>
+    <x:Reference>__ReferenceID10</x:Reference>
+    <x:Reference>__ReferenceID11</x:Reference>
+    <x:Reference>__ReferenceID12</x:Reference>
+    <x:Reference>__ReferenceID13</x:Reference>
+    <FlowStep x:Name="__ReferenceID15">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">430,139</av:Point>
+          <av:Size x:Key="ShapeSize">200,22</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">530,161 530,191 290,191 290,221.5</av:PointCollection>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <wab:CheckBpContextActivity x:TypeArguments="wbo:TE" Context="[BpContext]" DisplayName="Проверка параметров контекста" sap:VirtualizedContainerService.HintSize="200,22" IsMultipleItems="True" Result="[Items]">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </wab:CheckBpContextActivity>
+      <FlowStep.Next>
+        <x:Reference>__ReferenceID14</x:Reference>
+      </FlowStep.Next>
+    </FlowStep>
+  </Flowchart>
+</Activity>

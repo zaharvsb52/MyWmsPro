@@ -1,0 +1,212 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys">
+
+    <dx:EditorStringIdConverter x:Key="EditorStringIdConverter" />
+    
+    <Style x:Key="wmsEllipseCurrent" TargetType="{x:Type Ellipse}">
+        <Setter Property="Fill" Value="#cddeff" />
+        <Setter Property="StrokeThickness" Value="0" />
+        <Setter Property="Stroke" Value="Black" />
+        <Setter Property="Width" Value="12" />
+        <Setter Property="Height" Value="12" />
+        <!--<Setter Property="Stretch" Value="Fill" /> becbe3  105fff 092c72 cddeff -->
+        <Setter Property="Opacity" Value="0" />
+        
+        <Setter Property="Ellipse.Fill">
+            <Setter.Value>
+                <RadialGradientBrush>
+                    <GradientStop Color="White" Offset="0" />
+                    <GradientStop Color="#cddeff" Offset="1" />
+                    <!--<GradientStop Color="White" Offset="1" />-->
+                </RadialGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="wmsEllipse" TargetType="{x:Type Ellipse}">
+        <Setter Property="Fill" Value="#becbe3" />
+        <Setter Property="StrokeThickness" Value="0.2" />
+        <Setter Property="Stroke" Value="Black" />
+        <Setter Property="Width" Value="8" />
+        <Setter Property="Height" Value="8" />
+        <!--<Setter Property="Stretch" Value="Fill" />-->
+        
+    </Style>
+
+    <ControlTemplate x:Key="DefaultWaitIndicator" TargetType="{x:Type ProgressBar}">
+        <Grid SnapsToDevicePixels="True">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Determinate" />
+                    <VisualState x:Name="Indeterminate">
+                        <Storyboard RepeatBehavior="Forever">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="pathN">
+                                <DiscreteDoubleKeyFrame KeyTime="0:0:0.0" Value="1" />
+                                <DiscreteDoubleKeyFrame KeyTime="0:0:0.1" Value="0" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="pathNE">
+                                <DiscreteDoubleKeyFrame KeyTime="0:0:0.1" Value="1" />
+                                <DiscreteDoubleKeyFrame KeyTime="0:0:0.2" Value="0" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="pathE">
+                                <DiscreteDoubleKeyFrame KeyTime="0:0:0.2" Value="1" />
+                                <DiscreteDoubleKeyFrame KeyTime="0:0:0.3" Value="0" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="pathSE">
+                                <DiscreteDoubleKeyFrame KeyTime="0:0:0.3" Value="1" />
+                                <DiscreteDoubleKeyFrame KeyTime="0:0:0.4" Value="0" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="pathS">
+                                <DiscreteDoubleKeyFrame KeyTime="0:0:0.4" Value="1" />
+                                <DiscreteDoubleKeyFrame KeyTime="0:0:0.5" Value="0" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="pathSW">
+                                <DiscreteDoubleKeyFrame KeyTime="0:0:0.5" Value="1" />
+                                <DiscreteDoubleKeyFrame KeyTime="0:0:0.6" Value="0" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="pathW">
+                                <DiscreteDoubleKeyFrame KeyTime="0:0:0.6" Value="1" />
+                                <DiscreteDoubleKeyFrame KeyTime="0:0:0.7" Value="0" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="pathNW">
+                                <DiscreteDoubleKeyFrame KeyTime="0:0:0.7" Value="1" />
+                                <DiscreteDoubleKeyFrame KeyTime="0:0:0.8" Value="0" />
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                     </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            
+                        
+                <Viewbox  >
+                    
+                    
+                <Canvas Width="50" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        
+                    <!--<Ellipse Width="8" Height="8" StrokeThickness="0.1" Stroke="Red"/>-->    
+                    <!--<Rectangle Fill="Yellow" Stroke="Red"  Height="40" Width="40" Canvas.Left="0" Canvas.Top="0"></Rectangle>-->
+                    
+                    <Ellipse x:Name="elp1" Canvas.Left="16" Canvas.Top="0" Style="{StaticResource wmsEllipse}" Canvas.ZIndex="0"/>
+                    <Ellipse x:Name="elp2" Canvas.Left="28" Canvas.Top="4" Style="{StaticResource wmsEllipse}" Canvas.ZIndex="0"/>
+                    <Ellipse x:Name="elp3" Canvas.Left="32" Canvas.Top="16" Style="{StaticResource wmsEllipse}" Canvas.ZIndex="0"/>
+                    <Ellipse x:Name="elp4" Canvas.Left="28" Canvas.Top="28" Style="{StaticResource wmsEllipse}" Canvas.ZIndex="0"/>
+                    <Ellipse x:Name="elp5" Canvas.Left="16" Canvas.Top="32" Style="{StaticResource wmsEllipse}" Canvas.ZIndex="0"/>
+                    <Ellipse x:Name="elp6" Canvas.Left="4" Canvas.Top="28" Style="{StaticResource wmsEllipse}" Canvas.ZIndex="0"/>
+                    <Ellipse x:Name="elp7" Canvas.Left="0" Canvas.Top="16" Style="{StaticResource wmsEllipse}" Canvas.ZIndex="0"/>
+                    <Ellipse x:Name="elp8" Canvas.Left="4" Canvas.Top="4" Style="{StaticResource wmsEllipse}" Canvas.ZIndex="0"/>
+                    
+                    <!--<Ellipse x:Name="n2" Width="5" Height="5" Fill="#becbe3" Margin="0,0,-15, 15" StrokeThickness="0.2" Stroke="Black"/>
+                    <Ellipse x:Name="n3" Width="5" Height="5" Fill="#becbe3" Margin="0,0" HorizontalAlignment="Right" StrokeThickness="0.2" Stroke="Black"/>
+                    <Ellipse x:Name="n4" Width="5" Height="5" Fill="#becbe3" Margin="0,0,-15,-15" StrokeThickness="0.2" Stroke="Black"/>
+                    <Ellipse x:Name="n5" Width="5" Height="5" Fill="#becbe3" Margin="0,0" VerticalAlignment="Bottom" StrokeThickness="0.2" Stroke="Black"/>
+                    <Ellipse x:Name="n6" Width="5" Height="5" Fill="#becbe3" Margin="0,0, 15,-15" StrokeThickness="0.2" Stroke="Black"/>
+                    <Ellipse x:Name="n7" Width="5" Height="5" Fill="#becbe3" Margin="0,0" HorizontalAlignment="Left" StrokeThickness="0.2" Stroke="Black"/>
+                    <Ellipse x:Name="n8" Width="5" Height="5" Fill="#becbe3" Margin="0,0, 15, 15" StrokeThickness="0.2" Stroke="Black"/>
+                    -->
+                    
+                    <!--
+                    <Path x:Name="pathN" Stretch="Fill" Fill="{TemplateBinding Foreground}" Data="F1 M 395,409C 396.105,409 397,408.105 397,407C 397,405.895 396.105,403 395,403C 393.895,403 393,405.895 393,407C 393,408.105 393.895,409 395,409 Z "  Height="6" Margin="10,0" VerticalAlignment="Top" Opacity="0"/>
+                    <Path x:Name="pathNE" Stretch="Fill" Fill="{TemplateBinding Foreground}" Data="F1 M 399.547,410.375C 400.306,411.178 401.572,411.213 402.374,410.453C 403.176,409.694 404.664,407.054 403.905,406.251C 403.146,405.449 400.427,406.789 399.625,407.548C 398.822,408.307 398.787,409.573 399.547,410.375 Z " HorizontalAlignment="Right" Height="4.997" Margin="0,3.004,2.886,0" VerticalAlignment="Top" Width="5.115" Opacity="0" />
+                    <Path x:Name="pathE" Stretch="Fill" Fill="{TemplateBinding Foreground}" Data="F1 M 401,415C 401,416.105 401.895,417 403,417C 404.104,417 407,416.105 407,415C 407,413.895 404.104,413 403,413C 401.895,413 401,413.895 401,415 Z " HorizontalAlignment="Right" Margin="0,10" Width="6" Opacity="0" />
+                    <Path x:Name="pathSE" Stretch="Fill" Fill="{TemplateBinding Foreground}" Data="F1 M 399.625,419.547C 398.822,420.306 398.787,421.572 399.546,422.374C 400.306,423.176 402.946,424.664 403.749,423.905C 404.551,423.146 403.211,420.427 402.452,419.625C 401.693,418.822 400.427,418.787 399.625,419.547 Z " HorizontalAlignment="Right" Height="5.115" Margin="0,0,3.004,2.886" VerticalAlignment="Bottom" Width="4.997" Opacity="0" />
+                    <Path x:Name="pathS" Stretch="Fill" Fill="{TemplateBinding Foreground}" Data="F1 M 395,421C 396.105,421 397,421.895 397,423C 397,424.104 396.105,427 395,427C 393.895,427 393,424.104 393,423C 393,421.895 393.895,421 395,421 Z " Height="6" Margin="10,0" VerticalAlignment="Bottom" Opacity="0" />
+                    <Path x:Name="pathSW" Stretch="Fill" Fill="{TemplateBinding Foreground}" Data="F1 M 390.453,419.625C 389.694,418.822 388.428,418.787 387.626,419.546C 386.824,420.306 385.336,422.946 386.095,423.748C 386.854,424.551 389.573,423.211 390.375,422.452C 391.178,421.693 391.213,420.427 390.453,419.625 Z " HorizontalAlignment="Left" Height="4.997" Margin="2.886,0,0,3.004" VerticalAlignment="Bottom" Width="5.115" Opacity="0" />
+                    <Path x:Name="pathW" Stretch="Fill" Fill="{TemplateBinding Foreground}" Data="F1 M 389,415C 389,416.105 388.105,417 387,417C 385.895,417 383,416.105 383,415C 383,413.895 385.895,413 387,413C 388.105,413 389,413.895 389,415 Z " HorizontalAlignment="Left" Margin="0,10" Width="6" Opacity="0" />
+                    <Path x:Name="pathNW" Stretch="Fill" Fill="{TemplateBinding Foreground}" Data="F1 M 390.375,410.453C 391.178,409.694 391.213,408.428 390.453,407.626C 389.694,406.824 387.054,405.336 386.251,406.095C 385.449,406.854 386.789,409.573 387.548,410.375C 388.307,411.178 389.573,411.213 390.375,410.453 Z " HorizontalAlignment="Left" Height="5.115" Margin="3.004,2.886,0,0" VerticalAlignment="Top" Width="4.997" Opacity="0" />
+                    -->
+                    
+                    
+                    <Ellipse x:Name="pathN"  Canvas.Left="14" Canvas.Top="0" Style="{StaticResource wmsEllipseCurrent}" Canvas.ZIndex="1"/>
+                    <Ellipse x:Name="pathNE" Canvas.Left="26" Canvas.Top="2" Style="{StaticResource wmsEllipseCurrent}" Canvas.ZIndex="1"/>
+                    <Ellipse x:Name="pathE"  Canvas.Left="30" Canvas.Top="14" Style="{StaticResource wmsEllipseCurrent}" Canvas.ZIndex="1"/>
+                    <Ellipse x:Name="pathSE" Canvas.Left="28" Canvas.Top="26" Style="{StaticResource wmsEllipseCurrent}" Canvas.ZIndex="1"/>
+                    <Ellipse x:Name="pathS"  Canvas.Left="14" Canvas.Top="30" Style="{StaticResource wmsEllipseCurrent}" Canvas.ZIndex="1"/>
+                    <Ellipse x:Name="pathSW" Canvas.Left="2" Canvas.Top="26" Style="{StaticResource wmsEllipseCurrent}" Canvas.ZIndex="1"/>
+                    <Ellipse x:Name="pathW"  Canvas.Left="0" Canvas.Top="14" Style="{StaticResource wmsEllipseCurrent}" Canvas.ZIndex="1"/>
+                    <Ellipse x:Name="pathNW" Canvas.Left="2" Canvas.Top="2" Style="{StaticResource wmsEllipseCurrent}" Canvas.ZIndex="1"/>
+                     
+                </Canvas>
+                </Viewbox>
+        </Grid>
+    </ControlTemplate>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Core.ColumnWaitIndicator}" TargetType="{x:Type dx:ColumnWaitIndicator}">
+        <Setter Property="IsHitTestVisible" Value="{Binding IsHitTestVisible, FallbackValue=true, TargetNullValue=true}" />
+        <Setter Property="IsIndeterminate" Value="True" />
+        <Setter Property="Width" Value="32" />
+        <Setter Property="Height" Value="32" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="#FFCF85DF" />
+        <Setter Property="Margin" Value="25" />
+        <Setter Property="Padding" Value="4" />
+        <Setter Property="MinWidth" Value="8" />
+        <Setter Property="MinHeight" Value="8" />
+        <Setter Property="Template" Value="{StaticResource DefaultWaitIndicator}" />
+    </Style>
+
+    <ControlTemplate x:Key="{dx:WaitIndicatorThemeKey ResourceKey=WaitIndicatorTemplate}" TargetType="{x:Type dx:WaitIndicator}">
+        <Grid x:Name="Root" Margin="25" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="Visibility">
+                    <VisualState x:Name="Visible">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="Visibility">
+                                <DiscreteObjectKeyFrame KeyTime="0:0:0.1">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Visibility>Visible</Visibility>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                            <!--BEGIN WPF-->
+                            <BooleanAnimationUsingKeyFrames Storyboard.TargetName="progressBar" Storyboard.TargetProperty="IsIndeterminate">
+                                <DiscreteBooleanKeyFrame KeyTime="0:0:0.1" Value="True" />
+                            </BooleanAnimationUsingKeyFrames>
+                            <!--END WPF-->
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Collapsed">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" BeginTime="0:0:0.1" Duration="0:0:0.1" From="1" To="0" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="Visibility">
+                                <DiscreteObjectKeyFrame KeyTime="0:0:0.2">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Visibility>Collapsed</Visibility>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                            <!--BEGIN WPF-->
+                            <BooleanAnimationUsingKeyFrames Storyboard.TargetName="progressBar" Storyboard.TargetProperty="IsIndeterminate">
+                                <DiscreteBooleanKeyFrame KeyTime="0:0:0.1" Value="False" />
+                            </BooleanAnimationUsingKeyFrames>
+                            <!--END WPF-->
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Grid.Effect>
+                <DropShadowEffect x:Name="Shadow" Direction="270" ShadowDepth="1" BlurRadius="5" Opacity="0.15" />
+            </Grid.Effect>
+            <Border Background="#FFEBECEF" BorderBrush="#FF9DA0AA" BorderThickness="1" CornerRadius="3">
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <ProgressBar x:Name="progressBar" Foreground="#FFCF85DF" Margin="12,12,8,12" Height="41" Width="41" HorizontalAlignment="Center" VerticalAlignment="Center" Template="{StaticResource DefaultWaitIndicator}" IsIndeterminate="True" />
+                    <ContentPresenter Margin="{TemplateBinding Padding}" VerticalAlignment="Center" Content="{TemplateBinding ActualContent}" ContentTemplate="{TemplateBinding ContentTemplate}" Grid.Column="1" />
+                </Grid>
+             </Border>
+        </Grid>
+    </ControlTemplate>
+
+    <DataTemplate x:Key="{dx:WaitIndicatorThemeKey ResourceKey=WaitIndicatorContentTemplate}">
+        <TextBlock Foreground="#FF201F35" Text="{Binding}" TextWrapping="Wrap" VerticalAlignment="Center" />
+    </DataTemplate>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Core.WaitIndicator}" TargetType="{x:Type dx:WaitIndicator}">
+        <Setter Property="Template" Value="{DynamicResource {dx:WaitIndicatorThemeKey ResourceKey=WaitIndicatorTemplate}}" />
+        <Setter Property="Padding" Value="0,0,12,0" />
+        <Setter Property="Content" Value="{x:Null}" />
+        <Setter Property="ContentTemplate" Value="{DynamicResource {dx:WaitIndicatorThemeKey ResourceKey=WaitIndicatorContentTemplate}}" />
+    </Style>
+</ResourceDictionary>

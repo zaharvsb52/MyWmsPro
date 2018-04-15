@@ -1,0 +1,460 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:lex="clr-namespace:WPFLocalizeExtension.Extensions;assembly=WPFLocalizeExtension"
+    xmlns:helpers="clr-namespace:wmsMLC.General.PL.WPF.Components.Helpers"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    xmlns:local="clr-namespace:wmsMLC.General.PL.WPF.Components.Controls.Rcl"
+    xmlns:converters="clr-namespace:wmsMLC.General.PL.WPF.Converters;assembly=wmsMLC.General.PL.WPF"
+    xmlns:themes="http://schemas.devexpress.com/winfx/2008/xaml/editors/themekeys">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/wmsMLC.General.PL.WPF.Components;Component/Themes/FontTemplate.xaml"/>
+        <ResourceDictionary Source="/wmsMLC.General.PL.WPF.Components;Component/Themes/BarManagerItemsTemplate.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <dx:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+
+    <SolidColorBrush x:Key="{x:Static helpers:StyleKeys.TileBackgroundDefaultKey}" Color="#FF00ABDC" />
+    <SolidColorBrush x:Key="{x:Static helpers:StyleKeys.TileBackgroundWaitKey}" Color="#FFC3213F" />
+    <SolidColorBrush x:Key="{x:Static helpers:StyleKeys.TileBackgroundGreenKey}" Color="#FF54AF0E" />
+    <SolidColorBrush x:Key="{x:Static helpers:StyleKeys.TileBackgroundOrangeKey}" Color="#FFE65E20" />
+    <SolidColorBrush x:Key="{x:Static helpers:StyleKeys.EvenRowBrushKey}" Color="#f2f6fb" />
+    <LinearGradientBrush x:Key="{x:Static helpers:StyleKeys.ReadOnlyBrushKey}">
+        <GradientStop Color="#e7eff6" Offset="0"></GradientStop>
+        <GradientStop Color="White" Offset="1"></GradientStop>
+    </LinearGradientBrush>
+
+    <!--IsReadOnly Style-->
+    <!--Собсвенно стиль-->
+    <ControlTemplate x:Key="IsReadOnlyBorderTemplate" TargetType="{x:Type ContentControl}">
+        <Border BorderBrush="#e1e1e1" BorderThickness="1" CornerRadius="1"  Background="{StaticResource {x:Static helpers:StyleKeys.ReadOnlyBrushKey}}">
+            <ContentPresenter />
+        </Border>
+    </ControlTemplate>
+
+    <!--К каким контролам применяется-->
+    <Style TargetType="{x:Type dxe:TextEdit}" >
+        <Style.Triggers>
+            <Trigger Property="IsReadOnly" Value="True">
+                <Setter Property="BorderTemplate" Value="{StaticResource IsReadOnlyBorderTemplate}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="{x:Type local:CustomTextEdit}" >
+        <Style.Triggers>
+            <Trigger Property="IsReadOnly" Value="True">
+                <Setter Property="BorderTemplate" Value="{StaticResource IsReadOnlyBorderTemplate}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="{x:Type dxe:ButtonEdit}">
+        <Style.Triggers>
+            <Trigger Property="IsReadOnly" Value="True">
+                <Setter Property="BorderTemplate" Value="{StaticResource IsReadOnlyBorderTemplate}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="{x:Type dxe:DateEdit}">
+        <Style.Triggers>
+            <Trigger Property="IsReadOnly" Value="True">
+                <Setter Property="BorderTemplate" Value="{StaticResource IsReadOnlyBorderTemplate}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="{x:Type dxe:CheckEdit}">
+        <Style.Triggers>
+            <Trigger Property="IsReadOnly" Value="True">
+                <Setter Property="BorderTemplate" Value="{StaticResource IsReadOnlyBorderTemplate}" />
+                <Setter Property="IsHitTestVisible" Value="False" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="{x:Type local:CustomDateEdit}">
+        <Style.Triggers>
+            <Trigger Property="IsReadOnly" Value="True">
+                <Setter Property="BorderTemplate" Value="{StaticResource IsReadOnlyBorderTemplate}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="{x:Type local:CustomComboBoxEdit}">
+        <Style.Triggers>
+            <Trigger Property="IsReadOnly" Value="True">
+                <Setter Property="BorderTemplate" Value="{StaticResource IsReadOnlyBorderTemplate}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="{x:Type local:CustomComboBoxEditRcl}">
+        <Style.Triggers>
+            <Trigger Property="IsReadOnly" Value="True">
+                <Setter Property="BorderTemplate" Value="{StaticResource IsReadOnlyBorderTemplate}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="{x:Type local:CustomWaitIndicator}">
+        <Setter Property="Background" Value="Black"/>
+        <Setter Property="DisplayAfter" Value="0:0:0.1"/>
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="BusyContent" Value="{lex:LocExtension Key=wmsMLC.General.PL.WPF.Components:Resources:Wait}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:CustomWaitIndicator}">
+                    <Grid>
+                        <ContentControl ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" Focusable="{TemplateBinding Focusable}"/>
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Opacity="0.6" Visibility="{Binding IsBusyIndicationVisible, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BoolToVisibilityConverter}}" Focusable="False"/>
+                        <ContentPresenter Visibility="{Binding IsBusyIndicationVisible, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BoolToVisibilityConverter}}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0" Focusable="False">
+                            <ContentPresenter.Content>
+                                <Border BorderThickness="1" CornerRadius="2" BorderBrush="{TemplateBinding Background}" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="150" Height="65" Focusable="False">
+                                    <Grid>
+                                        <Rectangle Fill="White" />
+                                        <local:CustomTextBlock Margin="10" Text="{Binding BusyContent, RelativeSource={RelativeSource TemplatedParent}}" HorizontalAlignment="Center" VerticalAlignment="Center" Background="White" Foreground="Black" />
+                                    </Grid>
+                                </Border>
+                            </ContentPresenter.Content>
+                        </ContentPresenter>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type local:CustomTile}">
+        <Setter Property="Size" Value="Small"/>
+        <Setter Property="Background" Value="#FF00ABDC"/>
+        <Setter Property="BorderBrush" Value="#1AFFFFFF"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <!--<Setter Property="HorizontalHeaderAlignment" Value="Stretch"/>-->
+        <Setter Property="HorizontalHeaderAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+        <Setter Property="VerticalHeaderAlignment" Value="Bottom"/>
+        <Setter Property="IsTabStop" Value="False"/>
+        <Setter Property="Padding" Value="16,5"/>
+        <Setter Property="FontSize" Value="{StaticResource FontSizeMainTileMenuKey}"/>
+        <Setter Property="FontStretch" Value="{StaticResource {x:Static helpers:StyleKeys.FontStretchDefaultKey}}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:CustomTile}">
+                    <Grid x:Name="root" Background="{TemplateBinding Background}" dx:FrameworkElementHelper.IsClipped="True" RenderTransformOrigin="0.5,0.5">
+                        <Grid.Resources>
+                            <Storyboard x:Key="ContentChangeStoryboard" x:Name="ContentChangeStoryboard" FillBehavior="Stop">
+                                <ObjectAnimationUsingKeyFrames Duration="0:0:0.15" FillBehavior="Stop" Storyboard.TargetProperty="Visibility" Storyboard.TargetName="previousContent">
+                                    <DiscreteObjectKeyFrame KeyTime="0">
+                                        <DiscreteObjectKeyFrame.Value>
+                                            <Visibility>Visible</Visibility>
+                                        </DiscreteObjectKeyFrame.Value>
+                                    </DiscreteObjectKeyFrame>
+                                </ObjectAnimationUsingKeyFrames>
+                                <DoubleAnimation Duration="0:0:0.15" Storyboard.TargetProperty="(RenderTransform).Y" Storyboard.TargetName="previousContent">
+                                    <DoubleAnimation.To>
+                                        <Binding ConverterParameter="-1" ElementName="root" Path="ActualHeight">
+                                            <Binding.Converter>
+                                                <dx:MultiplyConverter/>
+                                            </Binding.Converter>
+                                        </Binding>
+                                    </DoubleAnimation.To>
+                                </DoubleAnimation>
+                                <DoubleAnimationUsingKeyFrames Duration="0:0:1" Storyboard.TargetProperty="(RenderTransform).Y" Storyboard.TargetName="content">
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding ActualHeight, ElementName=root}"/>
+                                    <DiscreteDoubleKeyFrame KeyTime="0:0:0.15" Value="{Binding ActualHeight, ElementName=root}"/>
+                                    <LinearDoubleKeyFrame KeyTime="0:0:0.4" Value="20"/>
+                                    <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0">
+                                        <EasingDoubleKeyFrame.EasingFunction>
+                                            <CubicEase EasingMode="EaseOut"/>
+                                        </EasingDoubleKeyFrame.EasingFunction>
+                                    </EasingDoubleKeyFrame>
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+                            <dx:MultiplyConverter x:Key="MultiplyConverter"/>
+                        </Grid.Resources>
+                        <Grid.RenderTransform>
+                            <ScaleTransform/>
+                        </Grid.RenderTransform>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition From="{x:Null}" GeneratedDuration="0:0:0.1" GeneratedEasingFunction="{x:Null}" Storyboard="{x:Null}" To="Pressed"/>
+                                    <VisualTransition From="Pressed" GeneratedDuration="0:0:0.1" GeneratedEasingFunction="{x:Null}" Storyboard="{x:Null}" To="{x:Null}"/>
+                                </VisualStateGroup.Transitions>
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver"/>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" To="0.97" Storyboard.TargetProperty="(RenderTransform).ScaleX" Storyboard.TargetName="root"/>
+                                        <DoubleAnimation Duration="0" To="0.97" Storyboard.TargetProperty="(RenderTransform).ScaleY" Storyboard.TargetName="root"/>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Rectangle Fill="{TemplateBinding CalculatedBackground}"/>
+                        <ContentPresenter Grid.RowSpan="2" x:Name="content" ContentTemplate="{TemplateBinding CurrentContentTemplate}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                            <ContentPresenter.RenderTransform>
+                                <TranslateTransform/>
+                            </ContentPresenter.RenderTransform>
+                        </ContentPresenter>
+                        <ContentPresenter x:Name="previousContent" ContentTemplate="{TemplateBinding CurrentContentTemplate}" Content="{TemplateBinding PreviousContent}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Visibility="Collapsed" VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                            <ContentPresenter.RenderTransform>
+                                <TranslateTransform/>
+                            </ContentPresenter.RenderTransform>
+                        </ContentPresenter>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <local:CustomTextBlock Margin="2,0" HorizontalAlignment="Left" Text="{Binding Path=HotKeyTitle, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" VerticalAlignment="Top" FontFamily="{TemplateBinding FontFamily}" FontSize="{TemplateBinding FontSize}" FontWeight="{TemplateBinding FontWeight}" FontStretch="{TemplateBinding FontStretch}" />
+                            <local:CustomTextBlock Grid.Column="1" Margin="2,0" HorizontalAlignment="Center" Text="{Binding Path=Title, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" VerticalAlignment="Top" FontFamily="{TemplateBinding FontFamily}" FontSize="{TemplateBinding FontSize}" FontWeight="{TemplateBinding FontWeight}" FontStretch="{TemplateBinding FontStretch}" Foreground="Brown" />
+                        </Grid>
+                        <ContentPresenter ContentTemplate="{TemplateBinding HeaderTemplate}" Content="{TemplateBinding Header}" HorizontalAlignment="{TemplateBinding HorizontalHeaderAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalHeaderAlignment}"/>
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- CustomButton Theme: MetropolisLight -->
+    <Color x:Key="DefaultForegroundColor">#FF373A3D</Color>
+    <SolidColorBrush x:Key="Text.Foreground" Color="{StaticResource DefaultForegroundColor}" />
+
+    <SolidColorBrush x:Key="Button.DefaultState.Border1" Color="#FFB9B9B9"/>
+    <SolidColorBrush x:Key="Button.DefaultState.Border2" Color="#FFFFFFFF"/>
+    <SolidColorBrush x:Key="Button.HoverState.Border1" Color="#FFB9B9B9"/>
+    <SolidColorBrush x:Key="Button.HoverState.Border2" Color="#FFB9B9B9"/>
+    <SolidColorBrush x:Key="Button.PressedState.Border1" Color="#FFB9B9B9"/>
+    <SolidColorBrush x:Key="Button.PressedState.Border2" Color="#FFB9B9B9"/>
+    <SolidColorBrush x:Key="Button.CheckedState.Border1" Color="#FFB9B9B9"/>
+    <SolidColorBrush x:Key="Button.CheckedState.Border2" Color="#FFB9B9B9"/>
+
+    <Style x:Key="FocusTemplate" TargetType="{x:Type Border}">
+        <Setter Property="BorderBrush" Value="#FFF78A09"/>
+        <Setter Property="BorderThickness" Value="1" />
+    </Style>
+
+    <Style TargetType="{x:Type local:CustomButton}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Background" Value="{StaticResource Button.DefaultState.Border1}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Button.DefaultState.Border1}" />
+        <Setter Property="Foreground" Value="{StaticResource Text.Foreground}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Padding" Value="2,1" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:CustomButton}">
+                    <Grid x:Name="Root" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                        <Grid x:Name="DefaultState">
+                            <Border Background="{StaticResource Button.DefaultState.Border1}" Padding="1">
+                                <Border Background="{StaticResource Button.DefaultState.Border2}" />
+                            </Border>
+                        </Grid>
+                        <Grid x:Name="HoverState" Opacity="0">
+                            <Border Background="{StaticResource Button.HoverState.Border1}" Padding="1">
+                                <Border Background="{StaticResource Button.HoverState.Border2}" />
+                            </Border>
+                        </Grid>
+                        <Grid x:Name="FocusState" Opacity="0">
+                            <Border Style="{StaticResource FocusTemplate}" />
+                        </Grid>
+                        <Grid x:Name="PressedState" Opacity="0">
+                            <Border Background="{StaticResource Button.PressedState.Border1}" Padding="1">
+                                <Border Background="{StaticResource Button.PressedState.Border2}" />
+                            </Border>
+                        </Grid>
+                        <Grid x:Name="CheckedState" Opacity="0">
+                            <Border Background="{StaticResource Button.CheckedState.Border1}" Padding="1">
+                                <Border Background="{StaticResource Button.CheckedState.Border2}" />
+                            </Border>
+                        </Grid>
+                        <Grid Margin="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            
+                            <ContentPresenter x:Name="contentPresenter" Margin="{TemplateBinding Padding}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                            <TextBlock Grid.Column="1" Margin="2" VerticalAlignment="Center" Text="{TemplateBinding SuffixText}"/>
+                        </Grid>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <!--<Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="DefaultState" Property="Opacity" Value="0" />
+                            <Setter TargetName="HoverState" Property="Opacity" Value="1" />
+                            <Setter TargetName="PressedState" Property="Opacity" Value="0" />
+                            <Setter TargetName="CheckedState" Property="Opacity" Value="0" />
+                            <Setter Property="Foreground" Value="#FFFFFFFF" />
+                        </Trigger>-->
+                        <!--<Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="DefaultState" Property="Opacity" Value="0" />
+                            <Setter TargetName="HoverState" Property="Opacity" Value="0" />
+                            <Setter TargetName="PressedState" Property="Opacity" Value="1" />
+                            <Setter TargetName="CheckedState" Property="Opacity" Value="0" />
+                            <Setter Property="Foreground" Value="#FFFFFFFF" />
+                        </Trigger>-->
+                        <!--<Trigger Property="ToggleButton.IsChecked" Value="True">
+                            <Setter TargetName="DefaultState" Property="Opacity" Value="0" />
+                            <Setter TargetName="HoverState" Property="Opacity" Value="0" />
+                            <Setter TargetName="PressedState" Property="Opacity" Value="0" />
+                            <Setter TargetName="CheckedState" Property="Opacity" Value="1" />
+                            <Setter Property="Foreground" Value="#FFFFFFFF" />
+                        </Trigger>-->
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter TargetName="FocusState" Property="Opacity" Value="1" />
+                        </Trigger>
+                        <Trigger Property="Button.IsDefaulted" Value="True">
+                            <Setter TargetName="DefaultState" Property="Opacity" Value="0" />
+                            <Setter TargetName="HoverState" Property="Opacity" Value="1" />
+                            <Setter TargetName="PressedState" Property="Opacity" Value="0" />
+                            <Setter TargetName="CheckedState" Property="Opacity" Value="0" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Root" Property="Opacity" Value="0.5" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--<Style x:Key="{dxt:DefaultStyleThemeKey FullName=System.Windows.Controls.Button}" TargetType="{x:Type local:CustomButton}" BasedOn="{StaticResource RclMenuStyle}" />-->
+    <!-- CustomButton Theme: MetropolisLight -->
+
+    <Style TargetType="{x:Type local:CustomSelectControlBase}">
+        <Setter Property="BorderTemplate" Value="{DynamicResource {themes:ListBoxEditThemeKey ResourceKey=BorderTemplate, ThemeName={x:Static dx:ThemeManager.ApplicationThemeName}}}" />
+        <Setter Property="StatusContentVisibility" Value="Visible"/>
+        <Setter Property="TotalRowsDisplayFormat" Value="{lex:LocExtension Key=wmsMLC.General.PL.WPF.Components:Resources:ListBoxTotalRowsDisplayFormat}"/>
+        <Setter Property="StatusContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Grid Height="22">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="50"/>
+                        </Grid.ColumnDefinitions>
+
+                        <local:CustomButton Grid.Column="0" Margin="3,0,0,2" Padding="0" Text="&lt;&lt;" HotKey="None" ShowHotKeyInTitle="False" Focusable="False" Command="{Binding Path=(local:CustomSelectControlBase.PreviousPageCommand)}"/>
+                        <TextBlock Grid.Column="1" Margin="2,0,2,2" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding Path=(local:CustomSelectControlBase.TotalRowsInfo)}"/>
+                        <local:CustomButton Grid.Column="2" Margin="0,0,3,2" Text="&gt;&gt;" Padding="0" HotKey="None" ShowHotKeyInTitle="False" Focusable="False" Command="{Binding Path=(local:CustomSelectControlBase.NextPageCommand)}"/>
+                    </Grid>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:CustomSelectControlBase}">
+                    <ContentControl Template="{TemplateBinding BorderTemplate}" Focusable="False">
+                        <Grid x:Name="LayoutRoot">
+                            <Grid.Resources>
+                                <converters:ListItemStyleConverter x:Key="ListItemStyleConverter" />
+                            </Grid.Resources>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <local:CustomListBoxEdit Margin="2" x:Name="list" ItemsSource="{Binding ActualItemsSource}" EditValue="{Binding SelectedItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="{TemplateBinding FontSize}" ShowBorder="False" ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                                <local:CustomListBoxEdit.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding DisplayText}" VerticalAlignment="Center" 
+                                            FontSize="{Binding FontSize, ElementName=list}"
+                                            FontStretch="{StaticResource {x:Static helpers:StyleKeys.FontStretchDefaultKey}}"
+                                            FontWeight="{Binding Style, Converter={StaticResource ListItemStyleConverter}}" 
+                                            Foreground="{Binding Style, Converter={StaticResource ListItemStyleConverter}, ConverterParameter=Foreground}" 
+                                            Background="{Binding Style, Converter={StaticResource ListItemStyleConverter}, ConverterParameter=Background}"/>
+                                    </DataTemplate>
+                                </local:CustomListBoxEdit.ItemTemplate>
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="MouseDoubleClick">
+                                        <i:InvokeCommandAction Command="{Binding ItemSelectCommand}"/>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </local:CustomListBoxEdit>
+
+                            <ContentPresenter Grid.Row="1" x:Name="StatusRow" ContentTemplate="{TemplateBinding StatusContentTemplate}" Visibility="{TemplateBinding StatusContentVisibility}"/> 
+                        </Grid>
+                    </ContentControl>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type local:FooterMenu}">
+        <Setter Property="Focusable" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:FooterMenu}">
+                    <Grid x:Name="LayoutRoot">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- DXWindow Theme: TouchlineDark --> 
+    <DataTemplate x:Key="{dxt:FloatingContainerThemeKey ThemeName=TouchlineDark, ResourceKey=FloatingContainerTemplate}">
+        <Grid SnapsToDevicePixels="True">
+            <Border x:Name="FloatingContainerBorder" Background="#FF333333" BorderBrush="#FF111111" BorderThickness="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Border x:Name="FloatingContainerHeader" Grid.Row="0">
+                        <TextBlock x:Name="PART_TITLE" Margin="5" Foreground="#FFF78A09" VerticalAlignment="Center" FontWeight="Light" FontSize="24" IsHitTestVisible="False"/>
+                    </Border>
+                    <Border x:Name="FloatingContainerBody" Grid.Row="1">
+                        <dx:BackgroundPanel x:Name="PART_ContainerContent" Margin="2,0,2,2" Content="{Binding}"  Background="{DynamicResource {dxt:FloatingContainerThemeKey ThemeName=TouchlineDark, ResourceKey=FloatingContainerBackground}}"/>
+                    </Border>
+                </Grid>
+            </Border>
+        </Grid>
+    </DataTemplate>
+    <!-- DXWindow Theme: TouchlineDark -->
+
+    <!-- DXWindow Theme: MetropolisLight -->
+    <DataTemplate x:Key="{dxt:FloatingContainerThemeKey ThemeName=MetropolisLight, ResourceKey=FloatingContainerTemplate}">
+        <Grid SnapsToDevicePixels="True">
+            <Border x:Name="FloatingContainerBorder" Background="#FFFFFFFF" BorderBrush="#7F666666" BorderThickness="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Border x:Name="FloatingContainerHeader" Grid.Row="0">
+                        <TextBlock x:Name="PART_TITLE" Margin="5" Foreground="#FF373A3D" VerticalAlignment="Center" FontWeight="Bold" FontSize="{StaticResource FontSizeDefaultKey}" FontStretch="{StaticResource {x:Static helpers:StyleKeys.FontStretchDefaultKey}}" IsHitTestVisible="False" />
+                    </Border>
+                    <Border x:Name="FloatingContainerBody" Grid.Row="1">
+                        <dx:BackgroundPanel x:Name="PART_ContainerContent" Margin="2,0,2,2" Content="{Binding}" Background="{DynamicResource {dxt:FloatingContainerThemeKey ThemeName=MetropolisLight, ResourceKey=FloatingContainerBackground}}" />
+                    </Border>
+                </Grid>
+            </Border>
+        </Grid>
+    </DataTemplate>
+    <!-- DXWindow Theme: MetropolisLight -->
+</ResourceDictionary>

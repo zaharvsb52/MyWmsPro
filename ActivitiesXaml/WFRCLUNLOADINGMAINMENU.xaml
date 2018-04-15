@@ -1,0 +1,250 @@
+<Activity mc:Ignorable="sads sap" x:Class="{x:Null}"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:s="clr-namespace:System;assembly=mscorlib"
+ xmlns:s1="clr-namespace:System;assembly=System"
+ xmlns:s2="clr-namespace:System;assembly=System.Core"
+ xmlns:s3="clr-namespace:System;assembly=System.ServiceModel"
+ xmlns:s4="clr-namespace:System;assembly=Microsoft.CompilerServices.AsyncTargetingPack.Net4"
+ xmlns:s5="clr-namespace:System;assembly=System.ComponentModel.Composition"
+ xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:wab="clr-namespace:wmsMLC.Activities.Business;assembly=wmsMLC.Activities.Business"
+ xmlns:wadm="clr-namespace:wmsMLC.Activities.Dialogs.Models;assembly=wmsMLC.Activities.Dialogs"
+ xmlns:war="clr-namespace:wmsMLC.Activities.RclViewInteraction;assembly=wmsMLC.Activities.RclViewInteraction"
+ xmlns:wbmp="clr-namespace:wmsMLC.Business.Managers.Processes;assembly=wmsMLC.Business.Managers"
+ xmlns:wgb="clr-namespace:wmsMLC.General.BL;assembly=wmsMLC.General.BL"
+ xmlns:wgpm="clr-namespace:wmsMLC.General.PL.Model;assembly=wmsMLC.General.PL"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="BpContext" Type="InOutArgument(wgb:BpContext)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>654,676</sap:VirtualizedContainerService.HintSize>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces for internal implementation</mva:VisualBasic.Settings>
+  <Flowchart DisplayName="Меню разгрузка" sap:VirtualizedContainerService.HintSize="614,636">
+    <Flowchart.Variables>
+      <Variable x:TypeArguments="wadm:DialogModel" Name="MenuModel" />
+      <Variable x:TypeArguments="x:String" Name="MenuLayout" />
+      <Variable x:TypeArguments="x:Boolean" Name="DialogResult" />
+      <Variable x:TypeArguments="x:Double" Default="14" Name="FontSize" />
+      <Variable x:TypeArguments="x:String" Name="DialogMenuResult" />
+    </Flowchart.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        <av:Point x:Key="ShapeLocation">410,2.5</av:Point>
+        <av:Size x:Key="ShapeSize">60,75</av:Size>
+        <av:PointCollection x:Key="ConnectorLocation">440,77.5 440,121.5</av:PointCollection>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Flowchart.StartNode>
+      <x:Reference>__ReferenceID9</x:Reference>
+    </Flowchart.StartNode>
+    <FlowStep x:Name="__ReferenceID9">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">340,121.5</av:Point>
+          <av:Size x:Key="ShapeSize">200,57</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">440,178.5 440,239</av:PointCollection>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <war:RclCreateDialogViewModelActivity LayoutValue="{x:Null}" Description="Разгрузка" DisplayName="Модель меню" FontSize="[FontSize]" Header="Разгрузка" sap:VirtualizedContainerService.HintSize="200,57" Layout="[MenuLayout]" Result="[MenuModel]">
+        <war:RclCreateDialogViewModelActivity.Fields>
+          <wgpm:ValueDataField BindingPath="{x:Null}" DependentFields="{x:Null}" Description="{x:Null}" DisplayFormat="{x:Null}" EnableCreate="{x:Null}" EnableEdit="{x:Null}" EventName="{x:Null}" FieldName="{x:Null}" KeyLink="{x:Null}" LookupCode="{x:Null}" LookupFilterExt="{x:Null}" LookupVarFilterExt="{x:Null}" MaxLength="{x:Null}" SourceName="{x:Null}" AllowAddNewValue="False" Caption="Учет ГМ" CloseDialog="False" FieldType="av:Button" IsChangeLookupCode="False" IsEnabled="True" IsLabelFontWeightBold="False" IsMemoView="False" IsRequired="False" LabelPosition="Left" LookupButtonEnabled="True" Name="menu1" Order="0" SetFocus="False" Value="D1" Visible="True" />
+          <wgpm:ValueDataField BindingPath="{x:Null}" DependentFields="{x:Null}" Description="{x:Null}" DisplayFormat="{x:Null}" EnableCreate="{x:Null}" EnableEdit="{x:Null}" EventName="{x:Null}" FieldName="{x:Null}" KeyLink="{x:Null}" LookupCode="{x:Null}" LookupFilterExt="{x:Null}" LookupVarFilterExt="{x:Null}" MaxLength="{x:Null}" SourceName="{x:Null}" AllowAddNewValue="False" Caption="Приемка ГМ" CloseDialog="False" FieldType="av:Button" IsChangeLookupCode="False" IsEnabled="True" IsLabelFontWeightBold="False" IsMemoView="False" IsRequired="False" LabelPosition="Left" LookupButtonEnabled="True" Name="menu2" Order="1" SetFocus="False" Value="D2" Visible="True" />
+        </war:RclCreateDialogViewModelActivity.Fields>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </war:RclCreateDialogViewModelActivity>
+      <FlowStep.Next>
+        <FlowStep x:Name="__ReferenceID2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">340,239</av:Point>
+              <av:Size x:Key="ShapeSize">200,22</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">440,261 440,316.5</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <war:RclShowDialogSourceActivity DialogResult="[DialogResult]" DialogResultWithMenu="[DialogMenuResult]" DisplayName="Ввод данных пользователем" sap:VirtualizedContainerService.HintSize="200,22" IsMenuVisible="False" Layout="[MenuLayout]" MenuItems="[Nothing]" Model="[MenuModel]" Source="[Nothing]">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </war:RclShowDialogSourceActivity>
+          <FlowStep.Next>
+            <FlowDecision x:Name="__ReferenceID6" Condition="[DialogResult]" sap:VirtualizedContainerService.HintSize="70,87">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <av:Point x:Key="ShapeLocation">405,316.5</av:Point>
+                  <av:Size x:Key="ShapeSize">70,87</av:Size>
+                  <av:PointCollection x:Key="TrueConnector">405,360 380,360 380,426.5 440,426.5 440,456.5</av:PointCollection>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <FlowDecision.True>
+                <FlowSwitch x:TypeArguments="x:String" x:Name="__ReferenceID5" Expression="[DialogMenuResult]" sap:VirtualizedContainerService.HintSize="70,87">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <av:Point x:Key="ShapeLocation">405,456.5</av:Point>
+                      <av:Size x:Key="ShapeSize">70,87</av:Size>
+                      <av:PointCollection x:Key="1D1Connector">405,478.25 375,478.25 375,460 292,460</av:PointCollection>
+                      <av:PointCollection x:Key="1D2Connector">405,500 375,500 375,520 292,520</av:PointCollection>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <FlowStep x:Key="1D1" x:Name="__ReferenceID7">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <av:Point x:Key="ShapeLocation">48,434.5</av:Point>
+                        <av:Size x:Key="ShapeSize">244,51</av:Size>
+                        <av:PointCollection x:Key="ConnectorLocation">48,460 18,460 18,250 340,250</av:PointCollection>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Flowchart DisplayName="Учет ГМ" sap:VirtualizedContainerService.HintSize="244,51">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+                          <av:Size x:Key="ShapeSize">60,75</av:Size>
+                          <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,107.5 298,107.5 298,160</av:PointCollection>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Flowchart.StartNode>
+                        <x:Reference>__ReferenceID1</x:Reference>
+                      </Flowchart.StartNode>
+                      <FlowStep x:Name="__ReferenceID0">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <av:Point x:Key="ShapeLocation">198,385</av:Point>
+                            <av:Size x:Key="ShapeSize">200,22</av:Size>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <wab:ExecuteWorkflowActivity DisplayName="Меню разгрузка" sap:VirtualizedContainerService.HintSize="200,22" InnerBpContext="[BpContext]" WorkflowCode="WfRclUnloadingMenu">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </wab:ExecuteWorkflowActivity>
+                      </FlowStep>
+                      <FlowStep x:Name="__ReferenceID1">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <av:Point x:Key="ShapeLocation">189,160</av:Point>
+                            <av:Size x:Key="ShapeSize">218,132</av:Size>
+                            <av:PointCollection x:Key="ConnectorLocation">298,292 298,385</av:PointCollection>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <InvokeMethod DisplayName="ConfirmKeyHelp" sap:VirtualizedContainerService.HintSize="218,132" MethodName="Set">
+                          <InvokeMethod.GenericTypeArguments>
+                            <x:Type Type="x:String" />
+                          </InvokeMethod.GenericTypeArguments>
+                          <InvokeMethod.TargetObject>
+                            <InArgument x:TypeArguments="wgb:BpContext">[BpContext]</InArgument>
+                          </InvokeMethod.TargetObject>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <InArgument x:TypeArguments="x:String">ConfirmKeyHelp</InArgument>
+                          <InArgument x:TypeArguments="x:String">[BpContext.Get(Of String)("ConfirmKeyHelp")]</InArgument>
+                        </InvokeMethod>
+                        <FlowStep.Next>
+                          <x:Reference>__ReferenceID0</x:Reference>
+                        </FlowStep.Next>
+                      </FlowStep>
+                    </Flowchart>
+                    <FlowStep.Next>
+                      <x:Reference>__ReferenceID2</x:Reference>
+                    </FlowStep.Next>
+                  </FlowStep>
+                  <FlowStep x:Key="1D2" x:Name="__ReferenceID8">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <av:Point x:Key="ShapeLocation">48,494.5</av:Point>
+                        <av:Size x:Key="ShapeSize">244,51</av:Size>
+                        <av:PointCollection x:Key="ConnectorLocation">48,520 18,520 18,250 340,250</av:PointCollection>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Flowchart DisplayName="Приемка ГМ" sap:VirtualizedContainerService.HintSize="614,636">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+                          <av:Size x:Key="ShapeSize">60,75</av:Size>
+                          <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,107.5 298,107.5 298,170</av:PointCollection>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Flowchart.StartNode>
+                        <x:Reference>__ReferenceID4</x:Reference>
+                      </Flowchart.StartNode>
+                      <FlowStep x:Name="__ReferenceID3">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <av:Point x:Key="ShapeLocation">198,395</av:Point>
+                            <av:Size x:Key="ShapeSize">200,22</av:Size>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <wab:ExecuteWorkflowActivity DisplayName="Меню разгрузка" sap:VirtualizedContainerService.HintSize="200,22" InnerBpContext="[BpContext]" WorkflowCode="WFRCLUNLOADINGINPUTMENU">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </wab:ExecuteWorkflowActivity>
+                      </FlowStep>
+                      <FlowStep x:Name="__ReferenceID4">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <av:Point x:Key="ShapeLocation">189,170</av:Point>
+                            <av:Size x:Key="ShapeSize">218,132</av:Size>
+                            <av:PointCollection x:Key="ConnectorLocation">298,302 298,395</av:PointCollection>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <InvokeMethod DisplayName="ConfirmKeyHelp" sap:VirtualizedContainerService.HintSize="218,132" MethodName="Set">
+                          <InvokeMethod.GenericTypeArguments>
+                            <x:Type Type="x:String" />
+                          </InvokeMethod.GenericTypeArguments>
+                          <InvokeMethod.TargetObject>
+                            <InArgument x:TypeArguments="wgb:BpContext">[BpContext]</InArgument>
+                          </InvokeMethod.TargetObject>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <InArgument x:TypeArguments="x:String">ConfirmKeyHelp</InArgument>
+                          <InArgument x:TypeArguments="x:String">[BpContext.Get(Of String)("ConfirmKeyHelp")]</InArgument>
+                        </InvokeMethod>
+                        <FlowStep.Next>
+                          <x:Reference>__ReferenceID3</x:Reference>
+                        </FlowStep.Next>
+                      </FlowStep>
+                    </Flowchart>
+                    <FlowStep.Next>
+                      <x:Reference>__ReferenceID2</x:Reference>
+                    </FlowStep.Next>
+                  </FlowStep>
+                </FlowSwitch>
+              </FlowDecision.True>
+            </FlowDecision>
+          </FlowStep.Next>
+        </FlowStep>
+      </FlowStep.Next>
+    </FlowStep>
+    <x:Reference>__ReferenceID2</x:Reference>
+    <x:Reference>__ReferenceID5</x:Reference>
+    <x:Reference>__ReferenceID6</x:Reference>
+    <x:Reference>__ReferenceID7</x:Reference>
+    <x:Reference>__ReferenceID8</x:Reference>
+  </Flowchart>
+</Activity>

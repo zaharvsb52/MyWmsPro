@@ -1,0 +1,37 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxscht="http://schemas.devexpress.com/winfx/2008/xaml/scheduler/themekeys" xmlns:dxschd="http://schemas.devexpress.com/winfx/2008/xaml/scheduler/internal">
+
+    <DataTemplate x:Key="{dxscht:SchedulerViewThemeKey ResourceKey=HorizontalAppointmentLongerThanADayContentTemplate}">
+        <Grid VerticalAlignment="Center" SnapsToDevicePixels="True">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Grid.Column="0">
+                <dxschd:AppointmentContinueStartDateControl ViewInfo="{Binding}" />
+                <dxschd:HorizontalAppointmentStartClockControl ViewInfo="{Binding}" />
+            </StackPanel>
+            <dxschd:HorizontalAppointmentContentPanel Margin="2,0,2,0" VerticalAlignment="Center" Grid.Column="1">
+                <dxschd:AppointmentImagesControl HorizontalAlignment="Center" ViewInfo="{Binding}" Orientation="Horizontal" />
+                <TextBlock Text="{Binding Subject}" TextWrapping="NoWrap" Margin="0,0,2,0" Foreground="{DynamicResource {dxscht:SchedulerViewThemeKey ResourceKey=AppointmentForegroundColor}}">
+                    <!--BEGIN WPF-->
+                    <TextBlock.TextTrimming>
+                        <TextTrimming>CharacterEllipsis</TextTrimming>    
+                    </TextBlock.TextTrimming>
+                    <!--END WPF-->
+                </TextBlock>
+                <TextBlock Text="{Binding Location}" TextWrapping="NoWrap" Foreground="{DynamicResource {dxscht:SchedulerViewThemeKey ResourceKey=AppointmentForegroundColor}}">
+                    <!--BEGIN WPF-->
+                    <TextBlock.TextTrimming>
+                        <TextTrimming>CharacterEllipsis</TextTrimming>    
+                    </TextBlock.TextTrimming>
+                    <!--END WPF-->
+                </TextBlock>
+            </dxschd:HorizontalAppointmentContentPanel>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Grid.Column="2">
+                <dxschd:HorizontalAppointmentEndClockControl ViewInfo="{Binding}" />
+                <dxschd:AppointmentContinueEndDateControl ViewInfo="{Binding}" />
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+</ResourceDictionary>

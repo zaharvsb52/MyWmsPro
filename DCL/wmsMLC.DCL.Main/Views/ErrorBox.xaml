@@ -1,0 +1,83 @@
+﻿<views:BaseDialogWindow x:Class="wmsMLC.DCL.Main.Views.ErrorBox"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:lex="http://wpflocalizeextension.codeplex.com"
+    xmlns:properties="clr-namespace:wmsMLC.DCL.Main.Properties"
+    xmlns:help="clr-namespace:wmsMLC.DCL.Main.Helpers" 
+    xmlns:views="clr-namespace:wmsMLC.DCL.Main.Views"
+    help:Help.FileName="{Binding Source={x:Static properties:Settings.Default}, Path=HelpFileName}"
+    Icon="{lex:LocExtension Key=wmsMLC.DCL.Resources:ImageResources:wms32}"
+	SmallIcon="{lex:LocExtension Key=wmsMLC.DCL.Resources:ImageResources:wms16}"
+    Title="{lex:LocExtension Key=wmsMLC.DCL.Resources:StringResources:Error}" 
+    mc:Ignorable="d"
+    Height="250" Width="480"
+    ShowInTaskbar="True"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    Topmost="False">
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="2" Margin="0,5,0,5">
+            <!--TODO: Не забыть заменить картинку на другую с правильным размером-->
+            <Image HorizontalAlignment="Left"
+                   Height="48"
+                   Margin="15,0,0,0"
+                   VerticalAlignment="Top"
+                   Width="48"
+                   Source="{lex:LocExtension Key=wmsMLC.DCL.Resources:ImageResources:Error64}" />
+            <TextBlock x:Name="LabelErrorCaption"
+                       Text="{lex:LocExtension Key=wmsMLC.DCL.Resources:StringResources:UnexpectedError}"
+                       TextWrapping="Wrap"
+                       VerticalAlignment="Center"
+                       FontWeight="Bold"
+                       Margin="10,0,0,0" MaxWidth="390" MaxHeight="32" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" />
+        </StackPanel>
+
+        <dxe:MemoEdit x:Name="MemoEditMainTxt" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+            MemoVerticalScrollBarVisibility="Visible" 
+    		MemoHorizontalScrollBarVisibility="Disabled"
+    		ShowIcon="False"
+    		PopupWidth="250" 
+    		ShowSizeGrip="False"
+    		TextWrapping="Wrap" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Top" MemoTextWrapping="Wrap" 
+            PopupFooterButtons="None" ShowEditorButtons="False" ShowError="False" ShowErrorToolTip="False" ValidateOnEnterKeyPressed="False" 
+            ValidateOnTextInput="False" VerticalScrollBarVisibility="Visible" 
+            PopupMaxHeight="300" Margin="10,0,10,0"/>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Margin="10,6,6,6" VerticalAlignment="Center" Text="{lex:LocExtension Key=wmsMLC.DCL.Resources:StringResources:FilterMandant}" Visibility="{Binding Path=MandantListVisibility}"/>
+        <dxe:ComboBoxEdit Grid.Row="2" Grid.Column="1" Margin="6,6,10,6" IsTextEditable="False" ValueMember="MandantCode" DisplayMember="DisplayText" ItemsSource="{Binding Mandants}" SelectedItem="{Binding SelectedItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Visibility="{Binding Path=MandantListVisibility}">
+            <dxe:ComboBoxEdit.StyleSettings>
+                <dxe:ComboBoxStyleSettings />
+            </dxe:ComboBoxEdit.StyleSettings>
+        </dxe:ComboBoxEdit>
+
+        <StackPanel Grid.Row="3" Grid.ColumnSpan="2" Height="40" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center">
+            <Button x:Name="BtnSendMail" Height="26" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Command="{Binding SendMailCommand}">
+                <StackPanel ToolTip="{lex:LocExtension Key=wmsMLC.DCL.Resources:StringResources:ErrorSdToolTip}" Orientation="Horizontal">
+                    <Image Margin="0,0,5,0" Height="16" Width="16" Source="{lex:LocExtension Key=wmsMLC.DCL.Resources:ImageResources:MailReport16}" />
+                    <TextBlock Text="{lex:LocExtension Key=wmsMLC.DCL.Resources:StringResources:ReportCommand}" Margin="0,0,5,0" VerticalAlignment="Center" />
+                </StackPanel>
+            </Button>
+            <Button Height="26" HorizontalAlignment="Right" Margin="10,0,0,0" Width="{Binding ElementName=BtnSendMail, Path=ActualWidth}" Command="{Binding CloseCommand}">
+                <Button.Content>
+                    <TextBlock Text="{lex:LocExtension Key=wmsMLC.DCL.Resources:StringResources:Close}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Button.Content>
+            </Button> 
+        </StackPanel>
+    </Grid>
+
+</views:BaseDialogWindow>

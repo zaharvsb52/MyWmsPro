@@ -1,0 +1,1387 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="http://schemas.devexpress.com/winfx/2008/xaml/docking" xmlns:ve="http://schemas.devexpress.com/winfx/2008/xaml/docking/visualelements" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/docking/themekeys" xmlns:dxp="http://schemas.devexpress.com/winfx/2008/xaml/docking/platform" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcn="http://schemas.devexpress.com/winfx/2008/xaml/core/internal">
+
+    <SolidColorBrush x:Key="TabHint.BorderBrush" Color="#FF97ABDA" />
+    <SolidColorBrush x:Key="TabHint.Background" Color="#7F97ABDA" />
+
+    <SolidColorBrush x:Key="BrushHot" Color="#FF97ABDA" />
+    <SolidColorBrush x:Key="BrushNormal" Color="#FFD6D6D6" />
+
+    <Color x:Key="ColorHot">#FF97ABDA</Color>
+    <Color x:Key="ColorNormal">#FFD6D6D6</Color>
+
+    <ControlTemplate x:Key="{dxt:TabHintThemeKey ResourceKey=Tab}" TargetType="dxp:TabHint">
+        <Border Background="{StaticResource TabHint.Background}" BorderBrush="{StaticResource TabHint.BorderBrush}" BorderThickness="1" />
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxt:TabHintThemeKey ResourceKey=TabHeader}" TargetType="dxp:TabHeaderHint">
+        <Grid UseLayoutRounding="True">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="TabHeaderStates">
+                    <VisualState x:Name="Left">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Border" Storyboard.TargetProperty="BorderThickness" dxcn:ValueSetter.Thickness="1,1,0,1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Top">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Border" Storyboard.TargetProperty="BorderThickness" dxcn:ValueSetter.Thickness="1,1,1,0" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Right">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Border" Storyboard.TargetProperty="BorderThickness" dxcn:ValueSetter.Thickness="0,1,1,1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Bottom">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Border" Storyboard.TargetProperty="BorderThickness" dxcn:ValueSetter.Thickness="1,0,1,1" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Border x:Name="Border" Background="{StaticResource TabHint.Background}" BorderBrush="{StaticResource TabHint.BorderBrush}" BorderThickness="1" />
+        </Grid>
+    </ControlTemplate>
+    <Style TargetType="dxp:ShadowResizeBackground">
+        <Setter Property="Background" Value="{StaticResource BrushNormal}" />
+        <Setter Property="Opacity" Value="0.7" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="dxp:ShadowResizeBackground">
+                    <Border Background="{TemplateBinding Background}" Opacity="{TemplateBinding Opacity}" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="dxp:ShadowResizePointer">
+        <Setter Property="Background" Value="{StaticResource BrushHot}" />
+        <Setter Property="Opacity" Value="0.7" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="dxp:ShadowResizePointer">
+                    <Border Background="{TemplateBinding Background}" Opacity="{TemplateBinding Opacity}" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="dxp:AutoHideResizePointer">
+        <Setter Property="Background" Value="{StaticResource BrushNormal}" />
+        <Setter Property="Opacity" Value="0.7" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="dxp:AutoHideResizePointer">
+                    <Border Background="{TemplateBinding Background}" Opacity="{TemplateBinding Opacity}" BorderBrush="{StaticResource BrushHot}">
+                        <Border.BorderThickness>
+                            <Binding Path="Dock" RelativeSource="{RelativeSource Mode=TemplatedParent}">
+                                <Binding.Converter>
+                                    <ve:DockTypeToThicknessConverter All="5" Inverted="True" />
+                                </Binding.Converter>
+                            </Binding>
+                        </Border.BorderThickness>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="dxp:FloatingResizePointer">
+        <Setter Property="Background" Value="{StaticResource BrushNormal}" />
+        <Setter Property="Opacity" Value="0.7" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="dxp:FloatingResizePointer">
+                    <Border Background="{TemplateBinding Background}" Opacity="{TemplateBinding Opacity}" BorderBrush="{StaticResource BrushHot}" BorderThickness="5" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="button-bottom" BasedOn="{x:Null}" TargetType="ve:DockHintButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ve:DockHintButton">
+                    <Grid x:Name="Root" SnapsToDevicePixels="True">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Collapsed" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Dock">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="{StaticResource ColorHot}" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="AvailableStates">
+                                <VisualState x:Name="Available" />
+                                <VisualState x:Name="Unavailable">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Background">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="#FFF0F0F0" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Dock">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="#FFD0D0D0" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="Background" Background="#FFFFFFFF" CornerRadius="1,1,0,0" Padding="1">
+                            <Border x:Name="Dock" Background="{StaticResource BrushNormal}" Height="9" CornerRadius="1,1,0,0" VerticalAlignment="Bottom" />
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="button-bottomhide" BasedOn="{x:Null}" TargetType="ve:DockHintButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ve:DockHintButton">
+                    <Grid x:Name="Root" SnapsToDevicePixels="True">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Collapsed" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Hide">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="{StaticResource ColorHot}" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="AvailableStates">
+                                <VisualState x:Name="Available" />
+                                <VisualState x:Name="Unavailable">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Background">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="#FFF0F0F0" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Hide">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="#FFD0D0D0" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="Background" Background="#FFFFFFFF" CornerRadius="0,0,1,1" Padding="1,0,1,1">
+                            <Border x:Name="Hide" Background="{StaticResource BrushNormal}" CornerRadius="0,0,1,1" VerticalAlignment="Bottom" Height="3" />
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="button-top" BasedOn="{x:Null}" TargetType="ve:DockHintButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ve:DockHintButton">
+                    <Grid x:Name="Root" SnapsToDevicePixels="True">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Collapsed" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Dock">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="{StaticResource ColorHot}" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="AvailableStates">
+                                <VisualState x:Name="Available" />
+                                <VisualState x:Name="Unavailable">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Background">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="#FFF0F0F0" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Dock">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="#FFD0D0D0" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="Background" Background="#FFFFFFFF" CornerRadius="0,0,1,1" Padding="1">
+                            <Border x:Name="Dock" Background="{StaticResource BrushNormal}" Height="9" CornerRadius="0,0,1,1" VerticalAlignment="Top" />
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="button-tophide" BasedOn="{x:Null}" TargetType="ve:DockHintButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ve:DockHintButton">
+                    <Grid x:Name="Root" SnapsToDevicePixels="True">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Collapsed" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Hide">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="{StaticResource ColorHot}" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="AvailableStates">
+                                <VisualState x:Name="Available" />
+                                <VisualState x:Name="Unavailable">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Background">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="#FFF0F0F0" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Hide">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="#FFD0D0D0" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="Background" Background="#FFFFFFFF" CornerRadius="1,1,0,0" Padding="1,1,1,0">
+                            <Border x:Name="Hide" Background="{StaticResource BrushNormal}" Height="3" CornerRadius="1,1,0,0" VerticalAlignment="Top" />
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="button-right" BasedOn="{x:Null}" TargetType="ve:DockHintButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ve:DockHintButton">
+                    <Grid x:Name="Root" SnapsToDevicePixels="True">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Collapsed" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Dock">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="{StaticResource ColorHot}" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="AvailableStates">
+                                <VisualState x:Name="Available" />
+                                <VisualState x:Name="Unavailable">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Background">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="#FFF0F0F0" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Dock">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="#FFD0D0D0" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="Background" Background="#FFFFFFFF" CornerRadius="1,0,0,1" Padding="1">
+                            <Border x:Name="Dock" Background="{StaticResource BrushNormal}" Width="9" CornerRadius="1,0,0,1" HorizontalAlignment="Right" />
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="button-righthide" BasedOn="{x:Null}" TargetType="ve:DockHintButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ve:DockHintButton">
+                    <Grid x:Name="Root" SnapsToDevicePixels="True">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Collapsed" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Hide">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="{StaticResource ColorHot}" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="AvailableStates">
+                                <VisualState x:Name="Available" />
+                                <VisualState x:Name="Unavailable">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Background">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="#FFF0F0F0" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Hide">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="#FFD0D0D0" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="Background" Background="#FFFFFFFF" CornerRadius="0,1,1,0" Padding="0,1,1,1">
+                            <Border x:Name="Hide" Background="{StaticResource BrushNormal}" Width="3" CornerRadius="0,1,1,0" HorizontalAlignment="Right" />
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="button-left" BasedOn="{x:Null}" TargetType="ve:DockHintButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ve:DockHintButton">
+                    <Grid x:Name="Root" SnapsToDevicePixels="True">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Collapsed" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Dock">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="{StaticResource ColorHot}" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="AvailableStates">
+                                <VisualState x:Name="Available" />
+                                <VisualState x:Name="Unavailable">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Background">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="#FFF0F0F0" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Dock">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="#FFD0D0D0" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="Background" Background="#FFFFFFFF" CornerRadius="0,1,1,0" Padding="1">
+                            <Border x:Name="Dock" Background="{StaticResource BrushNormal}" Width="9" CornerRadius="0,1,1,0" HorizontalAlignment="Left" />
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="button-lefthide" BasedOn="{x:Null}" TargetType="ve:DockHintButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ve:DockHintButton">
+                    <Grid x:Name="Root" Background="Transparent" SnapsToDevicePixels="True">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Collapsed" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Hide">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="{StaticResource ColorHot}" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="AvailableStates">
+                                <VisualState x:Name="Available" />
+                                <VisualState x:Name="Unavailable">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Background">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="#FFF0F0F0" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Hide">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="#FFD0D0D0" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="Background" Background="#FFFFFFFF" CornerRadius="1,0,0,1" Padding="1,1,0,1">
+                            <Border x:Name="Hide" Background="{StaticResource BrushNormal}" Width="3" CornerRadius="1,0,0,1" HorizontalAlignment="Left" />
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="button-left-2" BasedOn="{x:Null}" TargetType="ve:DockHintButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ve:DockHintButton">
+                    <Grid x:Name="Root" SnapsToDevicePixels="True">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Collapsed" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="{StaticResource ColorHot}" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="AvailableStates">
+                                <VisualState x:Name="Available" />
+                                <VisualState x:Name="Unavailable">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Background">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="#FFF0F0F0" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="#FFD0D0D0" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="Background" Background="#FFFFFFFF" CornerRadius="1">
+                            <Border x:Name="Border" Background="{StaticResource BrushNormal}" Margin="1" CornerRadius="1" Width="9" HorizontalAlignment="Left" />
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="button-right-2" BasedOn="{x:Null}" TargetType="ve:DockHintButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ve:DockHintButton">
+                    <Grid x:Name="Root" Background="Transparent" SnapsToDevicePixels="True">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Collapsed" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="{StaticResource ColorHot}" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="AvailableStates">
+                                <VisualState x:Name="Available" />
+                                <VisualState x:Name="Unavailable">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Background">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="#FFF0F0F0" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="#FFD0D0D0" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="Background" Background="#FFFFFFFF" CornerRadius="1">
+                            <Border x:Name="Border" Background="{StaticResource BrushNormal}" Margin="1" CornerRadius="1" Width="9" HorizontalAlignment="Right" />
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="button-bottom-2" BasedOn="{x:Null}" TargetType="ve:DockHintButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ve:DockHintButton">
+                    <Grid x:Name="Root" Background="Transparent" SnapsToDevicePixels="True">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Collapsed" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="{StaticResource ColorHot}" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="AvailableStates">
+                                <VisualState x:Name="Available" />
+                                <VisualState x:Name="Unavailable">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Background">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="#FFF0F0F0" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="#FFD0D0D0" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="Background" Background="#FFFFFFFF" CornerRadius="1">
+                            <Border x:Name="Border" Background="{StaticResource BrushNormal}" Margin="1" CornerRadius="1" Height="9" VerticalAlignment="Bottom" />
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="button-top-2" BasedOn="{x:Null}" TargetType="ve:DockHintButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ve:DockHintButton">
+                    <Grid x:Name="Root" Background="Transparent" SnapsToDevicePixels="True">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Collapsed" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="{StaticResource ColorHot}" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="AvailableStates">
+                                <VisualState x:Name="Available" />
+                                <VisualState x:Name="Unavailable">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Background">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="#FFF0F0F0" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="#FFD0D0D0" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="Background" Background="#FFFFFFFF" Padding="1" CornerRadius="1">
+                            <Border x:Name="Border" Background="{StaticResource BrushNormal}" Height="9" CornerRadius="1" VerticalAlignment="Top" />
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="button-left-3" BasedOn="{x:Null}" TargetType="ve:DockHintButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ve:DockHintButton">
+                    <Grid x:Name="Root" SnapsToDevicePixels="True">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Collapsed" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="{StaticResource ColorHot}" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="AvailableStates">
+                                <VisualState x:Name="Available" />
+                                <VisualState x:Name="Unavailable">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Background">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="#FFF0F0F0" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Separator">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="#FFF0F0F0" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="#FFD0D0D0" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="Background" Background="#FFFFFFFF" Padding="1" CornerRadius="1">
+                            <Grid>
+                                <Border x:Name="Border" Background="{StaticResource BrushNormal}" Width="13" CornerRadius="1" HorizontalAlignment="Left" />
+                                <Border x:Name="Separator" BorderBrush="#FFFFFFFF" BorderThickness="0,0,1,0" Width="4" HorizontalAlignment="Left" />
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="button-right-3" BasedOn="{x:Null}" TargetType="ve:DockHintButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ve:DockHintButton">
+                    <Grid x:Name="Root" Background="Transparent" SnapsToDevicePixels="True">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Collapsed" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="{StaticResource ColorHot}" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="AvailableStates">
+                                <VisualState x:Name="Available" />
+                                <VisualState x:Name="Unavailable">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Background">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="#FFF0F0F0" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Separator">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="#FFF0F0F0" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="#FFD0D0D0" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="Background" Background="#FFFFFFFF" Padding="1" CornerRadius="1">
+                            <Grid>
+                                <Border x:Name="Border" Background="{StaticResource BrushNormal}" Width="13" CornerRadius="1" HorizontalAlignment="Right" />
+                                <Border x:Name="Separator" BorderBrush="#FFFFFFFF" BorderThickness="1,0,0,0" Width="4" HorizontalAlignment="Right" />
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="button-bottom-3" BasedOn="{x:Null}" TargetType="ve:DockHintButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ve:DockHintButton">
+                    <Grid x:Name="Root" Background="Transparent" SnapsToDevicePixels="True">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Collapsed" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="{StaticResource ColorHot}" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="AvailableStates">
+                                <VisualState x:Name="Available" />
+                                <VisualState x:Name="Unavailable">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Background">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="#FFF0F0F0" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Separator">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="#FFF0F0F0" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="#FFD0D0D0" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="Background" Background="#FFFFFFFF" Padding="1" CornerRadius="1">
+                            <Grid>
+                                <Border x:Name="Border" Background="{StaticResource BrushNormal}" Height="13" CornerRadius="1" VerticalAlignment="Bottom" />
+                                <Border x:Name="Separator" BorderBrush="#FFFFFFFF" BorderThickness="0,1,0,0" Height="4" VerticalAlignment="Bottom" />
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="button-top-3" BasedOn="{x:Null}" TargetType="ve:DockHintButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ve:DockHintButton">
+                    <Grid x:Name="Root" Background="Transparent" SnapsToDevicePixels="True">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Collapsed" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="{StaticResource ColorHot}" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="AvailableStates">
+                                <VisualState x:Name="Available" />
+                                <VisualState x:Name="Unavailable">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Background">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="#FFF0F0F0" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Separator">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="#FFF0F0F0" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="#FFD0D0D0" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="Background" Background="#FFFFFFFF" Padding="1" CornerRadius="1">
+                            <Grid>
+                                <Border x:Name="Border" Background="{StaticResource BrushNormal}" Height="13" CornerRadius="1" VerticalAlignment="Top" />
+                                <Border x:Name="Separator" BorderBrush="#FFFFFFFF" BorderThickness="0,0,0,1" Height="4" VerticalAlignment="Top" />
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="button-center" BasedOn="{x:Null}" TargetType="ve:DockHintButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ve:DockHintButton">
+                    <Grid Background="Transparent">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Visibility)" Storyboard.TargetName="BorderRoot" dxcn:ValueSetter.Visibility="Collapsed" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Border1">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="{StaticResource ColorHot}" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="AvailableStates">
+                                <VisualState x:Name="Available" />
+                                <VisualState x:Name="Unavailable">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="BorderRoot">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="#FFF0F0F0" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Border1">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="#FFD0D0D0" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Border2">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="#FFF0F0F0" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="BorderRoot" Background="#FFFFFFFF" Padding="1" CornerRadius="1">
+                            <Grid>
+                                <Border x:Name="Border1" Background="{StaticResource BrushNormal}" CornerRadius="1" />
+                                <Border x:Name="Border2" Background="#FFFFFFFF" Width="16" Height="4" VerticalAlignment="Bottom" HorizontalAlignment="Right" />
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <ControlTemplate x:Key="{dxt:DockVisualizerThemeKey ResourceKey=RenameHint}" TargetType="dxp:RenameHint">
+        <Grid>
+            <Border Background="#26000000" CornerRadius="2" Margin="2,2,0,0" />
+            <Border Background="#3F000000" CornerRadius="2" Margin="1">
+                <Border Background="#FFFFFFFF" Margin="1" CornerRadius="1" Padding="2,0,2,0">
+                    <TextBox x:Name="PART_Text" BorderThickness="0" />
+                </Border>
+            </Border>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxt:DockVisualizerThemeKey ResourceKey=Selection}" TargetType="dxp:SelectionHint">
+        <Rectangle x:Name="PART_Selection" Stretch="Fill" Fill="#FF1D4ABD" RadiusX="3" RadiusY="3" IsHitTestVisible="False" Opacity="0.15" />
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxt:DockVisualizerThemeKey ResourceKey=DockZone}">
+        <Border Background="{StaticResource TabHint.Background}" BorderBrush="{StaticResource TabHint.BorderBrush}" BorderThickness="1" Margin="1" />
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxt:DockVisualizerThemeKey ResourceKey=Left}">
+        <Grid Width="34" Height="34" HorizontalAlignment="Left" VerticalAlignment="Center" dxp:DockHintElement.DockType="Left" SnapsToDevicePixels="True">
+            <Grid.Effect>
+                <DropShadowEffect x:Name="Shadow" Direction="270" ShadowDepth="1" BlurRadius="3" Opacity="0.35" />
+            </Grid.Effect>
+            <Border Background="#FF323544" CornerRadius="2">
+                <Grid Margin="3,7,3,3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <ve:DockHintButton x:Name="PART_Dock" Style="{StaticResource button-left}" Grid.Column="1" />
+                    <ve:DockHintButton x:Name="PART_Hide" Style="{StaticResource button-lefthide}" Grid.Column="0" />
+                </Grid>
+            </Border>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxt:DockVisualizerThemeKey ResourceKey=Right}">
+        <Grid Width="34" Height="34" HorizontalAlignment="Right" VerticalAlignment="Center" dxp:DockHintElement.DockType="Right" SnapsToDevicePixels="True">
+            <Grid.Effect>
+                <DropShadowEffect x:Name="Shadow" Direction="270" ShadowDepth="1" BlurRadius="3" Opacity="0.35" />
+            </Grid.Effect>
+            <Border Background="#FF323544" CornerRadius="2">
+                <Grid Margin="3,7,3,3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <ve:DockHintButton x:Name="PART_Hide" Style="{StaticResource button-righthide}" Grid.Column="1" />
+                    <ve:DockHintButton x:Name="PART_Dock" Style="{StaticResource button-right}" Grid.Column="0" />
+                 </Grid>
+            </Border>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxt:DockVisualizerThemeKey ResourceKey=Top}">
+        <Grid Width="34" Height="34" HorizontalAlignment="Center" VerticalAlignment="Top" dxp:DockHintElement.DockType="Top" SnapsToDevicePixels="True">
+            <Grid.Effect>
+                <DropShadowEffect x:Name="Shadow" Direction="270" ShadowDepth="1" BlurRadius="3" Opacity="0.35" />
+            </Grid.Effect>
+            <Border Background="#FF323544" CornerRadius="2">
+                <Grid Margin="3,7,3,3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <ve:DockHintButton x:Name="PART_Hide" Style="{StaticResource button-tophide}" Grid.Row="0" />
+                    <ve:DockHintButton x:Name="PART_Dock" Style="{StaticResource button-top}" Grid.Row="1" />
+                 </Grid>
+            </Border>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxt:DockVisualizerThemeKey ResourceKey=Bottom}">
+        <Grid Width="34" Height="34" HorizontalAlignment="Center" VerticalAlignment="Bottom" dxp:DockHintElement.DockType="Bottom" SnapsToDevicePixels="True">
+            <Grid.Effect>
+                <DropShadowEffect x:Name="Shadow" Direction="270" ShadowDepth="1" BlurRadius="3" Opacity="0.35" />
+            </Grid.Effect>
+            <Border Background="#FF323544" CornerRadius="2">
+                <Grid Margin="3,7,3,3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <ve:DockHintButton x:Name="PART_Dock" Style="{StaticResource button-bottom}" Grid.Row="0" />
+                    <ve:DockHintButton x:Name="PART_Hide" Style="{StaticResource button-bottomhide}" Grid.Row="1" />
+                 </Grid>
+            </Border>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxt:DockVisualizerThemeKey ResourceKey=Center}">
+        <Grid x:Name="center_button" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid.Effect>
+                <DropShadowEffect x:Name="Shadow" Direction="270" ShadowDepth="1" BlurRadius="3" Opacity="0.35" />
+            </Grid.Effect>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="34" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="34" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Cross -->
+            <Ellipse Fill="#FF323544" StrokeThickness="0" Margin="-22" Grid.Column="1" Grid.Row="1" />
+
+            <!-- Content -->
+            <Border x:Name="gridTop" Background="#FF323544" CornerRadius="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="0">
+                <Grid Margin="3,3,3,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <ve:DockHintButton x:Name="PART_Top" Width="28" Height="28" Margin="0,0,0,3" Style="{StaticResource button-top-3}" Grid.Row="0" dxp:DockHintElement.DockType="Top" />
+                    <ve:DockHintButton x:Name="PART_TabTop" Width="28" Height="28" Style="{StaticResource button-top-2}" Grid.Row="1" dxp:DockHintElement.DockType="Top" />
+                </Grid>
+            </Border>
+
+            <Border x:Name="gridBottom" Background="#FF323544" CornerRadius="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="2">
+                <Grid Margin="3,0,3,3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <ve:DockHintButton x:Name="PART_TabBottom" Width="28" Height="28" Style="{StaticResource button-bottom-2}" Grid.Row="0" dxp:DockHintElement.DockType="Bottom" />
+                    <ve:DockHintButton x:Name="PART_Bottom" Width="28" Height="28" Margin="0,3,0,0" Style="{StaticResource button-bottom-3}" Grid.Row="1" dxp:DockHintElement.DockType="Bottom" />
+                </Grid>
+            </Border>
+
+            <Border x:Name="gridLeft" Background="#FF323544" CornerRadius="2" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1">
+                <Grid Margin="3,3,0,3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <ve:DockHintButton x:Name="PART_Left" Width="28" Height="28" Margin="0,0,3,0" Style="{StaticResource button-left-3}" Grid.Column="0" dxp:DockHintElement.DockType="Left" />
+                    <ve:DockHintButton x:Name="PART_TabLeft" Width="28" Height="28" Style="{StaticResource button-left-2}" Grid.Column="1" dxp:DockHintElement.DockType="Left" />
+                </Grid>
+            </Border>
+
+            <Border x:Name="gridRight" Background="#FF323544" CornerRadius="2" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2" Grid.Row="1">
+                <Grid Margin="0,3,3,3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <ve:DockHintButton x:Name="PART_TabRight" Width="28" Height="28" Style="{StaticResource button-right-2}" Grid.Column="0" dxp:DockHintElement.DockType="Right" />
+                    <ve:DockHintButton x:Name="PART_Right" Width="28" Height="28" Margin="3,0,0,0" Style="{StaticResource button-right-3}" Grid.Column="1" dxp:DockHintElement.DockType="Right" />
+                </Grid>
+            </Border>
+
+            <ve:DockHintButton x:Name="PART_Fill" Width="28" Height="28" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource button-center}" Grid.Column="1" Grid.Row="1" dxp:DockHintElement.DockType="Fill" />
+
+        </Grid>
+    </ControlTemplate>
+
+    <!--BEGIN WPF-->
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Docking.VisualElements.DocumentSelectorContainer}" TargetType="{x:Type ve:DocumentSelectorContainer}">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="#FF201F35" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ve:DocumentSelectorContainer}">
+                        <Grid>
+                            <Grid.Effect>
+                                <DropShadowEffect x:Name="Shadow" Direction="270" ShadowDepth="1" BlurRadius="5" Opacity="0.15" />
+                            </Grid.Effect>
+                            <Border x:Name="Window" Background="#FF8591A2" CornerRadius="5" Margin="1">
+                                <Grid Margin="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Border x:Name="Header" CornerRadius="4,4,0,0">
+                                        <Border.Background>
+                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                <GradientStop Color="#FFD9DAE0" Offset="0" />
+                                                <GradientStop Color="#FFC8C9D0" Offset="1" />
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                        <StackPanel Margin="12,8,12,8" VerticalAlignment="Center" HorizontalAlignment="Left" Orientation="Horizontal">
+                                            <Image Margin="0,0,6,0" Stretch="None" VerticalAlignment="Top" HorizontalAlignment="Left" Source="{Binding Path=(local:DockLayoutManager.LayoutItem).CaptionImage}" />
+                                            <StackPanel>
+                                                <TextBlock TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontWeight="Bold" Text="{Binding (local:DockLayoutManager.LayoutItem).Caption}" />
+                                                <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top" Text="{Binding (local:DockLayoutManager.LayoutItem).Description}" />
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Border>
+                                    <Border x:Name="Content" Background="#FFEBECEF" BorderBrush="#FFB5B7BF" BorderThickness="0,1,0,0" Grid.Row="1">
+                                        <ContentPresenter x:Name="PART_ContainerContent" Content="{Binding}" Margin="12" />
+                                    </Border>
+                                    <Border x:Name="Footer" BorderBrush="#FFB5B7BF" BorderThickness="0,1,0,0" CornerRadius="0,0,4,4" MinHeight="24" Grid.Row="2">
+                                        <Border.Background>
+                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                <GradientStop Color="#FFD9DAE0" Offset="0" />
+                                                <GradientStop Color="#FFC8C9D0" Offset="1" />
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                        <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center" Margin="12,0,0,0" Content="{Binding (local:DockLayoutManager.LayoutItem).FooterDescription}" />
+                                    </Border>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <ControlTemplate x:Key="{dxt:DocumentSelectorElementsThemeKey ResourceKey=ListBoxItem}" TargetType="{x:Type ListBoxItem}">
+        <Grid>
+            <Grid x:Name="HoverSelection" Opacity="0">
+                <Border CornerRadius="2" BorderThickness="1" Padding="1">
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFF4F6FE" Offset="0" />
+                            <GradientStop Color="#FFF4F6FE" Offset="1" />
+                            <GradientStop Color="#FFECEFF7" Offset="0.25" />
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <Border.BorderBrush>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFCECFD5" Offset="0" />
+                            <GradientStop Color="#FFCECFD5" Offset="1" />
+                            <GradientStop Color="#FFACAFB8" Offset="0.25" />
+                        </LinearGradientBrush>
+                    </Border.BorderBrush>
+                    <Border CornerRadius="1">
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFE5EBFF" Offset="0" />
+                                <GradientStop Color="#FFE4EBFD" Offset="1" />
+                                <GradientStop Color="#FFDEE6FE" Offset="0.25" />
+                            </LinearGradientBrush>
+                        </Border.Background>
+                    </Border>
+                </Border>
+            </Grid>
+            <Grid x:Name="Selection" Opacity="0">
+                <Border CornerRadius="2" BorderThickness="1" Padding="1">
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFF4F6FE" Offset="0" />
+                            <GradientStop Color="#FFF4F6FE" Offset="1" />
+                            <GradientStop Color="#FFECEFF7" Offset="0.25" />
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <Border.BorderBrush>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFAEAFB5" Offset="0" />
+                            <GradientStop Color="#FFAEAFB5" Offset="1" />
+                            <GradientStop Color="#FF8C8F98" Offset="0.25" />
+                        </LinearGradientBrush>
+                    </Border.BorderBrush>
+                    <Border CornerRadius="1">
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFE7EDFF" Offset="0" />
+                                <GradientStop Color="#FFDEE6FE" Offset="1" />
+                                <GradientStop Color="#FFD2DEFC" Offset="0.25" />
+                            </LinearGradientBrush>
+                        </Border.Background>
+                    </Border>
+                </Border>
+            </Grid>
+            <Border Padding="{TemplateBinding Padding}">
+                <ve:CaptionControl DataContext="{Binding}" Margin="3,2,3,2" />
+            </Border>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Opacity" TargetName="Selection" Value="1" />
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Opacity" TargetName="HoverSelection" Value="0.5" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <DataTemplate x:Key="{dxt:DockPaneElementsThemeKey ResourceKey=ContentPreview}">
+        <Grid Margin="0,0,-2,0" VerticalAlignment="Top" SnapsToDevicePixels="True">
+            <Border x:Name="Shadow" Background="#FF000000" Margin="2,2,0,0" Opacity="0.10" />
+            <Border Background="#FFFFFFFF" BorderBrush="#FF919191" BorderThickness="1" Margin="0,0,2,2" Padding="12">
+                <ContentPresenter Content="{TemplateBinding Content}" />
+            </Border>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxt:DocumentElementsThemeKey ResourceKey=ContentPreview}">
+        <Grid Margin="0,0,-2,0" VerticalAlignment="Top" SnapsToDevicePixels="True">
+            <Border x:Name="Shadow" Background="#FF000000" Margin="2,2,0,0" Opacity="0.10" />
+            <Border Background="#FFFFFFFF" BorderBrush="#FF919191" BorderThickness="1" Margin="0,0,2,2" Padding="1">
+                <ContentPresenter Content="{TemplateBinding Content}" />
+            </Border>
+        </Grid>
+    </DataTemplate>
+    <!--END WPF-->
+
+</ResourceDictionary>

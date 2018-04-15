@@ -1,0 +1,35 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxet="http://schemas.devexpress.com/winfx/2008/xaml/editors/themekeys" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <Style x:Key="ErrorImageStyle" TargetType="{x:Type Image}">
+    <Setter Property="Stretch" Value="None" />
+    <Setter Property="SnapsToDevicePixels" Value="False" />
+    <Setter Property="dx:FocusHelper2.Focusable" Value="False" />
+  </Style>
+  <dxcore_unique_xmlns:EmbeddedResourceImageConverter x:Key="EmbeddedResourceImageConverter" />
+  <DataTemplate x:Key="{dxet:ErrorTypesThemeKey ResourceKey=Information}">
+    <!--BEGIN WPF-->
+    <dxcore_unique_xmlns:PixelSnapper HorizontalAlignment="Center" VerticalAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ErrorPresenter.xaml;13;10">
+      <!--END WPF-->
+      <Image Style="{StaticResource ErrorImageStyle}" Source="{Binding Source=DevExpress.Xpf.Core.Editors.Images.info.png, Converter={StaticResource EmbeddedResourceImageConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ErrorPresenter.xaml;15;14" />
+      <!--BEGIN WPF-->
+    </dxcore_unique_xmlns:PixelSnapper>
+    <!--END WPF-->
+  </DataTemplate>
+  <DataTemplate x:Key="{dxet:ErrorTypesThemeKey ResourceKey=Warning}">
+    <!--BEGIN WPF-->
+    <dxcore_unique_xmlns:PixelSnapper HorizontalAlignment="Center" VerticalAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ErrorPresenter.xaml;23;10">
+      <!--END WPF-->
+      <Image Style="{StaticResource ErrorImageStyle}" Source="{Binding Source=DevExpress.Xpf.Core.Editors.Images.warning.png, Converter={StaticResource EmbeddedResourceImageConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ErrorPresenter.xaml;25;14" />
+      <!--BEGIN WPF-->
+    </dxcore_unique_xmlns:PixelSnapper>
+    <!--END WPF-->
+  </DataTemplate>
+  <DataTemplate x:Key="{dxet:ErrorTypesThemeKey ResourceKey=Critical}">
+    <!--BEGIN WPF-->
+    <dxcore_unique_xmlns:PixelSnapper HorizontalAlignment="Center" VerticalAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ErrorPresenter.xaml;33;10">
+      <!--END WPF-->
+      <Image Style="{StaticResource ErrorImageStyle}" Source="{Binding Source=DevExpress.Xpf.Core.Editors.Images.error.png, Converter={StaticResource EmbeddedResourceImageConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ErrorPresenter.xaml;35;14" />
+      <!--BEGIN WPF-->
+    </dxcore_unique_xmlns:PixelSnapper>
+    <!--END WPF-->
+  </DataTemplate>
+</ResourceDictionary>

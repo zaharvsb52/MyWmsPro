@@ -1,0 +1,111 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Commmon -->
+    <Geometry x:Key="UpArrowGeometry">F1 M 1518,999L 1524,999L 1521,996L 1518,999 Z </Geometry>
+    <Geometry x:Key="DownArrowGeometry">F1 M 1515,989L 1521,989L 1518,992L 1515,989 Z </Geometry>
+    <Geometry x:Key="LeftArrowGeometry">F1 M 1525,992L 1525,998L 1522,995L 1525,992 Z </Geometry>
+    <Geometry x:Key="RightArrowGeometry">F1 M 1514,990L 1514,996L 1517,993L 1514,990 Z </Geometry>
+
+    <Geometry x:Key="ComboBoxDownArrowGeometry">F1 M 211,186L 205,186L 208,189L 211,186 Z</Geometry>
+    <Geometry x:Key="SizeGripPart">F1 M 114,110L 115,110L 115,111L 114,111L 114,110 Z M 114,113L 115,113L 115,114L 114,114L 114,113 Z M 111,113L 112,113L 112,114L 111,114L 111,113 Z M 111,116L 112,116L 112,117L 111,117L 111,116 Z M 108,116L 109,116L 109,117L 108,117L 108,116 Z M 114,116L 115,116L 115,117L 114,117L 114,116 Z</Geometry>
+
+    <Style x:Key="FocusTemplate" TargetType="{x:Type Border}">
+        <Setter Property="BorderBrush" Value="#FF0047FF" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Opacity" Value="0.25" />
+    </Style>
+
+    <!-- Button -->
+
+    <Style x:Key="ButtonFocusTemplate" TargetType="{x:Type Rectangle}">
+        <Setter Property="Stroke" Value="#FF6699FF" />
+        <Setter Property="StrokeThickness" Value="3" />
+        <Setter Property="Margin" Value="-1" />
+        <Setter Property="RadiusX" Value="2" />
+        <Setter Property="RadiusY" Value="2" />
+        <Setter Property="Opacity" Value="0.25" />
+        <Setter Property="IsHitTestVisible" Value="False" />
+    </Style>
+
+    <!-- CheckBox -->
+
+    <Style x:Key="CheckBoxFocusTemplate" TargetType="{x:Type Rectangle}">
+        <Setter Property="Stroke" Value="#FF6699FF" />
+        <Setter Property="StrokeThickness" Value="2" />
+        <Setter Property="Margin" Value="-1" />
+        <Setter Property="RadiusX" Value="1" />
+        <Setter Property="RadiusY" Value="1" />
+        <Setter Property="Opacity" Value="0.5" />
+        <Setter Property="IsHitTestVisible" Value="False" />
+    </Style>
+
+    <Style x:Key="CheckBoxIconTemplate" TargetType="{x:Type Path}">
+        <Setter Property="Data" Value="F1 M 1442,967L 1444,967L 1446,970L 1447,970L 1454,959L 1456,959L 1447,973L 1446,973L 1442,967 Z " />
+        <Setter Property="Fill" Value="{DynamicResource CheckBox.DefaultState.CheckIcon.Fill}" />
+        <Setter Property="FlowDirection" Value="LeftToRight" />
+        <Setter Property="Width" Value="14" />
+        <Setter Property="Height" Value="14" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Stretch" Value="Fill" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="UseLayoutRounding" Value="False" />
+    </Style>
+
+    <!-- RadioButton -->
+
+    <Style x:Key="RadioButtonFocusTemplate" TargetType="{x:Type Rectangle}">
+        <Setter Property="Stroke" Value="#FF6699FF" />
+        <Setter Property="StrokeThickness" Value="2" />
+        <Setter Property="Margin" Value="-1" />
+        <Setter Property="RadiusX" Value="64" />
+        <Setter Property="RadiusY" Value="64" />
+        <Setter Property="Opacity" Value="0.5" />
+        <Setter Property="IsHitTestVisible" Value="False" />
+    </Style>
+
+    <!-- Slider -->
+
+    <Style x:Key="SliderFocusTemplate" TargetType="{x:Type Border}">
+        <Setter Property="Background" Value="#FF6699FF" />
+        <Setter Property="Opacity" Value="1" />
+        <Setter Property="IsHitTestVisible" Value="False" />
+    </Style>
+
+    <!-- TextBox -->
+
+    <Style x:Key="TextBoxFocusTemplate" TargetType="{x:Type Rectangle}">
+        <Setter Property="Stroke" Value="#FF6699FF" />
+        <Setter Property="StrokeThickness" Value="1" />
+        <Setter Property="Margin" Value="-1" />
+        <Setter Property="RadiusX" Value="2" />
+        <Setter Property="RadiusY" Value="2" />
+        <Setter Property="Opacity" Value="0.25" />
+        <Setter Property="IsHitTestVisible" Value="False" />
+    </Style>
+
+    <!-- TabItem -->
+    <Thickness x:Key="TabItem.Padding">11,3,11,3</Thickness>
+
+    <Thickness x:Key="TabItem.TopPadding">11,3,11,2</Thickness>
+    <Thickness x:Key="TabItem.BottomPadding">11,2,11,3</Thickness>
+
+    <Thickness x:Key="TabItem.DefaultState.Root.Margin">0</Thickness>
+
+    <Thickness x:Key="TabItem.SelectedState.Top.Root.Margin">0,-2,-1,0</Thickness>
+    <Thickness x:Key="TabItem.SelectedState.Top.Item.Padding">1,1,1,0</Thickness>
+    <Thickness x:Key="TabItem.SelectedState.Top.Item.Margin">0,0,0,-1</Thickness>
+
+    <Thickness x:Key="TabItem.SelectedState.Bottom.Root.Margin">0,0,-1,-2</Thickness>
+    <Thickness x:Key="TabItem.SelectedState.Bottom.Item.Padding">1,0,1,1</Thickness>
+    <Thickness x:Key="TabItem.SelectedState.Bottom.Item.Margin">0,-1,0,0</Thickness>
+
+    <Thickness x:Key="TabItem.SelectedState.Left.Root.Margin">-2,0,0,-1</Thickness>
+    <Thickness x:Key="TabItem.SelectedState.Left.Item.Padding">1,1,0,1</Thickness>
+    <Thickness x:Key="TabItem.SelectedState.Left.Item.Margin">0,0,-1,0</Thickness>
+
+    <Thickness x:Key="TabItem.SelectedState.Right.Root.Margin">0,0,-2,-1</Thickness>
+    <Thickness x:Key="TabItem.SelectedState.Right.Item.Padding">0,1,1,1</Thickness>
+    <Thickness x:Key="TabItem.SelectedState.Right.Item.Margin">-1,0,0,0</Thickness>
+
+</ResourceDictionary>

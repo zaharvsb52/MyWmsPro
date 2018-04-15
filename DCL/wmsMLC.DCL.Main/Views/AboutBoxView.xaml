@@ -1,0 +1,78 @@
+﻿<views:BaseDialogWindow x:Class="wmsMLC.DCL.Main.Views.AboutBoxView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+    ShowInTaskbar="false"
+    Icon="{lex:LocExtension Key=wmsMLC.DCL.Resources:ImageResources:wms32}"
+	SmallIcon="{lex:LocExtension Key=wmsMLC.DCL.Resources:ImageResources:wms16}"
+    Width="500" Height="350"
+    Background="Transparent" Topmost="True"
+    xmlns:vm="clr-namespace:wmsMLC.DCL.Main.ViewModels"
+    xmlns:lex="http://wpflocalizeextension.codeplex.com"
+    xmlns:views="clr-namespace:wmsMLC.DCL.Main.Views">
+
+    <views:BaseDialogWindow.DataContext>
+        <vm:AboutBoxViewModel />
+    </views:BaseDialogWindow.DataContext>
+
+    <Grid>
+        <!--<Grid.Background> 
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="White" Offset="0" />
+                <GradientStop Color="#FF5A61F7" Offset="1" />
+                <GradientStop Color="#FF646AF7" Offset="0.96" />
+                <GradientStop Color="#FFDBDCFD" Offset="0.518" />
+                <GradientStop Color="#FFB8BAFB" Offset="0.77" />
+                <GradientStop Color="#FF9296F9" Offset="0.926" />
+            </LinearGradientBrush>
+        </Grid.Background>-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="6*" />
+            <RowDefinition Height="15*" />
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="30*" />
+            <RowDefinition Height="7*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
+
+        <Image Margin="5,0,5,0" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Stretch="Uniform" HorizontalAlignment="Left" VerticalAlignment="Stretch" Source="{lex:LocExtension Key=wmsMLC.DCL.Resources:ImageResources:Core}" />
+
+        <DockPanel Grid.Row="0" Grid.Column="1">
+            <TextBlock Text="{Binding Path=Product}" Margin="5" TextWrapping="Wrap" Foreground="Black" FontSize="16" DockPanel.Dock="Left" HorizontalAlignment="Left" VerticalAlignment="Stretch" />
+        </DockPanel>
+        
+        <DockPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Top">
+            <TextBlock Text="Version:" Margin="5" DockPanel.Dock="Left" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            <TextBlock Text="{Binding Path=Version}" Foreground="Black" DockPanel.Dock="Left" HorizontalAlignment="Left" VerticalAlignment="Center" />
+        </DockPanel>
+
+        <DockPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom">
+            <TextBlock Margin="5" TextWrapping="Wrap" Text="{Binding Path=Copyright}" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center" />
+        </DockPanel>
+
+        <DockPanel Grid.Row="2" Grid.Column="0">
+            <TextBlock Text="Modules:" Margin="5" DockPanel.Dock="Left" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center" />
+        </DockPanel>
+
+        <Border Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"  BorderThickness="1." Margin="5, 0, 5, 0" BorderBrush="#FF2738A8" Name="Bord" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalAlignment="Top">
+                <TextBlock Margin ="3" Text="{Binding Path=AllModules}" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Visible" VerticalAlignment="Top" />
+            </ScrollViewer>
+        </Border>
+
+        <TextBlock Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="5" HorizontalAlignment="Left" VerticalAlignment="Center">
+             <Hyperlink NavigateUri="{Binding Email}" RequestNavigate="Hyperlink_OnRequestNavigate">
+                <TextBlock x:Name="textBlock" Text="{Binding Email}" Foreground="Black" Opacity="0.5" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            </Hyperlink>
+        </TextBlock>
+        
+        <Button IsCancel="True" Content="OK" Grid.Row="4" Grid.Column="1" Margin="0,5,5,5" HorizontalAlignment="Right" VerticalAlignment="Center" Width="70" />
+
+    </Grid>
+</views:BaseDialogWindow>

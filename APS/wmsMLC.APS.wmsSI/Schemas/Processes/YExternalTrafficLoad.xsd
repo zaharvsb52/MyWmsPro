@@ -1,0 +1,465 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include  id="WmsDateTime" schemaLocation="../Entities/WmsDateTime.xsd"/>
+
+  <!--!!!ВНИМАНИЕ!!!-->
+  <!--ФОРМАТ И БП ДАННОЙ ТЕЛЕГРАММЫ БУДЕТ ИЗМЕНЕН-->
+  <!--Описание телеграммы внешнего рейса-->
+  <xs:element name="WMSTELEGRAM">
+    <xs:complexType>
+      <xs:sequence>
+        <!--Уникальный идентификатор телеграммы (GUID)-->
+        <xs:element name="ID" nillable="false">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="128"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <!--Дата отправки телеграммы-->
+        <xs:element name="DATE" type="WmsDateTime" nillable="false" />
+        <!--Тип телеграммы-->
+        <xs:element name="TYPE">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="60"/>
+              <xs:enumeration value="ACTION"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <!--Имя сущности-->
+        <xs:element name="ENTITY">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="128"/>
+              <xs:enumeration value="YEXTERNALTRAFFIC"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <!--Код телеграммы-->
+        <xs:element name="TELCODE">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="60"/>
+              <xs:enumeration value="WMS_PROCESS"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <!--Название процесса-->
+        <xs:element name="ACTION">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="128"/>
+              <xs:enumeration value="YExternalTraffic"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <!--Содержание документа-->
+        <!--Объекты телеграммы-->
+        <xs:element name="CONTENT">
+          <xs:complexType>
+            <xs:sequence>
+              <!--Список сущности-->
+              <xs:element name="ITEMS">
+                <xs:complexType>
+                  <xs:sequence>
+                    <!--Список передвижений транспорта-->
+                    <xs:element maxOccurs="unbounded" name="EXTERNALTRAFFIC" type="EXTERNALTRAFFICTYPE" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!--Тип "Адресная книга"-->
+  <xs:complexType name="ADDRESSBOOKTYPE">
+    <xs:sequence>
+      <!--Если клиент знает свой ID то его и указывает-->
+      <xs:element name="ADDRESSBOOKID" type="xs:integer" />
+      <xs:element name="ADDRESSBOOKCOUNTRY">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ADDRESSBOOKINDEX" type="xs:integer" />
+      <xs:element name="ADDRESSBOOKREGION">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ADDRESSBOOKCITY">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ADDRESSBOOKDISTRICT">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ADDRESSBOOKSTREET">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ADDRESSBOOKBUILDING">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ADDRESSBOOKAPARTMENT">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ADDRESSBOOKTYPECODE">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+            <xs:enumeration value="ADR_PHYSICAL"/>
+            <xs:enumeration value="ADR_LEGAL"/>
+            <xs:enumeration value="ADR_POST"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!--Документ работника-->
+  <xs:complexType name="WORKERDOCUMENTTYPE">
+    <xs:sequence>
+      <xs:element name="WORKERPASSTYPE">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1030"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="WORKERPASSSERIES">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="WORKERPASSNUMBER">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="WORKERPASSRECEIPT" type="WmsDateTime" />
+      <xs:element name="WORKERPASSAGENCY">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="255"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!--Груз-->
+  <xs:complexType name="CARGOIWBTYPE">
+    <xs:sequence>
+      <xs:element name="IWBNAME">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="60"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="MANDANTID" type="xs:integer"/>
+      <xs:element name="CARGOIWBNET" type="xs:integer" />
+      <xs:element name="CARGOIWBBRUTTO" type="xs:integer" />
+      <xs:element name="CARGOIWBVOLUME" type="xs:integer" />
+      <xs:element name="CARGOIWBCOUNT" type="xs:integer" />
+      <xs:element name="CARGOIWBLOADADDRESS" type="ADDRESSBOOKTYPE" />
+      <xs:element name="CARGOIWBLOADBEGIN" type="WmsDateTime"/>
+      <xs:element name="CARGOIWBLOADEND" type="WmsDateTime"/>
+      <xs:element name="CARGOIWBSTAMP" nillable="true">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CARGOIWBCONTAINER" nillable="true">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CARGOIWBPOSLCLIENT" type="CARGOIWBPOSTYPE" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <!--Описание позиций груза-->
+  <xs:complexType name="CARGOIWBPOSTYPE">
+    <xs:sequence>
+      <xs:element name="CARGOIWBPOSCOUNT" type="xs:integer" />
+      <xs:element name="TETYPECODE">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="TETYPE_AMERICAN"/>
+            <xs:enumeration value="EURO120"/>
+            <xs:enumeration value="EURO"/>
+            <xs:enumeration value="FIN"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CARGOIWBPOSQLF">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="QLFNORMAL"/>
+            <xs:enumeration value="QLFRETURN"/>
+            <xs:enumeration value="QLFQUALITY"/>
+            <xs:enumeration value="QLFDEFECT"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!--Описание типа сотрудника-->
+  <xs:complexType name="WORKERTYPE">
+    <xs:sequence>
+      <xs:element name="WORKERLASTNAME" nillable="false">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="WORKERNAME">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="WORKERMIDDLENAME">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="WORKEREMPLOYEE" type="xs:integer" nillable="false"/>
+      <xs:element name="WORKERPHONEWORK">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="WORKERPHONEMOBILE">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="WORKERTYPE">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+            <xs:enumeration value="IsForvarder"/>
+            <xs:enumeration value="IsCarDriver"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="WORKERADDRESSL" type="ADDRESSBOOKTYPE" />
+      <xs:element name="WORKERPASSL" type="WORKERDOCUMENTTYPE" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <!--Описание типа передвижений транспорта-->
+  <xs:complexType name="EXTERNALTRAFFICTYPE">
+    <xs:sequence>
+      <!--Регистрационный номер прицепа-->
+      <xs:element name="EXTERNALTRAFFICTRAILERRN">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Номер пломбы-->
+      <xs:element name="EXTERNALTRAFFICSTAMP">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="EXTERNALTRAFFICPLANARRIVED" type="WmsDateTime"/>
+      <xs:element name="EXTERNALTRAFFICFACTARRIVED" type="WmsDateTime"/>
+      <xs:element name="EXTERNALTRAFFICFACTDEPARTED" type="WmsDateTime"/>
+      <!--Идентификатор в хост-системе-->
+      <xs:element name="EXTERNALTRAFFICHOSTREF">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="EXTERNALTRAFFICCARRIER" type="xs:integer"/>
+
+      <!--Описание автомобиля-->
+      <xs:element name="VEHICLE">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="VEHICLERN">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="30"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="VEHICLEVIN">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="30"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="VEHICLECOLOR">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="1030"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="VEHICLEMAXWEIGHT" type="xs:integer"/>
+            <xs:element name="VEHICLEEMPTYWEIGHT" type="xs:integer"/>
+            <xs:element name="VEHICLETYPE">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="1030"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="VEHICLETRAILERRN">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="30"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="VEHICLETRAILERMAXWEIGHT" type="xs:integer"/>
+            <xs:element name="VEHICLETRAILEREMPTYWEIGHT" type="xs:integer" />
+            <xs:element name="VEHICLEOWNERLEGAL" type="xs:integer" />
+            <xs:element name="VEHICLEPERSON" type="xs:integer" />
+            <xs:element name="VEHICLEHOSTREF">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="128"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="CARTYPE">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="CARTYPEMARK">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="30"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CARTYPEMODEL">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="30"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CARTYPEDESC">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="1024"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+
+      <!--Груз на поставку-->
+      <xs:element name="CARGOIWBL" type="CARGOIWBTYPE" maxOccurs="unbounded" minOccurs="1"/>
+
+      <!--Статус-->
+      <xs:element name="STATUS">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+            <xs:enumeration value="CAR_ARRIVED"/>
+            <xs:enumeration value="CAR_DEPARTED"/>
+            <xs:enumeration value="CAR_ONTHEWAY"/>
+            <xs:enumeration value="CAR_PLAN"/>
+            <xs:enumeration value="CAR_TRANSITTERRITORY"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+      <!--Водитель-->
+      <xs:element name="DRIVER" type="WORKERTYPE"/>
+      <!--Экспедитор-->
+      <xs:element name="FORVARDER" type="WORKERTYPE"/>
+      <!--Перевозчик-->
+      <xs:element name="CARRIER" type="xs:integer"/>
+      <!--Парковка-->
+      <xs:element name="PARKING">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="PARKINGNUMBER" nillable="false">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="30"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="PARKINGNAME" nillable="false">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="64"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="PARKINGAREA">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="1030"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

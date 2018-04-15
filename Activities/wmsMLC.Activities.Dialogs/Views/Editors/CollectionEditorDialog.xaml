@@ -1,0 +1,86 @@
+﻿<Window x:Class="wmsMLC.Activities.Dialogs.Views.Editors.CollectionEditorDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation"
+    xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation"
+    xmlns:views="clr-namespace:wmsMLC.Activities.Dialogs.Views"
+    Title="Edit Collection" 
+    Height="400" Width="1500" 
+    WindowStartupLocation="CenterScreen" 
+    WindowStyle="SingleBorderWindow" 
+    MinHeight="400" MinWidth="700">
+
+    <Window.Resources>
+        <sapc:ModelToObjectValueConverter x:Key="ModelItemConverter" />
+        <views:GenericTypeParameterConverter x:Key="TypeParameterConverter"/>
+    </Window.Resources>
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35" />
+            <RowDefinition Height="527*" />
+            <RowDefinition Height="39" />
+        </Grid.RowDefinitions>
+        
+        <ToolBarTray Grid.Row="0">
+            <ToolBar ToolBarTray.IsLocked="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Button Margin="10,0,0,0" Content="Добавить" Click="_buttonAdd_Click" />
+                <Button Margin="10,0,0,0" Content="Вверх" Click="_buttonUp_Click" />
+                <Button Margin="10,0,0,0" Content="Вниз" Click="_buttonDown_Click" />
+                <Button Margin="10,0,0,0" Content="Удалить" Click="_buttonDelete_Click" />
+            </ToolBar>
+        </ToolBarTray>
+
+        <DataGrid Name="_dataGrid" Grid.Row="1" ItemsSource="{Binding}" AutoGenerateColumns="False" Margin="0,0,0,19" SelectionMode="Single"  CanUserAddRows="False" CanUserDeleteRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название" Binding="{Binding Path=Name}" Width="100"/>
+                <DataGridTextColumn Header="Надпись" Binding="{Binding Path=Caption}" Width="120"/>
+                <DataGridComboBoxColumn Header="Расположение надписи" TextBinding="{Binding LabelPosition}" Width="150">
+                    <DataGridComboBoxColumn.ItemsSource>
+                        <CompositeCollection>
+                            <ListBoxItem Content="Left"/>
+                            <ListBoxItem Content="Top"/>
+                            <ListBoxItem Content="None"/>
+                        </CompositeCollection>
+                    </DataGridComboBoxColumn.ItemsSource>
+                </DataGridComboBoxColumn>
+                <DataGridTextColumn Header="Порядок" Binding="{Binding Path=Order}" Width="100"/>
+                <DataGridCheckBoxColumn Header="Is enabled" Binding="{Binding Path=IsEnabled}" Width="80"/>
+                <DataGridCheckBoxColumn Header="Visible" Binding="{Binding Path=Visible}" Width="80"/>
+                <DataGridTemplateColumn Header="Тип" Width="100">
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <sapv:TypePresenter x:Name="addArgumentTypePresenter" VerticalAlignment="Center" Context="{Binding DataContext, ElementName=LayoutRoot}" Type="{Binding FieldType, Mode=TwoWay, Converter={StaticResource ModelItemConverter}}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock VerticalAlignment="Center" Text="{Binding Path=FieldType, Converter={StaticResource TypeParameterConverter}, ValidatesOnExceptions=True}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridCheckBoxColumn Header="Focus" Binding="{Binding Path=SetFocus}" Width="80"/>
+                <DataGridCheckBoxColumn Header="Close Dialog" Binding="{Binding Path=CloseDialog}" Width="80"/>
+                <DataGridTextColumn Header="Значение" Binding="{Binding Path=Value}" Width="100"/>
+                <DataGridTextColumn Header="LookupCode" Binding="{Binding Path=LookupCode}" Width="100"/>
+                <DataGridTextColumn Header="LookUpFilterExt" Binding="{Binding Path=LookupFilterExt}" Width="100"/>
+                <!--<DataGridTextColumn Header="LookUpVarFilterExt" Binding="{Binding Path=LookupVarFilterExt}" Width="100"/>-->
+                <DataGridTemplateColumn Header="Свойства">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="OnEditProperties">...</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="DisplayFormat" Binding="{Binding Path=DisplayFormat}" Width="100"/>
+                <!--<DataGridTextColumn Header="Tooltip" Binding="{Binding Path=Description}" Width="200"/>-->
+                <DataGridCheckBoxColumn Header="IsMemoView" Binding="{Binding Path=IsMemoView}" Width="80"/>
+                <!--<DataGridCheckBoxColumn Header="Обязательное поле?" Binding="{Binding Path=IsRequired}" Width="100"/>-->
+                <DataGridTextColumn Header="Заливка" Binding="{Binding Path=BackGroundColor}" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        
+        <Button Content="OK" Grid.Row="2" Height="23" HorizontalAlignment="Right" Margin="0,0,100,0" Name="_buttonOK" VerticalAlignment="Top" Width="75" Click="_buttonOK_Click" />
+        <Button Content="Cancel" Grid.Row="2" Height="23" HorizontalAlignment="Right" Margin="0,0,10,0" Name="_buttonCancel" VerticalAlignment="Top" Width="75" Click="_buttonCancel_Click" />
+    </Grid>
+</Window>

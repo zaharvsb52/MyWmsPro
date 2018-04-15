@@ -1,0 +1,312 @@
+﻿<UserControl x:Class="wmsMLC.DCL.Main.Views.MainView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+    xmlns:dxdo="http://schemas.devexpress.com/winfx/2008/xaml/docking"
+    xmlns:viewModels="clr-namespace:wmsMLC.DCL.Main.ViewModels"
+    xmlns:lex="clr-namespace:WPFLocalizeExtension.Extensions;assembly=WPFLocalizeExtension"
+    xmlns:dxga="http://schemas.devexpress.com/winfx/2008/xaml/gauges"
+    xmlns:balloons="clr-namespace:wmsMLC.DCL.Main.Views.Balloons"
+    xmlns:controls="clr-namespace:wmsMLC.DCL.Main.Views.Controls"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:properties="clr-namespace:wmsMLC.DCL.Main.Properties"
+    xmlns:help="clr-namespace:wmsMLC.DCL.Main.Helpers"
+    xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+    help:Help.FileName="{Binding Source={x:Static properties:Settings.Default}, Path=HelpFileName}"
+    help:Help.Keyword="wmsMLC"
+    mc:Ignorable="d" 
+    d:DesignHeight="300" d:DesignWidth="300">
+
+    <UserControl.Resources>
+        <Style x:Key="Blinking">
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="Image.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="(Image.Opacity)" BeginTime="0:0:0" Duration="0:0:0.5" From="1.0" To="0.0" RepeatBehavior="Forever" AutoReverse="True" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+        <Storyboard x:Key="FadeIn">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="grid" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:01" Value="0.95" />
+                <SplineDoubleKeyFrame KeyTime="00:00:03" Value="0.95" />
+                <!--				<SplineDoubleKeyFrame KeyTime="00:00:05" Value="0"/>-->
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="FadeBack">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="grid" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="FadeOut">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="grid" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0.2" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Popup" Timeline.DesiredFrameRate="30">
+            <DoubleAnimation  Storyboard.TargetProperty="Height" From="0" To="150" BeginTime="00:00:01" Duration="00:00:0.2" />
+            <DoubleAnimation  Storyboard.TargetProperty="Height" From="150" To="0" BeginTime="00:00:10" Duration="00:00:0.2" />
+        </Storyboard>
+        <BooleanToVisibilityConverter x:Key="BoolToVis" />
+    </UserControl.Resources>
+
+    <UserControl.DataContext>
+        <viewModels:MainViewModel />
+    </UserControl.DataContext>
+    <Grid>
+        <dxb:BarManager x:Name="BarManager" AllowCustomization="False" ItemClick="BarManager_OnItemClick">
+            <dxb:BarManager.Items>
+                <dxb:BarButtonItem x:Name="aboutBox" Content="{lex:Loc Key=wmsMLC.DCL.Resources:StringResources:AboutProgram}" Command="{Binding AboutCommand}" />
+                <dxb:BarButtonItem x:Name="userInfo" Content="{Binding UserInfo}" Command="{Binding LoginCommand}" />
+                <dxb:BarButtonItem x:Name="sysDbInfo" Content="{Binding SysEnvironmentInfo}" Command="{Binding SysDbInfoCommand}" />
+                
+                <dxb:BarButtonItem x:Name="miPacking"
+                                   Content="{lex:Loc Key=wmsMLC.DCL.Resources:StringResources:Packing}"
+                                   Command="{Binding PackingShowCommand}" 
+                                   Glyph="{lex:Loc Key=wmsMLC.DCL.Resources:ImageResources:DCLPackingPanel16}"
+                                   LargeGlyph="{lex:Loc Key=wmsMLC.DCL.Resources:ImageResources:DCLPackingPanel32}" />
+                <dxb:BarButtonItem x:Name="miCustomsShow"
+                                   Content="Таможня"
+                                   Command="{Binding CustomsShowCommand}" />
+                <dxb:BarSubItem x:Name="miOperations" Content="{lex:Loc Key=wmsMLC.DCL.Resources:StringResources:Operations}">
+                    <dxb:BarSubItem.ItemLinks>
+                        <dxb:BarButtonItemLink BarItemName="miPacking"/>
+                        <dxb:BarButtonItemLink BarItemName="miCustomsShow"/>
+                    </dxb:BarSubItem.ItemLinks>
+                </dxb:BarSubItem>
+                <dxb:BarButtonItem x:Name="miDashboardShow" Content="{lex:Loc Key=wmsMLC.DCL.Resources:StringResources:Showing}" Command="{Binding DashboardShowCommand}" />
+                <dxb:BarButtonItem x:Name="miTopology" Content="{lex:Loc Key=wmsMLC.DCL.Resources:StringResources:Topology}" Command="{Binding TopologyShowCommand}" />
+                <!--<dxb:BarButtonItem x:Name="miWorkingManage" Content="Работы" Command="{Binding WorkingManageShowCommand}" />-->
+                <dxb:BarSubItem x:Name="miTools" Content="{lex:Loc Key=wmsMLC.DCL.Resources:StringResources:Tools}">
+                    <dxb:BarSubItem.ItemLinks>
+                        <dxb:BarButtonItemLink BarItemName="miDashboardShow"/>
+                        <!--<dxb:BarButtonItemLink BarItemName="miTopology"/>-->
+                        <!--<dxb:BarButtonItemLink BarItemName="miWorkingManage"/>-->
+                    </dxb:BarSubItem.ItemLinks>
+                </dxb:BarSubItem>
+
+                <dxb:BarButtonItem x:Name="miReportPrint" Content="{lex:Loc Key=wmsMLC.DCL.Resources:StringResources:Reports}" Command="{Binding PrintReportCommand}" />
+
+                <dxb:BarSubItem x:Name="miThemes" CategoryName="Themes" Content="{lex:Loc Key=wmsMLC.DCL.Resources:StringResources:Themes}"/>
+                <dxb:BarSubItem x:Name="miSettings" Content="{lex:Loc Key=wmsMLC.DCL.Resources:StringResources:Settings}">
+                    <dxb:BarSubItem.ItemLinks>
+                        <dxb:BarSubItemLink  BarItemName="miThemes"/>
+                    </dxb:BarSubItem.ItemLinks>
+                </dxb:BarSubItem>
+
+                <dxb:BarSubItem  x:Name="workerInfo" Content="{Binding WorkerFIO}" ItemLinksSource="{Binding InfoWorkers}">
+                    <dxb:BarSubItem.ContentTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{lex:Loc Key=wmsMLC.DCL.Resources:StringResources:Worker}"/>
+                                <TextBlock Text="{Binding}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </dxb:BarSubItem.ContentTemplate>
+                    <dxb:BarSubItem.ItemTemplate>
+                        <DataTemplate>
+                            <ContentControl>
+                                <dxb:BarButtonItem Content="{Binding Caption}" Command="{Binding ItemCommand}" CommandParameter="{Binding Caption}"/>
+                            </ContentControl>
+                        </DataTemplate>
+                    </dxb:BarSubItem.ItemTemplate>
+                </dxb:BarSubItem>
+
+
+                <dxb:BarButtonItem x:Name="mandantInfo" Content="{Binding MandantNames}" Command="{Binding MandantsCommand}">
+                    <dxb:BarButtonItem.ContentTemplate >
+                        <DataTemplate>
+                            <StackPanel Grid.Column="0" Orientation="Horizontal">
+                                <TextBlock Text="{lex:Loc Key=wmsMLC.DCL.Resources:StringResources:Mandant}"/>
+                                <TextBlock Text=" "/>
+                                <TextBlock Text="{Binding}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </dxb:BarButtonItem.ContentTemplate>
+                </dxb:BarButtonItem>
+
+                <!--                <dxb:BarButtonItem x:Name="miClearCache" Content="{lex:Loc Key=wmsMLC.DCL.Resources:StringResources:ClearCache}" Command="{Binding ClearCacheCommand}" />-->
+                <dxb:BarButtonItem x:Name="miLiteClearCache" Content="{lex:Loc Key=wmsMLC.DCL.Resources:StringResources:LiteClearCache}" Command="{Binding LiteCacheClearCommand}" />
+                <dxb:BarButtonItem x:Name="miProperty" Content="{lex:Loc Key=wmsMLC.DCL.Resources:StringResources:PropertyWindow}" Command="{Binding PropertyCommand}" />
+                <dxb:BarSubItem x:Name="miAdministration" Content="{lex:Loc Key=wmsMLC.DCL.Resources:StringResources:Administration}">
+                    <dxb:BarSubItem.ItemLinks>
+<!--                        <dxb:BarButtonItemLink BarItemName="miClearCache" />-->
+                        <dxb:BarButtonItemLink BarItemName="miLiteClearCache" />
+                        <dxb:BarButtonItemLink BarItemName="miProperty" />
+                    </dxb:BarSubItem.ItemLinks>
+                </dxb:BarSubItem>
+
+                <dxb:BarButtonItem x:Name="systemMessages" Command="{Binding ChatShowCommand}">
+                    <dxb:BarButtonItem.ContentTemplate>
+                        <DataTemplate DataType="{x:Type viewModels:MainViewModel}">
+                            <dxga:StateIndicatorControl StateIndex="{Binding DataContext.SysMsgState, RelativeSource={RelativeSource AncestorType={x:Type dxb:BarManager}, Mode=FindAncestor}}" 
+                                ToolTip="{Binding DataContext.SystemMessageCount, RelativeSource={RelativeSource AncestorType={x:Type dxb:BarManager}, Mode=FindAncestor}}"                                
+                                Height="20" Width="20"
+                                Tag="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}">
+                                <dxga:StateIndicatorControl.ContextMenu>
+                                    <ContextMenu>
+                                        <MenuItem Header="{lex:Loc Key=wmsMLC.DCL.Resources:StringResources:SystemMessage}"
+                                                  Command="{Binding Path=PlacementTarget.Tag.DataContext.SystemMessageCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ContextMenu}}"/>
+                                    </ContextMenu>
+                                </dxga:StateIndicatorControl.ContextMenu>
+                                <dxga:StateIndicatorControl.Model>
+                                    <dxga:EmptyStateIndicatorModel />
+                                </dxga:StateIndicatorControl.Model>
+                                <dxga:StateIndicatorControl.AdditionalStates>
+                                    <dxga:State>
+                                        <dxga:State.Presentation>
+                                            <dxga:CustomStatePresentation>
+                                                <dxga:CustomStatePresentation.StateTemplate>
+                                                    <ControlTemplate>
+                                                        <Image Source="{lex:Loc Key=wmsMLC.DCL.Resources:ImageResources:DCLSysMsgNone32}" />
+                                                    </ControlTemplate>
+                                                </dxga:CustomStatePresentation.StateTemplate>
+                                            </dxga:CustomStatePresentation>
+                                        </dxga:State.Presentation>
+                                    </dxga:State>
+                                    <dxga:State>
+                                        <dxga:State.Presentation>
+                                            <dxga:CustomStatePresentation>
+                                                <dxga:CustomStatePresentation.StateTemplate>
+                                                    <ControlTemplate>
+                                                        <Image Source="{lex:Loc Key=wmsMLC.DCL.Resources:ImageResources:DCLSysMsgReceived32}" Opacity="1" Style="{StaticResource ResourceKey=Blinking}" />
+                                                    </ControlTemplate>
+                                                </dxga:CustomStatePresentation.StateTemplate>
+                                            </dxga:CustomStatePresentation>
+                                        </dxga:State.Presentation>
+                                    </dxga:State>
+                                    <dxga:State>
+                                        <dxga:State.Presentation>
+                                            <dxga:CustomStatePresentation>
+                                                <dxga:CustomStatePresentation.StateTemplate>
+                                                    <ControlTemplate>
+                                                        <Image Source="{lex:Loc Key=wmsMLC.DCL.Resources:ImageResources:DCLSysMsgNotReaded32}" />
+                                                    </ControlTemplate>
+                                                </dxga:CustomStatePresentation.StateTemplate>
+                                            </dxga:CustomStatePresentation>
+                                        </dxga:State.Presentation>
+                                    </dxga:State>
+                                    <dxga:State>
+                                        <dxga:State.Presentation>
+                                            <dxga:CustomStatePresentation>
+                                                <dxga:CustomStatePresentation.StateTemplate>
+                                                    <ControlTemplate>
+                                                        <Image Source="{lex:Loc Key=wmsMLC.DCL.Resources:ImageResources:DCLSysMsgReaded32}" />
+                                                    </ControlTemplate>
+                                                </dxga:CustomStatePresentation.StateTemplate>
+                                            </dxga:CustomStatePresentation>
+                                        </dxga:State.Presentation>
+                                    </dxga:State>
+                                </dxga:StateIndicatorControl.AdditionalStates>
+                            </dxga:StateIndicatorControl>
+                        </DataTemplate>
+                    </dxb:BarButtonItem.ContentTemplate>
+                </dxb:BarButtonItem>
+                <dxb:BarButtonItem x:Name="stateIndex">
+                    <dxb:BarButtonItem.ContentTemplate>
+                        <DataTemplate>
+                            <dxga:StateIndicatorControl StateIndex="{Binding DataContext.PingStateIndex, RelativeSource={RelativeSource AncestorType={x:Type dxb:BarManager}, Mode=FindAncestor}}" 
+                                ToolTip="{Binding DataContext.State, RelativeSource={RelativeSource AncestorType={x:Type dxb:BarManager}, Mode=FindAncestor}}"
+                                Height="20" Width="20"
+                                Tag="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}">
+                                <dxga:StateIndicatorControl.Model>
+                                    <dxga:LampStateIndicatorModel />
+                                </dxga:StateIndicatorControl.Model>
+                                <dxga:StateIndicatorControl.ContextMenu>
+                                    <ContextMenu >
+                                        <MenuItem Header="{lex:Loc Key=wmsMLC.DCL.Resources:StringResources:NextSDCL}"
+                                                  Command="{Binding Path=PlacementTarget.Tag.DataContext.NextSDCLCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ContextMenu}}">
+                                            <MenuItem.Icon>
+                                                <Image Source="{lex:LocExtension Key=wmsMLC.DCL.Resources:ImageResources:DCLConnect16}" ></Image>
+                                            </MenuItem.Icon>
+                                        </MenuItem>
+                                    </ContextMenu>
+                                </dxga:StateIndicatorControl.ContextMenu>
+                            </dxga:StateIndicatorControl>
+                        </DataTemplate>
+                    </dxb:BarButtonItem.ContentTemplate>
+                </dxb:BarButtonItem>
+            </dxb:BarManager.Items>
+            <dxb:BarManager.Bars>
+                <dxb:Bar Caption="MainMenu" x:Name="MainMenu" IsMainMenu="True">
+                    <dxb:Bar.DockInfo>
+                        <dxb:BarDockInfo ContainerType="Top" />
+                    </dxb:Bar.DockInfo>
+                    <dxb:BarItemLink BarItemName="aboutBox" Alignment="Far" />
+                    <dxb:BarItemLink BarItemName="miOperations" Alignment="Near"/>
+                    <dxb:BarItemLink BarItemName="miTools" Alignment="Near"/>
+                    <dxb:BarItemLink BarItemName="miReportPrint" Alignment="Near"/>
+                    <dxb:BarItemLink BarItemName="miSettings" Alignment="Near"/>
+                    <dxb:BarItemLink BarItemName="miAdministration" Alignment="Near" />
+                </dxb:Bar>
+                <dxb:Bar IsStatusBar="True">
+                    <dxb:Bar.DockInfo>
+                        <dxb:BarDockInfo ContainerType="Bottom" />
+                    </dxb:Bar.DockInfo>
+                    <dxb:BarItemLink BarItemName="userInfo" Alignment="Near" />
+                    <dxb:BarItemLinkSeparator />
+                    <dxb:BarItemLinkSeparator />
+                    <dxb:BarItemLink BarItemName="sysDbInfo" Alignment="Near" />
+                    <dxb:BarItemLinkSeparator />
+                    <dxb:BarItemLinkSeparator />
+                    <dxb:BarItemLink BarItemName="workerInfo" Alignment="Near" />
+                    <dxb:BarItemLink BarItemName="mandantInfo" Alignment="Near" />
+                    <dxb:BarItemLink BarItemName="systemMessages" Alignment="Far" />
+                    <dxb:BarItemLink BarItemName="stateIndex" Alignment="Far" />
+                </dxb:Bar>
+            </dxb:BarManager.Bars>
+            <dxdo:DockLayoutManager x:Name="dockManager"
+                                    FloatingMode="Desktop"
+                                    DisposeOnWindowClosing="True"
+                                    ClosingBehavior="ImmediatelyRemove">
+
+                <dxmvvm:Interaction.Behaviors>
+                    <!--<dxd:TabbedDocumentUIService DocumentGroup="{Binding ElementName=PanelHost}" />-->
+                    <dxdo:DockingDocumentUIService x:Name="DocServiceHost" LayoutGroup="{Binding ElementName=documentGroup}" />
+                    <dxdo:DockingDocumentUIService x:Name="DocServiceFloat" LayoutGroup="{Binding ElementName=FloatGroup}" />
+                    <!--<dxdo:DockingDocumentUIService x:Name="DocServiceFloat" LayoutGroup="{Binding ElementName=FloatGroup}" />-->
+                </dxmvvm:Interaction.Behaviors>
+
+                <i:Interaction.Behaviors>
+                    <help:DisableFloatingPanelTransparencyBehavior/>
+                </i:Interaction.Behaviors>
+
+                <dxdo:DockLayoutManager.FloatGroups>
+                    <dxdo:FloatGroup x:Name="FloatGroup"
+                                    DestroyOnClosingChildren="False">
+                    </dxdo:FloatGroup>
+                </dxdo:DockLayoutManager.FloatGroups>
+                
+                <dxdo:LayoutGroup>
+                    <dxdo:LayoutGroup Orientation="Vertical" DestroyOnClosingChildren="False">
+                        <dxdo:LayoutGroup ItemHeight="0.7*" Orientation="Horizontal">
+                            <dxdo:LayoutGroup x:Name="leftGroup" ItemWidth="0.12*" DestroyOnClosingChildren="False" />
+                            <controls:CustomDocumentGroup x:Name="documentGroup" ItemWidth="0.68*" MDIStyle="Tabbed" DestroyOnClosingChildren="False" />
+                            <dxdo:LayoutGroup x:Name="rightGroup" ItemWidth="0.4*" DestroyOnClosingChildren="False" />
+                        </dxdo:LayoutGroup>
+                    </dxdo:LayoutGroup>
+                </dxdo:LayoutGroup>
+            </dxdo:DockLayoutManager>
+        </dxb:BarManager>
+        <balloons:FancyBalloonView BalloonText="{Binding SystemMessage, NotifyOnTargetUpdated=True}" BalloonTitle="{Binding SystemMessageSubject}" CurrentTime="{Binding SystemMessageTime}"
+                                  HorizontalAlignment="Right" Width="400" Height="0" VerticalAlignment="Bottom">
+            <balloons:FancyBalloonView.Triggers>
+                <EventTrigger RoutedEvent="Binding.TargetUpdated">
+                    <BeginStoryboard Storyboard="{StaticResource FadeIn}" />
+                    <BeginStoryboard Storyboard="{StaticResource Popup}" />
+                </EventTrigger>
+            </balloons:FancyBalloonView.Triggers>
+        </balloons:FancyBalloonView>
+        <Border Name="cover" Background="Black" Opacity="0.50" Visibility="{Binding DeferedVisibility, ElementName=waitIndicator, Converter={StaticResource BoolToVis}}" />
+        <controls:CustomWaitIndicator x:Name="waitIndicator" DeferedVisibility="{Binding Path=WaitIndicatorVisible, IsAsync=True}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <controls:CustomWaitIndicator x:Name="updateWaitIndicator" Content="Выполняется обновление системы..." DeferedVisibility="{Binding Path=SystemUpdate, IsAsync=True}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+    </Grid>
+</UserControl>

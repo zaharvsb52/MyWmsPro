@@ -1,0 +1,365 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" xmlns:dxbt="http://schemas.devexpress.com/winfx/2008/xaml/bars/themekeys" xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon" xmlns:dxrt="http://schemas.devexpress.com/winfx/2008/xaml/ribbon/themekeys" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.RibbonControl}" TargetType="{x:Type dxr:RibbonControl}">
+    <Setter Property="Template" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=ControlTemplate}}" />
+    <Setter Property="HoverPageCaptionTextStyle" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=HoverPageCaptionTextStyle}}" />
+    <Setter Property="NormalPageCaptionTextStyle" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=NormalPageCaptionTextStyle}}" />
+    <Setter Property="SelectedPageCaptionTextStyle" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=SelectedPageCaptionTextStyle}}" />
+    <Setter Property="GroupCaptionTextStyle" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=GroupCaptionTextStyle}}" />
+    <Setter Property="MaxPageCaptionTextIndent" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=MaxPageCaptionTextIndent}}" />
+    <Setter Property="RowIndent" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=RowIndent}}" />
+    <Setter Property="ColumnIndent" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=ColumnIndent}}" />
+    <Setter Property="ApplicationMenuVerticalOffset" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=ApplicationMenuVerticalOffset}}" />
+    <Setter Property="ApplicationMenuHorizontalOffset" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=ApplicationMenuHorizontalOffset}}" />
+    <Setter Property="StandaloneHeaderBorderTemplate" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=StandaloneHeaderBorderTemplate}}" />
+    <Setter Property="ApplicationButton2007Style" Value="{DynamicResource {dxrt:ApplicationButtonThemeKey ResourceKey=Style2007}}" />
+    <Setter Property="ApplicationButton2010Style" Value="{DynamicResource {dxrt:ApplicationButtonThemeKey ResourceKey=Style2010}}" />
+    <Setter Property="ApplicationButton2007StyleInPopup" Value="{DynamicResource {dxrt:ApplicationButtonThemeKey ResourceKey=Style2007InPopup}}" />
+    <Setter Property="ApplicationButton2010StyleInPopup" Value="{DynamicResource {dxrt:ApplicationButtonThemeKey ResourceKey=Style2010InPopup}}" />
+    <Setter Property="ApplicationButtonPopupHorizontalOffset" Value="{DynamicResource {dxrt:ApplicationButtonThemeKey ResourceKey=PopupHorizontalOffset}}" />
+    <Setter Property="ApplicationButtonPopupVerticalOffset" Value="{DynamicResource {dxrt:ApplicationButtonThemeKey ResourceKey=PopupVerticalOffset}}" />
+    <Setter Property="ApplicationButton2010PopupHorizontalOffset" Value="{DynamicResource {dxrt:ApplicationButtonThemeKey ResourceKey=Popup2010HorizontalOffset}}" />
+    <Setter Property="ApplicationButton2010PopupVerticalOffset" Value="{DynamicResource {dxrt:ApplicationButtonThemeKey ResourceKey=Popup2010VerticalOffset}}" />
+    <Setter Property="SelectedPagePopupMargin" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=SelectedPagePopupMargin}}" />
+    <Setter Property="VerticalAlignment" Value="Top" />
+    <Setter Property="Focusable" Value="False" />
+    <Setter Property="IsTabStop" Value="False" />
+    <Setter Property="HeaderQAT2007ContainerStyle" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=HeaderQuickAccessToolbar2007ContainerStyle}}" />
+    <Setter Property="HeaderQAT2007ContainerStyleInRibbonWindow" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=HeaderQuickAccessToolbar2007ContainerStyleInRibbonWindow}}" />
+    <Setter Property="HeaderQAT2010ContainerStyle" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=HeaderQuickAccessToolbar2010ContainerStyle}}" />
+    <Setter Property="HeaderQAT2010ContainerStyleInRibbonWindow" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=HeaderQuickAccessToolbar2010ContainerStyleInRibbonWindow}}" />
+    <Setter Property="HeaderQATContainerStyleWithoutApplicationIcon" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=HeaderQuickAccessToolbarContainerStyleWithoutApplicationIcon}}" />
+    <!--BEGIN WPF-->
+    <Setter Property="ApplicationButton2007StyleInAeroWindow" Value="{DynamicResource {dxrt:ApplicationButtonThemeKey ResourceKey=Style2007InAeroWindow}}" />
+    <Setter Property="HeaderBorderTemplateInRibbonWindow" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=HeaderBorderTemplateInRibbonWindow}}" />
+    <Setter Property="AeroTemplate" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=AeroTemplate}}" />
+    <Setter Property="DefaultTemplate" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=ControlTemplate}}" />
+    <Setter Property="AeroBorderRibbonStyle" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=AeroBorderRibbonStyle}}" />
+    <Setter Property="AeroBorderTopOffset" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=AeroBorderTopOffset}}" />
+    <Setter Property="CollapsedRibbonAeroBorderTopOffset" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=CollapsedRibbonAeroBorderTopOffset}}" />
+    <Setter Property="HeaderQATContainerStyleWithoutAppIconInAeroWindow" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=HeaderQuickAccessToolbarContainerStyleWithoutAppIconInAeroWindow}}" />
+    <Setter Property="HeaderQAT2010ContainerStyleInAeroWindow" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=HeaderQuickAccessToolbar2010ContainerStyleInAeroWindow}}" />
+    <Setter Property="HeaderQAT2007ContainerStyleInAeroWindow" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=HeaderQuickAccessToolbar2007ContainerStyleInAeroWindow}}" />
+    <Setter Property="ApplicationMenuVerticalOffsetInAeroWindow" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=ApplicationMenuVerticalOffsetInAeroWindow}}" />
+    <Setter Property="ApplicationMenuHorizontalOffsetInAeroWindow" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=ApplicationMenuHorizontalOffsetInAeroWindow}}" />
+    <!--END WPF-->
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.RibbonPageCategoryControl}" TargetType="{x:Type dxr:RibbonPageCategoryControl}">
+    <Setter Property="Focusable" Value="False" />
+    <Setter Property="Template" Value="{DynamicResource {dxrt:RibbonPageCategoryThemeKey ResourceKey=ControlTemplate}}" />
+    <Setter Property="ItemsPanel" Value="{DynamicResource {dxrt:RibbonPageCategoryThemeKey ResourceKey=PanelTemplate}}" />
+    <Setter Property="IsTabStop" Value="False" />
+    <!--BEGIN WPF-->
+    <Setter Property="AeroTemplate" Value="{DynamicResource {dxrt:RibbonPageCategoryThemeKey ResourceKey=ControlTemplateInAeroWindow}}" />
+    <!--END WPF-->
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.RibbonPageCategoriesPane}" TargetType="{x:Type dxr:RibbonPageCategoriesPane}">
+    <Setter Property="Focusable" Value="False" />
+    <Setter Property="Template" Value="{DynamicResource {dxrt:RibbonPageCategoriesPaneThemeKey ResourceKey=ControlTemplate}}" />
+    <Setter Property="ItemsPanel" Value="{DynamicResource {dxrt:RibbonPageCategoriesPaneThemeKey ResourceKey=PanelTemplate}}" />
+    <Setter Property="IsTabStop" Value="False" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.RibbonPageHeaderControl}" TargetType="{x:Type dxr:RibbonPageHeaderControl}">
+    <Setter Property="Focusable" Value="False" />
+    <Setter Property="IsTabStop" Value="False" />
+    <Setter Property="Template" Value="{DynamicResource {dxrt:RibbonPageThemeKey ResourceKey=PageHeaderTemplate}}" />
+    <!--BEGIN WPF-->
+    <Setter Property="AeroTemplate" Value="{DynamicResource {dxrt:RibbonPageThemeKey ResourceKey=AeroPageHeaderTemplate}}" />
+    <!--END WPF-->
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.RibbonSelectedPageControl}" TargetType="{x:Type dxr:RibbonSelectedPageControl}">
+    <Setter Property="Focusable" Value="False" />
+    <Setter Property="Template" Value="{DynamicResource {dxrt:RibbonPageThemeKey ResourceKey=SelectedPageTemplate}}" />
+    <Setter Property="ItemsPanel" Value="{DynamicResource {dxrt:RibbonPageThemeKey ResourceKey=SelectedPagePanelTemplate}}" />
+    <Setter Property="BorderTemplate" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=SelectedPageBorderTemplate}}" />
+    <Setter Property="BorderTemplateInPopup" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=SelectedPageBorderTemplateInPopup}}" />
+    <Setter Property="HighlightedBorderTemplate" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=HighlightedSelectedPageBorderTemplate}}" />
+    <Setter Property="HighlightedBorderTemplateInPopup" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=HighlightedSelectedPageBorderTemplateInPopup}}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.RibbonPageGroupControl}" TargetType="{x:Type dxr:RibbonPageGroupControl}">
+    <Setter Property="Focusable" Value="False" />
+    <Setter Property="IsTabStop" Value="False" />
+    <Setter Property="Template" Value="{DynamicResource {dxrt:RibbonPageGroupThemeKey ResourceKey=ControlTemplate}}" />
+    <Setter Property="ItemsPanel" Value="{DynamicResource {dxrt:RibbonPageGroupThemeKey ResourceKey=PanelTemplate}}" />
+    <Setter Property="BorderTemplate" Value="{DynamicResource {dxrt:RibbonPageGroupThemeKey ResourceKey=BorderTemplate}}" />
+    <Setter Property="HighlightedBorderTemplate" Value="{DynamicResource {dxrt:RibbonPageGroupThemeKey ResourceKey=HighlightedBorderTemplate}}" />
+    <Setter Property="BorderTemplateInPopup" Value="{DynamicResource {dxrt:RibbonPageGroupThemeKey ResourceKey=BorderTemplateInPopup}}" />
+    <Setter Property="HighlightedBorderTemplateInPopup" Value="{DynamicResource {dxrt:RibbonPageGroupThemeKey ResourceKey=HighlightedBorderTemplateInPopup}}" />
+    <Setter Property="PopupButtonBorderTemplate" Value="{DynamicResource {dxrt:RibbonPageGroupThemeKey ResourceKey=PopupButtonBorderTemplate}}" />
+    <Setter Property="PopupButtonGlyphBorderTemplate" Value="{DynamicResource {dxrt:RibbonPageGroupThemeKey ResourceKey=PopupButtonGlyphBorderTemplate}}" />
+    <Setter Property="PopupButtonContentBorderTemplate" Value="{DynamicResource {dxrt:RibbonPageGroupThemeKey ResourceKey=PopupButtonContentBorderTemplate}}" />
+    <Setter Property="HighlightedPopupButtonBorderTemplate" Value="{DynamicResource {dxrt:RibbonPageGroupThemeKey ResourceKey=HighlightedPopupButtonBorderTemplate}}" />
+    <Setter Property="HighlightedPopupButtonGlyphBorderTemplate" Value="{DynamicResource {dxrt:RibbonPageGroupThemeKey ResourceKey=HighlightedPopupButtonGlyphBorderTemplate}}" />
+    <Setter Property="HighlightedPopupButtonContentBorderTemplate" Value="{DynamicResource {dxrt:RibbonPageGroupThemeKey ResourceKey=HighlightedPopupButtonContentBorderTemplate}}" />
+    <Setter Property="CaptionBorderTemplate" Value="{DynamicResource {dxrt:RibbonPageGroupThemeKey ResourceKey=CaptionBorderTemplate}}" />
+    <Setter Property="HighlightedCaptionBorderTemplate" Value="{DynamicResource {dxrt:RibbonPageGroupThemeKey ResourceKey=HighlightedCaptionBorderTemplate}}" />
+    <Setter Property="PopupHorizontalOffset" Value="{DynamicResource {dxrt:RibbonPageGroupThemeKey ResourceKey=PopupHorizontalOffset}}" />
+    <Setter Property="PopupVerticalOffset" Value="{DynamicResource {dxrt:RibbonPageGroupThemeKey ResourceKey=PopupVerticalOffset}}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.RibbonQuickAccessToolbarControl}" TargetType="{x:Type dxr:RibbonQuickAccessToolbarControl}">
+    <Setter Property="Template" Value="{DynamicResource {dxrt:QuickAccessToolbarThemeKey ResourceKey=RibbonToolbarTemplate}}" />
+    <Setter Property="ItemsPanel" Value="{DynamicResource {dxrt:QuickAccessToolbarThemeKey ResourceKey=RibbonToolbarItemsPanelTemplate}}" />
+    <Setter Property="Focusable" Value="False" />
+    <Setter Property="LeftContentTemplateInHeaderForOffice2007RibbonStyle" Value="{DynamicResource {dxrt:QuickAccessToolbarThemeKey ResourceKey=RibbonToolbarLeftContentTemplate}}" />
+    <Setter Property="LeftContentTemplateInFooterForOffice2007RibbonStyle" Value="{DynamicResource {dxrt:QuickAccessToolbarThemeKey ResourceKey=RibbonToolbarLeftContentTemplateInFooter}}" />
+    <Setter Property="RightContentTemplateInHeaderForOffice2007RibbonStyle" Value="{DynamicResource {dxrt:QuickAccessToolbarThemeKey ResourceKey=RibbonToolbarRightContentTemplate}}" />
+    <Setter Property="RightContentTemplateInFooterForOffice2007RibbonStyle" Value="{DynamicResource {dxrt:QuickAccessToolbarThemeKey ResourceKey=RibbonToolbarRightContentTemplateInFooter}}" />
+    <Setter Property="LeftContentTemplateInHeaderForOffice2010RibbonStyle" Value="{DynamicResource {dxrt:QuickAccessToolbarThemeKey ResourceKey=RibbonToolbarLeftContentTemplate2010}}" />
+    <Setter Property="LeftContentTemplateInFooterForOffice2010RibbonStyle" Value="{DynamicResource {dxrt:QuickAccessToolbarThemeKey ResourceKey=RibbonToolbarLeftContentTemplateInFooter}}" />
+    <Setter Property="RightContentTemplateInHeaderForOffice2010RibbonStyle" Value="{DynamicResource {dxrt:QuickAccessToolbarThemeKey ResourceKey=RibbonToolbarRightContentTemplate2010}}" />
+    <Setter Property="RightContentTemplateInFooterForOffice2010RibbonStyle" Value="{DynamicResource {dxrt:QuickAccessToolbarThemeKey ResourceKey=RibbonToolbarRightContentTemplateInFooter}}" />
+    <Setter Property="LeftContentTemplateInPopup" Value="{DynamicResource {dxrt:QuickAccessToolbarThemeKey ResourceKey=RibbonToolbarLeftContentTemplateInPopup}}" />
+    <Setter Property="LeftContentTemplateInTitle" Value="{DynamicResource {dxrt:QuickAccessToolbarThemeKey ResourceKey=RibbonToolbarLeftContentTemplateInTitle}}" />
+    <Setter Property="RightContentTemplateInPopup" Value="{DynamicResource {dxrt:QuickAccessToolbarThemeKey ResourceKey=RibbonToolbarRightContentTemplateInPopup}}" />
+    <Setter Property="RightContentTemplateInTitle" Value="{DynamicResource {dxrt:QuickAccessToolbarThemeKey ResourceKey=RibbonToolbarRightContentTemplateInTitle}}" />
+    <Setter Property="CustomizationButtonTemplateInFooter" Value="{DynamicResource {dxrt:QuickAccessToolbarThemeKey ResourceKey=RibbonToolbarCustomizationButtonTemplateInFooter}}" />
+    <Setter Property="CustomizationButtonTemplateInHeader" Value="{DynamicResource {dxrt:QuickAccessToolbarThemeKey ResourceKey=RibbonToolbarCustomizationButtonTemplate}}" />
+    <Setter Property="DropDownButtonTemplateInFooter" Value="{DynamicResource {dxrt:QuickAccessToolbarThemeKey ResourceKey=RibbonToolbarDropDownButtonTemplateInFooter}}" />
+    <Setter Property="DropDownButtonTemplateInHeader" Value="{DynamicResource {dxrt:QuickAccessToolbarThemeKey ResourceKey=RibbonToolbarDropDownButtonTemplate}}" />
+    <!--BEGIN WPF-->
+    <Setter Property="LeftContentTemplateInAeroHeaderForOffice2007RibbonStyle" Value="{DynamicResource {dxrt:QuickAccessToolbarThemeKey ResourceKey=RibbonToolbarLeftContentTemplateInAeroHeader}}" />
+    <Setter Property="RightContentTemplateInAeroHeaderForOffice2007RibbonStyle" Value="{DynamicResource {dxrt:QuickAccessToolbarThemeKey ResourceKey=RibbonToolbarRightContentTemplateInAeroHeader}}" />
+    <Setter Property="LeftContentTemplateInAeroHeaderForOffice2010RibbonStyle" Value="{DynamicResource {dxrt:QuickAccessToolbarThemeKey ResourceKey=RibbonToolbarLeftContentTemplate2010InAeroHeader}}" />
+    <Setter Property="RightContentTemplateInAeroHeaderForOffice2010RibbonStyle" Value="{DynamicResource {dxrt:QuickAccessToolbarThemeKey ResourceKey=RibbonToolbarRightContentTemplate2010InAeroHeader}}" />
+    <!--END WPF-->
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.RibbonQuickAccessToolbarPopupBorderControl}" TargetType="{x:Type dxr:RibbonQuickAccessToolbarPopupBorderControl}">
+    <Setter Property="Template" Value="{DynamicResource {dxrt:QuickAccessToolbarThemeKey ResourceKey=RibbonToolbarPopupBorderTemplate}}" />
+    <!--BEGIN WPF-->
+    <Setter Property="Margin" Value="0,0,0,20" />
+    <!--END WPF-->
+  </Style>
+  <ControlTemplate x:Key="{dxrt:RibbonPageGroupThemeKey ResourceKey=PopupBorderTemplate}" TargetType="{x:Type dxr:RibbonPageGroupPopupBorderControl}">
+    <ContentPresenter Content="{TemplateBinding Content}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\IndependentPart.xaml;144;10" />
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxrt:RibbonPageThemeKey ResourceKey=SelectedPagePopupBorderTemplate}" TargetType="{x:Type dxr:RibbonSelectedPagePopupBorderControl}">
+    <ContentPresenter Content="{TemplateBinding Content}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\IndependentPart.xaml;148;10" />
+  </ControlTemplate>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.RibbonSelectedPagePopupBorderControl}" TargetType="{x:Type dxr:RibbonSelectedPagePopupBorderControl}">
+    <Setter Property="Template" Value="{DynamicResource {dxrt:RibbonPageThemeKey ResourceKey=SelectedPagePopupBorderTemplate}}" />
+    <!--BEGIN WPF-->
+    <Setter Property="Margin" Value="{DynamicResource {dxrt:RibbonPageThemeKey ResourceKey=SelectedPagePopupBorderMargin}}" />
+    <!--END WPF-->
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.RibbonPageGroupPopupBorderControl}" TargetType="{x:Type dxr:RibbonPageGroupPopupBorderControl}">
+    <Setter Property="Focusable" Value="False" />
+    <Setter Property="Template" Value="{DynamicResource {dxrt:RibbonPageGroupThemeKey ResourceKey=PopupBorderTemplate}}" />
+    <!--BEGIN WPF-->
+    <Setter Property="Margin" Value="{DynamicResource {dxrt:RibbonPageGroupThemeKey ResourceKey=PopupBorderMargin}}" />
+    <!--END WPF-->
+  </Style>
+  <ControlTemplate x:Key="{dxrt:RibbonThemeKey ResourceKey=PopupBorderTemplate}" TargetType="{x:Type dxr:RibbonPopupBorderControl}">
+    <ContentPresenter Content="{TemplateBinding Content}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\IndependentPart.xaml;166;10" />
+  </ControlTemplate>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.RibbonPopupBorderControl}" TargetType="{x:Type dxr:RibbonPopupBorderControl}">
+    <Setter Property="Template" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=PopupBorderTemplate}}" />
+  </Style>
+  <ControlTemplate x:Key="{dxrt:RibbonThemeKey ResourceKey=ApplicationMenuPopupBorderTemplate}" TargetType="{x:Type dxr:ApplicationMenuPopupBorderControl}">
+    <Grid SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\IndependentPart.xaml;173;10">
+      <ContentPresenter Content="{TemplateBinding Content}" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\IndependentPart.xaml;174;14" />
+      <Canvas HorizontalAlignment="Stretch" VerticalAlignment="Stretch" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\IndependentPart.xaml;175;14">
+        <dxr:RibbonApplicationButtonControl x:Name="PART_ApplicationButton" IsPopup="True" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\IndependentPart.xaml;176;18" />
+      </Canvas>
+    </Grid>
+  </ControlTemplate>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.ApplicationMenuPopupBorderControl}" TargetType="{x:Type dxr:ApplicationMenuPopupBorderControl}">
+    <Setter Property="Template" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=ApplicationMenuPopupBorderTemplate}}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.ApplicationMenuBarControl}" TargetType="{x:Type dxr:ApplicationMenuBarControl}">
+    <Setter Property="ItemsPanel" Value="{DynamicResource {dxbt:SubMenuBarControlThemeKey ResourceKey=ItemsPanelTemplate}}" />
+    <Setter Property="Template" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=ApplicationMenuBarControlTemplate}}" />
+    <Setter Property="DropIndicatorStyle" Value="{DynamicResource {dxbt:SubMenuBarControlThemeKey ResourceKey=DropIndicatorStyle}}" />
+    <Setter Property="GlyphPadding" Value="7,0,9,0" />
+    <Setter Property="MinHeight" Value="16" />
+    <Setter Property="RightPaneWidth" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=DefaultRightPaneWidth}}" />
+    <Setter Property="BorderTemplateForOffice2007Style" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=ApplicationMenuBarControlBorderTemplate2007}}" />
+    <Setter Property="BorderTemplateForOffice2010Style" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=ApplicationMenuBarControlBorderTemplate2010}}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.RibbonStatusBarControl}" TargetType="{x:Type dxr:RibbonStatusBarControl}">
+    <Setter Property="Template" Value="{DynamicResource {dxrt:RibbonStatusBarThemeKey ResourceKey=ControlTemplate}}" />
+    <Setter Property="MinHeight" Value="{DynamicResource {dxrt:RibbonStatusBarThemeKey ResourceKey=MinHeight}}" />
+    <Setter Property="VerticalAlignment" Value="Bottom" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.RibbonStatusBarLeftPartControl}" TargetType="{x:Type dxr:RibbonStatusBarLeftPartControl}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <ItemsPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\IndependentPart.xaml;205;22" />
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="ItemsPanel" Value="{DynamicResource {dxrt:RibbonStatusBarThemeKey ResourceKey=LeftItemsPanelTemplate}}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.RibbonStatusBarRightPartControl}" TargetType="{x:Type dxr:RibbonStatusBarRightPartControl}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <ItemsPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\IndependentPart.xaml;215;22" />
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="ItemsPanel" Value="{DynamicResource {dxrt:RibbonStatusBarThemeKey ResourceKey=RightItemsPanelTemplate}}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.GalleryDropDownControl}" TargetType="{x:Type dxr:GalleryDropDownControl}">
+    <Setter Property="Focusable" Value="false" />
+    <Setter Property="ItemsPanel" Value="{DynamicResource {dxbt:SubMenuBarControlThemeKey ResourceKey=ItemsPanelTemplate}}" />
+    <Setter Property="DropIndicatorStyle" Value="{DynamicResource {dxbt:SubMenuBarControlThemeKey ResourceKey=DropIndicatorStyle}}" />
+    <Setter Property="GlyphPadding" Value="{DynamicResource {dxbt:SubMenuBarControlThemeKey ResourceKey=GlyphPadding}}" />
+    <Setter Property="MinHeight" Value="22" />
+    <Setter Property="Template" Value="{DynamicResource {dxrt:GalleryDropDownControlThemeKey ResourceKey=ControlTemplate}}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.ApplicationMenuContentControl}" TargetType="{x:Type dxr:ApplicationMenuContentControl}">
+    <Setter Property="Template" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=ApplicationMenuContentControlTemplate}}" />
+    <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.RibbonHeaderControl}" TargetType="{x:Type dxr:RibbonHeaderControl}">
+    <Setter Property="Template" Value="{DynamicResource {dxrt:RibbonHeaderThemeKey ResourceKey=ControlTemplate}}" />
+    <Setter Property="ItemsPanel" Value="{DynamicResource {dxrt:RibbonHeaderThemeKey ResourceKey=ItemsPanelTemplate}}" />
+    <Setter Property="Focusable" Value="False" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.RibbonPageCategoryHeaderControl}" TargetType="{x:Type dxr:RibbonPageCategoryHeaderControl}">
+    <Setter Property="Template" Value="{DynamicResource {dxrt:RibbonPageCategoryThemeKey ResourceKey=HeaderTemplate}}" />
+    <!--BEGIN WPF-->
+    <Setter Property="AeroTemplate" Value="{DynamicResource {dxrt:RibbonPageCategoryThemeKey ResourceKey=HeaderTemplateInAeroWindow}}" />
+    <!--END WPF-->
+    <Setter Property="Focusable" Value="False" />
+    <Setter Property="IsTabStop" Value="False" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.RibbonPageCaptionControl}" TargetType="{x:Type dxr:RibbonPageCaptionControl}">
+    <Setter Property="Template" Value="{DynamicResource {dxrt:RibbonPageThemeKey ResourceKey=CaptionTemplate}}" />
+    <Setter Property="HighlightedContentContainerStyle" Value="{DynamicResource {dxrt:RibbonPageThemeKey ResourceKey=HighlightedCaptionContentContainerStyle}}" />
+    <Setter Property="NormalContentContainerStyle" Value="{DynamicResource {dxrt:RibbonPageThemeKey ResourceKey=CaptionContentContainerStyle}}" />
+    <Setter Property="BorderTemplate" Value="{DynamicResource {dxrt:RibbonPageThemeKey ResourceKey=CaptionBackgroundTemplate}}" />
+    <Setter Property="HighlightedBorderTemplate" Value="{DynamicResource {dxrt:RibbonPageThemeKey ResourceKey=HighlightedCaptionBackgroundTemplate}}" />
+    <Setter Property="BorderTemplateInMinimizedRibbon" Value="{DynamicResource {dxrt:RibbonPageThemeKey ResourceKey=CaptionBackgroundTemplate}}" />
+    <Setter Property="HighlightedBorderTemplateInMinimizedRibbon" Value="{DynamicResource {dxrt:RibbonPageThemeKey ResourceKey=HighlightedCaptionBackgroundTemplate}}" />
+    <Setter Property="NormalTextStyle" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=NormalPageCaptionTextStyle}}" />
+    <Setter Property="SelectedTextStyle" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=SelectedPageCaptionTextStyle}}" />
+    <Setter Property="HoverTextStyleInMinimizedRibbon" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=HoverPageCaptionTextStyle}}" />
+    <Setter Property="NormalTextStyleInMinimizedRibbon" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=NormalPageCaptionTextStyle}}" />
+    <Setter Property="SelectedTextStyleInMinimizedRibbon" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=SelectedPageCaptionTextStyle}}" />
+    <Setter Property="HoverTextStyle" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=HoverPageCaptionTextStyle}}" />
+    <Setter Property="Focusable" Value="False" />
+    <Setter Property="IsTabStop" Value="False" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.RibbonGalleryBarItemLinkControl}" TargetType="{x:Type dxr:RibbonGalleryBarItemLinkControl}">
+    <Setter Property="Template" Value="{DynamicResource {dxrt:InRibbonGalleryThemeKey ResourceKey=Template}}" />
+    <Setter Property="dxb:BarItemLinkControlTemplateProvider.TemplateInRibbonPageGroup" Value="{DynamicResource {dxrt:InRibbonGalleryThemeKey ResourceKey=Template}}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.RibbonPageHeaderLinksControl}" TargetType="{x:Type dxr:RibbonPageHeaderLinksControl}">
+    <Setter Property="Template" Value="{DynamicResource {dxrt:RibbonPageHeaderLinksControlThemeKey ResourceKey=ControlTemplate}}" />
+    <Setter Property="ItemsPanel" Value="{DynamicResource {dxrt:RibbonPageHeaderLinksControlThemeKey ResourceKey=PanelTemplate}}" />
+    <Setter Property="Focusable" Value="False" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.BarButtonGroupItemsControl}" TargetType="{x:Type dxr:BarButtonGroupItemsControl}">
+    <Setter Property="Template" Value="{DynamicResource {dxrt:BarButtonGroupThemeKey ResourceKey=ItemsControlTemplate}}" />
+    <Setter Property="ItemsPanel" Value="{DynamicResource {dxrt:BarButtonGroupThemeKey ResourceKey=PanelTemplate}}" />
+    <Setter Property="IsTabStop" Value="False" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.BarButtonGroupLinkControl}" TargetType="{x:Type dxr:BarButtonGroupLinkControl}">
+    <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+    <Setter Property="Focusable" Value="False" />
+    <Setter Property="IsTabStop" Value="False" />
+    <Setter Property="Template" Value="{DynamicResource {dxrt:BarButtonGroupThemeKey ResourceKey=Template}}" />
+    <Setter Property="dxb:BarItemLinkControlTemplateProvider.TemplateInRibbonPageGroup" Value="{DynamicResource {dxrt:BarButtonGroupThemeKey ResourceKey=Template}}" />
+    <Setter Property="dxb:BarItemLinkControlTemplateProvider.Template" Value="{DynamicResource {dxrt:BarButtonGroupThemeKey ResourceKey=Template}}" />
+    <Setter Property="dxb:BarItemLinkControlTemplateProvider.TemplateInMenu" Value="{DynamicResource {dxrt:BarButtonGroupThemeKey ResourceKey=Template}}" />
+    <Setter Property="dxb:BarItemLinkControlTemplateProvider.BorderStyleInRibbonPageGroup" Value="{DynamicResource {dxrt:BarButtonGroupThemeKey ResourceKey=BorderStyle}}" />
+    <Setter Property="dxb:BarItemLinkControlTemplateProvider.BorderStyleInQuickAccessToolbar" Value="{DynamicResource {dxrt:BarButtonGroupThemeKey ResourceKey=BorderStyle}}" />
+    <Setter Property="dxb:BarItemLinkControlTemplateProvider.BorderStyleInQuickAccessToolbarFooter" Value="{DynamicResource {dxrt:BarButtonGroupThemeKey ResourceKey=BorderStyle}}" />
+    <Setter Property="dxb:BarItemLinkControlTemplateProvider.BorderStyleInRibbonPageHeader" Value="{DynamicResource {dxrt:BarButtonGroupThemeKey ResourceKey=BorderStyle}}" />
+    <Setter Property="dxb:BarItemLinkControlTemplateProvider.BorderStyleInRibbonStatusBarLeft" Value="{DynamicResource {dxrt:BarButtonGroupThemeKey ResourceKey=BorderStyle}}" />
+    <Setter Property="dxb:BarItemLinkControlTemplateProvider.BorderStyleInRibbonStatusBarRight" Value="{DynamicResource {dxrt:BarButtonGroupThemeKey ResourceKey=BorderStyle}}" />
+    <Setter Property="ResourceHolderTemplateInRibbonPageGroup" Value="{DynamicResource {dxrt:BarButtonGroupThemeKey ResourceKey=ResourceHolderTemplateInPageGroup}}" />
+    <Setter Property="CustomizationButtonStyle" Value="{DynamicResource {dxrt:BarButtonGroupThemeKey ResourceKey=CustomizationButtonStyle}}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.RibbonApplicationButtonControl}" TargetType="{x:Type dxr:RibbonApplicationButtonControl}">
+    <Setter Property="Template" Value="{DynamicResource {dxrt:ApplicationButtonThemeKey ResourceKey=Template}}" />
+    <Setter Property="BorderTemplateForOffice2007RibbonStyle" Value="{DynamicResource {dxrt:ApplicationButtonThemeKey ResourceKey=BorderTemplate2007}}" />
+    <Setter Property="BorderTemplateInPopupForOffice2007RibbonStyle" Value="{DynamicResource {dxrt:ApplicationButtonThemeKey ResourceKey=BorderTemplate2007InPopup}}" />
+    <Setter Property="BorderTemplateForOffice2010RibbonStyle" Value="{DynamicResource {dxrt:ApplicationButtonThemeKey ResourceKey=BorderTemplate2010}}" />
+    <Setter Property="BorderTemplateInPopupForOffice2010RibbonStyle" Value="{DynamicResource {dxrt:ApplicationButtonThemeKey ResourceKey=BorderTemplate2010InPopup}}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.GalleryDropDownPopupBorderControl}" TargetType="{x:Type dxr:GalleryDropDownPopupBorderControl}">
+    <Setter Property="Template" Value="{DynamicResource {dxrt:GalleryDropDownControlThemeKey ResourceKey=PopupBorderTemplate}}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.RibbonPagesControl}" TargetType="{x:Type dxr:RibbonPagesControl}">
+    <Setter Property="ItemsPanel" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=PagesControlItemsPanelTemplate}}" />
+    <Setter Property="Template" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=PagesControlTemplate}}" />
+    <Setter Property="Focusable" Value="False" />
+    <Setter Property="IsTabStop" Value="False" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.RibbonPageGroupsControl}" TargetType="{x:Type dxr:RibbonPageGroupsControl}">
+    <Setter Property="Focusable" Value="False" />
+    <Setter Property="IsTabStop" Value="False" />
+    <Setter Property="ItemsPanel" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=PageGroupsControlItemsPanelTemplate}}" />
+    <Setter Property="Template" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=PageGroupsControlTemplate}}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.BackstageViewControl}" TargetType="{x:Type dxr:BackstageViewControl}">
+    <Setter Property="Template" Value="{DynamicResource {dxrt:BackstageThemeKey ResourceKey=ControlTemplate}}" />
+    <Setter Property="BackgroundStyle" Value="{DynamicResource {dxrt:BackstageThemeKey ResourceKey=BackgroundStyle}}" />
+    <Setter Property="BackgroundGlyphStyle" Value="{DynamicResource {dxrt:BackstageThemeKey ResourceKey=BackgroundGlyphStyle}}" />
+    <Setter Property="TabPaneStyle" Value="{DynamicResource {dxrt:BackstageThemeKey ResourceKey=TabPaneStyle}}" />
+    <Setter Property="ControlPaneStyle" Value="{DynamicResource {dxrt:BackstageThemeKey ResourceKey=ControlPaneStyle}}" />
+    <Setter Property="ItemsPresenterStyle" Value="{DynamicResource {dxrt:BackstageThemeKey ResourceKey=ItemsPresenterStyle}}" />
+    <Setter Property="DisableDefaultBackgroundGlyph" Value="{DynamicResource {dxrt:BackstageThemeKey ResourceKey=DisableDefaultBackgroundGlyph}}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.BackstageButtonItem}" TargetType="{x:Type dxr:BackstageButtonItem}">
+    <Setter Property="Template" Value="{DynamicResource {dxrt:BackstageButtonItemThemeKey ResourceKey=ControlTemplate}}" />
+    <Setter Property="BorderStyle" Value="{DynamicResource {dxrt:BackstageButtonItemThemeKey ResourceKey=BorderStyle}}" />
+    <Setter Property="ContentStyle" Value="{DynamicResource {dxrt:BackstageButtonItemThemeKey ResourceKey=ContentStyle}}" />
+    <Setter Property="NormalTextStyle" Value="{DynamicResource {dxrt:BackstageButtonItemThemeKey ResourceKey=NormalTextStyle}}" />
+    <Setter Property="HoverTextStyle" Value="{DynamicResource {dxrt:BackstageButtonItemThemeKey ResourceKey=HoverTextStyle}}" />
+    <Setter Property="GlyphContainerStyle" Value="{DynamicResource {dxrt:BackstageButtonItemThemeKey ResourceKey=GlyphContainerStyle}}" />
+    <Setter Property="GlyphStyle" Value="{DynamicResource {dxrt:BackstageButtonItemThemeKey ResourceKey=GlyphStyle}}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.BackstageTabItem}" TargetType="{x:Type dxr:BackstageTabItem}">
+    <Setter Property="Template" Value="{DynamicResource {dxrt:BackstageTabItemThemeKey ResourceKey=ControlTemplate}}" />
+    <Setter Property="BorderStyle" Value="{DynamicResource {dxrt:BackstageTabItemThemeKey ResourceKey=BorderStyle}}" />
+    <Setter Property="ContentStyle" Value="{DynamicResource {dxrt:BackstageTabItemThemeKey ResourceKey=ContentStyle}}" />
+    <Setter Property="NormalTextStyle" Value="{DynamicResource {dxrt:BackstageTabItemThemeKey ResourceKey=NormalTextStyle}}" />
+    <Setter Property="HoverTextStyle" Value="{DynamicResource {dxrt:BackstageTabItemThemeKey ResourceKey=HoverTextStyle}}" />
+    <Setter Property="SelectedTextStyle" Value="{DynamicResource {dxrt:BackstageTabItemThemeKey ResourceKey=SelectedTextStyle}}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.BackstageSeparatorItem}" TargetType="{x:Type dxr:BackstageSeparatorItem}">
+    <Setter Property="Template" Value="{DynamicResource {dxrt:BackstageSeparatorItemThemeKey ResourceKey=ControlTemplate}}" />
+    <Setter Property="BorderStyle" Value="{DynamicResource {dxrt:BackstageSeparatorItemThemeKey ResourceKey=BorderStyle}}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.DXTreeView}" TargetType="{x:Type dxr:DXTreeView}">
+    <Setter Property="Template" Value="{DynamicResource {dxrt:DXTreeViewThemeKey ResourceKey=ControlTemplate}}" />
+    <Setter Property="ItemsPanel" Value="{DynamicResource {dxrt:DXTreeViewThemeKey ResourceKey=ItemsPanelTemplate}}" />
+    <Setter Property="BackgroundStyle" Value="{DynamicResource {dxrt:DXTreeViewThemeKey ResourceKey=BackgroundStyle}}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.DXTreeViewItem}" TargetType="{x:Type dxr:DXTreeViewItem}">
+    <Setter Property="Template" Value="{DynamicResource {dxrt:DXTreeViewItemThemeKey ResourceKey=ControlTemplate}}" />
+    <Setter Property="ItemsPanel" Value="{DynamicResource {dxrt:DXTreeViewItemThemeKey ResourceKey=ItemsPanelTemplate}}" />
+    <Setter Property="ItemsPresenterStyle" Value="{DynamicResource {dxrt:DXTreeViewItemThemeKey ResourceKey=ItemsPresenterStyle}}" />
+    <Setter Property="ContentStyle" Value="{DynamicResource {dxrt:DXTreeViewItemThemeKey ResourceKey=ContentStyle}}" />
+    <Setter Property="GlyphStyle" Value="{DynamicResource {dxrt:DXTreeViewItemThemeKey ResourceKey=GlyphStyle}}" />
+    <Setter Property="GlyphContainerStyle" Value="{DynamicResource {dxrt:DXTreeViewItemThemeKey ResourceKey=GlyphContainerStyle}}" />
+    <Setter Property="ExpanderStyle" Value="{DynamicResource {dxrt:DXTreeViewItemThemeKey ResourceKey=ExpanderStyle}}" />
+    <Setter Property="BorderStyle" Value="{DynamicResource {dxrt:DXTreeViewItemThemeKey ResourceKey=BorderStyle}}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.DXTreeViewGroupItem}" TargetType="{x:Type dxr:DXTreeViewGroupItem}">
+    <Setter Property="Template" Value="{DynamicResource {dxrt:DXTreeViewGroupItemThemeKey ResourceKey=ControlTemplate}}" />
+    <Setter Property="ItemsPanel" Value="{DynamicResource {dxrt:DXTreeViewGroupItemThemeKey ResourceKey=ItemsPanelTemplate}}" />
+    <Setter Property="ItemsPresenterStyle" Value="{DynamicResource {dxrt:DXTreeViewGroupItemThemeKey ResourceKey=ItemsPresenterStyle}}" />
+    <Setter Property="ContentStyle" Value="{DynamicResource {dxrt:DXTreeViewGroupItemThemeKey ResourceKey=ContentStyle}}" />
+    <Setter Property="BorderStyle" Value="{DynamicResource {dxrt:DXTreeViewGroupItemThemeKey ResourceKey=BorderStyle}}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.KeyTipToolTip}" TargetType="{x:Type dxr:KeyTipToolTip}">
+    <Setter Property="Template" Value="{DynamicResource {dxrt:KeyTipControlThemeKey ResourceKey=ToolTipTemplate}}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.KeyTipControl}" TargetType="{x:Type dxr:KeyTipControl}">
+    <Setter Property="Template" Value="{DynamicResource {dxrt:KeyTipControlThemeKey ResourceKey=Template}}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.UpDownArrowButton}" TargetType="{x:Type dxr:UpDownArrowButton}">
+    <Setter Property="UpTemplate" Value="{DynamicResource {dxrt:RibbonCustomizationThemeKey ResourceKey=UpArrowThemeKey}}" />
+    <Setter Property="DownTemplate" Value="{DynamicResource {dxrt:RibbonCustomizationThemeKey ResourceKey=DownArrowThemeKey}}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.CustomizationArrowControl}" TargetType="{x:Type dxr:CustomizationArrowControl}">
+    <Setter Property="Template" Value="{DynamicResource {dxrt:RibbonCustomizationThemeKey ResourceKey=CustomizationArrowControlTemplate}}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.CustomizationSeparatorControl}" TargetType="{x:Type dxr:CustomizationSeparatorControl}">
+    <Setter Property="Template" Value="{DynamicResource {dxrt:RibbonCustomizationThemeKey ResourceKey=CustomizationSeparatorControlTemplate}}" />
+  </Style>
+</ResourceDictionary>

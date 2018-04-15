@@ -1,0 +1,41 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxeh="http://schemas.devexpress.com/winfx/2008/xaml/editors/internal" xmlns:dxei="http://schemas.devexpress.com/winfx/2008/xaml/editors/internal" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys">
+    <!--PROCESS SETTERS WITH BINDING-->
+    <Style x:Key="BaseCheckEditBoxStyle" TargetType="{x:Type dxe:CheckEditBox}">
+        <Setter Property="DataContext" Value="{Binding DataContext}" />
+        <Setter Property="IsTabStop" Value="{Binding DataContext.IsTabStop, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="Focusable" Value="{Binding DataContext.Focusable, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="Cursor" Value="{Binding DataContext.Cursor, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="Padding" Value="{Binding DataContext.Padding, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="Content" Value="{Binding DataContext.Content, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="ContentTemplate" Value="{Binding DataContext.ContentTemplate, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="IsThreeState" Value="{Binding DataContext.IsThreeState, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="VerticalContentAlignment" Value="{Binding DataContext.VerticalContentAlignment, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="HorizontalContentAlignment" Value="{Binding DataContext.HorizontalContentAlignment, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <!--BEGIN WPF-->
+        <Setter Property="ContentTemplateSelector" Value="{Binding DataContext.ContentTemplateSelector, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="Foreground" Value="{Binding DataContext.Foreground, RelativeSource={RelativeSource TemplatedParent}}" />
+        <!--END WPF-->
+        <!--ONLY SL
+        <Setter Property="dxeh:ControlHelper.ClearDefaultStyleKey" Value="True"/>
+        ONLY SL-->
+    </Style>
+    <Style x:Key="BaseCheckEditBoxInplaceStyle" TargetType="{x:Type dxe:CheckEditBox}">
+        <Setter Property="Padding" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).Padding}" />
+        <Setter Property="IsTabStop" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).IsTabStop}" />
+        <Setter Property="Focusable" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).Focusable}" />
+        <Setter Property="Content" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).(dxe:CheckEdit.Content)}" />
+        <Setter Property="ContentTemplate" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).(dxe:CheckEdit.ContentTemplate)}" />
+        <Setter Property="IsThreeState" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).(dxe:CheckEdit.IsThreeState)}" />
+        <Setter Property="Cursor" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).Cursor}" />
+        <Setter Property="VerticalContentAlignment" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).VerticalContentAlignment}" />
+        <Setter Property="HorizontalContentAlignment" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).HorizontalContentAlignment}" />
+        <!--BEGIN WPF-->
+        <Setter Property="ContentTemplateSelector" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).(dxe:CheckEdit.ContentTemplateSelector)}" />
+        <Setter Property="Foreground" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).Foreground}" />
+        <!--END WPF-->
+        <!--ONLY SL
+        <Setter Property="dxeh:ControlHelper.ClearDefaultStyleKey" Value="True"/>
+        ONLY SL-->
+    </Style>
+</ResourceDictionary>

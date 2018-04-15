@@ -1,0 +1,222 @@
+<Activity mc:Ignorable="sads sap" x:Class="{x:Null}"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:bm="clr-namespace:BLToolkit.Mapping;assembly=BLToolkit.4"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:mvc="clr-namespace:Microsoft.VisualBasic.CompilerServices;assembly=Microsoft.VisualBasic"
+ xmlns:s="clr-namespace:System;assembly=mscorlib"
+ xmlns:s1="clr-namespace:System;assembly=System"
+ xmlns:s2="clr-namespace:System;assembly=System.Core"
+ xmlns:s3="clr-namespace:System;assembly=Microsoft.CompilerServices.AsyncTargetingPack.Net4"
+ xmlns:s4="clr-namespace:System;assembly=System.ServiceModel"
+ xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Core"
+ xmlns:scg1="clr-namespace:System.Collections.Generic;assembly=System"
+ xmlns:scg2="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:scg3="clr-namespace:System.Collections.Generic;assembly=System.ServiceModel"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System"
+ xmlns:sco1="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:sw="clr-namespace:System.Windows;assembly=PresentationCore"
+ xmlns:sw1="clr-namespace:System.Windows;assembly=WindowsBase"
+ xmlns:sw2="clr-namespace:System.Windows;assembly=PresentationFramework"
+ xmlns:sxs="clr-namespace:System.Xml.Serialization;assembly=System.Xml"
+ xmlns:wab="clr-namespace:wmsMLC.Activities.Business;assembly=wmsMLC.Activities.Business"
+ xmlns:wada="clr-namespace:wmsMLC.Activities.Dialogs.Activities;assembly=wmsMLC.Activities.Dialogs"
+ xmlns:wag="clr-namespace:wmsMLC.Activities.General;assembly=wmsMLC.Activities.General"
+ xmlns:wav="clr-namespace:wmsMLC.Activities.ViewInteraction;assembly=wmsMLC.Activities.ViewInteraction"
+ xmlns:wbmp="clr-namespace:wmsMLC.Business.Managers.Processes;assembly=wmsMLC.Business.Managers"
+ xmlns:wbo="clr-namespace:wmsMLC.Business.Objects;assembly=wmsMLC.Business.Objects"
+ xmlns:wdg="clr-namespace:wmsMLC.DCL.General;assembly=wmsMLC.DCL.General"
+ xmlns:wdgh="clr-namespace:wmsMLC.DCL.General.Helpers;assembly=wmsMLC.DCL.General"
+ xmlns:wdgv="clr-namespace:wmsMLC.DCL.General.ViewModels;assembly=wmsMLC.DCL.General"
+ xmlns:wg="clr-namespace:wmsMLC.General;assembly=wmsMLC.General"
+ xmlns:wgb="clr-namespace:wmsMLC.General.BL;assembly=wmsMLC.General.BL"
+ xmlns:wgbv="clr-namespace:wmsMLC.General.BL.Validation;assembly=wmsMLC.General.BL"
+ xmlns:wgd="clr-namespace:wmsMLC.General.DAL;assembly=wmsMLC.General.DAL"
+ xmlns:wgpm="clr-namespace:wmsMLC.General.PL.Model;assembly=wmsMLC.General.PL"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="BpContext" Type="InArgument(wgb:BpContext)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>654,676</sap:VirtualizedContainerService.HintSize>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces for internal implementation</mva:VisualBasic.Settings>
+  <Flowchart DisplayName="Название БП" sap:VirtualizedContainerService.HintSize="614,636">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        <av:Point x:Key="ShapeLocation">280,12.5</av:Point>
+        <av:Size x:Key="ShapeSize">60,75</av:Size>
+        <av:PointCollection x:Key="ConnectorLocation">310,87.5 310,144.5</av:PointCollection>
+      </scg2:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Flowchart.StartNode>
+      <x:Reference>__ReferenceID4</x:Reference>
+    </Flowchart.StartNode>
+    <FlowStep x:Name="__ReferenceID4">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">188,144.5</av:Point>
+          <av:Size x:Key="ShapeSize">244,51</av:Size>
+        </scg2:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch DisplayName="Безопасный блок" sap:VirtualizedContainerService.HintSize="682,823">
+        <TryCatch.Variables>
+          <Variable x:TypeArguments="wbo:OWB[]" Name="Items" />
+        </TryCatch.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg2:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <TryCatch.Try>
+          <Flowchart DisplayName="Вернуть с подбора" sap:VirtualizedContainerService.HintSize="664,636">
+            <Flowchart.Variables>
+              <Variable x:TypeArguments="x:Boolean" Name="APIResult" />
+              <Variable x:TypeArguments="s:Exception" Name="exception" />
+              <Variable x:TypeArguments="wbo:OWB" Name="OWB" />
+            </Flowchart.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <av:Point x:Key="ShapeLocation">210,2.5</av:Point>
+                <av:Size x:Key="ShapeSize">60,75</av:Size>
+                <av:PointCollection x:Key="ConnectorLocation">240,77.5 240,99 490,99 490,129</av:PointCollection>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                <x:Double x:Key="Width">650</x:Double>
+              </scg2:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Flowchart.StartNode>
+              <x:Reference>__ReferenceID3</x:Reference>
+            </Flowchart.StartNode>
+            <FlowStep>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">119,100</av:Point>
+                  <av:Size x:Key="ShapeSize">242,60</av:Size>
+                </scg2:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign sap:VirtualizedContainerService.HintSize="242,60">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="wbo:OWB[]">[Items]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="wbo:OWB[]">[BpContext.GetArray(Of OWB)("Items")]</InArgument>
+                </Assign.Value>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg2:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Assign>
+            </FlowStep>
+            <FlowStep x:Name="__ReferenceID0">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">140,339</av:Point>
+                  <av:Size x:Key="ShapeSize">200,22</av:Size>
+                </scg2:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <wav:ShowMessageBoxActivity Buttons="OK" DefaultResult="OK" DisplayName="Завершение процесса" sap:VirtualizedContainerService.HintSize="200,22" Image="Asterisk" Message="Статус накладной(ых) изменен." Result="OK" Title="Вернуть с подбора">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg2:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </wav:ShowMessageBoxActivity>
+            </FlowStep>
+            <FlowStep x:Name="__ReferenceID1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">140,279</av:Point>
+                  <av:Size x:Key="ShapeSize">200,22</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">240,301 240,339</av:PointCollection>
+                </scg2:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <wab:RefreshEntityActivity DisplayName="Обновление менеджеров сущностей" sap:VirtualizedContainerService.HintSize="200,22" IsEnabled="True">
+                <wab:RefreshEntityActivity.EntityTypes>
+                  <wgpm:ValueDataField BindingPath="{x:Null}" DependentFields="{x:Null}" Description="{x:Null}" DisplayFormat="{x:Null}" EnableCreate="{x:Null}" EnableEdit="{x:Null}" EventName="{x:Null}" FieldName="{x:Null}" FieldType="{x:Null}" ImageName="{x:Null}" KeyLink="{x:Null}" LookupCode="{x:Null}" LookupFilterExt="{x:Null}" LookupVarFilterExt="{x:Null}" MaxLength="{x:Null}" SourceName="{x:Null}" AllowAddNewValue="False" Caption="Items" CloseDialog="False" IsChangeLookupCode="False" IsEnabled="True" IsLabelFontWeightBold="False" IsMemoView="False" IsRequired="False" LabelPosition="Left" LookupButtonEnabled="True" Name="OWB" Order="0" SetFocus="False" Visible="True">
+                    <wgpm:ValueDataField.Value>
+                      <wab:RefreshAction>InsertOrUpdate</wab:RefreshAction>
+                    </wgpm:ValueDataField.Value>
+                  </wgpm:ValueDataField>
+                </wab:RefreshEntityActivity.EntityTypes>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg2:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </wab:RefreshEntityActivity>
+              <FlowStep.Next>
+                <x:Reference>__ReferenceID0</x:Reference>
+              </FlowStep.Next>
+            </FlowStep>
+            <FlowStep x:Name="__ReferenceID2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">140,194.5</av:Point>
+                  <av:Size x:Key="ShapeSize">244,51</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">262,245.5 262,275.5 240,275.5 240,279</av:PointCollection>
+                </scg2:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ForEach x:TypeArguments="wbo:OWB" DisplayName="ForEach&lt;OWB&gt;" sap:VirtualizedContainerService.HintSize="244,51" Values="[Items]">
+                <ActivityAction x:TypeArguments="wbo:OWB">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="wbo:OWB" Name="item" />
+                  </ActivityAction.Argument>
+                  <wag:ChangeEntityStatusActivity x:TypeArguments="wbo:OWB" DisplayName="ChangeEntityStatus`1" sap:VirtualizedContainerService.HintSize="200,22" Key="[item.GetKey(of Decimal)]" Operation="OP_OWB_PICK_RETURN" Result="[OWB]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg2:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </wag:ChangeEntityStatusActivity>
+                </ActivityAction>
+              </ForEach>
+              <FlowStep.Next>
+                <x:Reference>__ReferenceID1</x:Reference>
+              </FlowStep.Next>
+            </FlowStep>
+            <FlowStep x:Name="__ReferenceID3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">390,129</av:Point>
+                  <av:Size x:Key="ShapeSize">200,22</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">490,151 490,181 262,181 262,194.5</av:PointCollection>
+                </scg2:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <wab:CheckBpContextActivity x:TypeArguments="wbo:OWB" Context="[BpContext]" DisplayName="Проверка параметров контекста" sap:VirtualizedContainerService.HintSize="200,22" IsMultipleItems="True" Result="[Items]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg2:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </wab:CheckBpContextActivity>
+              <FlowStep.Next>
+                <x:Reference>__ReferenceID2</x:Reference>
+              </FlowStep.Next>
+            </FlowStep>
+          </Flowchart>
+        </TryCatch.Try>
+        <TryCatch.Catches>
+          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="668,21">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg2:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ActivityAction x:TypeArguments="s:Exception">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="s:Exception" Name="innerException" />
+              </ActivityAction.Argument>
+              <wav:ShowExceptionMessageActivity Buttons="OK" DefaultResult="OK" DisplayName="Отображение ошибки" Error="[InnerException]" ErrorList="[Nothing]" ForceError="True" sap:VirtualizedContainerService.HintSize="200,22" Image="Warning" Message="Ошибка:" Title="Ошибка" />
+            </ActivityAction>
+          </Catch>
+        </TryCatch.Catches>
+      </TryCatch>
+    </FlowStep>
+  </Flowchart>
+</Activity>

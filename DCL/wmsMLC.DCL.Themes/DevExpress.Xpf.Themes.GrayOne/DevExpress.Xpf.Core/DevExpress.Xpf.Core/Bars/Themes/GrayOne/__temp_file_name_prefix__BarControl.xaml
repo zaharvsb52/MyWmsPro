@@ -1,0 +1,323 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" xmlns:dxbt="http://schemas.devexpress.com/winfx/2008/xaml/bars/themekeys" xmlns:dxcn="http://schemas.devexpress.com/winfx/2008/xaml/core/internal" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <sys:Double x:Key="{dxbt:BarControlThemeKey ResourceKey=ClientPanelMinHeight}">22</sys:Double>
+  <Thickness x:Key="{dxbt:BarControlThemeKey ResourceKey=ClientPanelPadding}">1</Thickness>
+  <ControlTemplate x:Key="{dxbt:BarControlThemeKey ResourceKey=DragWidgetTemplate}" TargetType="{x:Type dxb:DragWidget}">
+    <StackPanel MaxHeight="24" Margin="2" Orientation="Horizontal" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarControl.xaml;7;10">
+      <StackPanel.OpacityMask>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+          <GradientStop Color="#00FFFFFF" Offset="0" />
+          <GradientStop Color="#00FFFFFF" Offset="1" />
+          <GradientStop Color="#FFFFFFFF" Offset="0.5" />
+        </LinearGradientBrush>
+      </StackPanel.OpacityMask>
+      <Border Background="#FFC2C4CB" Width="1" Margin="1,0,0,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarControl.xaml;15;14" />
+      <Border Background="#FFC2C4CB" Width="1" Margin="1,0,0,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarControl.xaml;16;14" />
+      <Border Background="#FFC2C4CB" Width="1" Margin="1,0,0,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarControl.xaml;17;14" />
+    </StackPanel>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxbt:BarControlThemeKey ResourceKey=QuickCustomizationButtonTemplate}" TargetType="{x:Type dxb:BarQuickCustomizationButton}">
+    <Grid Background="Transparent" Margin="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarControl.xaml;22;10">
+      <Border x:Name="DefaultState" CornerRadius="0,2,2,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarControl.xaml;23;14">
+        <Border.Background>
+          <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#3FB8BAC2" Offset="0" />
+            <GradientStop Color="#FFB8BAC2" Offset="1" />
+          </LinearGradientBrush>
+        </Border.Background>
+        <Border BorderThickness="1" CornerRadius="0,1,1,0" Margin="1,0,0,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarControl.xaml;30;18">
+          <Border.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+              <GradientStop Color="#FFFFFFFF" Offset="0" />
+              <GradientStop Color="#FFF9FAFB" Offset="1" />
+              <GradientStop Color="#FFE2E4EA" Offset="0.5" />
+            </LinearGradientBrush>
+          </Border.Background>
+          <Border.BorderBrush>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+              <GradientStop Color="#FFFFFFFF" Offset="0" />
+              <GradientStop Color="#FFFEFEFE" Offset="1" />
+              <GradientStop Color="#FFF1F2F5" Offset="0.5" />
+            </LinearGradientBrush>
+          </Border.BorderBrush>
+        </Border>
+      </Border>
+      <Border x:Name="HoverState" CornerRadius="0,2,2,0" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarControl.xaml;47;14">
+        <Border.Background>
+          <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#3FB8BAC2" Offset="0" />
+            <GradientStop Color="#FFB8BAC2" Offset="1" />
+          </LinearGradientBrush>
+        </Border.Background>
+        <Border BorderThickness="1" CornerRadius="0,1,1,0" Margin="1,0,0,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarControl.xaml;54;18">
+          <Border.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+              <GradientStop Color="#FFFFFFFF" Offset="0" />
+              <GradientStop Color="#FFEAEEFB" Offset="1" />
+              <GradientStop Color="#FFCBD6F5" Offset="0.5" />
+            </LinearGradientBrush>
+          </Border.Background>
+          <Border.BorderBrush>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+              <GradientStop Color="#FFFFFFFF" Offset="0" />
+              <GradientStop Color="#FFFAFBFE" Offset="1" />
+              <GradientStop Color="#FFE5EBFA" Offset="0.5" />
+            </LinearGradientBrush>
+          </Border.BorderBrush>
+        </Border>
+      </Border>
+      <Grid x:Name="Glyph" Margin="4,1,3,0" Height="3" Width="6" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarControl.xaml;71;14">
+        <Path x:Name="Path1" Stretch="Fill" Fill="#7FFFFFFF" Data="F1 M 1515,989L 1521,989L 1518,992L 1515,989 Z " Margin="0,1,0,-1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarControl.xaml;72;18" />
+        <Path x:Name="Path2" Stretch="Fill" Fill="#FF80838F" Data="F1 M 1515,989L 1521,989L 1518,992L 1515,989 Z " dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarControl.xaml;73;18" />
+      </Grid>
+      <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup x:Name="CommonStates">
+          <VisualState x:Name="Normal" />
+          <VisualState x:Name="MouseOver">
+            <Storyboard>
+              <DoubleAnimation Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="Pressed">
+            <Storyboard>
+              <DoubleAnimation Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="Checked">
+            <Storyboard>
+              <DoubleAnimation Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="Disabled">
+            <Storyboard>
+              <DoubleAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="Opacity" Duration="0" To="0.35" />
+            </Storyboard>
+          </VisualState>
+        </VisualStateGroup>
+        <VisualStateGroup x:Name="OrientationStates">
+          <VisualState x:Name="Horizontal" />
+          <VisualState x:Name="Vertical">
+            <Storyboard>
+              <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Glyph" Storyboard.TargetProperty="Margin" dxcn:ValueSetter.Thickness="2,3,2,0" />
+              <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Glyph" Storyboard.TargetProperty="VerticalAlignment" dxcn:ValueSetter.VerticalAlignment="Top" />
+              <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Glyph" Storyboard.TargetProperty="RenderTransform">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                  <DiscreteObjectKeyFrame.Value>
+                    <RotateTransform CenterX="3.5" CenterY="3.5" Angle="180" />
+                  </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+              </ObjectAnimationUsingKeyFrames>
+            </Storyboard>
+          </VisualState>
+        </VisualStateGroup>
+      </VisualStateManager.VisualStateGroups>
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxbt:BarControlThemeKey ResourceKey=StatusBarContentTemplate}" TargetType="{x:Type ContentControl}">
+    <Border x:Name="Border" BorderBrush="#FFC4C5CC" BorderThickness="0,1,0,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarControl.xaml;120;10">
+      <Border.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+          <GradientStop Color="#FFD8D9DE" Offset="0" />
+          <GradientStop Color="#FFC9CAD1" Offset="1" />
+        </LinearGradientBrush>
+      </Border.Background>
+      <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarControl.xaml;127;14">
+        <Border BorderBrush="#3FFFFFFF" BorderThickness="0,1,0,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarControl.xaml;128;18" />
+        <ContentPresenter Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" ContentTemplate="{TemplateBinding ContentTemplate}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarControl.xaml;129;18" />
+      </Grid>
+    </Border>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxbt:BarControlThemeKey ResourceKey=MainMenuContentTemplate}" TargetType="{x:Type ContentControl}">
+    <Border Background="#FFEBECEF" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarControl.xaml;135;10">
+      <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarControl.xaml;136;14" />
+    </Border>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxbt:BarControlThemeKey ResourceKey=QuickCustomizationButtonInMainMenuTemplate}" TargetType="{x:Type dxb:BarQuickCustomizationButton}">
+    <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarControl.xaml;141;10">
+      <Border BorderBrush="#FFB6BCCC" BorderThickness="0,0,0,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarControl.xaml;142;14">
+        <Border.Background>
+          <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFFDFDFE" Offset="0" />
+            <GradientStop Color="#FFE1E6F6" Offset="1" />
+            <GradientStop Color="#FFE2E7F3" Offset="0.35" />
+            <GradientStop Color="#FFD5DBED" Offset="0.35" />
+          </LinearGradientBrush>
+        </Border.Background>
+        <Grid x:Name="Glyph" Margin="3" Height="5" Width="8" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarControl.xaml;151;18">
+          <Path x:Name="Path1" Stretch="Fill" Fill="#9AFFFFFF" Data="F1 M 54,23L 54,24L 58,28L 62,24L 62,23L 54,23 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarControl.xaml;152;22" />
+          <Path x:Name="Path2" Stretch="Fill" Fill="#FFBDCADE" Data="F1 M 54,23L 62,23L 58,27L 54,23 Z" Margin="0,0,0,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarControl.xaml;153;22" />
+        </Grid>
+      </Border>
+      <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup x:Name="CommonStates">
+          <VisualState x:Name="Normal" />
+          <VisualState x:Name="MouseOver">
+            <Storyboard>
+              <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Path2">
+                <EasingColorKeyFrame KeyTime="0" Value="#FF8897AF" />
+              </ColorAnimationUsingKeyFrames>
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="Pressed">
+            <Storyboard>
+              <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Path2">
+                <EasingColorKeyFrame KeyTime="0" Value="#FF8897AF" />
+              </ColorAnimationUsingKeyFrames>
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="Checked">
+            <Storyboard>
+              <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Path2">
+                <EasingColorKeyFrame KeyTime="0" Value="#FF8897AF" />
+              </ColorAnimationUsingKeyFrames>
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="Disabled">
+            <Storyboard>
+              <DoubleAnimation Storyboard.TargetName="Glyph" Storyboard.TargetProperty="Opacity" Duration="0" To="0.35" />
+              <DoubleAnimation Storyboard.TargetName="Path1" Storyboard.TargetProperty="Opacity" Duration="0" To="0.0" />
+            </Storyboard>
+          </VisualState>
+        </VisualStateGroup>
+        <VisualStateGroup x:Name="OrientationStates">
+          <VisualState x:Name="Horizontal" />
+          <VisualState x:Name="Vertical">
+            <Storyboard>
+              <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Glyph" Storyboard.TargetProperty="Margin" dxcn:ValueSetter.Thickness="2,3,2,0" />
+              <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Glyph" Storyboard.TargetProperty="VerticalAlignment" dxcn:ValueSetter.VerticalAlignment="Top" />
+              <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Glyph" Storyboard.TargetProperty="RenderTransform">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                  <DiscreteObjectKeyFrame.Value>
+                    <RotateTransform CenterX="3.5" CenterY="3.5" Angle="180" />
+                  </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+              </ObjectAnimationUsingKeyFrames>
+            </Storyboard>
+          </VisualState>
+        </VisualStateGroup>
+      </VisualStateManager.VisualStateGroups>
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxbt:BarControlThemeKey ResourceKey=ThumbTemplate}" TargetType="{x:Type Thumb}">
+    <Border Background="Red" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarControl.xaml;208;10">
+      <Border Margin="0,0,0,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarControl.xaml;209;14">
+        <Border.Background>
+          <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFFFFFFF" Offset="0" />
+            <GradientStop Color="#FFF4F4F4" Offset="1" />
+            <GradientStop Color="#FFF8F8F8" Offset="0.5" />
+            <GradientStop Color="#FFF4F4F4" Offset="0.5" />
+          </LinearGradientBrush>
+        </Border.Background>
+        <Border Margin="0,1,0,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarControl.xaml;218;18">
+          <Border.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+              <GradientStop Color="#FFFFFFFF" Offset="0" />
+              <GradientStop Color="#FFDDE8F7" Offset="1" />
+              <GradientStop Color="#FFE8F1FB" Offset="0.5" />
+              <GradientStop Color="#FFDCE6F4" Offset="0.5" />
+            </LinearGradientBrush>
+          </Border.Background>
+          <Grid Background="Transparent" Margin="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Opacity="0.9" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarControl.xaml;227;26">
+            <Path Stretch="Fill" Fill="#FFB0BCD3" Data="F1 M 309.5,217C 310.329,217 311,217.672 311,218.5C 311,219.328 310.329,220 309.5,220C 308.672,220 308,219.328 308,218.5C 308,217.672 308.672,217 309.5,217 Z M 301.5,225C 302.328,225 303,225.672 303,226.5C 303,227.329 302.328,228 301.5,228C 300.672,228 300,227.329 300,226.5C 300,225.672 300.672,225 301.5,225 Z M 309.5,221C 310.328,221 311,221.672 311,222.5C 311,223.328 310.328,224 309.5,224C 308.672,224 308,223.328 308,222.5C 308,221.672 308.672,221 309.5,221 Z M 305.5,221C 306.328,221 307,221.672 307,222.5C 307,223.328 306.328,224 305.5,224C 304.672,224 304,223.328 304,222.5C 304,221.672 304.672,221 305.5,221 Z M 309.5,225C 310.329,225 311,225.672 311,226.5C 311,227.328 310.328,228 309.5,228C 308.672,228 308,227.328 308,226.5C 308,225.672 308.672,225 309.5,225 Z M 305.5,225C 306.329,225 307,225.672 307,226.5C 307,227.328 306.329,228 305.5,228C 304.672,228 304,227.328 304,226.5C 304,225.672 304.672,225 305.5,225 Z" Margin="0,0,1,1" Width="11" Height="11" UseLayoutRounding="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarControl.xaml;228;30" />
+            <Path Stretch="Fill" Fill="#BFFDFEFE" Data="F1 M 310.5,218C 311.328,218 312,218.672 312,219.5C 312,220.328 311.328,221 310.5,221C 309.672,221 309,220.328 309,219.5C 309,218.672 309.672,218 310.5,218 Z M 302.5,226C 303.328,226 304,226.672 304,227.5C 304,228.329 303.328,229 302.5,229C 301.671,229 301,228.329 301,227.5C 301,226.672 301.671,226 302.5,226 Z M 310.5,222C 311.328,222 312,222.672 312,223.5C 312,224.329 311.328,225 310.5,225C 309.671,225 309,224.329 309,223.5C 309,222.672 309.671,222 310.5,222 Z M 306.5,222C 307.328,222 308,222.672 308,223.5C 308,224.328 307.328,225 306.5,225C 305.672,225 305,224.328 305,223.5C 305,222.672 305.671,222 306.5,222 Z M 310.5,226C 311.328,226 312,226.672 312,227.5C 312,228.328 311.328,229 310.5,229C 309.672,229 309,228.328 309,227.5C 309,226.672 309.672,226 310.5,226 Z M 306.5,226C 307.328,226 308,226.672 308,227.5C 308,228.328 307.328,229 306.5,229C 305.672,229 305,228.328 305,227.5C 305,226.672 305.672,226 306.5,226 Z" Margin="1,1,0,0" Width="11" Height="11" UseLayoutRounding="False" Opacity="0.5" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarControl.xaml;229;30" />
+          </Grid>
+        </Border>
+      </Border>
+    </Border>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxbt:BarControlThemeKey ResourceKey=BarContentTemplate}" TargetType="{x:Type ContentControl}">
+    <ContentPresenter Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" ContentTemplate="{TemplateBinding ContentTemplate}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarControl.xaml;237;10" />
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxbt:BarControlThemeKey ResourceKey=DropIndicatorTemplate}" TargetType="{x:Type ContentControl}">
+    <!--First element MUST have a name "PART_Content"-->
+    <Grid x:Name="PART_Content" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarControl.xaml;242;10">
+      <Grid.RenderTransform>
+        <TranslateTransform X="-3" Y="0" />
+      </Grid.RenderTransform>
+      <Border Background="#FF000000" BorderBrush="#FFFFFFFF" BorderThickness="1" Width="9" Height="3" VerticalAlignment="Top" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarControl.xaml;246;14" />
+      <Border Background="#FF000000" BorderBrush="#FFFFFFFF" BorderThickness="1" Width="9" Height="3" VerticalAlignment="Bottom" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarControl.xaml;247;14" />
+      <dxcore_unique_xmlns:PixelSnapper HorizontalAlignment="Center" Margin="0,2,0,2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarControl.xaml;248;14">
+        <Border Background="#FF000000" BorderBrush="#FFFFFFFF" BorderThickness="1,0,1,0" Width="3" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarControl.xaml;249;18" />
+      </dxcore_unique_xmlns:PixelSnapper>
+      <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup x:Name="Orientation">
+          <VisualState x:Name="Horizontal">
+            <Storyboard>
+              <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_Content" Storyboard.TargetProperty="RenderTransform">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0">
+                  <DiscreteObjectKeyFrame.Value>
+                    <TransformGroup x:Name="HorizontalTransform">
+                      <TranslateTransform Y="0" X="-3" />
+                    </TransformGroup>
+                  </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+              </ObjectAnimationUsingKeyFrames>
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="Vertical">
+            <Storyboard>
+              <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_Content" Storyboard.TargetProperty="RenderTransform">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0">
+                  <DiscreteObjectKeyFrame.Value>
+                    <TransformGroup x:Name="VerticalTransform">
+                      <RotateTransform Angle="-90" CenterX="0.5" CenterY="0.5" />
+                      <TranslateTransform Y="3" X="0" />
+                    </TransformGroup>
+                  </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+              </ObjectAnimationUsingKeyFrames>
+            </Storyboard>
+          </VisualState>
+        </VisualStateGroup>
+      </VisualStateManager.VisualStateGroups>
+    </Grid>
+  </ControlTemplate>
+  <Style x:Key="{dxbt:BarControlThemeKey ResourceKey=BarContentStyle}" TargetType="{x:Type ContentControl}">
+    <Setter Property="Foreground" Value="#FF201F35" />
+  </Style>
+  <Style x:Key="{dxbt:BarControlThemeKey ResourceKey=MenuContentStyle}" TargetType="{x:Type ContentControl}">
+    <Setter Property="Foreground" Value="#FF201F35" />
+    <!--ONLY SL
+        <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        ONLY SL-->
+  </Style>
+  <Style x:Key="{dxbt:BarControlThemeKey ResourceKey=MainMenuContentStyle}" TargetType="{x:Type ContentControl}">
+    <Setter Property="Foreground" Value="#FF201F35" />
+  </Style>
+  <Style x:Key="{dxbt:BarControlThemeKey ResourceKey=StatusBarContentStyle}" TargetType="{x:Type ContentControl}">
+    <Setter Property="Foreground" Value="#FF201F35" />
+  </Style>
+  <Style x:Key="{dxbt:BarControlThemeKey ResourceKey=BarStyle}" TargetType="{x:Type ContentControl}"></Style>
+  <Style x:Key="{dxbt:BarControlThemeKey ResourceKey=FloatingBarStyle}" TargetType="{x:Type ContentControl}"></Style>
+  <Style x:Key="{dxbt:BarControlThemeKey ResourceKey=MainMenuStyle}" TargetType="{x:Type ContentControl}"></Style>
+  <Style x:Key="{dxbt:BarControlThemeKey ResourceKey=StatusBarStyle}" TargetType="{x:Type ContentControl}"></Style>
+  <ControlTemplate x:Key="{dxbt:BarControlThemeKey ResourceKey=BarTemplate}" TargetType="{x:Type ContentControl}">
+    <Grid Margin="0,0,1,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarControl.xaml;318;10">
+      <Grid.Effect>
+        <DropShadowEffect x:Name="Shadow" Direction="270" ShadowDepth="1" BlurRadius="3" Opacity="0.12" />
+      </Grid.Effect>
+      <Border BorderThickness="1" CornerRadius="2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarControl.xaml;322;14">
+        <Border.Background>
+          <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFFFFFFF" Offset="0" />
+            <GradientStop Color="#FFF1F2F6" Offset="1" />
+          </LinearGradientBrush>
+        </Border.Background>
+        <Border.BorderBrush>
+          <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#3FB8BAC2" Offset="0" />
+            <GradientStop Color="#FFB8BAC2" Offset="1" />
+          </LinearGradientBrush>
+        </Border.BorderBrush>
+      </Border>
+      <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarControl.xaml;336;14" />
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxbt:BarControlThemeKey ResourceKey=MainMenuTemplate}" TargetType="{x:Type ContentControl}">
+    <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarControl.xaml;341;10" />
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxbt:BarControlThemeKey ResourceKey=StatusBarTemplate}" TargetType="{x:Type ContentControl}">
+    <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarControl.xaml;345;10" />
+  </ControlTemplate>
+</ResourceDictionary>

@@ -1,0 +1,99 @@
+﻿<UserControl x:Class="wmsMLC.RCL.Main.Views.TTaskMenuView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:lex="clr-namespace:WPFLocalizeExtension.Extensions;assembly=WPFLocalizeExtension"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:vm="clr-namespace:wmsMLC.RCL.Main.ViewModels"
+    xmlns:controls="clr-namespace:wmsMLC.General.PL.WPF.Components.Controls.Rcl;assembly=wmsMLC.General.PL.WPF.Components"
+    xmlns:helpers="clr-namespace:wmsMLC.General.PL.WPF.Components.Helpers;assembly=wmsMLC.General.PL.WPF.Components"
+    xmlns:navigation="http://schemas.devexpress.com/winfx/2008/xaml/windowsui/navigation"
+    mc:Ignorable="d" 
+    d:DesignHeight="600" d:DesignWidth="600">
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding TTaskMenu.MenuClickCommand}" CommandParameter="Refresh"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <Grid >
+        <controls:CustomTileLayoutControl x:Name="PageAdornerControl" ShowLayerSeparators="False" AllowItemMoving="False" Padding="0" Margin="0" ItemSpace="0" LayerSpace="0" HorizontalAlignment="Stretch">
+            <controls:CustomTileLayoutControl.Background>
+                <ImageBrush ImageSource="{lex:LocExtension Key=wmsMLC.RCL.Resources:ImageResources:DashboardBackground}" Stretch="UniformToFill" />
+            </controls:CustomTileLayoutControl.Background>
+            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                
+                <controls:CustomTile Background="{Binding TTaskMenu.TileTTaskInBackground}" Header="{Binding TTaskMenu.TileTTaskInHeader}" Title="{Binding TTaskMenu.TileTTaskInTitle}" Margin="4" HotKey="D1" HotKey2="NumPad1">
+                    <Image Source="{lex:LocExtension Key=wmsMLC.RCL.Resources:ImageResources:TileTtIn}" Stretch="None"/>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <i:InvokeCommandAction Command="{Binding TTaskMenu.MenuClickCommand}" CommandParameter="{x:Static vm:TTaskMenuViewModel.ActionTTaskIn}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </controls:CustomTile>
+                <controls:CustomTile Grid.Row="1" Background="{Binding TTaskMenu.TileTTaskAllBackground}" Title="{Binding TTaskMenu.TileTTaskAllTitle}" Header="{Binding TTaskMenu.TileTTaskAllHeader}" Margin="4" HotKey="D4" HotKey2="NumPad4">
+                    <Image Source="{lex:LocExtension Key=wmsMLC.RCL.Resources:ImageResources:TileTt}" Stretch="None"/>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <i:InvokeCommandAction Command="{Binding TTaskMenu.MenuClickCommand}" CommandParameter="{x:Static vm:TTaskMenuViewModel.ActionTTaskAll}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </controls:CustomTile>
+                <controls:CustomTile Grid.Column="1" Background="{Binding TTaskMenu.TileTTaskOutputBackground}"  Header="{Binding TTaskMenu.TileTTaskOutputHeader}" Title="{Binding TTaskMenu.TileTTaskOutputTitle}" Margin="4" HotKey="D2" HotKey2="NumPad2">
+                    <Image Source="{lex:LocExtension Key=wmsMLC.RCL.Resources:ImageResources:TileTtOutput}" Stretch="None"/>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <i:InvokeCommandAction Command="{Binding TTaskMenu.MenuClickCommand}" CommandParameter="{x:Static vm:TTaskMenuViewModel.ActionTTaskOutput}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </controls:CustomTile>
+                <controls:CustomTile Grid.Column="2" Background="{Binding TTaskMenu.TileTTaskMoveBackground}" Header="{Binding TTaskMenu.TileTTaskMoveHeader}" Title="{Binding TTaskMenu.TileTTaskMoveTitle}" Margin="4" HotKey="D3" HotKey2="NumPad3">
+                    <Image Source="{lex:LocExtension Key=wmsMLC.RCL.Resources:ImageResources:TileTtMove}" Stretch="None"/>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <i:InvokeCommandAction Command="{Binding TTaskMenu.MenuClickCommand}" CommandParameter="{x:Static vm:TTaskMenuViewModel.ActionTTaskMove}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </controls:CustomTile>
+                <controls:CustomTile Grid.Row="2" Grid.Column="1" navigation:Navigation.NavigateTo="MainTileMenuView" Background="{StaticResource {x:Static helpers:StyleKeys.TileBackgroundDefaultKey}}" Header="{lex:LocExtension Key=wmsMLC.RCL.Resources:StringResources:Return}" Margin="4" HotKey="Escape" HotKey2="Escape"/>
+                
+                <controls:CustomTile Grid.Row="2" Background="{StaticResource {x:Static helpers:StyleKeys.TileBackgroundDefaultKey}}" Header="" Margin="4"/>
+                <controls:CustomTile Grid.Row="1" Grid.Column="1" Background="{StaticResource {x:Static helpers:StyleKeys.TileBackgroundDefaultKey}}" Header="" Margin="4"/>
+                <controls:CustomTile Grid.Row="1" Grid.Column="2" Background="{StaticResource {x:Static helpers:StyleKeys.TileBackgroundDefaultKey}}" Header="" Margin="4"/>
+
+                <controls:CustomTile Grid.Row="2" Grid.Column="2" x:Name="tileRefresh" Background="{Binding TTaskMenu.TileRefreshBackground}" Header="{Binding TTaskMenu.TileRefreshHeader}" Margin="4" HotKey="F5" ContentChangeInterval="{Binding TTaskMenu.TileRefreshContentChangeInterval}" IsEnabled="{Binding TTaskMenu.TileRefreshIsEnabled}">
+                    <controls:CustomTile.ContentSource>
+                        <dx:FrameworkElements>
+                            <Image Source="{lex:LocExtension Key=wmsMLC.RCL.Resources:ImageResources:TileRefresh}" Stretch="None"/>
+                            <Border Background="{Binding TTaskMenu.TileRefreshBackgroundWait}">
+                                <Image Source="{lex:LocExtension Key=wmsMLC.RCL.Resources:ImageResources:TileRefresh}" Stretch="None"/>
+                            </Border>
+                        </dx:FrameworkElements>
+                    </controls:CustomTile.ContentSource>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <i:InvokeCommandAction Command="{Binding TTaskMenu.MenuClickCommand}" CommandParameter="{x:Static vm:TTaskMenuViewModel.ActionRefresh}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </controls:CustomTile>
+                
+            </Grid>
+        </controls:CustomTileLayoutControl>
+        <controls:CustomWaitIndicator x:Name="Wait" IsBusy="{Binding Path=TTaskMenu.WaitIndicatorVisible}"/>
+    </Grid>
+
+</UserControl>

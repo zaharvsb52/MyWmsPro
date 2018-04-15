@@ -1,0 +1,94 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <sys:Double x:Key="{dxt:DXWindowThemeKey ResourceKey=AeroWindowBorderSize}">8</sys:Double>
+	<Thickness x:Key="{dxt:DXWindowThemeKey ResourceKey=AeroWindowResizeBorderThickness}">8</Thickness>
+    <SolidColorBrush x:Key="{dxt:DXWindowThemeKey ResourceKey=AeroWindowContainerBackground}" Color="#FFEBECEF" />
+    <DataTemplate x:Key="{dxt:DXWindowThemeKey ResourceKey=AeroWindowCaptionTemplate}">
+        <Grid Height="Auto" MinHeight="29">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Image x:Name="PART_Icon" Width="Auto" Height="Auto" Margin="6,6,0,3" Stretch="None" Grid.Column="0" VerticalAlignment="Top" Source="{Binding Path=(dxc:FloatingContainer.FloatingContainer).Icon, RelativeSource={RelativeSource AncestorType=ContentPresenter}}" />
+            <dxc:FloatingContainerHeaderPanel Grid.Column="1">
+                <Grid Margin="6,3,6,3" HorizontalAlignment="Left" VerticalAlignment="Center" IsHitTestVisible="False">
+                    <Border Background="White" CornerRadius="6" Opacity="0.3" Margin="-2,0,-2,0">
+                        <Border.Effect>
+                            <BlurEffect Radius="10" />
+                        </Border.Effect>
+                    </Border>
+                    <TextBlock x:Name="PART_Text" Background="{x:Null}" Foreground="Black" Text="{Binding Path=(dxc:FloatingContainer.FloatingContainer).Caption, RelativeSource={RelativeSource AncestorType=ContentPresenter}}" />
+                </Grid>
+            </dxc:FloatingContainerHeaderPanel>
+        </Grid>
+        <DataTemplate.Triggers>
+            <Trigger Property="Source" SourceName="PART_Icon" Value="{x:Null}">
+                <Setter TargetName="PART_Icon" Property="Visibility" Value="Collapsed" />
+            </Trigger>
+        </DataTemplate.Triggers>
+
+    </DataTemplate>
+    <ControlTemplate x:Key="{dxt:DXWindowThemeKey ResourceKey=AeroWindowDragWidgetTemplate}" TargetType="{x:Type Thumb}">
+        <Border Background="Transparent">
+        </Border>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxt:DXWindowThemeKey ResourceKey=AeroWindowSizeGripTemplate}" TargetType="{x:Type Thumb}">
+        <Grid Background="Transparent" Height="10" Width="10" Margin="2" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+            <Path Stretch="Fill" Fill="#7FFFFFFF" Data="F1 M 0,8.99998L 2,8.99998L 2,11L 0,11L 0,8.99998 Z M 3.99997,8.99999L 5.99997,8.99999L 5.99997,11L 3.99997,11L 3.99997,8.99999 Z M 7.99998,8.99999L 9.99998,8.99999L 9.99998,11L 7.99998,11L 7.99998,8.99999 Z M 7.99998,4.99999L 9.99998,4.99999L 9.99998,6.99999L 7.99998,6.99999L 7.99998,4.99999 Z M 7.99999,0.999989L 9.99999,0.999989L 9.99999,2.99998L 7.99999,2.99998L 7.99999,0.999989 Z M 4,4.99998L 6,4.99998L 6,6.99998L 4,6.99998L 4,4.99998 Z " Margin="0,1,0,-1" />
+            <Path Stretch="Fill" Fill="#FFAAABB2" Data="F1 M 0,7.99999L 2,7.99999L 2,9.99999L 0,9.99999L 0,7.99999 Z M 3.99997,8L 5.99997,8L 5.99997,10L 3.99997,10L 3.99997,8 Z M 7.99998,8L 9.99998,8L 9.99998,10L 7.99998,10L 7.99998,8 Z M 7.99998,4L 9.99998,4L 9.99998,6L 7.99998,6L 7.99998,4 Z M 7.99999,0L 9.99999,0L 9.99999,2L 7.99999,2L 7.99999,0 Z M 4,4L 6,4L 6,6L 4,6L 4,4 Z " />
+        </Grid>
+    </ControlTemplate>
+    <DataTemplate x:Key="{dxt:DXWindowThemeKey ResourceKey=AeroWindowTemplate}">
+        <Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <dxc:DXWindowHeader x:Name="FloatingContainerHeader" Grid.Row="0" CornerRadius="0" Background="Transparent" Panel.ZIndex="99">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <ContentPresenter x:Name="PART_CaptionContentPresenter" Panel.ZIndex="100" Grid.Column="0" Content="{x:Null}" ContentTemplate="{DynamicResource {dxt:DXWindowThemeKey IsVisibleInBlend=True, ResourceKey=AeroWindowCaptionTemplate}}" />
+                        <Thumb Template="{DynamicResource {dxt:DXWindowThemeKey IsVisibleInBlend=True, ResourceKey=AeroWindowDragWidgetTemplate}}" x:Name="PART_DragWidget" Grid.Column="0" />
+                        <StackPanel x:Name="stackPanel" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Top" Height="{Binding Path=(dxc:DXWindow.AeroControlBoxHeight), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=dxc:DXWindow}}" Width="{Binding Path=(dxc:DXWindow.AeroControlBoxWidth), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=dxc:DXWindow}}" Margin="{Binding Path=(dxc:DXWindow.AeroControlBoxMargin), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=dxc:DXWindow}}">
+                            <Button Template="{x:Null}" x:Name="PART_Minimize" Width="0" Height="0" Focusable="False" />
+                            <Button Template="{x:Null}" x:Name="PART_Restore" Width="0" Height="0" Focusable="False" />
+                            <Button Template="{x:Null}" x:Name="PART_Maximize" Width="0" Height="0" Focusable="False" />
+                            <Button Template="{x:Null}" x:Name="PART_CloseButton" Width="0" Height="0" Focusable="False" />
+                        </StackPanel>
+                    </Grid>
+                </dxc:DXWindowHeader>
+
+                <Grid x:Name="FloatingContainerBody" Margin="8,0,8,8" Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Background="{DynamicResource {dxt:DXWindowThemeKey ResourceKey=AeroWindowContainerBackground}}" Grid.RowSpan="2">
+                        <ContentPresenter x:Name="PART_ContainerContent" Content="{Binding}" />
+                    </Grid>
+                    <StackPanel x:Name="PART_StatusPanel" Grid.Row="1" Visibility="Collapsed">
+                        <Border Background="{x:Null}" HorizontalAlignment="Right">
+                            <Thumb Template="{DynamicResource {dxt:DXWindowThemeKey IsVisibleInBlend=True, ResourceKey=AeroWindowSizeGripTemplate}}" Cursor="SizeNWSE" HorizontalAlignment="Right" x:Name="PART_SizeGrip" VerticalAlignment="Bottom" Width="16" Height="16" />
+                        </Border>
+                    </StackPanel>
+                </Grid>
+
+
+            </Grid>
+
+            <Control x:Name="PART_ResizeFrame" Template="{DynamicResource {dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerResizeFrame}}" Focusable="False" Visibility="{Binding Path=(dxc:FloatingContainer.IsMaximized), Converter={dxc:BooleanToVisibilityConverter Invert=True}}" />
+        </Grid>
+        <DataTemplate.Triggers>
+            <DataTrigger Binding="{Binding Path=(dxc:FloatingContainer.FloatingContainer).AllowSizing, RelativeSource={RelativeSource Self}}" Value="false">
+                <Setter Property="Visibility" TargetName="PART_StatusPanel" Value="Collapsed" />
+                <Setter Property="Visibility" TargetName="PART_ResizeFrame" Value="Collapsed" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Path=(dxc:FloatingContainer.IsMaximized)}" Value="True">
+                <Setter Property="Margin" TargetName="FloatingContainerBody" Value="0,0,0,0" />
+            </DataTrigger>
+        </DataTemplate.Triggers>
+    </DataTemplate>
+</ResourceDictionary>

@@ -1,0 +1,118 @@
+﻿<views:BaseDialogWindow x:Class="wmsMLC.DCL.Configurator.Views.PmConfigView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+    xmlns:views="clr-namespace:wmsMLC.DCL.Main.Views;assembly=wmsMLC.DCL.Main"
+    xmlns:controls="clr-namespace:wmsMLC.DCL.Main.Views.Controls;assembly=wmsMLC.DCL.Main"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:exp="clr-namespace:wmsMLC.DCL.Main.Views.ConditionExpressionEditor;assembly=wmsMLC.DCL.Main"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:dxdo="http://schemas.devexpress.com/winfx/2008/xaml/docking"
+    xmlns:lex="clr-namespace:WPFLocalizeExtension.Extensions;assembly=WPFLocalizeExtension"
+    xmlns:plwpf="clr-namespace:wmsMLC.General.PL.WPF.Views;assembly=wmsMLC.General.PL.WPF"
+    xmlns:viewModels="clr-namespace:wmsMLC.DCL.Configurator.ViewModels"
+    xmlns:local="clr-namespace:wmsMLC.DCL.Configurator.Views"
+    xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+    WindowStartupLocation="CenterScreen"
+    Title="{Binding PanelCaption}"
+    ShowIcon="False"
+    BorderEffect="Default"
+    BorderEffectActiveColor="Red"
+    NotCloseOnEscapeKey="True"
+    mc:Ignorable="d" 
+    d:DesignHeight="300" d:DesignWidth="300" >
+
+    <views:BaseDialogWindow.Resources>
+        <local:IsDirtyToImageConverter x:Key="IsDirtyToImageConverter"/>
+
+        <ControlTemplate x:Key="{x:Static local:PmConfigView.ChangedColumnTemplateKey}">
+            <Image Source="{Binding Path=RowData.Row.IsDirty, Converter={StaticResource IsDirtyToImageConverter}}" Width="11" Height="11"/>
+        </ControlTemplate>
+
+        <!--Используется в коде-->
+        <DataTemplate x:Key="{x:Static local:PmConfigView.NotAllowedPmMethodCellTemplateKey}">
+            <dx:DXDockPanel>
+                <TextBlock Padding="5,0" Text="{lex:Loc Key=wmsMLC.DCL.Configurator:Resources:PmMethodIsUnavailable}" VerticalAlignment="Center" FontStyle="Italic"/>
+            </dx:DXDockPanel>
+        </DataTemplate>
+    </views:BaseDialogWindow.Resources>
+
+    <plwpf:PanelView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <views:MenuView Menu="{Binding Menu}" PreviewMouseLeftButtonUp="OnMenuPreviewMouseLeftButtonUp"/>
+
+            <dxdo:DockLayoutManager Grid.Row="1" FloatingMode="Desktop">
+                <dxdo:LayoutGroup Orientation="Horizontal" DestroyOnClosingChildren="False">
+                    <dxdo:LayoutPanel AllowClose="False" AllowHide="False" ShowCaption="False">
+                        <dxb:BarManager>
+                            <dxb:BarManager.Items>
+                                <dxb:BarButtonItem Content="{lex:LocExtension Key=wmsMLC.DCL.Resources:StringResources:Copy}" Name="Copy" ItemClick="OnGridContextMenuItemClick" KeyGesture="Ctrl+C" CommandParameter="ExcludeHeader" />
+                                <dxb:BarButtonItem Content="{lex:LocExtension Key=wmsMLC.DCL.Resources:StringResources:CopyWithHeader}" Name="Past" ItemClick="OnGridContextMenuItemClick" KeyGesture="Ctrl+Shift+C" CommandParameter="IncludeHeader" />
+                            </dxb:BarManager.Items>
+
+                            <controls:CustomGridControl x:Name="PmGridControl" ItemsSource="{Binding ItemsSource}"
+                                AutoShowAutoFilterRowWhenRowsCountMoreThan="20"
+                                UseStandardGridMenu="False"
+                                ShowTotalRow="True"
+                                TotalRowItemAdditionalInfo ="{Binding TotalRowItemAdditionalInfo}"
+                                ShowErrorMode="None"
+                                SelectionMode="Cell"
+                                CustomUnboundColumnData="OnCustomUnboundColumnData"
+                                CustomRowFilter="OnGridCustomRowFilter"
+                                SelectedItems="{Binding SelectedItems, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                dx:DXSerializer.SerializationID="grid"
+                                dx:DXSerializer.StoreLayoutMode="All"
+                                dxg:GridSerializationOptions.AddNewColumns="False"
+                                dxg:GridSerializationOptions.RemoveOldColumns="False">
+
+                                <controls:CustomGridControl.Columns>
+                                    <dxg:GridColumn Header="IsDirty" FieldName="IsDirty" ReadOnly="True" Width="11" FixedWidth="True"
+                                    AllowBestFit="False" AllowResizing="False" AllowSorting="False" AllowGrouping="False" AllowAutoFilter="False" AllowColumnFiltering="False" AllowMoving="False"
+                                    ShowInColumnChooser="False" AllowEditing="False" AllowFocus="False" AllowUnboundExpressionEditor="False"
+                                    DisplayTemplate="{StaticResource {x:Static local:PmConfigView.ChangedColumnTemplateKey}}" Fixed="Left"/>
+                                    <dxg:GridColumn Header="{lex:Loc Key=wmsMLC.DCL.Configurator:Resources:ColumnHeaderPm}" FieldName="{x:Static viewModels:PmConfiguratorData.PmCodePropertyName}" Fixed="Left"/>
+                                    <dxg:GridColumn Header="{lex:Loc Key=wmsMLC.DCL.Configurator:Resources:ColumnHeaderEntity}" FieldName="{x:Static viewModels:PmConfiguratorData.ObjectEntityCodePropertyName}" Fixed="Left"/>
+                                    <dxg:GridColumn Header="{lex:Loc Key=wmsMLC.DCL.Configurator:Resources:ColumnHeaderAttribute}" FieldName="{x:Static viewModels:PmConfiguratorData.ObjectNamePropertyName}" Fixed="Left"/>
+                                </controls:CustomGridControl.Columns>
+
+                                <!--AutoWidth="False" AllowPerPixelScrolling="True" AllowChangeBandParent="True" AllowChangeColumnParent="True"-->
+                                <controls:CustomGridControl.View>
+                                    <dxg:TableView
+                                    AllowEditing="True" 
+                                    NavigationStyle="Cell"
+                                    EditorShowMode="MouseDownFocused"
+                                    CellValueChanging="OnCellValueChanging"
+                                    ShowingEditor="OnShowingEditor">
+                                        <i:Interaction.Behaviors>
+                                            <exp:TableViewExpressionColumnBehavior ShowFormatConditionsEditorWindow="{Binding IsCustomization, Mode=TwoWay}" />
+                                        </i:Interaction.Behaviors>
+
+                                        <dxg:TableView.RowCellMenuCustomizations>
+                                            <dxb:BarLinkContainerItemLink BarItemName="Copy"/>
+                                            <dxb:BarLinkContainerItemLink BarItemName="Past"/>
+                                        </dxg:TableView.RowCellMenuCustomizations>
+                                    </dxg:TableView>
+                                </controls:CustomGridControl.View>
+                            </controls:CustomGridControl>
+                        </dxb:BarManager>
+                    </dxdo:LayoutPanel>
+                    <dxdo:LayoutPanel Caption="{lex:LocExtension Key=wmsMLC.DCL.Configurator:Resources:PmMethodConfigured}"
+                        ItemWidth="0.3*"
+                        AllowClose="False"
+                        AllowHide="True" AutoHidden="False">
+                        <local:PmMethodView x:Name="MethodView" />
+                    </dxdo:LayoutPanel>
+                </dxdo:LayoutGroup>
+            </dxdo:DockLayoutManager>
+
+            <controls:CustomWaitIndicator Grid.Row="0" Grid.RowSpan="2" x:Name="waitIndicator" DeferedVisibility="{Binding Path=WaitIndicatorVisible, IsAsync=True}"/>
+        </Grid>
+    </plwpf:PanelView>
+</views:BaseDialogWindow>

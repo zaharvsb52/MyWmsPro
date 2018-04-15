@@ -1,0 +1,65 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxrt="http://schemas.devexpress.com/winfx/2008/xaml/ribbon/themekeys" xmlns:interop="clr-namespace:System.Windows.Interop;assembly=PresentationFramework" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <ControlTemplate x:Key="{dxrt:RibbonThemeKey ResourceKey=ApplicationMenuBackgroundTemplate}" TargetType="{x:Type ContentControl}">
+    <Border Background="#FFFFFFFF" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\ApplicationMenu.xaml;4;10" />
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxrt:RibbonThemeKey ResourceKey=ApplicationMenuBarControlBorderTemplate2007}" TargetType="{x:Type ContentControl}">
+    <Border x:Name="Border" Background="#FF92949E" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\ApplicationMenu.xaml;8;10">
+      <Border.Effect>
+        <DropShadowEffect x:Name="Shadow" Direction="270" ShadowDepth="1" BlurRadius="5" Opacity="0.15" />
+      </Border.Effect>
+      <Grid Margin="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\ApplicationMenu.xaml;12;14">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" MinHeight="22" />
+          <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Border x:Name="Header" BorderBrush="#FF92949E" BorderThickness="0,0,0,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\ApplicationMenu.xaml;17;18">
+          <Border.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+              <GradientStop Color="#FFF0F0F0" Offset="0" />
+              <GradientStop Color="#FFE5E6E8" Offset="1" />
+            </LinearGradientBrush>
+          </Border.Background>
+          <Border BorderBrush="#BFFFFFFF" BorderThickness="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\ApplicationMenu.xaml;24;22" />
+        </Border>
+        <Border Grid.Row="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\ApplicationMenu.xaml;26;18">
+          <Border.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+              <GradientStop Color="Red " Offset="0" />
+              <GradientStop Color="#FFD1D8E2" Offset="1" />
+            </LinearGradientBrush>
+          </Border.Background>
+          <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\ApplicationMenu.xaml;33;22" />
+        </Border>
+      </Grid>
+    </Border>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxrt:RibbonThemeKey ResourceKey=ApplicationMenuBottomPaneTemplate}" TargetType="{x:Type ContentControl}">
+    <Border BorderBrush="#FF92949E" BorderThickness="0,1,0,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\ApplicationMenu.xaml;40;10">
+      <Border.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+          <GradientStop Color="#FFF0F0F0" Offset="0" />
+          <GradientStop Color="#FFE5E6E8" Offset="1" />
+        </LinearGradientBrush>
+      </Border.Background>
+      <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\ApplicationMenu.xaml;47;14">
+        <Border BorderBrush="#BFFFFFFF" BorderThickness="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\ApplicationMenu.xaml;48;18" />
+        <ContentPresenter Margin="2" HorizontalAlignment="Right" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\ApplicationMenu.xaml;49;18" />
+      </Grid>
+    </Border>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxrt:RibbonThemeKey ResourceKey=ApplicationMenuRightPaneTemplate}" TargetType="{x:Type ContentControl}">
+    <Border Background="#FFEBECEF" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\ApplicationMenu.xaml;55;10">
+      <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\ApplicationMenu.xaml;56;14" />
+    </Border>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxrt:RibbonThemeKey ResourceKey=ApplicationMenuContentControlBorderTemplate}" TargetType="{x:Type ContentControl}">
+    <Border Background="Red" BorderBrush="#FFA8AAB4" BorderThickness="0,1,0,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\ApplicationMenu.xaml;61;10">
+      <ContentPresenter Content="{TemplateBinding Content}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\ApplicationMenu.xaml;62;14" />
+    </Border>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxrt:RibbonThemeKey ResourceKey=ApplicationMenuBarControlBorderTemplate2010}" TargetType="{x:Type ContentControl}">
+    <ContentControl Template="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=ApplicationMenuBarControlBorderTemplate2007}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\ApplicationMenu.xaml;67;10">
+      <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\ApplicationMenu.xaml;68;14" />
+    </ContentControl>
+  </ControlTemplate>
+</ResourceDictionary>

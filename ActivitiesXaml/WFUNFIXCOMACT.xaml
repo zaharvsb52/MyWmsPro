@@ -1,0 +1,376 @@
+<Activity mc:Ignorable="sads sap" x:Class="{x:Null}"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:bm="clr-namespace:BLToolkit.Mapping;assembly=BLToolkit.4"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:mvc="clr-namespace:Microsoft.VisualBasic.CompilerServices;assembly=Microsoft.VisualBasic"
+ xmlns:s="clr-namespace:System;assembly=mscorlib"
+ xmlns:s1="clr-namespace:System;assembly=System"
+ xmlns:s2="clr-namespace:System;assembly=System.Core"
+ xmlns:s3="clr-namespace:System;assembly=Microsoft.CompilerServices.AsyncTargetingPack.Net4"
+ xmlns:s4="clr-namespace:System;assembly=System.ServiceModel"
+ xmlns:s5="clr-namespace:System;assembly=System.AddIn"
+ xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Core"
+ xmlns:scg1="clr-namespace:System.Collections.Generic;assembly=System"
+ xmlns:scg2="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:scg3="clr-namespace:System.Collections.Generic;assembly=System.ServiceModel"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System"
+ xmlns:sco1="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:sl="clr-namespace:System.Linq;assembly=System.Core"
+ xmlns:sw="clr-namespace:System.Windows;assembly=PresentationCore"
+ xmlns:sw1="clr-namespace:System.Windows;assembly=WindowsBase"
+ xmlns:sw2="clr-namespace:System.Windows;assembly=PresentationFramework"
+ xmlns:sxs="clr-namespace:System.Xml.Serialization;assembly=System.Xml"
+ xmlns:wab="clr-namespace:wmsMLC.Activities.Business;assembly=wmsMLC.Activities.Business"
+ xmlns:wada="clr-namespace:wmsMLC.Activities.Dialogs.Activities;assembly=wmsMLC.Activities.Dialogs"
+ xmlns:wag="clr-namespace:wmsMLC.Activities.General;assembly=wmsMLC.Activities.General"
+ xmlns:wav="clr-namespace:wmsMLC.Activities.ViewInteraction;assembly=wmsMLC.Activities.ViewInteraction"
+ xmlns:wbmp="clr-namespace:wmsMLC.Business.Managers.Processes;assembly=wmsMLC.Business.Managers"
+ xmlns:wbo="clr-namespace:wmsMLC.Business.Objects;assembly=wmsMLC.Business.Objects"
+ xmlns:wdcv="clr-namespace:wmsMLC.DCL.Content.ViewModels;assembly=wmsMLC.DCL.Content"
+ xmlns:wdg="clr-namespace:wmsMLC.DCL.General;assembly=wmsMLC.DCL.General"
+ xmlns:wdgh="clr-namespace:wmsMLC.DCL.General.Helpers;assembly=wmsMLC.DCL.General"
+ xmlns:wdgv="clr-namespace:wmsMLC.DCL.General.ViewModels;assembly=wmsMLC.DCL.General"
+ xmlns:wg="clr-namespace:wmsMLC.General;assembly=wmsMLC.General"
+ xmlns:wgb="clr-namespace:wmsMLC.General.BL;assembly=wmsMLC.General.BL"
+ xmlns:wgbv="clr-namespace:wmsMLC.General.BL.Validation;assembly=wmsMLC.General.BL"
+ xmlns:wgd="clr-namespace:wmsMLC.General.DAL;assembly=wmsMLC.General.DAL"
+ xmlns:wgpm="clr-namespace:wmsMLC.General.PL.Model;assembly=wmsMLC.General.PL"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="BpContext" Type="InArgument(wgb:BpContext)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>654,676</sap:VirtualizedContainerService.HintSize>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces for internal implementation</mva:VisualBasic.Settings>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg2:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Flowchart DisplayName="Расфиксация коммерческого акта" sap:VirtualizedContainerService.HintSize="614,636">
+    <Flowchart.Variables>
+      <Variable x:TypeArguments="av:MessageBoxResult" Name="DialogViewResult" />
+      <Variable x:TypeArguments="x:Boolean" Name="APIResult" />
+      <Variable x:TypeArguments="s:Exception" Name="exception" />
+      <Variable x:TypeArguments="sco1:Collection(s:Exception)" Default="[new Collection(Of Exception)]" Name="exceptionList" />
+    </Flowchart.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        <av:Point x:Key="ShapeLocation">230,52.5</av:Point>
+        <av:Size x:Key="ShapeSize">60,75</av:Size>
+        <av:PointCollection x:Key="ConnectorLocation">260,127.5 260,157.5 282,157.5 282,194.5</av:PointCollection>
+      </scg2:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Flowchart.StartNode>
+      <x:Reference>__ReferenceID8</x:Reference>
+    </Flowchart.StartNode>
+    <FlowStep x:Name="__ReferenceID8">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">160,194.5</av:Point>
+          <av:Size x:Key="ShapeSize">244,51</av:Size>
+        </scg2:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch DisplayName="Безопасный блок" sap:VirtualizedContainerService.HintSize="645,1147">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg2:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <TryCatch.Try>
+          <Flowchart DisplayName="Расфиксировать" sap:VirtualizedContainerService.HintSize="627,636">
+            <Flowchart.Variables>
+              <Variable x:TypeArguments="wbo:CommAct" Name="currentACT" />
+              <Variable x:TypeArguments="scg2:List(wbo:IWBPosInput)" Default="[new List(Of IWBPosInput)]" Name="posList" />
+              <Variable x:TypeArguments="scg2:List(wbo:IWBPos)" Name="iwbPosList" />
+              <Variable x:TypeArguments="wbo:IWBPosInput[]" Name="filledPosList" />
+              <Variable x:TypeArguments="x:Boolean" Name="printTE" />
+              <Variable x:TypeArguments="x:Boolean" Name="dialogResult" />
+              <Variable x:TypeArguments="wbo:CommAct[]" Name="Items" />
+              <Variable x:TypeArguments="scg2:List(wbo:Product)" Name="itemProductList" />
+              <Variable x:TypeArguments="sco1:Collection(wbo:Product)" Default="[new Collection(Of Product)]" Name="resultProductList" />
+              <Variable x:TypeArguments="scg2:List(wbo:IWBPosInput)" Name="failedIWBPosInputList" />
+              <Variable x:TypeArguments="wbo:IWBPosQLFDetailDesc[]" Name="eventDetailLst" />
+              <Variable x:TypeArguments="x:String" Name="message" />
+              <Variable x:TypeArguments="scg2:List(wbo:IWBPos)" Name="iwbPosExistList" />
+              <Variable x:TypeArguments="wbo:Place" Name="selectedPlace" />
+              <Variable x:TypeArguments="x:String" Name="errorMessage" />
+            </Flowchart.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <av:Point x:Key="ShapeLocation">280,2.5</av:Point>
+                <av:Size x:Key="ShapeSize">60,75</av:Size>
+                <x:Double x:Key="Width">613</x:Double>
+                <av:PointCollection x:Key="ConnectorLocation">310,77.5 310,99</av:PointCollection>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg2:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Flowchart.StartNode>
+              <x:Reference>__ReferenceID7</x:Reference>
+            </Flowchart.StartNode>
+            <FlowStep x:Name="__ReferenceID4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">189,140</av:Point>
+                  <av:Size x:Key="ShapeSize">242,60</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">310,200 310,220</av:PointCollection>
+                </scg2:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign DisplayName="Получим объект приходной накладной" sap:VirtualizedContainerService.HintSize="242,60">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="wbo:CommAct">[currentACT]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="wbo:CommAct">[Items(0)]</InArgument>
+                </Assign.Value>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg2:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Assign>
+              <FlowStep.Next>
+                <FlowStep x:Name="__ReferenceID5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:Point x:Key="ShapeLocation">210,220</av:Point>
+                      <av:Size x:Key="ShapeSize">200,22</av:Size>
+                      <av:PointCollection x:Key="ConnectorLocation">310,242 310,269</av:PointCollection>
+                    </scg2:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <wag:BeginTransactionActivity sap:VirtualizedContainerService.HintSize="200,22">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg2:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </wag:BeginTransactionActivity>
+                  <FlowStep.Next>
+                    <FlowStep x:Name="__ReferenceID0">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                          <av:Point x:Key="ShapeLocation">210,269</av:Point>
+                          <av:Size x:Key="ShapeSize">200,22</av:Size>
+                          <av:PointCollection x:Key="ConnectorLocation">310,291 310,309</av:PointCollection>
+                        </scg2:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <wag:ChangeEntityStatusActivity x:TypeArguments="wbo:CommAct" DisplayName="Обновим статус" sap:VirtualizedContainerService.HintSize="200,22" Key="[currentACT.GetKey()]" Operation="OP_COMMACT_UNCLOSE" Result="[currentACT]">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg2:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </wag:ChangeEntityStatusActivity>
+                      <FlowStep.Next>
+                        <FlowStep x:Name="__ReferenceID3">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                              <av:Point x:Key="ShapeLocation">210,309</av:Point>
+                              <av:Size x:Key="ShapeSize">200,22</av:Size>
+                              <av:PointCollection x:Key="ConnectorLocation">310,331 310,349</av:PointCollection>
+                            </scg2:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <wav:ShowMessageBoxActivity Buttons="OK" DefaultResult="None" sap:VirtualizedContainerService.HintSize="200,22" Image="None" Message="Коммерческий акт расфиксирован" Result="None" Title="Расфиксировать коммерческий акт">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg2:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </wav:ShowMessageBoxActivity>
+                          <FlowStep.Next>
+                            <FlowStep x:Name="__ReferenceID2">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <av:Point x:Key="ShapeLocation">210,349</av:Point>
+                                  <av:Size x:Key="ShapeSize">200,22</av:Size>
+                                  <av:PointCollection x:Key="ConnectorLocation">310,371 301,371 301,390.5</av:PointCollection>
+                                </scg2:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <wab:RefreshEntityActivity DisplayName="Обновление менеджеров сущностей" sap:VirtualizedContainerService.HintSize="200,22" IsEnabled="True">
+                                <wab:RefreshEntityActivity.EntityTypes>
+                                  <wgpm:ValueDataField BindingPath="{x:Null}" DependentFields="{x:Null}" Description="{x:Null}" DisplayFormat="{x:Null}" EnableCreate="{x:Null}" EnableEdit="{x:Null}" EventName="{x:Null}" FieldName="{x:Null}" FieldType="{x:Null}" ImageName="{x:Null}" KeyLink="{x:Null}" LookupCode="{x:Null}" LookupFilterExt="{x:Null}" LookupVarFilterExt="{x:Null}" MaxLength="{x:Null}" SourceName="{x:Null}" AllowAddNewValue="False" Caption="Items" CloseDialog="False" IsChangeLookupCode="False" IsEnabled="True" IsLabelFontWeightBold="False" IsMemoView="False" IsRequired="False" LabelPosition="Left" LookupButtonEnabled="True" Name="COMMACT" Order="0" SetFocus="False" Visible="True">
+                                    <wgpm:ValueDataField.Value>
+                                      <wab:RefreshAction>InsertOrUpdate</wab:RefreshAction>
+                                    </wgpm:ValueDataField.Value>
+                                  </wgpm:ValueDataField>
+                                </wab:RefreshEntityActivity.EntityTypes>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg2:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </wab:RefreshEntityActivity>
+                              <FlowStep.Next>
+                                <FlowStep x:Name="__ReferenceID1">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <av:Point x:Key="ShapeLocation">144,390.5</av:Point>
+                                      <av:Size x:Key="ShapeSize">314,99</av:Size>
+                                      <av:PointCollection x:Key="ConnectorLocation">301,489.5 301,510 310,510</av:PointCollection>
+                                    </scg2:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <wab:RegEvent BPProcessCode="{x:Null}" EndDate="{x:Null}" StartDate="{x:Null}" BillOperationCode="[&quot;OP_COMMACT_UNCLOSE&quot;]" EventKindCode="[&quot;COMMACT_UNCLOSE&quot;]" sap:VirtualizedContainerService.HintSize="314,99" MandantId="[BPH.GetMandantId(Items(0))]">
+                                    <wab:RegEvent.Parameters>
+                                      <InArgument x:TypeArguments="x:String" x:Key="USERCODE_R" />
+                                      <InArgument x:TypeArguments="s:Nullable(x:Decimal)" x:Key="PRODUCTID_R" />
+                                      <InArgument x:TypeArguments="x:String" x:Key="TECODE_R" />
+                                      <InArgument x:TypeArguments="x:String" x:Key="TETYPECODE_R" />
+                                      <InArgument x:TypeArguments="s:Nullable(x:Decimal)" x:Key="SKUID_R" />
+                                      <InArgument x:TypeArguments="x:String" x:Key="ARTCODE_R" />
+                                      <InArgument x:TypeArguments="s:Nullable(x:Decimal)" x:Key="PRODUCTCOUNTSKU" />
+                                      <InArgument x:TypeArguments="s:Nullable(x:Double)" x:Key="PRODUCTCOUNT" />
+                                      <InArgument x:TypeArguments="x:String" x:Key="QLFCODE_R" />
+                                      <InArgument x:TypeArguments="x:String" x:Key="QLFDETAILCODE_R" />
+                                      <InArgument x:TypeArguments="s:Nullable(s:DateTime)" x:Key="PRODUCTINPUTDATE" />
+                                      <InArgument x:TypeArguments="x:String" x:Key="PRODUCTPACK" />
+                                      <InArgument x:TypeArguments="s:Nullable(x:Decimal)" x:Key="PRODUCTPACKCOUNTSKU" />
+                                      <InArgument x:TypeArguments="s:Nullable(s:DateTime)" x:Key="PRODUCTEXPIRYDATE" />
+                                      <InArgument x:TypeArguments="x:String" x:Key="PRODUCTBATCH" />
+                                      <InArgument x:TypeArguments="x:String" x:Key="PRODUCTSERIALNUMBER" />
+                                      <InArgument x:TypeArguments="s:Nullable(x:Decimal)" x:Key="IWBID_R" />
+                                      <InArgument x:TypeArguments="x:String" x:Key="IWBNAME_R" />
+                                      <InArgument x:TypeArguments="s:Nullable(x:Decimal)" x:Key="IWBPOSID_R" />
+                                      <InArgument x:TypeArguments="s:Nullable(x:Decimal)" x:Key="IWBPOSNUMBER_R" />
+                                      <InArgument x:TypeArguments="s:Nullable(x:Decimal)" x:Key="OWBID_R" />
+                                      <InArgument x:TypeArguments="x:String" x:Key="OWBNAME_R" />
+                                      <InArgument x:TypeArguments="s:Nullable(x:Decimal)" x:Key="OWBPOSID_R" />
+                                      <InArgument x:TypeArguments="s:Nullable(x:Decimal)" x:Key="OWBPOSNUMBER_R" />
+                                      <InArgument x:TypeArguments="x:String" x:Key="PRODUCTHOSTREF" />
+                                      <InArgument x:TypeArguments="x:String" x:Key="OLDTECODE_R" />
+                                      <InArgument x:TypeArguments="x:String" x:Key="OLDTETYPECODE_R" />
+                                      <InArgument x:TypeArguments="s:Nullable(x:Decimal)" x:Key="OLDSKUID_R" />
+                                      <InArgument x:TypeArguments="x:String" x:Key="OLDARTCODE_R" />
+                                      <InArgument x:TypeArguments="s:Nullable(x:Decimal)" x:Key="OLDPRODUCTCOUNTSKU" />
+                                      <InArgument x:TypeArguments="s:Nullable(x:Double)" x:Key="OLDPRODUCTCOUNT" />
+                                      <InArgument x:TypeArguments="x:String" x:Key="OLDQLFCODE_R" />
+                                      <InArgument x:TypeArguments="x:String" x:Key="OLDQLFDETAILCODE_R" />
+                                      <InArgument x:TypeArguments="s:Nullable(s:DateTime)" x:Key="OLDPRODUCTINPUTDATE" />
+                                      <InArgument x:TypeArguments="x:String" x:Key="OLDPRODUCTPACK" />
+                                      <InArgument x:TypeArguments="s:Nullable(x:Decimal)" x:Key="OLDPRODUCTPACKCOUNTSKU" />
+                                      <InArgument x:TypeArguments="s:Nullable(s:DateTime)" x:Key="OLDPRODUCTEXPIRYDATE" />
+                                      <InArgument x:TypeArguments="x:String" x:Key="OLDPRODUCTBATCH" />
+                                      <InArgument x:TypeArguments="x:String" x:Key="OLDPRODUCTSERIALNUMBER" />
+                                      <InArgument x:TypeArguments="s:Nullable(x:Decimal)" x:Key="OLDIWBID_R" />
+                                      <InArgument x:TypeArguments="x:String" x:Key="OLDIWBNAME_R" />
+                                      <InArgument x:TypeArguments="s:Nullable(x:Decimal)" x:Key="OLDIWBPOSID_R" />
+                                      <InArgument x:TypeArguments="s:Nullable(x:Decimal)" x:Key="OLDIWBPOSNUMBER_R" />
+                                      <InArgument x:TypeArguments="x:String" x:Key="OLDPRODUCTHOSTREF" />
+                                      <InArgument x:TypeArguments="s:Nullable(x:Decimal)" x:Key="OLDOWBID_R" />
+                                      <InArgument x:TypeArguments="x:String" x:Key="OLDOWBNAME_R" />
+                                      <InArgument x:TypeArguments="s:Nullable(x:Decimal)" x:Key="OLDOWBPOSID_R" />
+                                      <InArgument x:TypeArguments="s:Nullable(x:Decimal)" x:Key="OLDOWBPOSNUMBER_R" />
+                                      <InArgument x:TypeArguments="s:Nullable(x:Decimal)" x:Key="COMMACTID_R">[currentACT.Get(of Decimal)("COMMACTID")]</InArgument>
+                                      <InArgument x:TypeArguments="s:Nullable(x:Decimal)" x:Key="QRESID_R" />
+                                      <InArgument x:TypeArguments="s:Nullable(x:Decimal)" x:Key="WORKID_R" />
+                                      <InArgument x:TypeArguments="s:Nullable(s:DateTime)" x:Key="WORKFROM_R" />
+                                      <InArgument x:TypeArguments="s:Nullable(s:DateTime)" x:Key="WORKTILL_R" />
+                                      <InArgument x:TypeArguments="s:Nullable(x:Decimal)" x:Key="INTERNALTRAFFICID_R" />
+                                      <InArgument x:TypeArguments="s:Nullable(x:Decimal)" x:Key="EXTERNALTRAFFICID_R" />
+                                      <InArgument x:TypeArguments="s:Nullable(x:Decimal)" x:Key="VEHICLEID_R" />
+                                      <InArgument x:TypeArguments="s:Nullable(x:Decimal)" x:Key="EXTERNALTRAFFICDRIVER_R" />
+                                      <InArgument x:TypeArguments="x:String" x:Key="VEHICLERN_R" />
+                                      <InArgument x:TypeArguments="s:Nullable(x:Decimal)" x:Key="CARGOIWBID_R" />
+                                      <InArgument x:TypeArguments="x:String" x:Key="PLACEGATEIN_R" />
+                                    </wab:RegEvent.Parameters>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg2:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </wab:RegEvent>
+                                  <FlowStep.Next>
+                                    <FlowStep x:Name="__ReferenceID6">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <av:Point x:Key="ShapeLocation">210,510</av:Point>
+                                          <av:Size x:Key="ShapeSize">200,22</av:Size>
+                                        </scg2:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <wag:CommitTransactionActivity sap:VirtualizedContainerService.HintSize="200,22">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg2:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </wag:CommitTransactionActivity>
+                                    </FlowStep>
+                                  </FlowStep.Next>
+                                </FlowStep>
+                              </FlowStep.Next>
+                            </FlowStep>
+                          </FlowStep.Next>
+                        </FlowStep>
+                      </FlowStep.Next>
+                    </FlowStep>
+                  </FlowStep.Next>
+                </FlowStep>
+              </FlowStep.Next>
+            </FlowStep>
+            <x:Reference>__ReferenceID0</x:Reference>
+            <x:Reference>__ReferenceID1</x:Reference>
+            <x:Reference>__ReferenceID2</x:Reference>
+            <x:Reference>__ReferenceID3</x:Reference>
+            <FlowStep x:Name="__ReferenceID7">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">210,99</av:Point>
+                  <av:Size x:Key="ShapeSize">200,22</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">310,121 310,140</av:PointCollection>
+                </scg2:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <wab:CheckBpContextActivity x:TypeArguments="wbo:CommAct" Context="[BpContext]" DisplayName="Проверка параметров контекста" sap:VirtualizedContainerService.HintSize="200,22" IsMultipleItems="False" Result="[Items]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg2:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </wab:CheckBpContextActivity>
+              <FlowStep.Next>
+                <x:Reference>__ReferenceID4</x:Reference>
+              </FlowStep.Next>
+            </FlowStep>
+            <x:Reference>__ReferenceID5</x:Reference>
+            <x:Reference>__ReferenceID6</x:Reference>
+          </Flowchart>
+        </TryCatch.Try>
+        <TryCatch.Catches>
+          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="631,241">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg2:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ActivityAction x:TypeArguments="s:Exception">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="s:Exception" Name="innerException" />
+              </ActivityAction.Argument>
+              <Sequence sap:VirtualizedContainerService.HintSize="222,208">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg2:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <wag:RollbackTransactionActivity sap:VirtualizedContainerService.HintSize="200,22" />
+                <wav:ShowExceptionMessageActivity Buttons="OK" DefaultResult="OK" DisplayName="Отображение ошибки" Error="[innerException]" ErrorList="[Nothing]" ForceError="False" sap:VirtualizedContainerService.HintSize="200,22" Image="Warning" Message="Ошибка:" Title="Ошибка" />
+              </Sequence>
+            </ActivityAction>
+          </Catch>
+        </TryCatch.Catches>
+      </TryCatch>
+    </FlowStep>
+  </Flowchart>
+</Activity>

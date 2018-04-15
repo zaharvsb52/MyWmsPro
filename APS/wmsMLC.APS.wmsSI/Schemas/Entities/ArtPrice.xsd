@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ArtPrice" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include  id="WmsDateTime" schemaLocation="WmsDateTime.xsd"/>
+  
+  <!--Сущность ArtPrice-->
+  <xs:element name="TENTARTPRICE" type="ArtPriceType"/>
+
+  <!--Стоимость SKU-->
+  <xs:complexType name="ArtPriceType">
+    <xs:sequence>
+      <!--ID записи-->
+      <!--<xs:element name="ARTPRICEID" type="xs:integer"/>-->
+      <!--ID записи SKU-->
+      <xs:element name="SKUID_R" type="xs:integer"/>
+      <!--Дата начала-->
+      <xs:element name="ARTPRICEDATEBEGIN" type="WmsDateTime" />
+      <!--Дата окончания-->
+      <xs:element name="ARTPRICEDATEEND" type="WmsDateTime" />
+      <!--Стоимость-->
+      <xs:element name="ARTPRICEVALUE" type="xs:double" nillable="false" minOccurs="1" maxOccurs="1"/>
+      <!--НДС-->
+      <xs:element name="ARTPRICEVAT" type="xs:double"/>
+      <!--Мандант-->
+      <xs:element name="MANDANTID" type="xs:integer"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

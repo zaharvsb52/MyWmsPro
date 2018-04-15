@@ -1,0 +1,45 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/StandardControls/Brushes.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="{dxt:SuperTipThemeKey ResourceKey=ItemContentStyle}" />
+
+    <Style x:Key="{dxt:SuperTipThemeKey ResourceKey=HeaderContentStyle}" />
+
+    <Style x:Key="{dxt:SuperTipThemeKey ResourceKey=SeparatorContentStyle}" />
+
+    <Style x:Key="{dxt:SuperTipThemeKey ResourceKey=ItemLayoutStyle}" TargetType="{x:Type dx:Items2Panel}">
+        <Setter Property="HorizontalIndent" Value="4" />
+    </Style>
+
+    <Style x:Key="{dxt:SuperTipThemeKey ResourceKey=HeaderLayoutStyle}" TargetType="{x:Type dx:Items2Panel}">
+        <Setter Property="HorizontalIndent" Value="4" />
+    </Style>
+
+    <DataTemplate x:Key="{dxt:SuperTipThemeKey ResourceKey=ItemContentTemplate}">
+        <TextBlock Foreground="{StaticResource ToolTip.Foreground}" Text="{Binding}" Margin="0,0,0,2" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxt:SuperTipThemeKey ResourceKey=HeaderContentTemplate}">
+        <TextBlock Foreground="{StaticResource ToolTip.Foreground}" FontWeight="Bold" Text="{Binding}" Margin="0,0,0,2" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxt:SuperTipThemeKey ResourceKey=SeparatorContentTemplate}">
+        <Border Background="#FFD3D5DA" Height="1" Margin="2,4,2,4">
+            <Border.OpacityMask>
+                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                    <GradientStop Color="#00FFFFFF" Offset="0" />
+                    <GradientStop Color="#00FFFFFF" Offset="1" />
+                    <GradientStop Color="#FFFFFFFF" Offset="0.5" />
+                </LinearGradientBrush>
+            </Border.OpacityMask>
+        </Border>
+    </DataTemplate>
+
+    <ControlTemplate x:Key="{dxt:SuperTipThemeKey ResourceKey=BorderTemplate}">
+        <ContentPresenter />
+    </ControlTemplate>
+
+</ResourceDictionary>

@@ -1,0 +1,178 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys">
+
+	<sys:Double x:Key="{dxt:BrushesThemeKey ThemeName=GrayOne, ResourceKey=DemoPanelElementsOpacity}">0.6</sys:Double>
+	<LinearGradientBrush x:Key="{dxt:BrushesThemeKey ThemeName=GrayOne, ResourceKey=PanelCenterGradient}" EndPoint="0.5,0.012" StartPoint="0.5,0.988">
+		<GradientStop Color="#FF030C27" Offset="0" />
+		<GradientStop Color="#FF08214B" Offset="1" />
+		<GradientStop Color="#FF051A3E" Offset="0.399" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="{dxt:BrushesThemeKey ThemeName=GrayOne, ResourceKey=PanelBottomGradient}" EndPoint="0.5,0.038" StartPoint="0.5,0.962">
+		<GradientStop Color="#FF030A1A" Offset="0" />
+		<GradientStop Color="#FF030C27" Offset="1" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="{dxt:BrushesThemeKey ThemeName=GrayOne, ResourceKey=PanelTopGradient}" EndPoint="0.5,0.034" StartPoint="0.5,0.966">
+		<GradientStop Color="#FF08214B" Offset="0" />
+		<GradientStop Color="#FF041228" Offset="1" />
+		<GradientStop Color="#FF061B3E" Offset="0.65" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="{dxt:BrushesThemeKey ThemeName=GrayOne, ResourceKey=PanelShow}" EndPoint="0.963,0.5" StartPoint="0.037,0.5">
+		<GradientStop Color="#A6030C27" Offset="0" />
+		<GradientStop Color="#00030C27" Offset="1" />
+		<GradientStop Color="#36030C27" Offset="0.385" />
+	</LinearGradientBrush>
+	<SolidColorBrush x:Key="{dxt:BrushesThemeKey ThemeName=GrayOne, ResourceKey=PanelBorder}" Color="#7E2D6199" />
+    <SolidColorBrush x:Key="{dxt:BrushesThemeKey ThemeName=GrayOne, ResourceKey=PanelBackground}" Color="#7E2D6199" />
+	<RadialGradientBrush x:Key="{dxt:BrushesThemeKey ThemeName=GrayOne, ResourceKey=OpacityMaskGradient}" GradientOrigin="0.5,0.78">
+		<RadialGradientBrush.RelativeTransform>
+			<TransformGroup>
+				<ScaleTransform CenterX="0.5" CenterY="0.5" ScaleX="0.9" ScaleY="2.384" />
+				<SkewTransform AngleX="0" AngleY="0" CenterX="0.5" CenterY="0.5" />
+				<RotateTransform Angle="0" CenterX="0.5" CenterY="0.5" />
+				<TranslateTransform X="0" Y="0.432" />
+			</TransformGroup>
+		</RadialGradientBrush.RelativeTransform>
+		<GradientStop Color="#00000000" Offset="0.74" />
+		<GradientStop Color="#FFFFFFFF" Offset="1" />
+	</RadialGradientBrush>
+	<LinearGradientBrush x:Key="{dxt:BrushesThemeKey ThemeName=GrayOne, ResourceKey=SelectedGreenLight}" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="#FF016C18" Offset="0" />
+		<GradientStop Color="#FFA4FA80" Offset="1" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="{dxt:BrushesThemeKey ThemeName=GrayOne, ResourceKey=NormalBlueGradient}" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="#FF234388" Offset="0" />
+		<GradientStop Color="#FF446BA7" Offset="1" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="{dxt:BrushesThemeKey ThemeName=GrayOne, ResourceKey=NormalGlareGradient}" EndPoint="0.5,0.083" StartPoint="0.5,0.917">
+		<GradientStop Color="#00CFE2FF" Offset="0" />
+		<GradientStop Color="#FFCFE2FF" Offset="1" />
+		<GradientStop Color="#48CBDFFF" Offset="0.298" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="{dxt:BrushesThemeKey ThemeName=GrayOne, ResourceKey=SelectedGlareGradient}" EndPoint="0.5,0.083" StartPoint="0.5,1.056">
+		<GradientStop Color="#00FFFFFF" Offset="0" />
+		<GradientStop Color="#FFFFFFFF" Offset="1" />
+		<GradientStop Color="#48FFFFFF" Offset="0.298" />
+	</LinearGradientBrush>
+	<SolidColorBrush x:Key="{dxt:BrushesThemeKey ThemeName=GrayOne, ResourceKey=GroupBoxBorderBrush}" Color="#FFD0D0BF" />
+	<LinearGradientBrush x:Key="{dxt:BrushesThemeKey ThemeName=GrayOne, ResourceKey=ControlEmboss}" EndPoint="0.5,1.002" StartPoint="0.5,-0.002" SpreadMethod="Pad">
+		<GradientStop Color="#3E4C6EB3" Offset="0" />
+		<GradientStop Color="#80EDF4FF" Offset="1" />
+		<GradientStop Color="#3F7098DC" Offset="0.215" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="{dxt:BrushesThemeKey ThemeName=GrayOne, ResourceKey=EditorButtonBorderGradient}" EndPoint="0.5,1.003" StartPoint="0.5,-0.003">
+		<GradientStop Color="#FF233B6C" Offset="0" />
+		<GradientStop Color="#FF5077B3" Offset="1" />
+		<GradientStop Color="#FF22417C" Offset="0.178" />
+		<GradientStop Color="#FF264B85" Offset="0.692" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="{dxt:BrushesThemeKey ThemeName=GrayOne, ResourceKey=ButtonNormalGradient}" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="#FF578BC8" Offset="0" />
+		<GradientStop Color="#FFBDD7FF" Offset="1" />
+		<GradientStop Color="#FF88B1F0" Offset="0.529" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="{dxt:BrushesThemeKey ThemeName=GrayOne, ResourceKey=ButtonNormalGlare}" EndPoint="0.5,-0.002" StartPoint="0.5,1.002">
+		<GradientStop Color="#FFD5E1F6" Offset="0.865" />
+		<GradientStop Color="#FFE7F2FA" Offset="1" />
+		<GradientStop Color="#FFAAC4EC" Offset="0" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="{dxt:BrushesThemeKey ThemeName=GrayOne, ResourceKey=EditorButtonPressedGradient}" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="#FF385FA1" Offset="0" />
+		<GradientStop Color="#FF6086BD" Offset="1" />
+		<GradientStop Color="#FF1F4685" Offset="0.529" />
+		<GradientStop Color="#FF4168A3" Offset="0.865" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="{dxt:BrushesThemeKey ThemeName=GrayOne, ResourceKey=EditorButtonPressedGlare}" EndPoint="0.5,-0.002" StartPoint="0.5,1.002">
+		<GradientStop Color="#FF5F83B6" Offset="0.862" />
+		<GradientStop Color="#FF384E76" Offset="1" />
+		<GradientStop Color="#FF385E99" Offset="0" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="{dxt:BrushesThemeKey ThemeName=GrayOne, ResourceKey=CheckRadioFillNormal}">
+		<GradientStop Color="#FFD2D4D2" Offset="0" />
+		<GradientStop Color="#FFFFFFFF" Offset="1" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="{dxt:BrushesThemeKey ThemeName=GrayOne, ResourceKey=CheckRadioStrokeNormal}">
+		<GradientStop Color="#FF004C94" Offset="0" />
+		<GradientStop Color="#FF003C74" Offset="1" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="{dxt:BrushesThemeKey ThemeName=GrayOne, ResourceKey=RadioCenter}" EndPoint="0.5,1.003" StartPoint="0.5,-0.003" MappingMode="RelativeToBoundingBox">
+		<GradientStop Color="#FFBEC9E0" Offset="0" />
+		<GradientStop Color="#FFFFFFFF" Offset="1" />
+		<GradientStop Color="#FFE5E9F1" Offset="0.508" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="{dxt:BrushesThemeKey ThemeName=GrayOne, ResourceKey=RadioPoint}" EndPoint="0.5,1.003" StartPoint="0.5,-0.003">
+		<GradientStop Color="#FF0F234D" Offset="0" />
+		<GradientStop Color="#FF2F5694" Offset="1" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="{dxt:BrushesThemeKey ThemeName=GrayOne, ResourceKey=RadioHottrackGradient}" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="#FF3856A9" Offset="0" />
+		<GradientStop Color="#FFD9ECFF" Offset="1" />
+		<GradientStop Color="#FF7798F2" Offset="0.483" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="{dxt:BrushesThemeKey ThemeName=GrayOne, ResourceKey=RadioHottrackGlare}" EndPoint="0.5,-0.002" StartPoint="0.5,1.002">
+		<GradientStop Color="#FFDBF0FF" Offset="1" />
+		<GradientStop Color="#FF87AEF2" Offset="0" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="{dxt:BrushesThemeKey ThemeName=GrayOne, ResourceKey=radioButtonNormalGradient}" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="#FF3856A9" Offset="0" />
+		<GradientStop Color="#FFC9E4FF" Offset="1" />
+		<GradientStop Color="#FF3559B9" Offset="0.485" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="{dxt:BrushesThemeKey ThemeName=GrayOne, ResourceKey=radioButtonNormalGlare}" EndPoint="0.5,-0.002" StartPoint="0.5,1.002">
+		<GradientStop Color="#FFC4E6FF" Offset="1" />
+		<GradientStop Color="#FF557BBD" Offset="0" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="{dxt:BrushesThemeKey ThemeName=GrayOne, ResourceKey=RadiobuttonNormalCenter}" EndPoint="0.5,1.003" StartPoint="0.5,-0.003" MappingMode="RelativeToBoundingBox">
+		<GradientStop Color="#FFBEC9E0" Offset="0" />
+		<GradientStop Color="#FFFFFFFF" Offset="1" />
+		<GradientStop Color="#FFE5E9F1" Offset="0.508" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="{dxt:BrushesThemeKey ThemeName=GrayOne, ResourceKey=RadioButtonHottrackCenter}" EndPoint="0.5,1.003" StartPoint="0.5,-0.003" MappingMode="RelativeToBoundingBox">
+		<GradientStop Color="#FFE9F0FF" Offset="0" />
+		<GradientStop Color="#FFB0CCFF" Offset="1" />
+		<GradientStop Color="#FF96B8EA" Offset="0.495" />
+		<GradientStop Color="#FFABC4F0" Offset="0.492" />
+	</LinearGradientBrush>
+	<SolidColorBrush x:Key="{dxt:BrushesThemeKey ThemeName=GrayOne, ResourceKey=ListBorder}" Color="#FF7F9DB9" />
+	<LinearGradientBrush x:Key="{dxt:BrushesThemeKey ThemeName=GrayOne, ResourceKey=SelectedItem}" EndPoint="0.5,-0.002" StartPoint="0.5,1.002">
+		<GradientStop Color="#FF4B6FA5" Offset="0" />
+		<GradientStop Color="#FF5E81B4" Offset="1" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="{dxt:BrushesThemeKey ThemeName=GrayOne, ResourceKey=HottrackItem}" EndPoint="0.5,-0.002" StartPoint="0.5,1.002">
+		<GradientStop Color="#FF6488BC" Offset="0" />
+		<GradientStop Color="#FF759BD2" Offset="1" />
+	</LinearGradientBrush>
+    <LinearGradientBrush x:Key="{dxt:BrushesThemeKey ThemeName=GrayOne, ResourceKey=SortArrowGradient}" EndPoint="0.5,1.01" StartPoint="0.5,-0.01">
+        <GradientStop Color="#FFB1CFE2" Offset="0" />
+        <GradientStop Color="#FFDEF1F7" Offset="1" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="{dxt:BrushesThemeKey ThemeName=GrayOne, ResourceKey=EditorTexteditBorderGradient}" EndPoint="0.5,1.003" StartPoint="0.5,-0.003">
+        <GradientStop Color="#FF233B6C" Offset="0" />
+        <GradientStop Color="#FF5C84C1" Offset="1" />
+        <GradientStop Color="#FF5373AF" Offset="0.178" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="{dxt:BrushesThemeKey ThemeName=GrayOne, ResourceKey=EditorTextediBgGradient}" EndPoint="0.5,1.003" StartPoint="0.5,-0.003" MappingMode="RelativeToBoundingBox">
+        <GradientStop Color="#FFCED6E6" Offset="0" />
+        <GradientStop Color="#FFFFFFFF" Offset="1" />
+        <GradientStop Color="#FFECEFF5" Offset="0.264" />
+        <GradientStop Color="#FFE5E9F1" Offset="0.12" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="{dxt:BrushesThemeKey ThemeName=GrayOne, ResourceKey=EditorButtonNormalGlare}" EndPoint="0.5,-0.002" StartPoint="0.5,1.002">
+        <GradientStop Color="#FF688CBF" Offset="0.862" />
+        <GradientStop Color="#FF46659D" Offset="1" />
+        <GradientStop Color="#FF517BBA" Offset="0" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="{dxt:BrushesThemeKey ThemeName=GrayOne, ResourceKey=EditorButtonNormalGradient}" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FF274B87" Offset="0" />
+        <GradientStop Color="#FF7398CE" Offset="1" />
+        <GradientStop Color="#FF2F538F" Offset="0.529" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="{dxt:BrushesThemeKey ThemeName=GrayOne, ResourceKey=EditorButtonHottrackGradient}" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FF385FA1" Offset="0" />
+        <GradientStop Color="#FFACCAF7" Offset="1" />
+        <GradientStop Color="#FF6F9CE0" Offset="0.529" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="{dxt:BrushesThemeKey ThemeName=GrayOne, ResourceKey=EditorButtonHottrackGlare}" EndPoint="0.5,-0.002" StartPoint="0.5,1.002">
+        <GradientStop Color="#FFCEDBF1" Offset="0.865" />
+        <GradientStop Color="#FFDCEAF3" Offset="1" />
+        <GradientStop Color="#FF90AAD2" Offset="0" />
+    </LinearGradientBrush>
+</ResourceDictionary>

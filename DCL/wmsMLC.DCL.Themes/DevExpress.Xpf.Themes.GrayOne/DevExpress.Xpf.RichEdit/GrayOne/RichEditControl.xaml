@@ -1,0 +1,21 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxret="http://schemas.devexpress.com/winfx/2008/xaml/richedit/themekeys">
+
+    <!--BEGIN WPF-->
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.RichEdit/GrayOne/Colors.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <!--END WPF-->
+
+    <ControlTemplate x:Key="{dxret:RichEditControlThemeKey ResourceKey=BackgroundControlTemplate}" TargetType="{x:Type ContentControl}">
+        <Border Background="{StaticResource BackgroundStyle}">
+            <ContentPresenter Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" UseLayoutRounding="True" SnapsToDevicePixels="True" />
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxret:RichEditControlThemeKey ResourceKey=BorderControlTemplate}" TargetType="{x:Type ContentControl}">
+        <Border BorderBrush="{StaticResource RichEditBorderBrush}" BorderThickness="1" SnapsToDevicePixels="True">
+            <ContentPresenter Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" UseLayoutRounding="True" />
+        </Border>
+    </ControlTemplate>
+
+</ResourceDictionary>

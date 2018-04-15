@@ -1,0 +1,53 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/charts/themekeys" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:local="http://schemas.devexpress.com/winfx/2008/xaml/charts" xmlns:media3D="clr-namespace:System.Windows.Media.Media3D;assembly=PresentationCore">
+
+    <media3D:MaterialGroup x:Key="DefaultXYDiagramMaterial">
+        <media3D:DiffuseMaterial />
+    </media3D:MaterialGroup>
+
+    <Style x:Key="Diagram3DStyle" TargetType="local:Diagram3D">
+        <Setter Property="local:XYDiagram3D.Material" Value="{StaticResource DefaultXYDiagramMaterial}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.XYDiagram3D}" TargetType="{x:Type local:XYDiagram3D}" BasedOn="{StaticResource Diagram3DStyle}">
+        <Setter Property="DomainBrush" Value="{DynamicResource {dxt:ChartBrushesThemeKey ResourceKey=Domain3DBrush}}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:XYDiagram3D">
+                    <local:ChartContentControl x:Name="XYDiagram3DWrapper" Padding="{TemplateBinding Padding}" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" Visibility="{TemplateBinding Visibility}" Template="{DynamicResource {dxt:ChartControlThemeKey ResourceKey=XYDiagram3DWrapperTemplate}}">
+                        <local:VisualContainer Diagram="{Binding RelativeSource={RelativeSource TemplatedParent}}" />
+                    </local:ChartContentControl>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.SimpleDiagram3D}" TargetType="{x:Type local:SimpleDiagram3D}" BasedOn="{StaticResource Diagram3DStyle}">
+        <Setter Property="local:XYDiagram3D.Material" Value="{StaticResource DefaultXYDiagramMaterial}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:SimpleDiagram3D}">
+                    <local:ChartContentControl x:Name="SimpleDiagram3DWrapper" Padding="{TemplateBinding Padding}" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" Visibility="{TemplateBinding Visibility}" Template="{DynamicResource {dxt:ChartControlThemeKey ResourceKey=SimpleDiagram3DWrapperTemplate}}">
+                        <local:SimpleDiagramItemsControl ItemsSource="{TemplateBinding ActualSeries}" DataContext="{Binding RelativeSource={RelativeSource TemplatedParent}}">
+                            <local:SimpleDiagramItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <local:SimpleDiagramPanel SimpleDiagram="{Binding}" />
+                                </ItemsPanelTemplate>
+                            </local:SimpleDiagramItemsControl.ItemsPanel>
+                            <local:SimpleDiagramItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <local:TitlesLayoutControl Titles="{Binding Path=Content.Titles, RelativeSource={RelativeSource TemplatedParent}}">
+                                        <local:TitlesLayoutControl.MasterElement>
+                                            <local:VisualContainer Diagram="{Binding Path=Diagram, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:ChartControl}}}" />
+                                        </local:TitlesLayoutControl.MasterElement>
+                                    </local:TitlesLayoutControl>
+                                </DataTemplate>
+                            </local:SimpleDiagramItemsControl.ItemTemplate>
+                        </local:SimpleDiagramItemsControl>
+                    </local:ChartContentControl>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

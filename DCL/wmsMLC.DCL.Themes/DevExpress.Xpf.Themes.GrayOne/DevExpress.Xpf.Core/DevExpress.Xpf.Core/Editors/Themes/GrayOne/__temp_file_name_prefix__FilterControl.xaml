@@ -1,0 +1,40 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxet="http://schemas.devexpress.com/winfx/2008/xaml/editors/themekeys" xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxef="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <!--BEGIN WPF-->
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Generic/FilterControl.xaml" />
+  </ResourceDictionary.MergedDictionaries>
+  <!--END WPF-->
+  <dxef:GroupTypeConverter x:Key="FilterControlGroupTypeConverter" />
+  <dxef:OperationStringConverter x:Key="FilterControlOperationStringConverter" />
+  <ControlTemplate x:Key="{dxet:FilterControlThemeKey ResourceKey=FilterControlBorderTemplate}" TargetType="{x:Type ContentControl}">
+    <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\FilterControl.xaml;11;10">
+      <Border Background="#FF9DA0AA" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\FilterControl.xaml;12;14" />
+      <Border Background="#FFFFFFFF" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\FilterControl.xaml;13;14">
+        <Border.Margin>
+          <Binding Path="Tag" RelativeSource="{RelativeSource TemplatedParent}">
+            <Binding.Converter>
+              <dxcore_unique_xmlns:BoolToObjectConverter>
+                <dxcore_unique_xmlns:BoolToObjectConverter.TrueValue>
+                  <Thickness>1</Thickness>
+                </dxcore_unique_xmlns:BoolToObjectConverter.TrueValue>
+                <dxcore_unique_xmlns:BoolToObjectConverter.FalseValue>
+                  <Thickness>0</Thickness>
+                </dxcore_unique_xmlns:BoolToObjectConverter.FalseValue>
+              </dxcore_unique_xmlns:BoolToObjectConverter>
+            </Binding.Converter>
+          </Binding>
+        </Border.Margin>
+      </Border>
+      <ContentPresenter Margin="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\FilterControl.xaml;29;14" />
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxet:FilterControlThemeKey ResourceKey=FilterControlGroupTypeButtonTemplate}" TargetType="{x:Type ContentControl}">
+    <TextBlock x:Name="TextButton" Text="{Binding Path=NodeType, Converter={StaticResource FilterControlGroupTypeConverter}}" Foreground="Red" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\FilterControl.xaml;33;10" />
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxet:FilterControlThemeKey ResourceKey=FilterControlFirstOperandButtonTemplate}" TargetType="{x:Type ContentControl}">
+    <dxcore_unique_xmlns:XPFContentControl x:Name="FirstOperandButton" Margin="0,2,0,2" VerticalAlignment="Center" Cursor="Hand" Content="{Binding Path=ColumnHeaderCaption}" ContentTemplate="{Binding Path=ColumnHeaderTemplate}" ContentTemplateSelector="{Binding Path=ColumnHeaderTemplateSelector}" Foreground="Blue" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\FilterControl.xaml;36;10" />
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxet:FilterControlThemeKey ResourceKey=FilterControlClauseOperationButtonTemplate}" TargetType="{x:Type ContentControl}">
+    <TextBlock x:Name="TextButton" VerticalAlignment="Center" Margin="0,2,0,2" Text="{Binding Path=Operation, Converter={StaticResource FilterControlOperationStringConverter}}" Foreground="Green" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\FilterControl.xaml;39;10" />
+  </ControlTemplate>
+</ResourceDictionary>

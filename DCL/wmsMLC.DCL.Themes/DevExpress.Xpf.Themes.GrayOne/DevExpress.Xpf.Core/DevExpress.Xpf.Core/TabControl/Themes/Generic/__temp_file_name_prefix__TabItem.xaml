@@ -1,0 +1,8 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <Style x:Key="TabItemDefaultStyle" TargetType="{x:Type dx:DXTabItem}">
+    <Setter Property="Foreground" Value="{DynamicResource {dxt:DXTabItemThemeKey ResourceKey=ForegroundBrush}}" />
+    <Setter Property="Template" Value="{DynamicResource {dxt:DXTabItemThemeKey ResourceKey=Template}}" />
+    <Setter Property="Padding" Value="{DynamicResource {dxt:DXTabItemThemeKey ResourceKey=Padding}}" />
+    <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+  </Style>
+</ResourceDictionary>

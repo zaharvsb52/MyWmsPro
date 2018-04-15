@@ -1,0 +1,123 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxet="http://schemas.devexpress.com/winfx/2008/xaml/editors/themekeys" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxcn="http://schemas.devexpress.com/winfx/2008/xaml/core/internal">
+
+    <!--BEGIN WPF-->
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/GrayOne/Brushes.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Generic/DataPager.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <!--END WPF-->
+
+    <SolidColorBrush x:Key="GlyphColor" Color="#FF201F35" />
+
+    <DataTemplate x:Key="{dxet:DataPagerButtonThemeKey ResourceKey=FirstPageGlyph}">
+        <Grid Width="5" Height="8">
+            <Path Stretch="Fill" Fill="{StaticResource GlyphColor}" Data="F1 M 156,47L 156,55L 152,51L 156,47 Z M 151,47L 152,47L 152,55L 151,55L 151,47 Z " Width="5" Height="8" />
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxet:DataPagerButtonThemeKey ResourceKey=PrevPageGlyph}">
+        <Grid Width="5" Height="8">
+            <Path Stretch="Fill" Fill="{StaticResource GlyphColor}" Data="F1 M 128,35L 128,43L 124,39L 128,35 Z " Width="4" Height="8" Margin="1,0,0,0" />
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxet:DataPagerButtonThemeKey ResourceKey=NextPageGlyph}">
+        <Grid Width="5" Height="8">
+            <Path Stretch="Fill" Fill="{StaticResource GlyphColor}" Data="F1 M 149,25L 149,33L 153,29L 149,25 Z " Width="4" Height="8" Margin="0,0,1,0" />
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxet:DataPagerButtonThemeKey ResourceKey=LastPageGlyph}">
+        <Grid Width="5" Height="8">
+            <Path Stretch="Fill" Fill="{StaticResource GlyphColor}" Data="F1 M 151,47L 151,55L 155,51L 151,47 Z M 156,47.0001L 155,47.0001L 155,55.0001L 156,55.0001L 156,47.0001 Z " Width="5" Height="8" />
+        </Grid>
+    </DataTemplate>
+
+    <ControlTemplate x:Key="{dxet:DataPagerButtonThemeKey ResourceKey=Template}" TargetType="{x:Type dxe:DataPagerButton}">
+        <Grid x:Name="Root" Margin="-1">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="HoverState" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="PressedState" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Root" Duration="0" To="0.35" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="Position">
+                    <VisualState x:Name="FirstLeft" />
+                    <VisualState x:Name="SecondLeft" />
+                    <VisualState x:Name="FirstRight" />
+                    <VisualState x:Name="SecondRight" />
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Border x:Name="HoverState" Background="{StaticResource ButtonEdit.HoverState.Border1}" Opacity="0">
+                <Border Background="{StaticResource ButtonEdit.HoverState.Border3}" BorderBrush="{StaticResource ButtonEdit.HoverState.Border2}" BorderThickness="1" Margin="1,0,1,0" />
+            </Border>
+            <Border x:Name="PressedState" Background="{StaticResource ButtonEdit.PressedState.Border1}" Opacity="0">
+                <Border Background="{StaticResource ButtonEdit.PressedState.Border3}" BorderBrush="{StaticResource ButtonEdit.PressedState.Border2}" BorderThickness="1,1,1,0" Margin="1,0,1,0" />
+            </Border>
+            <ContentPresenter Content="{TemplateBinding PageNumber}" ContentTemplate="{TemplateBinding ContentTemplate}" Visibility="{Binding ShowEllipsis, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource DataPagerBoolToVisibilityInvertConverter}}" Margin="8,4,8,4" />
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxet:DataPagerNumericButtonThemeKey ResourceKey=Template}" TargetType="{x:Type dxe:DataPagerNumericButton}">
+        <Grid Margin="0,0,-1,0">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Selection" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed" />
+                    <VisualState x:Name="Disabled" />
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Border x:Name="Selection" Background="{StaticResource ListBoxEditItem.HoverSelection.Border1}" Padding="1,0,1,0" Opacity="0">
+                <Border Background="{StaticResource ListBoxEditItem.HoverSelection.Border3}" BorderBrush="{StaticResource ListBoxEditItem.HoverSelection.Border2}" BorderThickness="1,0,1,0" />
+            </Border>
+            <Border x:Name="PressedState" Background="{StaticResource ListBoxEditItem.Selection.Border1}" Padding="1,0,1,0" Visibility="{Binding IsCurrentPage, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BoolToVisibilityConverter}}">
+                <Border Background="{StaticResource ListBoxEditItem.Selection.Border3}" BorderBrush="{StaticResource ListBoxEditItem.Selection.Border2}" BorderThickness="1,0,1,0" />
+            </Border>
+            <Border Margin="5,0,5,0">
+                <Grid>
+                    <ContentPresenter Content="99" ContentTemplate="{TemplateBinding ContentTemplate}" Opacity="0" />
+                    <ContentPresenter Content="{TemplateBinding PageNumber}" ContentTemplate="{TemplateBinding ContentTemplate}" Visibility="{Binding ShowEllipsis, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource DataPagerBoolToVisibilityInvertConverter}}" HorizontalAlignment="Center" />
+                    <ContentPresenter Content="..." ContentTemplate="{TemplateBinding ContentTemplate}" Visibility="{Binding ShowEllipsis, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BoolToVisibilityConverter}}" HorizontalAlignment="Center" />
+                </Grid>
+            </Border>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxet:DataPagerThemeKey ResourceKey=ButtonAreaBorderTemplate}" TargetType="ContentControl">
+        <Grid>
+            <Border BorderBrush="#FFB9BAC3" BorderThickness="1">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFE3E3E5" Offset="0" />
+                        <GradientStop Color="#FFF3F4F5" Offset="1" />
+                        <GradientStop Color="#FFF3F4F5" Offset="0.35" />
+                    </LinearGradientBrush>
+                </Border.Background>
+                <ContentPresenter Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" />
+            </Border>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxet:DataPagerThemeKey ResourceKey=NumericButtonAreaBorderTemplate}" TargetType="ContentControl">
+        <ContentPresenter Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" Margin="-1,0,0,0" />
+    </ControlTemplate>
+
+</ResourceDictionary>

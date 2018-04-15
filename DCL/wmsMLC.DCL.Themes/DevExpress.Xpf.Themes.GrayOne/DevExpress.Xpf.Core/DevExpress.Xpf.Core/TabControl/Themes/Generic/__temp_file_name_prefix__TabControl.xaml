@@ -1,0 +1,320 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <ControlTemplate x:Key="{dxt:DXTabControlThemeKey ResourceKey=TopLayoutTemplate}" TargetType="{x:Type dx:DXTabControl}">
+    <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;4;10">
+      <!--BEGIN WPF-->
+      <KeyboardNavigation.TabNavigation>Local</KeyboardNavigation.TabNavigation>
+      <!--END WPF-->
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+      <Grid Grid.Row="0" Margin="0,2,0,0" x:Name="tabHeadersPanel" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;12;14">
+        <!--BEGIN WPF-->
+        <KeyboardNavigation.TabIndex>1</KeyboardNavigation.TabIndex>
+        <KeyboardNavigation.DirectionalNavigation>Cycle</KeyboardNavigation.DirectionalNavigation>
+        <KeyboardNavigation.TabNavigation>Once</KeyboardNavigation.TabNavigation>
+        <Panel.ZIndex>1</Panel.ZIndex>
+        <!--END WPF-->
+        <!--ONLY SL<Canvas.ZIndex>1</Canvas.ZIndex>ONLY SL-->
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <dxcore_unique_xmlns:ClippedContainer Grid.Column="0" UseLayoutRounding="{TemplateBinding UseLayoutRounding}" Style="{DynamicResource {dxt:DXTabControlInternalThemeKey ResourceKey=ClippedContainerTopLayoutStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;26;18">
+          <dxcore_unique_xmlns:TabPanelContainer x:Name="panelContainer" Style="{DynamicResource {dxt:DXTabControlInternalThemeKey ResourceKey=PanelContainerTopLayoutStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;27;22">
+            <dxcore_unique_xmlns:TabPanelContainer.Resources>
+              <Storyboard x:Key="ScrollStoryboard">
+                <DoubleAnimation Storyboard.TargetName="ItemsPanelTranslate" Storyboard.TargetProperty="X" Duration="0:0:0.4" To="0">
+                  <DoubleAnimation.EasingFunction>
+                    <ExponentialEase EasingMode="EaseOut" Exponent="0" />
+                  </DoubleAnimation.EasingFunction>
+                </DoubleAnimation>
+              </Storyboard>
+            </dxcore_unique_xmlns:TabPanelContainer.Resources>
+            <ItemsPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;37;26">
+              <ItemsPresenter.RenderTransform>
+                <TranslateTransform x:Name="ItemsPanelTranslate" />
+              </ItemsPresenter.RenderTransform>
+            </ItemsPresenter>
+          </dxcore_unique_xmlns:TabPanelContainer>
+        </dxcore_unique_xmlns:ClippedContainer>
+        <dxcore_unique_xmlns:TabControlScrollButton x:Name="PrevButton" Grid.Column="1" Style="{DynamicResource {dxt:DXTabControlThemeKey ResourceKey=PrevButtonStyle}}" Margin="{DynamicResource {dxt:DXTabControlInternalThemeKey ResourceKey=ComponentsSpaceForHorizontalLayouts}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;44;18" />
+        <dxcore_unique_xmlns:TabControlScrollButton x:Name="NextButton" Grid.Column="2" Style="{DynamicResource {dxt:DXTabControlThemeKey ResourceKey=NextButtonStyle}}" Margin="{DynamicResource {dxt:DXTabControlInternalThemeKey ResourceKey=ComponentsSpaceForHorizontalLayouts}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;45;18" />
+        <dxcore_unique_xmlns:HeaderMenu Grid.Column="3" x:Name="HeaderMenu" IsTabStop="False" Style="{DynamicResource {dxt:DXTabControlThemeKey ResourceKey=HeaderMenuStyle}}" Margin="{DynamicResource {dxt:DXTabControlInternalThemeKey ResourceKey=ComponentsSpaceForHorizontalLayouts}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;46;18" />
+      </Grid>
+      <Grid Grid.Row="1" Name="PART_ContentHost" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;48;14">
+        <dxcore_unique_xmlns:DXContentPresenter ContentTemplate="{DynamicResource {dxt:DXTabControlThemeKey ResourceKey=TopBackgroundTemplate}}" IsTabStop="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;49;18">
+          <!--ONLY SL<dx:ThemeManager.ApplyApplicationTheme>True</dx:ThemeManager.ApplyApplicationTheme>ONLY SL-->
+        </dxcore_unique_xmlns:DXContentPresenter>
+        <Grid Margin="{TemplateBinding Padding}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;52;18">
+          <dxcore_unique_xmlns:DXContentPresenter x:Name="contentPresenter" UseLayoutRounding="{TemplateBinding UseLayoutRounding}" Content="{TemplateBinding SelectedItemContent}" ContentTemplate="{TemplateBinding SelectedItemContentTemplate}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;53;22">
+            <!--BEGIN WPF-->
+            <KeyboardNavigation.TabNavigation>Local</KeyboardNavigation.TabNavigation>
+            <KeyboardNavigation.DirectionalNavigation>Contained</KeyboardNavigation.DirectionalNavigation>
+            <KeyboardNavigation.TabIndex>2</KeyboardNavigation.TabIndex>
+            <!--END WPF-->
+            <!--ONLY SL<dx:ThemeManager.ApplyApplicationTheme>True</dx:ThemeManager.ApplyApplicationTheme>ONLY SL-->
+          </dxcore_unique_xmlns:DXContentPresenter>
+          <dxcore_unique_xmlns:TabControlFastRenderPanel x:Name="fastRenderPanel" UseLayoutRounding="{TemplateBinding UseLayoutRounding}" Visibility="Collapsed">
+            <!--BEGIN WPF-->
+            <KeyboardNavigation.TabNavigation>Local</KeyboardNavigation.TabNavigation>
+            <KeyboardNavigation.DirectionalNavigation>Contained</KeyboardNavigation.DirectionalNavigation>
+            <KeyboardNavigation.TabIndex>2</KeyboardNavigation.TabIndex>
+            <!--END WPF-->
+          </dxcore_unique_xmlns:TabControlFastRenderPanel>
+        </Grid>
+      </Grid>
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxt:DXTabControlThemeKey ResourceKey=BottomLayoutTemplate}" TargetType="{x:Type dx:DXTabControl}">
+    <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;73;10">
+      <!--BEGIN WPF-->
+      <KeyboardNavigation.TabNavigation>Local</KeyboardNavigation.TabNavigation>
+      <!--END WPF-->
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
+      <Grid Grid.Row="1" Margin="0,0,0,2" x:Name="tabHeadersPanel" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;81;14">
+        <!--BEGIN WPF-->
+        <KeyboardNavigation.TabIndex>1</KeyboardNavigation.TabIndex>
+        <KeyboardNavigation.DirectionalNavigation>Cycle</KeyboardNavigation.DirectionalNavigation>
+        <KeyboardNavigation.TabNavigation>Once</KeyboardNavigation.TabNavigation>
+        <Panel.ZIndex>1</Panel.ZIndex>
+        <!--END WPF-->
+        <!--ONLY SL<Canvas.ZIndex>1</Canvas.ZIndex>ONLY SL-->
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <dxcore_unique_xmlns:ClippedContainer Grid.Column="0" UseLayoutRounding="{TemplateBinding UseLayoutRounding}" Style="{DynamicResource {dxt:DXTabControlInternalThemeKey ResourceKey=ClippedContainerBottomLayoutStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;95;18">
+          <dxcore_unique_xmlns:TabPanelContainer x:Name="panelContainer" Style="{DynamicResource {dxt:DXTabControlInternalThemeKey ResourceKey=PanelContainerBottomLayoutStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;96;22">
+            <dxcore_unique_xmlns:TabPanelContainer.Resources>
+              <Storyboard x:Key="ScrollStoryboard">
+                <DoubleAnimation Storyboard.TargetName="ItemsPanelTranslate" Storyboard.TargetProperty="X" Duration="0:0:0.4" To="0">
+                  <DoubleAnimation.EasingFunction>
+                    <ExponentialEase EasingMode="EaseOut" Exponent="0" />
+                  </DoubleAnimation.EasingFunction>
+                </DoubleAnimation>
+              </Storyboard>
+            </dxcore_unique_xmlns:TabPanelContainer.Resources>
+            <ItemsPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;106;26">
+              <ItemsPresenter.RenderTransform>
+                <TranslateTransform x:Name="ItemsPanelTranslate" />
+              </ItemsPresenter.RenderTransform>
+            </ItemsPresenter>
+          </dxcore_unique_xmlns:TabPanelContainer>
+        </dxcore_unique_xmlns:ClippedContainer>
+        <dxcore_unique_xmlns:TabControlScrollButton x:Name="PrevButton" Grid.Column="1" Style="{DynamicResource {dxt:DXTabControlThemeKey ResourceKey=PrevButtonStyle}}" Margin="{DynamicResource {dxt:DXTabControlInternalThemeKey ResourceKey=ComponentsSpaceForHorizontalLayouts}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;113;18" />
+        <dxcore_unique_xmlns:TabControlScrollButton x:Name="NextButton" Grid.Column="2" Style="{DynamicResource {dxt:DXTabControlThemeKey ResourceKey=NextButtonStyle}}" Margin="{DynamicResource {dxt:DXTabControlInternalThemeKey ResourceKey=ComponentsSpaceForHorizontalLayouts}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;114;18" />
+        <dxcore_unique_xmlns:HeaderMenu Grid.Column="3" x:Name="HeaderMenu" IsTabStop="False" Style="{DynamicResource {dxt:DXTabControlThemeKey ResourceKey=HeaderMenuStyle}}" Margin="{DynamicResource {dxt:DXTabControlInternalThemeKey ResourceKey=ComponentsSpaceForHorizontalLayouts}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;115;18" />
+      </Grid>
+      <Grid Grid.Row="0" Name="PART_ContentHost" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;117;14">
+        <dxcore_unique_xmlns:DXContentPresenter ContentTemplate="{DynamicResource {dxt:DXTabControlThemeKey ResourceKey=BottomBackgroundTemplate}}" IsTabStop="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;118;18">
+          <!--ONLY SL<dx:ThemeManager.ApplyApplicationTheme>True</dx:ThemeManager.ApplyApplicationTheme>ONLY SL-->
+        </dxcore_unique_xmlns:DXContentPresenter>
+        <Grid Margin="{TemplateBinding Padding}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;121;18">
+          <dxcore_unique_xmlns:DXContentPresenter x:Name="contentPresenter" UseLayoutRounding="{TemplateBinding UseLayoutRounding}" Content="{TemplateBinding SelectedItemContent}" ContentTemplate="{TemplateBinding SelectedItemContentTemplate}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;122;22">
+            <!--BEGIN WPF-->
+            <KeyboardNavigation.TabNavigation>Local</KeyboardNavigation.TabNavigation>
+            <KeyboardNavigation.DirectionalNavigation>Contained</KeyboardNavigation.DirectionalNavigation>
+            <KeyboardNavigation.TabIndex>2</KeyboardNavigation.TabIndex>
+            <!--END WPF-->
+            <!--ONLY SL<dx:ThemeManager.ApplyApplicationTheme>True</dx:ThemeManager.ApplyApplicationTheme>ONLY SL-->
+          </dxcore_unique_xmlns:DXContentPresenter>
+          <dxcore_unique_xmlns:TabControlFastRenderPanel x:Name="fastRenderPanel" UseLayoutRounding="{TemplateBinding UseLayoutRounding}" Visibility="Collapsed">
+            <!--BEGIN WPF-->
+            <KeyboardNavigation.TabNavigation>Local</KeyboardNavigation.TabNavigation>
+            <KeyboardNavigation.DirectionalNavigation>Contained</KeyboardNavigation.DirectionalNavigation>
+            <KeyboardNavigation.TabIndex>2</KeyboardNavigation.TabIndex>
+            <!--END WPF-->
+          </dxcore_unique_xmlns:TabControlFastRenderPanel>
+        </Grid>
+      </Grid>
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxt:DXTabControlThemeKey ResourceKey=LeftLayoutTemplate}" TargetType="{x:Type dx:DXTabControl}">
+    <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;142;10">
+      <!--BEGIN WPF-->
+      <KeyboardNavigation.TabNavigation>Local</KeyboardNavigation.TabNavigation>
+      <!--END WPF-->
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      <Grid Grid.Column="0" Margin="2,0,0,0" x:Name="tabHeadersPanel" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;150;14">
+        <!--BEGIN WPF-->
+        <KeyboardNavigation.TabIndex>1</KeyboardNavigation.TabIndex>
+        <KeyboardNavigation.DirectionalNavigation>Cycle</KeyboardNavigation.DirectionalNavigation>
+        <KeyboardNavigation.TabNavigation>Once</KeyboardNavigation.TabNavigation>
+        <Panel.ZIndex>1</Panel.ZIndex>
+        <!--END WPF-->
+        <!--ONLY SL<Canvas.ZIndex>1</Canvas.ZIndex>ONLY SL-->
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <dxcore_unique_xmlns:ClippedContainer Grid.Row="3" UseLayoutRounding="{TemplateBinding UseLayoutRounding}" Style="{DynamicResource {dxt:DXTabControlInternalThemeKey ResourceKey=ClippedContainerLeftLayoutStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;164;18">
+          <dxcore_unique_xmlns:TabPanelContainer x:Name="panelContainer" Style="{DynamicResource {dxt:DXTabControlInternalThemeKey ResourceKey=PanelContainerLeftLayoutStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;165;22">
+            <dxcore_unique_xmlns:TabPanelContainer.Resources>
+              <Storyboard x:Key="ScrollStoryboard">
+                <DoubleAnimation Storyboard.TargetName="ItemsPanelTranslate" Storyboard.TargetProperty="Y" Duration="0:0:0.4" To="0">
+                  <DoubleAnimation.EasingFunction>
+                    <ExponentialEase EasingMode="EaseOut" Exponent="0" />
+                  </DoubleAnimation.EasingFunction>
+                </DoubleAnimation>
+              </Storyboard>
+            </dxcore_unique_xmlns:TabPanelContainer.Resources>
+            <ItemsPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;175;26">
+              <ItemsPresenter.RenderTransform>
+                <TranslateTransform x:Name="ItemsPanelTranslate" />
+              </ItemsPresenter.RenderTransform>
+            </ItemsPresenter>
+          </dxcore_unique_xmlns:TabPanelContainer>
+        </dxcore_unique_xmlns:ClippedContainer>
+        <dxcore_unique_xmlns:TabControlScrollButton x:Name="PrevButton" Grid.Row="1" Style="{DynamicResource {dxt:DXTabControlThemeKey ResourceKey=PrevButtonStyle}}" Margin="{DynamicResource {dxt:DXTabControlInternalThemeKey ResourceKey=ComponentsSpaceForVerticalLayouts}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;182;18">
+          <dxcore_unique_xmlns:TabControlScrollButton.RenderTransform>
+            <RotateTransform CenterX="8" CenterY="8" Angle="90" />
+          </dxcore_unique_xmlns:TabControlScrollButton.RenderTransform>
+        </dxcore_unique_xmlns:TabControlScrollButton>
+        <dxcore_unique_xmlns:TabControlScrollButton x:Name="NextButton" Grid.Row="2" Style="{DynamicResource {dxt:DXTabControlThemeKey ResourceKey=NextButtonStyle}}" Margin="{DynamicResource {dxt:DXTabControlInternalThemeKey ResourceKey=ComponentsSpaceForVerticalLayouts}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;187;18">
+          <dxcore_unique_xmlns:TabControlScrollButton.RenderTransform>
+            <RotateTransform CenterX="8" CenterY="8" Angle="90" />
+          </dxcore_unique_xmlns:TabControlScrollButton.RenderTransform>
+        </dxcore_unique_xmlns:TabControlScrollButton>
+        <dxcore_unique_xmlns:HeaderMenu Grid.Row="0" x:Name="HeaderMenu" IsTabStop="False" Style="{DynamicResource {dxt:DXTabControlThemeKey ResourceKey=HeaderMenuStyle}}" Margin="{DynamicResource {dxt:DXTabControlInternalThemeKey ResourceKey=ComponentsSpaceForVerticalLayouts}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;192;18">
+          <dxcore_unique_xmlns:HeaderMenu.RenderTransform>
+            <RotateTransform CenterX="8" CenterY="8" Angle="-90" />
+          </dxcore_unique_xmlns:HeaderMenu.RenderTransform>
+        </dxcore_unique_xmlns:HeaderMenu>
+      </Grid>
+      <Grid Grid.Column="1" Name="PART_ContentHost" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;198;14">
+        <dxcore_unique_xmlns:DXContentPresenter ContentTemplate="{DynamicResource {dxt:DXTabControlThemeKey ResourceKey=LeftBackgroundTemplate}}" IsTabStop="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;199;18">
+          <!--ONLY SL<dx:ThemeManager.ApplyApplicationTheme>True</dx:ThemeManager.ApplyApplicationTheme>ONLY SL-->
+        </dxcore_unique_xmlns:DXContentPresenter>
+        <Grid Margin="{TemplateBinding Padding}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;202;18">
+          <dxcore_unique_xmlns:DXContentPresenter x:Name="contentPresenter" UseLayoutRounding="{TemplateBinding UseLayoutRounding}" Content="{TemplateBinding SelectedItemContent}" ContentTemplate="{TemplateBinding SelectedItemContentTemplate}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;203;22">
+            <!--BEGIN WPF-->
+            <KeyboardNavigation.TabNavigation>Local</KeyboardNavigation.TabNavigation>
+            <KeyboardNavigation.DirectionalNavigation>Contained</KeyboardNavigation.DirectionalNavigation>
+            <KeyboardNavigation.TabIndex>2</KeyboardNavigation.TabIndex>
+            <!--END WPF-->
+            <!--ONLY SL<dx:ThemeManager.ApplyApplicationTheme>True</dx:ThemeManager.ApplyApplicationTheme>ONLY SL-->
+          </dxcore_unique_xmlns:DXContentPresenter>
+          <dxcore_unique_xmlns:TabControlFastRenderPanel x:Name="fastRenderPanel" UseLayoutRounding="{TemplateBinding UseLayoutRounding}" Visibility="Collapsed">
+            <!--BEGIN WPF-->
+            <KeyboardNavigation.TabNavigation>Local</KeyboardNavigation.TabNavigation>
+            <KeyboardNavigation.DirectionalNavigation>Contained</KeyboardNavigation.DirectionalNavigation>
+            <KeyboardNavigation.TabIndex>2</KeyboardNavigation.TabIndex>
+            <!--END WPF-->
+          </dxcore_unique_xmlns:TabControlFastRenderPanel>
+        </Grid>
+      </Grid>
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxt:DXTabControlThemeKey ResourceKey=RightLayoutTemplate}" TargetType="{x:Type dx:DXTabControl}">
+    <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;223;10">
+      <!--BEGIN WPF-->
+      <KeyboardNavigation.TabNavigation>Local</KeyboardNavigation.TabNavigation>
+      <!--END WPF-->
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="Auto" />
+      </Grid.ColumnDefinitions>
+      <Grid Grid.Column="1" Margin="0,0,2,0" x:Name="tabHeadersPanel" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;231;14">
+        <!--BEGIN WPF-->
+        <KeyboardNavigation.TabIndex>1</KeyboardNavigation.TabIndex>
+        <KeyboardNavigation.DirectionalNavigation>Cycle</KeyboardNavigation.DirectionalNavigation>
+        <KeyboardNavigation.TabNavigation>Once</KeyboardNavigation.TabNavigation>
+        <Panel.ZIndex>1</Panel.ZIndex>
+        <!--END WPF-->
+        <!--ONLY SL<Canvas.ZIndex>1</Canvas.ZIndex>ONLY SL-->
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <dxcore_unique_xmlns:ClippedContainer Grid.Row="3" UseLayoutRounding="{TemplateBinding UseLayoutRounding}" Style="{DynamicResource {dxt:DXTabControlInternalThemeKey ResourceKey=ClippedContainerRightLayoutStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;245;18">
+          <dxcore_unique_xmlns:TabPanelContainer x:Name="panelContainer" Style="{DynamicResource {dxt:DXTabControlInternalThemeKey ResourceKey=PanelContainerRightLayoutStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;246;22">
+            <dxcore_unique_xmlns:TabPanelContainer.Resources>
+              <Storyboard x:Key="ScrollStoryboard">
+                <DoubleAnimation Storyboard.TargetName="ItemsPanelTranslate" Storyboard.TargetProperty="Y" Duration="0:0:0.4" To="0">
+                  <DoubleAnimation.EasingFunction>
+                    <ExponentialEase EasingMode="EaseOut" Exponent="0" />
+                  </DoubleAnimation.EasingFunction>
+                </DoubleAnimation>
+              </Storyboard>
+            </dxcore_unique_xmlns:TabPanelContainer.Resources>
+            <ItemsPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;256;26">
+              <ItemsPresenter.RenderTransform>
+                <TranslateTransform x:Name="ItemsPanelTranslate" />
+              </ItemsPresenter.RenderTransform>
+            </ItemsPresenter>
+          </dxcore_unique_xmlns:TabPanelContainer>
+        </dxcore_unique_xmlns:ClippedContainer>
+        <dxcore_unique_xmlns:TabControlScrollButton x:Name="PrevButton" Grid.Row="1" Style="{DynamicResource {dxt:DXTabControlThemeKey ResourceKey=PrevButtonStyle}}" Margin="{DynamicResource {dxt:DXTabControlInternalThemeKey ResourceKey=ComponentsSpaceForVerticalLayouts}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;263;18">
+          <dxcore_unique_xmlns:TabControlScrollButton.RenderTransform>
+            <RotateTransform CenterX="8" CenterY="8" Angle="90" />
+          </dxcore_unique_xmlns:TabControlScrollButton.RenderTransform>
+        </dxcore_unique_xmlns:TabControlScrollButton>
+        <dxcore_unique_xmlns:TabControlScrollButton x:Name="NextButton" Grid.Row="2" Style="{DynamicResource {dxt:DXTabControlThemeKey ResourceKey=NextButtonStyle}}" Margin="{DynamicResource {dxt:DXTabControlInternalThemeKey ResourceKey=ComponentsSpaceForVerticalLayouts}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;268;18">
+          <dxcore_unique_xmlns:TabControlScrollButton.RenderTransform>
+            <RotateTransform CenterX="8" CenterY="8" Angle="90" />
+          </dxcore_unique_xmlns:TabControlScrollButton.RenderTransform>
+        </dxcore_unique_xmlns:TabControlScrollButton>
+        <dxcore_unique_xmlns:HeaderMenu Grid.Row="0" x:Name="HeaderMenu" IsTabStop="False" Style="{DynamicResource {dxt:DXTabControlThemeKey ResourceKey=HeaderMenuStyle}}" Margin="{DynamicResource {dxt:DXTabControlInternalThemeKey ResourceKey=ComponentsSpaceForVerticalLayouts}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;273;18">
+          <dxcore_unique_xmlns:HeaderMenu.RenderTransform>
+            <RotateTransform CenterX="8" CenterY="8" Angle="-90" />
+          </dxcore_unique_xmlns:HeaderMenu.RenderTransform>
+        </dxcore_unique_xmlns:HeaderMenu>
+      </Grid>
+      <Grid Grid.Column="0" Name="PART_ContentHost" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;279;14">
+        <dxcore_unique_xmlns:DXContentPresenter ContentTemplate="{DynamicResource {dxt:DXTabControlThemeKey ResourceKey=RightBackgroundTemplate}}" IsTabStop="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;280;18">
+          <!--ONLY SL<dx:ThemeManager.ApplyApplicationTheme>True</dx:ThemeManager.ApplyApplicationTheme>ONLY SL-->
+        </dxcore_unique_xmlns:DXContentPresenter>
+        <Grid Margin="{TemplateBinding Padding}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;283;18">
+          <dxcore_unique_xmlns:DXContentPresenter x:Name="contentPresenter" UseLayoutRounding="{TemplateBinding UseLayoutRounding}" Content="{TemplateBinding SelectedItemContent}" ContentTemplate="{TemplateBinding SelectedItemContentTemplate}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;284;22">
+            <!--BEGIN WPF-->
+            <KeyboardNavigation.TabNavigation>Local</KeyboardNavigation.TabNavigation>
+            <KeyboardNavigation.DirectionalNavigation>Contained</KeyboardNavigation.DirectionalNavigation>
+            <KeyboardNavigation.TabIndex>2</KeyboardNavigation.TabIndex>
+            <!--END WPF-->
+            <!--ONLY SL<dx:ThemeManager.ApplyApplicationTheme>True</dx:ThemeManager.ApplyApplicationTheme>ONLY SL-->
+          </dxcore_unique_xmlns:DXContentPresenter>
+          <dxcore_unique_xmlns:TabControlFastRenderPanel x:Name="fastRenderPanel" UseLayoutRounding="{TemplateBinding UseLayoutRounding}" Visibility="Collapsed">
+            <!--BEGIN WPF-->
+            <KeyboardNavigation.TabNavigation>Local</KeyboardNavigation.TabNavigation>
+            <KeyboardNavigation.DirectionalNavigation>Contained</KeyboardNavigation.DirectionalNavigation>
+            <KeyboardNavigation.TabIndex>2</KeyboardNavigation.TabIndex>
+            <!--END WPF-->
+          </dxcore_unique_xmlns:TabControlFastRenderPanel>
+        </Grid>
+      </Grid>
+    </Grid>
+  </ControlTemplate>
+  <Style x:Key="TabControlDefaultStyle" TargetType="{x:Type dx:DXTabControl}">
+    <Setter Property="Foreground" Value="{DynamicResource {dxt:DXTabControlThemeKey ResourceKey=ForegroundBrush}}" />
+    <Setter Property="LayoutTopTemplate" Value="{DynamicResource {dxt:DXTabControlThemeKey ResourceKey=TopLayoutTemplate}}" />
+    <Setter Property="LayoutBottomTemplate" Value="{DynamicResource {dxt:DXTabControlThemeKey ResourceKey=BottomLayoutTemplate}}" />
+    <Setter Property="LayoutLeftTemplate" Value="{DynamicResource {dxt:DXTabControlThemeKey ResourceKey=LeftLayoutTemplate}}" />
+    <Setter Property="LayoutRightTemplate" Value="{DynamicResource {dxt:DXTabControlThemeKey ResourceKey=RightLayoutTemplate}}" />
+    <Setter Property="Template" Value="{DynamicResource {dxt:DXTabControlThemeKey ResourceKey=TopLayoutTemplate}}" />
+    <Setter Property="ItemsPanel">
+      <Setter.Value>
+        <ItemsPanelTemplate>
+          <dxcore_unique_xmlns:TabPanel dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\TabControl\Themes\Generic\TabControl.xaml;313;22" />
+        </ItemsPanelTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="Padding" Value="{DynamicResource {dxt:DXTabControlThemeKey ResourceKey=Padding}}" />
+    <!--ONLY SL<Setter Property="Foreground" Value="{DynamicResource {dxt:DXTabItemThemeKey ResourceKey=ForegroundBrush}}"/>ONLY SL-->
+    <Setter Property="IsTabStop" Value="False" />
+  </Style>
+</ResourceDictionary>

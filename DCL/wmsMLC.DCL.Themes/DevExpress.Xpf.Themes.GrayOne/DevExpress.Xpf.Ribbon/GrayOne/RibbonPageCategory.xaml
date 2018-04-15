@@ -1,0 +1,184 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxrt="http://schemas.devexpress.com/winfx/2008/xaml/ribbon/themekeys" xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon">
+
+    <dx:ColorOverlayConverter x:Key="colorOverlayConverter" />
+
+    <Style x:Key="{dxrt:RibbonThemeKey ResourceKey=NormalPageCategoryTextStyle}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="{Binding Path=Color, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource colorOverlayConverter}, ConverterParameter=#FF333333}" />
+        <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+
+    <Style x:Key="{dxrt:RibbonThemeKey ResourceKey=SelectedPageCategoryTextStyle}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="{Binding Path=Color, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource colorOverlayConverter}, ConverterParameter=#FF333333}" />
+        <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+
+    <ControlTemplate x:Key="{dxrt:RibbonPageCategoryThemeKey ResourceKey=HeaderBackgroundTemplate}" TargetType="{x:Type dxr:RibbonCheckedBorderControl}">
+        <Grid Margin="1,0,1,0" SnapsToDevicePixels="True">
+            <Grid x:Name="Grid">
+                <Grid.OpacityMask>
+                    <LinearGradientBrush EndPoint="0.5,0" StartPoint="0.5,1">
+                        <GradientStop Color="#FFFFFFFF" Offset="1" />
+                        <GradientStop Color="#7FFFFFFF" Offset="0" />
+                    </LinearGradientBrush>
+                </Grid.OpacityMask>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2" />
+                </Grid.ColumnDefinitions>
+                <Border Background="{Binding Path=Color, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource colorOverlayConverter}, ConverterParameter=#FF999999}" BorderBrush="{Binding Path=Color, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource colorOverlayConverter}, ConverterParameter=#FF707070}" BorderThickness="0,1,0,0" Grid.Column="1" />
+                <Border Background="#FFFFFFFF" BorderBrush="{Binding Path=Color, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource colorOverlayConverter}, ConverterParameter=#FF777777}" BorderThickness="0,0,1,0" Grid.Column="0" />
+                <Border Background="#FFFFFFFF" BorderBrush="{Binding Path=Color, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource colorOverlayConverter}, ConverterParameter=#FF777777}" BorderThickness="1,0,0,0" Grid.Column="2" />
+            </Grid>
+            <ContentPresenter x:Name="Content" Margin="5,0,5,0" Grid.Column="1" />
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="Placement">
+                    <VisualState x:Name="RibbonWindow">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Grid" Storyboard.TargetProperty="Margin">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Thickness>0,-1,0,0</Thickness>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Content" Storyboard.TargetProperty="Margin">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Thickness>4,0,4,0</Thickness>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Standalone">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Grid" Storyboard.TargetProperty="Margin">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Thickness>0,0,0,0</Thickness>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Content" Storyboard.TargetProperty="Margin">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Thickness>4,0,4,1</Thickness>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxrt:RibbonPageCategoryThemeKey ResourceKey=HeadersBackgroundTemplate}" TargetType="{x:Type dxr:RibbonCheckedBorderControl}" />
+
+    <ControlTemplate x:Key="{dxrt:RibbonPageCategoryThemeKey ResourceKey=HighlightedHeadersBackgroundTemplate}" TargetType="{x:Type dxr:RibbonCheckedBorderControl}">
+        <Grid Margin="1,0,1,0" SnapsToDevicePixels="True">
+            <Grid.OpacityMask>
+                <LinearGradientBrush EndPoint="0.5,0" StartPoint="0.5,1">
+                    <GradientStop Color="#7FFFFFFF" Offset="1" />
+                    <GradientStop Color="#00FFFFFF" Offset="0" />
+                </LinearGradientBrush>
+            </Grid.OpacityMask>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2" />
+            </Grid.ColumnDefinitions>
+            <Border Background="{Binding Path=DataContext, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource colorOverlayConverter}, ConverterParameter=#FF999999}" Grid.Column="1" />
+            <Border Background="#FFFFFFFF" BorderBrush="{Binding Path=DataContext, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource colorOverlayConverter}, ConverterParameter=#FF777777}" BorderThickness="0,0,1,0" Grid.Column="0" />
+            <Border Background="#FFFFFFFF" BorderBrush="{Binding Path=DataContext, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource colorOverlayConverter}, ConverterParameter=#FF777777}" BorderThickness="1,0,0,0" Grid.Column="2" />
+        </Grid>
+    </ControlTemplate>
+
+    <Style x:Key="{dxrt:RibbonPageCategoryThemeKey ResourceKey=HeadersPresenterStyle}" TargetType="{x:Type ItemsPresenter}" />
+
+    <!--BEGIN WPF-->
+    <Style x:Key="{dxrt:RibbonThemeKey ResourceKey=NormalPageCategoryTextStyleInAeroWindow}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#FFFFFFFF" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ContentControl">
+                    <Grid>
+                        <TextBlock Foreground="#FF808080" Margin="1,1,0,0" Text="{TemplateBinding Content}" />
+                        <TextBlock Text="{TemplateBinding Content}" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="{dxrt:RibbonThemeKey ResourceKey=SelectedPageCategoryTextStyleInAeroWindow}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#FFFFFFFF" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ContentControl">
+                    <Grid>
+                        <TextBlock Foreground="#FF808080" Margin="1,1,0,0" Text="{TemplateBinding Content}" />
+                        <TextBlock Text="{TemplateBinding Content}" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <ControlTemplate x:Key="{dxrt:RibbonPageCategoryThemeKey ResourceKey=HeaderBackgroundTemplateInAeroWindow}" TargetType="{x:Type dxr:RibbonCheckedBorderControl}">
+        <Border SnapsToDevicePixels="True" MinHeight="27" BorderThickness="1,0,1,0">
+            <Border.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,0" StartPoint="0.5,1">
+                    <GradientStop Color="#7FFFFFFF" Offset="1" />
+                    <GradientStop Color="#50FFFFFF" Offset="0" />
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Border SnapsToDevicePixels="True" BorderThickness="1,1,1,0">
+                <Border.BorderBrush>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="{Binding Path=Color, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource colorOverlayConverter}, ConverterParameter=#FF797979}" Offset="0" />
+                        <GradientStop Color="{Binding Path=Color, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource colorOverlayConverter}, ConverterParameter=#90797979}" Offset="1" />
+                    </LinearGradientBrush>
+                </Border.BorderBrush>
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="{Binding Path=Color, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource colorOverlayConverter}, ConverterParameter=#60707070}" Offset="0" />
+                        <GradientStop Color="{Binding Path=Color, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource colorOverlayConverter}, ConverterParameter=#30707070}" Offset="1" />
+                    </LinearGradientBrush>
+                </Border.Background>
+
+                <ContentPresenter x:Name="Content" Margin="5,0,5,0" />
+            </Border>
+        </Border>
+    </ControlTemplate>
+    
+    <ControlTemplate x:Key="{dxrt:RibbonPageCategoryThemeKey ResourceKey=HeadersBackgroundTemplateInAeroWindow}" TargetType="{x:Type dxr:RibbonCheckedBorderControl}" />
+
+    <ControlTemplate x:Key="{dxrt:RibbonPageCategoryThemeKey ResourceKey=HighlightedHeadersBackgroundTemplateInAeroWindow}" TargetType="{x:Type dxr:RibbonCheckedBorderControl}">        
+        <Border SnapsToDevicePixels="True" BorderThickness="1,0,1,0">
+            <Border.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,0" StartPoint="0.5,1">
+                    <GradientStop Color="#7FFFFFFF" Offset="1" />
+                    <GradientStop Color="#00FFFFFF" Offset="0" />
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Border SnapsToDevicePixels="True" BorderThickness="1,0,1,0">
+                <Border.BorderBrush>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="{Binding Path=DataContext, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource colorOverlayConverter}, ConverterParameter=#90797979}" Offset="0" />
+                        <GradientStop Color="{Binding Path=DataContext, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource colorOverlayConverter}, ConverterParameter=#00797979}" Offset="1" />
+                    </LinearGradientBrush>
+                </Border.BorderBrush>
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="{Binding Path=DataContext, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource colorOverlayConverter}, ConverterParameter=#30707070}" Offset="0" />
+                        <GradientStop Color="{Binding Path=DataContext, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource colorOverlayConverter}, ConverterParameter=#00707070}" Offset="1" />
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+        </Border>
+    </ControlTemplate>
+    <!--END WPF-->
+
+</ResourceDictionary>

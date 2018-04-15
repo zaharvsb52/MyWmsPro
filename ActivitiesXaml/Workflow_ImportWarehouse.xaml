@@ -1,0 +1,119 @@
+<Activity mc:Ignorable="sap" x:Class="{x:Null}" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:b="clr-namespace:BLToolkit;assembly=BLToolkit.4" xmlns:bm="clr-namespace:BLToolkit.Mapping;assembly=BLToolkit.4" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=System" xmlns:s1="clr-namespace:System;assembly=mscorlib" xmlns:s2="clr-namespace:System;assembly=System.Core" xmlns:s3="clr-namespace:System;assembly=Microsoft.CompilerServices.AsyncTargetingPack.Net4" xmlns:s4="clr-namespace:System;assembly=System.ServiceModel" xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:scg1="clr-namespace:System.Collections.Generic;assembly=System" xmlns:scg2="clr-namespace:System.Collections.Generic;assembly=System.Core" xmlns:scg4="clr-namespace:System.Collections.Generic;assembly=System.ServiceModel" xmlns:sxs="clr-namespace:System.Xml.Serialization;assembly=System.Xml" xmlns:sxx="clr-namespace:System.Xml.Xsl;assembly=System.Xml" xmlns:wag="clr-namespace:wmsMLC.Activities.General;assembly=wmsMLC.Activities.General" xmlns:wbmp="clr-namespace:wmsMLC.Business.Managers.Processes;assembly=wmsMLC.Business.Managers" xmlns:wbo="clr-namespace:wmsMLC.Business.Objects;assembly=wmsMLC.Business.Objects" xmlns:wg="clr-namespace:wmsMLC.General;assembly=wmsMLC.General" xmlns:wgb="clr-namespace:wmsMLC.General.BL;assembly=wmsMLC.General.BL" xmlns:wgbv="clr-namespace:wmsMLC.General.BL.Validation;assembly=wmsMLC.General.BL" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="WMSIMPORT" Type="InArgument(x:String)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>654,676</sap:VirtualizedContainerService.HintSize>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Flowchart sap:VirtualizedContainerService.HintSize="614,636" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+    <Flowchart.Variables>
+      <Variable x:TypeArguments="scg:IDictionary[](x:String, x:Object)" Name="WarehouseList" />
+    </Flowchart.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        <av:Point x:Key="ShapeLocation">80,2.5</av:Point>
+        <av:Size x:Key="ShapeSize">60,75</av:Size>
+        <av:PointCollection x:Key="ConnectorLocation">110,77.5 110,107.5 110,129</av:PointCollection>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Flowchart.StartNode>
+      <x:Reference>__ReferenceID2</x:Reference>
+    </Flowchart.StartNode>
+    <FlowStep x:Name="__ReferenceID2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">10,129</av:Point>
+          <av:Size x:Key="ShapeSize">200,22</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">110,151 110,181 110,195.5</av:PointCollection>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <wag:GetDynamicDictionaryFromXmlActivity Descendant="WAREHOUSE" DisplayName="Получение объекта" sap:VirtualizedContainerService.HintSize="200,22" InputXml="[WMSIMPORT]" Result="[WarehouseList]" />
+      <FlowStep.Next>
+        <FlowStep x:Name="__ReferenceID0">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">1,195.5</av:Point>
+              <av:Size x:Key="ShapeSize">218,49</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">110,244.5 110,274.5 110,290.5</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ForEach x:TypeArguments="scg:IDictionary(x:String, x:Object)" DisplayName="Обработка телеграммы" sap:VirtualizedContainerService.HintSize="470,1036" Values="[WarehouseList]">
+            <ActivityAction x:TypeArguments="scg:IDictionary(x:String, x:Object)">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="scg:IDictionary(x:String, x:Object)" Name="WarehouseItem" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Проходим по всем объектам Warehouse" sap:VirtualizedContainerService.HintSize="440,933">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="wbo:Warehouse" Default="[new Warehouse()]" Name="Warehouse" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign DisplayName="Обнуляем объект" sap:VirtualizedContainerService.HintSize="418,57">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="wbo:Warehouse">[Warehouse]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="wbo:Warehouse">[new Warehouse]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <TryCatch sap:VirtualizedContainerService.HintSize="418,712">
+                  <TryCatch.Try>
+                    <Sequence sap:VirtualizedContainerService.HintSize="400,534">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <wag:DynamicAssign x:TypeArguments="wbo:Warehouse" sap:VirtualizedContainerService.HintSize="360,57" Object="[Warehouse]" PropertyName="[&quot;WAREHOUSECODE&quot;]" Value="[WarehouseItem(&quot;WAREHOUSECODE&quot;)]" />
+                      <wag:DynamicAssign x:TypeArguments="wbo:Warehouse" sap:VirtualizedContainerService.HintSize="360,57" Object="[Warehouse]" PropertyName="[&quot;WAREHOUSENAME&quot;]" Value="[WarehouseItem(&quot;WAREHOUSENAME&quot;)]" />
+                      <wag:DynamicAssign x:TypeArguments="wbo:Warehouse" sap:VirtualizedContainerService.HintSize="360,57" Object="[Warehouse]" PropertyName="[&quot;WAREHOUSEDESC&quot;]" Value="[WarehouseItem(&quot;WAREHOUSEDESC&quot;)]" />
+                      <wag:DynamicAssign x:TypeArguments="wbo:Warehouse" sap:VirtualizedContainerService.HintSize="360,57" Object="[Warehouse]" PropertyName="[&quot;WAREHOUSEHOSTREF&quot;]" Value="[WarehouseItem(&quot;WAREHOUSEHOSTRF&quot;)]" />
+                      <wag:UpdateActivity x:TypeArguments="wbo:Warehouse" DisplayName="Добавление записи в БД" sap:VirtualizedContainerService.HintSize="360,22" Key="[Warehouse]" />
+                    </Sequence>
+                  </TryCatch.Try>
+                  <TryCatch.Catches>
+                    <Catch x:TypeArguments="s1:InvalidOperationException" sap:VirtualizedContainerService.HintSize="404,20">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ActivityAction x:TypeArguments="s1:InvalidOperationException">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="s1:InvalidOperationException" Name="exception" />
+                        </ActivityAction.Argument>
+                        <WriteLine sap:VirtualizedContainerService.HintSize="398,75" Text="[exception.ToString]" />
+                      </ActivityAction>
+                    </Catch>
+                  </TryCatch.Catches>
+                </TryCatch>
+              </Sequence>
+            </ActivityAction>
+          </ForEach>
+          <FlowStep.Next>
+            <FlowStep x:Name="__ReferenceID1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">4.5,290.5</av:Point>
+                  <av:Size x:Key="ShapeSize">211,59</av:Size>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <WriteLine DisplayName="Процесс завершен" sap:VirtualizedContainerService.HintSize="211,59" Text="Склад добавлен... Наверное" />
+            </FlowStep>
+          </FlowStep.Next>
+        </FlowStep>
+      </FlowStep.Next>
+    </FlowStep>
+    <x:Reference>__ReferenceID0</x:Reference>
+    <x:Reference>__ReferenceID1</x:Reference>
+  </Flowchart>
+</Activity>

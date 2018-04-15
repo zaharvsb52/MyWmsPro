@@ -1,0 +1,464 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="clr-namespace:DevExpress.Xpf.Core;assembly=DevExpress.Xpf.Core.v15.2" xmlns:dxt="clr-namespace:DevExpress.Xpf.Utils.Themes;assembly=DevExpress.Xpf.Core.v15.2" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:dxcn="http://schemas.devexpress.com/winfx/2008/xaml/core/internal">
+
+    <!--BEGIN WPF-->
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/TabControl/Themes/GrayOne/Brushes.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <!--END WPF-->
+
+    <Thickness x:Key="TabControlItem.Padding">11,3,11,3</Thickness>
+
+    <Thickness x:Key="TabControlItem.TopPadding">11,3,11,2</Thickness>
+    <Thickness x:Key="TabControlItem.BottomPadding">11,2,11,3</Thickness>
+
+    <Thickness x:Key="TabControlItem.DefaultState.Root.Margin">0</Thickness>
+
+    <Thickness x:Key="TabControlItem.SelectedState.Hold.Root.Margin">0</Thickness>
+    <Thickness x:Key="TabControlItem.SelectedState.Hold.Item.Padding">1</Thickness>
+    <Thickness x:Key="TabControlItem.SelectedState.Hold.Item.Margin">0</Thickness>
+
+    <Thickness x:Key="TabControlItem.SelectedState.Top.Root.Margin">0,-1,0,0</Thickness>
+    <Thickness x:Key="TabControlItem.SelectedState.Top.Item.Padding">1,1,1,0</Thickness>
+    <Thickness x:Key="TabControlItem.SelectedState.Top.Item.Margin">0,0,0,-1</Thickness>
+
+    <Thickness x:Key="TabControlItem.SelectedState.Bottom.Root.Margin">0,0,0,-1</Thickness>
+    <Thickness x:Key="TabControlItem.SelectedState.Bottom.Item.Padding">1,0,1,1</Thickness>
+    <Thickness x:Key="TabControlItem.SelectedState.Bottom.Item.Margin">0,-1,0,0</Thickness>
+
+    <Thickness x:Key="TabControlItem.SelectedState.Left.Root.Margin">-1,0,0,0</Thickness>
+    <Thickness x:Key="TabControlItem.SelectedState.Left.Item.Padding">1,1,0,1</Thickness>
+    <Thickness x:Key="TabControlItem.SelectedState.Left.Item.Margin">0,0,-1,0</Thickness>
+
+    <Thickness x:Key="TabControlItem.SelectedState.Right.Root.Margin">0,0,-1,0</Thickness>
+    <Thickness x:Key="TabControlItem.SelectedState.Right.Item.Padding">0,1,1,1</Thickness>
+    <Thickness x:Key="TabControlItem.SelectedState.Right.Item.Margin">-1,0,0,0</Thickness>
+
+    <ControlTemplate x:Key="{dxt:DXTabItemThemeKey ResourceKey=CloseButtonTemplate}" TargetType="{x:Type Button}">
+        <Grid x:Name="Root" Background="Transparent">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="PressedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="0.35" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Border x:Name="HoverState" Background="{StaticResource TabHeaderButton.HoverState.Border1}" CornerRadius="2" Padding="1" Opacity="0">
+                <Border Background="{StaticResource TabHeaderButton.HoverState.Border3}" BorderBrush="{StaticResource TabHeaderButton.HoverState.Border2}" BorderThickness="1" CornerRadius="1" Padding="1" />
+            </Border>
+            <Border x:Name="PressedState" Background="{StaticResource TabHeaderButton.PressedState.Border1}" CornerRadius="2" Padding="1" Opacity="0">
+                <Border Background="{StaticResource TabHeaderButton.PressedState.Border3}" BorderBrush="{StaticResource TabHeaderButton.PressedState.Border2}" BorderThickness="1" CornerRadius="1" Padding="1" />
+            </Border>
+            <Path Stretch="Fill" Fill="#FF201F35" Data="F1 M 76,144L 78,144L 74.5,147.5L 78,151L 76,151L 73.5,148.5L 71,151L 69,151L 72.5,147.5L 69,144L 71,144L 73.5,146.5L 76,144 Z" Width="9" Height="7" />
+        </Grid>
+    </ControlTemplate>
+
+    <Style x:Key="{dxt:DXTabItemThemeKey ResourceKey=CloseButtonStyle}" TargetType="{x:Type Button}">
+        <Setter Property="Template" Value="{DynamicResource {dxt:DXTabItemThemeKey ResourceKey=CloseButtonTemplate}}" />
+        <Setter Property="Width" Value="15" />
+        <Setter Property="Height" Value="15" />
+    </Style>
+
+    <ControlTemplate x:Key="{dxt:DXTabItemThemeKey ResourceKey=Template}" TargetType="{x:Type dx:DXTabItem}">
+        <Grid UseLayoutRounding="{TemplateBinding UseLayoutRounding}">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="EmptyCommonState" />
+                    <VisualState x:Name="Normal">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="HoldDefaultState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <DoubleAnimation Storyboard.TargetName="TopDefaultState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <DoubleAnimation Storyboard.TargetName="BottomDefaultState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <DoubleAnimation Storyboard.TargetName="LeftDefaultState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <DoubleAnimation Storyboard.TargetName="RightDefaultState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="HoldHoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <DoubleAnimation Storyboard.TargetName="TopHoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <DoubleAnimation Storyboard.TargetName="BottomHoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <DoubleAnimation Storyboard.TargetName="LeftHoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <DoubleAnimation Storyboard.TargetName="RightHoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <DoubleAnimation Storyboard.TargetName="foneUpSelected" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <DoubleAnimation Storyboard.TargetName="foneBottomSelected" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="gridContainer" Storyboard.TargetProperty="Opacity" Duration="0" To="0.35" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="FocusStates">
+                    <VisualState x:Name="Focused">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="HoldFocusedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <DoubleAnimation Storyboard.TargetName="TopFocusedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <DoubleAnimation Storyboard.TargetName="BottomFocusedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <DoubleAnimation Storyboard.TargetName="LeftFocusedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <DoubleAnimation Storyboard.TargetName="RightFocusedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Unfocused" />
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="SelectionStates">
+                    <VisualState x:Name="EmptySelectionState" />
+                    <VisualState x:Name="Unselected" />
+                    <VisualState x:Name="Selected">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="HoldSelectedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <DoubleAnimation Storyboard.TargetName="TopSelectedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <DoubleAnimation Storyboard.TargetName="BottomSelectedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <DoubleAnimation Storyboard.TargetName="LeftSelectedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <DoubleAnimation Storyboard.TargetName="RightSelectedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <DoubleAnimation Storyboard.TargetName="foneUpSelected" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <DoubleAnimation Storyboard.TargetName="foneBottomSelected" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="LocationStates">
+                    <VisualState x:Name="EmptyLocationState" />
+                    <VisualState x:Name="LocationTopHorizontal">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="Top" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="rowFoneUp" Storyboard.TargetProperty="Height">
+                                <!--ONLY SL<DiscreteObjectKeyFrame KeyTime="0" Value="0"/>ONLY SL-->
+                                <!--BEGIN WPF-->
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <GridLength>0</GridLength>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                                <!--END WPF-->
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="LocationTopVertical">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="Right" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="LocationLeftHorizontal">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="Left" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="LocationLeftVertical">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="Top" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="rowFoneUp" Storyboard.TargetProperty="Height">
+                                <!--ONLY SL<DiscreteObjectKeyFrame KeyTime="0" Value="0"/>ONLY SL-->
+                                <!--BEGIN WPF-->
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <GridLength>0</GridLength>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                                <!--END WPF-->
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="LocationRightHorizontal">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="Right" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="rowFoneUp" Storyboard.TargetProperty="Height">
+                                <!--ONLY SL<DiscreteObjectKeyFrame KeyTime="0" Value="0"/>ONLY SL-->
+                                <!--BEGIN WPF-->
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <GridLength>0</GridLength>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                                <!--END WPF-->
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="LocationRightVertical">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="Top" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="LocationBottomHorizontal">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="Bottom" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="rowFoneBottom" Storyboard.TargetProperty="Height">
+                                <!--ONLY SL<DiscreteObjectKeyFrame KeyTime="0" Value="0"/>ONLY SL-->
+                                <!--BEGIN WPF-->
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <GridLength>0</GridLength>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                                <!--END WPF-->
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="LocationBottomVertical">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="Right" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="ViewModeState">
+                    <VisualState x:Name="EmptyViewModeState" />
+                    <VisualState x:Name="NormalViewMode">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="rowMain" Storyboard.TargetProperty="Height">
+                                <!--ONLY SL<DiscreteObjectKeyFrame KeyTime="0" Value="Auto"/>ONLY SL-->
+                                <!--BEGIN WPF-->
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <GridLength>Auto</GridLength>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                                <!--END WPF-->
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="HoldViewMode">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="TabItemRoot" Storyboard.TargetProperty="Margin" dxcn:ValueSetter.Thickness="1,1,0,0" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Hold" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Visible" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ScrollView" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Collapsed" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="rowFoneUp" Storyboard.TargetProperty="Height">
+                                <!--ONLY SL<DiscreteObjectKeyFrame KeyTime="0" Value="0"/>ONLY SL-->
+                                <!--BEGIN WPF-->
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <GridLength>0</GridLength>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                                <!--END WPF-->
+                            </ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="rowFoneBottom" Storyboard.TargetProperty="Height">
+                                <!--ONLY SL<DiscreteObjectKeyFrame KeyTime="0" Value="0"/>ONLY SL-->
+                                <!--BEGIN WPF-->
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <GridLength>0</GridLength>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                                <!--END WPF-->
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="ScrollViewMode">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="headerContainer" Storyboard.TargetProperty="VerticalAlignment" dxcn:ValueSetter.VerticalAlignment="Stretch" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="headerContainer" Storyboard.TargetProperty="HorizontalAlignment" dxcn:ValueSetter.HorizontalAlignment="Stretch" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="rowFoneUp" Storyboard.TargetProperty="Height">
+                                <!--ONLY SL<DiscreteObjectKeyFrame KeyTime="0" Value="0"/>ONLY SL-->
+                                <!--BEGIN WPF-->
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <GridLength>0</GridLength>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                                <!--END WPF-->
+                            </ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="rowFoneBottom" Storyboard.TargetProperty="Height">
+                                <!--ONLY SL<DiscreteObjectKeyFrame KeyTime="0" Value="0"/>ONLY SL-->
+                                <!--BEGIN WPF-->
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <GridLength>0</GridLength>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                                <!--END WPF-->
+                            </ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="rowMain" Storyboard.TargetProperty="Height">
+                                <!--ONLY SL<DiscreteObjectKeyFrame KeyTime="0" Value="*"/>ONLY SL-->
+                                <!--BEGIN WPF-->
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <GridLength>*</GridLength>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                                <!--END WPF-->
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <dx:HeaderContainerPresenter x:Name="headerContainerPresenter">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition x:Name="rowFoneUp" Height="*" />
+                        <RowDefinition x:Name="rowMain" Height="*" />
+                        <RowDefinition x:Name="rowFoneBottom" Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Border x:Name="foneUpNormal" Background="#FFEBEBEB" BorderBrush="#FF98A4B8" BorderThickness="1,0,1,0" Margin="0,1,0,0" Grid.Row="0" IsHitTestVisible="False" Opacity="1" />
+                    <Border x:Name="foneUpSelected" Background="#FFFFE8A6" BorderBrush="#FF98A4B8" BorderThickness="1,0,1,0" Margin="0,1,0,0" Grid.Row="0" IsHitTestVisible="False" Opacity="0" />
+                    <Border x:Name="foneBottomNormal" Background="#FFEBEBEB" BorderBrush="#FF98A4B8" BorderThickness="1,0,1,0" Margin="0,0,0,1" Grid.Row="2" IsHitTestVisible="False" Opacity="1" />
+                    <Border x:Name="foneBottomSelected" Background="#FFFFE8A6" BorderBrush="#FF98A4B8" BorderThickness="1,0,1,0" Margin="0,0,0,1" Grid.Row="2" IsHitTestVisible="False" Opacity="0" />
+
+                    <Grid x:Name="TabItemRoot" Grid.Row="1">
+                        <Grid>
+
+                            <Grid x:Name="Hold" Visibility="Collapsed">
+                                <Grid x:Name="HoldDefaultState" Opacity="0">
+                                    <Border Background="{StaticResource TabControlItem.BorderBrush.Top}" Padding="{StaticResource TabControlItem.SelectedState.Hold.Item.Padding}">
+                                        <Border Background="{StaticResource TabControlItem.HighlightedBorder.Top}" Padding="{StaticResource TabControlItem.SelectedState.Hold.Item.Padding}">
+                                            <Border Background="{StaticResource TabControlItem.Background.Top}" />
+                                        </Border>
+                                    </Border>
+                                </Grid>
+                                <Grid x:Name="HoldHoverState" Opacity="0">
+                                    <Border Background="{StaticResource TabControlItem.HoverState.Border.Top}" Padding="{StaticResource TabControlItem.SelectedState.Hold.Item.Padding}">
+                                        <Border Background="{StaticResource TabControlItem.HoverState.HighlightedBorder.Top}" Padding="{StaticResource TabControlItem.SelectedState.Hold.Item.Padding}">
+                                            <Border Background="{StaticResource TabControlItem.HoverState.Background.Top}" />
+                                        </Border>
+                                    </Border>
+                                </Grid>
+                                <Grid x:Name="HoldSelectedState" Opacity="0">
+                                    <Border Background="{StaticResource TabControlItem.SelectedState.Border.Top}" Margin="{StaticResource TabControlItem.SelectedState.Hold.Item.Margin}" Padding="{StaticResource TabControlItem.SelectedState.Hold.Item.Padding}">
+                                        <Border Background="{StaticResource TabControlItem.SelectedState.HighlightedBorder.Top}" Padding="{StaticResource TabControlItem.SelectedState.Hold.Item.Padding}">
+                                            <Border Background="{StaticResource TabControlItem.SelectedState.Background.Top}" />
+                                        </Border>
+                                    </Border>
+                                    <Border x:Name="HoldFocusedState" Background="{StaticResource TabControlItem.FocusedState.Top}" BorderThickness="2" Opacity="0" />
+                                </Grid>
+                            </Grid>
+
+                            <Grid x:Name="ScrollView">
+                                <Grid x:Name="Top" Margin="0,0,-1,0" Opacity="0">
+                                    <Grid x:Name="TopDefaultState" Opacity="0">
+                                        <Border Background="{StaticResource TabControlItem.BorderBrush.Top}" Padding="{StaticResource TabControlItem.SelectedState.Top.Item.Padding}">
+                                            <Border Background="{StaticResource TabControlItem.HighlightedBorder.Top}" Padding="{StaticResource TabControlItem.SelectedState.Top.Item.Padding}">
+                                                <Border Background="{StaticResource TabControlItem.Background.Top}" />
+                                            </Border>
+                                        </Border>
+                                    </Grid>
+                                    <Grid x:Name="TopHoverState" Opacity="0">
+                                        <Border Background="{StaticResource TabControlItem.HoverState.Border.Top}" Padding="{StaticResource TabControlItem.SelectedState.Top.Item.Padding}">
+                                            <Border Background="{StaticResource TabControlItem.HoverState.HighlightedBorder.Top}" Padding="{StaticResource TabControlItem.SelectedState.Top.Item.Padding}">
+                                                <Border Background="{StaticResource TabControlItem.HoverState.Background.Top}" />
+                                            </Border>
+                                        </Border>
+                                    </Grid>
+                                    <Grid x:Name="TopSelectedState" Margin="{StaticResource TabControlItem.SelectedState.Top.Root.Margin}" Opacity="0">
+                                        <Border Background="{StaticResource TabControlItem.SelectedState.Border.Top}" Margin="{StaticResource TabControlItem.SelectedState.Top.Item.Margin}" Padding="{StaticResource TabControlItem.SelectedState.Top.Item.Padding}">
+                                            <Border Background="{StaticResource TabControlItem.SelectedState.HighlightedBorder.Top}" Padding="{StaticResource TabControlItem.SelectedState.Top.Item.Padding}">
+                                                <Border Background="{StaticResource TabControlItem.SelectedState.Background.Top}" />
+                                            </Border>
+                                        </Border>
+                                        <Border x:Name="TopFocusedState" Background="{StaticResource TabControlItem.FocusedState.Top}" BorderThickness="2,2,2,0" Opacity="0" />
+                                    </Grid>
+                                </Grid>
+                                <Grid x:Name="Bottom" Margin="0,0,-1,0" Opacity="0">
+                                    <Grid x:Name="BottomDefaultState" Opacity="0">
+                                        <Border Background="{StaticResource TabControlItem.BorderBrush.Bottom}" Padding="{StaticResource TabControlItem.SelectedState.Bottom.Item.Padding}">
+                                            <Border Background="{StaticResource TabControlItem.HighlightedBorder.Bottom}" Padding="{StaticResource TabControlItem.SelectedState.Bottom.Item.Padding}">
+                                                <Border Background="{StaticResource TabControlItem.Background.Bottom}" />
+                                            </Border>
+                                        </Border>
+                                    </Grid>
+                                    <Grid x:Name="BottomHoverState" Opacity="0">
+                                        <Border Background="{StaticResource TabControlItem.HoverState.Border.Bottom}" Padding="{StaticResource TabControlItem.SelectedState.Bottom.Item.Padding}">
+                                            <Border Background="{StaticResource TabControlItem.HoverState.HighlightedBorder.Bottom}" Padding="{StaticResource TabControlItem.SelectedState.Bottom.Item.Padding}">
+                                                <Border Background="{StaticResource TabControlItem.HoverState.Background.Bottom}" />
+                                            </Border>
+                                        </Border>
+                                    </Grid>
+                                    <Grid x:Name="BottomSelectedState" Margin="{StaticResource TabControlItem.SelectedState.Bottom.Root.Margin}" Opacity="0">
+                                        <Border Background="{StaticResource TabControlItem.SelectedState.Border.Bottom}" Margin="{StaticResource TabControlItem.SelectedState.Bottom.Item.Margin}" Padding="{StaticResource TabControlItem.SelectedState.Bottom.Item.Padding}">
+                                            <Border Background="{StaticResource TabControlItem.SelectedState.HighlightedBorder.Bottom}" Padding="{StaticResource TabControlItem.SelectedState.Bottom.Item.Padding}">
+                                                <Border Background="{StaticResource TabControlItem.SelectedState.Background.Bottom}" />
+                                            </Border>
+                                        </Border>
+                                        <Border x:Name="BottomFocusedState" Background="{StaticResource TabControlItem.FocusedState.Bottom}" BorderThickness="2,2,2,0" Opacity="0" />
+                                    </Grid>
+                                </Grid>
+                                <Grid x:Name="Left" Margin="0,0,0,-1" Opacity="0">
+                                    <Grid x:Name="LeftDefaultState" Opacity="0">
+                                        <Border Background="{StaticResource TabControlItem.BorderBrush.Left}" Padding="{StaticResource TabControlItem.SelectedState.Left.Item.Padding}">
+                                            <Border Background="{StaticResource TabControlItem.HighlightedBorder.Left}" Padding="{StaticResource TabControlItem.SelectedState.Left.Item.Padding}">
+                                                <Border Background="{StaticResource TabControlItem.Background.Left}" />
+                                            </Border>
+                                        </Border>
+                                    </Grid>
+                                    <Grid x:Name="LeftHoverState" Opacity="0">
+                                        <Border Background="{StaticResource TabControlItem.HoverState.Border.Left}" Padding="{StaticResource TabControlItem.SelectedState.Left.Item.Padding}">
+                                            <Border Background="{StaticResource TabControlItem.HoverState.HighlightedBorder.Left}" Padding="{StaticResource TabControlItem.SelectedState.Left.Item.Padding}">
+                                                <Border Background="{StaticResource TabControlItem.HoverState.Background.Left}" />
+                                            </Border>
+                                        </Border>
+                                    </Grid>
+                                    <Grid x:Name="LeftSelectedState" Margin="{StaticResource TabControlItem.SelectedState.Left.Root.Margin}" Opacity="0">
+                                        <Border Background="{StaticResource TabControlItem.SelectedState.Border.Left}" Margin="{StaticResource TabControlItem.SelectedState.Left.Item.Margin}" Padding="{StaticResource TabControlItem.SelectedState.Left.Item.Padding}">
+                                            <Border Background="{StaticResource TabControlItem.SelectedState.HighlightedBorder.Left}" Padding="{StaticResource TabControlItem.SelectedState.Left.Item.Padding}">
+                                                <Border Background="{StaticResource TabControlItem.SelectedState.Background.Left}" />
+                                            </Border>
+                                        </Border>
+                                        <Border x:Name="LeftFocusedState" Background="{StaticResource TabControlItem.FocusedState.Left}" BorderThickness="2,2,0,2" Opacity="0" />
+                                    </Grid>
+                                </Grid>
+                                <Grid x:Name="Right" Margin="0,0,0,-1" Opacity="0">
+                                    <Grid x:Name="RightDefaultState" Opacity="0">
+                                        <Border Background="{StaticResource TabControlItem.BorderBrush.Right}" Padding="{StaticResource TabControlItem.SelectedState.Right.Item.Padding}">
+                                            <Border Background="{StaticResource TabControlItem.HighlightedBorder.Right}" Padding="{StaticResource TabControlItem.SelectedState.Right.Item.Padding}">
+                                                <Border Background="{StaticResource TabControlItem.Background.Right}" />
+                                            </Border>
+                                        </Border>
+                                    </Grid>
+                                    <Grid x:Name="RightHoverState" Opacity="0">
+                                        <Border Background="{StaticResource TabControlItem.HoverState.Border.Right}" Padding="{StaticResource TabControlItem.SelectedState.Right.Item.Padding}">
+                                            <Border Background="{StaticResource TabControlItem.HoverState.HighlightedBorder.Right}" Padding="{StaticResource TabControlItem.SelectedState.Right.Item.Padding}">
+                                                <Border Background="{StaticResource TabControlItem.HoverState.Background.Right}" />
+                                            </Border>
+                                        </Border>
+                                    </Grid>
+                                    <Grid x:Name="RightSelectedState" Margin="{StaticResource TabControlItem.SelectedState.Right.Root.Margin}" Opacity="0">
+                                        <Border Background="{StaticResource TabControlItem.SelectedState.Border.Right}" Margin="{StaticResource TabControlItem.SelectedState.Right.Item.Margin}" Padding="{StaticResource TabControlItem.SelectedState.Right.Item.Padding}">
+                                            <Border Background="{StaticResource TabControlItem.SelectedState.HighlightedBorder.Right}" Padding="{StaticResource TabControlItem.SelectedState.Right.Item.Padding}">
+                                                <Border Background="{StaticResource TabControlItem.SelectedState.Background.Right}" />
+                                            </Border>
+                                        </Border>
+                                        <Border x:Name="RightFocusedState" Background="{StaticResource TabControlItem.FocusedState.Right}" BorderThickness="0,2,2,2" Opacity="0" />
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+
+                        </Grid>
+
+                        <Grid x:Name="gridContainer">
+                            <Grid x:Name="headerContainer" Margin="{TemplateBinding Padding}" MinHeight="{TemplateBinding MinHeight}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <dx:HeaderIconPresenter x:Name="headerIconPresenter" Content="{TemplateBinding Icon}" IconWidth="{TemplateBinding IconWidth}" IconHeight="{TemplateBinding IconHeight}" Margin="0,0,4,0" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Column="0" IsTabStop="False" Visibility="Collapsed" />
+                                <!--BEGIN WPF-->
+                                <ContentPresenter Content="{TemplateBinding Header}" ContentTemplate="{TemplateBinding HeaderTemplate}" VerticalAlignment="Center" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Grid.Column="2">
+                                    <ContentPresenter.RecognizesAccessKey>True</ContentPresenter.RecognizesAccessKey>
+                                </ContentPresenter>
+                                <!--END WPF-->
+                                <!--ONLY SL<dx:DXContentPresenter Grid.Column="2" Content="{TemplateBinding Header}" ContentTemplate="{TemplateBinding HeaderTemplate}" VerticalAlignment="Center" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>ONLY SL-->
+                                <Button x:Name="closeButton" Margin="7,1,-4,0" HorizontalAlignment="Right" VerticalAlignment="Center" Style="{DynamicResource {dxt:DXTabItemThemeKey ResourceKey=CloseButtonStyle}}" Grid.Column="4" IsTabStop="False" Visibility="Collapsed" />
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </dx:HeaderContainerPresenter>
+        </Grid>
+    </ControlTemplate>
+
+    <Thickness x:Key="{dxt:DXTabItemThemeKey ResourceKey=Padding}">9,3,9,3</Thickness>
+    
+</ResourceDictionary>

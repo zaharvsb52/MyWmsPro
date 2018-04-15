@@ -1,0 +1,43 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxet="http://schemas.devexpress.com/winfx/2008/xaml/editors/themekeys" xmlns:dxscht="http://schemas.devexpress.com/winfx/2008/xaml/scheduler/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <!--BEGIN WPF-->
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Scheduler/GrayOne/Colors.xaml" />
+  </ResourceDictionary.MergedDictionaries>
+  <!--END WPF-->
+  <ControlTemplate x:Key="{dxscht:SchedulerControlThemeKey ResourceKey=BorderTemplate}" TargetType="{x:Type ContentControl}">
+    <!--BEGIN TOSLONLY REPLACE 'ContextMenu="{x:Null}"''-->
+    <Border ContextMenu="{x:Null}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\GrayOne\SchedulerControl.xaml;11;10">
+      <!--END TOSLONLY REPLACE 'ContextMenu="{x:Null}"''-->
+      <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\GrayOne\SchedulerControl.xaml;13;14">
+        <Border Background="{StaticResource DefaultBackgroundBrush}" Opacity="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\GrayOne\SchedulerControl.xaml;14;18" />
+        <ContentPresenter Margin="1,0,0,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\GrayOne\SchedulerControl.xaml;15;18" />
+        <Border BorderBrush="{StaticResource DefaultBorderBrush}" BorderThickness="1" Opacity="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\GrayOne\SchedulerControl.xaml;16;18" />
+      </Grid>
+    </Border>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxscht:SchedulerControlThemeKey ResourceKey=InvisibleBorderTemplate}" TargetType="{x:Type ContentControl}">
+    <!--BEGIN TOSLONLY REPLACE 'ContextMenu="{x:Null}"''-->
+    <Border ContextMenu="{x:Null}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\GrayOne\SchedulerControl.xaml;23;10">
+      <!--END TOSLONLY REPLACE 'ContextMenu="{x:Null}"''-->
+      <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\GrayOne\SchedulerControl.xaml;25;14">
+        <Border Background="{StaticResource DefaultBackgroundBrush}" BorderBrush="{StaticResource DefaultBorderBrush}" Opacity="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\GrayOne\SchedulerControl.xaml;26;18" />
+        <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\GrayOne\SchedulerControl.xaml;27;18" />
+      </Grid>
+    </Border>
+  </ControlTemplate>
+  <Style x:Key="{dxscht:SchedulerUIControlThemeKey ResourceKey=ColorMarkerStyle}" TargetType="{x:Type FrameworkElement}">
+    <Setter Property="Margin" Value="2,2,0,2" />
+  </Style>
+  <!--ONLY SL
+    <Style x:Key="{dxscht:SchedulerUIControlThemeKey ResourceKey=TextBlockStyle}" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlockStyle}">
+        <Setter Property="Margin" Value="5,3,5,3"/>
+    ONLY SL-->
+  <!--BEGIN WPF-->
+  <Style x:Key="{dxscht:SchedulerUIControlThemeKey ResourceKey=TextBlockStyle}" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource {dxet:TextEditThemeKey ResourceKey=TextBlockStyle}}">
+    <!--END WPF-->
+    <Setter Property="Padding" Value="0" />
+  </Style>
+  <Style x:Key="{dxscht:SchedulerUIControlThemeKey ResourceKey=ItemTextBlockStyle}" TargetType="{x:Type TextBlock}">
+    <Setter Property="Margin" Value="5,3,5,3" />
+  </Style>
+</ResourceDictionary>

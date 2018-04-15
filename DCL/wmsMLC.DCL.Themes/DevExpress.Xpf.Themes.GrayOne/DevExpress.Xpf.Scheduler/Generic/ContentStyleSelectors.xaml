@@ -1,0 +1,43 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxsch="http://schemas.devexpress.com/winfx/2008/xaml/scheduler" xmlns:dxscht="http://schemas.devexpress.com/winfx/2008/xaml/scheduler/themekeys" xmlns:dxschd="http://schemas.devexpress.com/winfx/2008/xaml/scheduler/internal" xmlns:dxschcore="clr-namespace:DevExpress.XtraScheduler;assembly=DevExpress.XtraScheduler.v15.2.Core" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys">
+
+    <dxschd:HorizontalAppointmentStyleSelector x:Key="{dxscht:StyleSelectorThemeKey ResourceKey=HorizontalAppointmentStyle}">
+        <dxschd:HorizontalAppointmentStyleSelector.Properties>
+            <dxschd:HorizontalAppointmentStyleSelectorProperties HorizontalAppointmentSameDay="{DynamicResource {dxscht:SchedulerViewThemeKey ResourceKey=HorizontalAppointmentSameDayStyle}}" HorizontalAppointmentLongerThanADay="{DynamicResource {dxscht:SchedulerViewThemeKey ResourceKey=HorizontalAppointmentLongerThanADayStyle}}" />
+            </dxschd:HorizontalAppointmentStyleSelector.Properties>
+    </dxschd:HorizontalAppointmentStyleSelector>
+    <dxschd:AppointmentStyleSelector x:Key="{dxscht:StyleSelectorThemeKey ResourceKey=VerticalAppointmentStyle}">
+        <dxschd:AppointmentStyleSelector.Properties>
+            <dxschd:AppointmentStyleSelectorProperties AppointmentStyle="{DynamicResource {dxscht:SchedulerViewThemeKey ResourceKey=VerticalAppointmentStyle}}" />
+        </dxschd:AppointmentStyleSelector.Properties>
+    </dxschd:AppointmentStyleSelector>
+    <dxschd:DayViewContentStyleSelector x:Key="{dxscht:DayViewThemeKey ResourceKey=ContentStyleSelector}">
+        <dxschd:DayViewContentStyleSelector.Properties>
+            <dxschd:ViewContentStyleSelectorProperties GroupByNone="{DynamicResource {dxscht:DayViewThemeKey ResourceKey=DayViewGroupByNone}}" GroupByDate="{DynamicResource {dxscht:DayViewThemeKey ResourceKey=DayViewGroupByDate}}" GroupByResource="{DynamicResource {dxscht:DayViewThemeKey ResourceKey=DayViewGroupByResource}}" />
+        </dxschd:DayViewContentStyleSelector.Properties>
+    </dxschd:DayViewContentStyleSelector>
+    <dxschd:MonthViewContentStyleSelector x:Key="{dxscht:MonthViewThemeKey ResourceKey=ContentStyleSelector}">
+        <dxschd:MonthViewContentStyleSelector.Properties>
+            <dxschd:ViewContentStyleSelectorProperties GroupByNone="{DynamicResource {dxscht:MonthViewThemeKey ResourceKey=MonthViewGroupByNone}}" GroupByDate="{DynamicResource {dxscht:MonthViewThemeKey ResourceKey=MonthViewGroupByDate}}" GroupByResource="{DynamicResource {dxscht:MonthViewThemeKey ResourceKey=MonthViewGroupByResource}}" />
+        </dxschd:MonthViewContentStyleSelector.Properties>
+    </dxschd:MonthViewContentStyleSelector>
+    <dxschd:WorkWeekViewContentStyleSelector x:Key="{dxscht:WorkWeekViewThemeKey ResourceKey=ContentStyleSelector}">
+        <dxschd:WorkWeekViewContentStyleSelector.Properties>
+            <dxschd:ViewContentStyleSelectorProperties GroupByNone="{DynamicResource {dxscht:DayViewThemeKey ResourceKey=DayViewGroupByNone}}" GroupByDate="{DynamicResource {dxscht:DayViewThemeKey ResourceKey=DayViewGroupByDate}}" GroupByResource="{DynamicResource {dxscht:DayViewThemeKey ResourceKey=DayViewGroupByResource}}" />
+        </dxschd:WorkWeekViewContentStyleSelector.Properties>
+    </dxschd:WorkWeekViewContentStyleSelector>
+    <dxschd:WeekViewContentStyleSelector x:Key="{dxscht:WeekViewThemeKey ResourceKey=ContentStyleSelector}">
+        <dxschd:WeekViewContentStyleSelector.Properties>
+            <dxschd:ViewContentStyleSelectorProperties GroupByNone="{DynamicResource {dxscht:WeekViewThemeKey ResourceKey=WeekViewGroupByNone}}" GroupByDate="{DynamicResource {dxscht:WeekViewThemeKey ResourceKey=WeekViewGroupByDate}}" GroupByResource="{DynamicResource {dxscht:WeekViewThemeKey ResourceKey=WeekViewGroupByResource}}" />
+        </dxschd:WeekViewContentStyleSelector.Properties>
+    </dxschd:WeekViewContentStyleSelector>
+    <dxschd:TimelineViewContentStyleSelector x:Key="{dxscht:TimelineViewThemeKey ResourceKey=ContentStyleSelector}">
+        <dxschd:TimelineViewContentStyleSelector.Properties>
+            <dxschd:ViewContentStyleSelectorProperties GroupByNone="{DynamicResource {dxscht:TimelineViewThemeKey ResourceKey=TimelineViewGroupByNone}}" GroupByDate="{DynamicResource {dxscht:TimelineViewThemeKey ResourceKey=TimelineViewGroupByDate}}" GroupByResource="{DynamicResource {dxscht:TimelineViewThemeKey ResourceKey=TimelineViewGroupByDate}}" />
+        </dxschd:TimelineViewContentStyleSelector.Properties>
+    </dxschd:TimelineViewContentStyleSelector>
+    <dxschd:GanttViewContentStyleSelector x:Key="{dxscht:GanttViewThemeKey ResourceKey=ContentStyleSelector}">
+        <dxschd:GanttViewContentStyleSelector.Properties>
+            <dxschd:ViewContentStyleSelectorProperties GroupByNone="{DynamicResource {dxscht:TimelineViewThemeKey ResourceKey=TimelineViewGroupByNone}}" GroupByDate="{DynamicResource {dxscht:GanttViewThemeKey ResourceKey=GanttViewGroupByDate}}" GroupByResource="{DynamicResource {dxscht:GanttViewThemeKey ResourceKey=GanttViewGroupByDate}}" />
+        </dxschd:GanttViewContentStyleSelector.Properties>
+    </dxschd:GanttViewContentStyleSelector>
+</ResourceDictionary>

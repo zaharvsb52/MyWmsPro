@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="wmsMLC.DCL.Topology.ViewModels.AreaModel">
+    <Position X="2.5" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAACQCAAAAAAAAACAAAAQAAABAAAAQAA=</HashCode>
+      <FileName>ViewModels\AreaModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="wmsMLC.DCL.Topology.ViewModels.BaseTopologyBoxObject">
+    <Position X="3.75" Y="1.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgEAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>ViewModels\BaseTopologyBoxObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="wmsMLC.DCL.Topology.ViewModels.FloorModel">
+    <Position X="0.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\FloorModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="wmsMLC.DCL.Topology.ViewModels.PlaceModel">
+    <Position X="5.25" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAADgAAAAAEAAFAAAIAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>ViewModels\PlaceModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="wmsMLC.DCL.Topology.ViewModels.TopologyViewModel" BaseTypeListCollapsed="true">
+    <Position X="11.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>ixeDYIQAAQRpDgEtxIFEAACK8EQAAoFghiBAziR6MCQ=</HashCode>
+      <FileName>ViewModels\TopologyViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="wmsMLC.DCL.Topology.ViewModels.TransportTaskDirectionModel" BaseTypeListCollapsed="true">
+    <Position X="8.75" Y="3.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAGIgAAAQAAACkAAQAAAAAAIAAAAAAEDAAAAAI=</HashCode>
+      <FileName>ViewModels\TransportTaskDirectionModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="wmsMLC.DCL.Topology.ViewModels.ISourceModel">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\ISourceModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="wmsMLC.DCL.Topology.ViewModels.ISelectable">
+    <Position X="9.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAQAAA=</HashCode>
+      <FileName>ViewModels\TopologyViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

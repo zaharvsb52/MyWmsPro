@@ -1,0 +1,188 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="http://schemas.devexpress.com/winfx/2008/xaml/carousel" xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/carousel" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/carousel/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/StandardControls/Brushes.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/StandardControls/SharedResources.xaml" />
+  </ResourceDictionary.MergedDictionaries>
+  <ControlTemplate x:Key="{dxt:CarouselNavigatorThemeKey ResourceKey=ButtonTemplate}" TargetType="{x:Type ButtonBase}">
+    <Grid x:Name="Root" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;9;10">
+      <Grid x:Name="DefaultState" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;10;14">
+        <Border Background="{StaticResource Button.DefaultState.Border2}" BorderBrush="{StaticResource Button.DefaultState.Border1}" BorderThickness="1,1,0,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;11;18">
+          <Border Background="{StaticResource Button.DefaultState.Border3}" Margin="1" CornerRadius="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;12;22" />
+        </Border>
+      </Grid>
+      <Grid x:Name="HoverState" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;15;14">
+        <Border Background="{StaticResource Button.HoverState.Border2}" BorderBrush="{StaticResource Button.HoverState.Border1}" BorderThickness="1,1,0,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;16;18">
+          <Border Background="{StaticResource Button.HoverState.Border3}" Margin="1" CornerRadius="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;17;22" />
+        </Border>
+      </Grid>
+      <Grid x:Name="PressedState" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;20;14">
+        <Border Background="{StaticResource Button.PressedState.Border2}" BorderBrush="{StaticResource Button.PressedState.Border1}" BorderThickness="1,1,0,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;21;18">
+          <Border Background="{StaticResource Button.PressedState.Border3}" Margin="1" CornerRadius="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;22;22" />
+        </Border>
+      </Grid>
+      <Grid x:Name="FocusState" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;25;14">
+        <Rectangle Style="{StaticResource ButtonFocusTemplate}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;26;18" />
+      </Grid>
+      <ContentPresenter Margin="{TemplateBinding Padding}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;28;14" />
+    </Grid>
+    <ControlTemplate.Triggers>
+      <Trigger Property="IsMouseOver" Value="True">
+        <Setter TargetName="DefaultState" Property="Opacity" Value="0" />
+        <Setter TargetName="HoverState" Property="Opacity" Value="1" />
+        <Setter TargetName="PressedState" Property="Opacity" Value="0" />
+      </Trigger>
+      <Trigger Property="IsPressed" Value="True">
+        <Setter TargetName="DefaultState" Property="Opacity" Value="0" />
+        <Setter TargetName="HoverState" Property="Opacity" Value="0" />
+        <Setter TargetName="PressedState" Property="Opacity" Value="1" />
+      </Trigger>
+      <Trigger Property="IsFocused" Value="True">
+        <Setter TargetName="FocusState" Property="Opacity" Value="1" />
+      </Trigger>
+      <Trigger Property="IsEnabled" Value="False">
+        <Setter TargetName="Root" Property="Opacity" Value="0.35" />
+      </Trigger>
+      <Trigger Property="ToggleButton.IsChecked" Value="True">
+        <Setter TargetName="DefaultState" Property="Opacity" Value="0" />
+        <Setter TargetName="HoverState" Property="Opacity" Value="0" />
+        <Setter TargetName="PressedState" Property="Opacity" Value="1" />
+      </Trigger>
+    </ControlTemplate.Triggers>
+  </ControlTemplate>
+  <ControlTemplate TargetType="{x:Type ButtonBase}" x:Key="{dxt:CarouselNavigatorThemeKey ResourceKey=FirstButtonTemplate}">
+    <Grid x:Name="Root" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;56;10">
+      <Grid x:Name="DefaultState" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;57;14">
+        <Border Background="{StaticResource Button.DefaultState.Border2}" BorderBrush="{StaticResource Button.DefaultState.Border1}" BorderThickness="1,1,0,1" CornerRadius="2,0,0,2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;58;18">
+          <Border Background="{StaticResource Button.DefaultState.Border3}" Margin="1" CornerRadius="1,0,0,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;59;22" />
+        </Border>
+      </Grid>
+      <Grid x:Name="HoverState" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;62;14">
+        <Border Background="{StaticResource Button.HoverState.Border2}" BorderBrush="{StaticResource Button.HoverState.Border1}" BorderThickness="1,1,0,1" CornerRadius="2,0,0,2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;63;18">
+          <Border Background="{StaticResource Button.HoverState.Border3}" Margin="1" CornerRadius="1,0,0,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;64;22" />
+        </Border>
+      </Grid>
+      <Grid x:Name="PressedState" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;67;14">
+        <Border Background="{StaticResource Button.PressedState.Border2}" BorderBrush="{StaticResource Button.PressedState.Border1}" BorderThickness="1,1,0,1" CornerRadius="2,0,0,2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;68;18">
+          <Border Background="{StaticResource Button.PressedState.Border3}" Margin="1" CornerRadius="1,0,0,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;69;22" />
+        </Border>
+      </Grid>
+      <Grid x:Name="FocusState" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;72;14">
+        <Rectangle Style="{StaticResource ButtonFocusTemplate}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;73;18" />
+      </Grid>
+      <ContentPresenter Margin="{TemplateBinding Padding}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;75;14" />
+    </Grid>
+    <ControlTemplate.Triggers>
+      <Trigger Property="IsMouseOver" Value="True">
+        <Setter TargetName="DefaultState" Property="Opacity" Value="0" />
+        <Setter TargetName="HoverState" Property="Opacity" Value="1" />
+        <Setter TargetName="PressedState" Property="Opacity" Value="0" />
+      </Trigger>
+      <Trigger Property="IsPressed" Value="True">
+        <Setter TargetName="DefaultState" Property="Opacity" Value="0" />
+        <Setter TargetName="HoverState" Property="Opacity" Value="0" />
+        <Setter TargetName="PressedState" Property="Opacity" Value="1" />
+      </Trigger>
+      <Trigger Property="IsFocused" Value="True">
+        <Setter TargetName="FocusState" Property="Opacity" Value="1" />
+      </Trigger>
+      <Trigger Property="IsEnabled" Value="False">
+        <Setter TargetName="Root" Property="Opacity" Value="0.35" />
+      </Trigger>
+      <Trigger Property="ToggleButton.IsChecked" Value="True">
+        <Setter TargetName="DefaultState" Property="Opacity" Value="0" />
+        <Setter TargetName="HoverState" Property="Opacity" Value="0" />
+        <Setter TargetName="PressedState" Property="Opacity" Value="1" />
+      </Trigger>
+    </ControlTemplate.Triggers>
+  </ControlTemplate>
+  <ControlTemplate TargetType="{x:Type ButtonBase}" x:Key="{dxt:CarouselNavigatorThemeKey ResourceKey=LastButtonTemplate}">
+    <Grid x:Name="Root" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;103;10">
+      <Grid x:Name="DefaultState" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;104;14">
+        <Border Background="{StaticResource Button.DefaultState.Border2}" BorderBrush="{StaticResource Button.DefaultState.Border1}" BorderThickness="1" CornerRadius="0,2,2,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;105;18">
+          <Border Background="{StaticResource Button.DefaultState.Border3}" Margin="1" CornerRadius="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;106;22" />
+        </Border>
+      </Grid>
+      <Grid x:Name="HoverState" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;109;14">
+        <Border Background="{StaticResource Button.HoverState.Border2}" BorderBrush="{StaticResource Button.HoverState.Border1}" BorderThickness="1" CornerRadius="0,2,2,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;110;18">
+          <Border Background="{StaticResource Button.HoverState.Border3}" Margin="1" CornerRadius="0,1,1,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;111;22" />
+        </Border>
+      </Grid>
+      <Grid x:Name="PressedState" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;114;14">
+        <Border Background="{StaticResource Button.PressedState.Border2}" BorderBrush="{StaticResource Button.PressedState.Border1}" BorderThickness="1" CornerRadius="0,2,2,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;115;18">
+          <Border Background="{StaticResource Button.PressedState.Border3}" Margin="1" CornerRadius="0,1,1,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;116;22" />
+        </Border>
+      </Grid>
+      <Grid x:Name="FocusState" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;119;14">
+        <Rectangle Style="{StaticResource ButtonFocusTemplate}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;120;18" />
+      </Grid>
+      <ContentPresenter Margin="{TemplateBinding Padding}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;122;14" />
+    </Grid>
+    <ControlTemplate.Triggers>
+      <Trigger Property="IsMouseOver" Value="True">
+        <Setter TargetName="DefaultState" Property="Opacity" Value="0" />
+        <Setter TargetName="HoverState" Property="Opacity" Value="1" />
+        <Setter TargetName="PressedState" Property="Opacity" Value="0" />
+      </Trigger>
+      <Trigger Property="IsPressed" Value="True">
+        <Setter TargetName="DefaultState" Property="Opacity" Value="0" />
+        <Setter TargetName="HoverState" Property="Opacity" Value="0" />
+        <Setter TargetName="PressedState" Property="Opacity" Value="1" />
+      </Trigger>
+      <Trigger Property="IsFocused" Value="True">
+        <Setter TargetName="FocusState" Property="Opacity" Value="1" />
+      </Trigger>
+      <Trigger Property="IsEnabled" Value="False">
+        <Setter TargetName="Root" Property="Opacity" Value="0.35" />
+      </Trigger>
+      <Trigger Property="ToggleButton.IsChecked" Value="True">
+        <Setter TargetName="DefaultState" Property="Opacity" Value="0" />
+        <Setter TargetName="HoverState" Property="Opacity" Value="0" />
+        <Setter TargetName="PressedState" Property="Opacity" Value="1" />
+      </Trigger>
+    </ControlTemplate.Triggers>
+  </ControlTemplate>
+  <ControlTemplate TargetType="{x:Type local:CarouselNavigator}" x:Key="{dxt:CarouselNavigatorThemeKey ResourceKey=NavigatorTemplate}">
+    <Border dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;150;10">
+      <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;151;14">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <RepeatButton Name="FirstItem" Interval="{Binding Path=Carousel.AnimationTime, RelativeSource={RelativeSource TemplatedParent}}" Command="dxc:CarouselPanel.FirstItem" CommandTarget="{Binding Path=Carousel, RelativeSource={RelativeSource TemplatedParent}}" Template="{DynamicResource {dxt:CarouselNavigatorThemeKey ResourceKey=FirstButtonTemplate}}" Grid.Column="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;160;18">
+          <Grid Width="10" Height="10" VerticalAlignment="Center" HorizontalAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;161;22">
+            <Path Stretch="Fill" Fill="#FF000000" Data="F1 M 1351,909L 1347,905L 1347,909L 1346,909L 1346,901L 1347,901L 1347,905L 1351,901L 1351,905L 1355,901L 1355,909L 1351,905L 1351,909 Z" Height="8" Width="9" Margin="0,0,1,0" HorizontalAlignment="Center" VerticalAlignment="Center" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;162;26" />
+          </Grid>
+        </RepeatButton>
+        <RepeatButton Name="PrevPage" Interval="{Binding Path=Carousel.AnimationTime, RelativeSource={RelativeSource TemplatedParent}}" Command="dxc:CarouselPanel.PreviousPage" CommandTarget="{Binding Path=Carousel, RelativeSource={RelativeSource TemplatedParent}}" Template="{DynamicResource {dxt:CarouselNavigatorThemeKey ResourceKey=ButtonTemplate}}" Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;165;18">
+          <Grid Width="10" Height="10" VerticalAlignment="Center" HorizontalAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;166;22">
+            <Path Stretch="Fill" Fill="#FF000000" Data="F1 M 1331,909L 1327,905L 1331,901L 1331,905L 1335,901L 1335,909L 1331,905L 1331,909 Z" Height="8" Width="8" HorizontalAlignment="Center" VerticalAlignment="Center" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;167;26" />
+          </Grid>
+        </RepeatButton>
+        <RepeatButton Name="PrevItem" Interval="{Binding Path=Carousel.AnimationTime, RelativeSource={RelativeSource TemplatedParent}}" Command="dxc:CarouselPanel.Previous" CommandTarget="{Binding Path=Carousel, RelativeSource={RelativeSource TemplatedParent}}" Template="{DynamicResource {dxt:CarouselNavigatorThemeKey ResourceKey=ButtonTemplate}}" Grid.Column="2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;170;18">
+          <Grid Width="10" Height="10" VerticalAlignment="Center" HorizontalAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;171;22">
+            <Path Stretch="Fill" Fill="#FF000000" Data="F1 M 1314,909L 1310,905L 1314,901L 1314,909 Z" Height="8" Width="4" HorizontalAlignment="Center" VerticalAlignment="Center" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;172;26" />
+          </Grid>
+        </RepeatButton>
+        <RepeatButton Name="NextItem" Interval="{Binding Path=Carousel.AnimationTime, RelativeSource={RelativeSource TemplatedParent}}" Command="dxc:CarouselPanel.Next" CommandTarget="{Binding Path=Carousel, RelativeSource={RelativeSource TemplatedParent}}" Template="{DynamicResource {dxt:CarouselNavigatorThemeKey ResourceKey=ButtonTemplate}}" Grid.Column="3" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;175;18">
+          <Grid Width="10" Height="10" VerticalAlignment="Center" HorizontalAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;176;22">
+            <Path Stretch="Fill" Fill="#FF000000" Data="F1 M 1423,901L 1427,905L 1423,909L 1423,901 Z" Height="8" Width="4" HorizontalAlignment="Center" VerticalAlignment="Center" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;177;26" />
+          </Grid>
+        </RepeatButton>
+        <RepeatButton Name="NextPage" Interval="{Binding Path=Carousel.AnimationTime, RelativeSource={RelativeSource TemplatedParent}}" Command="dxc:CarouselPanel.NextPage" CommandTarget="{Binding Path=Carousel, RelativeSource={RelativeSource TemplatedParent}}" Template="{DynamicResource {dxt:CarouselNavigatorThemeKey ResourceKey=ButtonTemplate}}" Grid.Column="4" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;180;18">
+          <Grid Width="10" Height="10" VerticalAlignment="Center" HorizontalAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;181;22">
+            <Path Stretch="Fill" Fill="#FF000000" Data="F1 M 1406,901L 1410,905L 1406,909L 1406,905L 1402,909L 1402,901L 1406,905L 1406,901 Z" Height="8" Width="8" HorizontalAlignment="Center" VerticalAlignment="Center" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;182;26" />
+          </Grid>
+        </RepeatButton>
+        <RepeatButton Name="LastItem" Command="dxc:CarouselPanel.LastItem" CommandTarget="{Binding Path=Carousel, RelativeSource={RelativeSource TemplatedParent}}" Template="{DynamicResource {dxt:CarouselNavigatorThemeKey ResourceKey=LastButtonTemplate}}" Grid.Column="5" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;185;18">
+          <Grid Width="10" Height="10" VerticalAlignment="Center" HorizontalAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;186;22">
+            <Path Stretch="Fill" Fill="#FF000000" Data="F1 M 1386,901L 1390,905L 1390,901L 1391,901L 1391,909L 1390,909L 1390,905L 1386,909L 1386,905L 1382,909L 1382,901L 1386,905L 1386,901 Z" Margin="1,0,0,0" Height="8" Width="9" HorizontalAlignment="Center" VerticalAlignment="Center" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Carousel\Themes\GrayOne.xaml;187;26" />
+          </Grid>
+        </RepeatButton>
+      </Grid>
+    </Border>
+  </ControlTemplate>
+</ResourceDictionary>

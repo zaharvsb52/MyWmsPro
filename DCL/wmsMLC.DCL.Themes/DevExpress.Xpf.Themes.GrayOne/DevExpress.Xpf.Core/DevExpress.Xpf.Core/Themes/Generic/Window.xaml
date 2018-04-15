@@ -1,0 +1,82 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys">
+    <ControlTemplate TargetType="{x:Type dxc:DXWindow}" x:Key="DXWindowTemplate">
+        <Grid x:Name="Root_Grid" Height="Auto" Margin="0,0,0,0" VerticalAlignment="Stretch">
+            <AdornerDecorator ClipToBounds="True" x:Name="PART_WindowAdornerDecorator">
+                <ContentPresenter ContentTemplate="{TemplateBinding ActualWindowTemplate}" Height="Auto" Width="Auto" x:Name="PART_RootContentPresenter" DataContext="{TemplateBinding DataContext}">
+                    <ContentPresenter.Content>
+                        <dxc:BackgroundPanel DataContext="{TemplateBinding DataContext}">
+                            <dxc:BackgroundPanel.ContentTemplate>
+                                <Binding Path="ContentTemplate" RelativeSource="{RelativeSource TemplatedParent}" />
+                            </dxc:BackgroundPanel.ContentTemplate>
+                            <dxc:BackgroundPanel.Content>
+                                <Binding Path="Content" RelativeSource="{RelativeSource TemplatedParent}" />
+                            </dxc:BackgroundPanel.Content>
+                        </dxc:BackgroundPanel>    
+                    </ContentPresenter.Content>
+                </ContentPresenter>
+            </AdornerDecorator>
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate TargetType="{x:Type dxc:DXWindow}" x:Key="DXWindowEmptyTemplate">
+        <Grid x:Name="Root_Grid" Height="Auto" Margin="0,0,0,0" VerticalAlignment="Stretch">
+            <AdornerDecorator ClipToBounds="True" x:Name="PART_WindowAdornerDecorator">
+                <ContentPresenter ContentTemplate="{TemplateBinding WindowTemplate}" Height="Auto" Width="Auto" x:Name="PART_RootContentPresenter">
+                    <ContentPresenter.Content>
+                        <Border />
+                    </ContentPresenter.Content>
+                </ContentPresenter>
+            </AdornerDecorator>
+        </Grid>
+    </ControlTemplate>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Core.DXWindow}" TargetType="{x:Type dxc:DXWindow}">
+        
+        <Setter Property="ResizeMode" Value="CanResize" />
+        <Setter Property="ResizeBorderThicknessInAeroMode" Value="{DynamicResource {dxt:DXWindowThemeKey ResourceKey=AeroWindowResizeBorderThickness}}" />
+        <Setter Property="ResizeBorderThickness" Value="{DynamicResource {dxt:DXWindowThemeKey ResourceKey=ResizeBorderThickness}}" />
+        <Setter Property="AeroWindowTemplate" Value="{DynamicResource {dxt:DXWindowThemeKey ResourceKey=AeroWindowTemplate}}" />
+        <Setter Property="AeroBorderSize" Value="{DynamicResource {dxt:DXWindowThemeKey ResourceKey=AeroWindowBorderSize}}" />
+        <Setter Property="WindowTemplate" Value="{DynamicResource {dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerTemplate}}" />
+        <Setter Property="Template" Value="{StaticResource DXWindowTemplate}" />
+        <Style.Triggers>
+            <Trigger Property="HasContent" Value="False">
+                <Setter Property="Template" Value="{StaticResource DXWindowEmptyTemplate}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Label x:Key="DefaultDXDialogContent" />
+    <ControlTemplate TargetType="{x:Type dxc:DXDialog}" x:Key="DXDialogTemplate">
+        <Grid x:Name="Root_Grid" Height="Auto" Margin="0,0,0,0" VerticalAlignment="Stretch">
+            <AdornerDecorator ClipToBounds="True">
+                <ContentPresenter ContentTemplate="{TemplateBinding ActualWindowTemplate}" Height="Auto" Width="Auto" x:Name="PART_RootContentPresenter">
+                    <ContentPresenter.Content>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <dxc:BackgroundPanel>
+                                <dxc:BackgroundPanel.Content>
+                                    <PriorityBinding>
+                                        <Binding Path="Content" RelativeSource="{RelativeSource TemplatedParent}" />
+                                        <Binding Source="{StaticResource DefaultDXDialogContent}" />
+                                    </PriorityBinding>
+                                </dxc:BackgroundPanel.Content>
+                            </dxc:BackgroundPanel>
+                            <StackPanel Orientation="Horizontal" x:Name="Footer" Margin="12" Grid.Row="2" HorizontalAlignment="Right">
+                                <Button x:Name="YesButton" IsDefault="True" Content="{dxc:DXMessageBoxStringId StringId=Yes}" MinWidth="65" MinHeight="22" Margin="6,0,0,0" />
+                                <Button x:Name="NoButton" IsCancel="True" Content="{dxc:DXMessageBoxStringId StringId=No}" MinWidth="65" MinHeight="22" Margin="6,0,0,0" />
+                                <Button x:Name="OkButton" IsDefault="True" Content="{dxc:DXMessageBoxStringId StringId=Ok}" MinWidth="65" MinHeight="22" Margin="6,0,0,0" />
+                                <Button x:Name="CancelButton" IsCancel="True" Content="{dxc:DXMessageBoxStringId StringId=Cancel}" MinWidth="65" MinHeight="22" Margin="6,0,0,0" />
+                            </StackPanel>
+                        </Grid>
+                    </ContentPresenter.Content>
+                </ContentPresenter>
+            </AdornerDecorator>
+        </Grid>
+    </ControlTemplate>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Core.DXDialog}" TargetType="{x:Type dxc:DXDialog}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Core.DXWindow}}">
+        <Setter Property="Template" Value="{StaticResource DXDialogTemplate}" />
+    </Style>
+</ResourceDictionary>

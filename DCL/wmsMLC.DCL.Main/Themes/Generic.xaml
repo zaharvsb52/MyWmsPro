@@ -1,0 +1,229 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:helpers="clr-namespace:wmsMLC.DCL.Main.Helpers"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    xmlns:dxet="http://schemas.devexpress.com/winfx/2008/xaml/editors/themekeys"
+    xmlns:mvvmx="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+    xmlns:lex="http://wpflocalizeextension.codeplex.com"
+    xmlns:controls="clr-namespace:wmsMLC.DCL.Main.Views.Controls"
+    xmlns:views="clr-namespace:wmsMLC.DCL.Main.Views"
+    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid">
+
+<!--    <ResourceDictionary.MergedDictionaries>-->
+<!--        <ResourceDictionary Source="/wmsMLC.DCL.Main;Component/Themes/ErrorControl.xaml"/>-->
+<!--    </ResourceDictionary.MergedDictionaries>-->
+
+    <!--Подсветка альтернативных строк (грид, дерево) #e8ebee -->
+    <SolidColorBrush x:Key="DeepBlue" Color="#f2f6fb" />
+    <SolidColorBrush x:Key="DXStyle" Color="#f2f6fb" />
+    <SolidColorBrush x:Key="LightGray" Color="#f2f6fb" />
+    <SolidColorBrush x:Key="Metropolis Dark" Color="#f2f6fb" />
+    <SolidColorBrush x:Key="Metropolis Light" Color="#f2f6fb" />
+    <SolidColorBrush x:Key="Office2007Black" Color="#f2f6fb" />
+    <SolidColorBrush x:Key="Office2007Blue" Color="#f2f6fb" />
+    <SolidColorBrush x:Key="Office2007Silver" Color="#f2f6fb" />
+    <SolidColorBrush x:Key="Office2010Black" Color="#f2f6fb" />
+    <SolidColorBrush x:Key="Office2010Blue" Color="#f2f6fb" />
+    <SolidColorBrush x:Key="Office2010Silver" Color="#f2f6fb" />
+    <SolidColorBrush x:Key="Office2013" Color="#f2f6fb" />
+    <SolidColorBrush x:Key="Seven" Color="#f2f6fb" />
+    <SolidColorBrush x:Key="VS2010" Color="#f2f6fb" />
+    <SolidColorBrush x:Key="TouchlineDark" Color="#f2f6fb" />
+    <SolidColorBrush x:Key="{x:Static helpers:StyleKeys.EvenRowBrushKey}" Color="#f2f6fb" />
+    <LinearGradientBrush x:Key="{x:Static helpers:StyleKeys.ReadOnlyBrushKey}">
+        <GradientStop Color="#e7eff6" Offset="0"></GradientStop>
+        <GradientStop Color="White" Offset="1"></GradientStop>
+    </LinearGradientBrush>
+    
+    <!--IsReadOnly Style-->
+    <!--Собсвенно стиль-->
+    <ControlTemplate x:Key="IsReadOnlyBorderTemplate" TargetType="{x:Type ContentControl}">
+        <Border BorderBrush="#e1e1e1" BorderThickness="1" CornerRadius="1"  Background="{StaticResource {x:Static helpers:StyleKeys.ReadOnlyBrushKey}}">
+            <ContentPresenter />
+        </Border>
+    </ControlTemplate>
+
+    <helpers:ErrorContentConverter x:Key="ErrorContentToErrorTypeConverter" GetValueTag="ErrorType" Separator=";" />
+    <helpers:ErrorContentConverter x:Key="ErrorContentConverter" GetValueTag="ErrorContent" Separator=";" />
+    <mvvmx:BooleanToVisibilityConverter x:Key="InvertBoolToVis" Inverse="True"/>
+
+    <DataTemplate x:Key="errorPopupTemplate">
+        <TextBlock Text="{Binding Path=ErrorContent, Converter={StaticResource ErrorContentConverter}}" />
+    </DataTemplate>
+    <Style TargetType="{x:Type dxe:ErrorControl}" BasedOn="{StaticResource {x:Type dxe:ErrorControl}}">
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Content.ErrorContent, Converter={StaticResource ErrorContentToErrorTypeConverter}, RelativeSource={RelativeSource Self}}" Value="Critical">
+                <Setter Property="ContentTemplate" Value="{DynamicResource {dxet:ErrorTypesThemeKey ResourceKey=Critical}}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Content.ErrorContent, Converter={StaticResource ErrorContentToErrorTypeConverter}, RelativeSource={RelativeSource Self}}" Value="Warning">
+                <Setter Property="ContentTemplate" Value="{DynamicResource {dxet:ErrorTypesThemeKey ResourceKey=Warning}}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Content.ErrorContent, Converter={StaticResource ErrorContentToErrorTypeConverter}, RelativeSource={RelativeSource Self}}" Value="Information">
+                <Setter Property="ContentTemplate" Value="{DynamicResource {dxet:ErrorTypesThemeKey ResourceKey=Information}}" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <ControlTemplate x:Key="ShowTimePopupContentTemplate">
+        <Grid DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type controls:CustomDateTimeEdit}}}">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <controls:CustomDateEditCalendar x:Name="Calendar_PART" ShowClearButton="False"  />
+
+            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="{lex:LocExtension Key=wmsMLC.DCL.Resources:StringResources:TimeCaption}" Margin="5,2,2,2" VerticalAlignment="Center"/>
+                <controls:CustomDateEdit EditValue="{Binding ElementName=Calendar_PART, Path=DateTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MaskType="DateTimeAdvancingCaret" ShowEditorButtons="True" MaskUseAsDisplayFormat="True" Mask="{Binding TimeMask}" IsReadOnly="{Binding IsReadOnly}">
+                    <controls:CustomDateEdit.StyleSettings>
+                        <dxe:DateEditPickerStyleSettings />
+                    </controls:CustomDateEdit.StyleSettings>
+                </controls:CustomDateEdit>
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" Orientation="Horizontal" Visibility="{Binding IsReadOnly, Converter={StaticResource InvertBoolToVis}}">
+                <Button Margin="5,5,0,8" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{DynamicResource {dxet:DateEditThemeKey IsVisibleInBlend=True, ResourceKey=ClearButtonStyle, ThemeName={x:Static dx:ThemeManager.ApplicationThemeName}}}" Content="Сегодня" Command="{Binding ElementName=Calendar_PART, Path=TodayCommand}" />
+                <Button Margin="5,5,0,8" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{DynamicResource {dxet:DateEditThemeKey IsVisibleInBlend=True, ResourceKey=ClearButtonStyle, ThemeName={x:Static dx:ThemeManager.ApplicationThemeName}}}" Content="Очистить" Command="{Binding ElementName=Calendar_PART, Path=ClearCommand}" />
+            </StackPanel>
+        </Grid>
+    </ControlTemplate>
+
+    <!--К каким контролам применяется-->
+    <Style TargetType="{x:Type dxe:TextEdit}" >
+        <Style.Triggers>
+            <Trigger Property="IsReadOnly" Value="True">
+                <Setter Property="BorderTemplate" Value="{StaticResource IsReadOnlyBorderTemplate}" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="BorderTemplate" Value="{StaticResource IsReadOnlyBorderTemplate}" />
+            </Trigger>
+        </Style.Triggers>
+        <Setter Property="ErrorToolTipContentTemplate" Value="{StaticResource errorPopupTemplate}" />
+    </Style>
+
+    <Style TargetType="{x:Type dxe:ButtonEdit}">
+        <Style.Triggers>
+            <Trigger Property="IsReadOnly" Value="True">
+                <Setter Property="BorderTemplate" Value="{StaticResource IsReadOnlyBorderTemplate}" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="BorderTemplate" Value="{StaticResource IsReadOnlyBorderTemplate}" />
+            </Trigger>
+        </Style.Triggers>
+        <Setter Property="ErrorToolTipContentTemplate" Value="{StaticResource errorPopupTemplate}" />
+    </Style>
+
+    <Style TargetType="{x:Type dxe:DateEdit}">
+        <Style.Triggers>
+            <Trigger Property="IsReadOnly" Value="True">
+                <Setter Property="BorderTemplate" Value="{StaticResource IsReadOnlyBorderTemplate}" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="BorderTemplate" Value="{StaticResource IsReadOnlyBorderTemplate}" />
+            </Trigger>
+        </Style.Triggers>
+        <Setter Property="ErrorToolTipContentTemplate" Value="{StaticResource errorPopupTemplate}" />
+    </Style>
+
+    <Style TargetType="{x:Type controls:CustomDateTimeEdit}">
+        <Style.Triggers>
+            <Trigger Property="IsShowTimePanel" Value="True">
+                <Setter Property="PopupContentTemplate" Value="{StaticResource ShowTimePopupContentTemplate}"/>
+            </Trigger>
+            <Trigger Property="IsReadOnly" Value="True">
+                <Setter Property="BorderTemplate" Value="{StaticResource IsReadOnlyBorderTemplate}" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="BorderTemplate" Value="{StaticResource IsReadOnlyBorderTemplate}" />
+            </Trigger>
+        </Style.Triggers>
+        <Setter Property="ErrorToolTipContentTemplate" Value="{StaticResource errorPopupTemplate}" />
+        <Setter Property="TimeMask" Value="HH:mm"/>
+    </Style>
+
+    <Style TargetType="{x:Type controls:CustomComboBoxEdit}">
+        <Style.Triggers>
+            <Trigger Property="IsReadOnly" Value="True">
+                <Setter Property="BorderTemplate" Value="{StaticResource IsReadOnlyBorderTemplate}" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="BorderTemplate" Value="{StaticResource IsReadOnlyBorderTemplate}" />
+            </Trigger>
+        </Style.Triggers>
+        <Setter Property="ErrorToolTipContentTemplate" Value="{StaticResource errorPopupTemplate}" />
+    </Style>
+
+    <ControlTemplate x:Key="CustomLookUpEditGridControlTemplate">
+        <controls:CustomGridControl Name="PART_GridControl"
+            ColumnsSource="{Binding LookUpColumnsSource, Mode=OneTime, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxg:LookUpEdit}}}"
+            AutoGenerateColumns="None"
+            ShowTotalRow="True"
+            AutoShowAutoFilterRowWhenRowsCountMoreThan="10">
+        </controls:CustomGridControl>
+    </ControlTemplate>
+
+    <Style TargetType="{x:Type controls:CustomLookUpEdit}">
+        <Style.Triggers>
+            <Trigger Property="IsReadOnly" Value="True">
+                <Setter Property="BorderTemplate" Value="{StaticResource IsReadOnlyBorderTemplate}" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="BorderTemplate" Value="{StaticResource IsReadOnlyBorderTemplate}" />
+            </Trigger>
+        </Style.Triggers>
+        
+        <Setter Property="ErrorToolTipContentTemplate" Value="{StaticResource errorPopupTemplate}" />
+        <Setter Property="AutoPopulateColumns" Value="False"/>
+        <Setter Property="IsPopupAutoWidth" Value="False"/>
+        <Setter Property="PopupContentTemplate" Value="{StaticResource CustomLookUpEditGridControlTemplate}"/>
+    </Style>
+
+    <Style TargetType="{x:Type controls:CustomSpinEdit}">
+        <Style.Triggers>
+            <Trigger Property="IsReadOnly" Value="True">
+                <Setter Property="BorderTemplate" Value="{StaticResource IsReadOnlyBorderTemplate}" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="BorderTemplate" Value="{StaticResource IsReadOnlyBorderTemplate}" />
+            </Trigger>
+        </Style.Triggers>
+        <Setter Property="ErrorToolTipContentTemplate" Value="{StaticResource errorPopupTemplate}" />
+    </Style>
+
+    <Style TargetType="{x:Type controls:CustomLabelItem}">
+        <Setter Property="ErrorToolTipContentTemplate" Value="{StaticResource errorPopupTemplate}" />
+    </Style>
+
+    <Style x:Key="EmptyErrorTemplate">
+        <Setter Property="Validation.ErrorTemplate">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Grid/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="views:SubListView" BasedOn="{StaticResource EmptyErrorTemplate}" />
+
+    <Style TargetType="{x:Type controls:CustomImageEdit}">
+        <Setter Property="MenuTemplate">
+            <Setter.Value>
+                <!--<ControlTemplate x:Key="{dxet:ImageEditThemeKey ResourceKey=MenuTemplate, ThemeName={x:Static dx:ThemeManager.ApplicationThemeName}}" TargetType="{x:Type ContentControl}">-->
+                <ControlTemplate TargetType="{x:Type ContentControl}">
+                    <StackPanel x:Name="PART_MenuContent" Orientation="Horizontal">
+                        <dxe:ImageEditCutToolButton />
+                        <dxe:ImageEditCopyToolButton />
+                        <dxe:ImageEditPasteToolButton />
+                        <dxe:ImageEditClearToolButton />
+                        <dxe:ImageEditToolSeparator />
+                        <dxe:ImageEditLoadToolButton />
+                        <dxe:ImageEditSaveToolButton />
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

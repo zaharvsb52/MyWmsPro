@@ -1,0 +1,11 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:core="http://schemas.devexpress.com/winfx/2008/xaml/core">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.Printing/GrayOne/PreviewSurface.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.Printing/GrayOne/PageBorderControl.xaml" />
+        <!--ONLY SL
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Printing/GrayOne/InfoPanel.xaml" core:Wpf2SLOptions.AllowProcessNode="False"/>
+        ONLY SL-->
+    </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

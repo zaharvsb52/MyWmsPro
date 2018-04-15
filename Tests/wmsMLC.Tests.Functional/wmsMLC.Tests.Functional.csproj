@@ -1,0 +1,510 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{400BB22A-8C66-4ADA-8EAA-C499FFF66F4D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>wmsMLC.Tests.Functional</RootNamespace>
+    <AssemblyName>wmsMLC.Tests.Functional</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'TST1|AnyCPU'">
+    <OutputPath>bin\TST1\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BLToolkit.4, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b1d3f6ab3aadaca3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Packages\BLToolkit.4.2.0\lib\net40-full\BLToolkit.4.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentAssertions">
+      <HintPath>..\..\..\Libraries\FluentAssertions\FluentAssertions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serialize.Linq, Version=1.2.4.0, Culture=neutral, PublicKeyToken=25bcc11ba213b377, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Packages\Serialize.Linq.1.2.4\lib\net40\Serialize.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO">
+      <HintPath>..\..\..\Packages\Microsoft.Bcl.1.1.10\lib\net40\System.IO.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime">
+      <HintPath>..\..\..\Packages\Microsoft.Bcl.1.1.10\lib\net40\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>..\..\..\Packages\Microsoft.Bcl.1.1.10\lib\net40\System.Threading.Tasks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\z_AdjustmentReasonTest.cs" />
+    <Compile Include="Entities\z_Area2BlockingTest.cs" />
+    <Compile Include="Entities\z_AreaTest.cs" />
+    <Compile Include="Entities\z_AreaTypeGPVTest.cs" />
+    <Compile Include="Entities\z_AreaTypeTest.cs" />
+    <Compile Include="Entities\z_Art2GroupTest.cs" />
+    <Compile Include="Entities\z_ArtGroupTest.cs" />
+    <Compile Include="Entities\z_ArtPriceTest.cs" />
+    <Compile Include="Entities\z_ArtTest.cs" />
+    <Compile Include="AuthenticationLogOnLogOffTest.cs" />
+    <Compile Include="Entities\z_BarcodeTest.cs" />
+    <Compile Include="BaseWMSObjectTest.cs" />
+    <Compile Include="Entities\z_BillAnalyticsTest.cs" />
+    <Compile Include="Entities\z_BillBillEntityTest.cs" />
+    <Compile Include="Entities\z_BillBiller2MandantTest.cs" />
+    <Compile Include="Entities\z_BillBillerTest.cs" />
+    <Compile Include="Entities\z_BillCalcConfigDetailTest.cs" />
+    <Compile Include="Entities\z_BillCalcConfigTest.cs" />
+    <Compile Include="Entities\z_BillCalcEventConfigTest.cs" />
+    <Compile Include="Entities\z_BillCalcVerificationTest.cs" />
+    <Compile Include="Entities\z_BillContractTest.cs" />
+    <Compile Include="Entities\z_BillEvent2BillerTest.cs" />
+    <Compile Include="Entities\z_BillEvent2OperationTest.cs" />
+    <Compile Include="Entities\z_BillEventKind2BillerTest.cs" />
+    <Compile Include="Entities\z_BillOperation2ContractTest.cs" />
+    <Compile Include="Entities\z_BillOperationCauseTest.cs" />
+    <Compile Include="Entities\z_BillOperationClassTest.cs" />
+    <Compile Include="Entities\z_BillOperationTest.cs" />
+    <Compile Include="Entities\z_BillScale2O2CTest.cs" />
+    <Compile Include="Entities\z_BillScaleTest.cs" />
+    <Compile Include="Entities\z_BillScaleValueTest.cs" />
+    <Compile Include="Entities\z_BillScaleValueTypeTest.cs" />
+    <Compile Include="Entities\z_BillSpecialFuncEntityTest.cs" />
+    <Compile Include="Entities\z_BillSpecialFuncParamsTest.cs" />
+    <Compile Include="Entities\z_BillSpecialFunctionTest.cs" />
+    <Compile Include="Entities\z_BillStrategyParamsTest.cs" />
+    <Compile Include="Entities\z_BillStrategyTest.cs" />
+    <Compile Include="Entities\z_BillStrategyUseTest.cs" />
+    <Compile Include="Entities\z_BillStrategyUseValuesTest.cs" />
+    <Compile Include="Entities\z_BillTariffTest.cs" />
+    <Compile Include="Entities\z_BillTransactionDetailTest.cs" />
+    <Compile Include="Entities\z_BillTransactionTest.cs" />
+    <Compile Include="Entities\z_BillTransactionTypeTest.cs" />
+    <Compile Include="Entities\z_BillTransactionWDetailTest.cs" />
+    <Compile Include="Entities\z_BillTransactionWTest.cs" />
+    <Compile Include="Entities\z_BillUserParams2O2CTest.cs" />
+    <Compile Include="Entities\z_BillUserParamsTest.cs" />
+    <Compile Include="Entities\z_BillUserParamsTypeApplyTest.cs" />
+    <Compile Include="Entities\z_BillUserParamsTypeTest.cs" />
+    <Compile Include="Entities\z_BillUserParamsValueTest.cs" />
+    <Compile Include="Entities\z_BillWorkActDetailTest.cs" />
+    <Compile Include="Entities\z_BillWorkActTest.cs" />
+    <Compile Include="Entities\z_BlackListTest.cs" />
+    <Compile Include="Entities\z_BPBatchSelectTest.cs" />
+    <Compile Include="Entities\z_BPBatchTest.cs" />
+    <Compile Include="Entities\z_Calendar2MandantTest.cs" />
+    <Compile Include="Entities\z_CalendarTest.cs" />
+    <Compile Include="Entities\z_CargoIWBPosTest.cs" />
+    <Compile Include="Entities\z_CargoIwbTest.cs" />
+    <Compile Include="Entities\z_CargoOWBTest.cs" />
+    <Compile Include="Entities\z_CarTypeTest.cs" />
+    <Compile Include="Entities\z_ClientSessionTest.cs" />
+    <Compile Include="Entities\z_ClientTest.cs" />
+    <Compile Include="Entities\z_ClientTypeTest.cs" />
+    <Compile Include="Entities\z_CommActTest.cs" />
+    <Compile Include="Entities\z_Config2ObjectTest.cs" />
+    <Compile Include="Entities\z_CP2MandantTest.cs" />
+    <Compile Include="Entities\z_CustomParamTest.cs" />
+    <Compile Include="Entities\z_Dashboard2UserTest.cs" />
+    <Compile Include="Entities\z_DashboardTest.cs" />
+    <Compile Include="Entities\z_EcomClientTest.cs" />
+    <Compile Include="Entities\z_Employee2OWBTest.cs" />
+    <Compile Include="Entities\z_EmployeeTest.cs" />
+    <Compile Include="Entities\z_Entity2GCTest.cs" />
+    <Compile Include="Entities\z_EntityFileTest.cs" />
+    <Compile Include="Entities\z_EntityLinkTest.cs" />
+    <Compile Include="Entities\z_EventDetailTest.cs" />
+    <Compile Include="Entities\z_EventKind2MandantTest.cs" />
+    <Compile Include="Entities\z_EventKindTest.cs" />
+    <Compile Include="Entities\z_EventHeaderTest.cs" />
+    <Compile Include="Entities\z_ExpiryDateTest.cs" />
+    <Compile Include="Entities\z_FactoryTest.cs" />
+    <Compile Include="Entities\z_IWBPosInputTest.cs" />
+    <Compile Include="Entities\z_MSCTypeTest.cs" />
+    <Compile Include="Entities\NewCarTypeTest.cs" />
+    <Compile Include="Entities\NewVehicleTest.cs" />
+    <Compile Include="Entities\z_PartnerColorTest.cs" />
+    <Compile Include="Entities\z_PattCalcDataSourceTest.cs" />
+    <Compile Include="Entities\z_PattCalcFieldTest.cs" />
+    <Compile Include="Entities\z_PattCalcParamTest.cs" />
+    <Compile Include="Entities\z_PattCalcWhereTest.cs" />
+    <Compile Include="Entities\z_PattTDataSourceTest.cs" />
+    <Compile Include="Entities\z_PattTFieldEntityTest.cs" />
+    <Compile Include="Entities\z_PattTFieldSectionTest.cs" />
+    <Compile Include="Entities\z_PattTFieldTest.cs" />
+    <Compile Include="Entities\z_PattTParamsTest.cs" />
+    <Compile Include="Entities\z_PattTWhereEntityTest.cs" />
+    <Compile Include="Entities\z_PattTWhereSectionTest.cs" />
+    <Compile Include="Entities\z_PurposeVisitTest.cs" />
+    <Compile Include="Entities\z_SysArchInstTest.cs" />
+    <Compile Include="Entities\z_SysArchTest.cs" />
+    <Compile Include="Entities\TestDataAccessor.cs" />
+    <Compile Include="Entities\z_VehiclePassTest.cs" />
+    <Compile Include="Entities\z_WorkGroupTest.cs" />
+    <Compile Include="Entities\z_WTSelectTest.cs" />
+    <Compile Include="FilterHelperTests.cs" />
+    <Compile Include="Entities\z_GCTest.cs" />
+    <Compile Include="Entities\z_InvGroupTest.cs" />
+    <Compile Include="Entities\z_InvReqPosTest.cs" />
+    <Compile Include="Entities\z_InvReqTest.cs" />
+    <Compile Include="Entities\z_InvSnapShotTest.cs" />
+    <Compile Include="Entities\z_InvTaskGroupTest.cs" />
+    <Compile Include="Entities\z_InvTaskStepTest.cs" />
+    <Compile Include="Entities\z_InvTaskTest.cs" />
+    <Compile Include="Entities\z_InvTest.cs" />
+    <Compile Include="Entities\z_IsoCountryTest.cs" />
+    <Compile Include="Entities\z_IsoCurrencyTest.cs" />
+    <Compile Include="Entities\z_LabelParamsTest.cs" />
+    <Compile Include="Entities\z_LabelParamsValueTest.cs" />
+    <Compile Include="Entities\z_LabelTest.cs" />
+    <Compile Include="Entities\z_LabelUseTest.cs" />
+    <Compile Include="Entities\z_MgRouteDateSelectTest.cs" />
+    <Compile Include="Entities\z_MgRouteSelectTest.cs" />
+    <Compile Include="Entities\z_MgRouteTest.cs" />
+    <Compile Include="Entities\z_MinSelectTest.cs" />
+    <Compile Include="Entities\z_MinTest.cs" />
+    <Compile Include="Entities\z_MITest.cs" />
+    <Compile Include="Entities\z_MIUseTest.cs" />
+    <Compile Include="Entities\z_MMSelectTest.cs" />
+    <Compile Include="Entities\z_MMTest.cs" />
+    <Compile Include="Entities\z_MMUseTest.cs" />
+    <Compile Include="Entities\z_MPLSelectTest.cs" />
+    <Compile Include="Entities\z_PLTest.cs" />
+    <Compile Include="Entities\z_MPLUseTest.cs" />
+    <Compile Include="Entities\z_MRSelectTest.cs" />
+    <Compile Include="Entities\z_MRTest.cs" />
+    <Compile Include="Entities\z_MRUseTest.cs" />
+    <Compile Include="Entities\z_MSCSelectTest.cs" />
+    <Compile Include="Entities\z_MSCTest.cs" />
+    <Compile Include="NewBaseWMSTest.cs" />
+    <Compile Include="Entities\z_OutTest.cs" />
+    <Compile Include="Entities\z_OWB2CargoTest.cs" />
+    <Compile Include="Entities\z_OWBPosTest.cs" />
+    <Compile Include="Entities\z_OWBTest.cs" />
+    <Compile Include="Entities\z_Partner2GroupTest.cs" />
+    <Compile Include="Entities\z_PartnerGroupTest.cs" />
+    <Compile Include="Entities\z_PLPosTest.cs" />
+    <Compile Include="Entities\z_Product2BlockingTest.cs" />
+    <Compile Include="Entities\z_ProductTest.cs" />
+    <Compile Include="Entities\z_PMMethodTest.cs" />
+    <Compile Include="Entities\z_PMConfigTest.cs" />
+    <Compile Include="Entities\z_PM2OperationTest.cs" />
+    <Compile Include="Entities\z_PM2ArtTest.cs" />
+    <Compile Include="Entities\z_PMTest.cs" />
+    <Compile Include="EPS\EpsDataTest.cs" />
+    <Compile Include="EPS\EPSCreateDataTest.cs" />
+    <Compile Include="EPS\EpsUnitTest.cs" />
+    <Compile Include="Entities\z_ExternalTrafficTest.cs" />
+    <Compile Include="Entities\z_GateTest.cs" />
+    <Compile Include="Entities\z_InternalTrafficTest.cs" />
+    <Compile Include="Entities\z_IWB2CargoTest.cs" />
+    <Compile Include="Entities\z_IWBPosTest.cs" />
+    <Compile Include="Entities\z_IWBTest.cs" />
+    <Compile Include="Entities\z_KitPosTest.cs" />
+    <Compile Include="Entities\z_KitTest.cs" />
+    <Compile Include="Entities\z_KitTypeTest.cs" />
+    <Compile Include="Entities\z_MeasureTest.cs" />
+    <Compile Include="Entities\z_MotionArea2GroupTest.cs" />
+    <Compile Include="Entities\z_MotionAreaGroupTest.cs" />
+    <Compile Include="Entities\z_MotionAreaTest.cs" />
+    <Compile Include="Entities\z_Object2ConfigTest.cs" />
+    <Compile Include="Entities\z_ObjectConfigTest.cs" />
+    <Compile Include="Entities\z_ParkingTest.cs" />
+    <Compile Include="Entities\z_Place2BlockingTest.cs" />
+    <Compile Include="Entities\z_PlaceTest.cs" />
+    <Compile Include="Entities\z_PlaceTypeTest.cs" />
+    <Compile Include="PerformanceBenchmark.cs" />
+    <Compile Include="Processes\BPLogTest.cs" />
+    <Compile Include="Processes\BPProcess2ObjectTest.cs" />
+    <Compile Include="Processes\BPProcessTest.cs" />
+    <Compile Include="Entities\z_EpsConfigTest.cs" />
+    <Compile Include="Entities\z_EpsJobTest.cs" />
+    <Compile Include="Entities\z_PrintStreamConfigTest.cs" />
+    <Compile Include="Entities\z_EpsTask2JobTest.cs" />
+    <Compile Include="Entities\z_EpsTaskTest.cs" />
+    <Compile Include="Entities\z_GlobalParamTest.cs" />
+    <Compile Include="Entities\z_GlobalParamValueTest.cs" />
+    <Compile Include="Entities\z_MandantTest.cs" />
+    <Compile Include="Entities\z_MeasureTypeTest.cs" />
+    <Compile Include="Entities\z_ObjectTreeMenuTest.cs" />
+    <Compile Include="Entities\z_OutputTaskTest.cs" />
+    <Compile Include="Entities\z_OutputTest.cs" />
+    <Compile Include="Entities\z_PartnerTest.cs" />
+    <Compile Include="Entities\z_PlaceClassTest.cs" />
+    <Compile Include="Entities\z_PrinterPhysicalTest.cs" />
+    <Compile Include="Processes\BPTriggerTest.cs" />
+    <Compile Include="Processes\BPWorkflowTest.cs" />
+    <Compile Include="Entities\z_ProductBlockingTest.cs" />
+    <Compile Include="Processes\CreateProductByPosPerfomanceTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\z_PrinterLogicalTest.cs" />
+    <Compile Include="Entities\z_QlfDetailTest.cs" />
+    <Compile Include="Entities\z_QlfTest.cs" />
+    <Compile Include="Entities\z_QResTest.cs" />
+    <Compile Include="Entities\z_QSupplyChainTest.cs" />
+    <Compile Include="Entities\z_ReceiveAreaTest.cs" />
+    <Compile Include="Entities\z_Report2EntityTest.cs" />
+    <Compile Include="Entities\z_Report2ReportTest.cs" />
+    <Compile Include="Entities\z_Report2UserTest.cs" />
+    <Compile Include="Entities\z_ReportDataBufferTest.cs" />
+    <Compile Include="Entities\z_ReportFileTest.cs" />
+    <Compile Include="Entities\z_ReportFilterTest.cs" />
+    <Compile Include="Entities\z_ReportRedefinitionTest.cs" />
+    <Compile Include="Entities\z_ReportTest.cs" />
+    <Compile Include="Entities\z_Res2SupplyChainTest.cs" />
+    <Compile Include="Entities\z_ResTest.cs" />
+    <Compile Include="Entities\z_Right2GroupTest.cs" />
+    <Compile Include="Entities\z_RightGroupTest.cs" />
+    <Compile Include="Entities\z_RightTest.cs" />
+    <Compile Include="Entities\z_RouteTest.cs" />
+    <Compile Include="Entities\z_RuleConfigTest.cs" />
+    <Compile Include="Entities\z_RuleExecParamTest.cs" />
+    <Compile Include="Entities\z_RuleExecTest.cs" />
+    <Compile Include="Entities\z_RuleParamTest.cs" />
+    <Compile Include="Entities\z_RuleTest.cs" />
+    <Compile Include="Entities\z_Segment2BlockingTest.cs" />
+    <Compile Include="Entities\z_SegmentTest.cs" />
+    <Compile Include="Entities\SegmentTypeGPVTest.cs" />
+    <Compile Include="Entities\z_SegmentTypeTest.cs" />
+    <Compile Include="Entities\z_SequenceTest.cs" />
+    <Compile Include="Entities\z_SKU2PartnerTest.cs" />
+    <Compile Include="Entities\z_SKU2TTETest.cs" />
+    <Compile Include="Entities\z_SKUTest.cs" />
+    <Compile Include="Entities\z_State2OperationTest.cs" />
+    <Compile Include="Entities\z_StateMachineTest.cs" />
+    <Compile Include="Entities\z_StatusTest.cs" />
+    <Compile Include="Entities\z_SupplyAreaTest.cs" />
+    <Compile Include="Entities\z_SupplyChainTest.cs" />
+    <Compile Include="Entities\z_SysEnumTest.cs" />
+    <Compile Include="Entities\z_SysServiceTest.cs" />
+    <Compile Include="Entities\z_TE2BlockingTest.cs" />
+    <Compile Include="Entities\z_TETest.cs" />
+    <Compile Include="Entities\z_TEType2MandantTest.cs" />
+    <Compile Include="Entities\z_TEType2PlaceClassTest.cs" />
+    <Compile Include="Entities\z_TEType2TETypeTest.cs" />
+    <Compile Include="Entities\z_TEType2TruckTypeTest.cs" />
+    <Compile Include="Entities\TETypeGPVTest.cs" />
+    <Compile Include="Entities\z_TETypeTest.cs" />
+    <Compile Include="TListXmlTest.cs" />
+    <Compile Include="Entities\TransactionTest.cs" />
+    <Compile Include="CommonThreadingTest.cs" />
+    <Compile Include="Entities\z_TransitDataTest.cs" />
+    <Compile Include="Entities\z_TransitTest.cs" />
+    <Compile Include="Entities\z_TransportTaskTest.cs" />
+    <Compile Include="Entities\z_TransportTaskTypeTest.cs" />
+    <Compile Include="Entities\z_Truck2MotionAreaGroupTest.cs" />
+    <Compile Include="Entities\z_TruckTest.cs" />
+    <Compile Include="Entities\z_TruckTypeTest.cs" />
+    <Compile Include="Entities\z_UIButtonTest.cs" />
+    <Compile Include="Entities\UoWUsingTest.cs" />
+    <Compile Include="Entities\z_User2GroupTest.cs" />
+    <Compile Include="Entities\z_User2MandantTest.cs" />
+    <Compile Include="Entities\z_UserEnumTest.cs" />
+    <Compile Include="Entities\z_UserGroupTest.cs" />
+    <Compile Include="Entities\z_UserTest.cs" />
+    <Compile Include="Entities\z_VATTypeTest.cs" />
+    <Compile Include="Entities\z_W2E2WorkingTest.cs" />
+    <Compile Include="Entities\z_WarehouseTest.cs" />
+    <Compile Include="Entities\z_VehicleTest.cs" />
+    <Compile Include="Entities\z_WeightControlTest.cs" />
+    <Compile Include="Entities\z_Work2EntityTest.cs" />
+    <Compile Include="Entities\z_Worker2GroupTest.cs" />
+    <Compile Include="Entities\z_Worker2WarehouseTest.cs" />
+    <Compile Include="Entities\WorkerGpvTest.cs" />
+    <Compile Include="Entities\z_WorkerGroupTest.cs" />
+    <Compile Include="Entities\z_WorkerTest.cs" />
+    <Compile Include="Entities\z_WorkingTest.cs" />
+    <Compile Include="Entities\z_WorkTest.cs" />
+    <Compile Include="Entities\z_WTVTest.cs" />
+    <Compile Include="TriggerFilterTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Activities\wmsMLC.Activities.Business.Designer\wmsMLC.Activities.Business.Designer.csproj">
+      <Project>{71315d65-fcef-43d4-b659-f6e50ef8a9dd}</Project>
+      <Name>wmsMLC.Activities.Business.Designer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\APS\wmsMLC.APS.wmsEPS\wmsMLC.APS.wmsEPS.csproj">
+      <Project>{3ae144f1-77f2-4696-8b49-d57f7c98baf2}</Project>
+      <Name>wmsMLC.APS.wmsEPS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Business\wmsMLC.Business.DAL.Oracle\wmsMLC.Business.DAL.Oracle.csproj">
+      <Project>{D271F881-E1C6-47FF-B2F6-2805B6F23389}</Project>
+      <Name>wmsMLC.Business.DAL.Oracle</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Business\wmsMLC.Business.DAL\wmsMLC.Business.DAL.csproj">
+      <Project>{386329D8-725F-4518-BFF8-496246552261}</Project>
+      <Name>wmsMLC.Business.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Business\wmsMLC.Business.General\wmsMLC.Business.General.csproj">
+      <Project>{AC7BED6A-2890-48D1-B1E3-C746053CD4DB}</Project>
+      <Name>wmsMLC.Business.General</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Business\wmsMLC.Business.Managers\wmsMLC.Business.Managers.csproj">
+      <Project>{19243b19-dec2-49c1-83a1-c1bfc861c9e3}</Project>
+      <Name>wmsMLC.Business.Managers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Business\wmsMLC.Business.Objects\wmsMLC.Business.Objects.csproj">
+      <Project>{67d93016-602c-462b-be46-9fdfa9ed2566}</Project>
+      <Name>wmsMLC.Business.Objects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Business\wmsMLC.Business\wmsMLC.Business.csproj">
+      <Project>{de1f83e8-8785-475f-9d0e-19af3f12c684}</Project>
+      <Name>wmsMLC.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DCL\wmsMLC.DCL.General\wmsMLC.DCL.General.csproj">
+      <Project>{151601E7-810A-4BAF-8D96-1DC589D603DA}</Project>
+      <Name>wmsMLC.DCL.General</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DCL\wmsMLC.DCL.Main\wmsMLC.DCL.Main.csproj">
+      <Project>{98890FF2-0995-4F5C-9073-500690342BC8}</Project>
+      <Name>wmsMLC.DCL.Main</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EPS\wmsEPS\wmsMLC.EPS.wmsEPS.csproj">
+      <Project>{eafe1e93-73fa-4dd3-9cd6-4c3c4f969da7}</Project>
+      <Name>wmsMLC.EPS.wmsEPS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\General\wmsMLC.General.PL.WPF\wmsMLC.General.PL.WPF.csproj">
+      <Project>{4312AE52-C3D5-435A-A174-93BC9D14B7C1}</Project>
+      <Name>wmsMLC.General.PL.WPF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\General\wmsMLC.General.Services.Service\wmsMLC.General.Services.Service.csproj">
+      <Project>{3EB67AF3-4C72-4D0A-B999-1049DFE1B3DB}</Project>
+      <Name>wmsMLC.General.Services.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\General\wmsMLC.General.Types\wmsMLC.General.Types.csproj">
+      <Project>{C095CABB-A2BC-45F2-9592-9E75E909622B}</Project>
+      <Name>wmsMLC.General.Types</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\General\wmsMLC.General.BL\wmsMLC.General.BL.csproj">
+      <Project>{dcd24e7c-7328-4d5f-9796-f77312e13ea3}</Project>
+      <Name>wmsMLC.General.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\General\wmsMLC.General.DAL.Oracle\wmsMLC.General.DAL.Oracle.csproj">
+      <Project>{232A6DA0-3D04-4F84-8C51-9ECA469EF638}</Project>
+      <Name>wmsMLC.General.DAL.Oracle</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\General\wmsMLC.General.DAL\wmsMLC.General.DAL.csproj">
+      <Project>{32cf6c98-d476-446b-ac2b-8a36e6430d91}</Project>
+      <Name>wmsMLC.General.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\General\wmsMLC.General.PL\wmsMLC.General.PL.csproj">
+      <Project>{360F0643-A516-4B1D-905A-F010A5783AC9}</Project>
+      <Name>wmsMLC.General.PL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\General\wmsMLC.General\wmsMLC.General.csproj">
+      <Project>{123ba357-aac6-4e30-8af9-9cd944bf25df}</Project>
+      <Name>wmsMLC.General</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EPS\Reports\Test001.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="EPS\Reports\Test002.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+  <Import Project="..\..\..\Packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\..\Packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

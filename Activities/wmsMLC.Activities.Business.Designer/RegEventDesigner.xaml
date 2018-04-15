@@ -1,0 +1,38 @@
+﻿<sap:ActivityDesigner x:Class="wmsMLC.Activities.Business.Designer.RegEventDesigner"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
+    xmlns:general="clr-namespace:wmsMLC.Activities.General;assembly=wmsMLC.Activities.General">
+
+    <sap:ActivityDesigner.Resources>
+        <ResourceDictionary>
+            <general:ComboBoxItemConverter x:Key="ComboBoxItemConverter" />
+        </ResourceDictionary>
+    </sap:ActivityDesigner.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="33*"/>
+            <RowDefinition Height="33*"/>
+            <RowDefinition Height="33*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="70*"/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Content="Вид события"/>
+        <ComboBox Name="cbEventKind" Grid.Row="0" Grid.Column="1"
+                  SelectedValue="{Binding ModelItem.EventKindCode,
+                                          Mode=TwoWay,
+                                          Converter={StaticResource ComboBoxItemConverter},
+                                          UpdateSourceTrigger=PropertyChanged}"/>
+
+        <Label Grid.Row="1" Grid.Column="0" Content="Операция"/>
+        <ComboBox Name="cbOperation" Grid.Row="1" Grid.Column="1"
+                  SelectedValue="{Binding ModelItem.BillOperationCode,
+                                          Mode=TwoWay,
+                                          Converter={StaticResource ComboBoxItemConverter},
+                                          UpdateSourceTrigger=PropertyChanged}"/>
+
+        <Button Grid.Row="2" Grid.Column="1" Content="Параметры..." ToolTip="Открыть редактор параметров события" Click="Button_Click" />
+    </Grid>
+</sap:ActivityDesigner>

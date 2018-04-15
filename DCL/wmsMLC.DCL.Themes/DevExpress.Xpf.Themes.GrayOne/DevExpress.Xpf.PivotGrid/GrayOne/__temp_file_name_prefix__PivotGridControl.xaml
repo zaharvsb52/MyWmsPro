@@ -1,0 +1,32 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxpg="http://schemas.devexpress.com/winfx/2008/xaml/pivotgrid" xmlns:dxpgi="http://schemas.devexpress.com/winfx/2008/xaml/pivotgrid/internal" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <Style x:Key="{dxpgi:PivotGridThemeKey ResourceKey=BorderTemplate}" TargetType="{x:Type dxpgi:DXPivotGridThemesLoader}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type dxpgi:DXPivotGridThemesLoader}">
+          <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PivotGrid\GrayOne\PivotGridControl.xaml;7;22">
+            <VisualStateManager.VisualStateGroups>
+              <VisualStateGroup Name="ShowBorder">
+                <VisualState Name="ShownBorder" />
+                <VisualState Name="HidenBorder">
+                  <Storyboard>
+                    <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Border" Storyboard.TargetProperty="BorderThickness">
+                      <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                        <DiscreteObjectKeyFrame.Value>
+                          <Thickness>0</Thickness>
+                        </DiscreteObjectKeyFrame.Value>
+                      </DiscreteObjectKeyFrame>
+                    </ObjectAnimationUsingKeyFrames>
+                  </Storyboard>
+                </VisualState>
+              </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Border x:Name="Border" Background="#FFEBECEF" BorderBrush="#FF9DA0AA" BorderThickness="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PivotGrid\GrayOne\PivotGridControl.xaml;24;26">
+              <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PivotGrid\GrayOne\PivotGridControl.xaml;25;30" />
+            </Border>
+            <dxcore_unique_xmlns:WaitIndicator DeferedVisibility="{TemplateBinding ShowIndicator}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PivotGrid\GrayOne\PivotGridControl.xaml;27;26" />
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+</ResourceDictionary>

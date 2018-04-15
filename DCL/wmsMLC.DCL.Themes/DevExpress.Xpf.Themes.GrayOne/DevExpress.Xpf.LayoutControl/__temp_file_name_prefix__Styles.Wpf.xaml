@@ -1,0 +1,12 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:lc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="Styles.xaml" />
+  </ResourceDictionary.MergedDictionaries>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.LayoutControl.LayerSeparator}" TargetType="{x:Type lc:LayerSeparator}" BasedOn="{StaticResource LayerSeparator.Style}" />
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.LayoutControl.ElementSizer}" TargetType="{x:Type lc:ElementSizer}" BasedOn="{StaticResource ElementSizer.Style}" />
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.LayoutControl.GroupBoxButton}" TargetType="{x:Type lc:GroupBoxButton}" BasedOn="{StaticResource GroupBoxButton.Style}" />
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.LayoutControl.GroupBox}" TargetType="{x:Type lc:GroupBox}" BasedOn="{StaticResource GroupBox.Style}">
+    <Setter Property="Background" Value="Transparent" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.LayoutControl.GroupSeparator}" TargetType="{x:Type lc:GroupSeparator}" BasedOn="{StaticResource GroupSeparator.Style}" />
+</ResourceDictionary>

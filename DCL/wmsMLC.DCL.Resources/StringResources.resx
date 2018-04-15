@@ -1,0 +1,1171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutProgram" xml:space="preserve">
+    <value>О программе</value>
+  </data>
+  <data name="ActionAccept" xml:space="preserve">
+    <value>ОК</value>
+  </data>
+  <data name="ActionCancel" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="ActionNext" xml:space="preserve">
+    <value>Далее</value>
+  </data>
+  <data name="Administration" xml:space="preserve">
+    <value>Администрирование</value>
+  </data>
+  <data name="ApplicationWillBeShutdown" xml:space="preserve">
+    <value>Превышено допустимое количество попыток ввода.{0}Приложение будет закрыто.</value>
+  </data>
+  <data name="Area2BlockingListViewModelPanelCaption" xml:space="preserve">
+    <value>Отношение области к блокировкам</value>
+  </data>
+  <data name="AreaListViewModelPanelCaption" xml:space="preserve">
+    <value>Области склада</value>
+  </data>
+  <data name="AreaListViewModelPanelCaptionShow" xml:space="preserve">
+    <value>Блокирование области</value>
+  </data>
+  <data name="AreaTypeListViewModelPanelCaption" xml:space="preserve">
+    <value>Типы областей склада</value>
+  </data>
+  <data name="AuthenticationError" xml:space="preserve">
+    <value>Ошибка аутентификации</value>
+  </data>
+  <data name="Base" xml:space="preserve">
+    <value>Базовый</value>
+  </data>
+  <data name="ClearCache" xml:space="preserve">
+    <value>Очистить кеш</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="Commands" xml:space="preserve">
+    <value>Команды</value>
+  </data>
+  <data name="CommunicationError" xml:space="preserve">
+    <value>Отсутсвует связь с сервисом.</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Подтверждение</value>
+  </data>
+  <data name="ConfirmationDeleteObject" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить объект?</value>
+  </data>
+  <data name="ConfirmationDeleteRecords" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить {0} записи(ей)?</value>
+  </data>
+  <data name="ConfirmationUnsavedData" xml:space="preserve">
+    <value>Имеются несохраненные данные. Сохранить?</value>
+  </data>
+  <data name="CustomizationBarMenu" xml:space="preserve">
+    <value>Служебные</value>
+  </data>
+  <data name="CustomizationRegionClear" xml:space="preserve">
+    <value>Очистить вид</value>
+  </data>
+  <data name="CustomizationRegionSave" xml:space="preserve">
+    <value>Сохранить вид</value>
+  </data>
+  <data name="CustomizeRegion" xml:space="preserve">
+    <value>Настроить вид</value>
+  </data>
+  <data name="DEBUG" xml:space="preserve">
+    <value>DEBUG</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Редактировать</value>
+  </data>
+  <data name="EditInNewWindow" xml:space="preserve">
+    <value>Новое окно</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="ErrorStackTrace" xml:space="preserve">
+    <value>--- Конец трассировки внутреннего стека исключений ---</value>
+  </data>
+  <data name="ErrorUnexpected" xml:space="preserve">
+    <value>Непредвиденная ошибка</value>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>Фильтр</value>
+  </data>
+  <data name="Filtering" xml:space="preserve">
+    <value>Фильтрация</value>
+  </data>
+  <data name="FilterViewMaxRowCountDescription" xml:space="preserve">
+    <value>Количество записей</value>
+  </data>
+  <data name="FilterViewModelEditMenuCaption" xml:space="preserve">
+    <value>Очистка фильтра</value>
+  </data>
+  <data name="FilterViewModelEditMenuClearAll" xml:space="preserve">
+    <value>Очистить все</value>
+  </data>
+  <data name="FilterViewModelEditMenuClearSelected" xml:space="preserve">
+    <value>Очистить текущий</value>
+  </data>
+  <data name="GlobalParamListViewModelPanelCaption" xml:space="preserve">
+    <value>Справочник параметров</value>
+  </data>
+  <data name="InputName" xml:space="preserve">
+    <value>Введите имя</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Логин:</value>
+  </data>
+  <data name="LogInfoDebugMode" xml:space="preserve">
+    <value>DEBUG MODE</value>
+  </data>
+  <data name="LogInfoHeader01" xml:space="preserve">
+    <value>=================</value>
+  </data>
+  <data name="LogInfoHeader02" xml:space="preserve">
+    <value>-----------------</value>
+  </data>
+  <data name="LogInfoStartApp" xml:space="preserve">
+    <value>Start application</value>
+  </data>
+  <data name="LogInfoStopApp" xml:space="preserve">
+    <value>Stop application</value>
+  </data>
+  <data name="LoginNullText" xml:space="preserve">
+    <value>Введите Ваш логин...</value>
+  </data>
+  <data name="Main" xml:space="preserve">
+    <value>Главное</value>
+  </data>
+  <data name="MainMenu" xml:space="preserve">
+    <value>Основное меню</value>
+  </data>
+  <data name="MandantListViewModelPanelCaption" xml:space="preserve">
+    <value>Справочник мандантов</value>
+  </data>
+  <data name="ManyToManyViewModelPanelCaption" xml:space="preserve">
+    <value>Отношение 'многие ко многим'</value>
+  </data>
+  <data name="MaxRowCount" xml:space="preserve">
+    <value>Макс. к-во зап.:</value>
+  </data>
+  <data name="MessageSupport" xml:space="preserve">
+    <value>Попробуйте повторить операцию. В случае повторной ошибки обратитесь в IT отдел Вашей компании.</value>
+  </data>
+  <data name="MultipleSelectionViewModelPanelCaption" xml:space="preserve">
+    <value>Множественный выбор</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>Создать</value>
+  </data>
+  <data name="OpenInNewWindow" xml:space="preserve">
+    <value>Новое окно</value>
+  </data>
+  <data name="PartnerListViewModelPanelCaption" xml:space="preserve">
+    <value>Справочник партнеров</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Пароль:</value>
+  </data>
+  <data name="PasswordNullText" xml:space="preserve">
+    <value>Введите Ваш пароль...</value>
+  </data>
+  <data name="PlaceClassListViewModelPanelCaption" xml:space="preserve">
+    <value>Справочник классов мест</value>
+  </data>
+  <data name="Printable" xml:space="preserve">
+    <value>Версия для печати</value>
+  </data>
+  <data name="ProductBlockingListViewModelPanelCaption" xml:space="preserve">
+    <value>Справочник блокировок</value>
+  </data>
+  <data name="RefreshData" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
+  <data name="ReportCommand" xml:space="preserve">
+    <value>Отчет...</value>
+  </data>
+  <data name="RightGroupTreeViewModelPanelCaption" xml:space="preserve">
+    <value>Справочник групп прав</value>
+  </data>
+  <data name="RightListViewModelPanelCaption" xml:space="preserve">
+    <value>Справочник прав</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>Выбрать</value>
+  </data>
+  <data name="SequenceListViewModelPanelCaption" xml:space="preserve">
+    <value>Справочник счетчиков</value>
+  </data>
+  <data name="StateAuthentication" xml:space="preserve">
+    <value>Аутентификация</value>
+  </data>
+  <data name="StateInitModules" xml:space="preserve">
+    <value>Инициализация модулей</value>
+  </data>
+  <data name="StateRun" xml:space="preserve">
+    <value>Запуск приложения</value>
+  </data>
+  <data name="StateRunModules" xml:space="preserve">
+    <value>Запуск модулей</value>
+  </data>
+  <data name="SystemEntities" xml:space="preserve">
+    <value>Сущности системы</value>
+  </data>
+  <data name="TE2BlockingListViewModelPanelCaption" xml:space="preserve">
+    <value>Отношение ТЕ к блокировкам</value>
+  </data>
+  <data name="TEListViewModelPanelCaption" xml:space="preserve">
+    <value>Справочник TE</value>
+  </data>
+  <data name="TEListViewModelPanelCaptionShow" xml:space="preserve">
+    <value>Блокирование ТЕ</value>
+  </data>
+  <data name="TETypeListViewModelPanelCaption" xml:space="preserve">
+    <value>Справочник типов ТЕ</value>
+  </data>
+  <data name="Timeout" xml:space="preserve">
+    <value>Истек период ожидания ответа.</value>
+  </data>
+  <data name="TotalRowItemDisplayFormat" xml:space="preserve">
+    <value>Строк: {0}{2} {1}    {3}</value>
+  </data>
+  <data name="TotalRowItemVisibleRowDisplayFormat" xml:space="preserve">
+    <value>(Отобрано: {0})</value>
+  </data>
+  <data name="TransportTaskStatusListViewModelPanelCaption" xml:space="preserve">
+    <value>Справочник статусов транспортных заданий</value>
+  </data>
+  <data name="TransportTaskTypeListViewModelPanelCaption" xml:space="preserve">
+    <value>Справочник типов транспортных заданий</value>
+  </data>
+  <data name="ErrorUndefined" xml:space="preserve">
+    <value>Неизвестная ошибка</value>
+  </data>
+  <data name="UnexpectedError" xml:space="preserve">
+    <value>Возникла непредвиденная ошибка</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="UserGroupListViewModelPanelCaption" xml:space="preserve">
+    <value>Справочник групп пользователей</value>
+  </data>
+  <data name="UserGroupTreeViewModelPanelCaption" xml:space="preserve">
+    <value>Дерево групп пользователей</value>
+  </data>
+  <data name="UserListViewModelBarItemDomenUsers" xml:space="preserve">
+    <value>Доменные пользователи</value>
+  </data>
+  <data name="UserListViewModelMenuItemAddUsers" xml:space="preserve">
+    <value>Добавить пользователей</value>
+  </data>
+  <data name="UserListViewModelPanelCaption" xml:space="preserve">
+    <value>Справочник пользователей</value>
+  </data>
+  <data name="Wait" xml:space="preserve">
+    <value>Ждите...</value>
+  </data>
+  <data name="Right2GroupListViewModelPanelCaption" xml:space="preserve">
+    <value>Справочник прав к группам</value>
+  </data>
+  <data name="MlcDescription" xml:space="preserve">
+    <value>Logistic solutions since 1990</value>
+  </data>
+  <data name="StatePrefix" xml:space="preserve">
+    <value>Выполняется: {0}</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Version:</value>
+  </data>
+  <data name="ErrorSave" xml:space="preserve">
+    <value>Сохранение невозможно.</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Значение</value>
+  </data>
+  <data name="ManyToManyListCaptionFormat" xml:space="preserve">
+    <value>Список '{0}'</value>
+  </data>
+  <data name="ObjectListViewModelBasePanelCaptionFormatDefault" xml:space="preserve">
+    <value>Журнал {0}</value>
+  </data>
+  <data name="SystemError" xml:space="preserve">
+    <value>Системная ошибка.</value>
+  </data>
+  <data name="ListViewModelBarItem_Block" xml:space="preserve">
+    <value>Блокировки...</value>
+    <comment>Common: Block</comment>
+  </data>
+  <data name="ListViewModelMenuItem_AddBlock" xml:space="preserve">
+    <value>Блокировать</value>
+    <comment>AddBlock</comment>
+  </data>
+  <data name="ListViewModelMenuItem_Block" xml:space="preserve">
+    <value>К блокировкам</value>
+    <comment>Block</comment>
+  </data>
+  <data name="SegmentListViewModelPanelCaptionShow" xml:space="preserve">
+    <value>Блокирование сектора(ов)</value>
+  </data>
+  <data name="SegmentTypeListViewModelPanelCaption" xml:space="preserve">
+    <value>Справочник секторов</value>
+  </data>
+  <data name="History" xml:space="preserve">
+    <value>История</value>
+  </data>
+  <data name="MainViewModel_Login" xml:space="preserve">
+    <value>Войти в систему</value>
+  </data>
+  <data name="MainViewModel_Logoff_Template" xml:space="preserve">
+    <value>Выйти из системы [{0}]</value>
+  </data>
+  <data name="ExportData" xml:space="preserve">
+    <value>Экспорт</value>
+  </data>
+  <data name="OlapData" xml:space="preserve">
+    <value>Аналитика</value>
+  </data>
+  <data name="WDUCL" xml:space="preserve">
+    <value>Дизайнер</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Открыть</value>
+  </data>
+  <data name="Compile" xml:space="preserve">
+    <value>Сборка</value>
+  </data>
+  <data name="Field" xml:space="preserve">
+    <value>Поле:</value>
+  </data>
+  <data name="ShowColumnGrandTotalHeader" xml:space="preserve">
+    <value>Показать заголовок колонки Итого</value>
+  </data>
+  <data name="ShowColumnGrandTotals" xml:space="preserve">
+    <value>Показать колонку Итого</value>
+  </data>
+  <data name="ShowColumnTotals" xml:space="preserve">
+    <value>Показать колонку Всего</value>
+  </data>
+  <data name="ShowGrandTotalsForSingleValues" xml:space="preserve">
+    <value>Показать Итого для отдельных значений</value>
+  </data>
+  <data name="ShowRowGrandTotalHeader" xml:space="preserve">
+    <value>Показать заголовок строки Итого</value>
+  </data>
+  <data name="ShowRowGrandTotals" xml:space="preserve">
+    <value>Показать строку Итого</value>
+  </data>
+  <data name="ShowRowTotals" xml:space="preserve">
+    <value>Показать строку Всего</value>
+  </data>
+  <data name="ShowTotalsForSingleValues" xml:space="preserve">
+    <value>Показать Всего для отдельных значений</value>
+  </data>
+  <data name="SummaryType" xml:space="preserve">
+    <value>Суммарный тип:</value>
+  </data>
+  <data name="SummaryDisplayType" xml:space="preserve">
+    <value>Суммарный тип отображения:</value>
+  </data>
+  <data name="SelectCompilePath" xml:space="preserve">
+    <value>Укажите путь для сборки</value>
+  </data>
+  <data name="ActionPrint" xml:space="preserve">
+    <value>Печать</value>
+  </data>
+  <data name="SystemMessage" xml:space="preserve">
+    <value>Системное сообщение</value>
+  </data>
+  <data name="SaveToFile" xml:space="preserve">
+    <value>Сохранить в файл</value>
+  </data>
+  <data name="EpsJobCreateError" xml:space="preserve">
+    <value>не сформировано EPS-задание: {0}.</value>
+  </data>
+  <data name="EpsJobCreateOk" xml:space="preserve">
+    <value>Сформировано EPS-задание '{0}' отчета '{1}' на принтер '{2}'.</value>
+  </data>
+  <data name="LookupAddButtonContent" xml:space="preserve">
+    <value>+</value>
+  </data>
+  <data name="LookupAddButtonTooltip" xml:space="preserve">
+    <value>Добавить новое значение</value>
+  </data>
+  <data name="FormulaSaveItemsTemplateMessage" xml:space="preserve">
+    <value>"Добавлено объектов: {0}"</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>Информация</value>
+  </data>
+  <data name="PlaceListViewModelPanelCaptionShow" xml:space="preserve">
+    <value>Блокирование мест</value>
+  </data>
+  <data name="CollectionEdit" xml:space="preserve">
+    <value>Групповое редактирование</value>
+  </data>
+  <data name="Accept" xml:space="preserve">
+    <value>Применить</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="ConditionalFormattingWindowAddButtonTooltip" xml:space="preserve">
+    <value>Добавить новое значение</value>
+  </data>
+  <data name="ConditionalFormattingWindowAppearanceGroupApplyToRowLabel" xml:space="preserve">
+    <value>Применить к строке?</value>
+  </data>
+  <data name="ConditionalFormattingWindowAppearanceGroupBackColorLabel" xml:space="preserve">
+    <value>Цвет фона</value>
+  </data>
+  <data name="ConditionalFormattingWindowAppearanceGroupColumnLabel" xml:space="preserve">
+    <value>Столбец</value>
+  </data>
+  <data name="ConditionalFormattingWindowAppearanceGroupFontFamilyLabel" xml:space="preserve">
+    <value>Шрифт</value>
+  </data>
+  <data name="ConditionalFormattingWindowAppearanceGroupFontSizeLabel" xml:space="preserve">
+    <value>Размер шрифта</value>
+  </data>
+  <data name="ConditionalFormattingWindowAppearanceGroupFontStyleLabel" xml:space="preserve">
+    <value>Начертание шрифта</value>
+  </data>
+  <data name="ConditionalFormattingWindowAppearanceGroupForeColorLabel" xml:space="preserve">
+    <value>Цвет</value>
+  </data>
+  <data name="ConditionalFormattingWindowAppearanceGroupHeader" xml:space="preserve">
+    <value>Визуализация</value>
+  </data>
+  <data name="ConditionalFormattingWindowDeleteButtonTooltip" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="ConditionalFormattingWindowExpressionFormatGroupConditionsHeader" xml:space="preserve">
+    <value>Список форматов</value>
+  </data>
+  <data name="ConditionalFormattingWindowExpressionGroupHeader" xml:space="preserve">
+    <value>Критерий</value>
+  </data>
+  <data name="ConditionalFormattingWindowTitle" xml:space="preserve">
+    <value>Условное форматирование</value>
+  </data>
+  <data name="AppearanceStyle" xml:space="preserve">
+    <value>Подсветка</value>
+  </data>
+  <data name="ConfirmationSaveDataOnRefresh" xml:space="preserve">
+    <value>Запись изменена. Обновление приведет к потере несохраненных данных. Продолжить?</value>
+  </data>
+  <data name="StyleOptionConditionError" xml:space="preserve">
+    <value>Ошибка в критерии ({0}).</value>
+  </data>
+  <data name="StyleOptionConditionNotDefined" xml:space="preserve">
+    <value>Критерий не определен.</value>
+  </data>
+  <data name="StyleOptionNewExpressionString" xml:space="preserve">
+    <value>Новый элемент</value>
+  </data>
+  <data name="StyleOptionFieldNameError" xml:space="preserve">
+    <value>Не выбран столбец.</value>
+  </data>
+  <data name="ConditionalFormattingWindowRowCount" xml:space="preserve">
+    <value>Строк:</value>
+  </data>
+  <data name="BusinessProcess" xml:space="preserve">
+    <value>Бизнес процесс</value>
+  </data>
+  <data name="BusinessProcesses" xml:space="preserve">
+    <value>Бизнес процессы</value>
+  </data>
+  <data name="FilterViewMandantDescription" xml:space="preserve">
+    <value>Мандант</value>
+  </data>
+  <data name="Mandant" xml:space="preserve">
+    <value>Мандант:</value>
+  </data>
+  <data name="CantCloseSessionError" xml:space="preserve">
+    <value>Невозможно завершить сеанс. Необходимо закрыть все вкладки.</value>
+  </data>
+  <data name="EnjoyYourWork" xml:space="preserve">
+    <value>Приложение запущено. Желаем Вам приятной работы{0}{0}Команда разработчиков wmsMLC</value>
+  </data>
+  <data name="InputMessageCount" xml:space="preserve">
+    <value>Количество входящих сообщений: {0}</value>
+  </data>
+  <data name="SysDbInfoMessage" xml:space="preserve">
+    <value>БД: {1}{0}Версия: {2}{0}Расположение: {3}{0}Сервис: {4}{0}Адрес: {5}</value>
+  </data>
+  <data name="SysDbInfoDialogTitle" xml:space="preserve">
+    <value>Подключение</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>Просмотр</value>
+  </data>
+  <data name="ListViewModelBaseTotalRowItemAdditionalInfo" xml:space="preserve">
+    <value>Время получения данных: {0:f3} ({1:f3})с</value>
+  </data>
+  <data name="FilterApply" xml:space="preserve">
+    <value>Применить фильтр и обновить данные</value>
+  </data>
+  <data name="FilterCancel" xml:space="preserve">
+    <value>Отменить текущие изменения</value>
+  </data>
+  <data name="FilterDefault" xml:space="preserve">
+    <value>Сбросить на фильтр по-умолчанию</value>
+  </data>
+  <data name="FilterLoad" xml:space="preserve">
+    <value>Загрузить фильтр из файла</value>
+  </data>
+  <data name="FilterMandant" xml:space="preserve">
+    <value>Мандант</value>
+  </data>
+  <data name="FilterMaxRowCount" xml:space="preserve">
+    <value>Строк</value>
+  </data>
+  <data name="FilterRemoveBlank" xml:space="preserve">
+    <value>Удалить пустые условия</value>
+  </data>
+  <data name="FilterSave" xml:space="preserve">
+    <value>Сохранить фильтр в файл</value>
+  </data>
+  <data name="EpsJobCreatePreview" xml:space="preserve">
+    <value>Сформировано EPS-задание для отчета '{0}' на просмотр</value>
+  </data>
+  <data name="FCPrintAndPreview" xml:space="preserve">
+    <value>Печать и просмотр</value>
+    <comment>FC - form caption</comment>
+  </data>
+  <data name="LiteClearCache" xml:space="preserve">
+    <value>Очистить кэш (для клиента)</value>
+  </data>
+  <data name="Package" xml:space="preserve">
+    <value>Пакет</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Описание</value>
+  </data>
+  <data name="FileReport" xml:space="preserve">
+    <value>Файл отчета</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Наименование</value>
+  </data>
+  <data name="QuickLink" xml:space="preserve">
+    <value>Перейти</value>
+  </data>
+  <data name="Showing" xml:space="preserve">
+    <value>Показатели</value>
+  </data>
+  <data name="Topology" xml:space="preserve">
+    <value>Топология</value>
+  </data>
+  <data name="ConditionalFormattingWindowAppearanceGroupFontWeightLabel" xml:space="preserve">
+    <value>Толщина шрифта</value>
+  </data>
+  <data name="CustomizationRegionSaveDB" xml:space="preserve">
+    <value>Сохранить вид в БД</value>
+  </data>
+  <data name="CustomizationSuccessSaveDB" xml:space="preserve">
+    <value>Настройки успешно сохранены в БД</value>
+  </data>
+  <data name="CustomizationSuccessSave" xml:space="preserve">
+    <value>Настройки успешно сохранены</value>
+  </data>
+  <data name="CustomizationSuccessClear" xml:space="preserve">
+    <value>Настройки успешно удалены</value>
+  </data>
+  <data name="ErrorClear" xml:space="preserve">
+    <value>Ошибка очистки.</value>
+  </data>
+  <data name="SaveAndClose" xml:space="preserve">
+    <value>Сохранить и закрыть</value>
+  </data>
+  <data name="SettingsInMenu" xml:space="preserve">
+    <value>Вид</value>
+  </data>
+  <data name="ErrorButton" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="Swap" xml:space="preserve">
+    <value>Обмен</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Загрузить</value>
+  </data>
+  <data name="Unload" xml:space="preserve">
+    <value>Выгрузить</value>
+  </data>
+  <data name="DownloadSuccess" xml:space="preserve">
+    <value>Данные успешно загружены</value>
+  </data>
+  <data name="UnloadError" xml:space="preserve">
+    <value>Выгрузить данные в файл '{0}' не удалось. Ошибка: '{1}'</value>
+  </data>
+  <data name="UnloadSuccess" xml:space="preserve">
+    <value>Данные успешно выгружены</value>
+  </data>
+  <data name="DownloadError" xml:space="preserve">
+    <value>Загрузить данные из файла '{0}' не удалось. Ошибка: '{1}'</value>
+  </data>
+  <data name="BarItemDisplayMode" xml:space="preserve">
+    <value>Показывать:</value>
+  </data>
+  <data name="CaptionAndGlyphAlignment" xml:space="preserve">
+    <value>Выравнивание надписей и иконок:</value>
+  </data>
+  <data name="NotClearInputData" xml:space="preserve">
+    <value>Не очищать данные</value>
+  </data>
+  <data name="SaveAndContinue" xml:space="preserve">
+    <value>Сохранить и продолжить</value>
+  </data>
+  <data name="Themes" xml:space="preserve">
+    <value>Темы</value>
+  </data>
+  <data name="Clear" xml:space="preserve">
+    <value>Очистить</value>
+  </data>
+  <data name="WaitServiceInit" xml:space="preserve">
+    <value>Ожидаем запуск сервиса...</value>
+  </data>
+  <data name="CancelPreview" xml:space="preserve">
+    <value>"Отменить просмотр?</value>
+  </data>
+  <data name="Parameters" xml:space="preserve">
+    <value>Параметры</value>
+  </data>
+  <data name="Parameter" xml:space="preserve">
+    <value>Параметр</value>
+  </data>
+  <data name="SelectUserParameter" xml:space="preserve">
+    <value>Выберите пользовательский параметр</value>
+  </data>
+  <data name="HideAutoFilterMenuItemContent" xml:space="preserve">
+    <value>Скрыть строку автофильтра</value>
+  </data>
+  <data name="ShowAutoFilterMenuItemContent" xml:space="preserve">
+    <value>Показать строку автофильтра</value>
+  </data>
+  <data name="CollapseAll" xml:space="preserve">
+    <value>Свернуть всё</value>
+  </data>
+  <data name="ExpandAll" xml:space="preserve">
+    <value>Развернуть всё</value>
+  </data>
+  <data name="CpCountValidationFormat" xml:space="preserve">
+    <value>- Превышено максимальное кол-во значений: {0}</value>
+  </data>
+  <data name="HideTotalSummaryContent" xml:space="preserve">
+    <value>Скрыть панель итогов</value>
+  </data>
+  <data name="ShowTotalSummaryContent" xml:space="preserve">
+    <value>Показать панель итогов</value>
+  </data>
+  <data name="ReportFilterCaption" xml:space="preserve">
+    <value>Ввод значений для отчета</value>
+  </data>
+  <data name="Reports" xml:space="preserve">
+    <value>Отчеты</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Запуск</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Копировать</value>
+  </data>
+  <data name="CopyWithHeader" xml:space="preserve">
+    <value>Копировать с заголовком</value>
+  </data>
+  <data name="ErrorComparingVersions" xml:space="preserve">
+    <value>Ошибка при запуске приложения!\nВыявлено несоответствие локальной версии приложения.\n\nРабота будет прекращена!\n(['{0}'] - ['{1}'] )</value>
+  </data>
+  <data name="ErrorWhileLoadingAnApplication" xml:space="preserve">
+    <value>Ошибка при запуске приложения!\nЗапуск приложения не возможен.\nВоспользуйтесь специальным ярлыком</value>
+  </data>
+  <data name="ErrorSaveSKUParentShouldBeEmpty" xml:space="preserve">
+    <value>Поле 'Родительская SKU' должно быть пустым</value>
+  </data>
+  <data name="ErrorSaveSKUParentShouldNotBeEmpty" xml:space="preserve">
+    <value>Поле 'Родительская SKU' должно быть заполнено </value>
+  </data>
+  <data name="PropertyWindow" xml:space="preserve">
+    <value>Управление системными объектами</value>
+  </data>
+  <data name="InsertAnyway" xml:space="preserve">
+    <value>Загрузка объекта возможна только с новым ключом. Продолжить?</value>
+  </data>
+  <data name="PmConfiguratorCaption" xml:space="preserve">
+    <value>Настроить</value>
+  </data>
+  <data name="PmConfiguratorHint" xml:space="preserve">
+    <value>Настроить PM</value>
+  </data>
+  <data name="GroupEdit" xml:space="preserve">
+    <value>Групповое редактирование</value>
+  </data>
+  <data name="ErrorSaveMIUSE" xml:space="preserve">
+    <value>Поля 'Код группы' и 'Значение стратегии' должны быть заполнены</value>
+  </data>
+  <data name="ErrorSaveMIUSEFilter" xml:space="preserve">
+    <value>Поле 'Значение стратегии' должно быть заполнено</value>
+  </data>
+  <data name="CustomizationRegionSaveDBUpCriticalVersion" xml:space="preserve">
+    <value>Сохранить вид в БД с поднятием версии</value>
+  </data>
+  <data name="Paste" xml:space="preserve">
+    <value>Вставить</value>
+  </data>
+  <data name="ErrorDataChanges" xml:space="preserve">
+    <value>Ошибка изменения данных</value>
+  </data>
+  <data name="CreateFactCargo" xml:space="preserve">
+    <value>Создать позицию по факту</value>
+  </data>
+  <data name="TimeCaption" xml:space="preserve">
+    <value>Время:</value>
+  </data>
+  <data name="CapsLockOn" xml:space="preserve">
+    <value>Нажата клавиша CapsLock</value>
+  </data>
+  <data name="ValidErrorFilterRowCount" xml:space="preserve">
+    <value>Значение не может быть пустым</value>
+  </data>
+  <data name="ClientChangeTruckMessageFormat" xml:space="preserve">
+    <value>Вы изменили погрузчик у устройства '{0}'. В системе были найдены активные подключения с данного устройства. Для корректной работы необходимо перезапустить клиентские приложения на данных устройствах.</value>
+  </data>
+  <data name="ConfirmationDeleteCpv" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить выбранный параметр?</value>
+  </data>
+  <data name="ConfirmationDeleteCpvs" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить выбранные параметры?</value>
+  </data>
+  <data name="ConfirmationRefreshDate" xml:space="preserve">
+    <value>Обновление приведет к потере несохраненных данных. Продолжить?</value>
+  </data>
+  <data name="CpvChanges" xml:space="preserve">
+    <value>Значение параметра было изменено. {0}</value>
+  </data>
+  <data name="CpvsChange" xml:space="preserve">
+    <value>Значения некоторых параметров были изменены. {0}</value>
+  </data>
+  <data name="ArtMassInputCaption" xml:space="preserve">
+    <value>Массовый ввод артикулов</value>
+  </data>
+  <data name="FormContainsErrors" xml:space="preserve">
+    <value>Форма содержит ошибки</value>
+  </data>
+  <data name="Operations" xml:space="preserve">
+    <value>Операции</value>
+  </data>
+  <data name="Packing" xml:space="preserve">
+    <value>Упаковка </value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="Tools" xml:space="preserve">
+    <value>Инструменты</value>
+  </data>
+  <data name="ConditionalFormattingWindowAppearanceGroupCommentLabel" xml:space="preserve">
+    <value>Комментарий</value>
+  </data>
+  <data name="ConditionalFormattingWindowAppearanceGroupTypeLabel" xml:space="preserve">
+    <value>Тип условия</value>
+  </data>
+  <data name="FormatConditionTypeColorScale" xml:space="preserve">
+    <value>Цветовая гамма</value>
+  </data>
+  <data name="FormatConditionTypeDataBar" xml:space="preserve">
+    <value>График (DataBar)</value>
+  </data>
+  <data name="FormatConditionTypeDefault" xml:space="preserve">
+    <value>Подсветка строк/столбцов</value>
+  </data>
+  <data name="FormatConditionTypeIconSet" xml:space="preserve">
+    <value>Иконы</value>
+  </data>
+  <data name="FormatConditionTypeTopItemsRule" xml:space="preserve">
+    <value>Первые n-строк</value>
+  </data>
+  <data name="FormatConditionTypeAboveAverageRule" xml:space="preserve">
+    <value>Значения выше среднего</value>
+  </data>
+  <data name="FormatConditionTypeBelowAverageRule" xml:space="preserve">
+    <value>Значения ниже среднего</value>
+  </data>
+  <data name="FormatConditionTypeBottomItemsRule" xml:space="preserve">
+    <value>Последние n-строк</value>
+  </data>
+  <data name="FormatConditionTypeBottomPercentRule" xml:space="preserve">
+    <value>Последние n-строк в %</value>
+  </data>
+  <data name="FormatConditionTypeTopPersentRule" xml:space="preserve">
+    <value>Первые n-строк в %</value>
+  </data>
+  <data name="ConditionalFormattingWindowAppearanceGroupThresholdInPercentLabel" xml:space="preserve">
+    <value>Количество, %</value>
+  </data>
+  <data name="ConditionalFormattingWindowAppearanceGroupThresholdLabel" xml:space="preserve">
+    <value>Количество</value>
+  </data>
+  <data name="ConditionalFormattingWindowAppearanceGroupNameLabel" xml:space="preserve">
+    <value>Наименование</value>
+  </data>
+  <data name="StyleOptionFormatConditionTypeColumnError" xml:space="preserve">
+    <value>Недопустимое использование типа условия. Тип столбца не определен.</value>
+  </data>
+  <data name="StyleOptionFormatConditionTypeColumnTypeError" xml:space="preserve">
+    <value>Недопустимое использование типа условия. Тип столбца должен быть числовым.</value>
+  </data>
+  <data name="StyleOptionNameNotDefined" xml:space="preserve">
+    <value>Наименование не определено.</value>
+  </data>
+  <data name="StyleOptionThresholdError" xml:space="preserve">
+    <value>Значение поля '{0}' должно быть &gt; 0.</value>
+  </data>
+  <data name="ConditionalFormattingWindowAppearanceGroupFormatLabel" xml:space="preserve">
+    <value>Формат</value>
+  </data>
+  <data name="StyleOptionPredefinedFormatNameError" xml:space="preserve">
+    <value>Значение поля '{0}' не определено.</value>
+  </data>
+  <data name="ClearLayoutViewLabelClearFormComponents" xml:space="preserve">
+    <value>Очистить вид компонентов</value>
+  </data>
+  <data name="ClearLayoutViewLabelClearFormPosition" xml:space="preserve">
+    <value>Очистить положение формы</value>
+  </data>
+  <data name="ClearLayoutViewLabelClearFormSize" xml:space="preserve">
+    <value>Очистить размеры формы</value>
+  </data>
+  <data name="ClearLayoutViewLabelClearMenu" xml:space="preserve">
+    <value>Очистить вид меню</value>
+  </data>
+  <data name="UserCanceled" xml:space="preserve">
+    <value>Отменено пользователем.</value>
+  </data>
+  <data name="SaveLayoutViewLabelSaveFormComponents" xml:space="preserve">
+    <value>Сохранить вид компонентов</value>
+  </data>
+  <data name="SaveLayoutViewLabelSaveFormPosition" xml:space="preserve">
+    <value>Сохранить положение формы</value>
+  </data>
+  <data name="SaveLayoutViewLabelSaveFormSize" xml:space="preserve">
+    <value>Сохранить размеры формы</value>
+  </data>
+  <data name="SaveLayoutViewLabelSaveMenu" xml:space="preserve">
+    <value>Сохранить вид меню</value>
+  </data>
+  <data name="CollapsePanel" xml:space="preserve">
+    <value>Свернуть</value>
+  </data>
+  <data name="ExpandPanel" xml:space="preserve">
+    <value>Развернуть</value>
+  </data>
+  <data name="Chat" xml:space="preserve">
+    <value>Чат</value>
+  </data>
+  <data name="LoadCustomization" xml:space="preserve">
+    <value>Чтение настроек</value>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>Подключиться</value>
+  </data>
+  <data name="NextSDCL" xml:space="preserve">
+    <value>Сменить сервис</value>
+  </data>
+  <data name="DesignerBp" xml:space="preserve">
+    <value>Дизайнер бизнес процессов</value>
+  </data>
+  <data name="DesignerBpLockConfirmation" xml:space="preserve">
+    <value>Workflow редактируется пользователем '{0}'. Открыть только на чтение?</value>
+  </data>
+  <data name="DesignerBpRestriction" xml:space="preserve">
+    <value>Работа с дизайнером Workflow доступна в операционной системе Window 7 и выше.</value>
+  </data>
+  <data name="DesignerBpUnLockConfirmation" xml:space="preserve">
+    <value>Workflow заблокирована Вами. Снять блокировку?</value>
+  </data>
+  <data name="WfOpen" xml:space="preserve">
+    <value>Открыть для редактирования</value>
+  </data>
+  <data name="WfOpenReadOnly" xml:space="preserve">
+    <value>Открыть для чтения</value>
+  </data>
+  <data name="ErrorSdToolTip" xml:space="preserve">
+    <value>Составить заявку в Service Desk</value>
+  </data>
+  <data name="ErrorSaveShouldNotBeEmpty" xml:space="preserve">
+    <value>Поле '{0}' должно быть заполнено</value>
+  </data>
+  <data name="CustomGridSimpleLookupEditSettingsDisplayValueAll" xml:space="preserve">
+    <value>(Все)</value>
+  </data>
+  <data name="CustomGridSimpleLookupEditSettingsDisplayValueEmpty" xml:space="preserve">
+    <value>(Пустые)</value>
+  </data>
+  <data name="CustomGridSimpleLookupEditSettingsDisplayValueNotEmpty" xml:space="preserve">
+    <value>(Не пустые)</value>
+  </data>
+  <data name="StyleOptionMaxThresholdError" xml:space="preserve">
+    <value>Значение поля '{0}' должно быть &lt; '{1}'.</value>
+  </data>
+  <data name="StyleOptionTypeNotDecimal" xml:space="preserve">
+    <value>Значение поля '{0}' должно быть цифровым</value>
+  </data>
+  <data name="ApplyFilterTitle" xml:space="preserve">
+    <value>Применение пользовательского фильтра</value>
+  </data>
+  <data name="CancelPreviewReportQuestionFormat" xml:space="preserve">
+    <value>Желаете отменить выполнение создания отчета?{0}Фильтр для отчета: '{1}'.</value>
+  </data>
+  <data name="MultiplePreviewReportsError" xml:space="preserve">
+    <value>Одновременный просмотр нескольких отчетов не поддерживается.</value>
+  </data>
+  <data name="ReportFilterParametersErrorFormat" xml:space="preserve">
+    <value>Ошибка конфигурации фильтра отчета в параметре '{0}'. Не удалось привести значение по умолчанию '{1}' к типу '{2}'.</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Предупреждение</value>
+  </data>
+  <data name="PrintReportMessageBatchFormat" xml:space="preserve">
+    <value>Для группы {0}</value>
+  </data>
+  <data name="PrintReportMessageFormat" xml:space="preserve">
+    <value>Для '{0}' {1}</value>
+  </data>
+  <data name="TotalRowItemSelectedRowDisplayFormat" xml:space="preserve">
+    <value>Выделенных строк: {0}</value>
+  </data>
+  <data name="ErrorSelectWorker" xml:space="preserve">
+    <value>Нельзя выбрать работника другого пользователя</value>
+  </data>
+  <data name="ErrorSelectWorkerByUser" xml:space="preserve">
+    <value>Не удалось получить работников для пользователя '{0}'</value>
+  </data>
+  <data name="SelectWorker" xml:space="preserve">
+    <value>Выберите работника</value>
+  </data>
+  <data name="UserCanNotBeIdentified" xml:space="preserve">
+    <value>Пользователь не может быть идентифицирован</value>
+  </data>
+  <data name="Worker" xml:space="preserve">
+    <value>Работник: </value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Добавить</value>
+  </data>
+  <data name="MenuCaptionEditTable" xml:space="preserve">
+    <value>Ред. таблицу</value>
+  </data>
+  <data name="BeginWork" xml:space="preserve">
+    <value>Начать работу</value>
+  </data>
+  <data name="EndWork" xml:space="preserve">
+    <value>Завершить работу</value>
+  </data>
+  <data name="WorkCommands" xml:space="preserve">
+    <value>Управление работой</value>
+  </data>
+  <data name="CloseFromConfirmationFormat" xml:space="preserve">
+    <value>При закрытии формы все измененные данные будут потеряны!{0}Продолжить?</value>
+  </data>
+  <data name="Operation" xml:space="preserve">
+    <value>Операция</value>
+  </data>
+  <data name="WorkerNotSelect" xml:space="preserve">
+    <value>Сотрудник не выбран. Выберите сотрудника.</value>
+  </data>
+  <data name="YouHaveWorkingsMessageFormat" xml:space="preserve">
+    <value>На Вас назначены работы. Завершить их и начать новую?{0}{1}</value>
+  </data>
+  <data name="UndefinedWorkGroupForOperation" xml:space="preserve">
+    <value>Группа работ не определена. Проверьте настройки операции '{0}' к типам работ для манданта '{1}'.</value>
+  </data>
+  <data name="AutoValueinsertFormat" xml:space="preserve">
+    <value>Автозаполнение значением '{0}'</value>
+  </data>
+  <data name="UseOneTypeTe" xml:space="preserve">
+    <value>Использовать выбранный тип ТЕ для всех</value>
+  </data>
+  <data name="UpdateLayoutInfo" xml:space="preserve">
+    <value>Вы изменили активных мандантов. Это может привести к не корректному отображению данных. Возможно Вам потребуется перезапустить открытые вкладки.</value>
+  </data>
+  <data name="SelectActiveMandant" xml:space="preserve">
+    <value>Выбор активного манданта</value>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>Выбрать все</value>
+  </data>
+  <data name="UnSelectAll" xml:space="preserve">
+    <value>Снять все</value>
+  </data>
+  <data name="SelectCurrent" xml:space="preserve">
+    <value>Задать текущего</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Создать</value>
+  </data>
+  <data name="EmbededTeToTe" xml:space="preserve">
+    <value>Вложить</value>
+  </data>
+  <data name="Weight" xml:space="preserve">
+    <value>Вес</value>
+  </data>
+  <data name="ChangeOvxSkuCaption" xml:space="preserve">
+    <value>ОВХ SKU</value>
+  </data>
+  <data name="BatchCodeBarCaption" xml:space="preserve">
+    <value>Batch-код</value>
+  </data>
+  <data name="BatchCodeMenuCaption" xml:space="preserve">
+    <value>Расш. Batch</value>
+  </data>
+  <data name="Decrypt" xml:space="preserve">
+    <value>Расшифровать</value>
+  </data>
+  <data name="SkuCaption" xml:space="preserve">
+    <value>ЕУ (SKU)</value>
+  </data>
+  <data name="ChangeThemeNotSupport" xml:space="preserve">
+    <value>Изменение темы не поддерживается. Обратитесь в службу поддержки для обновления версии .NET Framework до 4.5.1 и выше.</value>
+  </data>
+  <data name="ChangeThemeOsNotSupport" xml:space="preserve">
+    <value>Изменение темы не поддерживается для данной ОС '{0}'.</value>
+  </data>
+  <data name="HistoryDoNotUseArchive" xml:space="preserve">
+    <value>Без архива</value>
+  </data>
+  <data name="HistoryUseArchive" xml:space="preserve">
+    <value>Архив</value>
+  </data>
+  <data name="WfClosePickSuccessFormat" xml:space="preserve">
+    <value>Список пикинга '{0}' успешно обработан.</value>
+  </data>
+</root>

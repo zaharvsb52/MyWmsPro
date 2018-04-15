@@ -1,0 +1,101 @@
+﻿<views:DXPanelView x:Class="wmsMLC.DCL.Content.Views.CalculateShippingCostsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+    xmlns:lex="http://wpflocalizeextension.codeplex.com"
+    xmlns:views="clr-namespace:wmsMLC.DCL.Main.Views;assembly=wmsMLC.DCL.Main"
+    xmlns:controls="clr-namespace:wmsMLC.DCL.Main.Views.Controls;assembly=wmsMLC.DCL.Main"
+    xmlns:exp="clr-namespace:wmsMLC.DCL.Main.Views.ConditionExpressionEditor;assembly=wmsMLC.DCL.Main"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="600">
+
+    <views:DXPanelView.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/wmsMLC.DCL.Main;component/Views/Templates/BarManagerItemsTemplate.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </views:DXPanelView.Resources>
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <views:MenuView Menu="{Binding Menu}"/>
+        <controls:CustomDataLayoutControl Grid.Row="1" x:Name="objectDataLayout" Orientation="Vertical" AllowAvailableItemsDuringCustomization="True" IsCustomization="{Binding DataContext.IsCustomization, ElementName=LayoutRoot, Mode=TwoWay}">
+            <dxlc:LayoutItem DataContext="{Binding DataContext, ElementName=LayoutRoot}" Label="{Binding GridControlLabel}" LabelPosition="Top" VerticalAlignment="Stretch">
+                <dxb:BarManager>
+                    <dxb:BarManager.Items>
+                        <dxb:BarLinkContainerItem ItemLinksSource="{Binding ContextMenu}" Name="ctx" ItemTemplateSelector="{StaticResource itemTemplateSelector}"/>
+                        <dxb:BarButtonItem Content="{lex:LocExtension Key=wmsMLC.DCL.Resources:StringResources:Copy}" Name="copy" ItemClick="OnGridControlItemClick" KeyGesture="Ctrl+C" CommandParameter="ExcludeHeader" />
+                        <dxb:BarButtonItem Content="{lex:LocExtension Key=wmsMLC.DCL.Resources:StringResources:CopyWithHeader}" Name="past" ItemClick="OnGridControlItemClick" KeyGesture="Ctrl+Shift+C" CommandParameter="IncludeHeader" />
+                    </dxb:BarManager.Items>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <views:MenuView Menu="{Binding GridControlMenu}"/>
+
+                        <controls:CustomGridControl Grid.Row="1" x:Name="ObjectListGridControl" 
+                            IsEnabled="{Binding Path=WaitIndicatorVisible, Converter={dx:NegationConverter}, IsAsync=True}"
+                            VerticalAlignment="Stretch"
+                            HorizontalAlignment="Stretch"
+                            AutoShowAutoFilterRowWhenRowsCountMoreThan="-1"
+                            SelectionMode="Cell"
+                            SelectedItems="{Binding GridControlSelectedItems, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                            ShowTotalRow="{Binding GridControlShowTotalRow}"
+                            TotalRowItemFilteredSymbolIsVisible="{Binding TotalRowItemFilteredSymbolIsVisible}"
+                            TotalRowItemAdditionalInfo="{Binding TotalRowItemAdditionalInfo}"
+                            IsNeedRefresh="{Binding GridControlIsNeedRefresh, Mode=TwoWay}"
+                            ItemsSource="{Binding GridControlSource, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                            FilterString="{Binding GridControlFilterString, Mode=TwoWay}"
+                            ColumnsSource="{Binding GridControlFields}"
+                            ShowErrorMode="RowAndCell"
+                            dx:DXSerializer.SerializationID="grid"
+                            dx:DXSerializer.StoreLayoutMode="All"
+                            dxg:GridSerializationOptions.AddNewColumns="False"
+                            dxg:GridSerializationOptions.RemoveOldColumns="False">
+
+                            <dxg:GridControl.View>
+                                <dxg:TableView NavigationStyle="Cell"
+                                AllowEditing="{Binding GridControlAllowEditing}"
+                                EditorShowMode="{Binding GridControlEditorShowMode}"
+                                HorizontalScrollbarVisibility="Visible"
+                                NewItemRowPosition="Bottom"
+                                IsRowCellMenuEnabled="True">
+
+                                    <i:Interaction.Behaviors>
+                                        <exp:TableViewExpressionColumnBehavior ShowFormatConditionsEditorWindow="{Binding IsCustomization, Mode=TwoWay}" />
+                                    </i:Interaction.Behaviors>
+
+                                    <dxg:TableView.RowCellMenuCustomizations>
+                                        <dxb:BarLinkContainerItemLink BarItemName="ctx"/>
+                                        <dxb:BarItemLinkSeparator/>
+                                        <dxb:BarLinkContainerItemLink BarItemName="copy"/>
+                                        <dxb:BarLinkContainerItemLink BarItemName="past"/>
+                                    </dxg:TableView.RowCellMenuCustomizations>
+                                </dxg:TableView>
+                            </dxg:GridControl.View>
+                        </controls:CustomGridControl>
+                    </Grid>
+                </dxb:BarManager>
+            </dxlc:LayoutItem>
+        </controls:CustomDataLayoutControl>
+
+        <controls:CustomWaitIndicator Grid.Row="0" Grid.RowSpan="2" DeferedVisibility="{Binding Path=WaitIndicatorVisible, IsAsync=True}"/>
+    </Grid>
+</views:DXPanelView>
+
+
+

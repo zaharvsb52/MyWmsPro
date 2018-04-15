@@ -1,0 +1,82 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:core="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/charts/themekeys" xmlns:local="http://schemas.devexpress.com/winfx/2008/xaml/charts" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <SolidColorBrush x:Key="{dxt:ChartBrushesThemeKey ResourceKey=ToolTipForeground}" Color="#FF000000" />
+  <SolidColorBrush x:Key="{dxt:ChartBrushesThemeKey ResourceKey=CrosshairSeriesLabelForeground}" Color="#FF000000" />
+  <local:AnnotationLocationToTransformConverter x:Key="annotationLocationConverter" />
+  <ControlTemplate TargetType="{x:Type local:ToolTipControl}" x:Key="{dxt:ChartControlThemeKey ResourceKey=ToolTipPresentationTemplate}">
+    <local:ToolTipPanel x:Name="PART_ToolTipPanel" Focusable="False" IsHitTestVisible="False" DataContext="{Binding RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\GrayOne\ToolTip.xaml;9;10">
+      <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup x:Name="VisibleStates">
+          <VisualState x:Name="Visible">
+            <Storyboard>
+              <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PART_ToolTipContent" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00.15" Value="1" />
+              </DoubleAnimationUsingKeyFrames>
+              <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_ToolTipContent" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                  <DiscreteObjectKeyFrame.Value>
+                    <Visibility>Visible</Visibility>
+                  </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+              </ObjectAnimationUsingKeyFrames>
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="Invisible">
+            <Storyboard>
+              <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PART_ToolTipContent" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0" />
+              </DoubleAnimationUsingKeyFrames>
+              <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_ToolTipContent" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00.0">
+                  <DiscreteObjectKeyFrame.Value>
+                    <Visibility>Collapsed</Visibility>
+                  </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+              </ObjectAnimationUsingKeyFrames>
+            </Storyboard>
+          </VisualState>
+        </VisualStateGroup>
+      </VisualStateManager.VisualStateGroups>
+      <local:AnnotationPanel x:Name="PART_ToolTipContent" DataContext="{Binding Path=ToolTipItem, RelativeSource={RelativeSource TemplatedParent}}" AnnotationItem="{Binding}" Opacity="0" MinWidth="40" Effect="{Binding Path=Shadow}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\GrayOne\ToolTip.xaml;42;14">
+        <Grid x:Name="PART_MainContent" local:AnnotationPanel.ElementType="Content" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\GrayOne\ToolTip.xaml;43;18">
+          <Border Background="#BF898C95" CornerRadius="3" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\GrayOne\ToolTip.xaml;44;22">
+            <Border Background="#FFF2F3F5" CornerRadius="2" Margin="1" dxcore_unique_xmlns:BorderExtensions.ClipChild="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\GrayOne\ToolTip.xaml;45;26">
+              <ContentPresenter Focusable="False" HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="{Binding Path=ToolTipItem.ContentMargin, RelativeSource={RelativeSource TemplatedParent}}" Content="{Binding Path=ToolTipItem.PresentationData, RelativeSource={RelativeSource TemplatedParent}}" ContentTemplate="{Binding Path=ToolTipItem.ContentTemplate, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\GrayOne\ToolTip.xaml;46;30" />
+            </Border>
+          </Border>
+        </Grid>
+        <Grid x:Name="PART_Beak" local:AnnotationPanel.ElementType="Beak" Height="32" Width="16" RenderTransform="{Binding Path=Location, Converter={StaticResource annotationLocationConverter}}" RenderTransformOrigin="0.5,0.5" Visibility="{Binding Path=ToolTipItem.BeakVisibility, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\GrayOne\ToolTip.xaml;50;18">
+          <Path Stretch="Fill" Fill="#BF898C95" Data="F1 M 575,369L 567,400L 568,400L 583,369L 575,369 Z " UseLayoutRounding="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\GrayOne\ToolTip.xaml;51;22" />
+          <Path Stretch="Fill" Fill="#FFF2F3F5" Data="F1 M 577,368L 569,396L 582,368L 577,368 Z " Margin="2,-1,1,4" UseLayoutRounding="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\GrayOne\ToolTip.xaml;52;22" />
+        </Grid>
+      </local:AnnotationPanel>
+    </local:ToolTipPanel>
+  </ControlTemplate>
+  <DataTemplate x:Key="{dxt:ChartControlThemeKey ResourceKey=CrosshairSeriesLabelTemplate}">
+    <local:AnnotationPanel AnnotationItem="{Binding }" MinWidth="40" Effect="{Binding Path=Shadow}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\GrayOne\ToolTip.xaml;59;10">
+      <Grid local:AnnotationPanel.ElementType="Content" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\GrayOne\ToolTip.xaml;60;14">
+        <Border Background="Black" Opacity="0.35" CornerRadius="4" Margin="-1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\GrayOne\ToolTip.xaml;61;18" />
+        <Border Background="White" CornerRadius="3" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\GrayOne\ToolTip.xaml;62;18">
+          <ItemsControl Margin="24,14,24,14" ItemsSource="{Binding PresentationData}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\GrayOne\ToolTip.xaml;63;22">
+            <ItemsControl.ItemsPanel>
+              <ItemsPanelTemplate>
+                <StackPanel Orientation="Vertical" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\GrayOne\ToolTip.xaml;66;34" />
+              </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+              <DataTemplate>
+                <ContentPresenter Focusable="False" HorizontalAlignment="{Binding Path=ElementAlignment}" VerticalAlignment="Stretch" Content="{Binding}" ContentTemplate="{Binding Path=CrosshairSeriesLabelTemplate}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\GrayOne\ToolTip.xaml;71;34" />
+              </DataTemplate>
+            </ItemsControl.ItemTemplate>
+          </ItemsControl>
+        </Border>
+      </Grid>
+      <Grid local:AnnotationPanel.ElementType="Beak" Height="32" Width="16" Visibility="{Binding Path=BeakVisibility}" RenderTransform="{Binding Path=Location, Converter={StaticResource annotationLocationConverter}}" RenderTransformOrigin="0.5,0.5" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\GrayOne\ToolTip.xaml;77;14">
+        <Path Stretch="Fill" Fill="#5A000000" Data="F1 M 575,369L 567,400L 568,400L 583,369L 575,369 Z " Margin="0,1,0,0" UseLayoutRounding="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\GrayOne\ToolTip.xaml;78;18" />
+        <Path Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 577,368L 569,396L 582,368L 577,368 Z " Margin="2,0,1,4" UseLayoutRounding="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\GrayOne\ToolTip.xaml;79;18" />
+      </Grid>
+    </local:AnnotationPanel>
+  </DataTemplate>
+  <DataTemplate x:Key="{dxt:ChartControlThemeKey ResourceKey=CrosshairAxisLabelTemplate}">
+    <ContentPresenter Content="{Binding Path=Content.PresentationData, RelativeSource={RelativeSource TemplatedParent}}" ContentTemplate="{Binding RelativeSource={RelativeSource Self}, Path=Content.CrosshairAxisLabelTemplate}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\GrayOne\ToolTip.xaml;85;10" />
+  </DataTemplate>
+</ResourceDictionary>

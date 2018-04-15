@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="YInternalTraffic" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include  id="WmsDateTime" schemaLocation="WmsDateTime.xsd"/>
+
+  <!--Сущность YInternalTraffic-->
+  <xs:element name="TENTYINTERNALTRAFFIC" type="YInternalTrafficType"/>
+  
+  <!--Описание типа YInternalTraffic-->
+  <xs:complexType name="YInternalTrafficType">
+    <xs:sequence>
+      <!--ID записи-->
+      <xs:element name="INTERNALTRAFFICID" type="xs:integer"/>
+      <!--Привязка к внешнему трафику-->
+      <xs:element name="EXTERNALTRAFFICID_R " type="xs:integer" nillable="false"/>
+      <!--Код складаа-->
+      <xs:element name="WAREHOUSECODE_R" nillable="false">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Ворота-->
+      <xs:element name="GATECODE_R">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="60"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Ожидаемые дата и время прибытия-->
+      <xs:element name="INTERNALTRAFFICFACTARRIVED" type="WmsDateTime"/>      
+      <!--Фактические дата и время убытия-->
+      <xs:element name="INTERNALTRAFFICFACTDEPARTED" type="WmsDateTime"/>      
+      <!--Последовательность-->
+      <xs:element name="INTERNALTRAFFICORDER" type="xs:integer"/>      
+      <!--Цель визита-->
+      <xs:element name="INTERNALTRAFFICPURPOSE">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1030"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Мандант-->
+      <xs:element name="MANDANTID" type="xs:integer"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

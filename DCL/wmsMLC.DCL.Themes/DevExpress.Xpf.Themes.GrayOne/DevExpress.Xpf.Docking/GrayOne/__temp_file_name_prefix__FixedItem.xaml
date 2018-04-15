@@ -1,0 +1,83 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/docking/themekeys" xmlns:local="http://schemas.devexpress.com/winfx/2008/xaml/docking" xmlns:ve="http://schemas.devexpress.com/winfx/2008/xaml/docking/visualelements" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <dxcore_unique_xmlns:BoolToVisibilityInverseConverter x:Key="boolToVisibilityInverseConverter" />
+  <dxcore_unique_xmlns:BoolToVisibilityConverter x:Key="boolToVisibilityConverter" />
+  <ControlTemplate x:Key="{dxt:SplitterControlElementsThemeKey ResourceKey=Template}">
+    <Border x:Name="PART_Border" Background="Transparent" ve:DockPane.HitTestType="Bounds" Margin="{Binding Path=(local:DockLayoutManager.LayoutItem).ActualMargin, RelativeSource={RelativeSource TemplatedParent}}" Padding="{Binding Path=(local:DockLayoutManager.LayoutItem).ActualPadding, RelativeSource={RelativeSource TemplatedParent}}" Visibility="{Binding Path=(local:DockLayoutManager.LayoutItem).Visibility, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\GrayOne\FixedItem.xaml;5;10">
+      <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup x:Name="CommonStates">
+          <VisualState x:Name="Normal" />
+          <VisualState x:Name="MouseOver">
+            <Storyboard>
+              <ColorAnimation Storyboard.TargetName="GlyphHorizontal" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF201F35" />
+              <ColorAnimation Storyboard.TargetName="GlyphVertical" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0" To="#FF201F35" />
+            </Storyboard>
+          </VisualState>
+        </VisualStateGroup>
+      </VisualStateManager.VisualStateGroups>
+      <ve:DropBoundsControl x:Name="Drop" Margin="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\GrayOne\FixedItem.xaml;17;14">
+        <dxcore_unique_xmlns:Container dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\GrayOne\FixedItem.xaml;18;18">
+          <dxcore_unique_xmlns:Container x:Name="PART_HorizontalRootElement" Width="14" Height="2" Cursor="SizeNS" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\GrayOne\FixedItem.xaml;19;22">
+            <Grid SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\GrayOne\FixedItem.xaml;20;26">
+              <Path x:Name="GlyphHorizontal" Stretch="Fill" Fill="#FF80838F" Data="F1 M 558,364L 558,366L 556,366L 556,364L 558,364 Z M 554,364L 554,366L 552,366L 552,364L 554,364 Z M 550,364L 550,366L 548,366L 548,364L 550,364 Z M 546,364L 546,366L 544,366L 544,364L 546,364 Z " dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\GrayOne\FixedItem.xaml;21;30" />
+              <Path Stretch="Fill" Fill="#3FFFFFFF" Data="F1 M 559,365L 559,367L 557,367L 557,365L 559,365 Z M 555,365L 555,367L 553,367L 553,365L 555,365 Z M 551,365L 551,367L 549,367L 549,365L 551,365 Z M 547,365L 547,367L 545,367L 545,365L 547,365 Z " Margin="1,1,-1,-1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\GrayOne\FixedItem.xaml;22;30" />
+            </Grid>
+          </dxcore_unique_xmlns:Container>
+          <dxcore_unique_xmlns:Container x:Name="PART_VerticalRootElement" Width="2" Height="14" Cursor="SizeWE" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\GrayOne\FixedItem.xaml;25;22">
+            <Grid SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\GrayOne\FixedItem.xaml;26;26">
+              <Path x:Name="GlyphVertical" Stretch="Fill" Fill="#FF80838F" Data="F1 M 538,357L 540,357L 540,359L 538,359L 538,357 Z M 538,361L 540,361L 540,363L 538,363L 538,361 Z M 538,365L 540,365L 540,367L 538,367L 538,365 Z M 538,369L 540,369L 540,371L 538,371L 538,369 Z " dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\GrayOne\FixedItem.xaml;27;30" />
+              <Path Stretch="Fill" Fill="#3FFFFFFF" Data="F1 M 539,358L 541,358L 541,360L 539,360L 539,358 Z M 539,362L 541,362L 541,364L 539,364L 539,362 Z M 539,366L 541,366L 541,368L 539,368L 539,366 Z M 539,370L 541,370L 541,372L 539,372L 539,370 Z " Margin="1,1,-1,-1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\GrayOne\FixedItem.xaml;28;30" />
+            </Grid>
+          </dxcore_unique_xmlns:Container>
+        </dxcore_unique_xmlns:Container>
+      </ve:DropBoundsControl>
+    </Border>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxt:EmptySpaceControlElementsThemeKey ResourceKey=Template}">
+    <Border x:Name="PART_Border" ve:DockPane.HitTestType="Bounds" Background="Transparent" Margin="{Binding Path=(local:DockLayoutManager.LayoutItem).ActualMargin, RelativeSource={RelativeSource TemplatedParent}}" Padding="{Binding Path=(local:DockLayoutManager.LayoutItem).ActualPadding, RelativeSource={RelativeSource TemplatedParent}}" Visibility="{Binding Path=(local:DockLayoutManager.LayoutItem).Visibility, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\GrayOne\FixedItem.xaml;37;10">
+      <ve:DropBoundsControl dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\GrayOne\FixedItem.xaml;38;14">
+        <Grid SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\GrayOne\FixedItem.xaml;39;18" />
+      </ve:DropBoundsControl>
+    </Border>
+  </ControlTemplate>
+  <DataTemplate x:Key="{dxt:LabelControlElementsThemeKey ResourceKey=Caption}">
+    <Border Background="Transparent" ve:DockPane.HitTestType="Header" DataContext="{Binding LayoutItem}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\GrayOne\FixedItem.xaml;45;10">
+      <ve:TemplatedCaptionControl LayoutItem="{Binding}" />
+    </Border>
+  </DataTemplate>
+  <DataTemplate x:Key="{dxt:LabelControlElementsThemeKey ResourceKey=Content}">
+    <Border ve:DockPane.HitTestType="Content" DataContext="{Binding LayoutItem}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\GrayOne\FixedItem.xaml;51;10">
+      <!--BEGIN WPF-->
+      <ContentPresenter Content="{Binding Path=Content}" ContentTemplate="{Binding ContentTemplate}" ContentTemplateSelector="{Binding ContentTemplateSelector}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\GrayOne\FixedItem.xaml;53;14" />
+      <!--END WPF-->
+      <!--ONLY SL            
+            <ContentPresenter Content="{Binding Path=Content}" 
+                              ContentTemplate="{Binding ContentTemplate}" />ONLY SL-->
+    </Border>
+  </DataTemplate>
+  <ControlTemplate x:Key="{dxt:LabelControlElementsThemeKey ResourceKey=Template}" TargetType="ve:psvHeaderedContentControl">
+    <Border x:Name="PART_Border" ve:DockPane.HitTestType="Bounds" Background="Transparent" Padding="{Binding LayoutItem.ActualPadding, RelativeSource={RelativeSource TemplatedParent}}" Margin="{Binding LayoutItem.ActualMargin, RelativeSource={RelativeSource TemplatedParent}}" Visibility="{Binding LayoutItem.Visibility, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\GrayOne\FixedItem.xaml;60;10">
+      <ve:DropBoundsControl dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\GrayOne\FixedItem.xaml;61;14">
+        <Grid SnapsToDevicePixels="true" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\GrayOne\FixedItem.xaml;62;18">
+          <ve:LabelControlCaptionPresenter x:Name="PART_Caption" Content="{TemplateBinding Header}" ContentTemplate="{TemplateBinding HeaderTemplate}" HorizontalAlignment="{Binding LayoutItem.CaptionHorizontalAlignment, RelativeSource={RelativeSource TemplatedParent}}" VerticalAlignment="{Binding LayoutItem.CaptionVerticalAlignment, RelativeSource={RelativeSource TemplatedParent}}" Visibility="{Binding LayoutItem.HasContent, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource boolToVisibilityInverseConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\GrayOne\FixedItem.xaml;63;22" />
+          <ve:LabelControlContentPresenter x:Name="PART_Content" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" Margin="{Binding Path=(local:DockLayoutManager.LayoutItem).ActualPadding, RelativeSource={RelativeSource TemplatedParent}}" HorizontalAlignment="{Binding LayoutItem.ContentHorizontalAlignment, RelativeSource={RelativeSource TemplatedParent}}" VerticalAlignment="{Binding LayoutItem.ContentVerticalAlignment, RelativeSource={RelativeSource TemplatedParent}}" Visibility="{Binding LayoutItem.HasContent, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource boolToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\GrayOne\FixedItem.xaml;64;22" />
+        </Grid>
+      </ve:DropBoundsControl>
+    </Border>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxt:SeparatorControlElementsThemeKey ResourceKey=Template}">
+    <Border x:Name="PART_Border" Background="Transparent" ve:DockPane.HitTestType="Bounds" Margin="{Binding Path=(local:DockLayoutManager.LayoutItem).ActualMargin, RelativeSource={RelativeSource TemplatedParent}}" Padding="{Binding Path=(local:DockLayoutManager.LayoutItem).ActualPadding, RelativeSource={RelativeSource TemplatedParent}}" Visibility="{Binding Path=(local:DockLayoutManager.LayoutItem).Visibility, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\GrayOne\FixedItem.xaml;71;10">
+      <ve:DropBoundsControl dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\GrayOne\FixedItem.xaml;72;14">
+        <Grid SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\GrayOne\FixedItem.xaml;73;18">
+          <Grid Margin="2,4,2,4" Width="2" x:Name="PART_VerticalRootElement" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\GrayOne\FixedItem.xaml;74;22">
+            <Rectangle Stretch="Fill" Fill="#FF80838F" Margin="0,0,0,1" Width="1" HorizontalAlignment="Left" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\GrayOne\FixedItem.xaml;75;26" />
+            <Rectangle Stretch="Fill" Fill="#3FFFFFFF" Margin="0,1,0,0" Width="1" HorizontalAlignment="Right" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\GrayOne\FixedItem.xaml;76;26" />
+          </Grid>
+          <Grid Margin="4,2,4,2" Height="2" x:Name="PART_HorizontalRootElement" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\GrayOne\FixedItem.xaml;78;22">
+            <Rectangle Stretch="Fill" Fill="#FF80838F" Margin="0,0,1,0" Height="1" VerticalAlignment="Top" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\GrayOne\FixedItem.xaml;79;26" />
+            <Rectangle Stretch="Fill" Fill="#3FFFFFFF" Margin="1,0,0,0" Height="1" VerticalAlignment="Bottom" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\GrayOne\FixedItem.xaml;80;26" />
+          </Grid>
+        </Grid>
+      </ve:DropBoundsControl>
+    </Border>
+  </ControlTemplate>
+</ResourceDictionary>

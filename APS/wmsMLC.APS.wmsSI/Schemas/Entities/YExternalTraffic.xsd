@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="YExternalTraffic" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include  id="WmsDateTime" schemaLocation="WmsDateTime.xsd"/>
+  <xs:include  id="AddressBook" schemaLocation="AddressBook.xsd"/>
+  <xs:include  id="WorkerPass" schemaLocation="WorkerPass.xsd"/>
+  <xs:include  id="CargoIWB" schemaLocation="CargoIWB.xsd"/>
+  <xs:include  id="Vehicle" schemaLocation="Vehicle.xsd"/>
+  <xs:include  id="Worker" schemaLocation="Worker.xsd"/>
+
+  <!--Сущность YExternalTraffic-->
+  <xs:element name="TENTYEXTERNALTRAFFIC" type="YExternalTrafficType"/>
+
+  <!--Описание типа YExternalTraffic-->
+  <xs:complexType name="YExternalTrafficType">
+    <xs:sequence>
+      <!--ID записи-->
+      <xs:element name="EXTERNALTRAFFICID" type="xs:integer"/>
+      <!--ID автомобиля-->
+      <xs:element name="VEHICLEID_R " type="xs:integer" nillable="false"/>
+      <!--Регистрационный номер прицепа-->
+      <xs:element name="EXTERNALTRAFFICTRAILERRN">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Ожидаемые дата и время прибытия-->
+      <xs:element name="EXTERNALTRAFFICPLANARRIVED" type="WmsDateTime"/>
+      <!--Фактические дата и время прибытия-->
+      <xs:element name="EXTERNALTRAFFICFACTARRIVED" type="WmsDateTime"/>
+      <!--Фактические дата и время убытия-->
+      <xs:element name="EXTERNALTRAFFICFACTDEPARTED" type="WmsDateTime"/>
+      <!--Статус-->
+      <xs:element name="STATUSCODE_R">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+            <xs:enumeration value="CAR_ARRIVED"/>
+            <xs:enumeration value="CAR_DEPARTED"/>
+            <xs:enumeration value="CAR_ONTHEWAY"/>
+            <xs:enumeration value="CAR_PLAN"/>
+            <xs:enumeration value="CAR_TRANSITTERRITORY"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Водитель-->
+      <xs:element name="EXTERNALTRAFFICDRIVER" type="xs:integer"/>
+      <!--Экспедитор-->
+      <xs:element name="EXTERNALTRAFFICFORVARDER" type="xs:integer"/>
+      <!--Перевозчик-->
+      <xs:element name="EXTERNALTRAFFICCARRIER" type="xs:integer"/>
+      <!--Место стоянки-->
+      <xs:element name="PARKINGID_R" type="xs:integer"/>
+      <!--Идентификатор в хост-системе-->
+      <xs:element name="EXTERNALTRAFFICHOSTREF">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>      
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

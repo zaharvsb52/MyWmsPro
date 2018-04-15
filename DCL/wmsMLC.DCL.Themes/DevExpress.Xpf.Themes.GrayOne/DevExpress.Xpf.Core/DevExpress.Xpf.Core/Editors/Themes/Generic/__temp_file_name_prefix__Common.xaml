@@ -1,0 +1,12 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxedp="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxei="http://schemas.devexpress.com/winfx/2008/xaml/editors/internal" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <Style x:Key="ButtonEditButtonGlyphStyle" TargetType="FrameworkElement">
+    <Setter Property="FlowDirection" Value="LeftToRight" />
+    <Setter Property="SnapsToDevicePixels" Value="True" />
+  </Style>
+  <dxcore_unique_xmlns:ColorToBrushConverter x:Key="ColorToBrushConverter" />
+  <dxedp:ChipSizeToSizeConverter x:Key="ChipSizeToSizeConverter" />
+  <dxedp:DataPagerBoolToVisibilityInvertConverter x:Key="DataPagerBoolToVisibilityInvertConverter" />
+  <dxedp:HideBorderSideToThicknessConverter x:Key="HideBorderSideToThicknessConverter" />
+  <dxei:TrackBarEditFocusElementVisibilityConverter x:Key="TrackBarEditFocusElementVisibilityConverter" />
+  <dxcore_unique_xmlns:EditorStringIdConverter x:Key="EditorStringIdConverter" />
+</ResourceDictionary>

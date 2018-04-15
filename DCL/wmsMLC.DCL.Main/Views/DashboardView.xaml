@@ -1,0 +1,24 @@
+﻿<mv:DXPanelView x:Class="wmsMLC.DCL.Main.Views.DashboardView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mv="clr-namespace:wmsMLC.DCL.Main.Views"
+        xmlns:lex="clr-namespace:WPFLocalizeExtension.Extensions;assembly=WPFLocalizeExtension"
+        xmlns:controls="clr-namespace:wmsMLC.DCL.Main.Views.Controls"
+        xmlns:dashboardWin="clr-namespace:DevExpress.DashboardWin;assembly=DevExpress.Dashboard.v15.2.Win"
+        PanelCaption="{lex:LocExtension Key=wmsMLC.DCL.Resources:StringResources:Showing}" 
+        AllowClosePanel="True">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <mv:MenuView Menu="{Binding Menu}" />
+
+        <WindowsFormsHost x:Name="dashBord" Grid.Row="1">
+            <dashboardWin:DashboardViewer x:Name="dash" DashboardUri="Views\Templates\Dashboard.xml" AllowPrintDashboardItems="True" />
+        </WindowsFormsHost>
+
+        <controls:CustomWaitIndicator x:Name="waitIndicator" DeferedVisibility="{Binding Path=WaitIndicatorVisible, IsAsync=True}" Grid.RowSpan="2" />
+    </Grid>
+</mv:DXPanelView>

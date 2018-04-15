@@ -1,0 +1,27 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/charts/themekeys" xmlns:local="http://schemas.devexpress.com/winfx/2008/xaml/charts" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <Thickness x:Key="{dxt:ChartControlThemeKey ResourceKey=ChartPaddingValue}">16</Thickness>
+  <Thickness x:Key="{dxt:ChartControlThemeKey ResourceKey=ChartBorderThickness}">1</Thickness>
+  <SolidColorBrush x:Key="{dxt:ChartBrushesThemeKey ResourceKey=ChartBackgroundBrush}" Color="#FFFFFFFF" />
+  <SolidColorBrush x:Key="{dxt:ChartBrushesThemeKey ResourceKey=ChartBorderBrush}" Color="#FF9DA0AA" />
+  <ControlTemplate x:Key="{dxt:ChartControlThemeKey ResourceKey=ChartWrapperTemplate}" TargetType="ContentControl">
+    <Border x:Name="OutsideBorder" Background="{TemplateBinding BorderBrush}" Padding="{TemplateBinding BorderThickness}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\GrayOne\ChartControl.xaml;10;10">
+      <Border x:Name="InsideBorder" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\GrayOne\ChartControl.xaml;11;14">
+        <local:ChartContentPresenter Content="{Binding Path=Content, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\GrayOne\ChartControl.xaml;12;18" />
+      </Border>
+    </Border>
+    <ControlTemplate.Triggers>
+      <Trigger Property="Panel.Background" Value="{x:Null}">
+        <Setter Property="Background" TargetName="OutsideBorder" Value="{x:Null}" />
+        <Setter Property="Background" TargetName="InsideBorder" Value="{x:Null}" />
+        <Setter Property="CornerRadius" TargetName="OutsideBorder" Value="0" />
+        <Setter Property="Padding" TargetName="OutsideBorder" Value="0" />
+        <Setter Property="CornerRadius" TargetName="InsideBorder" Value="0" />
+      </Trigger>
+      <Trigger Property="BorderThickness" Value="0">
+        <Setter Property="CornerRadius" TargetName="OutsideBorder" Value="0" />
+        <Setter Property="Padding" TargetName="OutsideBorder" Value="0" />
+        <Setter Property="CornerRadius" TargetName="InsideBorder" Value="0" />
+      </Trigger>
+    </ControlTemplate.Triggers>
+  </ControlTemplate>
+</ResourceDictionary>

@@ -1,0 +1,24 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxreui="http://schemas.devexpress.com/winfx/2008/xaml/richedit" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <!--BEGIN WPF-->
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="{dxdst:ThemePartLoader Path=/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Generic/Generic.xaml}" />
+  </ResourceDictionary.MergedDictionaries>
+  <!--END WPF-->
+  <dxreui:PercentDisplayTextConverter x:Key="PercentDisplayTextConverter" />
+  <!--<ResourceDictionary x:Key="EditorsDictionary" Source="/DevExpress.Xpf.Core.v12.2;component/Themes/generic.xaml" dx:Wpf2SLOptions.AllowProcessNode="False" />-->
+  <!--ZoomComboBoxEdit-->
+  <!--BEGIN WPF-->
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.RichEdit.UI.ZoomComboBoxEdit}" TargetType="{x:Type dxreui:ZoomComboBoxEdit}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.ComboBoxEdit}}">
+    <!--END WPF-->
+    <!--ONLY SL<Style TargetType="{x:Type dxreui:ZoomComboBoxEdit}" dx:ThemeManager.InheritedStyleSource="{StaticResource EditorsDictionary}">ONLY SL-->
+    <Setter Property="ItemTemplate">
+      <Setter.Value>
+        <DataTemplate>
+          <TextBlock Text="{Binding Converter={StaticResource PercentDisplayTextConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Generic\ZoomComboBox.xaml;21;22" />
+        </DataTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="ValidateOnTextInput" Value="False" />
+    <Setter Property="DisplayTextConverter" Value="{StaticResource PercentDisplayTextConverter}" />
+  </Style>
+</ResourceDictionary>

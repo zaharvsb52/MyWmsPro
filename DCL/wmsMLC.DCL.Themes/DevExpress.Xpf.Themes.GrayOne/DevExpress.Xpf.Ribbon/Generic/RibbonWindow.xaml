@@ -1,0 +1,276 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon" xmlns:dxrt="http://schemas.devexpress.com/winfx/2008/xaml/ribbon/themekeys" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys">
+    <dxc:BooleanToVisibilityConverter x:Key="boolToVisibilityConverter" Invert="False" />
+    <dxc:BooleanToVisibilityConverter x:Key="invertBoolToVisibilityConverter" Invert="True" />
+    
+    <!--BEGIN WPF-->
+    <ControlTemplate TargetType="{x:Type dxc:DXWindow}" x:Key="DXWindowTemplate">
+        <Grid x:Name="Root_Grid" Height="Auto" Margin="0,0,0,0" VerticalAlignment="Stretch">
+            <AdornerDecorator ClipToBounds="True" x:Name="PART_WindowAdornerDecorator">
+                <ContentPresenter ContentTemplate="{TemplateBinding ActualWindowTemplate}" Height="Auto" Width="Auto" x:Name="PART_RootContentPresenter">
+                </ContentPresenter>
+            </AdornerDecorator>
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate TargetType="{x:Type dxc:DXWindow}" x:Key="DXWindowEmptyTemplate">
+        <Grid x:Name="Root_Grid" Height="Auto" Margin="0,0,0,0" VerticalAlignment="Stretch">
+            <AdornerDecorator ClipToBounds="True" x:Name="PART_WindowAdornerDecorator">
+                <ContentPresenter ContentTemplate="{TemplateBinding WindowTemplate}" Height="Auto" Width="Auto" x:Name="PART_RootContentPresenter">
+                    <ContentPresenter.Content>
+                        <Border />
+                    </ContentPresenter.Content>
+                </ContentPresenter>
+            </AdornerDecorator>
+        </Grid>
+    </ControlTemplate>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.DXRibbonWindow}" TargetType="{x:Type dxr:DXRibbonWindow}">
+        <Setter Property="ResizeMode" Value="CanResize" />
+        <Setter Property="ResizeBorderThickness" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=ResizeBorderThickness}}" />
+        <Setter Property="ResizeBorderThicknessInAeroMode" Value="{DynamicResource {dxrt:DXRibbonAeroWindowThemeKey ResourceKey=AeroWindowResizeBorderThickness}}" />
+        <Setter Property="AeroBorderSize" Value="{DynamicResource {dxrt:DXRibbonAeroWindowThemeKey ResourceKey=AeroBorderSize}}" />
+        <Setter Property="AeroWindowTemplate" Value="{DynamicResource {dxrt:DXRibbonAeroWindowThemeKey ResourceKey=AeroWindowTemplate}}" />
+        <Setter Property="WindowTemplate" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerTemplate}}" />
+        <Setter Property="Template" Value="{StaticResource DXWindowTemplate}" />
+        <Style.Triggers>
+            <Trigger Property="HasContent" Value="False">
+                <Setter Property="Template" Value="{StaticResource DXWindowEmptyTemplate}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
+    <DataTemplate x:Key="{dxrt:RibbonThemeKey ResourceKey=FloatingContainerTemplate}">
+        <ContentControl Template="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerBorderTemplate}}" Focusable="False">
+            <Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid x:Name="FloatingContainerHeader" Grid.Row="0" Visibility="{Binding Path=IsCaptionVisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxr:DXRibbonWindow}}, Converter={StaticResource boolToVisibilityConverter}}">
+                        <ContentControl Template="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerHeaderBorderTemplate}}" />
+                        <Thumb x:Name="PART_DragWidget" Template="{DynamicResource {dxt:FloatingContainerThemeKey IsVisibleInBlend=True, ResourceKey=FloatingContainerDragWidgetTemplate}}" />
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <ContentControl x:Name="PART_IconAndCaptionArea" Grid.Column="0" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerIconAndCaptionAreaStyle}}" Visibility="{Binding Path=IsCaptionVisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxr:DXRibbonWindow}}, Converter={StaticResource boolToVisibilityConverter}}">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Image x:Name="PART_Icon" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerIconStyle}}" Grid.Column="0" Panel.ZIndex="100" Source="{Binding Path=(dxc:FloatingContainer.FloatingContainer).Icon, RelativeSource={RelativeSource AncestorType=ContentPresenter}}" />
+                                    <ContentControl Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerCaptionStyle}}" IsHitTestVisible="False" Content="{Binding Path=Title, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxr:DXRibbonWindow}}}" Panel.ZIndex="100" Grid.Column="1" />
+                                </Grid>
+                            </ContentControl>
+                        
+                            <ContentControl Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerControlBoxStyle}}" Template="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerControlBoxTemplate}}" Grid.Column="1" Opacity="0" Focusable="False">
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Template="{DynamicResource {dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerMinimizeButtonTemplate}}" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerMinimizeButtonStyle}}" />
+                                    <Button Template="{DynamicResource {dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerRestoreButtonTemplate}}" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerRestoreButtonStyle}}" Visibility="{Binding Path=(dxc:FloatingContainer.IsMaximized), RelativeSource={RelativeSource TemplatedParent}, Converter={dxc:BooleanToVisibilityConverter Invert=False}}" />
+                                    <Button Template="{DynamicResource {dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerMaximizeButtonTemplate}}" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerMaximizeButtonStyle}}" Visibility="{Binding Path=(dxc:FloatingContainer.IsMaximized), RelativeSource={RelativeSource TemplatedParent}, Converter={dxc:BooleanToVisibilityConverter Invert=True}}" />
+                                    <Button Template="{DynamicResource {dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerCloseButtonTemplate}}" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerCloseButtonStyle}}" />
+                                </StackPanel>
+                            </ContentControl>
+                        </Grid>
+                    </Grid>
+                    <ContentControl Template="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerHeaderBorderTemplate}}" Height="{Binding Path=(dxr:DXRibbonWindow.RibbonHeaderBorderHeight), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxr:DXRibbonWindow}}}" Focusable="False" Visibility="{Binding Path=IsCaptionVisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxr:DXRibbonWindow}}, Converter={StaticResource invertBoolToVisibilityConverter}}" />
+                    <ContentControl Template="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerContentTemplate}}" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerContentStyle}}" Grid.Row="1" Focusable="False">
+                        <Grid>
+                            
+                            <ContentControl Template="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerBodyTemplate}}" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerBodyStyle}}" Focusable="False">
+                                <dxc:BackgroundPanel x:Name="PART_ContainerContent" Background="{x:Null}" Margin="{Binding Path=(dxr:DXRibbonWindow.ContentPresenterMargin), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxr:DXRibbonWindow}}}" Content="{Binding Path=Content, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxr:DXRibbonWindow}}}" />
+                            </ContentControl>
+                            <StackPanel x:Name="PART_StatusPanel" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                                <Border Height="Auto" Background="{x:Null}">
+                                    <Thumb Template="{DynamicResource {dxt:FloatingContainerThemeKey IsVisibleInBlend=True, ResourceKey=FloatingContainerSizeGripTemplate}}" Cursor="SizeNWSE" HorizontalAlignment="Right" x:Name="PART_SizeGrip" VerticalAlignment="Bottom" Width="16" Height="16" />
+                                </Border>
+                            </StackPanel>
+                        </Grid>
+                    </ContentControl>
+                </Grid>
+
+                <Grid Background="{x:Null}" VerticalAlignment="Top">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <ContentControl Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerCaptionStyle}}" Visibility="{Binding Path=IsCaptionVisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxr:DXRibbonWindow}}, Converter={StaticResource boolToVisibilityConverter}}" IsHitTestVisible="False" Opacity="0">
+                        <ContentPresenter Panel.ZIndex="100" Grid.Column="0" Content="{Binding Path=Title, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxr:DXRibbonWindow}}}" ContentTemplate="{DynamicResource {dxt:FloatingContainerThemeKey IsVisibleInBlend=True, ResourceKey=FloatingContainerCaptionTemplate}}" />
+                    </ContentControl>
+                    <ContentControl Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerControlBoxStyle}}" Template="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerControlBoxTemplate}}" Grid.Column="1" Focusable="False">
+                        <StackPanel x:Name="stackPanel" Orientation="Horizontal">
+                            <Button x:Name="PART_Minimize" Template="{DynamicResource {dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerMinimizeButtonTemplate}}" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerMinimizeButtonStyle}}" Focusable="False" />
+                            <Button x:Name="PART_Restore" Template="{DynamicResource {dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerRestoreButtonTemplate}}" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerRestoreButtonStyle}}" Visibility="{Binding Path=(dxc:FloatingContainer.IsMaximized), RelativeSource={RelativeSource TemplatedParent}, Converter={dxc:BooleanToVisibilityConverter Invert=False}}" Focusable="False" />
+                            <Button x:Name="PART_Maximize" Template="{DynamicResource {dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerMaximizeButtonTemplate}}" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerMaximizeButtonStyle}}" Visibility="{Binding Path=(dxc:FloatingContainer.IsMaximized), RelativeSource={RelativeSource TemplatedParent}, Converter={dxc:BooleanToVisibilityConverter Invert=True}}" Focusable="False" />
+                            <Button x:Name="PART_CloseButton" Template="{DynamicResource {dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerCloseButtonTemplate}}" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerCloseButtonStyle}}" Focusable="False" />
+                        </StackPanel>
+                    </ContentControl>
+                </Grid>
+
+            </Grid>
+        </ContentControl>
+
+        <DataTemplate.Triggers>
+            <DataTrigger Binding="{Binding Path=(dxc:FloatingContainer.IsActive), RelativeSource={RelativeSource TemplatedParent}}" Value="False">
+                <Setter Property="Opacity" TargetName="stackPanel" Value="0.5" />
+                <Setter Property="Opacity" TargetName="PART_IconAndCaptionArea" Value="0.5" />               
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Path=(dxc:FloatingContainer.FloatingContainer), RelativeSource={RelativeSource Self}}" Value="{x:Null}">
+                <Setter Property="Visibility" TargetName="PART_StatusPanel" Value="Collapsed" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Path=(dxc:FloatingContainer.FloatingContainer).AllowSizing, RelativeSource={RelativeSource Self}}" Value="false">
+                <Setter Property="Visibility" TargetName="PART_StatusPanel" Value="Collapsed" />
+            </DataTrigger>
+        </DataTemplate.Triggers>
+    </DataTemplate>
+    <ControlTemplate x:Key="DXWindowContainerTemplate" TargetType="{x:Type dxr:DXRibbonWindowContainer}">
+        <ContentControl Template="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerBorderTemplate}}" Focusable="False">
+            <Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid x:Name="FloatingContainerHeader" Grid.Row="0" Visibility="{Binding Path=IsHeaderVisible, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter={StaticResource boolToVisibilityConverter}}">
+                        <ContentControl Template="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerHeaderBorderTemplate}}" />
+                        <Thumb x:Name="PART_DragWidget" Template="{DynamicResource {dxt:FloatingContainerThemeKey IsVisibleInBlend=True, ResourceKey=FloatingContainerDragWidgetTemplate}}" />
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <ContentControl x:Name="PART_IconAndCaptionArea" Grid.Column="0" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerIconAndCaptionAreaStyle}}" Visibility="{Binding Path=IsHeaderVisible, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter={StaticResource boolToVisibilityConverter}}">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Image x:Name="PART_Icon" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerIconStyle}}" Grid.Column="0" Panel.ZIndex="100" Source="{TemplateBinding Icon}" />
+                                    <ContentControl Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerCaptionStyle}}" IsHitTestVisible="False" Content="{TemplateBinding Caption}" Panel.ZIndex="100" Grid.Column="1" />
+                                </Grid>
+                            </ContentControl>
+
+                            <ContentControl x:Name="PART_ControlBoxContainer" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerControlBoxStyle}}" Template="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerControlBoxTemplate}}" Grid.Column="1" Opacity="0" Focusable="False">
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Template="{DynamicResource {dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerMinimizeButtonTemplate}}" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerMinimizeButtonStyle}}" />
+                                    <Button Template="{DynamicResource {dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerRestoreButtonTemplate}}" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerRestoreButtonStyle}}" Visibility="{Binding Path=(dxc:FloatingContainer.IsMaximized), Converter={dxc:BooleanToVisibilityConverter Invert=False}}" />
+                                    <Button Template="{DynamicResource {dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerMaximizeButtonTemplate}}" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerMaximizeButtonStyle}}" Visibility="{Binding Path=(dxc:FloatingContainer.IsMaximized), Converter={dxc:BooleanToVisibilityConverter Invert=True}}" />
+                                    <Button Template="{DynamicResource {dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerCloseButtonTemplate}}" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerCloseButtonStyle}}" />
+                                </StackPanel>
+                            </ContentControl>
+                        </Grid>
+                    </Grid>
+                    <ContentControl Template="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerHeaderBorderTemplate}}" Height="{Binding Path=(dxr:DXRibbonWindow.RibbonHeaderBorderHeight), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxr:DXRibbonWindowContainer}}}" Visibility="{Binding Path=IsHeaderVisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxr:DXRibbonWindowContainer}}, Converter={StaticResource invertBoolToVisibilityConverter}}" />
+                    <ContentControl Template="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerContentTemplate}}" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerContentStyle}}" Grid.Row="1" Focusable="False">
+                        <Grid>
+                            <ContentControl Template="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerBodyTemplate}}" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerBodyStyle}}" Focusable="False">
+                                <ContentPresenter Margin="{Binding Path=(dxr:DXRibbonWindow.ContentPresenterMargin), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxr:DXRibbonWindowContainer}}}" />
+                            </ContentControl>
+                            <StackPanel x:Name="PART_StatusPanel" Visibility="{Binding Path=IsStatusBarVisible, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter={StaticResource boolToVisibilityConverter}}">
+                                <Border Height="Auto" Background="{x:Null}" HorizontalAlignment="Right">
+                                    <Thumb Template="{DynamicResource {dxt:FloatingContainerThemeKey IsVisibleInBlend=True, ResourceKey=FloatingContainerSizeGripTemplate}}" Cursor="SizeNWSE" HorizontalAlignment="Right" x:Name="PART_SizeGrip" VerticalAlignment="Bottom" Width="16" Height="16" />
+                                </Border>
+                            </StackPanel>
+                        </Grid>
+                    </ContentControl>
+                </Grid>
+
+                <Grid Background="{x:Null}" VerticalAlignment="Top">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <ContentControl Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerCaptionStyle}}" Visibility="{Binding Path=IsHeaderVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource boolToVisibilityConverter}}" IsHitTestVisible="False" Opacity="0">
+                        <ContentPresenter Panel.ZIndex="100" Grid.Column="0" Content="{TemplateBinding Caption}" ContentTemplate="{DynamicResource {dxt:FloatingContainerThemeKey IsVisibleInBlend=True, ResourceKey=FloatingContainerCaptionTemplate}}" />
+                    </ContentControl>
+                    <ContentControl Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerControlBoxStyle}}" Template="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerControlBoxTemplate}}" Grid.Column="1" Focusable="False">
+                        <StackPanel x:Name="stackPanel" Orientation="Horizontal">
+                            <Button x:Name="PART_Minimize" Template="{DynamicResource {dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerMinimizeButtonTemplate}}" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerMinimizeButtonStyle}}" Visibility="{Binding Path=IsMinimizeButtonVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource boolToVisibilityConverter}}" Focusable="False" />
+                            <Button x:Name="PART_Restore" Template="{DynamicResource {dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerRestoreButtonTemplate}}" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerRestoreButtonStyle}}" Visibility="{Binding Path=IsRestoreButtonVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource boolToVisibilityConverter}}" Focusable="False" />
+                            <Button x:Name="PART_Maximize" Template="{DynamicResource {dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerMaximizeButtonTemplate}}" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerMaximizeButtonStyle}}" Visibility="{Binding Path=IsMaximizeButtonVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource boolToVisibilityConverter}}" Focusable="False" />
+                            <Button x:Name="PART_CloseButton" Template="{DynamicResource {dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerCloseButtonTemplate}}" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerCloseButtonStyle}}" Visibility="{Binding Path=IsCloseButtonVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource boolToVisibilityConverter}}" Focusable="False" />
+                        </StackPanel>
+                    </ContentControl>
+                </Grid>
+
+            </Grid>
+        </ContentControl>
+
+        <ControlTemplate.Triggers>
+            <DataTrigger Binding="{Binding Path=IsActive}" Value="False">
+                <Setter Property="Opacity" TargetName="stackPanel" Value="0.5" />
+                <Setter Property="Opacity" TargetName="PART_IconAndCaptionArea" Value="0.5" />
+            </DataTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="DXAeroWindowContainerTemplate" TargetType="{x:Type dxr:DXRibbonWindowContainer}">
+        <Grid>
+            <Border CornerRadius="4" BorderBrush="#FF4E6166" BorderThickness="1">
+                <Border CornerRadius="3" BorderBrush="#FFECF4FC" Background="#FFF0FFFF" BorderThickness="1" />
+            </Border>
+
+            <Grid>
+                <Grid Margin="{Binding Path=(dxr:DXRibbonWindow.AeroContentMargin), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxr:DXRibbonWindowContainer}}}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid x:Name="FloatingContainerHeader" Grid.Row="0" Visibility="{Binding Path=IsHeaderVisible, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter={StaticResource boolToVisibilityConverter}}">
+                        <ContentControl Template="{DynamicResource {dxrt:DXRibbonAeroWindowThemeKey ResourceKey=AeroWindowHeaderBorderTemplate}}" />
+                        <Thumb x:Name="PART_DragWidget" Template="{DynamicResource {dxt:FloatingContainerThemeKey IsVisibleInBlend=True, ResourceKey=FloatingContainerDragWidgetTemplate}}" />
+
+                        <ContentControl x:Name="PART_IconAndCaptionArea" Grid.Column="0" Style="{DynamicResource {dxrt:DXRibbonAeroWindowThemeKey ResourceKey=AeroWindowIconAndCaptionAreaStyle}}" Visibility="{Binding Path=IsHeaderVisible, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter={StaticResource boolToVisibilityConverter}}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Image x:Name="PART_Icon" Style="{DynamicResource {dxrt:DXRibbonAeroWindowThemeKey ResourceKey=AeroWindowIconStyle}}" Grid.Column="0" Panel.ZIndex="100" Source="{TemplateBinding Icon}" />
+                                <ContentControl Style="{DynamicResource {dxrt:DXRibbonAeroWindowThemeKey ResourceKey=AeroWindowCaptionStyle}}" IsHitTestVisible="False" Content="{TemplateBinding  Caption}" Panel.ZIndex="100" Grid.Column="1" />
+                            </Grid>
+                        </ContentControl>
+
+                    </Grid>
+
+                    <ContentControl Template="{DynamicResource {dxrt:DXRibbonAeroWindowThemeKey ResourceKey=AeroWindowContentTemplate}}" Style="{DynamicResource {dxrt:DXRibbonAeroWindowThemeKey ResourceKey=AeroWindowContentStyle}}" Grid.Row="1" Focusable="False">
+                        <Grid>
+                            <ContentControl Template="{DynamicResource {dxrt:DXRibbonAeroWindowThemeKey ResourceKey=AeroWindowBodyTemplate}}" Style="{DynamicResource {dxrt:DXRibbonAeroWindowThemeKey ResourceKey=AeroWindowBodyStyle}}" Focusable="False">
+                                <dxc:BackgroundPanel x:Name="PART_ContainerContent" Margin="{Binding Path=(dxr:DXRibbonWindow.ContentPresenterMargin), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxr:DXRibbonWindowContainer}}}" />
+                            </ContentControl>
+                            <StackPanel x:Name="PART_StatusPanel" VerticalAlignment="Bottom">
+                                <Border Height="Auto" Background="{x:Null}" HorizontalAlignment="Right">
+                                    <Thumb Template="{DynamicResource {dxt:FloatingContainerThemeKey IsVisibleInBlend=True, ResourceKey=FloatingContainerSizeGripTemplate}}" Cursor="SizeNWSE" HorizontalAlignment="Right" x:Name="PART_SizeGrip" VerticalAlignment="Bottom" Width="16" Height="16" />
+                                </Border>
+                            </StackPanel>
+                        </Grid>
+                    </ContentControl>
+
+                </Grid>
+
+                <Grid Background="{x:Null}" VerticalAlignment="Top">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <ContentControl Style="{DynamicResource {dxrt:DXRibbonAeroWindowThemeKey ResourceKey=AeroWindowCaptionStyle}}" Visibility="{Binding Path=IsHeaderVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource boolToVisibilityConverter}}" IsHitTestVisible="False" Opacity="0">
+                        <ContentPresenter Panel.ZIndex="100" Grid.Column="0" Content="{Binding Path=Title, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxr:DXRibbonWindow}}}" ContentTemplate="{DynamicResource {dxrt:DXRibbonAeroWindowThemeKey IsVisibleInBlend=True, ResourceKey=AeroWindowCaptionTemplate}}" />
+                    </ContentControl>
+                    <ContentControl x:Name="PART_ControlBoxContainer" Grid.Column="1" IsHitTestVisible="False" Opacity="0" />
+                </Grid>
+
+            </Grid>
+
+        </Grid>
+        <ControlTemplate.Triggers>
+            <DataTrigger Binding="{Binding Path=IsActive}" Value="False">
+                <Setter Property="Opacity" TargetName="PART_IconAndCaptionArea" Value="0.5" />
+            </DataTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.DXRibbonWindowContainer}" TargetType="{x:Type dxr:DXRibbonWindowContainer}">
+        <Setter Property="Template" Value="{StaticResource DXWindowContainerTemplate}" />
+        <Setter Property="AeroTemplate" Value="{StaticResource DXAeroWindowContainerTemplate}" />
+    </Style>
+    <!--END WPF-->
+</ResourceDictionary>

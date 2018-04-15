@@ -1,0 +1,670 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Error64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Error64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="info" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\info.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MailReport16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\MailReport16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MailReport32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\MailReport32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MailReport64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\MailReport64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="status_anim" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\status_anim.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mcl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\mcl.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLAddNew16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLAddNew16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLAddNew32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLAddNew32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLDefault16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLDefault16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLDefault32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLDefault32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLDefaultTree16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLDefaultTree16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLDefaultTree32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLDefaultTree32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLDelete16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLDelete16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLDelete32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLDelete32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLDuplicateTab16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLDuplicateTab16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLDuplicateTab32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLDuplicateTab32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLEdit16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLEdit16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLEdit32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLEdit32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLEditInNewWindow16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLEditInNewWindow16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLEditInNewWindow32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLEditInNewWindow32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLFilter16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLFilter16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLFilter32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLFilter32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLFilterRefresh16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLFilterRefresh16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLFilterRefresh32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLFilterRefresh32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLMandant16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLMandant16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLMandant32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLMandant32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLOpenFolder16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLOpenFolder16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLOpenFolder32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLOpenFolder32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLPartner16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLPartner16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLPartner32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLPartner32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLSave16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLSave16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLSave32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLSave32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLTeType16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLTeType16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLTeType32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLTeType32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLViewClear16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLViewClear16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLViewClear32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLViewClear32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLViewSave16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLViewSave16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLViewSave32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLViewSave32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Key128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Key128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SplashScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\SplashScreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wms32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\wms32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLArea2Blocking16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLArea2Blocking16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLArea2Blocking32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLArea2Blocking32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLHistory16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLHistory16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLHistory32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLHistory32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLSysMsgNone32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLSysMsgNone32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLSysMsgNotReaded32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLSysMsgNotReaded32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLSysMsgReaded32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLSysMsgReaded32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLSysMsgReceived32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLSysMsgReceived32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLBusinessProcess16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLBusinessProcess16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLBusinessProcess32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLBusinessProcess32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLFilterApply16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLFilterApply16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLFilterApply32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLFilterApply32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLFilterCancel16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLFilterCancel16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLFilterCancel32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLFilterCancel32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLFilterDefault16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLFilterDefault16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLFilterDefault32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLFilterDefault32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLFilterLoad16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLFilterLoad16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLFilterLoad32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLFilterLoad32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLFilterRemove16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLFilterRemove16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLFilterRemove32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLFilterRemove32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLFilterSave16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLFilterSave16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLFilterSave32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLFilterSave32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLPrintAndPreview16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLPrintAndPreview16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLPrintAndPreview32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLPrintAndPreview32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLPrintPreview16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLPrintPreview16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLPrintPreview32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLPrintPreview32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLAppearanceStyle16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLAppearanceStyle16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLAppearanceStyle32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLAppearanceStyle32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLMultiReport16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLMultiReport16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLViewSaveDB16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLViewSaveDB16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLViewSaveDB32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLViewSaveDB32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLSettings16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLSettings16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLSettings32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLSettings32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLSwap16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLSwap16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLSwap32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLSwap32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLDownload16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLDownload16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLDownload32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLDownload32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLUnload16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLUnload16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLUnload32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLUnload32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLQuickLink16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLQuickLink16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLQuickLink32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLQuickLink32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLSaveAndClose16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLSaveAndClose16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLSaveAndClose32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLSaveAndClose32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLWFDesigner16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLWFDesigner16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLWFDesigner32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLWFDesigner32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLCustomLayer16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLCustomLayer16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLCustomLayer32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLCustomLayer32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLWFCompile16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLWFCompile16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLWFCompile32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLWFCompile32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLSaveAndContinue16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLSaveAndContinue16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLSaveAndContinue32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLSaveAndContinue32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLDetail16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLDetail16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLJournal16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLJournal16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLAllMoveLeftArrow16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLAllMoveLeftArrow16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLAllMoveLeftArrow32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLAllMoveLeftArrow32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLAllMoveUpArrow16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLAllMoveUpArrow16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLAllMoveUpArrow32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLAllMoveUpArrow32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLClosePack16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLClosePack16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLClosePack32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLClosePack32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLCreatePack16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLCreatePack16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLCreatePack32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLCreatePack32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLMoveLeftArrow16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLMoveLeftArrow16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLMoveLeftArrow32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLMoveLeftArrow32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLMoveUpArrow16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLMoveUpArrow16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLMoveUpArrow32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLMoveUpArrow32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLOpenPack16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLOpenPack16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLOpenPack32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLOpenPack32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLPacked16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLPacked16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLPacked32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLPacked32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLPackingPanel16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLPackingPanel16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLPackingPanel32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLPackingPanel32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLPackWeight16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLPackWeight16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLPackWeight161" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLPackWeight16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLPackWeight32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLPackWeight32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLExportData16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLExportData16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLExportData32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLExportData32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLOlapData16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLOlapData16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLOlapData32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLOlapData32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLPickBegin16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLPickBegin16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLPickBegin32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLPickBegin32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLPickComplete16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLPickComplete16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLPickComplete32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLPickComplete32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLPickReturn16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLPickReturn16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLPickReturn32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLPickReturn32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLBatchProcessApply16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\dclbatchprocessapply16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLBatchProcessApply32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\dclbatchprocessapply32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLBatchProcessFull16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\dclbatchprocessfull16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLBatchProcessFull32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\dclbatchprocessfull32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLBatchProcessParse16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\dclbatchprocessparse16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLBatchProcessParse32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\dclbatchprocessparse32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLPmConfigurator16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLPmConfigurator16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLPmConfigurator32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLPmConfigurator32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLGridRowEdit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\dclgridrowedit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wms16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\wms16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Core" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Core.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLGridEditBegin16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLGridEditBegin16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLGridEditBegin32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLGridEditBegin32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLGridEditEnd16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLGridEditEnd16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLGridEditEnd32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLGridEditEnd32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLWorkClose16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLWorkClose16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLWorkClose32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLWorkClose32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLWorkOpen16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLWorkOpen16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLWorkOpen32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLWorkOpen32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLPackDelete16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLPackDelete16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLPackDelete32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLPackDelete32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLPackDeleteAll16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLPackDeleteAll16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLPackDeleteAll32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLPackDeleteAll32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLCollapsePack16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLCollapsePack16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLCollapsePack32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLCollapsePack32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLExpandPack16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLExpandPack16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLExpandPack32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLExpandPack32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLPackTE16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLPackTE16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLPackTE32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLPackTE32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLReturnTE16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLReturnTE16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLReturnTE32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLReturnTE32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLDashboardDesigner16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\dcldashboarddesigner16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLDashboardDesigner32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\dcldashboarddesigner32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLConnect16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLConnect16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLConnect32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLConnect32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLWFOpen16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLWFOpen16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLWFOpen32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLWFOpen32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLWFOpenReadOnly16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLWFOpenReadOnly16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLWFOpenReadOnly32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLWFOpenReadOnly32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLPutIn16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLPutIn16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLPutIn32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLPutIn32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLChangeOvxSku16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLChangeOvxSku16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLChangeOvxSku32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLChangeOvxSku32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLStartAcceptance16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLStartAcceptance16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLStartAcceptance32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLStartAcceptance32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLWorkTimeControl16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLWorkTimeControl16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLWorkTimeControl32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLWorkTimeControl32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLAccept16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLAccept16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLAccept32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLAccept32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLCloneMaster16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLCloneMaster16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLCloneMaster32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLCloneMaster32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLCloneSimple16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLCloneSimple16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLCloneSimple32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLCloneSimple32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLReading_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLReading_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLReading_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLReading_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLReset_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLReset_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DCLReset_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DCLReset_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+</root>

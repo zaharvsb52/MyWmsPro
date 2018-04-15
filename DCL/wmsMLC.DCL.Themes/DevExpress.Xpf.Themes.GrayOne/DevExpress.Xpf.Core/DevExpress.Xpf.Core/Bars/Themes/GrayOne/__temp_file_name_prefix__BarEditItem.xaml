@@ -1,0 +1,177 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxbt="http://schemas.devexpress.com/winfx/2008/xaml/bars/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <Thickness x:Key="{dxbt:BarEditItemThemeKey ResourceKey=InMenuClientPadding}">0,1,0,1</Thickness>
+  <Style x:Key="{dxbt:BarEditItemThemeKey ResourceKey=DisabledEditStyle}" TargetType="{x:Type ContentControl}">
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+  </Style>
+  <Style x:Key="{dxbt:BarEditItemThemeKey ResourceKey=DisabledEditStyleInMainMenu}" TargetType="{x:Type ContentControl}">
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="HorizontalContentAlignment" Value="Left" />
+    <Setter Property="Foreground" Value="#FF201F35 " />
+  </Style>
+  <Style x:Key="{dxbt:BarEditItemThemeKey ResourceKey=DisabledEditStyleInButtonGroup}" TargetType="{x:Type ContentControl}">
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="HorizontalContentAlignment" Value="Left" />
+    <Setter Property="Foreground" Value="#FF201F35 " />
+  </Style>
+  <Style x:Key="{dxbt:BarEditItemThemeKey ResourceKey=DisabledEditStyleInMenu}" TargetType="{x:Type ContentControl}">
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+  </Style>
+  <Style x:Key="{dxbt:BarEditItemThemeKey ResourceKey=DisabledEditStyleInStatusBar}" TargetType="{x:Type ContentControl}">
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="HorizontalContentAlignment" Value="Left" />
+    <Setter Property="Foreground" Value="#FF201F35" />
+  </Style>
+  <Style x:Key="{dxbt:BarEditItemThemeKey ResourceKey=HotEditStyle}" TargetType="{x:Type ContentControl}">
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+  </Style>
+  <Style x:Key="{dxbt:BarEditItemThemeKey ResourceKey=HotEditStyleInMainMenu}" TargetType="{x:Type ContentControl}">
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="HorizontalContentAlignment" Value="Left" />
+    <Setter Property="Foreground" Value="#FF201F35" />
+  </Style>
+  <Style x:Key="{dxbt:BarEditItemThemeKey ResourceKey=HotEditStyleInButtonGroup}" TargetType="{x:Type ContentControl}">
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="HorizontalContentAlignment" Value="Left" />
+    <Setter Property="Foreground" Value="#FF201F35" />
+  </Style>
+  <Style x:Key="{dxbt:BarEditItemThemeKey ResourceKey=HotEditStyleInMenu}" TargetType="{x:Type ContentControl}">
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+  </Style>
+  <Style x:Key="{dxbt:BarEditItemThemeKey ResourceKey=HotEditStyleInStatusBar}" TargetType="{x:Type ContentControl}">
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="HorizontalContentAlignment" Value="Left" />
+    <Setter Property="Foreground" Value="#FF201F35" />
+  </Style>
+  <Style x:Key="{dxbt:BarEditItemThemeKey ResourceKey=LayoutPanelStyle}" TargetType="{x:Type dxc:Items2Panel}">
+    <Setter Property="HorizontalIndent" Value="0" />
+    <Setter Property="VerticalIndent" Value="0" />
+    <Setter Property="Content1Padding" Value="0,0,0,0" />
+    <Setter Property="Content2Padding" Value="0,0,0,0" />
+    <Setter Property="VerticalPadding" Value="6,0,6,0" />
+    <Setter Property="HorizontalPadding" Value="0,0,6,0" />
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="Margin" Value="0,2" />
+  </Style>
+  <Style x:Key="{dxbt:BarEditItemThemeKey ResourceKey=LayoutPanelStyleInMainMenu}" TargetType="{x:Type dxc:Items2Panel}" BasedOn="{StaticResource {dxbt:BarEditItemThemeKey ResourceKey=LayoutPanelStyle}}" />
+  <Style x:Key="{dxbt:BarEditItemThemeKey ResourceKey=LayoutPanelStyleInMenu}" TargetType="{x:Type dxc:Items2Panel}">
+    <Setter Property="HorizontalIndent" Value="0" />
+    <Setter Property="VerticalIndent" Value="0" />
+    <Setter Property="Content1Padding" Value="0,0,0,0" />
+    <Setter Property="Content2Padding" Value="0,0,0,0" />
+    <Setter Property="VerticalPadding" Value="0,0,0,0" />
+    <Setter Property="HorizontalPadding" Value="0,0,0,0" />
+    <Setter Property="VerticalAlignment" Value="Center" />
+  </Style>
+  <Style x:Key="{dxbt:BarEditItemThemeKey ResourceKey=LayoutPanelStyleInStatusBar}" TargetType="{x:Type dxc:Items2Panel}" BasedOn="{StaticResource {dxbt:BarEditItemThemeKey ResourceKey=LayoutPanelStyle}}" />
+  <Style x:Key="{dxbt:BarEditItemThemeKey ResourceKey=NormalEditStyle}" TargetType="{x:Type ContentControl}">
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="HorizontalAlignment" Value="Stretch" />
+    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+  </Style>
+  <Style x:Key="{dxbt:BarEditItemThemeKey ResourceKey=NormalEditStyleInMainMenu}" TargetType="{x:Type ContentControl}">
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="HorizontalContentAlignment" Value="Left" />
+    <Setter Property="Foreground" Value="#FF201F35" />
+  </Style>
+  <Style x:Key="{dxbt:BarEditItemThemeKey ResourceKey=NormalEditStyleInButtonGroup}" TargetType="{x:Type ContentControl}">
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="HorizontalContentAlignment" Value="Left" />
+    <Setter Property="Foreground" Value="#FF201F35" />
+  </Style>
+  <Style x:Key="{dxbt:BarEditItemThemeKey ResourceKey=NormalEditStyleInRibbonPageGroup}" TargetType="{x:Type ContentControl}">
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="HorizontalContentAlignment" Value="Left" />
+    <Setter Property="Foreground" Value="#FF201F35" />
+  </Style>
+  <Style x:Key="{dxbt:BarEditItemThemeKey ResourceKey=NormalEditStyleInMenu}" TargetType="{x:Type ContentControl}">
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+  </Style>
+  <Style x:Key="{dxbt:BarEditItemThemeKey ResourceKey=NormalEditStyleInStatusBar}" TargetType="{x:Type ContentControl}">
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="HorizontalContentAlignment" Value="Left" />
+    <Setter Property="Foreground" Value="#FF201F35" />
+  </Style>
+  <Style x:Key="{dxbt:BarEditItemThemeKey ResourceKey=PressedEditStyle}" TargetType="{x:Type ContentControl}">
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+  </Style>
+  <Style x:Key="{dxbt:BarEditItemThemeKey ResourceKey=PressedEditStyleInMainMenu}" TargetType="{x:Type ContentControl}">
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="HorizontalContentAlignment" Value="Left" />
+    <Setter Property="Foreground" Value="#FF201F35" />
+  </Style>
+  <Style x:Key="{dxbt:BarEditItemThemeKey ResourceKey=PressedEditStyleInButtonGroup}" TargetType="{x:Type ContentControl}">
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="HorizontalContentAlignment" Value="Left" />
+    <Setter Property="Foreground" Value="#FF201F35" />
+  </Style>
+  <Style x:Key="{dxbt:BarEditItemThemeKey ResourceKey=PressedEditStyleInMenu}" TargetType="{x:Type ContentControl}">
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+  </Style>
+  <Style x:Key="{dxbt:BarEditItemThemeKey ResourceKey=PressedEditStyleInStatusBar}" TargetType="{x:Type ContentControl}">
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="HorizontalContentAlignment" Value="Left" />
+    <Setter Property="Foreground" Value="#FF201F35" />
+  </Style>
+  <Style x:Key="{dxbt:BarEditItemThemeKey ResourceKey=DisabledContentStyleInMenu}" TargetType="{x:Type ContentControl}">
+    <Setter Property="VerticalAlignment" Value="Center" />
+  </Style>
+  <Style x:Key="{dxbt:BarEditItemThemeKey ResourceKey=HotContentStyleInMenu}" TargetType="{x:Type ContentControl}">
+    <Setter Property="VerticalAlignment" Value="Center" />
+  </Style>
+  <Style x:Key="{dxbt:BarEditItemThemeKey ResourceKey=NormalContentStyleInMenu}" TargetType="{x:Type ContentControl}">
+    <Setter Property="VerticalAlignment" Value="Center" />
+  </Style>
+  <Style x:Key="{dxbt:BarEditItemThemeKey ResourceKey=PressedContentStyleInMenu}" TargetType="{x:Type ContentControl}">
+    <Setter Property="VerticalAlignment" Value="Center" />
+  </Style>
+  <Style x:Key="{dxbt:BarEditItemThemeKey ResourceKey=LayoutPanelStyleInRibbonToolbar}" TargetType="{x:Type dxc:Items2Panel}">
+    <Setter Property="HorizontalIndent" Value="1" />
+    <Setter Property="VerticalIndent" Value="1" />
+    <Setter Property="Content1Padding" Value="3" />
+    <Setter Property="Content2Padding" Value="3" />
+    <Setter Property="VerticalPadding" Value="3" />
+    <Setter Property="HorizontalPadding" Value="3" />
+  </Style>
+  <Style x:Key="{dxbt:BarEditItemThemeKey ResourceKey=LayoutPanelStyleInRibbonPageHeader}" TargetType="{x:Type dxc:Items2Panel}" BasedOn="{StaticResource {dxbt:BarEditItemThemeKey ResourceKey=LayoutPanelStyleInRibbonToolbar}}" />
+  <Style x:Key="{dxbt:BarEditItemThemeKey ResourceKey=LayoutPanelStyleInRibbonStatusBarLeft}" TargetType="{x:Type dxc:Items2Panel}">
+    <Setter Property="HorizontalIndent" Value="0" />
+    <Setter Property="VerticalIndent" Value="3" />
+    <Setter Property="Content1Padding" Value="0,0,0,0" />
+    <Setter Property="Content2Padding" Value="6,0,6,0" />
+    <Setter Property="VerticalPadding" Value="6,0,6,4" />
+    <Setter Property="HorizontalPadding" Value="0,0,6,0" />
+  </Style>
+  <Style x:Key="{dxbt:BarEditItemThemeKey ResourceKey=LayoutPanelStyleInRibbonStatusBarRight}" TargetType="{x:Type dxc:Items2Panel}" BasedOn="{StaticResource {dxbt:BarEditItemThemeKey ResourceKey=LayoutPanelStyleInRibbonStatusBarLeft}}" />
+  <!--ONLY SL
+    <Style x:Key="{dxbt:BarEditItemThemeKey ResourceKey=DisabledContentStyleInButtonGroup}" TargetType="{x:Type ContentControl}">
+    </Style>
+
+    <Style x:Key="{dxbt:BarEditItemThemeKey ResourceKey=HotContentStyleInButtonGroup}" TargetType="{x:Type ContentControl}">
+    </Style>
+
+    <Style x:Key="{dxbt:BarEditItemThemeKey ResourceKey=LayoutPanelStyleInButtonGroup}" TargetType="{x:Type dxc:Items2Panel}">
+    </Style>
+
+    <Style x:Key="{dxbt:BarEditItemThemeKey ResourceKey=LayoutPanelStyleInRibbonStatusBarLeft}" TargetType="{x:Type dxc:Items2Panel}">
+    </Style>
+
+    <Style x:Key="{dxbt:BarEditItemThemeKey ResourceKey=LayoutPanelStyleInRibbonStatusBarRight}" TargetType="{x:Type dxc:Items2Panel}">
+    </Style>
+
+    <Style x:Key="{dxbt:BarEditItemThemeKey ResourceKey=LayoutPanelStyleInRibbonToolbar}" TargetType="{x:Type dxc:Items2Panel}">
+    </Style>
+
+    <Style x:Key="{dxbt:BarEditItemThemeKey ResourceKey=NormalContentStyleInButtonGroup}" TargetType="{x:Type ContentControl}">
+    </Style>
+
+    <Style x:Key="{dxbt:BarEditItemThemeKey ResourceKey=PressedContentStyleInButtonGroup}" TargetType="{x:Type ContentControl}">
+    </Style>
+    ONLY SL-->
+</ResourceDictionary>

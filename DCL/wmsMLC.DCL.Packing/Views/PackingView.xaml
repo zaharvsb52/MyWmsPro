@@ -1,0 +1,328 @@
+﻿<views:DXPanelView x:Class="wmsMLC.DCL.Packing.Views.PackingView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:views="clr-namespace:wmsMLC.DCL.Main.Views;assembly=wmsMLC.DCL.Main"
+    xmlns:controls="clr-namespace:wmsMLC.DCL.Main.Views.Controls;assembly=wmsMLC.DCL.Main"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:views1="clr-namespace:wmsMLC.DCL.Packing.Views"
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    xmlns:lex="clr-namespace:WPFLocalizeExtension.Extensions;assembly=WPFLocalizeExtension"
+    xmlns:dxdo="http://schemas.devexpress.com/winfx/2008/xaml/docking"
+    xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+    xmlns:dxgt="http://schemas.devexpress.com/winfx/2008/xaml/grid/themekeys"
+    xmlns:local="clr-namespace:wmsMLC.DCL.Packing.Views"
+    xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+    mc:Ignorable="d" 
+    d:DesignHeight="300" d:DesignWidth="300">
+
+    <views:DXPanelView.Resources>
+        <views1:IsActiveConverter x:Key="IsActiveConverter" />
+        <views1:IsLastPackedProductConverter x:Key="IsLastPackedProductConverter" />
+        <views1:NullToBooleanConverter x:Key="BooleanConverter" />
+        <Style x:Key="ActivePackStyle" TargetType="{x:Type dxg:RowControl}">
+            <Style.Triggers>
+                <DataTrigger Value="True">
+                    <DataTrigger.Binding>
+                        <MultiBinding Converter="{StaticResource IsActiveConverter}">
+                            <Binding Path="View.DataContext.ActivePack"/>
+                            <Binding Path=""/>
+                            <Binding Path="Row"/>
+                        </MultiBinding>
+                    </DataTrigger.Binding>
+                    <Setter Property="Background" Value="IndianRed" />
+                    <Setter Property="FontWeight" Value="Bold" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="LastPackedProductStyle" TargetType="{x:Type dxg:RowControl}">
+            <Style.Triggers>
+                <DataTrigger Value="True">
+                    <DataTrigger.Binding>
+                        <MultiBinding Converter="{StaticResource IsLastPackedProductConverter}">
+                            <Binding Path="View.DataContext.LastPackedProduct"/>
+                            <Binding Path=""/>
+                            <Binding Path="Row"/>
+                        </MultiBinding>
+                    </DataTrigger.Binding>
+                    <Setter Property="Background" Value="IndianRed" />
+                    <Setter Property="FontWeight" Value="Bold" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </views:DXPanelView.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <views:MenuView Menu="{Binding Menu}" Grid.Row="0" />
+
+        <dxdo:DockLayoutManager Grid.Row="1">
+            <dxdo:LayoutGroup Orientation="Vertical" AllowDock="True" AllowMove="False">
+                <dxdo:LayoutPanel x:Name="lPlace" ItemHeight="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Top" ShowCloseButton="False" ShowPinButton="False" ShowCaption="False" Padding="0,0,0,0">
+                    <StackPanel>
+                        <Label Content="Место упаковки" />
+                        <controls:CustomLookUpEdit x:Name="placeLookUpEdit" LookUpCodeEditor="PLACE_PLACECODE" EditValue="{Binding Path=CurrentPlaceCode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" LookUpCodeEditorFilterExt="{Binding Path=PlaceFilter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    </StackPanel>
+                </dxdo:LayoutPanel>
+
+                <dxdo:LayoutGroup Orientation="Horizontal" ItemHeight="0.5*" ShowControlBox="False" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <dxdo:LayoutPanel x:Name="lPack" ItemWidth="0.5*" ShowCloseButton="False" ShowPinButton="False" ShowCaption="False" Padding="0,0,0,0" >
+                        <dxb:BarManager>
+                            <dxb:BarManager.Items>
+                                <dxb:BarButtonItem Content="Распаковать" Name="UnpackAllCommandMenuItem" Command="{Binding UnpackAllCommand}" />
+                                <dxb:BarButtonItem Content="{lex:LocExtension Key=wmsMLC.DCL.Resources:StringResources:CollapseAll}" Name="collaps"  ItemClick="BarItemCollapseAll_OnItemClick" />
+                                <dxb:BarButtonItem Content="{lex:LocExtension Key=wmsMLC.DCL.Resources:StringResources:ExpandAll}" Name="expand"  ItemClick="BarItemExpandAll_OnItemClick" />
+                            </dxb:BarManager.Items>
+                                
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                
+                                <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="5,1,1,1" Height="{Binding ElementName=panelPacked, Path=ActualHeight}">
+                                    <TextBlock Text="Упаковка" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </StackPanel>
+
+                                <controls:CustomTreeListControl Grid.Row="1" x:Name="gTE"
+                                                                ShowTotalRow="False"
+                                                                ItemsSource="{Binding AvailableTE, Mode=OneWay}"
+                                                                ColumnsSource="{Binding AvailableTEFields, Mode=OneWay}"
+                                                                SelectedItem="{Binding SelectedPack, Mode=TwoWay, IsAsync=False, UpdateSourceTrigger=PropertyChanged}"
+                                                                SelectedItems="{Binding SelectedPacks, Mode=TwoWay, IsAsync=False, UpdateSourceTrigger=PropertyChanged}"
+                                                                HaveChild="{Binding HaveChild, Mode=TwoWay, IsAsync=False, UpdateSourceTrigger=PropertyChanged}"
+                                                                SelectedItemChanged="OnSelectedItemChanged"
+                                                                SelectionMode="Row"
+                                                                AutoShowAutoFilterRowWhenRowsCountMoreThan="1"
+                                                                dx:DXSerializer.SerializationID="tree"
+                                                                dx:DXSerializer.StoreLayoutMode="All"
+                                                                dxg:GridSerializationOptions.AddNewColumns="False"
+                                                                dxg:GridSerializationOptions.RemoveOldColumns="False"
+                                                                KeyDown="OnPreviewKeyDown">
+
+                                    <dxmvvm:Interaction.Behaviors>
+                                        <dxg:TreeListDragDropManager AllowDrop="True" AllowDrag="False" 
+                                                                     Drop="TreeListTEDragDropManager_OnDrop"
+                                                                     StartDrag="TreeListTEDragDropManager_OnStartDrag"
+                                                                     DragOver="TreeListTEDragDropManager_OnDragOver"/>
+                                    </dxmvvm:Interaction.Behaviors>
+
+                                    <controls:CustomTreeListControl.View>
+                                        <controls:CustomTreeListView AllowPerPixelScrolling="False"
+                                                                     AllowSorting="True"
+                                                                     AllowEditing="False"
+                                                                     ShowHorizontalLines="False"
+                                                                     ShowVerticalLines="False"
+                                                                     ShowFocusedRectangle="False"
+                                                                     ShowIndicator="False"
+                                                                     NavigationStyle="Row"
+                                                                     ShowColumnHeaders="True"
+                                                                     AutoExpandAllNodes="False"
+                                                                     TreeLineStyle="Solid"
+                                                                     FilterMode="Smart"  
+                                                                     CustomNodeFilter="OnCustomNodeFilter"
+                                                                     RowStyle="{StaticResource ActivePackStyle}"
+                                                                     KeyFieldName="{Binding TEKeyPropertyName}"
+                                                                     ParentFieldName="{Binding TEParentPropertyName}">
+                                            
+                                            <i:Interaction.Triggers>
+                                                <i:EventTrigger EventName="RowDoubleClick">
+                                                    <i:InvokeCommandAction Command="{Binding SetActivePackCommand}" />
+                                                </i:EventTrigger>
+                                            </i:Interaction.Triggers>
+
+                                            <dxg:TreeListView.RowCellMenuCustomizations>
+                                                <dxb:BarLinkContainerItemLink BarItemName="collaps"/>
+                                                <dxb:BarLinkContainerItemLink BarItemName="expand"/>
+                                                <dxb:BarItemLinkSeparator/>
+                                                <dxb:BarLinkContainerItemLink BarItemName="UnpackAllCommandMenuItem"/>
+                                            </dxg:TreeListView.RowCellMenuCustomizations>
+                                            
+                                        </controls:CustomTreeListView>
+                                    </controls:CustomTreeListControl.View>
+                                </controls:CustomTreeListControl>
+                            </Grid>
+                        </dxb:BarManager>
+                    </dxdo:LayoutPanel>
+                    
+                    <dxdo:LayoutPanel x:Name="lPackedProduct" ItemWidth="0.5*" ShowCloseButton="False" ShowPinButton="False" ShowCaption="False" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <dxb:BarManager>
+                            <dxb:BarManager.Items>
+                                <dxb:BarButtonItem BarItemName="returnOnSourceTE" Content="Вернуть на исходную ТЕ" Command="{Binding ReturnOnSourceTECommand}"/>
+                                <dxb:BarButtonItem BarItemName="moveToOtherTE" Content="Переместить в другой короб" Command="{Binding MoveToOtherTECommand}"/>
+                                <dxb:BarButtonItem BarItemName="moveAllToOtherTE" Content="Переместить все в другой короб" Command="{Binding MoveAllToOtherTECommand}"/>
+                            </dxb:BarManager.Items>
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+
+                                <StackPanel Orientation="Horizontal" Margin="5,1,1,1" Grid.Row="0" x:Name="panelPacked">
+                                    <TextBlock Text="Упаковано" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </StackPanel>
+
+                                <controls:CustomGridControl x:Name="gPackedProducts" Grid.Row="1"
+                                                            ShowTotalRow="False" SelectionMode="Row"
+                                                            ItemsSource="{Binding PackedProducts, Mode=OneWay}"
+                                                            ColumnsSource="{Binding PackedProductFields, Mode=OneWay}"
+                                                            SelectedItems="{Binding SelectedPackedProducts, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                            AutoShowAutoFilterRowWhenRowsCountMoreThan="1"
+                                                            dx:DXSerializer.SerializationID="grid"
+                                                            dx:DXSerializer.StoreLayoutMode="All"
+                                                            dxg:GridSerializationOptions.AddNewColumns="False"
+                                                            dxg:GridSerializationOptions.RemoveOldColumns="False"
+                                                            KeyDown="OnPreviewKeyDown">
+                                    
+                                    <dxmvvm:Interaction.Behaviors>
+                                        <dxg:GridDragDropManager AllowDrop="True" AllowDrag="True"  Drop="GridPackedDragDropManager_OnDrop" 
+                                            StartDrag="GridPackedDragDropManager_OnStartDrag" DragOver="GridPackedDragDropManager_OnDragOver" />
+                                    </dxmvvm:Interaction.Behaviors>
+                                    
+                                    <controls:CustomGridControl.View>
+                                        <dxg:TableView AllowEditing="{Binding ActivePack, Converter={StaticResource BooleanConverter}}" 
+                                                       RowStyle="{StaticResource LastPackedProductStyle}" UseLightweightTemplates="All"
+                                                       local:GroupChildSelector.Mode="Hierarchical">
+                                            
+                                            <dxg:TableView.GroupRowTemplate>
+                                                <DataTemplate x:Key="{dxgt:GroupRowThemeKey ThemeName=Office2013, ResourceKey=GroupRowTemplate}">
+                                                    <dx:MeasurePixelSnapper>
+                                                        <dxg:GroupGridRowContent Height="23">
+                                                            <dxg:GroupGridRowContent.Style>
+                                                                <Style TargetType="dxg:GroupGridRowContent" >
+                                                                    <Setter Property="dxb:BarManager.DXContextMenu">
+                                                                        <Setter.Value>
+                                                                            <dxb:PopupMenuInfo>
+                                                                                <dxb:BarButtonItemLink BarItemName="returnOnSourceTE" />
+                                                                                <dxb:BarButtonItemLink BarItemName="moveToOtherTE" />
+                                                                                <dxb:BarButtonItemLink BarItemName="moveAllToOtherTE" />
+                                                                            </dxb:PopupMenuInfo>
+                                                                        </Setter.Value>
+                                                                    </Setter>
+                                                                </Style>
+                                                            </dxg:GroupGridRowContent.Style>
+                                                            <dx:DXDockPanel TextBlock.FontSize="12" TextBlock.FontWeight="Medium">
+                                                                <dxg:GridGroupExpandButton VerticalAlignment="Center" IsChecked="{Binding Path=IsRowExpanded}" Command="{Binding View.Commands.ChangeGroupExpanded}" CommandParameter="{Binding RowHandle.Value}" />
+                                                                <dxg:GroupValueContentPresenter Margin="0,2,0,3" Content="{Binding Path=GroupValue}" ContentTemplateSelector="{Binding Path=Content.Column.ActualGroupValueTemplateSelector, RelativeSource={RelativeSource Self}}"/>
+                                                                <dxg:GroupSummaryContainer dxg:RowData.CurrentRowData="{Binding}" Margin="0,-7,0,0" />
+                                                            </dx:DXDockPanel>
+                                                        </dxg:GroupGridRowContent>
+                                                    </dx:MeasurePixelSnapper>
+                                                </DataTemplate>
+                                            </dxg:TableView.GroupRowTemplate>
+                                            
+                                            <dxg:TableView.GroupValueTemplate>
+                                                <DataTemplate>
+                                                    <Border Style="{Binding Path=View.GroupValueContentStyle}">
+                                                        <TextBlock Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding Path=Value}"/>
+                                                    </Border>
+                                                </DataTemplate>
+                                            </dxg:TableView.GroupValueTemplate>
+                                            
+                                            <dxg:TableView.RowCellMenuCustomizations>
+                                                <dxb:BarButtonItemLink BarItemName="returnOnSourceTE" />
+                                                <dxb:BarButtonItemLink BarItemName="moveToOtherTE" />
+                                                <dxb:BarButtonItemLink BarItemName="moveAllToOtherTE" />
+                                            </dxg:TableView.RowCellMenuCustomizations>
+                                        </dxg:TableView>
+                                    </controls:CustomGridControl.View>
+                                </controls:CustomGridControl>
+                            </Grid>
+                        </dxb:BarManager>
+                    </dxdo:LayoutPanel>
+                </dxdo:LayoutGroup>
+                
+                <dxdo:LayoutPanel x:Name="lPackingProduct" AllowDock="True" ItemHeight="0.5*" ShowCloseButton="False" ShowPinButton="False" ShowCaption="False" Padding="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <dxb:BarManager>
+                        <dxb:BarManager.Items>
+                            <dxb:BarButtonItem BarItemName="packSourceTE" Content="Упаковать исходную ТЕ" Command="{Binding PackSourceTECommand}"/>
+                            <dxb:BarButtonItem BarItemName="pack" Content="Упаковать товар" Command="{Binding PackCommand}"/>
+                        </dxb:BarManager.Items>
+                        
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                        
+                            <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="5,1,1,1" HorizontalAlignment="Stretch">
+                                <StackPanel Orientation="Horizontal"  Width="{Binding Path=ActualWidth, ElementName=gTE, Mode=OneWay}">
+                                    <TextBlock Text="Товар" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    <dxe:ButtonEdit x:Name="bProduct" 
+                                                    Text="{Binding Path=DataContext.PackingProductEditValue, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxdo:LayoutPanel}}, UpdateSourceTrigger=Explicit}"
+                                                    KeyDown="ProductOnKeyDown"
+                                                    AllowDefaultButton="False"
+                                                    Width="200" Margin="5,0,0,0">
+                                        <dxe:ButtonInfo GlyphKind="Search" Click="OnPackingProductSearchButtonClick" Tag="{Binding ElementName=bProduct}"/>
+                                        <dxe:ButtonEdit.Style>
+                                            <Style TargetType="{x:Type dxe:TextEdit}">
+                                                <Style.Triggers>
+                                                    <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                                                        <Setter Property="Background" Value="LightGreen"/>
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </dxe:ButtonEdit.Style>
+                                    </dxe:ButtonEdit>
+                                </StackPanel>
+                                <DockPanel  Width="{Binding Path=ActualWidth, ElementName=gPackedProducts, Mode=OneWay}">
+                                    <Button DockPanel.Dock="Left"  ToolTip="Упаковать товар" ToolTipService.ShowOnDisabled="True" Height="{Binding ElementName=bProduct, Path=ActualHeight, Mode=OneWay}" Width="100" Command="{Binding PackCommand}" Margin="5,0,5,0">
+                                        <Image Source="{lex:Loc Key=wmsMLC.DCL.Resources:ImageResources:DCLMoveUpArrow16}"  />
+                                    </Button>
+                                    <Button DockPanel.Dock="Left" ToolTip="Упаковать весь товар" ToolTipService.ShowOnDisabled="True" Height="{Binding ElementName=bProduct, Path=ActualHeight, Mode=OneWay}" Width="100" Command="{Binding PackAllCommand}" >
+                                        <Image Source="{lex:Loc Key=wmsMLC.DCL.Resources:ImageResources:DCLAllMoveUpArrow16}" />
+                                    </Button>
+                                    <Button DockPanel.Dock="Left" ToolTip="Упаковать исходную ТE" ToolTipService.ShowOnDisabled="True"  Height="{Binding ElementName=bProduct, Path=ActualHeight, Mode=OneWay}" Width="100" Command="{Binding PackSourceTECommand}" Margin="5,0,0,0">
+                                        <Image Source="{lex:Loc Key=wmsMLC.DCL.Resources:ImageResources:DCLPackTE16}" />
+                                    </Button>
+                                    <Button DockPanel.Dock="Right" ToolTip="Вернуть на исходную ТЕ"  ToolTipService.ShowOnDisabled="True" Height="{Binding ElementName=bProduct, Path=ActualHeight, Mode=OneWay}" Width="100" Command="{Binding ReturnOnSourceTECommand}" Margin="0,0,5,0" HorizontalAlignment="Right">
+                                        <Image Source="{lex:Loc Key=wmsMLC.DCL.Resources:ImageResources:DCLReturnTE16}"  />
+                                    </Button>
+                                </DockPanel>
+                            </StackPanel>
+                            
+                            <controls:CustomGridControl Grid.Row="1" x:Name="gPackingProducts"
+                                                        ShowTotalRow="False" SelectionMode="Row"
+                                                        ItemsSource="{Binding PackingProducts, Mode=OneWay}"
+                                                        views1:FilteredDataSupport.VisibleData="{Binding VisiblePackingProducts, Mode=TwoWay}"
+                                                        ColumnsSource="{Binding PackingProductFields, Mode=OneWay}"
+                                                        SelectedItems="{Binding SelectedPackingProducts, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                        AutoShowAutoFilterRowWhenRowsCountMoreThan="1"
+                                                        dx:DXSerializer.SerializationID="grid"
+                                                        dx:DXSerializer.StoreLayoutMode="All"
+                                                        dxg:GridSerializationOptions.AddNewColumns="False"
+                                                        dxg:GridSerializationOptions.RemoveOldColumns="False"
+                                                        KeyDown="OnPreviewKeyDown">
+                                <dxg:GridControl.View>
+                                    <dxg:TableView>
+                                        <dxg:TableView.RowCellMenuCustomizations>
+                                            <dxb:BarButtonItemLink BarItemName="packSourceTE"/>
+                                            <dxb:BarButtonItemLink BarItemName="pack"/>
+                                        </dxg:TableView.RowCellMenuCustomizations>
+                                    </dxg:TableView>
+                                </dxg:GridControl.View>
+                                
+                                <dxmvvm:Interaction.Behaviors>
+                                    <dxg:GridDragDropManager AllowDrag="True" AllowDrop="True" 
+                                                             Drop="GridPackingDragDropManager_OnDrop" 
+                                                             StartDrag="GridPackingDragDropManager_OnStartDrag" 
+                                                             DragOver="GridPackingDragDropManager_OnDragOver"/>
+                                </dxmvvm:Interaction.Behaviors>
+                            </controls:CustomGridControl>
+                        </Grid>
+                    </dxb:BarManager>
+                </dxdo:LayoutPanel>
+            </dxdo:LayoutGroup>
+        </dxdo:DockLayoutManager>
+        
+        <controls:CustomWaitIndicator DeferedVisibility="{Binding Path=WaitIndicatorVisible, IsAsync=True}" Grid.RowSpan="2" />
+    </Grid>
+</views:DXPanelView>

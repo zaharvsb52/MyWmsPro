@@ -1,0 +1,65 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:local="http://schemas.devexpress.com/winfx/2008/xaml/docking" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/docking/themekeys" xmlns:dxp="http://schemas.devexpress.com/winfx/2008/xaml/docking/platform" xmlns:ve="http://schemas.devexpress.com/winfx/2008/xaml/docking/visualelements" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys">
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Docking.VisualElements.LayoutItemsControl}" TargetType="{x:Type ve:LayoutItemsControl}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <ItemsPresenter />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <ve:GroupPanel />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Docking.VisualElements.PanelTabContainer}" TargetType="{x:Type ve:PanelTabContainer}">
+        <Setter Property="SnapsToDevicePixels" Value="true" />
+        <Setter Property="Template" Value="{DynamicResource {dxt:TabbedPaneElementsThemeKey ResourceKey=TabContainerTemplate}}" />
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <ve:TabHeadersPanel />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Docking.VisualElements.DocumentTabContainer}" TargetType="{x:Type ve:DocumentTabContainer}">
+        <Setter Property="SnapsToDevicePixels" Value="true" />
+        <Setter Property="Template" Value="{DynamicResource {dxt:DocumentPaneElementsThemeKey ResourceKey=TabContainerTemplate}}" />
+        <Setter Property="ThemeDependentBackground" Value="{DynamicResource {dxt:DocumentPaneElementsThemeKey ResourceKey=TabbedBackground}}" />
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <ve:TabHeadersPanel ClipMargin="{DynamicResource {dxt:DocumentPaneElementsThemeKey ResourceKey=TabHeadersClipMargin}}" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Docking.VisualElements.DocumentMDIContainer}" TargetType="{x:Type ve:DocumentMDIContainer}">
+        <Setter Property="SnapsToDevicePixels" Value="true" />
+        <Setter Property="Template" Value="{DynamicResource {dxt:DocumentPaneElementsThemeKey ResourceKey=MDIContainerTemplate}}" />
+        <Setter Property="ThemeDependentBackground" Value="{DynamicResource {dxt:DocumentPaneElementsThemeKey ResourceKey=MDIBackground}}" />
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <ve:MDIPanel />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--ONLY SL
+    <Style TargetType="{x:Type ve:FloatPanePresenter}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Border Visibility="Collapsed"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    ONLY SL-->
+</ResourceDictionary>

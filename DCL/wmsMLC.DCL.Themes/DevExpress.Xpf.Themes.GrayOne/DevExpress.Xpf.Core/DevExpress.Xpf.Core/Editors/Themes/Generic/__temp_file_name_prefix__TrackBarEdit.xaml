@@ -1,0 +1,675 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxcn="http://schemas.devexpress.com/winfx/2008/xaml/core/internal" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxeh="http://schemas.devexpress.com/winfx/2008/xaml/editors/internal" xmlns:dxei="http://schemas.devexpress.com/winfx/2008/xaml/editors/internal" xmlns:dxet="http://schemas.devexpress.com/winfx/2008/xaml/editors/themekeys" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <!--BEGIN WPF-->
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Generic/Common.xaml" />
+  </ResourceDictionary.MergedDictionaries>
+  <!--END WPF-->
+  <ControlTemplate x:Key="{dxet:TrackBarEditThemeKey ResourceKey=DisplayTemplate}">
+    <!--BEGIN WPF-->
+    <dxe:RangeEditBasePanel x:Name="PART_Editor" dxcore_unique_xmlns:FocusHelper2.Focusable="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;11;10" />
+    <!--END WPF-->
+    <!--ONLY SL
+        <Grid Background="Transparent">
+            <dxe:RangeEditBasePanel x:Name="PART_Editor" IsTabStop="False"/>
+        </Grid>
+        ONLY SL-->
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxet:TrackBarEditThemeKey ResourceKey=PanelLeftSideTemplate}">
+    <Border Background="Transparent" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;20;10" />
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxet:TrackBarEditThemeKey ResourceKey=PanelRightSideTemplate}">
+    <Border Background="Transparent" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;23;10" />
+  </ControlTemplate>
+  <Style x:Key="{dxet:TrackBarEditThemeKey ResourceKey=PanelRightSideStyle}" TargetType="ContentControl">
+    <Setter Property="IsTabStop" Value="false" />
+    <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=PanelRightSideTemplate}}" />
+    <!--BEGIN WPF-->
+    <Setter Property="Focusable" Value="false" />
+    <Setter Property="OverridesDefaultStyle" Value="true" />
+    <!--END WPF-->
+  </Style>
+  <Style x:Key="{dxet:TrackBarEditThemeKey ResourceKey=PanelLeftSideStyle}" TargetType="ContentControl">
+    <Setter Property="IsTabStop" Value="false" />
+    <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=PanelLeftSideTemplate}}" />
+    <Setter Property="UseLayoutRounding" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).UseLayoutRounding}" />
+    <!--BEGIN WPF-->
+    <Setter Property="Focusable" Value="false" />
+    <Setter Property="OverridesDefaultStyle" Value="true" />
+    <!--END WPF-->
+  </Style>
+  <Style x:Key="{dxet:TrackBarEditThumbThemeKey ResourceKey=HorizontalThumbStyle}" TargetType="Thumb">
+    <Setter Property="IsTabStop" Value="false" />
+    <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=HorizontalThumbTemplate}}" />
+    <Setter Property="UseLayoutRounding" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).UseLayoutRounding}" />
+    <!--BEGIN WPF-->
+    <Setter Property="Focusable" Value="false" />
+    <Setter Property="OverridesDefaultStyle" Value="true" />
+    <!--END WPF-->
+    <Style.Triggers>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="TopLeft">
+        <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=HorizontalThumbTickPlacementTopLeftTemplate}}" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="BottomRight">
+        <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=HorizontalThumbTickPlacementBottomRightTemplate}}" />
+      </DataTrigger>
+    </Style.Triggers>
+  </Style>
+  <Style x:Key="{dxet:TrackBarEditThumbThemeKey ResourceKey=VerticalThumbStyle}" TargetType="Thumb">
+    <Setter Property="IsTabStop" Value="false" />
+    <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=VerticalThumbTemplate}}" />
+    <Setter Property="UseLayoutRounding" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).UseLayoutRounding}" />
+    <!--BEGIN WPF-->
+    <Setter Property="Focusable" Value="false" />
+    <Setter Property="OverridesDefaultStyle" Value="true" />
+    <!--END WPF-->
+    <Style.Triggers>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="TopLeft">
+        <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=VerticalThumbTickPlacementTopLeftTemplate}}" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="BottomRight">
+        <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=VerticalThumbTickPlacementBottomRightTemplate}}" />
+      </DataTrigger>
+    </Style.Triggers>
+  </Style>
+  <Style x:Key="{dxet:TrackBarEditThumbThemeKey ResourceKey=LeftHorizontalThumbStyle}" TargetType="Thumb">
+    <Setter Property="IsTabStop" Value="false" />
+    <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=LeftHorizontalThumbTemplate}}" />
+    <Setter Property="UseLayoutRounding" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).UseLayoutRounding}" />
+    <!--BEGIN WPF-->
+    <Setter Property="Focusable" Value="false" />
+    <Setter Property="OverridesDefaultStyle" Value="true" />
+    <!--END WPF-->
+    <Style.Triggers>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="TopLeft">
+        <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=LeftHorizontalThumbTickPlacementTopLeftTemplate}}" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="BottomRight">
+        <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=LeftHorizontalThumbTickPlacementBottomRightTemplate}}" />
+      </DataTrigger>
+    </Style.Triggers>
+  </Style>
+  <Style x:Key="{dxet:TrackBarEditThumbThemeKey ResourceKey=RightHorizontalThumbStyle}" TargetType="Thumb">
+    <Setter Property="IsTabStop" Value="false" />
+    <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=RightHorizontalThumbTemplate}}" />
+    <Setter Property="UseLayoutRounding" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).UseLayoutRounding}" />
+    <!--BEGIN WPF-->
+    <Setter Property="Focusable" Value="false" />
+    <Setter Property="OverridesDefaultStyle" Value="true" />
+    <!--END WPF-->
+    <Style.Triggers>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="TopLeft">
+        <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=RightHorizontalThumbTickPlacementTopLeftTemplate}}" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="BottomRight">
+        <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=RightHorizontalThumbTickPlacementBottomRightTemplate}}" />
+      </DataTrigger>
+    </Style.Triggers>
+  </Style>
+  <Style x:Key="{dxet:TrackBarEditThumbThemeKey ResourceKey=ScrollableLeftHorizontalThumbStyle}" TargetType="Thumb">
+    <Setter Property="IsTabStop" Value="false" />
+    <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=ScrollableLeftHorizontalThumbTemplate}}" />
+    <Setter Property="UseLayoutRounding" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).UseLayoutRounding}" />
+    <!--BEGIN WPF-->
+    <Setter Property="Focusable" Value="false" />
+    <Setter Property="OverridesDefaultStyle" Value="true" />
+    <!--END WPF-->
+    <Style.Triggers>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="TopLeft">
+        <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=ScrollableLeftHorizontalThumbTickPlacementTopLeftTemplate}}" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="BottomRight">
+        <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=ScrollableLeftHorizontalThumbTickPlacementBottomRightTemplate}}" />
+      </DataTrigger>
+    </Style.Triggers>
+  </Style>
+  <Style x:Key="{dxet:TrackBarEditThumbThemeKey ResourceKey=ScrollableRightHorizontalThumbStyle}" TargetType="Thumb">
+    <Setter Property="IsTabStop" Value="false" />
+    <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=ScrollableRightHorizontalThumbTemplate}}" />
+    <Setter Property="UseLayoutRounding" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).UseLayoutRounding}" />
+    <!--BEGIN WPF-->
+    <Setter Property="Focusable" Value="false" />
+    <Setter Property="OverridesDefaultStyle" Value="true" />
+    <!--END WPF-->
+    <Style.Triggers>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="TopLeft">
+        <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=ScrollableRightHorizontalThumbTickPlacementTopLeftTemplate}}" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="BottomRight">
+        <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=ScrollableRightHorizontalThumbTickPlacementBottomRightTemplate}}" />
+      </DataTrigger>
+    </Style.Triggers>
+  </Style>
+  <Style x:Key="{dxet:TrackBarEditThumbThemeKey ResourceKey=ScrollableCenterHorizontalThumbStyle}" TargetType="Thumb">
+    <Setter Property="IsTabStop" Value="false" />
+    <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=ScrollableCenterHorizontalThumbTemplate}}" />
+    <Setter Property="UseLayoutRounding" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).UseLayoutRounding}" />
+    <!--BEGIN WPF-->
+    <Setter Property="Focusable" Value="false" />
+    <Setter Property="OverridesDefaultStyle" Value="true" />
+    <!--END WPF-->
+    <Style.Triggers>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="TopLeft">
+        <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=ScrollableCenterHorizontalThumbTickPlacementTopLeftTemplate}}" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="BottomRight">
+        <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=ScrollableCenterHorizontalThumbTickPlacementBottomRightTemplate}}" />
+      </DataTrigger>
+    </Style.Triggers>
+  </Style>
+  <Style x:Key="{dxet:TrackBarEditThumbThemeKey ResourceKey=LeftVerticalThumbStyle}" TargetType="Thumb">
+    <Setter Property="IsTabStop" Value="false" />
+    <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=LeftVerticalThumbTemplate}}" />
+    <Setter Property="UseLayoutRounding" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).UseLayoutRounding}" />
+    <!--BEGIN WPF-->
+    <Setter Property="Focusable" Value="false" />
+    <Setter Property="OverridesDefaultStyle" Value="true" />
+    <!--END WPF-->
+    <Style.Triggers>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="TopLeft">
+        <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=LeftVerticalThumbTickPlacementTopLeftTemplate}}" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="BottomRight">
+        <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=LeftVerticalThumbTickPlacementBottomRightTemplate}}" />
+      </DataTrigger>
+    </Style.Triggers>
+  </Style>
+  <Style x:Key="{dxet:TrackBarEditThumbThemeKey ResourceKey=RightVerticalThumbStyle}" TargetType="Thumb">
+    <Setter Property="IsTabStop" Value="false" />
+    <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=RightVerticalThumbTemplate}}" />
+    <Setter Property="UseLayoutRounding" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).UseLayoutRounding}" />
+    <!--BEGIN WPF-->
+    <Setter Property="Focusable" Value="false" />
+    <Setter Property="OverridesDefaultStyle" Value="true" />
+    <!--END WPF-->
+    <Style.Triggers>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="TopLeft">
+        <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=RightVerticalThumbTickPlacementTopLeftTemplate}}" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="BottomRight">
+        <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=RightVerticalThumbTickPlacementBottomRightTemplate}}" />
+      </DataTrigger>
+    </Style.Triggers>
+  </Style>
+  <Style x:Key="{dxet:TrackBarEditThumbThemeKey ResourceKey=ScrollableLeftVerticalThumbStyle}" TargetType="Thumb">
+    <Setter Property="IsTabStop" Value="false" />
+    <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=ScrollableLeftVerticalThumbTemplate}}" />
+    <Setter Property="UseLayoutRounding" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).UseLayoutRounding}" />
+    <!--BEGIN WPF-->
+    <Setter Property="Focusable" Value="false" />
+    <Setter Property="OverridesDefaultStyle" Value="true" />
+    <!--END WPF-->
+    <Style.Triggers>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="TopLeft">
+        <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=ScrollableLeftVerticalThumbTickPlacementTopLeftTemplate}}" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="BottomRight">
+        <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=ScrollableLeftVerticalThumbTickPlacementBottomRightTemplate}}" />
+      </DataTrigger>
+    </Style.Triggers>
+  </Style>
+  <Style x:Key="{dxet:TrackBarEditThumbThemeKey ResourceKey=ScrollableCenterVerticalThumbStyle}" TargetType="Thumb">
+    <Setter Property="IsTabStop" Value="false" />
+    <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=LeftVerticalThumbTemplate}}" />
+    <Setter Property="UseLayoutRounding" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).UseLayoutRounding}" />
+    <!--BEGIN WPF-->
+    <Setter Property="Focusable" Value="false" />
+    <Setter Property="OverridesDefaultStyle" Value="true" />
+    <!--END WPF-->
+    <Style.Triggers>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="TopLeft">
+        <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=ScrollableCenterVerticalThumbTickPlacementTopLeftTemplate}}" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="BottomRight">
+        <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=ScrollableCenterVerticalThumbTickPlacementBottomRightTemplate}}" />
+      </DataTrigger>
+    </Style.Triggers>
+  </Style>
+  <Style x:Key="{dxet:TrackBarEditThumbThemeKey ResourceKey=ScrollableRightVerticalThumbStyle}" TargetType="Thumb">
+    <Setter Property="IsTabStop" Value="false" />
+    <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=ScrollableRightVerticalThumbTemplate}}" />
+    <Setter Property="UseLayoutRounding" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).UseLayoutRounding}" />
+    <!--BEGIN WPF-->
+    <Setter Property="Focusable" Value="false" />
+    <Setter Property="OverridesDefaultStyle" Value="true" />
+    <!--END WPF-->
+    <Style.Triggers>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="TopLeft">
+        <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=ScrollableRightVerticalThumbTickPlacementTopLeftTemplate}}" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="BottomRight">
+        <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=ScrollableRightVerticalThumbTickPlacementBottomRightTemplate}}" />
+      </DataTrigger>
+    </Style.Triggers>
+  </Style>
+  <!--BEGIN WPF-->
+  <Style x:Key="{dxet:TrackBarEditThemeKey ResourceKey=TickBarStyle}" TargetType="TickBar">
+    <Setter Property="MinHeight" Value="4" />
+    <Setter Property="MinWidth" Value="4" />
+    <Setter Property="Fill" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).Foreground}" />
+    <Setter Property="TickFrequency" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickFrequency}" />
+    <Setter Property="ReservedSpace" Value="{Binding Path=(dxe:RangeEditBaseInfo.LayoutInfo).ReservedSpace}" />
+    <Setter Property="Minimum" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).Minimum}" />
+    <Setter Property="Maximum" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).Maximum}" />
+    <Setter Property="UseLayoutRounding" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).UseLayoutRounding}" />
+  </Style>
+  <!--END WPF-->
+  <Style x:Key="{dxet:TrackBarEditThemeKey ResourceKey=LeftStepButtonStyle}" TargetType="RepeatButton">
+    <Setter Property="IsTabStop" Value="false" />
+    <Setter Property="HorizontalContentAlignment" Value="Center" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="Width" Value="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=LeftStepButtonSize}}" />
+    <Setter Property="Height" Value="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=LeftStepButtonSize}}" />
+    <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=LeftStepButtonTemplate}}" />
+    <Setter Property="UseLayoutRounding" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).UseLayoutRounding}" />
+    <!--BEGIN WPF-->
+    <Setter Property="Focusable" Value="false" />
+    <Setter Property="OverridesDefaultStyle" Value="true" />
+    <!--END WPF-->
+  </Style>
+  <Style x:Key="{dxet:TrackBarEditThemeKey ResourceKey=RightStepButtonStyle}" TargetType="RepeatButton">
+    <Setter Property="IsTabStop" Value="false" />
+    <Setter Property="HorizontalContentAlignment" Value="Center" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="Width" Value="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=RightStepButtonSize}}" />
+    <Setter Property="Height" Value="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=RightStepButtonSize}}" />
+    <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=RightStepButtonTemplate}}" />
+    <Setter Property="UseLayoutRounding" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).UseLayoutRounding}" />
+    <!--BEGIN WPF-->
+    <Setter Property="Focusable" Value="false" />
+    <Setter Property="OverridesDefaultStyle" Value="true" />
+    <!--END WPF-->
+  </Style>
+  <Style x:Key="{dxet:TrackBarEditThemeKey ResourceKey=HorizontalBackgroundStyle}" TargetType="ContentControl">
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="IsTabStop" Value="false" />
+    <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=HorizontalBackgroundTemplate}}" />
+    <Setter Property="UseLayoutRounding" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).UseLayoutRounding}" />
+    <!--BEGIN WPF-->
+    <Setter Property="Focusable" Value="false" />
+    <Setter Property="OverridesDefaultStyle" Value="true" />
+    <!--END WPF-->
+  </Style>
+  <Style x:Key="{dxet:TrackBarEditThemeKey ResourceKey=VerticalBackgroundStyle}" TargetType="ContentControl">
+    <Setter Property="HorizontalContentAlignment" Value="Center" />
+    <Setter Property="IsTabStop" Value="false" />
+    <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=VerticalBackgroundTemplate}}" />
+    <Setter Property="UseLayoutRounding" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).UseLayoutRounding}" />
+    <!--BEGIN WPF-->
+    <Setter Property="Focusable" Value="false" />
+    <Setter Property="OverridesDefaultStyle" Value="true" />
+    <!--END WPF-->
+  </Style>
+  <dxcore_unique_xmlns:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+  <dxe:GridLengthConverter x:Key="GridLengthConverter" />
+  <ControlTemplate x:Key="{dxet:TrackBarEditThemeKey ResourceKey=PanelHorizontalTemplate}" TargetType="dxe:RangeEditBasePanel">
+    <Grid x:Name="root" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;309;10">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition x:Name="leftButton" Width="Auto" />
+        <ColumnDefinition x:Name="leftColumn" Width="{Binding Path=(dxe:RangeEditBaseInfo.LayoutInfo).LeftSidePosition, Converter={StaticResource GridLengthConverter}}" />
+        <ColumnDefinition x:Name="centerColumn" Width="Auto" />
+        <ColumnDefinition x:Name="rightColumn" Width="{Binding Path=(dxe:RangeEditBaseInfo.LayoutInfo).RightSidePosition, Converter={StaticResource GridLengthConverter}}" />
+        <ColumnDefinition x:Name="rightButton" Width="Auto" />
+      </Grid.ColumnDefinitions>
+      <ContentControl x:Name="back" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=HorizontalBackgroundStyle}}" dxei:ControlHelper.ShowFocusedState="{Binding IsKeyboardFocusWithin}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;322;14" />
+      <RepeatButton x:Name="PART_LeftStepButton" Visibility="{Binding Path=(dxe:BaseEdit.OwnerEdit).IsZoom, Converter={StaticResource BoolToVisibilityConverter}}" Grid.Column="0" Grid.Row="1" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=LeftStepButtonStyle}}" Command="{Binding Path=(dxe:BaseEdit.OwnerEdit).DecrementSmallCommand}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;323;14"></RepeatButton>
+      <!--BEGIN WPF-->
+      <TickBar x:Name="PART_TopTick" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Placement="Top" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=TickBarStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;326;14" />
+      <TickBar x:Name="PART_BottomTick" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=TickBarStyle}}" Placement="Bottom" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;327;14" />
+      <!--END WPF-->
+      <RepeatButton x:Name="left" Grid.Column="1" Grid.Row="1" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=PanelLeftSideStyle}}" Command="{Binding Path=(dxe:BaseEdit.OwnerEdit).DecrementLargeCommand}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;329;14" />
+      <Thumb x:Name="PART_Thumb" Grid.Column="2" Grid.Row="1" Style="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=HorizontalThumbStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;330;14" />
+      <RepeatButton x:Name="right" Grid.Column="3" Grid.Row="1" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=PanelRightSideStyle}}" Command="{Binding Path=(dxe:BaseEdit.OwnerEdit).IncrementLargeCommand}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;331;14" />
+      <RepeatButton x:Name="PART_RightStepButton" Visibility="{Binding Path=(dxe:BaseEdit.OwnerEdit).IsZoom, Converter={StaticResource BoolToVisibilityConverter}}" Grid.Column="4" Grid.Row="1" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=RightStepButtonStyle}}" Command="{Binding Path=(dxe:BaseEdit.OwnerEdit).IncrementSmallCommand}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;332;14" />
+    </Grid>
+    <!--BEGIN WPF-->
+    <ControlTemplate.Triggers>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="None">
+        <Setter Property="Visibility" Value="Collapsed" TargetName="PART_BottomTick" />
+        <Setter Property="Visibility" Value="Collapsed" TargetName="PART_TopTick" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="TopLeft">
+        <Setter Property="Visibility" Value="Collapsed" TargetName="PART_BottomTick" />
+        <Setter Property="Visibility" Value="Visible" TargetName="PART_TopTick" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="BottomRight">
+        <Setter Property="Visibility" Value="Visible" TargetName="PART_BottomTick" />
+        <Setter Property="Visibility" Value="Collapsed" TargetName="PART_TopTick" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="Both">
+        <Setter Property="Visibility" Value="Visible" TargetName="PART_BottomTick" />
+        <Setter Property="Visibility" Value="Visible" TargetName="PART_TopTick" />
+      </DataTrigger>
+    </ControlTemplate.Triggers>
+    <!--END WPF-->
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxet:TrackBarEditThemeKey ResourceKey=SelectionRangeLeftButtonTemplate}" TargetType="RepeatButton">
+    <Rectangle Fill="Transparent" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;356;10" />
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxet:TrackBarEditThemeKey ResourceKey=SelectionRangeRightButtonTemplate}" TargetType="RepeatButton">
+    <Rectangle Fill="Transparent" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;359;10" />
+  </ControlTemplate>
+  <Style x:Key="{dxet:TrackBarEditThemeKey ResourceKey=SelectionRangeLeftButtonStyle}" TargetType="RepeatButton">
+    <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=SelectionRangeLeftButtonTemplate}}" />
+    <Setter Property="dxc:FocusHelper2.Focusable" Value="False" />
+  </Style>
+  <Style x:Key="{dxet:TrackBarEditThemeKey ResourceKey=SelectionRangeRightButtonStyle}" TargetType="RepeatButton">
+    <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=SelectionRangeRightButtonTemplate}}" />
+    <Setter Property="dxc:FocusHelper2.Focusable" Value="False" />
+  </Style>
+  <Style x:Key="{dxet:TrackBarEditThemeKey ResourceKey=HorizontalSelectionRangeBackgroundStyle}" TargetType="ContentControl">
+    <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=HorizontalSelectionRangeBackgroundTemplate}}" />
+    <Setter Property="dxc:FocusHelper2.Focusable" Value="False" />
+  </Style>
+  <Style x:Key="{dxet:TrackBarEditThemeKey ResourceKey=VerticalSelectionRangeBackgroundStyle}" TargetType="ContentControl">
+    <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=VerticalSelectionRangeBackgroundTemplate}}" />
+    <Setter Property="dxc:FocusHelper2.Focusable" Value="False" />
+  </Style>
+  <ControlTemplate x:Key="{dxet:TrackBarEditThemeKey ResourceKey=HorizontalSelectionRangeTemplate}" TargetType="ContentControl">
+    <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;378;10">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      <ContentControl Grid.Column="0" Grid.ColumnSpan="2" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=HorizontalSelectionRangeBackgroundStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;383;14" />
+      <RepeatButton Grid.Column="0" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=SelectionRangeLeftButtonStyle}}" Command="{Binding Path=(dxe:BaseEdit.OwnerEdit).IncrementSmallCommand}" CommandParameter="SelectionStart" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;384;14" />
+      <RepeatButton Grid.Column="1" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=SelectionRangeRightButtonStyle}}" Command="{Binding Path=(dxe:BaseEdit.OwnerEdit).DecrementSmallCommand}" CommandParameter="SelectionEnd" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;385;14" />
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxet:TrackBarEditThemeKey ResourceKey=VerticalSelectionRangeTemplate}" TargetType="ContentControl">
+    <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;389;10">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+      <ContentControl Grid.Row="0" Grid.RowSpan="2" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=VerticalSelectionRangeBackgroundStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;394;14" />
+      <RepeatButton Grid.Row="0" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=SelectionRangeRightButtonStyle}}" Command="{Binding Path=(dxe:BaseEdit.OwnerEdit).DecrementSmallCommand}" CommandParameter="SelectionEnd" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;395;14" />
+      <RepeatButton Grid.Row="1" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=SelectionRangeLeftButtonStyle}}" Command="{Binding Path=(dxe:BaseEdit.OwnerEdit).IncrementSmallCommand}" CommandParameter="SelectionStart" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;396;14" />
+    </Grid>
+  </ControlTemplate>
+  <Style x:Key="{dxet:TrackBarEditThemeKey ResourceKey=HorizontalSelectionRangeStyle}" TargetType="ContentControl">
+    <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=HorizontalSelectionRangeTemplate}}" />
+    <Setter Property="dxc:FocusHelper2.Focusable" Value="False" />
+  </Style>
+  <Style x:Key="{dxet:TrackBarEditThemeKey ResourceKey=VerticalSelectionRangeStyle}" TargetType="ContentControl">
+    <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=VerticalSelectionRangeTemplate}}" />
+    <Setter Property="dxc:FocusHelper2.Focusable" Value="False" />
+  </Style>
+  <ControlTemplate x:Key="{dxet:TrackBarEditThemeKey ResourceKey=RangePanelHorizontalTemplate}" TargetType="dxe:RangeEditBasePanel">
+    <Grid x:Name="root" UseLayoutRounding="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;408;10">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition x:Name="leftButton" Width="Auto" />
+        <ColumnDefinition x:Name="leftColumn" Width="{Binding Path=(dxe:RangeEditBaseInfo.LayoutInfo).LeftSidePosition, Converter={StaticResource GridLengthConverter}}" />
+        <ColumnDefinition x:Name="leftThumb" Width="Auto" />
+        <ColumnDefinition x:Name="centerColumn" Width="{Binding Path=(dxe:RangeEditBaseInfo.LayoutInfo).SelectionLength, Converter={StaticResource GridLengthConverter}}" />
+        <ColumnDefinition x:Name="rightThumb" Width="Auto" />
+        <ColumnDefinition x:Name="rightColumn" Width="{Binding Path=(dxe:RangeEditBaseInfo.LayoutInfo).RightSidePosition, Converter={StaticResource GridLengthConverter}}" />
+        <ColumnDefinition x:Name="rightButton" Width="Auto" />
+      </Grid.ColumnDefinitions>
+      <ContentControl x:Name="back" Grid.Row="1" Grid.ColumnSpan="5" Grid.Column="1" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=HorizontalBackgroundStyle}}" dxei:ControlHelper.ShowFocusedState="{Binding IsKeyboardFocusWithin}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;423;14" />
+      <!--BEGIN WPF-->
+      <TickBar x:Name="PART_TopTick" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="5" ReservedSpace="{Binding Path=(dxe:RangeEditBaseInfo.LayoutInfo).ReservedSpace}" Placement="Top" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=TickBarStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;425;14" />
+      <!--END WPF-->
+      <RepeatButton x:Name="PART_LeftStepButton" Visibility="{Binding Path=(dxe:BaseEdit.OwnerEdit).IsZoom, Converter={StaticResource BoolToVisibilityConverter}}" Grid.Column="0" Grid.Row="1" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=LeftStepButtonStyle}}" Command="{Binding Path=(dxe:BaseEdit.OwnerEdit).DecrementSmallCommand}" CommandParameter="SelectionRange" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;427;14" />
+      <RepeatButton x:Name="left" Grid.Column="1" Grid.Row="1" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=PanelLeftSideStyle}}" Command="{Binding Path=(dxe:BaseEdit.OwnerEdit).DecrementLargeCommand}" CommandParameter="SelectionStart" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;428;14" />
+      <ContentControl Grid.Column="3" Grid.Row="1" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=HorizontalSelectionRangeStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;429;14" />
+      <Thumb x:Name="PART_LeftThumb" Grid.Column="2" Grid.Row="1" Style="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=LeftHorizontalThumbStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;430;14" />
+      <Thumb x:Name="PART_RightThumb" Grid.Column="4" Grid.Row="1" Style="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=RightHorizontalThumbStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;431;14" />
+      <RepeatButton x:Name="right" Grid.Column="5" Grid.Row="1" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=PanelRightSideStyle}}" Command="{Binding Path=(dxe:BaseEdit.OwnerEdit).IncrementLargeCommand}" CommandParameter="SelectionEnd" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;432;14" />
+      <RepeatButton x:Name="PART_RightStepButton" Visibility="{Binding Path=(dxe:BaseEdit.OwnerEdit).IsZoom, Converter={StaticResource BoolToVisibilityConverter}}" Grid.Column="6" Grid.Row="1" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=RightStepButtonStyle}}" Command="{Binding Path=(dxe:BaseEdit.OwnerEdit).IncrementSmallCommand}" CommandParameter="SelectionRange" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;433;14" />
+      <!--BEGIN WPF-->
+      <TickBar x:Name="PART_BottomTick" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="5" ReservedSpace="{Binding Path=(dxe:RangeEditBaseInfo.LayoutInfo).ReservedSpace}" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=TickBarStyle}}" Placement="Bottom" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;435;14" />
+      <!--END WPF-->
+    </Grid>
+    <!--BEGIN WPF-->
+    <ControlTemplate.Triggers>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="None">
+        <Setter Property="Visibility" Value="Collapsed" TargetName="PART_BottomTick" />
+        <Setter Property="Visibility" Value="Collapsed" TargetName="PART_TopTick" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="TopLeft">
+        <Setter Property="Visibility" Value="Collapsed" TargetName="PART_BottomTick" />
+        <Setter Property="Visibility" Value="Visible" TargetName="PART_TopTick" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="BottomRight">
+        <Setter Property="Visibility" Value="Visible" TargetName="PART_BottomTick" />
+        <Setter Property="Visibility" Value="Collapsed" TargetName="PART_TopTick" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="Both">
+        <Setter Property="Visibility" Value="Visible" TargetName="PART_BottomTick" />
+        <Setter Property="Visibility" Value="Visible" TargetName="PART_TopTick" />
+      </DataTrigger>
+    </ControlTemplate.Triggers>
+    <!--END WPF-->
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxet:TrackBarEditThemeKey ResourceKey=RangePanelVerticalTemplate}" TargetType="dxe:RangeEditBasePanel">
+    <Grid x:Name="root" UseLayoutRounding="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;460;10">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="Auto" />
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition x:Name="leftButton" Height="Auto" />
+        <RowDefinition x:Name="leftColumn" Height="{Binding Path=(dxe:RangeEditBaseInfo.LayoutInfo).RightSidePosition, Converter={StaticResource GridLengthConverter}}" />
+        <RowDefinition x:Name="leftThumb" Height="Auto" />
+        <RowDefinition x:Name="centerColumn" Height="{Binding Path=(dxe:RangeEditBaseInfo.LayoutInfo).SelectionLength, Converter={StaticResource GridLengthConverter}}" />
+        <RowDefinition x:Name="rightThumb" Height="Auto" />
+        <RowDefinition x:Name="rightColumn" Height="{Binding Path=(dxe:RangeEditBaseInfo.LayoutInfo).LeftSidePosition, Converter={StaticResource GridLengthConverter}}" />
+        <RowDefinition x:Name="rightButton" Height="Auto" />
+      </Grid.RowDefinitions>
+      <ContentControl x:Name="back" Grid.Column="1" Grid.Row="1" Grid.RowSpan="5" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=VerticalBackgroundStyle}}" dxei:ControlHelper.ShowFocusedState="{Binding IsKeyboardFocusWithin}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;475;14" />
+      <!--BEGIN WPF-->
+      <TickBar x:Name="PART_TopTick" Grid.Row="1" Grid.Column="0" Grid.RowSpan="5" ReservedSpace="{Binding Path=(dxe:RangeEditBaseInfo.LayoutInfo).ReservedSpace}" Placement="Left" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=TickBarStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;477;14" />
+      <!--END WPF-->
+      <RepeatButton x:Name="PART_RightStepButton" Visibility="{Binding Path=(dxe:BaseEdit.OwnerEdit).IsZoom, Converter={StaticResource BoolToVisibilityConverter}}" Grid.Column="1" Grid.Row="0" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=RightStepButtonStyle}}" Command="{Binding Path=(dxe:BaseEdit.OwnerEdit).IncrementSmallCommand}" CommandParameter="SelectionRange" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;479;14" />
+      <RepeatButton x:Name="right" Grid.Column="1" Grid.Row="1" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=PanelLeftSideStyle}}" Command="{Binding Path=(dxe:BaseEdit.OwnerEdit).IncrementLargeCommand}" CommandParameter="SelectionEnd" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;480;14" />
+      <ContentControl Grid.Column="1" Grid.Row="3" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=VerticalSelectionRangeStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;481;14" />
+      <Thumb x:Name="PART_RightThumb" Grid.Column="1" Grid.Row="2" Style="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=RightVerticalThumbStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;482;14" />
+      <Thumb x:Name="PART_LeftThumb" Grid.Column="1" Grid.Row="4" Style="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=LeftVerticalThumbStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;483;14" />
+      <RepeatButton x:Name="left" Grid.Column="1" Grid.Row="5" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=PanelRightSideStyle}}" Command="{Binding Path=(dxe:BaseEdit.OwnerEdit).DecrementLargeCommand}" CommandParameter="SelectionStart" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;484;14" />
+      <RepeatButton x:Name="PART_LeftStepButton" Visibility="{Binding Path=(dxe:BaseEdit.OwnerEdit).IsZoom, Converter={StaticResource BoolToVisibilityConverter}}" Grid.Column="1" Grid.Row="6" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=LeftStepButtonStyle}}" Command="{Binding Path=(dxe:BaseEdit.OwnerEdit).DecrementSmallCommand}" CommandParameter="SelectionRange" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;485;14" />
+      <!--BEGIN WPF-->
+      <TickBar x:Name="PART_BottomTick" Grid.Row="1" Grid.Column="2" Grid.RowSpan="5" ReservedSpace="{Binding Path=(dxe:RangeEditBaseInfo.LayoutInfo).ReservedSpace}" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=TickBarStyle}}" Placement="Right" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;487;14" />
+      <!--END WPF-->
+    </Grid>
+    <!--BEGIN WPF-->
+    <ControlTemplate.Triggers>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="None">
+        <Setter Property="Visibility" Value="Collapsed" TargetName="PART_BottomTick" />
+        <Setter Property="Visibility" Value="Collapsed" TargetName="PART_TopTick" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="TopLeft">
+        <Setter Property="Visibility" Value="Collapsed" TargetName="PART_BottomTick" />
+        <Setter Property="Visibility" Value="Visible" TargetName="PART_TopTick" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="BottomRight">
+        <Setter Property="Visibility" Value="Visible" TargetName="PART_BottomTick" />
+        <Setter Property="Visibility" Value="Collapsed" TargetName="PART_TopTick" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="Both">
+        <Setter Property="Visibility" Value="Visible" TargetName="PART_BottomTick" />
+        <Setter Property="Visibility" Value="Visible" TargetName="PART_TopTick" />
+      </DataTrigger>
+    </ControlTemplate.Triggers>
+    <!--END WPF-->
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxet:TrackBarEditThemeKey ResourceKey=ScrollableRangePanelHorizontalTemplate}" TargetType="dxe:RangeEditBasePanel">
+    <Grid x:Name="root" UseLayoutRounding="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;512;10">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition x:Name="leftButton" Width="Auto" />
+        <ColumnDefinition x:Name="leftColumn" Width="{Binding Path=(dxe:RangeEditBaseInfo.LayoutInfo).LeftSidePosition, Converter={StaticResource GridLengthConverter}}" />
+        <ColumnDefinition x:Name="leftThumb" Width="Auto" />
+        <ColumnDefinition x:Name="centerColumn" Width="{Binding Path=(dxe:RangeEditBaseInfo.LayoutInfo).SelectionLength, Converter={StaticResource GridLengthConverter}}" />
+        <ColumnDefinition x:Name="rightThumb" Width="Auto" />
+        <ColumnDefinition x:Name="rightColumn" Width="{Binding Path=(dxe:RangeEditBaseInfo.LayoutInfo).RightSidePosition, Converter={StaticResource GridLengthConverter}}" />
+        <ColumnDefinition x:Name="rightButton" Width="Auto" />
+      </Grid.ColumnDefinitions>
+      <ContentControl x:Name="back" Grid.Row="1" Grid.ColumnSpan="5" Grid.Column="1" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=HorizontalBackgroundStyle}}" dxei:ControlHelper.ShowFocusedState="{Binding IsKeyboardFocusWithin}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;527;14" />
+      <!--BEGIN WPF-->
+      <TickBar x:Name="PART_TopTick" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="5" ReservedSpace="{Binding Path=(dxe:RangeEditBaseInfo.LayoutInfo).ReservedSpace}" Placement="Top" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=TickBarStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;529;14" />
+      <!--END WPF-->
+      <RepeatButton x:Name="PART_LeftStepButton" Visibility="{Binding Path=(dxe:BaseEdit.OwnerEdit).IsZoom, Converter={StaticResource BoolToVisibilityConverter}}" Grid.Column="0" Grid.Row="1" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=LeftStepButtonStyle}}" Command="{Binding Path=(dxe:BaseEdit.OwnerEdit).DecrementSmallCommand}" CommandParameter="SelectionRange" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;531;14" />
+      <RepeatButton x:Name="left" Grid.Column="1" Grid.Row="1" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=PanelLeftSideStyle}}" Command="{Binding Path=(dxe:BaseEdit.OwnerEdit).DecrementLargeCommand}" CommandParameter="SelectionRange" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;532;14" />
+      <Thumb x:Name="PART_CenterThumb" Grid.Column="3" Grid.Row="1" Style="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=ScrollableCenterHorizontalThumbStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;533;14" />
+      <Thumb x:Name="PART_LeftThumb" Grid.Column="2" Grid.Row="1" Style="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=ScrollableLeftHorizontalThumbStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;534;14" />
+      <Thumb x:Name="PART_RightThumb" Grid.Column="4" Grid.Row="1" Style="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=ScrollableRightHorizontalThumbStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;535;14" />
+      <RepeatButton x:Name="right" Grid.Column="5" Grid.Row="1" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=PanelRightSideStyle}}" Command="{Binding Path=(dxe:BaseEdit.OwnerEdit).IncrementLargeCommand}" CommandParameter="SelectionRange" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;536;14" />
+      <RepeatButton x:Name="PART_RightStepButton" Visibility="{Binding Path=(dxe:BaseEdit.OwnerEdit).IsZoom, Converter={StaticResource BoolToVisibilityConverter}}" Grid.Column="6" Grid.Row="1" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=RightStepButtonStyle}}" Command="{Binding Path=(dxe:BaseEdit.OwnerEdit).IncrementSmallCommand}" CommandParameter="SelectionRange" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;537;14" />
+      <!--BEGIN WPF-->
+      <TickBar x:Name="PART_BottomTick" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="5" ReservedSpace="{Binding Path=(dxe:RangeEditBaseInfo.LayoutInfo).ReservedSpace}" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=TickBarStyle}}" Placement="Bottom" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;539;14" />
+      <!--END WPF-->
+    </Grid>
+    <!--BEGIN WPF-->
+    <ControlTemplate.Triggers>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="None">
+        <Setter Property="Visibility" Value="Collapsed" TargetName="PART_BottomTick" />
+        <Setter Property="Visibility" Value="Collapsed" TargetName="PART_TopTick" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="TopLeft">
+        <Setter Property="Visibility" Value="Collapsed" TargetName="PART_BottomTick" />
+        <Setter Property="Visibility" Value="Visible" TargetName="PART_TopTick" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="BottomRight">
+        <Setter Property="Visibility" Value="Visible" TargetName="PART_BottomTick" />
+        <Setter Property="Visibility" Value="Collapsed" TargetName="PART_TopTick" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="Both">
+        <Setter Property="Visibility" Value="Visible" TargetName="PART_BottomTick" />
+        <Setter Property="Visibility" Value="Visible" TargetName="PART_TopTick" />
+      </DataTrigger>
+    </ControlTemplate.Triggers>
+    <!--END WPF-->
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxet:TrackBarEditThemeKey ResourceKey=ScrollableRangePanelVerticalTemplate}" TargetType="dxe:RangeEditBasePanel">
+    <Grid x:Name="root" UseLayoutRounding="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;564;10">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="Auto" />
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition x:Name="leftButton" Height="Auto" />
+        <RowDefinition x:Name="leftColumn" Height="{Binding Path=(dxe:RangeEditBaseInfo.LayoutInfo).RightSidePosition, Converter={StaticResource GridLengthConverter}}" />
+        <RowDefinition x:Name="leftThumb" Height="Auto" />
+        <RowDefinition x:Name="centerColumn" Height="{Binding Path=(dxe:RangeEditBaseInfo.LayoutInfo).SelectionLength, Converter={StaticResource GridLengthConverter}}" />
+        <RowDefinition x:Name="rightThumb" Height="Auto" />
+        <RowDefinition x:Name="rightColumn" Height="{Binding Path=(dxe:RangeEditBaseInfo.LayoutInfo).LeftSidePosition, Converter={StaticResource GridLengthConverter}}" />
+        <RowDefinition x:Name="rightButton" Height="Auto" />
+      </Grid.RowDefinitions>
+      <ContentControl x:Name="back" Grid.Column="1" Grid.Row="1" Grid.RowSpan="5" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=VerticalBackgroundStyle}}" dxei:ControlHelper.ShowFocusedState="{Binding IsKeyboardFocusWithin}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;579;14" />
+      <!--BEGIN WPF-->
+      <TickBar x:Name="PART_TopTick" Grid.Row="1" Grid.Column="0" Grid.RowSpan="5" ReservedSpace="{Binding Path=(dxe:RangeEditBaseInfo.LayoutInfo).ReservedSpace}" Placement="Left" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=TickBarStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;581;14" />
+      <!--END WPF-->
+      <RepeatButton x:Name="PART_RightStepButton" Visibility="{Binding Path=(dxe:BaseEdit.OwnerEdit).IsZoom, Converter={StaticResource BoolToVisibilityConverter}}" Grid.Column="1" Grid.Row="0" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=RightStepButtonStyle}}" Command="{Binding Path=(dxe:BaseEdit.OwnerEdit).IncrementSmallCommand}" CommandParameter="SelectionRange" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;583;14" />
+      <RepeatButton x:Name="right" Grid.Column="1" Grid.Row="1" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=PanelLeftSideStyle}}" Command="{Binding Path=(dxe:BaseEdit.OwnerEdit).IncrementLargeCommand}" CommandParameter="SelectionEnd" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;584;14" />
+      <Thumb x:Name="PART_CenterThumb" Grid.Column="1" Grid.Row="3" Style="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=ScrollableCenterVerticalThumbStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;585;14" />
+      <Thumb x:Name="PART_RightThumb" Grid.Column="1" Grid.Row="2" Style="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=ScrollableRightVerticalThumbStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;586;14" />
+      <Thumb x:Name="PART_LeftThumb" Grid.Column="1" Grid.Row="4" Style="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=ScrollableLeftVerticalThumbStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;587;14" />
+      <RepeatButton x:Name="left" Grid.Column="1" Grid.Row="5" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=PanelRightSideStyle}}" Command="{Binding Path=(dxe:BaseEdit.OwnerEdit).DecrementLargeCommand}" CommandParameter="SelectionStart" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;588;14" />
+      <RepeatButton x:Name="PART_LeftStepButton" Visibility="{Binding Path=(dxe:BaseEdit.OwnerEdit).IsZoom, Converter={StaticResource BoolToVisibilityConverter}}" Grid.Column="1" Grid.Row="6" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=LeftStepButtonStyle}}" Command="{Binding Path=(dxe:BaseEdit.OwnerEdit).DecrementSmallCommand}" CommandParameter="SelectionRange" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;589;14" />
+      <!--BEGIN WPF-->
+      <TickBar x:Name="PART_BottomTick" Grid.Row="1" Grid.Column="2" Grid.RowSpan="5" ReservedSpace="{Binding Path=(dxe:RangeEditBaseInfo.LayoutInfo).ReservedSpace}" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=TickBarStyle}}" Placement="Right" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;591;14" />
+      <!--END WPF-->
+    </Grid>
+    <!--BEGIN WPF-->
+    <ControlTemplate.Triggers>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="None">
+        <Setter Property="Visibility" Value="Collapsed" TargetName="PART_BottomTick" />
+        <Setter Property="Visibility" Value="Collapsed" TargetName="PART_TopTick" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="TopLeft">
+        <Setter Property="Visibility" Value="Collapsed" TargetName="PART_BottomTick" />
+        <Setter Property="Visibility" Value="Visible" TargetName="PART_TopTick" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="BottomRight">
+        <Setter Property="Visibility" Value="Visible" TargetName="PART_BottomTick" />
+        <Setter Property="Visibility" Value="Collapsed" TargetName="PART_TopTick" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="Both">
+        <Setter Property="Visibility" Value="Visible" TargetName="PART_BottomTick" />
+        <Setter Property="Visibility" Value="Visible" TargetName="PART_TopTick" />
+      </DataTrigger>
+    </ControlTemplate.Triggers>
+    <!--END WPF-->
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxet:TrackBarEditThemeKey ResourceKey=PanelVerticalTemplate}" TargetType="dxe:RangeEditBasePanel">
+    <Grid x:Name="root" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;616;10">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="*" MinWidth="{Binding Path=(dxe:BaseEdit.OwnerEdit).MinWidth}" />
+        <ColumnDefinition Width="Auto" />
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition x:Name="rightButton" Height="Auto" />
+        <RowDefinition x:Name="rightColumn" Height="{Binding Path=(dxe:RangeEditBaseInfo.LayoutInfo).RightSidePosition, Converter={StaticResource GridLengthConverter}}" />
+        <RowDefinition x:Name="centerColumn" Height="Auto" />
+        <RowDefinition x:Name="leftColumn" Height="{Binding Path=(dxe:RangeEditBaseInfo.LayoutInfo).LeftSidePosition, Converter={StaticResource GridLengthConverter}}" />
+        <RowDefinition x:Name="leftButton" Height="Auto" />
+      </Grid.RowDefinitions>
+      <ContentControl x:Name="back" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=VerticalBackgroundStyle}}" dxei:ControlHelper.ShowFocusedState="{Binding IsKeyboardFocusWithin}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;629;14" />
+      <!--BEGIN WPF-->
+      <TickBar x:Name="PART_TopTick" Grid.Row="1" Grid.Column="0" Grid.RowSpan="3" Placement="Left" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=TickBarStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;631;14" />
+      <!--END WPF-->
+      <RepeatButton x:Name="PART_RightStepButton" Visibility="{Binding Path=(dxe:BaseEdit.OwnerEdit).IsZoom, Converter={StaticResource BoolToVisibilityConverter}}" Grid.Column="1" Grid.Row="0" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=RightStepButtonStyle}}" Command="{Binding Path=(dxe:BaseEdit.OwnerEdit).IncrementSmallCommand}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;633;14" />
+      <RepeatButton x:Name="right" Grid.Column="1" Grid.Row="1" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=PanelRightSideStyle}}" Command="{Binding Path=(dxe:BaseEdit.OwnerEdit).IncrementLargeCommand}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;634;14" />
+      <Thumb x:Name="PART_Thumb" Grid.Column="1" Grid.Row="2" Style="{DynamicResource {dxet:TrackBarEditThumbThemeKey ResourceKey=VerticalThumbStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;635;14" />
+      <RepeatButton x:Name="left" Grid.Column="1" Grid.Row="3" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=PanelLeftSideStyle}}" Command="{Binding Path=(dxe:BaseEdit.OwnerEdit).DecrementLargeCommand}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;636;14" />
+      <RepeatButton x:Name="PART_LeftStepButton" Visibility="{Binding Path=(dxe:BaseEdit.OwnerEdit).IsZoom, Converter={StaticResource BoolToVisibilityConverter}}" Grid.Column="1" Grid.Row="4" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=LeftStepButtonStyle}}" Command="{Binding Path=(dxe:BaseEdit.OwnerEdit).DecrementSmallCommand}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;637;14" />
+      <!--BEGIN WPF-->
+      <TickBar x:Name="PART_BottomTick" Grid.Row="1" Grid.Column="2" Grid.RowSpan="3" Style="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=TickBarStyle}}" Placement="Right" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;639;14" />
+      <!--END WPF-->
+    </Grid>
+    <!--BEGIN WPF-->
+    <ControlTemplate.Triggers>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="None">
+        <Setter Property="Visibility" Value="Collapsed" TargetName="PART_BottomTick" />
+        <Setter Property="Visibility" Value="Collapsed" TargetName="PART_TopTick" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="TopLeft">
+        <Setter Property="Visibility" Value="Collapsed" TargetName="PART_BottomTick" />
+        <Setter Property="Visibility" Value="Visible" TargetName="PART_TopTick" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="BottomRight">
+        <Setter Property="Visibility" Value="Visible" TargetName="PART_BottomTick" />
+        <Setter Property="Visibility" Value="Collapsed" TargetName="PART_TopTick" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).TickPlacement}" Value="Both">
+        <Setter Property="Visibility" Value="Visible" TargetName="PART_BottomTick" />
+        <Setter Property="Visibility" Value="Visible" TargetName="PART_TopTick" />
+      </DataTrigger>
+    </ControlTemplate.Triggers>
+    <!--END WPF-->
+  </ControlTemplate>
+  <!--ONLY SL
+    <Style x:Key="TrackBarEditStyleThemeKey_TrackBarEditPanelHorizontalStyle" TargetType="dxe:RangeEditBasePanel">
+        <Setter Property="Template" Value="{StaticResource TrackBarEditThemeKey_PanelHorizontalTemplate}"/>
+    </Style>
+    <Style x:Key="TrackBarEditStyleThemeKey_RangeTrackBarEditPanelHorizontalStyle" TargetType="dxe:RangeEditBasePanel">
+        <Setter Property="Template" Value="{StaticResource TrackBarEditThemeKey_RangePanelHorizontalTemplate}"/>
+    </Style>
+    <Style x:Key="TrackBarEditStyleThemeKey_RangeTrackBarEditPanelVerticalStyle" TargetType="dxe:RangeEditBasePanel">
+        <Setter Property="Template" Value="{StaticResource TrackBarEditThemeKey_RangePanelVerticalTemplate}"/>
+    </Style>
+    <Style x:Key="TrackBarEditStyleThemeKey_TrackBarEditPanelVerticalStyle" TargetType="dxe:RangeEditBasePanel">
+        <Setter Property="Template" Value="{StaticResource TrackBarEditThemeKey_PanelVerticalTemplate}"/>
+    </Style>
+    ONLY SL-->
+  <ControlTemplate x:Key="{dxet:TrackBarEditThemeKey ResourceKey=Template}" TargetType="dxe:TrackBarEdit">
+    <dxe:EditorControl x:Name="PART_Content" Template="{TemplateBinding ActualEditorControlTemplate}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\TrackBarEdit.xaml;678;10" />
+  </ControlTemplate>
+</ResourceDictionary>

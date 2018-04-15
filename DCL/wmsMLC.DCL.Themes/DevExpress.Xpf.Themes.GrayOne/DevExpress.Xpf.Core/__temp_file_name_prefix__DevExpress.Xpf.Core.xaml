@@ -1,0 +1,21 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/DXPanel.xaml" />
+    <ResourceDictionary Source="{dxc:ThemePartLoader Path=/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/DXPanel.xaml}" />
+    <ResourceDictionary Source="{dxc:ThemePartLoader Path=/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/Generic.XAML}" />
+    <ResourceDictionary Source="{dxc:ThemePartLoader Path=/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Bars/Themes/GrayOne.XAML}" />
+    <ResourceDictionary Source="{dxc:ThemePartLoader Path=/DevExpress.Xpf.Core/DevExpress.Xpf.Core/TabControl/Themes/GrayOne.XAML}" />
+    <ResourceDictionary Source="{dxc:ThemePartLoader Path=/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/GroupBoxAndGroupFrame.XAML}" />
+    <ResourceDictionary Source="{dxc:ThemePartLoader Path=/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Generic/Generic.XAML}" />
+    <ResourceDictionary Source="{dxc:ThemePartLoader Path=/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/GrayOne.XAML}" />
+    <ResourceDictionary Source="{dxc:ThemePartLoader Path=/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/StandardControlStyles.XAML}" />
+    <ResourceDictionary Source="{dxc:ThemePartLoader Path=/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/GrayOne/Window.xaml}" />
+    <ResourceDictionary Source="{dxc:ThemePartLoader Path=/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/GrayOne/SuperTip.xaml}" />
+    <ResourceDictionary Source="{dxc:ThemePartLoader Path=/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/GrayOne/UserControl.xaml}" />
+    <ResourceDictionary Source="{dxc:ThemePartLoader Path=/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/GrayOne/PopUp.xaml}" />
+    <ResourceDictionary Source="{dxc:ThemePartLoader Path=/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/GrayOne/PseudoWindow.xaml}" />
+    <ResourceDictionary Source="{dxc:ThemePartLoader Path=/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/GrayOne/CustomTemplates.xaml}" />
+    <ResourceDictionary Source="{dxc:ThemePartLoader Path=/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/GrayOne/SearchPanel.xaml}" />
+    <ResourceDictionary Source="{dxc:ThemePartLoader Path=/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/GrayOne/WaitIndicators.xaml}" />
+  </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

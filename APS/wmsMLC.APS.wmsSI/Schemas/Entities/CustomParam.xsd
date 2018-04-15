@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CustomParam" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!--Сущность CustomParam-->
+  <xs:element name="TENTCUSTOMPARAM" type="CustomParamType"/>
+  
+  <!--Описание типа CustomParam-->
+  <xs:complexType name="CustomParamType">
+    <xs:sequence>
+      <!--Код параметра-->
+      <xs:element name="CUSTOMPARAMCODE" nillable="false">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Отношение к сущности-->
+      <xs:element name="CUSTOMPARAM2ENTITY" nillable="false">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Тип данных параметра-->
+      <xs:element name="CUSTOMPARAMDATATYPE" type="xs:integer" nillable="false"/>
+      <!--Количество значений-->
+      <xs:element name="CUSTOMPARAMCOUNT" type="xs:integer" nillable="false"/>
+      <!--Обязательное наличие параметра-->
+      <xs:element name="CUSTOMPARAMMUSTSET" nillable="false">
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:totalDigits value="1"/>
+            <xs:maxInclusive value="1"/>
+            <xs:minInclusive value="0"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>      
+      <!--Значение по-умолчанию-->
+      <xs:element name="CUSTOMPARAMDEFAULT">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1030"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Наименование параметра-->
+      <xs:element name="CUSTOMPARAMNAME" nillable="false">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Описание параметра-->
+      <xs:element name="CUSTOMPARAMDESC">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1024"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Владелец-->
+      <xs:element name="CUSTOMPARAMPARENT">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

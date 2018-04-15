@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Art" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include  id="WmsDateTime" schemaLocation="WmsDateTime.xsd"/>
+  <xs:include  id="Art2Group" schemaLocation="Art2Group.xsd"/>
+  <xs:include  id="SKU" schemaLocation="SKU.xsd"/>
+
+  <!--Сущность Art-->
+  <xs:element name="TENTART" type="ArtType"/>
+  
+  <!--Описание типа артикул-->
+  <xs:complexType name="ArtType">
+    <xs:sequence>
+      <!--Код артикула-->
+      <xs:element name="ARTCODE">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Наименование артикула-->
+      <xs:element name="ARTNAME" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Код фабрики-->
+      <xs:element name="ARTFACTORY">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Мандант-->
+      <xs:element name="MANDANTID" type="xs:integer" nillable="false" minOccurs="1" maxOccurs="1"/>
+      <!--Описание-->
+      <xs:element name="ARTDESC">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1024"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Расширенное описание-->
+      <xs:element name="ARTDESCEXT">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="4000"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--ABCD-критерии-->
+      <xs:element name="ARTABCD" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+            <xs:enumeration value="DATETIME"/>
+            <xs:enumeration value="A"/>
+            <xs:enumeration value="B"/>
+            <xs:enumeration value="C"/>
+            <xs:enumeration value="D"/>
+            <xs:enumeration value="NONE"/>
+            <xs:enumeration value="DAY"/>
+            <xs:enumeration value="MONTH"/>
+            <xs:enumeration value="YEAR"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Цвет артикула-->
+      <xs:element name="ARTCOLOR">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="60"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Тон артикула-->
+      <xs:element name="ARTCOLORTONE">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="60"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Размер артикула (одежды)-->
+      <xs:element name="ARTSIZE">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Сортировка при пикинге-->
+      <xs:element name="ARTPICKORDER" type="xs:integer"/>
+      <!--Мин. температура хранения-->
+      <xs:element name="ARTTEMPMIN" type="xs:double"/>
+      <!--Макс. температура хранения-->
+      <xs:element name="ARTTEMPMAX" type="xs:double"/>
+      <!--Метод даты приемки-->
+      <xs:element name="ARTINPUTDATEMETHOD">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+            <xs:enumeration value="DATETIME"/>
+            <xs:enumeration value="NONE"/>
+            <xs:enumeration value="DAY"/>
+            <xs:enumeration value="MONTH"/>
+            <xs:enumeration value="YEAR"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Хост-идентификатор-->
+      <xs:element name="ARTHOSTREF">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Список SKU-->
+      <xs:element name="SKUL">
+        <xs:complexType>
+          <xs:sequence>            
+            <xs:element maxOccurs="unbounded" name="TENTSKU" type="SKUType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--Группа артикулов-->
+      <xs:element name="GROUP2ARTL">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="TENTART2GROUP" type="Art2GroupType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

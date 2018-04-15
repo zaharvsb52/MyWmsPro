@@ -1,0 +1,15 @@
+﻿<sap:ActivityDesigner x:Class="wmsMLC.Activities.Business.Designer.CommentActivityDesigner"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation" >
+
+    <sap:ActivityDesigner.DataContext>
+        <Binding RelativeSource="{RelativeSource Self}" />
+    </sap:ActivityDesigner.DataContext>
+
+    <Grid >
+        <TextBox Text="{Binding Path=ModelItem.Comment, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                 HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                 TextWrapping="Wrap" MinHeight="20" AcceptsReturn="True"/>
+    </Grid>
+</sap:ActivityDesigner>

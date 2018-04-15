@@ -1,0 +1,41 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxbt="http://schemas.devexpress.com/winfx/2008/xaml/bars/themekeys" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:dxcn="http://schemas.devexpress.com/winfx/2008/xaml/core/internal" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <ControlTemplate x:Key="{dxbt:BarStaticItemThemeKey ResourceKey=BorderTemplate}">
+    <Grid SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarStaticItem.xaml;4;10">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="Auto" />
+      </Grid.ColumnDefinitions>
+      <Border x:Name="border" Width="1" Margin="2,4,2,4" Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarStaticItem.xaml;9;14">
+        <Border.Background>
+          <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#00B9C8DE" Offset="0" />
+            <GradientStop Color="#00B9C8DE" Offset="1" />
+            <GradientStop Color="#FFB9C8DE" Offset="0.25" />
+            <GradientStop Color="#FFB9C8DE" Offset="0.5" />
+            <GradientStop Color="#FFB9C8DE" Offset="0.75" />
+          </LinearGradientBrush>
+        </Border.Background>
+      </Border>
+      <ContentPresenter Content="{Binding Path=Content, RelativeSource={RelativeSource TemplatedParent}}" Grid.ColumnSpan="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarStaticItem.xaml;20;14" />
+      <dxcn:DXTriggerManager.TriggersInfo>
+        <dxcn:DXTriggerInfoCollection>
+          <dxcn:DXTriggerInfo Binding="{Binding Path=Link.Item.ShowBorder}" VisualState="HideBorder" VisualStateNormal="ShowBorder" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarStaticItem.xaml;23;22">
+            <dxcn:DXTriggerInfo.TriggerValue>
+              <sys:Boolean>False</sys:Boolean>
+            </dxcn:DXTriggerInfo.TriggerValue>
+          </dxcn:DXTriggerInfo>
+        </dxcn:DXTriggerInfoCollection>
+      </dxcn:DXTriggerManager.TriggersInfo>
+      <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup x:Name="BorderVisibility">
+          <VisualState x:Name="ShowBorder"></VisualState>
+          <VisualState x:Name="HideBorder">
+            <Storyboard>
+              <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="Opacity" Duration="0" To="0" />
+            </Storyboard>
+          </VisualState>
+        </VisualStateGroup>
+      </VisualStateManager.VisualStateGroups>
+    </Grid>
+  </ControlTemplate>
+</ResourceDictionary>

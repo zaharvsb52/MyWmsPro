@@ -1,0 +1,27 @@
+﻿<sap:ActivityDesigner x:Class="wmsMLC.Activities.Business.Designer.ComboBoxActivityDesigner"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
+    xmlns:general="clr-namespace:wmsMLC.Activities.General;assembly=wmsMLC.Activities.General"                      
+                      Collapsible="True">
+
+    <sap:ActivityDesigner.Resources>
+        <ResourceDictionary>
+            <general:ComboBoxItemConverter x:Key="ComboBoxItemConverter" />
+        </ResourceDictionary>
+    </sap:ActivityDesigner.Resources>
+
+    <sap:ActivityDesigner.DataContext>
+        <Binding RelativeSource="{RelativeSource Self}" />
+    </sap:ActivityDesigner.DataContext>
+
+    <ComboBox Grid.Column="0" x:Name="cbProperties"
+                  HorizontalAlignment="Stretch"
+                  ItemsSource="{Binding Path=ModelItem.Items, Mode=TwoWay}"
+                  DisplayMemberPath="DisplayName"
+                  SelectedValuePath="Name"
+                  SelectedValue="{Binding Path=ModelItem.Value,
+                                          Mode=TwoWay,
+                                          Converter={StaticResource ComboBoxItemConverter},
+                                          UpdateSourceTrigger=PropertyChanged}" />
+</sap:ActivityDesigner>

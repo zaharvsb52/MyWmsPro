@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SKU" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include  id="BarCode" schemaLocation="BarCode.xsd"/>
+  <xs:include  id="ArtPrice" schemaLocation="ArtPrice.xsd"/>
+  <xs:include  id="SKU2TTE" schemaLocation="SKU2TTE.xsd"/>
+
+  <!--Сущность SKU-->
+  <xs:element name="TENTSKU" type="SKUType"/>
+  
+  <!--Описание типа SKU-->
+  <xs:complexType name="SKUType">
+    <xs:sequence>
+      <!--ID записи-->
+      <!--<xs:element name="SKUID" type="xs:integer"/>-->
+      <!--Код артикула-->
+      <xs:element name="ARTCODE_R">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Единица измерения-->
+      <xs:element name="MEASURECODE_R">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Количество SKU-->
+      <xs:element name="SKUCOUNT" type="xs:integer"/>
+      <!--Признак базовой-->
+      <xs:element name="SKUPRIMARY">
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:totalDigits value="1"/>
+            <xs:maxInclusive value="1"/>
+            <xs:minInclusive value="0"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Наименование-->
+      <xs:element name="SKUNAME">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Описание-->
+      <xs:element name="SKUDESC">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1024"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Длина-->
+      <xs:element name="SKULENGTH" type="xs:integer"/>
+      <!--Ширина-->
+      <xs:element name="SKUWIDTH" type="xs:integer"/>
+      <!--Высота-->
+      <xs:element name="SKUHEIGHT" type="xs:integer"/>
+      <!--Вес-->
+      <xs:element name="SKUWEIGHT" type="xs:integer"/>
+      <!--Длина от клиента-->
+      <xs:element name="SKULENGTHCL" type="xs:integer"/>
+      <!--Ширина от клиента-->
+      <xs:element name="SKUWIDTHCL" type="xs:integer"/>
+      <!--Высота от клиента-->
+      <xs:element name="SKUHEIGHTCL" type="xs:integer"/>
+      <!--Вес от клиента-->
+      <xs:element name="SKUWEIGHTCL" type="xs:integer"/>
+      <!--типы TE-->
+      <xs:element name="TETYPE2SKU">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="TENTSKU2TTE" type="SKU2TTEType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--Стоимость SKU-->
+      <xs:element name="ARTPRICEL">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="TENTARTPRICE" type="ArtPriceType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--Штрих-коды-->
+      <xs:element name="BARCODEL">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="TENTBARCODE" type="BarCodeType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--Мандант-->
+      <xs:element name="MANDANTID" type="xs:integer"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,378 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxet="http://schemas.devexpress.com/winfx/2008/xaml/editors/themekeys" xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxepc="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxednc="clr-namespace:DevExpress.Xpf.Editors.DateNavigator.Controls;assembly=DevExpress.Xpf.Core.v12.2" xmlns:dxcn="http://schemas.devexpress.com/winfx/2008/xaml/core/internal" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <!--BEGIN TOSLONLY REPLACE 'RepeatButton'wpfcompatibility:SLRepeatButton'-->
+  <!--BEGIN WPF-->
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/GrayOne/Brushes.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/TransferStyles.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/GrayOne/PopupBaseEdit.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Generic/DateNavigator.xaml" />
+  </ResourceDictionary.MergedDictionaries>
+  <!--END WPF-->
+  <!--BEGIN WPF-->
+  <Style x:Key="{dxet:DateNavigatorThemeKey ResourceKey=TodayButtonStyle}" TargetType="{x:Type Button}">
+    <!--END WPF-->
+    <!--ONLY SL
+    <Style x:Key="{dxet:DateNavigatorThemeKey ResourceKey=TodayButtonStyle}" TargetType="{x:Type Button}" dx:ThemeManager.SameBasedOnType="True" dx:ThemeManager.InheritedStyleSource="{StaticResource CoreDictionary}">
+    ONLY SL-->
+    <Setter Property="Content" Value="{Binding Path=IsTabStop, RelativeSource={RelativeSource Self}, ConverterParameter=Today, Converter={StaticResource EditorStringIdConverter}}" />
+    <Setter Property="Visibility" Value="{Binding Path=ShowTodayButton, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BoolToVisibilityConverter}}" />
+    <Setter Property="dx:FocusHelper2.Focusable" Value="False" />
+    <Setter Property="Margin" Value="0,0,0,12" />
+    <Setter Property="HorizontalAlignment" Value="Center" />
+    <Setter Property="SnapsToDevicePixels" Value="True" />
+  </Style>
+  <ControlTemplate x:Key="{dxet:DateNavigatorThemeKey ResourceKey=CurrentDateButtonTemplate}" TargetType="{x:Type Button}">
+    <Grid Background="Transparent" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;29;10">
+      <ContentPresenter Content="{Binding Path=Content, RelativeSource={RelativeSource TemplatedParent}}" HorizontalAlignment="Center" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;30;14" />
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxet:DateNavigatorThemeKey ResourceKey=CellButtonTemplate}" TargetType="{x:Type Button}">
+    <Grid Background="Transparent" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;35;10">
+      <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup x:Name="CommonStates">
+          <VisualState x:Name="Normal" />
+          <VisualState x:Name="MouseOver">
+            <Storyboard>
+              <ObjectAnimationUsingKeyFrames Storyboard.TargetName="BorderMouseOver" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Visible" />
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="Pressed" />
+          <VisualState x:Name="Disabled" />
+        </VisualStateGroup>
+        <VisualStateGroup x:Name="CellStatesSpecial">
+          <VisualState x:Name="CellStateSpecial">
+            <Storyboard>
+              <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Content" Storyboard.TargetProperty="FontWeight" dxcn:ValueSetter.FontWeight="Bold" />
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="CellStateNotSpecial" />
+        </VisualStateGroup>
+        <VisualStateGroup x:Name="CellStatesHoliday">
+          <VisualState x:Name="CellStateHoliday">
+            <Storyboard>
+              <ColorAnimation Storyboard.TargetName="Content" Storyboard.TargetProperty="ForegroundSolidColor5" Duration="0" To="#FFCC3333" />
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="CellStateNotHoliday" />
+        </VisualStateGroup>
+        <VisualStateGroup x:Name="CellStatesSelected">
+          <VisualState x:Name="CellStateSelected">
+            <Storyboard>
+              <ObjectAnimationUsingKeyFrames Storyboard.TargetName="BorderSelected" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Visible" />
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="CellStateNotSelected" />
+        </VisualStateGroup>
+        <VisualStateGroup x:Name="CellStatesToday">
+          <VisualState x:Name="CellStateToday">
+            <Storyboard>
+              <ObjectAnimationUsingKeyFrames Storyboard.TargetName="BorderToday" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Visible" />
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="CellStateNotToday" />
+        </VisualStateGroup>
+        <VisualStateGroup x:Name="CellStatesFocused">
+          <VisualState x:Name="CellStateNotFocused" />
+          <VisualState x:Name="CellStateFocused">
+            <Storyboard>
+              <ObjectAnimationUsingKeyFrames Storyboard.TargetName="BorderFocused" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Visible" />
+            </Storyboard>
+          </VisualState>
+        </VisualStateGroup>
+        <VisualStateGroup x:Name="CellStatesInactive">
+          <VisualState x:Name="CellStateActive" />
+          <VisualState x:Name="CellStateInactive">
+            <Storyboard>
+              <ColorAnimation Storyboard.TargetName="Content" Storyboard.TargetProperty="ForegroundSolidColor4" Duration="0" To="#FFB3B3B3" />
+            </Storyboard>
+          </VisualState>
+        </VisualStateGroup>
+      </VisualStateManager.VisualStateGroups>
+      <Border x:Name="BorderFocused" BorderBrush="#FF89A2DD" BorderThickness="1" Visibility="Collapsed" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;96;14" />
+      <Border x:Name="BorderMouseOver" BorderBrush="#FFB1C5FA" BorderThickness="1" Visibility="Collapsed" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;97;14">
+        <Border.Background>
+          <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFE5EBFF" Offset="0" />
+            <GradientStop Color="#FFE4EBFD" Offset="1" />
+            <GradientStop Color="#FFDEE6FE" Offset="0.25" />
+          </LinearGradientBrush>
+        </Border.Background>
+      </Border>
+      <Border x:Name="BorderToday" BorderBrush="#FFDBAEF0" BorderThickness="1" Opacity="0.75" Visibility="Collapsed" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;106;14">
+        <Border.Background>
+          <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+            <GradientStop Color="#FFEACAF9" Offset="0" />
+            <GradientStop Color="#FFE7CDF7" Offset="1" />
+            <GradientStop Color="#FFDCAFF0" Offset="0.25" />
+          </LinearGradientBrush>
+        </Border.Background>
+      </Border>
+      <Border x:Name="BorderSelected" BorderBrush="#FFB1C5FA" BorderThickness="1" Visibility="Collapsed" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;115;14">
+        <Border.Background>
+          <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFE7EDFF" Offset="0" />
+            <GradientStop Color="#FFDEE6FE" Offset="1" />
+            <GradientStop Color="#FFD2DEFC" Offset="0.25" />
+          </LinearGradientBrush>
+        </Border.Background>
+      </Border>
+      <dxcore_unique_xmlns:ContentContainer x:Name="Content" Margin="1,0,1,1" HorizontalAlignment="Center" VerticalAlignment="Center" Content="{TemplateBinding Content}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;124;14" />
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxet:DateNavigatorThemeKey ResourceKey=HeaderButtonTemplate}" TargetType="{x:Type Button}">
+    <Grid SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;129;10">
+      <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup x:Name="CommonStates">
+          <VisualState x:Name="Normal" />
+          <VisualState x:Name="MouseOver">
+            <Storyboard>
+              <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Content" Storyboard.TargetProperty="Foreground" Duration="0">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                  <DiscreteObjectKeyFrame.Value>
+                    <SolidColorBrush Color="#FF063A9A" />
+                  </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+              </ObjectAnimationUsingKeyFrames>
+            </Storyboard>
+          </VisualState>
+        </VisualStateGroup>
+      </VisualStateManager.VisualStateGroups>
+      <dxcore_unique_xmlns:ContentContainer x:Name="Content" Foreground="#FF0066CC" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;146;14">
+        <ContentPresenter Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" HorizontalAlignment="Center" VerticalAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;147;18" />
+      </dxcore_unique_xmlns:ContentContainer>
+    </Grid>
+  </ControlTemplate>
+  <Style x:Key="{dxet:DateNavigatorThemeKey ResourceKey=HeaderButtonStyle}" TargetType="{x:Type Button}">
+    <Setter Property="Background" Value="#00000000" />
+    <Setter Property="Template" Value="{DynamicResource {dxet:DateNavigatorThemeKey ResourceKey=HeaderButtonTemplate}}" />
+    <Setter Property="dx:FocusHelper2.Focusable" Value="False" />
+  </Style>
+  <Style x:Key="{dxet:DateNavigatorThemeKey ResourceKey=CurrentDateButtonStyle}" TargetType="{x:Type Button}" BasedOn="{StaticResource {dxet:DateNavigatorThemeKey ResourceKey=HeaderButtonStyle}}">
+    <Setter Property="Template" Value="{DynamicResource {dxet:DateNavigatorThemeKey ResourceKey=CurrentDateButtonTemplate}}" />
+    <Setter Property="Margin" Value="0,2,0,2" />
+  </Style>
+  <Style x:Key="{dxet:DateNavigatorThemeKey ResourceKey=WeekdayNameStyle}" TargetType="{x:Type TextBlock}" />
+  <Style x:Key="{dxet:DateNavigatorThemeKey ResourceKey=WeekNumberStyle}" TargetType="{x:Type TextBlock}">
+    <Setter Property="Foreground" Value="#7F201F35" />
+    <Setter Property="TextElement.FontSize" Value="9" />
+    <Setter Property="Margin" Value="0,0,4,0" />
+    <Setter Property="VerticalAlignment" Value="Center" />
+  </Style>
+  <Style x:Key="{dxet:DateNavigatorThemeKey ResourceKey=WeekdayAbbreviationStyle}" TargetType="{x:Type TextBlock}">
+    <Setter Property="Foreground" Value="#FF201F35" />
+    <Setter Property="Margin" Value="0,0,0,4" />
+    <Setter Property="HorizontalAlignment" Value="Center" />
+  </Style>
+  <ControlTemplate x:Key="{dxet:DateNavigatorThemeKey ResourceKey=WeekNumberDelimeter}">
+    <Border Background="#FF999999" Height="1" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;179;10" />
+  </ControlTemplate>
+  <Style x:Key="{dxet:DateNavigatorThemeKey ResourceKey=CellButtonStyle}" TargetType="{x:Type Button}">
+    <Setter Property="Template" Value="{DynamicResource {dxet:DateNavigatorThemeKey ResourceKey=CellButtonTemplate}}" />
+    <Setter Property="Background" Value="#FFFFFFFF" />
+    <Setter Property="HorizontalAlignment" Value="Stretch" />
+    <Setter Property="VerticalAlignment" Value="Stretch" />
+  </Style>
+  <ControlTemplate x:Key="{dxet:DateNavigatorThemeKey ResourceKey=YearInfoTemplate}">
+    <Grid x:Name="PART_ContentGrid" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;190;10">
+      <Grid.RowDefinitions>
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition />
+        <ColumnDefinition />
+        <ColumnDefinition />
+        <ColumnDefinition />
+      </Grid.ColumnDefinitions>
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxet:DateNavigatorThemeKey ResourceKey=MonthInfoDelimeter}">
+    <Border Background="#FFE3E3E3" Margin="0,0,0,4" Height="1" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;206;10" />
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxet:DateNavigatorThemeKey ResourceKey=MonthInfoTemplate}">
+    <Grid x:Name="PART_ContentGrid" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;210;10">
+      <Grid.RowDefinitions>
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition />
+        <ColumnDefinition />
+        <ColumnDefinition />
+        <ColumnDefinition />
+        <ColumnDefinition />
+        <ColumnDefinition />
+        <ColumnDefinition />
+      </Grid.ColumnDefinitions>
+      <ContentControl Template="{DynamicResource {dxet:DateNavigatorThemeKey ResourceKey=MonthInfoDelimeter}}" Grid.Row="1" Grid.ColumnSpan="7" Grid.Column="2" IsTabStop="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;232;14" />
+      <ContentControl x:Name="WeekNumberDelimeter" Template="{DynamicResource {dxet:DateNavigatorThemeKey ResourceKey=WeekNumberDelimeter}}" Grid.Row="2" Grid.RowSpan="6" Grid.Column="1" Visibility="Collapsed" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;233;14" />
+    </Grid>
+  </ControlTemplate>
+  <!--END TOSLONLY REPLACE 'RepeatButton'wpfcompatibility:SLRepeatButton'-->
+  <!--BEGIN TOSLONLY REPLACE 'RepeatButton'wpfcompatibility:SLRepeatButton'-->
+  <Style x:Key="{dxet:DateNavigatorThemeKey ResourceKey=HeaderStyle}" TargetType="{x:Type Border}">
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="Margin" Value="4,4,4,8" />
+  </Style>
+  <dxcore_unique_xmlns:EditorStringIdConverter x:Key="EditorStringIdConverter" />
+  <SolidColorBrush x:Key="{dxet:DateNavigatorThemeKey ResourceKey=BackgroundBrush}" Color="#FFFFFFFF" />
+  <ControlTemplate x:Key="{dxet:DateNavigatorThemeKey ResourceKey=ClearButtonTemplate}" TargetType="{x:Type Button}">
+    <Grid x:Name="Root" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;248;10">
+      <Grid x:Name="DefaultState" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;249;14">
+        <Border Background="{StaticResource ButtonTemplate.DefaultState.Border2}" BorderBrush="{StaticResource ButtonTemplate.DefaultState.Border1}" BorderThickness="1" CornerRadius="2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;250;18">
+          <Border Background="{StaticResource ButtonTemplate.DefaultState.Border3}" Margin="1" CornerRadius="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;251;22" />
+        </Border>
+      </Grid>
+      <Grid x:Name="HoverState" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;254;14">
+        <Border Background="{StaticResource ButtonTemplate.HoverState.Border2}" BorderBrush="{StaticResource ButtonTemplate.HoverState.Border1}" BorderThickness="1" CornerRadius="2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;255;18">
+          <Border Background="{StaticResource ButtonTemplate.HoverState.Border3}" Margin="1" CornerRadius="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;256;22" />
+        </Border>
+      </Grid>
+      <Grid x:Name="PressedState" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;259;14">
+        <Border Background="{StaticResource ButtonTemplate.PressedState.Border2}" BorderBrush="{StaticResource ButtonTemplate.PressedState.Border1}" BorderThickness="1" CornerRadius="2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;260;18">
+          <Border Background="{StaticResource ButtonTemplate.PressedState.Border3}" Margin="1" CornerRadius="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;261;22" />
+        </Border>
+      </Grid>
+      <Grid x:Name="FocusState" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;264;14">
+        <Rectangle Style="{StaticResource ButtonTemplateFocusTemplate}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;265;18" />
+      </Grid>
+      <Grid Margin="2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;267;14">
+        <ContentPresenter Margin="{TemplateBinding Padding}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;268;18" />
+      </Grid>
+    </Grid>
+    <ControlTemplate.Triggers>
+      <Trigger Property="IsMouseOver" Value="True">
+        <Setter TargetName="DefaultState" Property="Opacity" Value="0" />
+        <Setter TargetName="HoverState" Property="Opacity" Value="1" />
+        <Setter TargetName="PressedState" Property="Opacity" Value="0" />
+      </Trigger>
+      <Trigger Property="IsFocused" Value="True">
+        <Setter TargetName="FocusState" Property="Opacity" Value="1" />
+      </Trigger>
+      <Trigger Property="IsPressed" Value="True">
+        <Setter TargetName="DefaultState" Property="Opacity" Value="0" />
+        <Setter TargetName="HoverState" Property="Opacity" Value="0" />
+        <Setter TargetName="PressedState" Property="Opacity" Value="1" />
+        <Setter TargetName="FocusState" Property="Opacity" Value="0" />
+      </Trigger>
+      <Trigger Property="Button.IsDefaulted" Value="True">
+        <Setter TargetName="FocusState" Property="Opacity" Value="1" />
+      </Trigger>
+      <Trigger Property="IsEnabled" Value="False">
+        <Setter TargetName="Root" Property="Opacity" Value="0.5" />
+      </Trigger>
+      <Trigger Property="ToggleButton.IsChecked" Value="True">
+        <Setter TargetName="DefaultState" Property="Opacity" Value="0" />
+        <Setter TargetName="HoverState" Property="Opacity" Value="0" />
+        <Setter TargetName="PressedState" Property="Opacity" Value="1" />
+        <Setter TargetName="FocusState" Property="Opacity" Value="0" />
+      </Trigger>
+    </ControlTemplate.Triggers>
+  </ControlTemplate>
+  <Style x:Key="{dxet:DateNavigatorThemeKey ResourceKey=ClearButtonStyle}" TargetType="{x:Type Button}">
+    <Setter Property="Background" Value="#00000000" />
+    <Setter Property="Template" Value="{DynamicResource {dxet:DateNavigatorThemeKey ResourceKey=ClearButtonTemplate}}" />
+    <Setter Property="Margin" Value="0,12,0,12" />
+    <Setter Property="dx:FocusHelper2.Focusable" Value="False" />
+  </Style>
+  <ControlTemplate x:Key="{dxet:DateNavigatorThemeKey ResourceKey=LeftArrowTemplate}" TargetType="{x:Type RepeatButton}">
+    <Grid Width="16" Height="16" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;309;10">
+      <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup x:Name="CommonStates">
+          <VisualState x:Name="Normal" />
+          <VisualState x:Name="MouseOver">
+            <Storyboard>
+              <DoubleAnimation Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="Pressed">
+            <Storyboard>
+              <DoubleAnimation Storyboard.TargetName="PressedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="Disabled" />
+        </VisualStateGroup>
+      </VisualStateManager.VisualStateGroups>
+      <Border x:Name="HoverState" Background="{StaticResource ListBoxEditItem.HoverSelection.Border1}" CornerRadius="2" Padding="1" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;326;14">
+        <Border Background="{StaticResource ListBoxEditItem.HoverSelection.Border3}" BorderBrush="{StaticResource ListBoxEditItem.HoverSelection.Border2}" BorderThickness="1" CornerRadius="1" Padding="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;327;18" />
+      </Border>
+      <Border x:Name="PressedState" Background="{StaticResource ListBoxEditItem.Selection.Border1}" CornerRadius="2" Padding="1" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;329;14">
+        <Border Background="{StaticResource ListBoxEditItem.Selection.Border3}" BorderBrush="{StaticResource ListBoxEditItem.Selection.Border2}" BorderThickness="1" CornerRadius="1" Padding="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;330;18" />
+      </Border>
+      <Path Stretch="Fill" Fill="#FF201F35" Data="F1M1334,811L1330,807 1334,803 1334,811z" Width="4" Height="8" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;332;14" />
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxet:DateNavigatorThemeKey ResourceKey=RightArrowTemplate}" TargetType="{x:Type RepeatButton}">
+    <Grid Width="16" Height="16" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;337;10">
+      <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup x:Name="CommonStates">
+          <VisualState x:Name="Normal" />
+          <VisualState x:Name="MouseOver">
+            <Storyboard>
+              <DoubleAnimation Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="Pressed">
+            <Storyboard>
+              <DoubleAnimation Storyboard.TargetName="PressedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="Disabled" />
+        </VisualStateGroup>
+      </VisualStateManager.VisualStateGroups>
+      <Border x:Name="HoverState" Background="{StaticResource ListBoxEditItem.HoverSelection.Border1}" CornerRadius="2" Padding="1" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;354;14">
+        <Border Background="{StaticResource ListBoxEditItem.HoverSelection.Border3}" BorderBrush="{StaticResource ListBoxEditItem.HoverSelection.Border2}" BorderThickness="1" CornerRadius="1" Padding="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;355;18" />
+      </Border>
+      <Border x:Name="PressedState" Background="{StaticResource ListBoxEditItem.Selection.Border1}" CornerRadius="2" Padding="1" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;357;14">
+        <Border Background="{StaticResource ListBoxEditItem.Selection.Border3}" BorderBrush="{StaticResource ListBoxEditItem.Selection.Border2}" BorderThickness="1" CornerRadius="1" Padding="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;358;18" />
+      </Border>
+      <Path Stretch="Fill" Fill="#FF201F35" Data="F1M1340,804L1344,808 1340,812 1340,804z" Width="4" Height="8" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;360;14" />
+    </Grid>
+  </ControlTemplate>
+  <Style x:Key="{dxet:DateNavigatorThemeKey ResourceKey=LeftArrowStyle}" TargetType="{x:Type RepeatButton}">
+    <Setter Property="Template" Value="{DynamicResource {dxet:DateNavigatorThemeKey ResourceKey=LeftArrowTemplate}}" />
+    <Setter Property="dx:FocusHelper2.Focusable" Value="False" />
+    <Setter Property="Margin" Value="2,0,0,0" />
+    <Setter Property="ClickMode" Value="Press" />
+    <Setter Property="Delay" Value="400" />
+    <Setter Property="Interval" Value="400" />
+  </Style>
+  <Style x:Key="{dxet:DateNavigatorThemeKey ResourceKey=RightArrowStyle}" TargetType="{x:Type RepeatButton}">
+    <Setter Property="Template" Value="{DynamicResource {dxet:DateNavigatorThemeKey ResourceKey=RightArrowTemplate}}" />
+    <Setter Property="dx:FocusHelper2.Focusable" Value="False" />
+    <Setter Property="Margin" Value="0,0,2,0" />
+    <Setter Property="ClickMode" Value="Press" />
+    <Setter Property="Delay" Value="400" />
+    <Setter Property="Interval" Value="400" />
+  </Style>
+  <Style TargetType="TextBlock" x:Key="{dxet:DateNavigatorThemeKey IsVisibleInBlend=True, ResourceKey=CalendarCurrentDateStyle}">
+    <Setter Property="HorizontalAlignment" Value="Center" />
+  </Style>
+  <ControlTemplate x:Key="{dxet:DateNavigatorThemeKey ResourceKey=CalendarTemplate}" TargetType="{x:Type dxednc:DateNavigatorCalendar}">
+    <Grid Margin="8" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;387;10">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+      <StackPanel dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;392;14">
+        <TextBlock Text="{Binding Path=CurrentDateText, RelativeSource={RelativeSource TemplatedParent}}" Style="{DynamicResource {dxet:DateNavigatorThemeKey IsVisibleInBlend=True, ResourceKey=CalendarCurrentDateStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;393;18" />
+      </StackPanel>
+      <Border Grid.Row="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;395;14">
+        <Grid Margin="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;396;18">
+          <Grid x:Name="PART_ContentPaddingPanel" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\DateNavigator.xaml;397;22" />
+          <dxednc:DateNavigatorCalendarContent x:Name="PART_Content" dxcore_unique_xmlns:FocusHelper2.Focusable="False" />
+        </Grid>
+      </Border>
+    </Grid>
+  </ControlTemplate>
+  <!--END TOSLONLY REPLACE 'RepeatButton'wpfcompatibility:SLRepeatButton'-->
+</ResourceDictionary>

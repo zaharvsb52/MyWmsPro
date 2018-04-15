@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="wmsMLC.DCL.Main.Views.Controls.CustomOptionsControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+    xmlns:lex="http://wpflocalizeextension.codeplex.com"
+    mc:Ignorable="d" 
+    d:DesignHeight="300" d:DesignWidth="300">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <dx:BarsStringIdConverter x:Key="BarsStringIdConverter"/>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    
+    <Grid>
+        <StackPanel DataContext="{Binding Path=BarManager}">
+            <dx:GroupFrame x:Name="frame1" Margin="0,0,0,4" Header="{Binding ConverterParameter=OptionsControl_IconsGroupCaption, Converter={StaticResource BarsStringIdConverter},RelativeSource={RelativeSource Self}}">
+                <StackPanel>
+                    <dxe:CheckEdit Margin="0" x:Name="ceLargeIconsInToolbars" ClickMode="Press" IsThreeState="False" Content="{Binding ConverterParameter=OptionsControl_LargeIconsInToolbarsCaption,Converter={StaticResource BarsStringIdConverter},RelativeSource={RelativeSource Self}}"/>
+                    <dxe:CheckEdit Margin="0,2" x:Name="ceLargeIconsInMenu" IsThreeState="False" ClickMode="Press" Content="{Binding ConverterParameter=OptionsControl_LargeIconsInMenuCaption,Converter={StaticResource BarsStringIdConverter},RelativeSource={RelativeSource Self}}" IsEnabled="False" />
+
+                    <TextBlock Margin="0,2" Text="{lex:LocExtension Key=wmsMLC.DCL.Resources:StringResources:BarItemDisplayMode}" VerticalAlignment="Center"/>
+                    <dxe:ComboBoxEdit x:Name="displayMode" IsTextEditable="False" SelectedIndexChanged="displayMode_SelectedIndexChanged">
+                        <dxb:BarItemDisplayMode>Default</dxb:BarItemDisplayMode>
+                        <dxb:BarItemDisplayMode>Content</dxb:BarItemDisplayMode>
+                        <dxb:BarItemDisplayMode>ContentAndGlyph</dxb:BarItemDisplayMode>
+                    </dxe:ComboBoxEdit>
+
+                    <TextBlock Margin="0,2" Text="{lex:LocExtension Key=wmsMLC.DCL.Resources:StringResources:CaptionAndGlyphAlignment}" VerticalAlignment="Center"/>
+                    <dxe:ComboBoxEdit x:Name="captionGlyphAlignment" IsTextEditable="False" SelectedIndexChanged="captionGlyphAlignment_SelectedIndexChanged">
+                        <Dock>Left</Dock>
+                        <Dock>Top</Dock>
+                        <Dock>Right</Dock>
+                        <Dock>Bottom</Dock>
+                    </dxe:ComboBoxEdit>
+
+                </StackPanel>
+            </dx:GroupFrame>
+            
+            <dx:GroupFrame Margin="0" x:Name="frame2" Header="{Binding ConverterParameter=OptionsControl_ScreenTipsGroupCaption,Converter={StaticResource BarsStringIdConverter},RelativeSource={RelativeSource Self}}">
+                <StackPanel>
+                    <dxe:CheckEdit Margin="0,2" x:Name="ceShowScreenTipsOnToolbars" ClickMode="Press" Content="{Binding ConverterParameter=OptionsControl_ShowScreenTipsOnToolbarsCaption,Converter={StaticResource BarsStringIdConverter},RelativeSource={RelativeSource Self}}"/>
+                    <dxe:CheckEdit Margin="0,2" x:Name="ceShowShortcutKeysOnScreenTips" ClickMode="Press" Content="{Binding ConverterParameter=OptionsControl_ShowShortcutKeysOnScreenTipsCaption,Converter={StaticResource BarsStringIdConverter},RelativeSource={RelativeSource Self}}"/>
+                </StackPanel>
+            </dx:GroupFrame>
+        </StackPanel>
+    </Grid>
+</UserControl>

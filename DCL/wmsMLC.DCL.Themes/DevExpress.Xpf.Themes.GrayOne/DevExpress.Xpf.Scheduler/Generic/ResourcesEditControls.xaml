@@ -1,0 +1,23 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxschdui="http://schemas.devexpress.com/winfx/2008/xaml/scheduler">
+
+    <!--BEGIN WPF-->
+    <!--<ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="{dxdst:ThemePartLoader Path=/DevExpress.Xpf.Core/Editors/Themes/Generic/Generic.xaml, PathCore=/Themes/Empty.xaml}" />
+    </ResourceDictionary.MergedDictionaries>-->
+    <!--END WPF-->
+    <!--ONLY SL<ResourceDictionary x:Key="EditorsDictionary" Source="/DevExpress.Xpf.Core.v12.2;component/Themes/generic.xaml" dx:Wpf2SLOptions.AllowProcessNode ="False" />ONLY SL-->
+
+    <!--BEGIN WPF-->
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Scheduler.UI.ResourcesComboBoxControl}" TargetType="{x:Type dxschdui:ResourcesComboBoxControl}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.ComboBoxEdit}}" />
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Scheduler.UI.ResourcesPopupCheckedListBoxControl}" TargetType="{x:Type dxschdui:ResourcesPopupCheckedListBoxControl}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.ComboBoxEdit}}" />
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Scheduler.UI.ResourcesCheckedListBoxControl}" TargetType="{x:Type dxschdui:ResourcesCheckedListBoxControl}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.ListBoxEdit}}" />
+    <!--END WPF-->
+    <!--ONLY SL
+    <Style TargetType="{x:Type dxschdui:ResourcesCheckedListBoxControl}" dx:ThemeManager.InheritedStyleSource="{StaticResource EditorsDictionary}" />
+    <Style TargetType="{x:Type dxschdui:ResourcesComboBoxControl}" dx:ThemeManager.InheritedStyleSource="{StaticResource EditorsDictionary}"/>
+    <Style TargetType="{x:Type dxschdui:ResourcesPopupCheckedListBoxControl}" dx:ThemeManager.InheritedStyleSource="{StaticResource EditorsDictionary}"/>
+    ONLY SL-->
+
+</ResourceDictionary>

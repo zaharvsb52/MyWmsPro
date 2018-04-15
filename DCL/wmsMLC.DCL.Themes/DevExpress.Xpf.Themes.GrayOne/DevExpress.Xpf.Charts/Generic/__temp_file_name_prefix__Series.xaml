@@ -1,0 +1,360 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/charts/themekeys" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:local="http://schemas.devexpress.com/winfx/2008/xaml/charts" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <!--BEGIN WPF-->
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="{dx:ChartsResource themes/Generic/ToolTip.xaml}" />
+    <ResourceDictionary Source="{dx:ChartsResource themes/Generic/LegendMarker.xaml}" />
+  </ResourceDictionary.MergedDictionaries>
+  <!--END WPF-->
+  <Style x:Key="AdditionalLineSeriesGeometryBaseStyle" TargetType="Control">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="local:AdditionalLineSeriesGeometry">
+          <!--BEGIN WPF-->
+          <Path x:Name="PART_LinePath" StrokeThickness="{Binding Path=ActualLineStyle.Thickness}" StrokeDashArray="{Binding Path=ActualLineStyle.DashStyle.Dashes}" StrokeDashOffset="{Binding Path=ActualLineStyle.DashStyle.Offset}" StrokeDashCap="{Binding Path=ActualLineStyle.DashCap}" StrokeLineJoin="{Binding Path=ActualLineStyle.LineJoin}" StrokeMiterLimit="{Binding Path=ActualLineStyle.MiterLimit}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Series.xaml;15;22"></Path>
+          <!--END WPF-->
+          <!--ONLY SL <Path x:Name="PART_LinePath"
+                            StrokeThickness="{Binding Path=ActualLineStyle.Thickness}"
+                            StrokeDashArray="{Binding Path=ActualLineStyle.DashArray, Converter={StaticResource strokeDashArrayConverter}}"
+                            StrokeDashOffset="{Binding Path=ActualLineStyle.DashOffset}"
+                            StrokeDashCap="{Binding Path=ActualLineStyle.DashCap}"
+                            StrokeLineJoin="{Binding Path=ActualLineStyle.LineJoin}"
+                            StrokeMiterLimit="{Binding Path=ActualLineStyle.MiterLimit}"
+                            >                       
+                    </Path> ONLY SL-->
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.AdditionalLineSeriesGeometry}" TargetType="local:AdditionalLineSeriesGeometry" BasedOn="{StaticResource AdditionalLineSeriesGeometryBaseStyle}" />
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.AdditionalStepLineSeriesGeometry}" TargetType="local:AdditionalStepLineSeriesGeometry" BasedOn="{StaticResource AdditionalLineSeriesGeometryBaseStyle}" />
+  <local:TransparencyToOpacityConverter x:Key="TransparencyToOpacityConverter" />
+  <Style x:Key="AdditionalAreaSeriesGeometryBaseStyle" TargetType="Control">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="local:AdditionalAreaSeriesGeometry">
+          <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Series.xaml;38;22">
+            <Path x:Name="PART_AreaPath" UseLayoutRounding="True" Opacity="{Binding Path=Transparency, Converter={StaticResource TransparencyToOpacityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Series.xaml;39;26" />
+            <!--BEGIN WPF-->
+            <Path x:Name="PART_LinePath" StrokeThickness="{Binding Path=ActualBorder.LineStyle.Thickness}" StrokeDashArray="{Binding Path=ActualBorder.LineStyle.DashStyle.Dashes}" StrokeDashOffset="{Binding Path=ActualBorder.LineStyle.DashStyle.Offset}" StrokeDashCap="{Binding Path=ActualBorder.LineStyle.DashCap}" StrokeLineJoin="{Binding Path=ActualBorder.LineStyle.LineJoin}" StrokeMiterLimit="{Binding Path=ActualBorder.LineStyle.MiterLimit}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Series.xaml;41;26" />
+            <!--END WPF-->
+            <!--ONLY SL <Path x:Name="PART_LinePath"
+                            StrokeThickness="{Binding Path=ActualBorder.LineStyle.Thickness}"
+                            StrokeDashArray="{Binding Path=ActualBorder.LineStyle.DashArray, Converter={StaticResource strokeDashArrayConverter}}"
+                            StrokeDashOffset="{Binding Path=ActualBorder.LineStyle.DashOffset}"
+                            StrokeDashCap="{Binding Path=ActualBorder.LineStyle.DashCap}"
+                            StrokeLineJoin="{Binding Path=ActualBorder.LineStyle.LineJoin}"
+                            StrokeMiterLimit="{Binding Path=ActualBorder.LineStyle.MiterLimit}"/>
+                        ONLY SL-->
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.AdditionalAreaSeriesGeometry}" TargetType="local:AdditionalAreaSeriesGeometry" BasedOn="{StaticResource AdditionalAreaSeriesGeometryBaseStyle}" />
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.AdditionalStepAreaSeriesGeometry}" TargetType="local:AdditionalStepAreaSeriesGeometry" BasedOn="{StaticResource AdditionalAreaSeriesGeometryBaseStyle}" />
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.AdditionalStackedAreaSeriesGeometry}" TargetType="local:AdditionalStackedAreaSeriesGeometry" BasedOn="{StaticResource AdditionalAreaSeriesGeometryBaseStyle}" />
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.AdditionalRangeAreaSeriesGeometry}" TargetType="local:AdditionalRangeAreaSeriesGeometry">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="local:AdditionalRangeAreaSeriesGeometry">
+          <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Series.xaml;63;22">
+            <Path x:Name="PART_AreaPath" UseLayoutRounding="True" Opacity="{Binding Path=Transparency, Converter={StaticResource TransparencyToOpacityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Series.xaml;64;26" />
+            <!--BEGIN WPF-->
+            <Path x:Name="PART_LinePath" StrokeThickness="{Binding Path=ActualBorder1.LineStyle.Thickness}" StrokeDashArray="{Binding Path=ActualBorder1.LineStyle.DashStyle.Dashes}" StrokeDashOffset="{Binding Path=ActualBorder1.LineStyle.DashStyle.Offset}" StrokeDashCap="{Binding Path=ActualBorder1.LineStyle.DashCap}" StrokeLineJoin="{Binding Path=ActualBorder1.LineStyle.LineJoin}" StrokeMiterLimit="{Binding Path=ActualBorder1.LineStyle.MiterLimit}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Series.xaml;66;26" />
+            <Path x:Name="PART_Line2Path" StrokeThickness="{Binding Path=ActualBorder2.LineStyle.Thickness}" StrokeDashArray="{Binding Path=ActualBorder2.LineStyle.DashStyle.Dashes}" StrokeDashOffset="{Binding Path=ActualBorder2.LineStyle.DashStyle.Offset}" StrokeDashCap="{Binding Path=ActualBorder2.LineStyle.DashCap}" StrokeLineJoin="{Binding Path=ActualBorder2.LineStyle.LineJoin}" StrokeMiterLimit="{Binding Path=ActualBorder2.LineStyle.MiterLimit}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Series.xaml;67;26" />
+            <!--END WPF-->
+            <!--ONLY SL <Path x:Name="PART_LinePath"
+                            StrokeThickness="{Binding Path=ActualBorder1.LineStyle.Thickness}"
+                            StrokeDashArray="{Binding Path=ActualBorder1.LineStyle.DashArray, Converter={StaticResource strokeDashArrayConverter}}"
+                            StrokeDashOffset="{Binding Path=ActualBorder1.LineStyle.DashOffset}"
+                            StrokeDashCap="{Binding Path=ActualBorder1.LineStyle.DashCap}"
+                            StrokeLineJoin="{Binding Path=ActualBorder1.LineStyle.LineJoin}"
+                            StrokeMiterLimit="{Binding Path=ActualBorder1.LineStyle.MiterLimit}"/>
+                        <Path x:Name="PART_Line2Path"
+                            StrokeThickness="{Binding Path=ActualBorder2.LineStyle.Thickness}"
+                            StrokeDashArray="{Binding Path=ActualBorder2.LineStyle.DashArray, Converter={StaticResource strokeDashArrayConverter}}"
+                            StrokeDashOffset="{Binding Path=ActualBorder2.LineStyle.DashOffset}"
+                            StrokeDashCap="{Binding Path=ActualBorder2.LineStyle.DashCap}"
+                            StrokeLineJoin="{Binding Path=ActualBorder2.LineStyle.LineJoin}"
+                            StrokeMiterLimit="{Binding Path=ActualBorder2.LineStyle.MiterLimit}"/>
+                        ONLY SL-->
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.SeriesPresentation}" TargetType="{x:Type local:SeriesPresentation}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type local:SeriesPresentation}">
+          <local:PointsContainer x:Name="PART_PointsContainer" ItemsSource="{Binding Path=SeriesItem.VisiblePointItems, RelativeSource={RelativeSource TemplatedParent}}" DataContext="{Binding Path=Series, RelativeSource={RelativeSource TemplatedParent}}">
+            <local:ChartItemsControl.ItemsPanel>
+              <ItemsPanelTemplate>
+                <local:SimplePanel x:Name="PART_PointsPanel" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Series.xaml;97;34" />
+              </ItemsPanelTemplate>
+            </local:ChartItemsControl.ItemsPanel>
+          </local:PointsContainer>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <local:XYSeries2DToAdditionalGeometryConverter x:Key="seriesToAdditionalGeometryConverter" />
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.LineAreaSeriesPresentation}" TargetType="{x:Type local:LineAreaSeriesPresentation}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type local:LineAreaSeriesPresentation}">
+          <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Series.xaml;112;22">
+            <local:ChartContentPresenter x:Name="PART_AdditionalGeometryHolder" Content="{Binding Path=Series, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource seriesToAdditionalGeometryConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Series.xaml;113;26" />
+            <local:PointsContainer x:Name="PART_PointsContainer" ItemsSource="{Binding Path=SeriesItem.VisiblePointItems, RelativeSource={RelativeSource TemplatedParent}}" DataContext="{Binding Path=Series, RelativeSource={RelativeSource TemplatedParent}}">
+              <local:ChartItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                  <local:SimplePanel x:Name="PART_PointsPanel" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Series.xaml;117;38" />
+                </ItemsPanelTemplate>
+              </local:ChartItemsControl.ItemsPanel>
+            </local:PointsContainer>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.AreaStackedSeriesPresentation}" TargetType="{x:Type local:AreaStackedSeriesPresentation}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type local:AreaStackedSeriesPresentation}">
+          <local:ChartContentPresenter x:Name="PART_AdditionalGeometryHolder" Content="{Binding Path=Series, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource seriesToAdditionalGeometryConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Series.xaml;131;22" />
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="series2DStyleBase" TargetType="{x:Type local:Series}">
+    <Setter Property="ToolTipSeriesPattern" Value="{}{S}" />
+    <Setter Property="ToolTipSeriesTemplate" Value="{DynamicResource {dxt:ChartControlThemeKey ResourceKey=ToolTipTemplate}}" />
+    <Setter Property="ToolTipPointTemplate" Value="{DynamicResource {dxt:ChartControlThemeKey ResourceKey=ToolTipTemplate}}" />
+  </Style>
+  <Style x:Key="xySeries2DStyleBase" TargetType="{x:Type local:XYSeries2D}" BasedOn="{StaticResource series2DStyleBase}">
+    <Setter Property="CrosshairLabelTemplate" Value="{DynamicResource {dxt:ChartControlThemeKey ResourceKey=CrosshairSeriesLabelContentTemplate}}" />
+  </Style>
+  <Style x:Key="BarSeries2DStyle" TargetType="local:BarSeries2D" BasedOn="{StaticResource xySeries2DStyleBase}">
+    <Setter Property="Model">
+      <Setter.Value>
+        <local:OutsetBar2DModel />
+      </Setter.Value>
+    </Setter>
+    <Setter Property="LegendMarkerTemplate" Value="{StaticResource ResourceKey=BarSeriesLegendMarkerTemplate}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.BarSideBySideSeries2D}" TargetType="{x:Type local:BarSideBySideSeries2D}" BasedOn="{StaticResource BarSeries2DStyle}" />
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.BarStackedSeries2D}" TargetType="{x:Type local:BarStackedSeries2D}" BasedOn="{StaticResource BarSeries2DStyle}" />
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.BarFullStackedSeries2D}" TargetType="{x:Type local:BarFullStackedSeries2D}" BasedOn="{StaticResource BarSeries2DStyle}" />
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.BarSideBySideStackedSeries2D}" TargetType="{x:Type local:BarSideBySideStackedSeries2D}" BasedOn="{StaticResource BarSeries2DStyle}" />
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.BarSideBySideFullStackedSeries2D}" TargetType="{x:Type local:BarSideBySideFullStackedSeries2D}" BasedOn="{StaticResource BarSeries2DStyle}" />
+  <Style x:Key="RangeBar2DStyle" TargetType="local:RangeBarSeries2D" BasedOn="{StaticResource xySeries2DStyleBase}">
+    <Setter Property="Model">
+      <Setter.Value>
+        <local:OutsetRangeBar2DModel />
+      </Setter.Value>
+    </Setter>
+    <Setter Property="LegendMarkerTemplate" Value="{StaticResource ResourceKey=BarSeriesLegendMarkerTemplate}" />
+    <Setter Property="MinMarkerModel">
+      <Setter.Value>
+        <local:CircleMarker2DModel />
+      </Setter.Value>
+    </Setter>
+    <Setter Property="MaxMarkerModel">
+      <Setter.Value>
+        <local:CircleMarker2DModel />
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.RangeBarOverlappedSeries2D}" TargetType="{x:Type local:RangeBarOverlappedSeries2D}" BasedOn="{StaticResource RangeBar2DStyle}" />
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.RangeBarSideBySideSeries2D}" TargetType="{x:Type local:RangeBarSideBySideSeries2D}" BasedOn="{StaticResource RangeBar2DStyle}" />
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.PointSeries2D}" TargetType="{x:Type local:PointSeries2D}" BasedOn="{StaticResource xySeries2DStyleBase}">
+    <Setter Property="MarkerModel">
+      <Setter.Value>
+        <local:CircleMarker2DModel />
+      </Setter.Value>
+    </Setter>
+    <Setter Property="LegendMarkerTemplate" Value="{StaticResource ResourceKey=MarkerSeriesLegendMarkerTemplate}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.BubbleSeries2D}" TargetType="{x:Type local:BubbleSeries2D}" BasedOn="{StaticResource xySeries2DStyleBase}">
+    <Setter Property="MarkerModel">
+      <Setter.Value>
+        <local:CircleMarker2DModel />
+      </Setter.Value>
+    </Setter>
+    <Setter Property="LegendMarkerTemplate" Value="{StaticResource ResourceKey=MarkerSeriesLegendMarkerTemplate}" />
+  </Style>
+  <Style x:Key="LineSeries2DBaseStyle" TargetType="local:LineSeries2D" BasedOn="{StaticResource xySeries2DStyleBase}">
+    <Setter Property="MarkerModel">
+      <Setter.Value>
+        <local:CircleMarker2DModel />
+      </Setter.Value>
+    </Setter>
+    <Setter Property="LegendMarkerTemplate" Value="{StaticResource ResourceKey=LineSeriesLegendMarkerTemplate}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.LineSeries2D}" TargetType="{x:Type local:LineSeries2D}" BasedOn="{StaticResource LineSeries2DBaseStyle}" />
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.LineStackedSeries2D}" TargetType="{x:Type local:LineStackedSeries2D}" BasedOn="{StaticResource LineSeries2DBaseStyle}" />
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.LineFullStackedSeries2D}" TargetType="{x:Type local:LineFullStackedSeries2D}" BasedOn="{StaticResource LineSeries2DBaseStyle}" />
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.LineScatterSeries2D}" TargetType="{x:Type local:LineScatterSeries2D}" BasedOn="{StaticResource LineSeries2DBaseStyle}" />
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.LineStepSeries2D}" TargetType="{x:Type local:LineStepSeries2D}" BasedOn="{StaticResource xySeries2DStyleBase}">
+    <Setter Property="MarkerModel">
+      <Setter.Value>
+        <local:CircleMarker2DModel />
+      </Setter.Value>
+    </Setter>
+    <Setter Property="LegendMarkerTemplate">
+      <Setter.Value>
+        <DataTemplate>
+          <local:LineStepLegendItemPresentation InvertedStep="{Binding Path=RepresentedElement.InvertedStep}" />
+        </DataTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.AreaSeries2D}" TargetType="{x:Type local:AreaSeries2D}" BasedOn="{StaticResource xySeries2DStyleBase}">
+    <Setter Property="MarkerModel">
+      <Setter.Value>
+        <local:CircleMarker2DModel />
+      </Setter.Value>
+    </Setter>
+    <Setter Property="LegendMarkerTemplate" Value="{StaticResource ResourceKey=AreaSeriesLegendMarkerTemplate}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.AreaStepSeries2D}" TargetType="{x:Type local:AreaStepSeries2D}" BasedOn="{StaticResource xySeries2DStyleBase}">
+    <Setter Property="MarkerModel">
+      <Setter.Value>
+        <local:CircleMarker2DModel />
+      </Setter.Value>
+    </Setter>
+    <Setter Property="LegendMarkerTemplate">
+      <Setter.Value>
+        <DataTemplate>
+          <local:AreaStepLegendItemPresentation InvertedStep="{Binding Path=RepresentedElement.InvertedStep}" />
+        </DataTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.RangeAreaSeries2D}" TargetType="{x:Type local:RangeAreaSeries2D}" BasedOn="{StaticResource xySeries2DStyleBase}">
+    <Setter Property="Marker1Model">
+      <Setter.Value>
+        <local:CircleMarker2DModel />
+      </Setter.Value>
+    </Setter>
+    <Setter Property="Marker2Model">
+      <Setter.Value>
+        <local:CircleMarker2DModel />
+      </Setter.Value>
+    </Setter>
+    <Setter Property="LegendMarkerTemplate" Value="{StaticResource ResourceKey=RangeAreaSeriesLegendMarkerTemplate}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.AreaStackedSeries2D}" TargetType="{x:Type local:AreaStackedSeries2D}" BasedOn="{StaticResource xySeries2DStyleBase}">
+    <Setter Property="LegendMarkerTemplate" Value="{StaticResource ResourceKey=AreaSeriesLegendMarkerTemplate}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.AreaFullStackedSeries2D}" TargetType="{x:Type local:AreaFullStackedSeries2D}" BasedOn="{StaticResource xySeries2DStyleBase}">
+    <Setter Property="LegendMarkerTemplate" Value="{StaticResource ResourceKey=AreaSeriesLegendMarkerTemplate}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.CandleStickSeries2D}" TargetType="{x:Type local:CandleStickSeries2D}" BasedOn="{StaticResource xySeries2DStyleBase}">
+    <Setter Property="Model">
+      <Setter.Value>
+        <local:SimpleCandleStick2DModel />
+      </Setter.Value>
+    </Setter>
+    <Setter Property="LegendMarkerTemplate" Value="{StaticResource CandleStickSeriesLegendMarkerTemplate}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.StockSeries2D}" TargetType="{x:Type local:StockSeries2D}" BasedOn="{StaticResource xySeries2DStyleBase}">
+    <Setter Property="Model">
+      <Setter.Value>
+        <local:ThinStock2DModel />
+      </Setter.Value>
+    </Setter>
+    <Setter Property="LegendMarkerTemplate">
+      <Setter.Value>
+        <DataTemplate>
+          <local:StockLegendItemPresentation ShowOpenClose="{Binding Path=RepresentedElement.ShowOpenClose}" />
+        </DataTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="circularSeries2DStyleBase" TargetType="{x:Type local:CircularSeries2D}" BasedOn="{StaticResource series2DStyleBase}">
+    <Setter Property="MarkerModel">
+      <Setter.Value>
+        <local:CircleMarker2DModel />
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.RadarPointSeries2D}" TargetType="{x:Type local:RadarPointSeries2D}" BasedOn="{StaticResource circularSeries2DStyleBase}">
+    <Setter Property="LegendMarkerTemplate" Value="{StaticResource ResourceKey=MarkerSeriesLegendMarkerTemplate}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.PolarPointSeries2D}" TargetType="{x:Type local:PolarPointSeries2D}" BasedOn="{StaticResource circularSeries2DStyleBase}">
+    <Setter Property="LegendMarkerTemplate" Value="{StaticResource ResourceKey=MarkerSeriesLegendMarkerTemplate}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.RadarLineSeries2D}" TargetType="{x:Type local:RadarLineSeries2D}" BasedOn="{StaticResource circularSeries2DStyleBase}">
+    <Setter Property="LegendMarkerTemplate" Value="{StaticResource ResourceKey=LineSeriesLegendMarkerTemplate}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.PolarLineSeries2D}" TargetType="{x:Type local:PolarLineSeries2D}" BasedOn="{StaticResource circularSeries2DStyleBase}">
+    <Setter Property="LegendMarkerTemplate" Value="{StaticResource ResourceKey=LineSeriesLegendMarkerTemplate}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.RadarAreaSeries2D}" TargetType="{x:Type local:RadarAreaSeries2D}" BasedOn="{StaticResource circularSeries2DStyleBase}">
+    <Setter Property="LegendMarkerTemplate" Value="{StaticResource ResourceKey=AreaSeriesLegendMarkerTemplate}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.PolarAreaSeries2D}" TargetType="{x:Type local:PolarAreaSeries2D}" BasedOn="{StaticResource circularSeries2DStyleBase}">
+    <Setter Property="LegendMarkerTemplate" Value="{StaticResource ResourceKey=AreaSeriesLegendMarkerTemplate}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.PieSeries2D}" TargetType="{x:Type local:PieSeries2D}" BasedOn="{StaticResource series2DStyleBase}">
+    <Setter Property="Model">
+      <Setter.Value>
+        <local:SimplePie2DModel />
+      </Setter.Value>
+    </Setter>
+    <Setter Property="LegendMarkerTemplate" Value="{StaticResource PieSeriesLegendMarkerTemplate}" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type local:PieSeries2D}">
+          <local:ChartContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Series.xaml;327;22">
+            <local:ChartContentPresenter.Content>
+              <local:TitlesLayoutControl Titles="{TemplateBinding Titles}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Series.xaml;329;30">
+                <local:TitlesLayoutControl.MasterElement>
+                  <local:PieSeries2DItemsControl Series="{Binding RelativeSource={RelativeSource TemplatedParent}}" SeriesLabel="{Binding Path=ActualLabel, RelativeSource={RelativeSource TemplatedParent}}" SeriesLabelItems="{Binding Path=ActualLabel.Items, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Series.xaml;331;38">
+                    <local:PieSeries2DItemsControl.PointsContainer>
+                      <local:PointsContainer x:Name="PART_PointsContainer" ItemsSource="{Binding Path=Item.VisiblePointItems, RelativeSource={RelativeSource TemplatedParent}}" DataContext="{Binding RelativeSource={RelativeSource TemplatedParent}}">
+                        <local:ChartItemsControl.ItemsPanel>
+                          <ItemsPanelTemplate>
+                            <local:PieSeries2DPointsPanel x:Name="PART_PointsPanel" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Series.xaml;336;58" />
+                          </ItemsPanelTemplate>
+                        </local:ChartItemsControl.ItemsPanel>
+                      </local:PointsContainer>
+                    </local:PieSeries2DItemsControl.PointsContainer>
+                    <local:PieSeries2DItemsControl.ItemsPanel>
+                      <ItemsPanelTemplate>
+                        <local:PieSeries2DPanel dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Series.xaml;343;50" />
+                      </ItemsPanelTemplate>
+                    </local:PieSeries2DItemsControl.ItemsPanel>
+                  </local:PieSeries2DItemsControl>
+                </local:TitlesLayoutControl.MasterElement>
+              </local:TitlesLayoutControl>
+            </local:ChartContentPresenter.Content>
+          </local:ChartContentPresenter>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <!--BEGIN WPF-->
+  <Style x:Key="BarSeries3DStyle" TargetType="{x:Type local:BarSeries3D}" BasedOn="{StaticResource series2DStyleBase}">
+    <Setter Property="LegendMarkerTemplate" Value="{StaticResource ResourceKey=BarSeriesLegendMarkerTemplate}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.BarSeries3D}" TargetType="{x:Type local:BarSeries3D}" BasedOn="{StaticResource ResourceKey=BarSeries3DStyle}" />
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.BarSideBySideSeries3D}" TargetType="{x:Type local:BarSideBySideSeries3D}" BasedOn="{StaticResource ResourceKey=BarSeries3DStyle}" />
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.PointSeries3D}" TargetType="{x:Type local:PointSeries3D}" BasedOn="{StaticResource series2DStyleBase}">
+    <Setter Property="LegendMarkerTemplate" Value="{StaticResource ResourceKey=MarkerSeriesLegendMarkerTemplate}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.BubbleSeries3D}" TargetType="{x:Type local:BubbleSeries3D}" BasedOn="{StaticResource series2DStyleBase}">
+    <Setter Property="LegendMarkerTemplate" Value="{StaticResource ResourceKey=MarkerSeriesLegendMarkerTemplate}" />
+  </Style>
+  <Style x:Key="AreaSeries3DStyle" TargetType="{x:Type local:AreaSeries3D}" BasedOn="{StaticResource series2DStyleBase}">
+    <Setter Property="LegendMarkerTemplate" Value="{StaticResource ResourceKey=AreaSeriesLegendMarkerTemplate}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.AreaSeries3D}" TargetType="{x:Type local:AreaSeries3D}" BasedOn="{StaticResource ResourceKey=AreaSeries3DStyle}" />
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.AreaStackedSeries3D}" TargetType="{x:Type local:AreaStackedSeries3D}" BasedOn="{StaticResource ResourceKey=AreaSeries3DStyle}" />
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.AreaFullStackedSeries3D}" TargetType="{x:Type local:AreaFullStackedSeries3D}" BasedOn="{StaticResource ResourceKey=AreaSeries3DStyle}" />
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.PieSeries3D}" TargetType="{x:Type local:PieSeries3D}" BasedOn="{StaticResource series2DStyleBase}">
+    <Setter Property="LegendMarkerTemplate" Value="{StaticResource ResourceKey=PieSeriesLegendMarkerTemplate}" />
+  </Style>
+  <!--END WPF-->
+</ResourceDictionary>

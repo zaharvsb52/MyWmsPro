@@ -1,0 +1,616 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:utils="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxec="clr-namespace:DevExpress.Xpf.Editors.Controls;assembly=DevExpress.Xpf.Core.v15.2" xmlns:dxedn="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxednc="http://schemas.devexpress.com/winfx/2008/xaml/editors/internal" xmlns:dxedp="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxep="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxepc="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxei="http://schemas.devexpress.com/winfx/2008/xaml/editors/internal" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" xmlns:dxbt="http://schemas.devexpress.com/winfx/2008/xaml/bars/themekeys" xmlns:dxet="http://schemas.devexpress.com/winfx/2008/xaml/editors/themekeys" xmlns:dxev="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxef="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxee="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxcn="http://schemas.devexpress.com/winfx/2008/xaml/core/internal" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Generic/PopupListBox.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Generic/FilterPanelControlBase.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.BaseEdit}" TargetType="{x:Type dxe:BaseEdit}">
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="SnapsToDevicePixels" Value="true" />
+        <Setter Property="ErrorToolTipContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Path=ErrorContent}" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="TrimmedTextToolTipContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Path=Content}" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Style.Triggers>
+            <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                <Setter Property="IsTabStop" Value="False" />
+            </Trigger>
+            <Trigger Property="EditMode" Value="InplaceInactive">
+                <Setter Property="Template" Value="{Binding DisplayTemplate, RelativeSource={RelativeSource Self}}" />
+            </Trigger>
+            <Trigger Property="EditMode" Value="InplaceActive">
+                <Setter Property="Template" Value="{Binding EditTemplate, RelativeSource={RelativeSource Self}}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.RangeEdit}" TargetType="{x:Type dxe:RangeEdit}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.BaseEdit}}">
+        <Setter Property="ClipToBounds" Value="True" />
+        <Setter Property="Template" Value="{DynamicResource {dxet:RangeEditThemeKey ResourceKey=Template}}" />
+        <Setter Property="DisplayTemplate" Value="{DynamicResource {dxet:RangeEditThemeKey ResourceKey=DisplayTemplate}}" />
+        <Setter Property="EditTemplate" Value="{DynamicResource {dxet:RangeEditThemeKey ResourceKey=DisplayTemplate}}" />
+        <Setter Property="BorderTemplate" Value="{DynamicResource {dxet:RangeEditThemeKey ResourceKey=BorderTemplate}}" />
+        <Style.Triggers>
+            <Trigger Property="ShowBorder" Value="False">
+                <Setter Property="BorderTemplate" Value="{DynamicResource {dxet:RangeEditThemeKey ResourceKey=EmptyBorderTemplate}}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="{dxet:RangeEditThemeKey ResourceKey=DateTimePanelStyle}" TargetType="{x:Type dxe:RangeEditContentPanel}">
+        <Setter Property="dx:FocusHelper2.Focusable" Value="false" />
+        <Setter Property="Template" Value="{DynamicResource {dxet:RangeEditThemeKey ResourceKey=DateTimePanelTemplate}}" />
+    </Style>
+    <Style x:Key="{dxet:RangeEditThemeKey ResourceKey=NumericPanelStyle}" TargetType="{x:Type dxe:RangeEditContentPanel}">
+        <Setter Property="dx:FocusHelper2.Focusable" Value="false" />
+        <Setter Property="Template" Value="{DynamicResource {dxet:RangeEditThemeKey ResourceKey=NumericPanelTemplate}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.RangeEditVisibleIntervalViewer}" TargetType="{x:Type dxe:RangeEditVisibleIntervalViewer}">
+        <Setter Property="dx:FocusHelper2.Focusable" Value="false" />
+        <Setter Property="Template" Value="{DynamicResource {dxet:RangeEditThemeKey ResourceKey=RangeEditVisibleIntervalViewerTemplate}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.TrackBarEdit}" TargetType="{x:Type dxe:TrackBarEdit}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.BaseEdit}}">
+        <Setter Property="Background" Value="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=Background}}" />
+        <Setter Property="Foreground" Value="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=Foreground}}" />
+        <Setter Property="ContentTemplate" Value="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=ContentTemplate}}" />
+        <Setter Property="DisplayTemplate" Value="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=DisplayTemplate}}" />
+        <Setter Property="EditTemplate" Value="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=DisplayTemplate}}" />
+        <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=Template}}" />
+        <Style.Triggers>
+            <Trigger Property="ShowBorder" Value="False">
+                <Setter Property="BorderTemplate" Value="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=EmptyBorderTemplate}}" />
+            </Trigger>
+            <Trigger Property="EditMode" Value="InplaceActive">
+                <Setter Property="EditTemplate" Value="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=DisplayTemplate}}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="{dxet:TrackBarEditStyleThemeKey ResourceKey=TrackBarEditPanelHorizontalStyle}" TargetType="{x:Type dxe:RangeEditBasePanel}">
+        <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=PanelHorizontalTemplate}}" />
+    </Style>
+    <Style x:Key="{dxet:TrackBarEditStyleThemeKey ResourceKey=RangeTrackBarEditPanelHorizontalStyle}" TargetType="{x:Type dxe:RangeEditBasePanel}">
+        <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=RangePanelHorizontalTemplate}}" />
+    </Style>
+    <Style x:Key="{dxet:TrackBarEditStyleThemeKey ResourceKey=RangeTrackBarEditPanelVerticalStyle}" TargetType="{x:Type dxe:RangeEditBasePanel}">
+        <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=RangePanelVerticalTemplate}}" />
+    </Style>
+    <Style x:Key="{dxet:TrackBarEditStyleThemeKey ResourceKey=TrackBarEditPanelVerticalStyle}" TargetType="{x:Type dxe:RangeEditBasePanel}">
+        <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=PanelVerticalTemplate}}" />
+    </Style>
+    <Style x:Key="{dxet:TrackBarEditStyleThemeKey ResourceKey=ScrollableRangeTrackBarEditPanelHorizontalStyle}" TargetType="{x:Type dxe:RangeEditBasePanel}">
+        <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=ScrollableRangePanelHorizontalTemplate}}" />
+    </Style>
+    <Style x:Key="{dxet:TrackBarEditStyleThemeKey ResourceKey=ScrollableRangeTrackBarEditPanelVerticalStyle}" TargetType="{x:Type dxe:RangeEditBasePanel}">
+        <Setter Property="Template" Value="{DynamicResource {dxet:TrackBarEditThemeKey ResourceKey=ScrollableRangePanelVerticalTemplate}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.TextEdit}" TargetType="{x:Type dxe:TextEdit}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.BaseEdit}}">
+        <Setter Property="BorderTemplate" Value="{DynamicResource {dxet:TextEditThemeKey ResourceKey=BorderTemplate}}" />
+        <Setter Property="DisplayTemplate" Value="{DynamicResource {dxet:TextEditThemeKey ResourceKey=DisplayInplaceTemplate}}" />
+        <Setter Property="EditTemplate" Value="{DynamicResource {dxet:TextEditThemeKey ResourceKey=EditTemplate}}" />
+        <Setter Property="EditNonEditableTemplate" Value="{DynamicResource {dxet:TextEditThemeKey ResourceKey=EditNonEditableTemplate}}" />
+        <Setter Property="RenderTransform">
+            <Setter.Value>
+                <ScaleTransform ScaleY="1" CenterY="0.5" />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template" Value="{DynamicResource {dxet:TextEditThemeKey ResourceKey=Template}}" />
+        <Style.Triggers>
+            <Trigger Property="ShowBorder" Value="False">
+                <Setter Property="BorderTemplate" Value="{DynamicResource {dxet:TextEditThemeKey ResourceKey=EmptyBorderTemplate}}" />
+            </Trigger>
+            <Trigger Property="EditMode" Value="InplaceActive">
+                <Setter Property="EditTemplate" Value="{DynamicResource {dxet:TextEditThemeKey ResourceKey=EditInplaceTemplate}}" />
+                <Setter Property="EditNonEditableTemplate" Value="{DynamicResource {dxet:TextEditThemeKey ResourceKey=EditNonEditableInplaceTemplate}}" />
+            </Trigger>
+            <!-- if  IsReadOnly = true, then -->
+            <Trigger Property="IsReadOnly" Value="True">
+                <Setter Property="Background" Value="#eeeef6" />
+            </Trigger>    
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.PasswordBoxEdit}" TargetType="{x:Type dxe:PasswordBoxEdit}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.BaseEdit}}">
+        <Setter Property="DisplayTemplate" Value="{DynamicResource {dxet:PasswordBoxEditThemeKey ResourceKey=DisplayTemplate}}" />
+        <Setter Property="EditTemplate" Value="{DynamicResource {dxet:PasswordBoxEditThemeKey ResourceKey=EditTemplate}}" />
+        <Setter Property="EditNonEditableTemplate" Value="{DynamicResource {dxet:PasswordBoxEditThemeKey ResourceKey=DisplayTemplate}}" />
+        <Setter Property="Template" Value="{DynamicResource {dxet:PasswordBoxEditThemeKey ResourceKey=Template}}" />
+        <Setter Property="BorderTemplate" Value="{DynamicResource {dxet:TextEditThemeKey ResourceKey=BorderTemplate}}" />
+        <Setter Property="CapsLockWarningToolTipTemplate" Value="{DynamicResource {dxet:PasswordBoxEditThemeKey ResourceKey=CapsLockWarningToolTipTemplate}}" />
+        <Style.Triggers>
+            <Trigger Property="ShowBorder" Value="False">
+                <Setter Property="BorderTemplate" Value="{DynamicResource {dxet:TextEditThemeKey ResourceKey=EmptyBorderTemplate}}" />
+            </Trigger>
+            <Trigger Property="EditMode" Value="InplaceActive">
+                <Setter Property="EditTemplate" Value="{DynamicResource {dxet:PasswordBoxEditThemeKey ResourceKey=EditTemplate}}" />
+                <Setter Property="EditNonEditableTemplate" Value="{DynamicResource {dxet:PasswordBoxEditThemeKey ResourceKey=EditTemplate}}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="{dxet:ProgressBarEditStyleThemeKey ResourceKey=ProgressBarStyleHorizontal}" TargetType="dxe:RangeEditBasePanel">
+        <Setter Property="Template" Value="{DynamicResource {dxet:ProgressBarEditStyleThemeKey ResourceKey=PanelTemplateHorizontal}}" />
+    </Style>
+    <Style x:Key="{dxet:ProgressBarEditStyleThemeKey ResourceKey=ProgressBarMarqueeStyleHorizontal}" TargetType="dxe:RangeEditBasePanel">
+        <Setter Property="Template" Value="{DynamicResource {dxet:ProgressBarEditStyleThemeKey ResourceKey=ProgressBarMarqueeTemplateHorizontal}}" />
+    </Style>
+    <Style x:Key="{dxet:ProgressBarEditStyleThemeKey ResourceKey=ProgressBarStyleVertical}" TargetType="dxe:RangeEditBasePanel">
+        <Setter Property="Template" Value="{DynamicResource {dxet:ProgressBarEditStyleThemeKey ResourceKey=PanelTemplateVertical}}" />
+    </Style>
+    <Style x:Key="{dxet:ProgressBarEditStyleThemeKey ResourceKey=ProgressBarMarqueeStyleVertical}" TargetType="dxe:RangeEditBasePanel">
+        <Setter Property="Template" Value="{DynamicResource {dxet:ProgressBarEditStyleThemeKey ResourceKey=ProgressBarMarqueeTemplateVertical}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.ProgressBarMarqueeHorizontalAnimationControl}" TargetType="{x:Type dxe:ProgressBarMarqueeHorizontalAnimationControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxet:ProgressBarEditStyleThemeKey ResourceKey=MarqueeHorizontalAnimationControlTemplate}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.ProgressBarMarqueeVerticalAnimationControl}" TargetType="{x:Type dxe:ProgressBarMarqueeVerticalAnimationControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxet:ProgressBarEditStyleThemeKey ResourceKey=MarqueeVerticalAnimationControlTemplate}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.ProgressBarEdit}" TargetType="{x:Type dxe:ProgressBarEdit}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.BaseEdit}}">
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="BorderTemplate" Value="{DynamicResource {dxet:ProgressBarEditThemeKey ResourceKey=BorderTemplate}}" />
+        <Setter Property="DisplayTemplate" Value="{DynamicResource {dxet:ProgressBarEditThemeKey ResourceKey=DisplayTemplate}}" />
+        <Setter Property="EditTemplate" Value="{DynamicResource {dxet:ProgressBarEditThemeKey ResourceKey=DisplayTemplate}}" />
+        <Setter Property="Template" Value="{DynamicResource {dxet:ProgressBarEditThemeKey ResourceKey=Template}}" />
+        <Style.Triggers>
+            <Trigger Property="ShowBorder" Value="False">
+                <Setter Property="BorderTemplate" Value="{DynamicResource {dxet:ProgressBarEditThemeKey ResourceKey=EmptyBorderTemplate}}" />
+            </Trigger>
+            <Trigger Property="EditMode" Value="InplaceActive">
+                <Setter Property="EditTemplate" Value="{DynamicResource {dxet:ProgressBarEditThemeKey ResourceKey=DisplayTemplate}}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="{dxet:ProgressBarEditStyleThemeKey ResourceKey=ProgressBarStyle}" TargetType="{x:Type dxe:RangeEditBasePanel}">
+        <Setter Property="Template" Value="{DynamicResource {dxet:ProgressBarEditStyleThemeKey ResourceKey=PanelTemplate}}" />
+    </Style>
+    <Style x:Key="{dxet:ProgressBarEditStyleThemeKey ResourceKey=ProgressBarMarqueeStyle}" TargetType="{x:Type dxe:RangeEditBasePanel}">
+        <Setter Property="Template" Value="{DynamicResource {dxet:ProgressBarEditStyleThemeKey ResourceKey=ProgressBarMarqueeTemplate}}" />
+    </Style>
+    <Style x:Key="{dxet:CheckEditThemeKey ResourceKey=EmptyFocusVisualStyle}" />
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.CheckEdit}" TargetType="{x:Type dxe:CheckEdit}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.BaseEdit}}">
+        <!--BEGIN WPF-->
+        <Setter Property="FocusVisualStyle" Value="{DynamicResource {dxet:CheckEditThemeKey ResourceKey=EmptyFocusVisualStyle}}" />
+        <!--END WPF-->
+        <Setter Property="Padding" Value="{DynamicResource {dxet:CheckEditThemeKey ResourceKey=Padding}}" />
+        <Setter Property="DisplayTemplate" Value="{DynamicResource {dxet:CheckEditThemeKey ResourceKey=DisplayInplaceTemplate}}" />
+        <Setter Property="EditTemplate" Value="{DynamicResource {dxet:CheckEditThemeKey ResourceKey=EditTemplate}}" />
+        <Setter Property="Template" Value="{DynamicResource {dxet:CheckEditThemeKey ResourceKey=Template}}" />
+        <Style.Triggers>
+            <Trigger Property="EditMode" Value="InplaceActive">
+                <Setter Property="EditTemplate" Value="{DynamicResource {dxet:CheckEditThemeKey ResourceKey=EditInplaceTemplate}}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.ButtonEdit}" TargetType="{x:Type dxe:ButtonEdit}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.TextEdit}}">
+        <Setter Property="Template" Value="{DynamicResource {dxet:ButtonEditThemeKey ResourceKey=Template}}" />
+        <Style.Triggers>
+            <Trigger Property="ShowText" Value="False">
+                <Setter Property="Template" Value="{DynamicResource {dxet:ButtonEditThemeKey ResourceKey=TemplateWithoutEditBox}}" />
+            </Trigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsTextEditable" Value="False" />
+                    <Condition Property="EditMode" Value="InplaceActive" />
+                </MultiTrigger.Conditions>
+                <MultiTrigger.Setters>
+                    <Setter Property="Template" Value="{Binding Path=EditNonEditableTemplate, RelativeSource={RelativeSource Self}}" />
+                </MultiTrigger.Setters>
+            </MultiTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.PopupBaseEdit}" TargetType="{x:Type dxe:PopupBaseEdit}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.ButtonEdit}}">
+        <Setter Property="PopupContentContainerTemplate" Value="{DynamicResource {dxet:PopupBaseEditThemeKey ResourceKey=PopupContentContainerTemplate}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.MemoEdit}" TargetType="{x:Type dxe:MemoEdit}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.PopupBaseEdit}}">
+        <Setter Property="PopupContentTemplate" Value="{DynamicResource {dxet:MemoEditThemeKey ResourceKey=PopupContentTemplate}}" />
+        <Style.Triggers>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="ShowIcon" Value="True" />
+                    <Condition Property="EditMode" Value="InplaceActive" />
+                </MultiTrigger.Conditions>
+                <Setter Property="EditNonEditableTemplate" Value="{DynamicResource {dxet:MemoEditThemeKey ResourceKey=EditNonEditableIconInplaceTemplate}}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="ShowIcon" Value="True" />
+                    <Condition Property="EditMode" Value="InplaceInactive" />
+                </MultiTrigger.Conditions>
+                <Setter Property="DisplayTemplate" Value="{DynamicResource {dxet:MemoEditThemeKey ResourceKey=DisplayIconTemplate}}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="ShowIcon" Value="True" />
+                    <Condition Property="EditMode" Value="Standalone" />
+                </MultiTrigger.Conditions>
+                <Setter Property="EditNonEditableTemplate" Value="{DynamicResource {dxet:MemoEditThemeKey ResourceKey=EditNonEditableIconTemplate}}" />
+            </MultiTrigger>
+            <Trigger Property="IsPrintingMode" Value="true">
+                <Setter Property="DisplayTemplate" Value="{DynamicResource {dxet:TextEditThemeKey ResourceKey=DisplayInplaceTemplate}}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.DateEdit}" TargetType="{x:Type dxe:DateEdit}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.PopupBaseEdit}}">
+        <Setter Property="PopupContentTemplate" Value="{DynamicResource {dxet:DateEditThemeKey ResourceKey=PopupContentTemplate}}" />
+        <Setter Property="AllowNullInput" Value="true" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.LookUpEditBase}" TargetType="{x:Type dxe:LookUpEditBase}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.PopupBaseEdit}}">
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.ComboBoxEdit}" TargetType="{x:Type dxe:ComboBoxEdit}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.LookUpEditBase}}">
+        <Setter Property="PopupContentTemplate" Value="{DynamicResource {dxet:ComboBoxEditThemeKey ResourceKey=PopupContentTemplate}}" />
+        <!--BEGIN WPF-->
+        <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
+        <!--END WPF-->
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <dxt:DXVirtualizingStackPanel />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="ApplyItemTemplateToSelectedItem" Value="True">
+                <Setter Property="EditNonEditableTemplate" Value="{DynamicResource {dxet:ComboBoxEditThemeKey ResourceKey=SelectedItemTemplate}}" />
+                <Setter Property="DisplayTemplate" Value="{DynamicResource {dxet:ComboBoxEditThemeKey ResourceKey=SelectedItemTemplate}}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.FontEdit}" TargetType="{x:Type dxe:FontEdit}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.ComboBoxEdit}}">
+        <Setter Property="ItemTemplate" Value="{DynamicResource {dxet:FontEditThemeKey ResourceKey=ItemTemplate}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.ListBoxEditItem}" TargetType="{x:Type dxe:ListBoxEditItem}" BasedOn="{StaticResource {dxet:EditorListBoxThemeKey ResourceKey=DefaultItemStyle}}">
+    </Style>
+    
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.ListBoxEdit}" TargetType="{x:Type dxe:ListBoxEdit}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.BaseEdit}}">
+        <Setter Property="Padding" Value="1" />
+        <Setter Property="DisplayTemplate" Value="{DynamicResource {dxet:ListBoxEditThemeKey ResourceKey=DisplayTemplate}}" />
+        <Setter Property="EditTemplate" Value="{DynamicResource {dxet:ListBoxEditThemeKey ResourceKey=EditTemplate}}" />
+        <Setter Property="Template" Value="{DynamicResource {dxet:ListBoxEditThemeKey ResourceKey=Template}}" />
+        <Setter Property="BorderTemplate" Value="{DynamicResource {dxet:ListBoxEditThemeKey ResourceKey=BorderTemplate}}" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+        <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <dxt:DXVirtualizingStackPanel />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="ShowBorder" Value="False">
+                <Setter Property="BorderTemplate" Value="{DynamicResource {dxet:ListBoxEditThemeKey ResourceKey=EmptyBorderTemplate}}" />
+            </Trigger>
+            <Trigger Property="EditMode" Value="InplaceInactive">
+                <Setter Property="Background" Value="{x:Null}" />
+            </Trigger>
+            <Trigger Property="EditMode" Value="InplaceActive">
+                <Setter Property="Background" Value="{x:Null}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.Popups.Calendar.DateEditCalendar}" TargetType="{x:Type dxepc:DateEditCalendar}">
+        <Setter Property="IsManipulationEnabled" Value="true" />
+        <Setter Property="Template" Value="{DynamicResource {dxet:DateEditThemeKey ResourceKey=CalendarTemplate}}" />
+        <Setter Property="WeekdayAbbreviationStyle" Value="{DynamicResource {dxet:DateEditThemeKey ResourceKey=WeekdayAbbreviationStyle}}" />
+        <Setter Property="WeekNumbersStyle" Value="{DynamicResource {dxet:DateEditThemeKey ResourceKey=WeekNumbersStyle}}" />
+        <Setter Property="CellButtonStyle" Value="{DynamicResource {dxet:DateEditThemeKey ResourceKey=CellButtonStyle}}" />
+        <Setter Property="MonthInfoTemplate" Value="{DynamicResource {dxet:DateEditThemeKey ResourceKey=MonthInfoTemplate}}" />
+        <Setter Property="YearInfoTemplate" Value="{DynamicResource {dxet:DateEditThemeKey ResourceKey=YearInfoTemplate}}" />
+        <Setter Property="YearsInfoTemplate" Value="{DynamicResource {dxet:DateEditThemeKey ResourceKey=YearInfoTemplate}}" />
+        <Setter Property="YearsGroupInfoTemplate" Value="{DynamicResource {dxet:DateEditThemeKey ResourceKey=YearInfoTemplate}}" />
+        <Setter Property="CalendarTransferStyle" Value="{DynamicResource {dxet:DateEditThemeKey ResourceKey=CalendarTranserStyle}}" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.DateNavigator.DateNavigator}" TargetType="{x:Type dxedn:DateNavigator}">
+        <Setter Property="Template" Value="{DynamicResource {dxet:DateNavigatorThemeKey ResourceKey=Template}}" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.DateNavigator.Controls.DateNavigatorCalendar}" TargetType="{x:Type dxednc:DateNavigatorCalendar}">
+        <Setter Property="FirstDayOfWeek" Value="{Binding Path=(dxedn:DateNavigator.Navigator).ActualFirstDayOfWeek, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="HighlightSpecialDates" Value="{Binding Path=(dxedn:DateNavigator.Navigator).HighlightSpecialDates, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="HighlightHolidays" Value="{Binding Path=(dxedn:DateNavigator.Navigator).HighlightHolidays, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="ShowWeekNumbers" Value="{Binding Path=(dxedn:DateNavigator.Navigator).ShowWeekNumbers, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="Template" Value="{DynamicResource {dxet:DateNavigatorThemeKey ResourceKey=CalendarTemplate}}" />
+        <Setter Property="WeekNumberRule" Value="{Binding Path=(dxedn:DateNavigator.Navigator).WeekNumberRule, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="WeekdayAbbreviationStyle" Value="{DynamicResource {dxet:DateNavigatorThemeKey ResourceKey=WeekdayAbbreviationStyle}}" />
+        <Setter Property="WeekNumberStyle" Value="{DynamicResource {dxet:DateNavigatorThemeKey ResourceKey=WeekNumberStyle}}" />
+        <Setter Property="CellButtonStyle" Value="{DynamicResource {dxet:DateNavigatorThemeKey ResourceKey=CellButtonStyle}}" />
+        <Setter Property="MonthInfoTemplate" Value="{DynamicResource {dxet:DateNavigatorThemeKey ResourceKey=MonthInfoTemplate}}" />
+        <Setter Property="YearInfoTemplate" Value="{DynamicResource {dxet:DateNavigatorThemeKey ResourceKey=YearInfoTemplate}}" />
+        <Setter Property="YearsInfoTemplate" Value="{DynamicResource {dxet:DateNavigatorThemeKey ResourceKey=YearInfoTemplate}}" />
+        <Setter Property="YearsRangeInfoTemplate" Value="{DynamicResource {dxet:DateNavigatorThemeKey ResourceKey=YearInfoTemplate}}" />
+        <Setter Property="dx:FocusHelper2.Focusable" Value="False" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.DateNavigator.Controls.DateNavigatorContent}" TargetType="{x:Type dxednc:DateNavigatorContent}">
+        <Setter Property="Template" Value="{DynamicResource {dxet:DateNavigatorContentThemeKey ResourceKey=Template}}" />
+        <Setter Property="dx:FocusHelper2.Focusable" Value="False" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.DateNavigator.Controls.DateNavigatorCalendarCellButton}" TargetType="{x:Type dxednc:DateNavigatorCalendarCellButton}">
+        <Setter Property="ClickMode" Value="Press" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="Margin" Value="0,0,1,1" />
+        <Setter Property="Background" Value="White" />
+        <Setter Property="Template" Value="{DynamicResource {dxet:DateNavigatorThemeKey ResourceKey=CellButtonTemplate}}" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.ColorChooser}" TargetType="{x:Type dxe:ColorChooser}">
+        <Setter Property="Template" Value="{DynamicResource {dxet:ColorChooserThemeKey ResourceKey=ControlTemplate}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.ErrorControl}" TargetType="{x:Type dxe:ErrorControl}">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="DockPanel.Dock" Value="Left" />
+        <Setter Property="ContentTemplate" Value="{DynamicResource {dxet:ErrorTypesThemeKeyExtension ResourceKey=Critical}}" />
+        <Setter Property="Template" Value="{DynamicResource {dxet:TextEditThemeKey ResourceKey=ErrorControlTemplate}}" />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Path=Content.ErrorType, RelativeSource={RelativeSource Self}}" Value="Critical">
+                <Setter Property="ContentTemplate" Value="{DynamicResource {dxet:ErrorTypesThemeKeyExtension ResourceKey=Critical}}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Path=Content.ErrorType, RelativeSource={RelativeSource Self}}" Value="Warning">
+                <Setter Property="ContentTemplate" Value="{DynamicResource {dxet:ErrorTypesThemeKeyExtension ResourceKey=Warning}}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Path=Content.ErrorType, RelativeSource={RelativeSource Self}}" Value="Information">
+                <Setter Property="ContentTemplate" Value="{DynamicResource {dxet:ErrorTypesThemeKeyExtension ResourceKey=Information}}" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.ButtonsControl}" TargetType="{x:Type dxe:ButtonsControl}">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="ItemContainerStyle" Value="{DynamicResource {dxet:ButtonsThemeKey ResourceKey=ButtonContainerStyle}}" />
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type dxe:ButtonsControl}">
+                    <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="true">
+                        <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.Internal.GalleryBarItemLinkControl}" TargetType="{x:Type dxei:GalleryBarItemLinkControl}">
+        <Setter Property="dxb:BarItemLinkControlTemplateProvider.TemplateInMenu" Value="{DynamicResource {dxet:ColorEditThemeKey ResourceKey=GalleryBarItemLinkControlTemplate}}" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.ColorEdit}" TargetType="{x:Type dxe:ColorEdit}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.BaseEdit}}">
+        <Setter Property="ChipMargin" Value="2,0,2,0" />
+        <Setter Property="ChipBorderBrush" Value="{DynamicResource {dxet:ColorEditThemeKey ResourceKey=ChipBorderBrush}}" />
+        <Setter Property="Template" Value="{DynamicResource {dxet:ColorEditThemeKey ResourceKey=Template}}" />
+        <Setter Property="EditTemplate" Value="{DynamicResource {dxet:ColorEditThemeKey ResourceKey=EditTemplate}}" />
+        <Setter Property="DisplayTemplate" Value="{DynamicResource {dxet:ColorEditThemeKey ResourceKey=EditTemplate}}" />
+        <Setter Property="BorderTemplate" Value="{DynamicResource {dxet:ColorEditThemeKey ResourceKey=BorderTemplate}}" />
+        <Style.Triggers>
+            <Trigger Property="ShowBorder" Value="False">
+                <Setter Property="BorderTemplate" Value="{DynamicResource {dxet:ColorEditThemeKey ResourceKey=EmptyBorderTemplate}}" />
+            </Trigger>
+            <Trigger Property="EditMode" Value="InplaceActive">
+                <Setter Property="EditTemplate" Value="{DynamicResource {dxet:ColorEditThemeKey ResourceKey=EditInplaceTemplate}}" />
+            </Trigger>
+            <Trigger Property="EditMode" Value="InplaceInactive">
+                <Setter Property="DisplayTemplate" Value="{DynamicResource {dxet:ColorEditThemeKey ResourceKey=EditInplaceTemplate}}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.PopupColorEdit}" TargetType="{x:Type dxe:PopupColorEdit}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.PopupBaseEdit}}">
+        <Setter Property="ChipBorderBrush" Value="{DynamicResource {dxet:ColorEditThemeKey ResourceKey=ChipBorderBrush}}" />
+        <Setter Property="PopupContentTemplate" Value="{DynamicResource {dxet:PopupColorEditThemeKey ResourceKey=PopupContentTemplate}}" />
+        <Setter Property="EditNonEditableTemplate" Value="{DynamicResource {dxet:PopupColorEditThemeKey ResourceKey=DisplayTemplate}}" />
+        <Setter Property="DisplayTemplate" Value="{DynamicResource {dxet:PopupColorEditThemeKey ResourceKey=DisplayTemplate}}" />
+        <Setter Property="EditTemplate" Value="{DynamicResource {dxet:TextEditThemeKey ResourceKey=EditTemplate}}" />
+        <Style.Triggers>
+            <Trigger Property="EditMode" Value="InplaceActive">
+                <Setter Property="EditTemplate" Value="{DynamicResource {dxet:PopupColorEditThemeKey ResourceKey=EditTemplate}}" />
+                <Setter Property="EditNonEditableTemplate" Value="{DynamicResource {dxet:PopupColorEditThemeKey ResourceKey=DisplayTemplate}}" />
+            </Trigger>
+        </Style.Triggers>
+
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.Calculator}" TargetType="{x:Type dxe:Calculator}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Template" Value="{DynamicResource {dxet:CalculatorThemeKey ResourceKey=Template}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.CalculatorGaugeSegment}" TargetType="{x:Type dxe:CalculatorGaugeSegment}">
+        <Setter Property="dx:FocusHelper2.Focusable" Value="False" />
+        <Setter Property="Height" Value="22" />
+        <Setter Property="Template" Value="{DynamicResource {dxet:CalculatorThemeKey ResourceKey=GaugeSegmentTemplate}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.CalculatorGauge}" TargetType="{x:Type dxe:CalculatorGauge}">
+        <Setter Property="Template" Value="{DynamicResource {dxet:CalculatorThemeKey ResourceKey=GaugeTemplate}}" />
+        <Setter Property="dx:FocusHelper2.Focusable" Value="False" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.CalculatorMemoryIndicator}" TargetType="{x:Type dxe:CalculatorMemoryIndicator}">
+        <Setter Property="Template" Value="{DynamicResource {dxet:CalculatorThemeKey ResourceKey=MemoryIndicatorTemplate}}" />
+        <Setter Property="dx:FocusHelper2.Focusable" Value="False" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.PopupCalcEdit}" TargetType="{x:Type dxe:PopupCalcEdit}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.PopupBaseEdit}}">
+        <Setter Property="PopupContentTemplate" Value="{DynamicResource {dxet:CalcEditThemeKey ResourceKey=PopupContentTemplate}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.PopupCalcEditCalculator}" TargetType="{x:Type dxe:PopupCalcEditCalculator}">
+        <Setter Property="Template" Value="{DynamicResource {dxet:CalculatorThemeKey ResourceKey=PopupTemplate}}" />
+        <Setter Property="Precision" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).Precision}" />
+    </Style>
+
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.ImageEditToolSeparator}" TargetType="{x:Type dxe:ImageEditToolSeparator}">
+        <Style.Setters>
+            <Setter Property="Margin" Value="6,0" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Fill="#FFDADADA" Width="1" Height="18" Opacity="0.25" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter> 
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.ImageEditToolButton}" TargetType="{x:Type dxe:ImageEditToolButton}" BasedOn="{StaticResource {x:Type Button}}">
+        <Style.Setters>
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Focusable" Value="False" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type dxe:ImageEditToolButton}">
+                        <Grid>
+                            <Border Name="border" Background="{TemplateBinding Background}">
+                                <StackPanel Orientation="Horizontal" Margin="{TemplateBinding Padding}">
+                                    <Image Source="{TemplateBinding ImageSource}" Stretch="None" />
+                                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                </StackPanel>
+                            </Border>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="MouseOver">
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0" Storyboard.TargetName="border" Storyboard.TargetProperty="Opacity" To=".3" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.ImageEdit}" TargetType="{x:Type dxe:ImageEdit}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.BaseEdit}}">
+        <Setter Property="Template" Value="{DynamicResource {dxet:ImageEditThemeKey ResourceKey=Template}}" />
+        <Setter Property="EditTemplate" Value="{DynamicResource {dxet:ImageEditThemeKey ResourceKey=EditTemplate}}" />
+        <Setter Property="DisplayTemplate" Value="{DynamicResource {dxet:ImageEditThemeKey ResourceKey=EditTemplate}}" />
+        <Setter Property="EmptyContentTemplate" Value="{DynamicResource {dxet:ImageEditThemeKey ResourceKey=EmptyContentTemplate}}" />
+        <Setter Property="BorderTemplate" Value="{DynamicResource {dxet:ImageEditThemeKey ResourceKey=BorderTemplate}}" />
+        <Setter Property="MenuTemplate" Value="{DynamicResource {dxet:ImageEditThemeKey ResourceKey=MenuTemplate}}" />
+        <Setter Property="MenuContainerTemplate" Value="{DynamicResource {dxet:ImageEditThemeKey ResourceKey=MenuPopupTemplate}}" />
+        <Style.Triggers>
+            <Trigger Property="ShowBorder" Value="False">
+                <Setter Property="BorderTemplate" Value="{DynamicResource {dxet:ImageEditThemeKey ResourceKey=EmptyBorderTemplate}}" />
+            </Trigger>
+            <Trigger Property="EditMode" Value="InplaceActive">
+                <Setter Property="EditTemplate" Value="{DynamicResource {dxet:ImageEditThemeKey ResourceKey=EditInplaceTemplate}}" />
+            </Trigger>
+            <Trigger Property="EditMode" Value="InplaceInactive">
+                <Setter Property="DisplayTemplate" Value="{DynamicResource {dxet:ImageEditThemeKey ResourceKey=EditInplaceTemplate}}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.PopupImageEdit}" TargetType="{x:Type dxe:PopupImageEdit}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.PopupBaseEdit}}">
+        <Setter Property="PopupContentTemplate" Value="{DynamicResource {dxet:PopupImageEditThemeKey ResourceKey=PopupContentTemplate}}" />
+        <Setter Property="PopupContentContainerTemplate" Value="{DynamicResource {dxet:PopupImageEditThemeKey ResourceKey=PopupContentContainerTemplate}}" />
+        <Setter Property="EditNonEditableTemplate" Value="{DynamicResource {dxet:PopupImageEditThemeKey ResourceKey=DisplayTemplate}}" />
+        <Setter Property="DisplayTemplate" Value="{DynamicResource {dxet:PopupImageEditThemeKey ResourceKey=DisplayTemplate}}" />
+        <Setter Property="EditTemplate" Value="{DynamicResource {dxet:PopupImageEditThemeKey ResourceKey=DisplayTemplate}}" />
+        <Setter Property="MenuTemplate" Value="{DynamicResource {dxet:PopupImageEditThemeKey ResourceKey=MenuTemplate}}" />
+        <Style.Triggers>
+            <Trigger Property="EditMode" Value="InplaceActive">
+                <Setter Property="EditTemplate" Value="{DynamicResource {dxet:PopupImageEditThemeKey ResourceKey=DisplayTemplate}}" />
+                <Setter Property="EditNonEditableTemplate" Value="{DynamicResource {dxet:PopupImageEditThemeKey ResourceKey=DisplayTemplate}}" />
+            </Trigger>
+            <Trigger Property="EditMode" Value="InplaceInactive">
+                <Setter Property="DisplayTemplate" Value="{DynamicResource {dxet:PopupImageEditThemeKey ResourceKey=DisplayTemplate}}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Core.Native.MultiContentControl}" TargetType="{x:Type dxcn:MultiContentControl}">
+        <Setter Property="dx:FocusHelper2.Focusable" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type dxcn:MultiContentControl}">
+                    <Grid x:Name="PART_Root" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.DataPager.DataPager}" TargetType="{x:Type dxedp:DataPager}">
+        <Setter Property="HorizontalContentAlignment" Value="Right" />
+        <Setter Property="Template" Value="{DynamicResource {dxet:DataPagerThemeKey ResourceKey=Template}}" />
+        <Setter Property="UseLayoutRounding" Value="True" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.DataPager.DataPagerNumericButtonContainer}" TargetType="{x:Type dxedp:DataPagerNumericButtonContainer}">
+        <Setter Property="Template" Value="{DynamicResource {dxet:DataPagerNumericButtonContainerThemeKey ResourceKey=Template}}" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.DataPager.DataPagerButton}" TargetType="{x:Type dxedp:DataPagerButton}">
+        <Setter Property="Template" Value="{DynamicResource {dxet:DataPagerButtonThemeKey ResourceKey=Template}}" />
+        <Style.Triggers>
+            <Trigger Property="ButtonType" Value="PageFirst">
+                <Setter Property="ContentTemplate" Value="{DynamicResource {dxet:DataPagerButtonThemeKey ResourceKey=FirstPageGlyph}}" />
+            </Trigger>
+            <Trigger Property="ButtonType" Value="PageLast">
+                <Setter Property="ContentTemplate" Value="{DynamicResource {dxet:DataPagerButtonThemeKey ResourceKey=LastPageGlyph}}" />
+            </Trigger>
+            <Trigger Property="ButtonType" Value="PageNext">
+                <Setter Property="ContentTemplate" Value="{DynamicResource {dxet:DataPagerButtonThemeKey ResourceKey=NextPageGlyph}}" />
+            </Trigger>
+            <Trigger Property="ButtonType" Value="PagePrevious">
+                <Setter Property="ContentTemplate" Value="{DynamicResource {dxet:DataPagerButtonThemeKey ResourceKey=PrevPageGlyph}}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.DataPager.DataPagerNumericButton}" TargetType="{x:Type dxedp:DataPagerNumericButton}">
+        <Setter Property="Template" Value="{DynamicResource {dxet:DataPagerNumericButtonThemeKey ResourceKey=Template}}" />
+    </Style>
+    
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.SearchControl}" TargetType="{x:Type dxe:SearchControl}">
+        <Setter Property="Margin" Value="12" />
+        <Setter Property="BorderBrush" Value="#FF062B63" />
+        <Setter Property="BorderThickness" Value="0,0,0,1" />
+        <Setter Property="Template" Value="{DynamicResource {dxet:SearchControlThemeKey ResourceKey=Template}}" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.Filtering.FilterControl}" TargetType="{x:Type dxef:FilterControl}">
+        <Setter Property="ShowBorder" Value="True" />
+        <Setter Property="Template" Value="{DynamicResource {dxet:FilterControlThemeKey ResourceKey=FilterControlTemplate}}" />
+        <Setter Property="EmptyValueTemplate" Value="{DynamicResource {dxet:FilterControlThemeKey ResourceKey=EmptyValueTemplate}}" />
+        <Setter Property="EmptyStringTemplate" Value="{DynamicResource {dxet:FilterControlThemeKey ResourceKey=EmptyStringTemplate}}" />
+        <Setter Property="ValueTemplate" Value="{DynamicResource {dxet:FilterControlThemeKey ResourceKey=ValueTemplate}}" />
+        <Setter Property="BooleanValueTemplate" Value="{DynamicResource {dxet:FilterControlThemeKey ResourceKey=BooleanValueTemplate}}" />
+        <Setter Property="FocusVisualStyle" Value="{DynamicResource {dxet:FilterControlThemeKey ResourceKey=FocusVisualStyle}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.Filtering.FilterControlGroupNode}" TargetType="{x:Type dxef:FilterControlGroupNode}">
+        <Setter Property="Template" Value="{DynamicResource {dxet:FilterControlThemeKey ResourceKey=FilterControlGroupNodeTemplate}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.Filtering.FilterControlClauseNode}" TargetType="{x:Type dxef:FilterControlClauseNode}">
+        <Setter Property="Template" Value="{DynamicResource {dxet:FilterControlThemeKey ResourceKey=FilterControlClauseNodeTemplate}}" />
+        <Setter Property="SecondOperandsOneTemplate" Value="{DynamicResource {dxet:FilterControlThemeKey ResourceKey=OneElementsInSecondOperandTemplate}}" />
+        <Setter Property="SecondOperandsTwoTemplate" Value="{DynamicResource {dxet:FilterControlThemeKey ResourceKey=TwoElementsInSecondOperandTemplate}}" />
+        <Setter Property="SecondOperandsSeveralTemplate" Value="{DynamicResource {dxet:FilterControlThemeKey ResourceKey=SeveralElementsInSecondOperandTemplate}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.Filtering.FilterControlEditor}" TargetType="{x:Type dxef:FilterControlEditor}">
+        <Setter Property="Template" Value="{DynamicResource {dxet:FilterControlThemeKey ResourceKey=FilterControlEditorTemplate}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.ExpressionEditor.ExpressionEditorControl}" TargetType="{x:Type dxee:ExpressionEditorControl}">
+        <Setter Property="Template" Value="{DynamicResource {dxet:ExpressionEditorControlThemeKey ResourceKey=Template}}" />
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="wmsMLC.DCL.Content.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="WclUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://mp-app-t1-nwms:83/wmsWebApp/</Value>
+    </Setting>
+    <Setting Name="MaxImageSize" Description="Макс. размер изображения в Мб" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

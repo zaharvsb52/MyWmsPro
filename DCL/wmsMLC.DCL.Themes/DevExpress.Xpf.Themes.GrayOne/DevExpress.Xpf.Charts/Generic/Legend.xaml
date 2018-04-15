@@ -1,0 +1,83 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:core="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/charts/themekeys" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:local="http://schemas.devexpress.com/winfx/2008/xaml/charts">
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.Legend}" TargetType="local:Legend">
+        <Setter Property="Background" Value="{DynamicResource {dxt:ChartBrushesThemeKey ResourceKey=LegendBackgroundBrush}}" />
+        <Setter Property="Foreground" Value="{DynamicResource {dxt:ChartBrushesThemeKey ResourceKey=LegendForeground}}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource {dxt:ChartBrushesThemeKey ResourceKey=LegendBorderBrush}}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource {dxt:ChartControlThemeKey ResourceKey=LegendBorderThickness}}" />
+        <Setter Property="Padding" Value="{DynamicResource {dxt:ChartControlThemeKey ResourceKey=LegendPaddingValue}}" />
+        <Setter Property="IndentFromDiagram" Value="{DynamicResource {dxt:ChartControlThemeKey ResourceKey=IndentFromDiagramValue}}" />
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <!--BEGIN WPF-->
+                    <WrapPanel Orientation="{Binding Path=Orientation}" />
+                    <!--END WPF-->
+                    <!--ONLY SL<core:WrapPanel Orientation="{Binding Path=Orientation}"/>ONLY SL-->
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <local:LegendItemContainer Orientation="Horizontal" Margin="{DynamicResource {dxt:ChartControlThemeKey ResourceKey=LegendItemMargin}}">
+                        <Grid Width="{DynamicResource {dxt:ChartControlThemeKey ResourceKey=LegendMarkerWidth}}" Height="{DynamicResource {dxt:ChartControlThemeKey ResourceKey=LegendMarkerHeight}}">
+                            <Rectangle Stretch="Uniform" Fill="Transparent" />
+                            <local:ChartContentPresenter Content="{Binding}" ContentTemplate="{Binding Path=MarkerTemplate}" />
+                        </Grid>
+                        <TextBlock x:Name="tbLegendItemText" Text="{Binding Path=Text}" VerticalAlignment="Center" Margin="{DynamicResource {dxt:ChartControlThemeKey ResourceKey=LegendItemTextMargin}}" Foreground="{Binding Path=Legend.Foreground}" FontFamily="{Binding Path=Legend.FontFamily}" FontSize="{Binding Path=Legend.FontSize}" FontStretch="{Binding Path=Legend.FontStretch}" FontStyle="{Binding Path=Legend.FontStyle}" FontWeight="{Binding Path=Legend.FontWeight}" />
+                    </local:LegendItemContainer>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:Legend">
+                    <local:ChartContentControl x:Name="LegendWrapper" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}" Template="{DynamicResource {dxt:ChartControlThemeKey ResourceKey=LegendWrapperTemplate}}">
+                        <local:LegendItemsControl LegendItems="{TemplateBinding Items}" ItemsPanel="{TemplateBinding ItemsPanel}" ItemTemplate="{TemplateBinding ItemTemplate}" ReverseItems="{TemplateBinding ReverseItems}" DataContext="{Binding RelativeSource={RelativeSource TemplatedParent}}">
+                        </local:LegendItemsControl>
+                    </local:ChartContentControl>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="local:LegendItemPresentation">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:LegendItemPresentation">
+                    <!--BEGIN WPF-->
+                    <Path x:Name="PART_MarkerPath" Stretch="Uniform" Fill="{Binding Path=MarkerBrush}" Stroke="{Binding Path=MarkerLineBrush}" StrokeThickness="{Binding Path=MarkerLineStyle.Thickness}" StrokeDashArray="{Binding Path=MarkerLineStyle.DashStyle.Dashes}" StrokeDashOffset="{Binding Path=MarkerLineStyle.DashStyle.Offset}" StrokeDashCap="{Binding Path=MarkerLineStyle.DashCap}" StrokeLineJoin="{Binding Path=MarkerLineStyle.LineJoin}" StrokeMiterLimit="{Binding Path=MarkerLineStyle.MiterLimit}" SnapsToDevicePixels="True" StrokeStartLineCap="Square" StrokeEndLineCap="Square">
+                    </Path>
+                    <!--END WPF-->
+                    <!--ONLY SL <Path x:Name = "PART_MarkerPath"
+                                      Stretch="Uniform"
+                                      Fill="{Binding Path=MarkerBrush}"
+                                      Stroke="{Binding Path=MarkerLineBrush}"
+                                      StrokeThickness="{Binding Path=MarkerLineStyle.Thickness}"
+                                      StrokeDashArray="{Binding Path=MarkerLineStyle.DashArray, Converter={StaticResource strokeDashArrayConverter}}"
+                                      StrokeDashOffset="{Binding Path=MarkerLineStyle.DashOffset}"
+                                      StrokeDashCap="{Binding Path=MarkerLineStyle.DashCap}"
+                                      StrokeLineJoin="{Binding Path=MarkerLineStyle.LineJoin}"
+                                      StrokeMiterLimit="{Binding Path=MarkerLineStyle.MiterLimit}"
+                                      StrokeStartLineCap="Square"
+                                      StrokeEndLineCap="Square">
+                    </Path>  ONLY SL-->
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--BEGIN WPF-->
+    <!-- Obsolete -->
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.LegendMarkerControl}" TargetType="{x:Type local:LegendMarkerControl}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:LegendMarkerControl}">
+                    <Path Stretch="Fill" Data="{TemplateBinding MarkerGeometry}" Fill="{TemplateBinding MarkerBrush}" Stroke="{Binding Path=MarkerPen.Brush, RelativeSource={RelativeSource TemplatedParent}}" StrokeThickness="{Binding Path=MarkerPen.Thickness, RelativeSource={RelativeSource TemplatedParent}}" StrokeDashArray="{Binding Path=MarkerPen.DashStyle.Dashes, RelativeSource={RelativeSource TemplatedParent}}" StrokeDashOffset="{Binding Path=MarkerPen.DashStyle.Offset, RelativeSource={RelativeSource TemplatedParent}}" StrokeDashCap="{Binding Path=MarkerPen.DashCap, RelativeSource={RelativeSource TemplatedParent}}" StrokeLineJoin="{Binding Path=MarkerPen.LineJoin, RelativeSource={RelativeSource TemplatedParent}}" StrokeMiterLimit="{Binding Path=MarkerPen.MiterLimit, RelativeSource={RelativeSource TemplatedParent}}">
+                    </Path>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--END WPF-->
+</ResourceDictionary>

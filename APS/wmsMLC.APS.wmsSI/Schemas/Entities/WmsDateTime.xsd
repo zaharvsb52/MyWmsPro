@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="WmsDateTime" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!--Сущность WmsDateTime-->
+  <xs:element name="WMSDATETIME" type="WmsDateTime"/>
+  
+  <!--Описание типа даты время-->
+  <xs:simpleType name="WmsDateTime">
+    <xs:restriction base="xs:string">
+      <!-- yyyyMMdd HH:mm:ss-->
+      <xs:pattern value="(\d{4}(0[1-9]|1[0-2])(0[1-9]|[12]\d|3[01]) ([01]\d|2[0-3])(:[0-5]\d){2}?)" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

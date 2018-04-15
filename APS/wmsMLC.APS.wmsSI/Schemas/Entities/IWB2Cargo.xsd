@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="IWB2Cargo" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!--Сущность IWB2Cargo-->
+  <xs:element name="TENTIWB2CARGO" type="IWB2CargoType"/>
+  
+  <!--Описание типа IWB2Cargo-->
+  <xs:complexType name="IWB2CargoType">
+    <xs:sequence>
+      <!--ID записи-->
+      <xs:element name="IWB2CARGOID" type="xs:integer"/>
+      <!--ID приходной накладной-->
+      <xs:element name="IWBID_R" type="xs:integer" nillable="false"/>
+      <!--ID груза-->
+      <xs:element name="CARGOIWBID_R " type="xs:integer" nillable="false"/>
+      <!--Мандант-->
+      <xs:element name="MANDANTID " type="xs:integer" nillable="false"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

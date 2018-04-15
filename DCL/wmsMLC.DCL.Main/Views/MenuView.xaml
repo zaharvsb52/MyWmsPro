@@ -1,0 +1,28 @@
+﻿<UserControl x:Class="wmsMLC.DCL.Main.Views.MenuView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:controls="clr-namespace:wmsMLC.DCL.Main.Views.Controls"
+    xmlns:views="clr-namespace:wmsMLC.DCL.Main.Views"
+    SnapsToDevicePixels="True"
+    UseLayoutRounding="True"
+    mc:Ignorable="d" 
+    d:DesignHeight="25" d:DesignWidth="600">
+
+    <!-- Ресурсы для меню-->
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="templates\BarManagerItemsTemplate.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <controls:CustomBarManager
+        MenuGlyphSize="Large"
+        BarTemplate="{StaticResource barTemplate}"
+        BarsSource="{Binding Menu.Bars, RelativeSource = {RelativeSource FindAncestor, AncestorType={x:Type views:MenuView}}}"
+        BarStyle="{StaticResource barStyle}"/>
+</UserControl>
+

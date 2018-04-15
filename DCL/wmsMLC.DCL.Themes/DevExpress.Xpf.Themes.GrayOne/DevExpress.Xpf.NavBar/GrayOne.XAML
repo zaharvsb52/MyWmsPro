@@ -1,0 +1,29 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxn="http://schemas.devexpress.com/winfx/2008/xaml/navbar" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.NavBar/GrayOne/Generic.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.NavBar/Generic/DefaultStyles.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.NavBar.NavBarGroupItemsControl}" TargetType="{x:Type dxn:NavBarGroupItemsControl}" BasedOn="{StaticResource NavBarGroupItemsControlDefaultStyle}" />
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.NavBar.ImageAndTextDecorator}" TargetType="{x:Type dxn:ImageAndTextDecorator}" BasedOn="{StaticResource ImageAndTextDecoratorDefaultStyle}" />
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.NavBar.ExplorerBarScrollableContentControl}" TargetType="{x:Type dxn:ExplorerBarScrollableContentControl}" BasedOn="{StaticResource ExplorerBarScrollableContentControlDefaultStyle}" />
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.NavBar.ExplorerBarView}" TargetType="{x:Type dxn:ExplorerBarView}" BasedOn="{StaticResource ExplorerBarViewDefaultStyle}" />
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.NavBar.NavPaneScrollableContentControl}" TargetType="{x:Type dxn:NavPaneScrollableContentControl}" BasedOn="{StaticResource NavPaneScrollableContentControlDefaultStyle}" />
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.NavBar.NavPaneSplitter}" TargetType="{x:Type dxn:NavPaneSplitter}" BasedOn="{StaticResource NavPaneSplitterDefaultStyle}" />
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.NavBar.NavPaneExpandButton}" TargetType="{x:Type dxn:NavPaneExpandButton}" BasedOn="{StaticResource NavPaneExpandButtonDefaultStyle}" />
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.NavBar.NavPanePopupWindowFrame}" TargetType="{x:Type dxn:NavPanePopupWindowFrame}" BasedOn="{StaticResource NavPanePopupWindowFrameDefaultStyle}" />
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.NavBar.NavPaneOverflowPanel}" TargetType="{x:Type dxn:NavPaneOverflowPanel}" BasedOn="{StaticResource NavPaneOverflowPanelDefaultStyle}" />
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.NavBar.NavPaneItemsControl}" TargetType="{x:Type dxn:NavPaneItemsControl}" BasedOn="{StaticResource NavPaneItemsControlDefaultStyle}" />
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.NavBar.NavigationPaneView}" TargetType="{x:Type dxn:NavigationPaneView}" BasedOn="{StaticResource NavigationPaneViewDefaultStyle}" />
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.NavBar.SideBarView}" TargetType="{x:Type dxn:SideBarView}" BasedOn="{StaticResource SideBarViewDefaultStyle}" />
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.NavBar.ExplorerBarExpandButton}" TargetType="{x:Type dxn:ExplorerBarExpandButton}" BasedOn="{StaticResource ExplorerBarExpandButtonDefaultStyle}" />
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.NavBar.NavBarRepeatButton}" TargetType="{x:Type dxn:NavBarRepeatButton}" BasedOn="{StaticResource NavBarRepeatButtonDefaultStyle}" />
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.NavBar.GroupScrollableContentControl}" TargetType="{x:Type dxn:GroupScrollableContentControl}" BasedOn="{StaticResource GroupScrollableContentControlDefaultStyle}" />
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.NavBar.GroupItemsContainer}" TargetType="{x:Type dxn:GroupItemsContainer}" BasedOn="{StaticResource GroupItemsContainerDefaultStyle}" />
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.NavBar.NavPaneDropDownMenuControl}" TargetType="{x:Type dxn:NavPaneDropDownMenuControl}" BasedOn="{StaticResource NavPaneDropDownMenuControlDefaultStyle}" />
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.NavBar.NavPanePopupWindowContent}" TargetType="{x:Type dxn:NavPanePopupWindowContent}" BasedOn="{StaticResource NavPanePopupWindowContentDefaultStyle}" />
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.NavBar.NavPaneDefaultIcon}" TargetType="{x:Type dxn:NavPaneDefaultIcon}" BasedOn="{StaticResource NavPaneDefaultIconDefaultStyle}" />
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.NavBar.NavBarItemsControl}" TargetType="{x:Type dxn:NavBarItemsControl}" BasedOn="{StaticResource NavBarItemsControlDefaultStyle}" />
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.NavBar.NavPaneContentPresenter}" TargetType="{x:Type dxn:NavPaneContentPresenter}" BasedOn="{StaticResource NavPaneContentPresenterDefaultStyle}" />
+</ResourceDictionary>

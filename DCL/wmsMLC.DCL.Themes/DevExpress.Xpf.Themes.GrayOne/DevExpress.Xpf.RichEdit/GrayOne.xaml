@@ -1,0 +1,52 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" xmlns:dxec="clr-namespace:DevExpress.Xpf.Editors.Controls;assembly=DevExpress.Xpf.Core.v15.2" xmlns:dxre="http://schemas.devexpress.com/winfx/2008/xaml/richedit" xmlns:dxreui="http://schemas.devexpress.com/winfx/2008/xaml/richedit" xmlns:dxrec="http://schemas.devexpress.com/winfx/2008/xaml/richedit/internal" xmlns:util="http://schemas.devexpress.com/winfx/2008/xaml/richedit/internal">
+
+    <!--ONLY SL
+    <ResourceDictionary x:Key="EditorsDictionary"
+                        Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/devexpress.xpf.core/devexpress.xpf.core/editors/themes/generic.GrayOne.sl.xaml"
+                        dx:Wpf2SLOptions.AllowProcessNode="False" />
+    ONLY SL-->
+
+    <!--#include \..\Themes.SL\StandardControls\Brushes.xaml-->
+    <!--#include \..\Themes.SL\StandardControls\SharedResources.xaml-->
+    <!--#include \..\Themes.SL\StandardControls\Button.xaml-->
+
+    <!--#include \GrayOne\Colors.xaml-->
+    <!--#include \GrayOne\PageNumberWindow.xaml-->
+    <!--#include \GrayOne\XpfRichEditFlowSelection.xaml-->
+    <!--#include \GrayOne\XpfRichEditSizerSelection.xaml-->
+    <!--#include \GrayOne\RichEditViewPage.xaml-->
+    <!--#include \GrayOne\Ruler.xaml-->
+    <!--#include \GrayOne\RichEditControl.xaml-->
+
+    <!--Generic-->
+
+    <!--#include \Generic\FontComboBoxEdit.xaml-->
+    <!--#include \Generic\RichEditFontSizeComboBoxEdit.xaml-->
+    <!--#include \Generic\RichEditStyleEdit.xaml-->
+    <!--#include \Generic\PageNumberWindow.xaml-->
+    <!--#include \Generic\XpfRichEditCaret.xaml-->
+    <!--#include \Generic\XpfRichEditDragCaret.xaml-->
+    <!--#include \Generic\XpfRichEditFlowSelection.xaml-->
+    <!--#include \Generic\XpfRichEditSizerSelection.xaml-->
+    <!--#include \Generic\XpfRichEditImageSelection.xaml-->
+    <!--#include \Generic\Ruler.xaml-->
+    <!--#include \Generic\RichEditControl.xaml-->
+    <!--#include \Generic\RichEditViewPage.xaml-->
+    <!--#include \Generic\FontSizeListBox.xaml-->
+    <!--#include \Generic\ZoomComboBox.xaml-->
+    <!--#include \Generic\CharacterMapControl.xaml-->
+    <!--#include \Generic\BarItemTemplates.xaml-->
+
+    <!--BEGIN WPF-->
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.RichEdit/GrayOne/Colors.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.RichEdit/GrayOne/PageNumberWindow.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.RichEdit/GrayOne/XpfRichEditFlowSelection.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.RichEdit/GrayOne/XpfRichEditSizerSelection.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.RichEdit/GrayOne/RichEditViewPage.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.RichEdit/GrayOne/Ruler.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.RichEdit/GrayOne/RichEditControl.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <!--END WPF-->
+
+</ResourceDictionary>

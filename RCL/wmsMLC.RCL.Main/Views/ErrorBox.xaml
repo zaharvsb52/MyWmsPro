@@ -1,0 +1,42 @@
+﻿<rcl:CustomWindow x:Class="wmsMLC.RCL.Main.Views.ErrorBox"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:lex="http://wpflocalizeextension.codeplex.com"
+    xmlns:rcl="clr-namespace:wmsMLC.General.PL.WPF.Components.Controls.Rcl;assembly=wmsMLC.General.PL.WPF.Components"
+    mc:Ignorable="d" 
+    Title="{lex:LocExtension Key=wmsMLC.RCL.Resources:StringResources:Error}" 
+    ShowTitle="False"
+    ShowInTaskbar="False"
+    Topmost="True"
+    d:DesignWidth="300" d:DesignHeight="300">
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Image Source="{lex:LocExtension Key=wmsMLC.General.PL.WPF.Components:Resources:Error_48x48}" VerticalAlignment="Top" />
+        <rcl:CustomTextBlock Grid.Row="0" Grid.Column="1" Margin="2" Text="{Binding ErrorCaption}"
+            TextWrapping="Wrap"
+            VerticalAlignment="Center"/>
+
+        <rcl:CustomTextEdit Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0" Margin="5,0,5,5" IsReadOnly="True" 
+            SelectAllOnGotFocus="False" ShowErrorToolTip="False" ShowNullText="False" ShowNullTextForEmptyValue="False" ShowTooltipForTrimmedText="False"
+            VerticalContentAlignment="Top" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Text="{Binding ErrorMessage}"/>
+
+        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <rcl:CustomButton Margin="2,5" MinWidth="65" HotKey="Escape" IsNotMenuButton="True" Text="{lex:LocExtension Key=wmsMLC.RCL.Resources:StringResources:Close}" Command="{Binding CloseCommand}"/>
+            <rcl:CustomButton Margin="2,5" MinWidth="65" HotKey="F1" IsNotMenuButton="True" Text="{lex:LocExtension Key=wmsMLC.RCL.Resources:StringResources:SendMail}" Command="{Binding SendMailCommand}" />
+        </StackPanel>
+
+        <rcl:CustomWaitIndicator Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2" IsBusy="{Binding IsBusy}"/>
+    </Grid>
+</rcl:CustomWindow>

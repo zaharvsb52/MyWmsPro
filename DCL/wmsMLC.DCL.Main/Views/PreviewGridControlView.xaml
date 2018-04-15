@@ -1,0 +1,40 @@
+﻿<views:BaseDialogWindow x:Class="wmsMLC.DCL.Main.Views.PreviewGridControlView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+    xmlns:controls="clr-namespace:wmsMLC.DCL.Main.Views.Controls"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:lex="http://wpflocalizeextension.codeplex.com"
+    xmlns:properties="clr-namespace:wmsMLC.DCL.Main.Properties"
+    xmlns:views="clr-namespace:wmsMLC.DCL.Main.Views"
+    xmlns:help="clr-namespace:wmsMLC.DCL.Main.Helpers" 
+    help:Help.FileName="{Binding Source={x:Static properties:Settings.Default}, Path=HelpFileName}"      
+    Title="{lex:LocExtension Key=wmsMLC.DCL.Resources:StringResources:Printable}"
+    mc:Ignorable="d" 
+    d:DesignHeight="300" d:DesignWidth="300"
+    WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <controls:CustomGridControl Grid.Row="0" x:Name="GridPreview"
+                                    dx:DXSerializer.SerializationID="grid"
+                                    dx:DXSerializer.StoreLayoutMode="All"
+                                    dxg:GridSerializationOptions.AddNewColumns="False"
+                                    dxg:GridSerializationOptions.RemoveOldColumns="False"
+                                    AutoPopulateColumns="False"
+                                    ItemsSource="{Binding Source}" >
+        </controls:CustomGridControl>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="{lex:LocExtension Key=wmsMLC.DCL.Resources:StringResources:ActionNext}" Click="Button_Click" Margin="10" />
+            <Button Content="{lex:LocExtension Key=wmsMLC.DCL.Resources:StringResources:ActionCancel}" IsCancel="True" Margin="10" />
+        </StackPanel>
+        
+    </Grid>
+</views:BaseDialogWindow>

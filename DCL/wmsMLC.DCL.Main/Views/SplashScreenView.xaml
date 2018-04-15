@@ -1,0 +1,40 @@
+﻿<Window x:Class="wmsMLC.DCL.Main.Views.SplashScreenView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    xmlns:lex="http://wpflocalizeextension.codeplex.com"
+    xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
+    xmlns:general="clr-namespace:wmsMLC.General;assembly=wmsMLC.General"
+    mc:Ignorable="po"
+    WindowStyle="None" ResizeMode="NoResize" Width="700" Height="450"
+    AllowsTransparency="True" Background="Transparent" ShowInTaskbar="True"
+    Icon="{lex:LocExtension Key=wmsMLC.DCL.Resources:ImageResources:wms32}"
+    WindowStartupLocation="CenterScreen">
+
+    <Grid  Margin="0,20,00,0" Width="660" Height="401" >
+
+        <Grid.Background>
+            <ImageBrush ImageSource="{lex:LocExtension Key=wmsMLC.DCL.Resources:ImageResources:SplashScreen}"
+                        Stretch="None"
+                        po:Freeze="True"/>
+        </Grid.Background>
+
+        <StackPanel Orientation="Vertical" Margin="241,10,10,282">
+            <TextBlock TextWrapping="Wrap" Text="{Binding Source={x:Static general:AssemblyAttributeAccessors.AssemblyProduct}, Mode=OneTime}" FontSize="20" Foreground="White" Margin="0,0,0,10" />
+            <StackPanel Orientation="Horizontal">
+                <TextBlock TextWrapping="Wrap" Text="Version:" Foreground="White" HorizontalAlignment="Left" />
+                <TextBlock Margin="2,0,0,0" TextWrapping="Wrap" Text="{Binding Source={x:Static general:AssemblyAttributeAccessors.AssemblyFileVersion}, Mode=OneTime}" Foreground="White" HorizontalAlignment="Left" />
+            </StackPanel>
+        </StackPanel>
+
+        <TextBlock TextWrapping="Wrap" Text="{Binding Source={x:Static general:AssemblyAttributeAccessors.AssemblyCopyright}, Mode=OneTime}" Opacity="1" Foreground="Silver" Margin="336,373,10,10" HorizontalAlignment="Right"/>
+
+        <TextBlock x:Name="Info" TextWrapping="Wrap" Foreground="#FF2D2D2D" Margin="241,361,124,22"/>
+        <dxe:ProgressBarEdit x:Name="progressBar" Height="16" Margin="241,343,10,42">
+            <dxe:ProgressBarEdit.StyleSettings>
+                <dxe:ProgressBarMarqueeStyleSettings/>
+            </dxe:ProgressBarEdit.StyleSettings>
+        </dxe:ProgressBarEdit>
+    </Grid>
+</Window>

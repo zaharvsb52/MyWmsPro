@@ -1,0 +1,19 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <Color x:Key="LayerSeparator.NormalColor">#FF80838F</Color>
+  <Color x:Key="LayerSeparator.MouseOverColor">#FF201F35</Color>
+  <Color x:Key="ElementSizer.GlyphNormalColor">#FF80838F</Color>
+  <Color x:Key="ElementSizer.GlyphMouseOverColor">#FF201F35</Color>
+  <Color x:Key="ElementSizer.GlyphBackgroundColor">#3FFFFFFF</Color>
+  <Color x:Key="GroupBoxButton.NormalColor">#FF80838F</Color>
+  <Color x:Key="GroupBoxButton.MouseOverColor">#FF201F35</Color>
+  <Color x:Key="GroupBoxButton.PressedColor">#FF201F35</Color>
+  <SolidColorBrush x:Key="GroupBox.Background" Color="#FFEBECEF" />
+  <SolidColorBrush x:Key="GroupBox.BorderBrush" Color="#FFC2C4CB" />
+  <SolidColorBrush x:Key="GroupBox.SeparatorBrush" Color="#FFD1D3D8" />
+  <LinearGradientBrush x:Key="GroupBox.TitleBackground" EndPoint="0.5,1" StartPoint="0.5,0">
+    <GradientStop Color="#FFE6E8EB" Offset="0" />
+    <GradientStop Color="#FFE1E2E6" Offset="1" />
+  </LinearGradientBrush>
+  <SolidColorBrush x:Key="GroupSeparator.Brush1" Color="#FFC2C4CB" />
+  <SolidColorBrush x:Key="GroupSeparator.Brush2" Color="#7FFFFFFF" />
+</ResourceDictionary>

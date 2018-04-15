@@ -1,0 +1,9 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxret="http://schemas.devexpress.com/winfx/2008/xaml/richedit/themekeys">
+
+    <Style x:Key="{dxret:RichEditControlThemeKey ResourceKey=SelectionPathStyle}" TargetType="{x:Type Path}">
+        <Setter Property="Fill" Value="#3F0133AF" />
+        <Setter Property="Stroke" Value="#7F0133AF" />
+        <Setter Property="StrokeThickness" Value="0" />
+    </Style>
+
+</ResourceDictionary>

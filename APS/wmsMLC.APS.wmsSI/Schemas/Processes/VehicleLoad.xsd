@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PartnerLoad" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">  
+  <xs:include  id="WmsDateTime" schemaLocation="../Entities/WmsDateTime.xsd"/>
+  <xs:include  id="Vehicle" schemaLocation="../Entities/Vehicle.xsd"/>
+
+  <!--Описание телеграммы автомобилей-->
+  <xs:element name="WMSTELEGRAM">
+    <xs:complexType>
+      <xs:sequence>
+        <!--Уникальный идентификатор клиента (GUID)-->
+        <xs:element name="ID">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="128"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <!--Дата отправки телеграммы-->
+        <xs:element name="DATE" type="WmsDateTime" />
+        <!--Тип телеграммы-->
+        <xs:element name="TYPE">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="60"/>
+              <xs:enumeration value="ACTION"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <!--Имя сущности (доп. инфо, требуется обсудить)-->
+        <xs:element name="ENTITY">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="128"/>
+              <xs:enumeration value="TENTVEHICLE"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <!--Код телеграммы-->
+        <xs:element name="TELCODE">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="60"/>
+              <xs:enumeration value="WMS_API"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <!--Название процесса-->
+        <xs:element name="ACTION">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="128"/>
+              <xs:enumeration value="POST"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <!--Расположение склада?-->
+        <xs:element name="SITE">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="128"/>
+              <xs:enumeration value="My"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <!--Название склада-->
+        <xs:element name="WAREHOUSE">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="30"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <!--Объекты телеграммы-->
+        <xs:element name="CONTENT">
+          <xs:complexType>
+            <xs:sequence>
+              <!--Rest url-->
+              <xs:element name="URL" type="xs:string"/>
+              <!--Список сущности-->
+              <xs:element name="ITEMS">
+                <xs:complexType>
+                  <xs:sequence>
+                    <!--Список транспортов-->
+                    <xs:element maxOccurs="unbounded" name="TENTVEHICLE" type="VehicleType" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,31 @@
+﻿<controls:DXPanelView x:Class="wmsMLC.RCL.Main.Views.DialogSourceView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:controls="clr-namespace:wmsMLC.General.PL.WPF.Components.Controls.Rcl;assembly=wmsMLC.General.PL.WPF.Components"
+    mc:Ignorable="d" 
+    d:DesignHeight="300" d:DesignWidth="300">
+    
+    <!--<Grid>
+        <dxlc:LayoutControl Orientation="Vertical" Padding="0" Margin="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <controls:CustomDataLayoutControl x:Name="objectDataLayout" Orientation="Vertical" Focusable="False" VerticalAlignment="Stretch" ScrollBars="None" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" SnapsToDevicePixels="True"/>
+            <controls:CustomDataLayoutControl HorizontalAlignment="Stretch" Height="Auto" VerticalAlignment="Bottom" Focusable="False">
+                <controls:FooterMenu x:Name="footerMenuControl" />
+            </controls:CustomDataLayoutControl>
+        </dxlc:LayoutControl>
+        <controls:CustomWaitIndicator IsBusy="{Binding Path=WaitIndicatorVisible}" />
+    </Grid>-->
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <controls:CustomDataLayoutControl Grid.Row="0" x:Name="objectDataLayout" Margin="0" Orientation="Vertical" Focusable="False" />
+        <controls:FooterMenu Grid.Row="1" Margin="11,0,11,2" x:Name="footerMenuControl" />
+        <controls:CustomWaitIndicator Grid.Row="0" Grid.RowSpan="2" IsBusy="{Binding Path=WaitIndicatorVisible}" />
+    </Grid>
+
+</controls:DXPanelView>

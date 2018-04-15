@@ -1,0 +1,67 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:system="clr-namespace:System;assembly=mscorlib" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxti="http://schemas.devexpress.com/winfx/2008/xaml/core/internal" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" xmlns:dxbt="http://schemas.devexpress.com/winfx/2008/xaml/bars/themekeys" xmlns:dxbc="http://schemas.devexpress.com/winfx/2008/xaml/bars/internal" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcn="http://schemas.devexpress.com/winfx/2008/xaml/core/internal">    
+ 
+        <!--<Setter Property="Foreground" Value="#FF201F35" />-->
+    <Style x:Key="{dxbt:BarItemLinkMenuHeaderThemeKey ResourceKey=HeaderStyle}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Foreground" Value="#FF201F35" />
+    </Style>
+
+    <ControlTemplate x:Key="{dxbt:BarItemLinkMenuHeaderThemeKey ResourceKey=HeaderTemplate}" TargetType="{x:Type dxb:BarItemLinkMenuHeaderContentControl}">
+        <Grid Background="#FFFFFFFF">           
+            <Grid x:Name="PART_Border" VerticalAlignment="Stretch">
+                <Grid.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFFFFFFF" Offset="0" />
+                        <GradientStop Color="#FFFCFCFC" Offset="1" />
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <Grid.OpacityMask>
+                    <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                        <GradientStop Color="#00FFFFFF" Offset="0" />
+                        <GradientStop Color="#00FFFFFF" Offset="1" />
+                        <GradientStop Color="#FFFFFFFF" Offset="0.5" />
+                    </LinearGradientBrush>
+                </Grid.OpacityMask>
+                <Grid.Effect>
+                    <DropShadowEffect x:Name="Shadow" Direction="270" ShadowDepth="1" BlurRadius="3" Opacity="0.15" />
+                </Grid.Effect>
+                <Border x:Name="PART_SeparatorBorder" BorderBrush="#FF9DA0AA" VerticalAlignment="Stretch" BorderThickness="{TemplateBinding ContentBorderThickness}" />
+            </Grid>            
+                <ContentPresenter VerticalAlignment="Stretch" Margin="5" />
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxbt:BarItemLinkMenuHeaderThemeKey ResourceKey=ItemsControlTemplate}" TargetType="{x:Type dxb:BarItemMenuHeaderItemsControl}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <ItemsPresenter x:Name="PART_ItemsPresenter" Grid.Row="0" Margin="{TemplateBinding ItemsPresenterThickness}" />
+            <Grid x:Name="PART_SeparatorBorder" Grid.Row="1" Height="1" VerticalAlignment="Stretch" Visibility="{TemplateBinding ItemsBorderVisibility}">
+                <Grid.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFFFFFFF" Offset="0" />
+                        <GradientStop Color="#FFFCFCFC" Offset="1" />
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <Grid.OpacityMask>
+                    <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                        <GradientStop Color="#00FFFFFF" Offset="0" />
+                        <GradientStop Color="#00FFFFFF" Offset="1" />
+                        <GradientStop Color="#FFFFFFFF" Offset="0.5" />
+                    </LinearGradientBrush>
+                </Grid.OpacityMask>
+                <Grid.Effect>
+                    <DropShadowEffect x:Name="Shadow" Direction="270" ShadowDepth="1" BlurRadius="3" Opacity="0.15" />
+                </Grid.Effect>
+                <Border Background="#FF9DA0AA" Height="1" VerticalAlignment="Bottom" />
+            </Grid>
+        </Grid>
+    </ControlTemplate>
+
+
+    <system:Double x:Key="{dxbt:BarItemLinkMenuHeaderThemeKey ResourceKey=RowIndent}">0</system:Double>
+    <system:Double x:Key="{dxbt:BarItemLinkMenuHeaderThemeKey ResourceKey=ColumnIndent}">0</system:Double>
+    <Thickness x:Key="{dxbt:BarItemLinkMenuHeaderThemeKey ResourceKey=HorizontalGlyphPadding}">2,0,2,0</Thickness>
+    <dxb:BarItemLinkMenuHeaderControlStatesResourceHolder x:Key="{dxbt:BarItemLinkMenuHeaderThemeKey ResourceKey=StatesHolder}" CornerRadiusCommon="0" CornerRadiusBottomLeft="0,0,0,2" CornerRadiusBottomRight="0,0,2,0" CornerRadiusBottomStretch="0,0,2,2" CornerRadiusTopLeft="2,0,0,0" CornerRadiusTopRight="0,2,0,0" CornerRadiusTopStretch="2,2,0,0" ContentBorderThicknessCenter="0,1,0,1" ContentBorderThicknessTop="0,0,0,1" ContentBorderThicknessBottom="0,1,0,0" ItemsBorderThicknessCollapsed="0" ItemsBorderThicknessVisible="0,0,0,1" HorizontalItemsPresenterThickness="4,1,4,0" VerticalItemsPresenterThickness="0,1,0,0" />
+</ResourceDictionary>

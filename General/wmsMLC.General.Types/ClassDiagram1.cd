@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="wmsMLC.General.Types.ConvertHelper" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConvertHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="wmsMLC.General.Types.FilePumper" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IARIACAAAAIAAQABAAAISABAAAAAAAACAAQFAQAIAAA=</HashCode>
+      <FileName>FilePumper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="wmsMLC.General.Types.FileStruct" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACIAABBAAgAAAAAAACAAQAAAAAABAAAABAAABABAA=</HashCode>
+      <FileName>FileStruct.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="wmsMLC.General.Types.GSerialize" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAIAAAAAAAAAAABAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>GSerialize.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="wmsMLC.General.Types.Serializator&lt;T&gt;" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAgAAAAAAABAxBAAAAAAAAAkBgAAAAAQAAAACAAIE=</HashCode>
+      <FileName>Serializator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="wmsMLC.General.Types.SubstGlobalMacros" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gABEAAAAAggAAgAAAQIAAAAAAECAAAAAAAEAAABCAAA=</HashCode>
+      <FileName>SubstGlobalMacros.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="wmsMLC.General.Types.SubstMacros" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAggAAgAAAAIAAAAAAEAAAAAAAAAAAABCAAA=</HashCode>
+      <FileName>SubstMacros.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="wmsMLC.General.Types.wmsBaseObject" Collapsed="true">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACABAAAAAAAAAAAEIQAAgAAAA=</HashCode>
+      <FileName>wmsBaseObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="wmsMLC.General.Types.wmsLogMessage" Collapsed="true">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>iQAAAAAACAEAggAAACAAAwiCAQgCiBAAAQADiABAAAA=</HashCode>
+      <FileName>wmsLogMessage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="wmsMLC.General.Types.wmsNode" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>wmsNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="wmsMLC.General.Types.wmsTelegram" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAMAAABAQAAAAABAAA=</HashCode>
+      <FileName>wmsTelegram.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="wmsMLC.General.Types.WorkWithFiles" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAEIAIAAAA=</HashCode>
+      <FileName>WorkWithFiles.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="wmsMLC.General.Types.wmsToID" Collapsed="true">
+    <Position X="7.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAIAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>wmsTelegram.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="wmsMLC.General.Types.ISubstMacros" Collapsed="true">
+    <Position X="7.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAgAAAgAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ISubstMacros.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="wmsMLC.General.Types.DebugLevel" Collapsed="true">
+    <Position X="7.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAEAAAA=</HashCode>
+      <FileName>DebugLevel.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="wmsMLC.General.Types.ErrorType" Collapsed="true">
+    <Position X="9.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAABAAAAAAAABAAAAAA=</HashCode>
+      <FileName>ErrorType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="wmsMLC.General.Types.LogMessageLevel" Collapsed="true">
+    <Position X="11" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAEAAAA=</HashCode>
+      <FileName>LogMessageLevel.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="wmsMLC.General.Types.wmsTelegramType">
+    <Position X="7.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>wmsTelegram.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Delegate Name="wmsMLC.General.Types.EventErrorHandler" Collapsed="true">
+    <Position X="7.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACBCAAAAABAAAIQAAAAAAAAAACAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>EventErrorHandler.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="wmsMLC.General.Types.TelegramEventHandler" Collapsed="true">
+    <Position X="9.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>TelegramEventHandler.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

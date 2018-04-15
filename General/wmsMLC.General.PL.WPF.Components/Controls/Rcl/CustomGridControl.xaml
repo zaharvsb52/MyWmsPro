@@ -1,0 +1,278 @@
+﻿<dxg:GridControl x:Class="wmsMLC.General.PL.WPF.Components.Controls.Rcl.CustomGridControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    xmlns:helpers="clr-namespace:wmsMLC.General.PL.WPF.Components.Helpers"
+    xmlns:controls="clr-namespace:wmsMLC.General.PL.WPF.Components.Controls.Rcl"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:lex="clr-namespace:WPFLocalizeExtension.Extensions;assembly=WPFLocalizeExtension"
+    xmlns:dxgt="http://schemas.devexpress.com/winfx/2008/xaml/grid/themekeys"
+    xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core/internal"
+    xmlns:converters="clr-namespace:wmsMLC.General.PL.WPF.Components.Converters"
+    mc:Ignorable="d" 
+    d:DesignHeight="300"
+    d:DesignWidth="300">
+
+    <dxg:GridControl.Resources>
+        <converters:BoolToDefaultBooleanConverter x:Key="boolToDefaultBooleanConverter" />
+
+        <DataTemplate x:Key="SuperToolTipTempl">
+            <Grid >
+                <dx:SuperTipControl>
+                    <dx:SuperTip>
+                        <dx:SuperTipItem Content="{Binding Caption}"/>
+                        <dx:SuperTipItemSeparator/>
+                        <dx:SuperTipItem Content="{Binding Description}"/>
+                        <dx:SuperTipItemSeparator/>
+                        <dx:SuperTipItem Content="{Binding}">
+                            <dx:SuperTipItem.ContentTemplate>
+                                <DataTemplate>
+                                    <TextBlock FontFamily="Segoe UI" Foreground="Gray" FontSize="11" Text="{Binding FieldName,StringFormat=[{0}]}"/>
+                                </DataTemplate>
+                            </dx:SuperTipItem.ContentTemplate>
+                        </dx:SuperTipItem>
+                    </dx:SuperTip>
+                </dx:SuperTipControl>
+            </Grid>
+        </DataTemplate>
+
+        <Style x:Key="columnStyle" TargetType="controls:CustomGridColumn">
+            <Setter Property="FieldName" Value="{Binding Path=(dxc:DependencyObjectExtensions.DataContext).FieldName, RelativeSource={RelativeSource Self}}" />
+            <Setter Property="SerializableName" Value="{Binding Path=(dxc:DependencyObjectExtensions.DataContext).FieldName, RelativeSource={RelativeSource Self}}" />
+            <Setter Property="Header" Value="{Binding Path=(dxc:DependencyObjectExtensions.DataContext).Caption, RelativeSource={RelativeSource Self}}" />
+            <Setter Property="HeaderToolTip" Value="{Binding}"/>
+            <Setter Property="HeaderToolTipTemplate" Value="{StaticResource SuperToolTipTempl}"/>
+            <Setter Property="Visible" Value="{Binding Path=(dxc:DependencyObjectExtensions.DataContext).Visible, RelativeSource={RelativeSource Self}}"/>
+            <Setter Property="ShowInColumnChooser" Value="{Binding Path=(dxc:DependencyObjectExtensions.DataContext).Visible, RelativeSource={RelativeSource Self}}" />
+            <Setter Property="AllowEditing" Value="{Binding Path=IsEnabled, Converter={StaticResource boolToDefaultBooleanConverter}}" />
+            <Setter Property="BindingPath" Value="{Binding Path=(dxc:DependencyObjectExtensions.DataContext).BindingPath, RelativeSource={RelativeSource Self}}" />
+        </Style>
+
+        <helpers:ColumnTemplateSelector x:Key="columnTemplateSelector" />
+
+        <DataTemplate x:Key="DefaultColumnTemplate">
+            <ContentControl>
+                <controls:CustomGridColumn AutoFilterCondition="Contains" ColumnFilterMode="DisplayText">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:TextEditSettings DisplayFormat="{Binding DisplayFormat}" DisplayTextConverter="{Binding DisplayTextConverter}"/>
+                    </dxg:GridColumn.EditSettings>
+                </controls:CustomGridColumn>
+            </ContentControl>
+        </DataTemplate>
+
+        <DataTemplate x:Key="CheckColumnTemplate">
+            <ContentControl>
+                <controls:CustomGridColumn AutoFilterCondition="Contains" ColumnFilterMode="Value">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:CheckEditSettings DisplayFormat="{Binding DisplayFormat}" />
+                    </dxg:GridColumn.EditSettings>
+                </controls:CustomGridColumn>
+            </ContentControl>
+        </DataTemplate>
+
+        <DataTemplate x:Key="DateTimeColumnTemplate">
+            <ContentControl>
+                <controls:CustomGridColumn AutoFilterCondition="Default" ColumnFilterMode="Value">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:DateEditSettings Mask="{Binding DisplayFormat, TargetNullValue='d'}" MaskUseAsDisplayFormat="True" />
+                    </dxg:GridColumn.EditSettings>
+                </controls:CustomGridColumn>
+            </ContentControl>
+        </DataTemplate>
+
+        <DataTemplate x:Key="LookUpEditColumnTemplate">
+            <ContentControl>
+                <controls:CustomGridColumn AutoFilterCondition="Contains" ColumnFilterMode="Value">
+                    <dxg:GridColumn.EditSettings>
+                        <controls:CustomCommonLookupSettings LookUpCodeEditor="{Binding LookupCode}" AllowAddNewValue="{Binding AllowAddNewValue}" />
+                    </dxg:GridColumn.EditSettings>
+                </controls:CustomGridColumn>
+            </ContentControl>
+        </DataTemplate>
+
+        <DataTemplate x:Key="ComboBoxColumnTemplate">
+            <ContentControl>
+                <controls:CustomGridColumn AutoFilterCondition="Contains" ColumnFilterMode="DisplayText">
+                    <dxg:GridColumn.EditSettings>
+                        <controls:CustomComboBoxSettings LookUpCodeEditor="{Binding LookupCode}" AllowAddNewValue="{Binding AllowAddNewValue}" />
+                    </dxg:GridColumn.EditSettings>
+                </controls:CustomGridColumn>
+            </ContentControl>
+        </DataTemplate>
+
+        <DataTemplate x:Key="MemoEditColumnTemplate">
+            <ContentControl>
+                <controls:CustomGridColumn AutoFilterCondition="Contains" ColumnFilterMode="DisplayText">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:MemoEditSettings ShowIcon="False" PopupWidth="250" MemoTextWrapping="Wrap" MemoVerticalScrollBarVisibility="Auto" DisplayFormat="{Binding DisplayFormat}" />
+                    </dxg:GridColumn.EditSettings>
+                </controls:CustomGridColumn>
+            </ContentControl>
+        </DataTemplate>
+
+        <!-- Шаблон грида -->
+        <DataTemplate x:Key="TotalItemRowTemplateKey">
+            <TextBlock Margin="2" Text="{Binding}" />
+        </DataTemplate>
+
+        <Style x:Key="UpdateTimeTextStyle" TargetType="TextBlock" >
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsNeedRefresh, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type controls:CustomGridControl}}}" Value="True">
+                    <Setter Property="Foreground" Value="Red"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsNeedRefresh, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type controls:CustomGridControl}}}" Value="False">
+                    <Setter Property="Foreground" Value="Green"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <DataTemplate x:Key="UpdateTimeTemplateKey">
+            <TextBlock Margin="2" Text="{Binding StringFormat='{}{0:dd.MM.yy HH:mm:ss}' }" Style="{StaticResource UpdateTimeTextStyle}"  />
+        </DataTemplate>
+
+        <Style x:Key="CustomGridControlTemplateKey" TargetType="{x:Type controls:CustomGridControl}">
+            <Setter Property="TotalRowPosition" Value="Bottom" />
+            <!-- Формат 'Всего строк' - {0}, 'Формат вывода видимых строк' - {1}, 'Символ - не все строки из БД получены' - {2}, 'Дополнительная информация' - {3} -->
+            <Setter Property="TotalRowItemDisplayFormat" Value="{lex:LocExtension Key=wmsMLC.General.PL.WPF.Components:Resources:TotalRowItemDisplayFormat}" />
+            <Setter Property="TotalRowItemVisibleRowDisplayFormat" Value="{lex:LocExtension Key=wmsMLC.General.PL.WPF.Components:Resources:TotalRowItemVisibleRowDisplayFormat}" />
+            <Setter Property="TotalRowItemFilteredSymbol" Value="+" />
+            <Setter Property="IsNeedRefresh" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type controls:CustomGridControl}">
+                        <!--BEGIN WPF-->
+                        <AdornerDecorator>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="Common">
+                                    <VisualState x:Name="TotalItemRowHidden">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="topTotalItemRow" Duration="0">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Collapsed</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="bottomTotalItemRow" Duration="0">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Collapsed</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="updateTimeRow" Duration="0">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Collapsed</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="TopTotalItemRowVisible">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="topTotalItemRow" Duration="0">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="bottomTotalItemRow" Duration="0">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Collapsed</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="updateTimeRow" Duration="0">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Collapsed</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="BottomTotalItemRowVisible">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="topTotalItemRow" Duration="0">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Collapsed</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="bottomTotalItemRow" Duration="0">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="updateTimeRow" Duration="0">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <!--END WPF-->
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <ContentPresenter x:Name="topTotalItemRow" ContentTemplate="{StaticResource TotalItemRowTemplateKey}" Visibility="Collapsed" />
+
+                                <dx:DXArranger Grid.Row="1">
+                                    <dxg:DXGridThemesLoader x:Name="PART_ThemesLoader" dxg:GridBorderHelper.ShowBorder="{Binding Path=ShowBorder, RelativeSource={RelativeSource TemplatedParent}}" Template="{DynamicResource {dxgt:GridControlThemeKey ResourceKey=BorderTemplate, ThemeName={x:Static dx:ThemeManager.ApplicationThemeName}}}" />
+                                </dx:DXArranger>
+                                <dxg:ErrorPanel Grid.Row="1" x:Name="PART_ErrorPanel" Visibility="Collapsed" />
+                                <dx:WaitIndicator Grid.Row="1" x:Name="PART_LoadingPanel" DeferedVisibility="{TemplateBinding ShowLoadingPanel}" Style="{Binding Path=View.WaitIndicatorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
+
+                                <Grid Grid.Row="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <ContentPresenter Grid.Column="0" x:Name="bottomTotalItemRow" ContentTemplate="{StaticResource TotalItemRowTemplateKey}" Visibility="Visible" HorizontalAlignment="Left" />
+                                    <ContentPresenter Grid.Column="1" x:Name="updateTimeRow" ContentTemplate="{StaticResource UpdateTimeTemplateKey}" Visibility="Visible" HorizontalAlignment="Right" />
+                                </Grid>
+
+                            </Grid>
+                            <!--BEGIN WPF-->
+                        </AdornerDecorator>
+                        <!--END WPF-->
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </dxg:GridControl.Resources>
+
+    <dxg:GridControl.Style>
+        <StaticResource ResourceKey="CustomGridControlTemplateKey" />
+    </dxg:GridControl.Style>
+
+    <dxg:GridControl.ColumnGeneratorStyle>
+        <StaticResource ResourceKey="columnStyle" />
+    </dxg:GridControl.ColumnGeneratorStyle>
+    <dxg:GridControl.ColumnGeneratorTemplateSelector>
+        <helpers:ColumnTemplateSelector DefaultColumnTemplate="{StaticResource DefaultColumnTemplate}"
+            DateTimeColumnTemplate="{StaticResource DateTimeColumnTemplate}"
+            CheckColumnTemplate="{StaticResource CheckColumnTemplate}"
+            LookUpEditColumnTemplate="{StaticResource LookUpEditColumnTemplate}"
+            MemoEditColumnTemplate="{StaticResource MemoEditColumnTemplate}"
+            ComboBoxColumnTemplate="{StaticResource ComboBoxColumnTemplate}"/>
+    </dxg:GridControl.ColumnGeneratorTemplateSelector>
+</dxg:GridControl>

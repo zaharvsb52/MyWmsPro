@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Vehicle" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!--Сущность Vehicle-->
+  <xs:element name="TENTVEHICLE" type="VehicleType"/>
+  
+  <!--Описание типа Vehicle-->
+  <xs:complexType name="VehicleType">
+    <xs:sequence>
+      <!--ID записи-->
+      <xs:element name="VEHICLEID" type="xs:integer"/>
+      <!--Марка и модель автомобиля-->
+      <xs:element name="CARTYPEID_R" type="xs:integer" nillable="false"/>      
+      <!--Регистрационный номер автомобиля-->
+      <xs:element name="VEHICLERN">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--VIN-->
+      <xs:element name="VEHICLEVIN">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Цвет автомобиля-->
+      <xs:element name="VEHICLECOLOR">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1030"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Разрешенная max масса-->
+      <xs:element name="VEHICLEMAXWEIGHT" type="xs:integer"/>
+      <!--Масса без нагрузки-->
+      <xs:element name="VEHICLEEMPTYWEIGHT" type="xs:integer"/>
+      <!--Тип автомобиля-->
+      <xs:element name="VEHICLETYPE">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1030"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Регистрационный номер прицепа-->
+      <xs:element name="VEHICLETRAILERRN">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Разрешенная max масса прицепа-->
+      <xs:element name="VEHICLETRAILERMAXWEIGHT" type="xs:integer"/>
+      <!--Масса прицепа без нагрузки-->
+      <xs:element name="VEHICLETRAILEREMPTYWEIGHT" type="xs:integer"/>
+      <!--Владелец ЮР-->
+      <xs:element name="VEHICLEOWNERLEGAL" type="xs:integer"/>
+      <!--Владелец ФИЗ-->
+      <xs:element name="VEHICLEPERSON" type="xs:integer"/>
+      <!--Идентификатор в хост-системе-->
+      <xs:element name="VEHICLEHOSTREF">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

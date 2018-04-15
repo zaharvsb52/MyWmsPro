@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SKU2TTE" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!--Сущность SKU2TTE-->
+  <xs:element name="TENTSKU2TTE" type="SKU2TTEType"/>
+  
+  <!--Отношение типов ТЕ к артикулу -->
+  <xs:complexType name="SKU2TTEType">
+    <xs:sequence>
+      <!--ID записи-->
+      <xs:element name="SKU2TTEID" type="xs:integer"/>
+      <!--Код типа ТЕ-->
+      <xs:element name="TETYPECODE_R" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--ID записи SKU-->
+      <xs:element name="SKUID_R" type="xs:integer" nillable="false" minOccurs="1" maxOccurs="1"/>
+      <!--Тип ТЕ по умолчанию-->
+      <xs:element name="SKU2TTEDEFAULT" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:totalDigits value="1"/>
+            <xs:maxInclusive value="1"/>
+            <xs:minInclusive value="0"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Максимально разрешенное кол-во товара на ТЕ-->
+      <xs:element name="SKU2TTEQUANTITY" type="xs:integer" nillable="false" minOccurs="1" maxOccurs="1"/>
+      <!--Максимально разрешенный вес товара на ТЕ-->
+      <xs:element name="SKU2TTEMAXWEIGHT" type="xs:integer" nillable="false" minOccurs="1" maxOccurs="1"/>
+      <!--Длина с товаром-->
+      <xs:element name="SKU2TTELENGTH" type="xs:integer"/>
+      <!--Ширина с товаром-->
+      <xs:element name="SKU2TTEWIDTH" type="xs:integer"/>
+      <!--Высота с товаром-->
+      <xs:element name="SKU2TTEHEIGHT" type="xs:integer"/>
+      <!--Критерий выбора менеджера перемещения-->
+      <xs:element name="SKU2TTESELMM">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+            <xs:enumeration value="IDM_BAREL"/>
+            <xs:enumeration value="IDM_BOX"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Мандант-->
+      <xs:element name="MANDANTID" type="xs:integer"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

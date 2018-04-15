@@ -1,0 +1,29 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <Style x:Key="{dxdst:DefaultStyleThemeKey ThemeName=GrayOne, FullName=DevExpress.Xpf.Core.TransferControl}" TargetType="{x:Type dx:TransferControl}">
+    <Setter Property="ClipToBounds" Value="true" />
+    <Setter Property="PreviousControlTemplate">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type ContentControl}">
+          <ContentPresenter Name="PART_ContentPresenter" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\TransferControl.xaml;8;22" />
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="ControlTemplate">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type ContentControl}">
+          <ContentPresenter Name="PART_ContentPresenter" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\TransferControl.xaml;15;22" />
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type dx:TransferControl}">
+          <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\TransferControl.xaml;22;22">
+            <dxcore_unique_xmlns:TransferContentControl Name="PART_PreviousContentPresenter" Content="{TemplateBinding PreviousContent}" ContentTemplate="{TemplateBinding ContentTemplate}" ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}" IsPreviousContent="True" Template="{TemplateBinding PreviousControlTemplate}" SpeedRatio="{TemplateBinding SpeedRatio}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\TransferControl.xaml;23;26"></dxcore_unique_xmlns:TransferContentControl>
+            <dxcore_unique_xmlns:TransferContentControl Name="PART_ContentPresenter" Content="{TemplateBinding CurrentContent}" ContentTemplate="{TemplateBinding ContentTemplate}" ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}" Template="{TemplateBinding ControlTemplate}" SpeedRatio="{TemplateBinding SpeedRatio}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\TransferControl.xaml;25;26"></dxcore_unique_xmlns:TransferContentControl>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+</ResourceDictionary>

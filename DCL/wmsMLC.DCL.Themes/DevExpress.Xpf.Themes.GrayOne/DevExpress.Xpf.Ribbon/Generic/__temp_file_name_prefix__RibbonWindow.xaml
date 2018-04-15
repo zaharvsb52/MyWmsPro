@@ -1,0 +1,256 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon" xmlns:dxrt="http://schemas.devexpress.com/winfx/2008/xaml/ribbon/themekeys" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <dxcore_unique_xmlns:BooleanToVisibilityConverter x:Key="boolToVisibilityConverter" Invert="False" />
+  <dxcore_unique_xmlns:BooleanToVisibilityConverter x:Key="invertBoolToVisibilityConverter" Invert="True" />
+  <!--BEGIN WPF-->
+  <ControlTemplate TargetType="{x:Type dxc:DXWindow}" x:Key="DXWindowTemplate">
+    <Grid x:Name="Root_Grid" Height="Auto" Margin="0,0,0,0" VerticalAlignment="Stretch" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;7;10">
+      <AdornerDecorator ClipToBounds="True" x:Name="PART_WindowAdornerDecorator" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;8;14">
+        <ContentPresenter ContentTemplate="{TemplateBinding ActualWindowTemplate}" Height="Auto" Width="Auto" x:Name="PART_RootContentPresenter" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;9;18"></ContentPresenter>
+      </AdornerDecorator>
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate TargetType="{x:Type dxc:DXWindow}" x:Key="DXWindowEmptyTemplate">
+    <Grid x:Name="Root_Grid" Height="Auto" Margin="0,0,0,0" VerticalAlignment="Stretch" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;15;10">
+      <AdornerDecorator ClipToBounds="True" x:Name="PART_WindowAdornerDecorator" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;16;14">
+        <ContentPresenter ContentTemplate="{TemplateBinding WindowTemplate}" Height="Auto" Width="Auto" x:Name="PART_RootContentPresenter" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;17;18">
+          <ContentPresenter.Content>
+            <Border dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;19;26" />
+          </ContentPresenter.Content>
+        </ContentPresenter>
+      </AdornerDecorator>
+    </Grid>
+  </ControlTemplate>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.DXRibbonWindow}" TargetType="{x:Type dxr:DXRibbonWindow}">
+    <Setter Property="ResizeMode" Value="CanResize" />
+    <Setter Property="ResizeBorderThickness" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=ResizeBorderThickness}}" />
+    <Setter Property="ResizeBorderThicknessInAeroMode" Value="{DynamicResource {dxrt:DXRibbonAeroWindowThemeKey ResourceKey=AeroWindowResizeBorderThickness}}" />
+    <Setter Property="AeroBorderSize" Value="{DynamicResource {dxrt:DXRibbonAeroWindowThemeKey ResourceKey=AeroBorderSize}}" />
+    <Setter Property="AeroWindowTemplate" Value="{DynamicResource {dxrt:DXRibbonAeroWindowThemeKey ResourceKey=AeroWindowTemplate}}" />
+    <Setter Property="WindowTemplate" Value="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerTemplate}}" />
+    <Setter Property="Template" Value="{StaticResource DXWindowTemplate}" />
+    <Style.Triggers>
+      <Trigger Property="HasContent" Value="False">
+        <Setter Property="Template" Value="{StaticResource DXWindowEmptyTemplate}" />
+      </Trigger>
+    </Style.Triggers>
+  </Style>
+  <DataTemplate x:Key="{dxrt:RibbonThemeKey ResourceKey=FloatingContainerTemplate}">
+    <ContentControl Template="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerBorderTemplate}}" Focusable="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;41;10">
+      <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;42;14">
+        <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;43;18">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+          </Grid.RowDefinitions>
+          <Grid x:Name="FloatingContainerHeader" Grid.Row="0" Visibility="{Binding Path=IsCaptionVisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxr:DXRibbonWindow}}, Converter={StaticResource boolToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;48;22">
+            <ContentControl Template="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerHeaderBorderTemplate}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;49;26" />
+            <Thumb x:Name="PART_DragWidget" Template="{DynamicResource {dxt:FloatingContainerThemeKey IsVisibleInBlend=True, ResourceKey=FloatingContainerDragWidgetTemplate}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;50;26" />
+            <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;51;26">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+              </Grid.ColumnDefinitions>
+              <ContentControl x:Name="PART_IconAndCaptionArea" Grid.Column="0" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerIconAndCaptionAreaStyle}}" Visibility="{Binding Path=IsCaptionVisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxr:DXRibbonWindow}}, Converter={StaticResource boolToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;56;30">
+                <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;57;34">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                  </Grid.ColumnDefinitions>
+                  <Image x:Name="PART_Icon" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerIconStyle}}" Grid.Column="0" Panel.ZIndex="100" Source="{Binding Path=(dxc:FloatingContainer.FloatingContainer).Icon, RelativeSource={RelativeSource AncestorType=ContentPresenter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;62;38" />
+                  <ContentControl Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerCaptionStyle}}" IsHitTestVisible="False" Content="{Binding Path=Title, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxr:DXRibbonWindow}}}" Panel.ZIndex="100" Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;63;38" />
+                </Grid>
+              </ContentControl>
+              <ContentControl Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerControlBoxStyle}}" Template="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerControlBoxTemplate}}" Grid.Column="1" Opacity="0" Focusable="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;67;30">
+                <StackPanel Orientation="Horizontal" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;68;34">
+                  <Button Template="{DynamicResource {dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerMinimizeButtonTemplate}}" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerMinimizeButtonStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;69;38" />
+                  <Button Template="{DynamicResource {dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerRestoreButtonTemplate}}" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerRestoreButtonStyle}}" Visibility="{Binding Path=(dxc:FloatingContainer.IsMaximized), RelativeSource={RelativeSource TemplatedParent}, Converter={dxc:BooleanToVisibilityConverter Invert=False}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;70;38" />
+                  <Button Template="{DynamicResource {dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerMaximizeButtonTemplate}}" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerMaximizeButtonStyle}}" Visibility="{Binding Path=(dxc:FloatingContainer.IsMaximized), RelativeSource={RelativeSource TemplatedParent}, Converter={dxc:BooleanToVisibilityConverter Invert=True}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;71;38" />
+                  <Button Template="{DynamicResource {dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerCloseButtonTemplate}}" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerCloseButtonStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;72;38" />
+                </StackPanel>
+              </ContentControl>
+            </Grid>
+          </Grid>
+          <ContentControl Template="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerHeaderBorderTemplate}}" Height="{Binding Path=(dxr:DXRibbonWindow.RibbonHeaderBorderHeight), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxr:DXRibbonWindow}}}" Focusable="False" Visibility="{Binding Path=IsCaptionVisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxr:DXRibbonWindow}}, Converter={StaticResource invertBoolToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;77;22" />
+          <ContentControl Template="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerContentTemplate}}" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerContentStyle}}" Grid.Row="1" Focusable="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;78;22">
+            <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;79;26">
+              <ContentControl Template="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerBodyTemplate}}" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerBodyStyle}}" Focusable="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;81;30">
+                <dxcore_unique_xmlns:BackgroundPanel x:Name="PART_ContainerContent" Background="{x:Null}" Margin="{Binding Path=(dxr:DXRibbonWindow.ContentPresenterMargin), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxr:DXRibbonWindow}}}" Content="{Binding Path=Content, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxr:DXRibbonWindow}}}" />
+              </ContentControl>
+              <StackPanel x:Name="PART_StatusPanel" VerticalAlignment="Bottom" HorizontalAlignment="Right" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;84;30">
+                <Border Height="Auto" Background="{x:Null}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;85;34">
+                  <Thumb Template="{DynamicResource {dxt:FloatingContainerThemeKey IsVisibleInBlend=True, ResourceKey=FloatingContainerSizeGripTemplate}}" Cursor="SizeNWSE" HorizontalAlignment="Right" x:Name="PART_SizeGrip" VerticalAlignment="Bottom" Width="16" Height="16" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;86;38" />
+                </Border>
+              </StackPanel>
+            </Grid>
+          </ContentControl>
+        </Grid>
+        <Grid Background="{x:Null}" VerticalAlignment="Top" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;93;18">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+          </Grid.ColumnDefinitions>
+          <ContentControl Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerCaptionStyle}}" Visibility="{Binding Path=IsCaptionVisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxr:DXRibbonWindow}}, Converter={StaticResource boolToVisibilityConverter}}" IsHitTestVisible="False" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;98;22">
+            <ContentPresenter Panel.ZIndex="100" Grid.Column="0" Content="{Binding Path=Title, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxr:DXRibbonWindow}}}" ContentTemplate="{DynamicResource {dxt:FloatingContainerThemeKey IsVisibleInBlend=True, ResourceKey=FloatingContainerCaptionTemplate}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;99;26" />
+          </ContentControl>
+          <ContentControl Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerControlBoxStyle}}" Template="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerControlBoxTemplate}}" Grid.Column="1" Focusable="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;101;22">
+            <StackPanel x:Name="stackPanel" Orientation="Horizontal" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;102;26">
+              <Button x:Name="PART_Minimize" Template="{DynamicResource {dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerMinimizeButtonTemplate}}" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerMinimizeButtonStyle}}" Focusable="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;103;30" />
+              <Button x:Name="PART_Restore" Template="{DynamicResource {dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerRestoreButtonTemplate}}" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerRestoreButtonStyle}}" Visibility="{Binding Path=(dxc:FloatingContainer.IsMaximized), RelativeSource={RelativeSource TemplatedParent}, Converter={dxc:BooleanToVisibilityConverter Invert=False}}" Focusable="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;104;30" />
+              <Button x:Name="PART_Maximize" Template="{DynamicResource {dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerMaximizeButtonTemplate}}" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerMaximizeButtonStyle}}" Visibility="{Binding Path=(dxc:FloatingContainer.IsMaximized), RelativeSource={RelativeSource TemplatedParent}, Converter={dxc:BooleanToVisibilityConverter Invert=True}}" Focusable="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;105;30" />
+              <Button x:Name="PART_CloseButton" Template="{DynamicResource {dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerCloseButtonTemplate}}" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerCloseButtonStyle}}" Focusable="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;106;30" />
+            </StackPanel>
+          </ContentControl>
+        </Grid>
+      </Grid>
+    </ContentControl>
+    <DataTemplate.Triggers>
+      <DataTrigger Binding="{Binding Path=(dxc:FloatingContainer.IsActive), RelativeSource={RelativeSource TemplatedParent}}" Value="False">
+        <Setter Property="Opacity" TargetName="stackPanel" Value="0.5" />
+        <Setter Property="Opacity" TargetName="PART_IconAndCaptionArea" Value="0.5" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding Path=(dxc:FloatingContainer.FloatingContainer), RelativeSource={RelativeSource Self}}" Value="{x:Null}">
+        <Setter Property="Visibility" TargetName="PART_StatusPanel" Value="Collapsed" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding Path=(dxc:FloatingContainer.FloatingContainer).AllowSizing, RelativeSource={RelativeSource Self}}" Value="false">
+        <Setter Property="Visibility" TargetName="PART_StatusPanel" Value="Collapsed" />
+      </DataTrigger>
+    </DataTemplate.Triggers>
+  </DataTemplate>
+  <ControlTemplate x:Key="DXWindowContainerTemplate" TargetType="{x:Type dxr:DXRibbonWindowContainer}">
+    <ContentControl Template="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerBorderTemplate}}" Focusable="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;128;10">
+      <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;129;14">
+        <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;130;18">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+          </Grid.RowDefinitions>
+          <Grid x:Name="FloatingContainerHeader" Grid.Row="0" Visibility="{Binding Path=IsHeaderVisible, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter={StaticResource boolToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;135;22">
+            <ContentControl Template="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerHeaderBorderTemplate}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;136;26" />
+            <Thumb x:Name="PART_DragWidget" Template="{DynamicResource {dxt:FloatingContainerThemeKey IsVisibleInBlend=True, ResourceKey=FloatingContainerDragWidgetTemplate}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;137;26" />
+            <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;138;26">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+              </Grid.ColumnDefinitions>
+              <ContentControl x:Name="PART_IconAndCaptionArea" Grid.Column="0" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerIconAndCaptionAreaStyle}}" Visibility="{Binding Path=IsHeaderVisible, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter={StaticResource boolToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;143;30">
+                <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;144;34">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                  </Grid.ColumnDefinitions>
+                  <Image x:Name="PART_Icon" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerIconStyle}}" Grid.Column="0" Panel.ZIndex="100" Source="{TemplateBinding Icon}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;149;38" />
+                  <ContentControl Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerCaptionStyle}}" IsHitTestVisible="False" Content="{TemplateBinding Caption}" Panel.ZIndex="100" Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;150;38" />
+                </Grid>
+              </ContentControl>
+              <ContentControl x:Name="PART_ControlBoxContainer" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerControlBoxStyle}}" Template="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerControlBoxTemplate}}" Grid.Column="1" Opacity="0" Focusable="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;154;30">
+                <StackPanel Orientation="Horizontal" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;155;34">
+                  <Button Template="{DynamicResource {dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerMinimizeButtonTemplate}}" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerMinimizeButtonStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;156;38" />
+                  <Button Template="{DynamicResource {dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerRestoreButtonTemplate}}" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerRestoreButtonStyle}}" Visibility="{Binding Path=(dxc:FloatingContainer.IsMaximized), Converter={dxc:BooleanToVisibilityConverter Invert=False}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;157;38" />
+                  <Button Template="{DynamicResource {dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerMaximizeButtonTemplate}}" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerMaximizeButtonStyle}}" Visibility="{Binding Path=(dxc:FloatingContainer.IsMaximized), Converter={dxc:BooleanToVisibilityConverter Invert=True}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;158;38" />
+                  <Button Template="{DynamicResource {dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerCloseButtonTemplate}}" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerCloseButtonStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;159;38" />
+                </StackPanel>
+              </ContentControl>
+            </Grid>
+          </Grid>
+          <ContentControl Template="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerHeaderBorderTemplate}}" Height="{Binding Path=(dxr:DXRibbonWindow.RibbonHeaderBorderHeight), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxr:DXRibbonWindowContainer}}}" Visibility="{Binding Path=IsHeaderVisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxr:DXRibbonWindowContainer}}, Converter={StaticResource invertBoolToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;164;22" />
+          <ContentControl Template="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerContentTemplate}}" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerContentStyle}}" Grid.Row="1" Focusable="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;165;22">
+            <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;166;26">
+              <ContentControl Template="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerBodyTemplate}}" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerBodyStyle}}" Focusable="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;167;30">
+                <ContentPresenter Margin="{Binding Path=(dxr:DXRibbonWindow.ContentPresenterMargin), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxr:DXRibbonWindowContainer}}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;168;34" />
+              </ContentControl>
+              <StackPanel x:Name="PART_StatusPanel" Visibility="{Binding Path=IsStatusBarVisible, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter={StaticResource boolToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;170;30">
+                <Border Height="Auto" Background="{x:Null}" HorizontalAlignment="Right" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;171;34">
+                  <Thumb Template="{DynamicResource {dxt:FloatingContainerThemeKey IsVisibleInBlend=True, ResourceKey=FloatingContainerSizeGripTemplate}}" Cursor="SizeNWSE" HorizontalAlignment="Right" x:Name="PART_SizeGrip" VerticalAlignment="Bottom" Width="16" Height="16" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;172;38" />
+                </Border>
+              </StackPanel>
+            </Grid>
+          </ContentControl>
+        </Grid>
+        <Grid Background="{x:Null}" VerticalAlignment="Top" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;179;18">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+          </Grid.ColumnDefinitions>
+          <ContentControl Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerCaptionStyle}}" Visibility="{Binding Path=IsHeaderVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource boolToVisibilityConverter}}" IsHitTestVisible="False" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;184;22">
+            <ContentPresenter Panel.ZIndex="100" Grid.Column="0" Content="{TemplateBinding Caption}" ContentTemplate="{DynamicResource {dxt:FloatingContainerThemeKey IsVisibleInBlend=True, ResourceKey=FloatingContainerCaptionTemplate}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;185;26" />
+          </ContentControl>
+          <ContentControl Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerControlBoxStyle}}" Template="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerControlBoxTemplate}}" Grid.Column="1" Focusable="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;187;22">
+            <StackPanel x:Name="stackPanel" Orientation="Horizontal" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;188;26">
+              <Button x:Name="PART_Minimize" Template="{DynamicResource {dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerMinimizeButtonTemplate}}" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerMinimizeButtonStyle}}" Visibility="{Binding Path=IsMinimizeButtonVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource boolToVisibilityConverter}}" Focusable="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;189;30" />
+              <Button x:Name="PART_Restore" Template="{DynamicResource {dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerRestoreButtonTemplate}}" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerRestoreButtonStyle}}" Visibility="{Binding Path=IsRestoreButtonVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource boolToVisibilityConverter}}" Focusable="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;190;30" />
+              <Button x:Name="PART_Maximize" Template="{DynamicResource {dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerMaximizeButtonTemplate}}" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerMaximizeButtonStyle}}" Visibility="{Binding Path=IsMaximizeButtonVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource boolToVisibilityConverter}}" Focusable="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;191;30" />
+              <Button x:Name="PART_CloseButton" Template="{DynamicResource {dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerCloseButtonTemplate}}" Style="{DynamicResource {dxrt:RibbonThemeKey ResourceKey=FloatingContainerCloseButtonStyle}}" Visibility="{Binding Path=IsCloseButtonVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource boolToVisibilityConverter}}" Focusable="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;192;30" />
+            </StackPanel>
+          </ContentControl>
+        </Grid>
+      </Grid>
+    </ContentControl>
+    <ControlTemplate.Triggers>
+      <DataTrigger Binding="{Binding Path=IsActive}" Value="False">
+        <Setter Property="Opacity" TargetName="stackPanel" Value="0.5" />
+        <Setter Property="Opacity" TargetName="PART_IconAndCaptionArea" Value="0.5" />
+      </DataTrigger>
+    </ControlTemplate.Triggers>
+  </ControlTemplate>
+  <ControlTemplate x:Key="DXAeroWindowContainerTemplate" TargetType="{x:Type dxr:DXRibbonWindowContainer}">
+    <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;208;10">
+      <Border CornerRadius="4" BorderBrush="#FF4E6166" BorderThickness="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;209;14">
+        <Border CornerRadius="3" BorderBrush="#FFECF4FC" Background="#FFF0FFFF" BorderThickness="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;210;18" />
+      </Border>
+      <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;213;14">
+        <Grid Margin="{Binding Path=(dxr:DXRibbonWindow.AeroContentMargin), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxr:DXRibbonWindowContainer}}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;214;18">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+          </Grid.RowDefinitions>
+          <Grid x:Name="FloatingContainerHeader" Grid.Row="0" Visibility="{Binding Path=IsHeaderVisible, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter={StaticResource boolToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;219;22">
+            <ContentControl Template="{DynamicResource {dxrt:DXRibbonAeroWindowThemeKey ResourceKey=AeroWindowHeaderBorderTemplate}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;220;26" />
+            <Thumb x:Name="PART_DragWidget" Template="{DynamicResource {dxt:FloatingContainerThemeKey IsVisibleInBlend=True, ResourceKey=FloatingContainerDragWidgetTemplate}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;221;26" />
+            <ContentControl x:Name="PART_IconAndCaptionArea" Grid.Column="0" Style="{DynamicResource {dxrt:DXRibbonAeroWindowThemeKey ResourceKey=AeroWindowIconAndCaptionAreaStyle}}" Visibility="{Binding Path=IsHeaderVisible, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter={StaticResource boolToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;223;26">
+              <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;224;30">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="Auto" />
+                  <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Image x:Name="PART_Icon" Style="{DynamicResource {dxrt:DXRibbonAeroWindowThemeKey ResourceKey=AeroWindowIconStyle}}" Grid.Column="0" Panel.ZIndex="100" Source="{TemplateBinding Icon}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;229;34" />
+                <ContentControl Style="{DynamicResource {dxrt:DXRibbonAeroWindowThemeKey ResourceKey=AeroWindowCaptionStyle}}" IsHitTestVisible="False" Content="{TemplateBinding  Caption}" Panel.ZIndex="100" Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;230;34" />
+              </Grid>
+            </ContentControl>
+          </Grid>
+          <ContentControl Template="{DynamicResource {dxrt:DXRibbonAeroWindowThemeKey ResourceKey=AeroWindowContentTemplate}}" Style="{DynamicResource {dxrt:DXRibbonAeroWindowThemeKey ResourceKey=AeroWindowContentStyle}}" Grid.Row="1" Focusable="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;236;22">
+            <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;237;26">
+              <ContentControl Template="{DynamicResource {dxrt:DXRibbonAeroWindowThemeKey ResourceKey=AeroWindowBodyTemplate}}" Style="{DynamicResource {dxrt:DXRibbonAeroWindowThemeKey ResourceKey=AeroWindowBodyStyle}}" Focusable="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;238;30">
+                <dxcore_unique_xmlns:BackgroundPanel x:Name="PART_ContainerContent" Margin="{Binding Path=(dxr:DXRibbonWindow.ContentPresenterMargin), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxr:DXRibbonWindowContainer}}}" />
+              </ContentControl>
+              <StackPanel x:Name="PART_StatusPanel" VerticalAlignment="Bottom" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;241;30">
+                <Border Height="Auto" Background="{x:Null}" HorizontalAlignment="Right" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;242;34">
+                  <Thumb Template="{DynamicResource {dxt:FloatingContainerThemeKey IsVisibleInBlend=True, ResourceKey=FloatingContainerSizeGripTemplate}}" Cursor="SizeNWSE" HorizontalAlignment="Right" x:Name="PART_SizeGrip" VerticalAlignment="Bottom" Width="16" Height="16" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;243;38" />
+                </Border>
+              </StackPanel>
+            </Grid>
+          </ContentControl>
+        </Grid>
+        <Grid Background="{x:Null}" VerticalAlignment="Top" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;251;18">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+          </Grid.ColumnDefinitions>
+          <ContentControl Style="{DynamicResource {dxrt:DXRibbonAeroWindowThemeKey ResourceKey=AeroWindowCaptionStyle}}" Visibility="{Binding Path=IsHeaderVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource boolToVisibilityConverter}}" IsHitTestVisible="False" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;256;22">
+            <ContentPresenter Panel.ZIndex="100" Grid.Column="0" Content="{Binding Path=Title, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxr:DXRibbonWindow}}}" ContentTemplate="{DynamicResource {dxrt:DXRibbonAeroWindowThemeKey IsVisibleInBlend=True, ResourceKey=AeroWindowCaptionTemplate}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;257;26" />
+          </ContentControl>
+          <ContentControl x:Name="PART_ControlBoxContainer" Grid.Column="1" IsHitTestVisible="False" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\RibbonWindow.xaml;259;22" />
+        </Grid>
+      </Grid>
+    </Grid>
+    <ControlTemplate.Triggers>
+      <DataTrigger Binding="{Binding Path=IsActive}" Value="False">
+        <Setter Property="Opacity" TargetName="PART_IconAndCaptionArea" Value="0.5" />
+      </DataTrigger>
+    </ControlTemplate.Triggers>
+  </ControlTemplate>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.DXRibbonWindowContainer}" TargetType="{x:Type dxr:DXRibbonWindowContainer}">
+    <Setter Property="Template" Value="{StaticResource DXWindowContainerTemplate}" />
+    <Setter Property="AeroTemplate" Value="{StaticResource DXAeroWindowContainerTemplate}" />
+  </Style>
+  <!--END WPF-->
+</ResourceDictionary>

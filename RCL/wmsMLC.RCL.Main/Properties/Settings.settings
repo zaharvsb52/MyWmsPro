@@ -1,0 +1,36 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="wmsMLC.RCL.Main.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="HelpServiceMail" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">mail not set</Value>
+    </Setting>
+    <Setting Name="AskUserIdentification" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ServiceId" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">RCL</Value>
+    </Setting>
+    <Setting Name="SessionId" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Auto</Value>
+    </Setting>
+    <Setting Name="ClientType" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ApplicationThemeName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SDCL_Endpoint" GenerateDefaultValueInCode="false" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ReturnedScannerKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Enter</Value>
+    </Setting>
+    <Setting Name="NextControlKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Enter</Value>
+    </Setting>
+    <Setting Name="IsTestMenuVisible" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,141 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" xmlns:dxcn="clr-namespace:DevExpress.Xpf.Core.Native;assembly=DevExpress.Xpf.Core.v15.2" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxpg="http://schemas.devexpress.com/winfx/2008/xaml/pivotgrid" xmlns:dxpgi="http://schemas.devexpress.com/winfx/2008/xaml/pivotgrid/internal" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys">
+    <dx:BooleanToVisibilityConverter x:Key="boolToVisibilityConverter" />
+    <dx:BoolToVisibilityInverseConverter x:Key="inverseBoolToVisibilityConverter" />
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.PivotGrid.Internal.ScrollableAreaCell}" TargetType="{x:Type dxpgi:ScrollableAreaCell}">
+        <Setter Property="dxpg:PivotGridPopupMenu.GridMenuType" Value="Cell" />
+        <Setter Property="dxb:BarManager.DXContextMenu" Value="{Binding Path=ValueItem.PivotGrid.GridMenu, Mode=OneTime, RelativeSource={RelativeSource Self}}" />
+    </Style>
+
+    <Style x:Key="ResizerStyle" TargetType="{x:Type dx:DXThumb}">
+        <!--BEGIN WPF-->
+        <Setter Property="MinWidth" Value="{StaticResource {x:Static SystemParameters.ResizeFrameVerticalBorderWidthKey}}" />
+        <!--END WPF-->
+        <!--ONLY SL
+        <Setter Property="MinWidth" Value="8" />
+        ONLY SL-->
+        <Setter Property="MinHeight" Value="4" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type dx:DXThumb}">
+                    <Grid Background="Transparent" dx:DragManager.IsStartDragPlace="False" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.PivotGrid.Internal.FieldValueCellElement}" TargetType="{x:Type dxpgi:FieldValueCellElement}">
+        <Setter Property="dxpg:PivotGridPopupMenu.GridMenuType" Value="FieldValue" />
+        <Setter Property="dxb:BarManager.DXContextMenu" Value="{Binding Path=ValueItem.PivotGrid.GridMenu, Mode=OneTime, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="dxpgi:FieldValueCellElement">
+                    <dx:SimplePanel x:Name="panel">
+                        <Border Name="border0" Background="{Binding Background}" Padding="{Binding Padding}" BorderBrush="{DynamicResource {dxpgi:AppearanceThemeKey ResourceKey=FieldValueBorderBrush}}" BorderThickness="{TemplateBinding Border}">
+                            <!--BEGIN WPF-->
+                            <TextBlock.Foreground>
+                                <Binding Path="Foreground" />
+                            </TextBlock.Foreground>
+                        
+                            <dx:XPFContentControl x:Name="grid" Template="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(dxpgi:ScrollableAreaPresenter.ItemTemplate), Mode=OneWay}" />
+                            <!--END WPF-->
+                                <!--ONLY SL
+                            <dxpgi:FieldDataValueContentPresenter x:Name="grid" Content="{Binding}"
+                             Template="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(dxpgi:ScrollableAreaPresenter.ItemTemplate), Mode=OneWay}"
+                                                                  DataContext="{Binding Path=DataContext, ElementName=border0}"
+                                                                  />
+                                ONLY SL-->
+                                    
+                        </Border>
+                        <dx:DXThumb Name="PART_VerticalGripper" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Style="{StaticResource ResizerStyle}" Cursor="SizeNS" Visibility="{TemplateBinding GripperYVisibility}" />
+                        <dx:DXThumb Name="PART_HorizontalGripper" HorizontalAlignment="Right" VerticalAlignment="Stretch" Style="{StaticResource ResizerStyle}" Cursor="SizeWE" Visibility="{TemplateBinding GripperXVisibility}" />
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup Name="IsTotal">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Total">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="VerticalAlignment" Storyboard.TargetName="grid">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <VerticalAlignment>Center</VerticalAlignment>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </dx:SimplePanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.PivotGrid.Internal.FieldValueExpandButton}" TargetType="{x:Type dxpgi:FieldValueExpandButton}">
+        <Setter Property="Visibility" Value="{Binding Path=ExpandButtonVisibility, Mode=OneWay}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type dxpgi:FieldValueExpandButton}">
+                    <dx:ToggleStateButton ClickMode="Press" IsChecked="{Binding Path=IsExpanded, Mode=OneWay}" Command="{Binding Path=ChangeFieldValueExpanded, Mode=OneTime}" CommandParameter="{Binding Path=Item, Mode=OneWay}" Style="{DynamicResource {dxpgi:ScrollableAreaThemeKey ResourceKey=ExpandButtonStyle}}" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.PivotGrid.Internal.GroupCollapseButton}" TargetType="{x:Type dxpgi:GroupCollapseButton}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type dxpgi:GroupCollapseButton}">
+                    <dx:SimplePanel Background="Transparent" IsHitTestVisible="True" Name="panel">
+                        <Path x:Name="collapseItem" Visibility="Visible" Style="{DynamicResource {dxpgi:FieldHeaderThemeKey ResourceKey=GroupButtonCollapseItemStyle}}" Data="F1 M 645,375L 641,379L 645,383L 645,375 Z" />
+                        <Path x:Name="expandItem" Visibility="Collapsed" Style="{DynamicResource {dxpgi:FieldHeaderThemeKey ResourceKey=GroupButtonExpandItemStyle}}" Data="F1 M 653,383L 657,379L 653,375L 653,383 Z " />
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="Buttons">
+                                <VisualState x:Name="CollapseButton" />
+                                <VisualState x:Name="ExpandButton">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="collapseItem" Storyboard.TargetProperty="(UIElement.Visibility)" dxcn:ValueSetter.Visibility="Collapsed" />
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="expandItem" Storyboard.TargetProperty="(UIElement.Visibility)" dxcn:ValueSetter.Visibility="Visible" />
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="panel" Storyboard.TargetProperty="Margin" dxcn:ValueSetter.Thickness="2,0,-1,0" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </dx:SimplePanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="MinWidth" Value="8" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Margin" Value="-1,0,1,0" />
+    </Style>
+
+    <DataTemplate x:Key="{dxpgi:PivotGridThemeKey ResourceKey=FilterCheckedTreeViewItemHeaderTemplate}">
+        <dxe:CheckEdit Focusable="False" Content="{Binding Text, Mode=OneTime}" IsChecked="{Binding IsChecked, Mode=TwoWay, RelativeSource={RelativeSource AncestorType=dxpgi:FilterCheckedTreeViewItem}}" IsThreeState="{Binding Path=IsThreeState, RelativeSource={RelativeSource AncestorType=dxpgi:FilterCheckedTreeViewItem}}">
+        </dxe:CheckEdit>
+    </DataTemplate>
+
+    <ControlTemplate x:Key="{dxpgi:PivotGridThemeKey ResourceKey=FilterCheckedTreeViewPopupTemplate}" TargetType="{x:Type Control}">
+        <Grid Width="Auto" Height="Auto" SnapsToDevicePixels="True">
+            <dxpgi:FilterCheckedTreeView x:Name="tree" BorderThickness="0" ItemsHeaderTemplate="{DynamicResource {dxpgi:PivotGridThemeKey ResourceKey=FilterCheckedTreeViewItemHeaderTemplate}}" IsEnabled="{Binding IsItemsLoaded, RelativeSource={RelativeSource Self}}" VirtualizingStackPanel.VirtualizationMode="Recycling" dxpg:PivotGridPopupMenu.GridMenuType="FilterPopup">
+                <!--BEGIN WPF-->
+                <VirtualizingStackPanel.IsVirtualizing>True</VirtualizingStackPanel.IsVirtualizing>
+                <!--END WPF-->
+            </dxpgi:FilterCheckedTreeView>
+            <dx:ColumnWaitIndicator Visibility="{Binding Path=IsItemsLoaded, ElementName=tree, Converter={StaticResource inverseBoolToVisibilityConverter}}" /> 
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxpgi:PivotGridThemeKey ResourceKey=FilterWaitIndicatorTemplate}" TargetType="{x:Type Control}">
+        <Grid Width="Auto" Height="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=ItemsPresenter}}" SnapsToDevicePixels="True">
+            <dx:ColumnWaitIndicator VerticalAlignment="Center" HorizontalAlignment="Center" />
+        </Grid>
+    </ControlTemplate>
+
+    <!--ONLY SL
+    <Style TargetType="dxpgi:FilterCheckedTreeView" dx:ThemeManager.InheritedStyleSource="{StaticResource TreeViewDictionary}" />
+    <Style TargetType="dxpgi:TreeViewFieldsPresenter" dx:ThemeManager.InheritedStyleSource="{StaticResource TreeViewDictionary}" />
+    <Style TargetType="dxpgi:CheckedTreeViewItem" dx:ThemeManager.InheritedStyleSource="{StaticResource TreeViewDictionary}" />
+   ONLY SL-->
+
+</ResourceDictionary>

@@ -1,0 +1,117 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- BarItem -->
+
+    <SolidColorBrush x:Key="BarItem.CustomizationState.Border1" Color="#FF97ABDA" />
+    <SolidColorBrush x:Key="BarItem.CustomizationState.Border2" Color="#7F97ABDA" />
+
+    <LinearGradientBrush x:Key="BarItem.HoverState.Border1" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#3F646877" Offset="0" />
+        <GradientStop Color="#3F646877" Offset="1" />
+        <GradientStop Color="#FF646877" Offset="0.5" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="BarItem.HoverState.Border2" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#3FB9C6EE" Offset="0" />
+        <GradientStop Color="#3FB9C6EE" Offset="1" />
+        <GradientStop Color="#FFB9C6EE" Offset="0.5" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="BarItem.PressedState.Border1" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#3F646877" Offset="0" />
+        <GradientStop Color="#3F646877" Offset="1" />
+        <GradientStop Color="#FF646877" Offset="0.5" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="BarItem.PressedState.Border2" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#3FBCC2CB" Offset="0" />
+        <GradientStop Color="#3FBCC2CB" Offset="1" />
+        <GradientStop Color="#FFBCC2CB" Offset="0.5" />
+    </LinearGradientBrush>
+    
+    <!-- BarItem in RibbonPageGroup -->
+    <LinearGradientBrush x:Key="BarItemInRibbonPageGroup.HoverState.Border1" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#7F656774" Offset="0" />
+        <GradientStop Color="#7FA1A3B1" Offset="1" />
+        <GradientStop Color="#7F52535F" Offset="0.25" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="BarItemInRibbonPageGroup.HoverState.Border2" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#BFD6E2F5" Offset="0" />
+        <GradientStop Color="#BFF0F3FC" Offset="1" />
+        <GradientStop Color="#BFB8C7E2" Offset="0.25" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="BarItemInRibbonPageGroup.PressedState.Border1" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#9933353D" Offset="0" />
+        <GradientStop Color="#9972737E" Offset="1" />
+        <GradientStop Color="#993B3C45" Offset="0.25" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="BarItemInRibbonPageGroup.PressedState.Border2" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#7F606469" Offset="0" />
+        <GradientStop Color="#7F94959F" Offset="1" />
+        <GradientStop Color="#7F7C7E87" Offset="0.25" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="BarItemInRibbonPageGroup.InactiveState.Border2" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#BFF9F9F9" Offset="0" />
+        <GradientStop Color="#BFF3F3F3" Offset="1" />
+        <GradientStop Color="#BFE0E0E0" Offset="0.25" />
+    </LinearGradientBrush>
+
+    <!-- BarItem In MainMenu -->
+    
+    <LinearGradientBrush x:Key="BarItemInMainMenu.HoverState.Border1" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#00646877" Offset="0" />
+        <GradientStop Color="#00646877" Offset="1" />
+        <GradientStop Color="#FF646877" Offset="0.5" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="BarItemInMainMenu.HoverState.Border2" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#00B9C6EE" Offset="0" />
+        <GradientStop Color="#00B9C6EE" Offset="1" />
+        <GradientStop Color="#FFB9C6EE" Offset="0.5" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="BarItemInMainMenu.PressedState.Border1" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#00646877" Offset="0" />
+        <GradientStop Color="#00646877" Offset="1" />
+        <GradientStop Color="#FF646877" Offset="0.5" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="BarItemInMainMenu.PressedState.Border2" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#00BCC2CB" Offset="0" />
+        <GradientStop Color="#00BCC2CB" Offset="1" />
+        <GradientStop Color="#FFBCC2CB" Offset="0.5" />
+    </LinearGradientBrush>
+
+    <!-- BarItem In PopupMenu -->
+
+    <LinearGradientBrush x:Key="BarItemInPopupMenu.HoverState.Border1" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFCECFD5" Offset="0" />
+        <GradientStop Color="#FFCECFD5" Offset="1" />
+        <GradientStop Color="#FFACAFB8" Offset="0.25" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="BarItemInPopupMenu.HoverState.Border2" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFF4F6FE" Offset="0" />
+        <GradientStop Color="#FFF4F6FE" Offset="1" />
+        <GradientStop Color="#FFECEFF7" Offset="0.25" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="BarItemInPopupMenu.HoverState.Border3" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFE5EBFF" Offset="0" />
+        <GradientStop Color="#FFE4EBFD" Offset="1" />
+        <GradientStop Color="#FFDEE6FE" Offset="0.25" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="BarItemInPopupMenu.PressedState.Border1" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFAEAFB5" Offset="0" />
+        <GradientStop Color="#FFAEAFB5" Offset="1" />
+        <GradientStop Color="#FF8C8F98" Offset="0.25" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="BarItemInPopupMenu.PressedState.Border2" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFF4F6FE" Offset="0" />
+        <GradientStop Color="#FFF4F6FE" Offset="1" />
+        <GradientStop Color="#FFECEFF7" Offset="0.25" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="BarItemInPopupMenu.PressedState.Border3" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFE7EDFF" Offset="0" />
+        <GradientStop Color="#FFDEE6FE" Offset="1" />
+        <GradientStop Color="#FFD2DEFC" Offset="0.25" />
+    </LinearGradientBrush>
+
+</ResourceDictionary>

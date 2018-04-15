@@ -1,0 +1,75 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxschd="http://schemas.devexpress.com/winfx/2008/xaml/scheduler/internal" xmlns:dxscht="http://schemas.devexpress.com/winfx/2008/xaml/scheduler/themekeys" xmlns:dxschcore="clr-namespace:DevExpress.XtraScheduler;assembly=DevExpress.XtraScheduler.v12.2.Core" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <SolidColorBrush x:Key="DefaultBorderBrush" Color="#FF9DA0AA" />
+  <SolidColorBrush x:Key="DefaultBackgroundBrush" Color="#FFFFFFFF" />
+  <SolidColorBrush x:Key="{dxscht:SchedulerViewThemeKey ResourceKey=HeaderForegroundColor}" Color="#FF201F35"></SolidColorBrush>
+  <SolidColorBrush x:Key="{dxscht:SchedulerViewThemeKey ResourceKey=AppointmentForegroundColor}" Color="#FF201F35"></SolidColorBrush>
+  <SolidColorBrush x:Key="{dxscht:DayViewThemeKey ResourceKey=AllDayAreaBottomBorderBackground}" Color="#FFFFFFFF"></SolidColorBrush>
+  <dxschcore:SchedulerColorSchemaCollection x:Key="{dxscht:SchedulerControlThemeKey ResourceKey=ResourceColorSchemaTemplate}">
+    <dxschcore:SchedulerColorSchema CellLight="#FFFFFFFF" Cell="#FFFAFAFA" CellLightBorderDark="#FFD0D0D0" CellLightBorder="#FFDADADA" CellBorder="#FFD0D0D0" CellBorderDark="#FFDADADA" />
+    <dxschcore:SchedulerColorSchema CellLight="#FFF3FFE5" Cell="#FFE2EED4" CellLightBorderDark="#FFC9D5BB" CellLightBorder="#FFD2DEC4" CellBorder="#FFC9D5BB" CellBorderDark="#FFD2DEC4" />
+    <dxschcore:SchedulerColorSchema CellLight="#FFE5FBFF" Cell="#FFD4EAEE" CellLightBorderDark="#FFBBD1D5" CellLightBorder="#FFC4D9DE" CellBorder="#FFBBD1D5" CellBorderDark="#FFC4D9DE" />
+    <dxschcore:SchedulerColorSchema CellLight="#FFFFF1E5" Cell="#FFEEE0D4" CellLightBorderDark="#FFD5C7BB" CellLightBorder="#FFDED0C4" CellBorder="#FFD5C7BB" CellBorderDark="#FFDED0C4" />
+    <dxschcore:SchedulerColorSchema CellLight="#FFF0E5FF" Cell="#FFDFD4EE" CellLightBorderDark="#FFC6BBD5" CellLightBorder="#FFCFC4DE" CellBorder="#FFC6BBD5" CellBorderDark="#FFCFC4DE" />
+    <dxschcore:SchedulerColorSchema CellLight="#FFE5FFEB" Cell="#FFD4EEDA" CellLightBorderDark="#FFBBD5C1" CellLightBorder="#FFC4DECA" CellBorder="#FFBBD5C1" CellBorderDark="#FFC4DECA" />
+    <dxschcore:SchedulerColorSchema CellLight="#FFFFE5F2" Cell="#FFEED4E1" CellLightBorderDark="#FFD5BBC8" CellLightBorder="#FFDEC4D1" CellBorder="#FFD5BBC8" CellBorderDark="#FFDEC4D1" />
+    <dxschcore:SchedulerColorSchema CellLight="#FFFFF8E5" Cell="#FFEEE7D4" CellLightBorderDark="#FFD5CEBB" CellLightBorder="#FFDED7C4" CellBorder="#FFD5CEBB" CellBorderDark="#FFDED7C4" />
+    <dxschcore:SchedulerColorSchema CellLight="#FFFFE8E5" Cell="#FFEED7D4" CellLightBorderDark="#FFD5BEBB" CellLightBorder="#FFDEC7C4" CellBorder="#FFD5BEBB" CellBorderDark="#FFDEC7C4" />
+    <dxschcore:SchedulerColorSchema CellLight="#FFE5FDFF" Cell="#FFD4ECEE" CellLightBorderDark="#FFBBD2D5" CellLightBorder="#FFC4DBDE" CellBorder="#FFBBD2D5" CellBorderDark="#FFC4DBDE" />
+    <dxschcore:SchedulerColorSchema CellLight="#FFEFFFE5" Cell="#FFDEEED4" CellLightBorderDark="#FFC5D5BB" CellLightBorder="#FFCEDEC4" CellBorder="#FFC5D5BB" CellBorderDark="#FFCEDEC4" />
+    <dxschcore:SchedulerColorSchema CellLight="#FFFDFFE5" Cell="#FFECEED4" CellLightBorderDark="#FFD0D0D0" CellLightBorder="#FFDADADA" CellBorder="#FFD0D0D0" CellBorderDark="#FFDADADA" />
+  </dxschcore:SchedulerColorSchemaCollection>
+  <SolidColorBrush x:Key="ResourceNavigatorGlyphBrush" Color="#FF201F35" />
+  <dxschd:ColorCollection x:Key="HeaderBaseColors">
+    <dxschd:ColorDefinition Value="#FFCACBD3" Name="ColorDefinition_HeaderBaseBorderColor" />
+    <dxschd:ColorDefinition Value="#FFF2F3F4" Name="ColorDefinition_NormalGradientStop1" />
+    <dxschd:ColorDefinition Value="#FFEDEEEF" Name="ColorDefinition_NormalGradientStop2" />
+    <dxschd:ColorDefinition Value="#FFEFF0F1" Name="ColorDefinition_NormalGradientStop3" />
+    <dxschd:ColorDefinition Value="#FFEFE8F9" Name="ColorDefinition_AltNormalGradientStop1" />
+    <dxschd:ColorDefinition Value="#FFECE3F8" Name="ColorDefinition_AltNormalGradientStop2" />
+    <dxschd:ColorDefinition Value="#FFEDE5F9" Name="ColorDefinition_AltNormalGradientStop3" />
+  </dxschd:ColorCollection>
+  <SolidColorBrush x:Key="TimeRulerTextForeground" Color="#FF80838F" />
+  <!-- Resource Navigator -->
+  <SolidColorBrush x:Key="HorizontalResourceNavigatorBackground" Color="#FFF5F5F5" />
+  <SolidColorBrush x:Key="VerticalResourceNavigatorBackground" Color="#FFF5F5F5" />
+  <LinearGradientBrush x:Key="HorizontalButtonStyle.HoverState.Border1" EndPoint="0.5,1" StartPoint="0.5,0">
+    <GradientStop Color="#3F888C99" Offset="0" />
+    <GradientStop Color="#3F888C99" Offset="1" />
+    <GradientStop Color="#FF888C99" Offset="0.5" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="HorizontalButtonStyle.HoverState.Border2" EndPoint="0.5,1" StartPoint="0.5,0">
+    <GradientStop Color="#3FCBD6F3" Offset="0" />
+    <GradientStop Color="#3FCBD6F3" Offset="1" />
+    <GradientStop Color="#FFCBD6F3" Offset="0.5" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="HorizontalButtonStyle.PressedState.Border1" EndPoint="0.5,1" StartPoint="0.5,0">
+    <GradientStop Color="#3F888C99" Offset="0" />
+    <GradientStop Color="#3F888C99" Offset="1" />
+    <GradientStop Color="#FF888C99" Offset="0.5" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="HorizontalButtonStyle.PressedState.Border2" EndPoint="0.5,1" StartPoint="0.5,0">
+    <GradientStop Color="#3FCED2D9" Offset="0" />
+    <GradientStop Color="#3FCED2D9" Offset="1" />
+    <GradientStop Color="#FFCED2D9" Offset="0.5" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="VerticalButtonStyle.HoverState.Border1" EndPoint="1,0.5" StartPoint="0,0.5">
+    <GradientStop Color="#3F888C99" Offset="0" />
+    <GradientStop Color="#3F888C99" Offset="1" />
+    <GradientStop Color="#FF888C99" Offset="0.5" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="VerticalButtonStyle.HoverState.Border2" EndPoint="1,0.5" StartPoint="0,0.5">
+    <GradientStop Color="#3FCBD6F3" Offset="0" />
+    <GradientStop Color="#3FCBD6F3" Offset="1" />
+    <GradientStop Color="#FFCBD6F3" Offset="0.5" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="VerticalButtonStyle.PressedState.Border1" EndPoint="1,0.5" StartPoint="0,0.5">
+    <GradientStop Color="#3F888C99" Offset="0" />
+    <GradientStop Color="#3F888C99" Offset="1" />
+    <GradientStop Color="#FF888C99" Offset="0.5" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="VerticalButtonStyle.PressedState.Border2" EndPoint="1,0.5" StartPoint="0,0.5">
+    <GradientStop Color="#3FCED2D9" Offset="0" />
+    <GradientStop Color="#3FCED2D9" Offset="1" />
+    <GradientStop Color="#FFCED2D9" Offset="0.5" />
+  </LinearGradientBrush>
+</ResourceDictionary>

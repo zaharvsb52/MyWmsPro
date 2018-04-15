@@ -1,0 +1,44 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/charts/themekeys" xmlns:local="http://schemas.devexpress.com/winfx/2008/xaml/charts" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <Thickness x:Key="{dxt:ChartControlThemeKey ResourceKey=IndentFromDiagramValue}">16</Thickness>
+    <Thickness x:Key="{dxt:ChartControlThemeKey ResourceKey=LegendPaddingValue}">8</Thickness>
+    <Thickness x:Key="{dxt:ChartControlThemeKey ResourceKey=LegendBorderThickness}">1</Thickness>
+    <Thickness x:Key="{dxt:ChartControlThemeKey ResourceKey=LegendItemMargin}">6,2</Thickness>
+    <Thickness x:Key="{dxt:ChartControlThemeKey ResourceKey=LegendItemTextMargin}">4,0,0,0</Thickness>
+    
+    <sys:Double x:Key="{dxt:ChartControlThemeKey ResourceKey=LegendMarkerWidth}">12</sys:Double>
+    <sys:Double x:Key="{dxt:ChartControlThemeKey ResourceKey=LegendMarkerHeight}">12</sys:Double>
+    
+    <SolidColorBrush x:Key="{dxt:ChartBrushesThemeKey ResourceKey=LegendForeground}" Color="#FF201F35" />
+    <SolidColorBrush x:Key="{dxt:ChartBrushesThemeKey ResourceKey=LegendBorderBrush}" Color="#FFB8BAC2" />
+    
+    <LinearGradientBrush x:Key="{dxt:ChartBrushesThemeKey ResourceKey=LegendBackgroundBrush}" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFFFFFFF" Offset="0" />
+        <GradientStop Color="#FFF1F2F6" Offset="1" />
+    </LinearGradientBrush>
+
+    <ControlTemplate x:Key="{dxt:ChartControlThemeKey ResourceKey=LegendWrapperTemplate}" TargetType="ContentControl">
+        <Grid>
+            <Border x:Name="OutsideBorder" Background="{TemplateBinding BorderBrush}" Padding="{TemplateBinding BorderThickness}" CornerRadius="3">
+                <Border.Effect>
+                    <DropShadowEffect x:Name="Shadow" Direction="270" ShadowDepth="1" BlurRadius="8" Opacity="0.25" />
+                </Border.Effect>
+                <Border x:Name="InsideBorder" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" CornerRadius="2">
+                    <local:ChartContentPresenter Content="{Binding Path=Content, RelativeSource={RelativeSource TemplatedParent}}" />
+                </Border>
+            </Border>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="Border.BorderThickness" Value="0">
+                <Setter Property="Padding" TargetName="OutsideBorder" Value="0" />
+                <Setter Property="CornerRadius" TargetName="OutsideBorder" Value="0" />
+                <Setter Property="CornerRadius" TargetName="InsideBorder" Value="0" />
+            </Trigger>
+            <Trigger Property="Panel.Background" Value="{x:Null}">
+                <Setter Property="Background" TargetName="OutsideBorder" Value="{x:Null}" />
+                <Setter Property="Background" TargetName="InsideBorder" Value="{x:Null}" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+</ResourceDictionary>

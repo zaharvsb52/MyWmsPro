@@ -1,0 +1,236 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxet="http://schemas.devexpress.com/winfx/2008/xaml/editors/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <Style x:Key="ZThumbStyle" TargetType="{x:Type Thumb}">
+    <!--BEGIN WPF-->
+    <Setter Property="Stylus.IsPressAndHoldEnabled" Value="True" />
+    <!--END WPF-->
+    <Setter Property="Width" Value="20" />
+    <Setter Property="Height" Value="10" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Thumb}">
+          <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;12;22">
+            <Rectangle Fill="Transparent" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;13;26" />
+            <Path Data="M0,0 L5,5 0,10 z" Fill="#FF000000" Width="5" HorizontalAlignment="Left" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;14;26" />
+            <Path Data="M 5,0 L0,5 5,10 z" Fill="#FF000000" Width="5" HorizontalAlignment="Right" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;15;26" />
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="XYThumbStyle" TargetType="{x:Type Thumb}">
+    <!--BEGIN WPF-->
+    <Setter Property="Stylus.IsPressAndHoldEnabled" Value="false" />
+    <!--END WPF-->
+    <Setter Property="Width" Value="21" />
+    <Setter Property="Height" Value="21" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Thumb}">
+          <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;31;22">
+            <Rectangle Fill="Transparent" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;32;26" />
+            <Path Stretch="Fill" Fill="#FF000000" Stroke="#FFFFFFFF" Data="M0,9 L8,9" Width="9" Height="1" HorizontalAlignment="Left" Margin="0,9,0,0" VerticalAlignment="Top" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;34;26" />
+            <Path Stretch="Fill" Fill="#FF000000" Stroke="#FF000000" Data="M0,10 L8,10" Width="9" HorizontalAlignment="Left" Margin="0,10" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;35;26" />
+            <Path Stretch="Fill" Fill="#FF000000" Stroke="#FFFFFFFF" Data="M0,11 L8,11" Width="9" Height="1" HorizontalAlignment="Left" Margin="0,0,0,9" VerticalAlignment="Bottom" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;36;26" />
+            <Path Stretch="Fill" Fill="#FF000000" Stroke="#FFFFFFFF" Data="M0,9 L8,9" Width="9" Height="1" HorizontalAlignment="Right" Margin="0,9,0,0" VerticalAlignment="Top" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;38;26" />
+            <Path Stretch="Fill" Fill="#FF000000" Stroke="#FF000000" Data="M0,10 L8,10" Width="9" HorizontalAlignment="Right" Margin="0,10" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;39;26" />
+            <Path Stretch="Fill" Fill="#FF000000" Stroke="#FFFFFFFF" Data="M0,11 L8,11" Width="9" Height="1" HorizontalAlignment="Right" Margin="0,0,0,9" VerticalAlignment="Bottom" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;40;26" />
+            <Path Stretch="Fill" Fill="#FF000000" Stroke="#FFFFFFFF" Data="M9,0 L9,8" Width="1" Height="9" HorizontalAlignment="Left" Margin="9,0,0,0" VerticalAlignment="Top" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;42;26" />
+            <Path Stretch="Fill" Fill="#FF000000" Stroke="#FF000000" Data="M10,0 L10,8" Height="9" Margin="10,0" VerticalAlignment="Top" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;43;26" />
+            <Path Stretch="Fill" Fill="#FF000000" Stroke="#FFFFFFFF" Data="M11,0 L11,8" Width="1" Height="9" HorizontalAlignment="Right" Margin="0,0,9,0" VerticalAlignment="Top" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;44;26" />
+            <Path Stretch="Fill" Fill="#FF000000" Stroke="#FFFFFFFF" Data="M9,0 L9,8" Width="1" Height="9" HorizontalAlignment="Left" Margin="9,0,0,0" VerticalAlignment="Bottom" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;46;26" />
+            <Path Stretch="Fill" Fill="#FF000000" Stroke="#FF000000" Data="M10,0 L10,8" Height="9" Margin="10,0" VerticalAlignment="Bottom" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;47;26" />
+            <Path Stretch="Fill" Fill="#FF000000" Stroke="#FFFFFFFF" Data="M11,0 L11,8" Width="1" Height="9" HorizontalAlignment="Right" Margin="0,0,9,0" VerticalAlignment="Bottom" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;48;26" />
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <ControlTemplate x:Key="{dxet:ColorChooserThemeKey ResourceKey=ControlTemplate}" TargetType="{x:Type dxe:ColorChooser}">
+    <Border Background="{TemplateBinding Background}" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;56;10">
+      <Grid x:Name="colorChooser" Margin="12" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;57;14">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid x:Name="left_part" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;62;18">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+          </Grid.ColumnDefinitions>
+          <Border x:Name="XY" Background="#FFFFFFFF" BorderBrush="#FF9DA0AA" BorderThickness="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;71;22">
+            <Canvas x:Name="PART_xyColorArea" ClipToBounds="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;72;26">
+              <Rectangle Fill="#FFFFFFFF" Width="290" Height="240" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;73;30" />
+              <Rectangle x:Name="PART_xColorAreaRect" RenderTransformOrigin="0.5,0.412" Width="240" Height="290" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;74;30">
+                <Rectangle.RenderTransform>
+                  <TransformGroup>
+                    <RotateTransform Angle="-90" />
+                  </TransformGroup>
+                </Rectangle.RenderTransform>
+                <Rectangle.Fill>
+                  <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop x:Name="xColorStart" Color="#00000000" Offset="0" />
+                    <GradientStop x:Name="xColorEnd" Color="#FFFF0000" Offset="1" />
+                  </LinearGradientBrush>
+                </Rectangle.Fill>
+              </Rectangle>
+              <Rectangle x:Name="PART_yColorAreaRect" RenderTransformOrigin="0.5,0.5" Width="290" Height="240" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;87;30">
+                <Rectangle.Fill>
+                  <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop x:Name="yColorStart" Color="#00000000" Offset="0" />
+                    <GradientStop x:Name="yColorEnd" Color="#FF000000" Offset="1" />
+                  </LinearGradientBrush>
+                </Rectangle.Fill>
+              </Rectangle>
+              <Canvas Width="21" Height="21" Canvas.Left="{Binding Path=ActualXYThumbXOffset, RelativeSource={RelativeSource TemplatedParent}}" Canvas.Top="{Binding Path=ActualXYThumbYOffset, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;95;30">
+                <Rectangle Width="21" Height="21" Fill="Transparent" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;96;34" />
+                <Path Stretch="Fill" Fill="#FF000000" Stroke="#FFFFFFFF" Data="M0,9 L8,9" Width="9" Height="1" Canvas.Left="0" Canvas.Top="9" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;98;34" />
+                <Path Stretch="Fill" Fill="#FF000000" Stroke="#FF000000" Data="M0,10 L8,10" Width="9" Height="1" Canvas.Left="0" Canvas.Top="10" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;99;34" />
+                <Path Stretch="Fill" Fill="#FF000000" Stroke="#FFFFFFFF" Data="M0,11 L8,11" Width="9" Height="1" Canvas.Left="0" Canvas.Top="11" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;100;34" />
+                <Path Stretch="Fill" Fill="#FF000000" Stroke="#FFFFFFFF" Data="M0,9 L8,9" Width="9" Height="1" Canvas.Left="12" Canvas.Top="9" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;102;34" />
+                <Path Stretch="Fill" Fill="#FF000000" Stroke="#FF000000" Data="M0,10 L8,10" Width="9" Height="1" Canvas.Left="12" Canvas.Top="10" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;103;34" />
+                <Path Stretch="Fill" Fill="#FF000000" Stroke="#FFFFFFFF" Data="M0,11 L8,11" Width="9" Height="1" Canvas.Left="12" Canvas.Top="11" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;104;34" />
+                <Path Stretch="Fill" Fill="#FF000000" Stroke="#FFFFFFFF" Data="M9,0 L9,8" Width="1" Height="9" Canvas.Left="9" Canvas.Top="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;106;34" />
+                <Path Stretch="Fill" Fill="#FF000000" Stroke="#FF000000" Data="M10,0 L10,8" Width="1" Height="9" Canvas.Left="10" Canvas.Top="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;107;34" />
+                <Path Stretch="Fill" Fill="#FF000000" Stroke="#FFFFFFFF" Data="M11,0 L11,8" Width="1" Height="9" Canvas.Left="11" Canvas.Top="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;108;34" />
+                <Path Stretch="Fill" Fill="#FF000000" Stroke="#FFFFFFFF" Data="M9,0 L9,8" Width="1" Height="9" Canvas.Left="9" Canvas.Top="12" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;110;34" />
+                <Path Stretch="Fill" Fill="#FF000000" Stroke="#FF000000" Data="M10,0 L10,8" Width="1" Height="9" Canvas.Left="10" Canvas.Top="12" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;111;34" />
+                <Path Stretch="Fill" Fill="#FF000000" Stroke="#FFFFFFFF" Data="M11,0 L11,8" Width="1" Height="9" Canvas.Left="11" Canvas.Top="12" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;112;34" />
+              </Canvas>
+            </Canvas>
+          </Border>
+          <Border x:Name="X" Background="#FFFFFFFF" BorderBrush="#FF9DA0AA" BorderThickness="1" Margin="0,4,0,0" Width="290" Height="18" VerticalAlignment="Center" Grid.Row="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;116;22">
+            <Canvas x:Name="PART_aColorArea" ClipToBounds="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;117;26">
+              <Rectangle Fill="#FFD3D3D3" Width="290" Height="16" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;118;30" />
+              <Rectangle Width="290" Height="16" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;119;30">
+                <Rectangle.Fill>
+                  <!--BEGIN WPF-->
+                  <DrawingBrush Viewport="0,0,8,8" TileMode="Tile" Stretch="None" ViewportUnits="Absolute">
+                    <DrawingBrush.Drawing>
+                      <DrawingGroup>
+                        <GeometryDrawing Brush="#FFFFFFFF">
+                          <GeometryDrawing.Geometry>
+                            <RectangleGeometry Rect="0,0,4,4" />
+                          </GeometryDrawing.Geometry>
+                        </GeometryDrawing>
+                        <GeometryDrawing Brush="#FFFFFFFF">
+                          <GeometryDrawing.Geometry>
+                            <RectangleGeometry Rect="4,4,4,4" />
+                          </GeometryDrawing.Geometry>
+                        </GeometryDrawing>
+                      </DrawingGroup>
+                    </DrawingBrush.Drawing>
+                  </DrawingBrush>
+                  <!--END WPF-->
+                  <!--ONLY SL
+                                    <SolidColorBrush Color="Gray"/>
+                                    ONLY SL-->
+                </Rectangle.Fill>
+              </Rectangle>
+              <Rectangle Width="16" Height="290" Canvas.Top="16" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;144;30">
+                <Rectangle.Fill>
+                  <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop x:Name="aColorStart" Color="#00FFFFFF" Offset="0" />
+                    <GradientStop x:Name="aColorEnd" Color="#FFFFFFFF" Offset="1" />
+                  </LinearGradientBrush>
+                </Rectangle.Fill>
+                <Rectangle.RenderTransform>
+                  <TransformGroup>
+                    <ScaleTransform ScaleX="1" ScaleY="1" />
+                    <SkewTransform AngleX="0" AngleY="0" />
+                    <RotateTransform Angle="-90" />
+                    <TranslateTransform X="0" Y="0" />
+                  </TransformGroup>
+                </Rectangle.RenderTransform>
+              </Rectangle>
+              <Path x:Name="PART_aThumbUp" Fill="#FF000000" Data="M0,0 L5,5 10,0 z" Width="10" Height="5" Canvas.Left="{Binding Path=ActualAThumbOffset, RelativeSource={RelativeSource TemplatedParent}}" IsHitTestVisible="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;160;30" />
+              <Path x:Name="PART_aThumbDown" Fill="#FF000000" Data="M 0,5 L5,0 10,5 z" Canvas.Top="11" Canvas.Left="{Binding Path=ActualAThumbOffset, RelativeSource={RelativeSource TemplatedParent}}" IsHitTestVisible="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;161;30" />
+            </Canvas>
+          </Border>
+          <Border x:Name="Y" Background="#FFCAD7FB" BorderBrush="#FF9DA0AA" BorderThickness="1" Margin="4,0,0,0" Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;164;22">
+            <Canvas x:Name="PART_resColorArea" Height="240" Width="16" ClipToBounds="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;165;26">
+              <Rectangle x:Name="PART_resColorAreaRect" Height="240" Width="16" IsHitTestVisible="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;166;30">
+                <Rectangle.Fill>
+                  <LinearGradientBrush x:Name="zColor" EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop x:Name="zColor1" Color="#FFFF0000" Offset="0" />
+                    <GradientStop x:Name="zColor2" Color="#FFFFFF00" Offset="0.166666" />
+                    <GradientStop x:Name="zColor3" Color="#FF00FF00" Offset="0.333333" />
+                    <GradientStop x:Name="zColor4" Color="#FF00FFFF" Offset="0.5" />
+                    <GradientStop x:Name="zColor5" Color="#FF0000FF" Offset="0.666666" />
+                    <GradientStop x:Name="zColor6" Color="#FFFF00FF" Offset="0.833333" />
+                    <GradientStop x:Name="zColor7" Color="#FFFF0000" Offset="1" />
+                  </LinearGradientBrush>
+                </Rectangle.Fill>
+              </Rectangle>
+              <Path x:Name="PART_zThumbLeft" Data="M0,0 L5,5 0,10 z" Fill="#FF000000" Width="5" Height="10" Canvas.Top="{Binding Path=ActualZThumbOffset, RelativeSource={RelativeSource TemplatedParent}}" IsHitTestVisible="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;179;30" />
+              <Path x:Name="PART_zThumbRight" Data="M 5,0 L0,5 5,10 z" Fill="#FF000000" Width="5" Height="10" Canvas.Left="11" Canvas.Top="{Binding Path=ActualZThumbOffset, RelativeSource={RelativeSource TemplatedParent}}" IsHitTestVisible="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;180;30" />
+            </Canvas>
+          </Border>
+        </Grid>
+        <Grid x:Name="right" Margin="16,0,0,0" HorizontalAlignment="Left" Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;184;18">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+          </Grid.RowDefinitions>
+          <StackPanel x:Name="RGBA" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;189;22">
+            <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;190;26">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+              </Grid.ColumnDefinitions>
+              <TextBlock VerticalAlignment="Center" MinWidth="16" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;195;30">
+                <Run Text="R:" />
+              </TextBlock>
+              <dxe:TextEdit MaskType="RegEx" Mask="([01]?\d\d?|2[0-4]\d|25[0-5])" x:Name="PART_rChannel" Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;196;30" />
+            </Grid>
+            <Grid Margin="0,4,0,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;198;26">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+              </Grid.ColumnDefinitions>
+              <TextBlock VerticalAlignment="Center" MinWidth="16" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;203;30">
+                <Run Text="G:" />
+              </TextBlock>
+              <dxe:TextEdit MaskType="RegEx" Mask="([01]?\d\d?|2[0-4]\d|25[0-5])" x:Name="PART_gChannel" Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;204;30" />
+            </Grid>
+            <Grid Margin="0,4,0,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;206;26">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+              </Grid.ColumnDefinitions>
+              <TextBlock VerticalAlignment="Center" MinWidth="16" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;211;30">
+                <Run Text="B:" />
+              </TextBlock>
+              <dxe:TextEdit MaskType="RegEx" Mask="([01]?\d\d?|2[0-4]\d|25[0-5])" x:Name="PART_bChannel" Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;212;30" />
+            </Grid>
+            <Grid Margin="0,4,0,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;214;26">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+              </Grid.ColumnDefinitions>
+              <TextBlock VerticalAlignment="Center" MinWidth="16" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;219;30">
+                <Run Text="A:" />
+              </TextBlock>
+              <dxe:TextEdit MaskType="RegEx" Mask="([01]?\d\d?|2[0-4]\d|25[0-5])" x:Name="PART_aChannel" Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;220;30" />
+            </Grid>
+          </StackPanel>
+          <StackPanel x:Name="currentColor" Margin="0,16,0,0" Grid.Row="1" VerticalAlignment="Bottom" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;223;22">
+            <Border Height="75" Background="#FF8692A3" CornerRadius="4" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;224;26">
+              <Border Margin="1" Background="#FFFFFFFF" CornerRadius="3" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;225;30">
+                <Border Margin="2" CornerRadius="2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;226;34">
+                  <Border.Background>
+                    <SolidColorBrush Color="{Binding Path=Color, RelativeSource={RelativeSource TemplatedParent}}" />
+                  </Border.Background>
+                </Border>
+              </Border>
+            </Border>
+            <dxe:TextEdit x:Name="PART_ResultColor" MinWidth="80" Margin="0,4,0,0" IsReadOnly="True" EditValue="{Binding Path=Color, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\GrayOne\ColorChooser.xaml;233;26" />
+          </StackPanel>
+        </Grid>
+      </Grid>
+    </Border>
+  </ControlTemplate>
+</ResourceDictionary>

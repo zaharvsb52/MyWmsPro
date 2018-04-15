@@ -1,0 +1,74 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="http://schemas.devexpress.com/winfx/2008/xaml/charts">
+
+    <local:BrushOverlayConverter x:Key="brushOverlayConverter" />
+
+    <Style TargetType="{x:Type local:SimpleStock2DModelControl}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:SimpleStock2DModelControl}">
+                    <local:Stock2DModelPanel>
+                        <Border local:Stock2DModelPanel.Elements="CenterLine" Width="1" Background="{Binding Path=PointColor, ConverterParameter=#FF808080, Converter={StaticResource brushOverlayConverter}, RelativeSource={RelativeSource TemplatedParent}}" />
+                        <Border local:Stock2DModelPanel.Elements="OpenLine" Height="1" Margin="0,0,-1,0" Background="{Binding Path=PointColor, ConverterParameter=#FF808080, Converter={StaticResource brushOverlayConverter}, RelativeSource={RelativeSource TemplatedParent}}" />
+                        <Border local:Stock2DModelPanel.Elements="CloseLine" Height="1" Margin="-1,0,0,0" Background="{Binding Path=PointColor, ConverterParameter=#FF808080, Converter={StaticResource brushOverlayConverter}, RelativeSource={RelativeSource TemplatedParent}}" />
+                    </local:Stock2DModelPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type local:ThinStock2DModelControl}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:ThinStock2DModelControl}">
+                    <local:Stock2DModelPanel>
+                        <Border local:Stock2DModelPanel.Elements="CenterLine" Width="1" Background="{Binding Path=PointColor, ConverterParameter=#FF808080, Converter={StaticResource brushOverlayConverter}, RelativeSource={RelativeSource TemplatedParent}}" />
+                        <Border local:Stock2DModelPanel.Elements="OpenLine" Height="1" Margin="0,0,-1,0" Background="{Binding Path=PointColor, ConverterParameter=#FF808080, Converter={StaticResource brushOverlayConverter}, RelativeSource={RelativeSource TemplatedParent}}" />
+                        <Border local:Stock2DModelPanel.Elements="CloseLine" Height="1" Margin="-1,0,0,0" Background="{Binding Path=PointColor, ConverterParameter=#FF808080, Converter={StaticResource brushOverlayConverter}, RelativeSource={RelativeSource TemplatedParent}}" />
+                    </local:Stock2DModelPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type local:FlatStock2DModelControl}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:FlatStock2DModelControl}">
+                    <local:Stock2DModelPanel>
+                        <Border local:Stock2DModelPanel.Elements="CenterLine" Width="3" Background="{Binding Path=PointColor, ConverterParameter=#FF808080, Converter={StaticResource brushOverlayConverter}, RelativeSource={RelativeSource TemplatedParent}}" />
+                        <Border local:Stock2DModelPanel.Elements="OpenLine" Height="3" Margin="0,0,-2,0" Background="{Binding Path=PointColor, ConverterParameter=#FF808080, Converter={StaticResource brushOverlayConverter}, RelativeSource={RelativeSource TemplatedParent}}" />
+                        <Border local:Stock2DModelPanel.Elements="CloseLine" Height="3" Margin="-2,0,0,0" Background="{Binding Path=PointColor, ConverterParameter=#FF808080, Converter={StaticResource brushOverlayConverter}, RelativeSource={RelativeSource TemplatedParent}}" />
+                    </local:Stock2DModelPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type local:DropsStock2DModelControl}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:DropsStock2DModelControl}">
+                    <local:Stock2DModelPanel>
+                        <Border local:Stock2DModelPanel.Elements="CenterLine" Width="1" Background="{Binding Path=PointColor, ConverterParameter=#FF808080, Converter={StaticResource brushOverlayConverter}, RelativeSource={RelativeSource TemplatedParent}}" />
+                        <Path local:Stock2DModelPanel.Elements="OpenLine" Height="9" Stretch="Uniform" Margin="-2,0,1,0" HorizontalAlignment="Right" Data="F1 M 768.5,579C 772,579 774,583 777,583L 777,584C 774,584 772,588 768.5,588C 766.015,588 764,585.985 764,583.5C 764,581.015 766.015,579 768.5,579 Z " Fill="{Binding Path=PointColor, ConverterParameter=#FF808080, Converter={StaticResource brushOverlayConverter}, RelativeSource={RelativeSource TemplatedParent}}" />
+                        <Path local:Stock2DModelPanel.Elements="CloseLine" Height="9" Stretch="Uniform" Margin="1,0,-2,0" HorizontalAlignment="Left" Data="F1 M 791.5,590C 788,590 786,586 783,586L 783,585C 786,585 788,581 791.5,581C 793.985,581 796,583.015 796,585.5C 796,587.985 793.985,590 791.5,590 Z " Fill="{Binding Path=PointColor, ConverterParameter=#FF808080, Converter={StaticResource brushOverlayConverter}, RelativeSource={RelativeSource TemplatedParent}}" />
+                    </local:Stock2DModelPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type local:ArrowsStock2DModelControl}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:ArrowsStock2DModelControl}">
+                    <local:Stock2DModelPanel>
+                        <Border local:Stock2DModelPanel.Elements="CenterLine" Width="1" Background="{Binding Path=PointColor, ConverterParameter=#FF808080, Converter={StaticResource brushOverlayConverter}, RelativeSource={RelativeSource TemplatedParent}}" />
+                        <Path local:Stock2DModelPanel.Elements="OpenLine" Height="9" Stretch="Uniform" Margin="-2,0,1,0" HorizontalAlignment="Right" Data="F1 M 765,595L 776,599.094L 776,599.969L 765,604L 765,595 Z" Fill="{Binding Path=PointColor, ConverterParameter=#FF808080, Converter={StaticResource brushOverlayConverter}, RelativeSource={RelativeSource TemplatedParent}}" />
+                        <Path local:Stock2DModelPanel.Elements="CloseLine" Height="9" Stretch="Uniform" Margin="1,0,-2,0" HorizontalAlignment="Left" Data="F1 M 782,604L 771,599.906L 771,599.031L 782,595L 782,604 Z " Fill="{Binding Path=PointColor, ConverterParameter=#FF808080, Converter={StaticResource brushOverlayConverter}, RelativeSource={RelativeSource TemplatedParent}}" />
+                    </local:Stock2DModelPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

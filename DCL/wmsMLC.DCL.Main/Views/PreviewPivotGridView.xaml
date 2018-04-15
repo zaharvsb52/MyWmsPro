@@ -1,0 +1,197 @@
+﻿<views:BaseDialogWindow x:Class="wmsMLC.DCL.Main.Views.PreviewPivotGridView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:lex="clr-namespace:WPFLocalizeExtension.Extensions;assembly=WPFLocalizeExtension"
+    xmlns:dxpg="http://schemas.devexpress.com/winfx/2008/xaml/pivotgrid"
+    xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+    xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/charts"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:dxdo="http://schemas.devexpress.com/winfx/2008/xaml/docking"
+    xmlns:properties="clr-namespace:wmsMLC.DCL.Main.Properties"
+    xmlns:help="clr-namespace:wmsMLC.DCL.Main.Helpers" 
+    xmlns:views="clr-namespace:wmsMLC.DCL.Main.Views"
+    help:Help.FileName="{Binding Source={x:Static properties:Settings.Default}, Path=HelpFileName}"      
+    Title="{lex:LocExtension Key=wmsMLC.DCL.Resources:StringResources:OlapData}"
+    WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight">
+
+    <views:BaseDialogWindow.Resources>
+        <DataTemplate x:Key="Data">
+            <Grid>
+                <StackPanel>
+                    <dxe:ImageEdit IsPrintingMode="True" Source="{Binding Content}" />
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+    </views:BaseDialogWindow.Resources>
+
+    <Grid>
+        <dxdo:DockLayoutManager x:Name="dockManager">
+            <dxdo:LayoutGroup>
+                <dxdo:LayoutGroup Orientation="Vertical" DestroyOnClosingChildren="False">
+                    <dxdo:LayoutGroup ItemHeight="0.7*" Orientation="Horizontal">
+                        <dxdo:DocumentGroup Name="documentGroup" ItemWidth="0.6*" MDIStyle="Tabbed" DestroyOnClosingChildren="True">
+                            <dxdo:LayoutPanel Caption="{Binding PanelCaption}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+
+                                    <dxlc:DockLayoutControl Grid.Row="0" Margin="10">
+                                        <Border dxlc:DockLayoutControl.Dock="Right" dxlc:DockLayoutControl.AllowHorizontalSizing="True" MinWidth="360">
+                                            <ScrollViewer VerticalScrollBarVisibility="Visible">
+                                                <Grid Margin="10,0,0,0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition />
+                                                    </Grid.RowDefinitions>
+
+                                                    <dx:GroupFrame Header="Настройки полей суммирования" Margin="0,0,0,8">
+                                                        <Grid>
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition Height="*" />
+                                                                <RowDefinition Height="*" />
+                                                                <RowDefinition Height="*" />
+                                                            </Grid.RowDefinitions>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="*" />
+                                                                <ColumnDefinition Width="*" />
+                                                            </Grid.ColumnDefinitions>
+                                                            <TextBlock Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" Margin="0,0,8,4" Text="{lex:LocExtension Key=wmsMLC.DCL.Resources:StringResources:Field}" />
+                                                            <dxe:ComboBoxEdit Grid.Column="1" Grid.Row="0" Name="Field" 
+                                                      VerticalAlignment="Center" HorizontalAlignment="Stretch"
+                                                      IsTextEditable="False" SelectedIndexChanged="Field_OnSelectedIndexChanged" />
+                                                            <TextBlock Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" Margin="0,0,8,0" Text="{lex:LocExtension Key=wmsMLC.DCL.Resources:StringResources:SummaryType}" />
+                                                            <dxe:ComboBoxEdit Grid.Column="1" Grid.Row="1" Name="SummaryType" 
+                                                      VerticalAlignment="Center" HorizontalAlignment="Stretch"
+                                                      IsTextEditable="False" SelectedIndexChanged="SummaryType_OnSelectedIndexChanged" />
+                                                            <TextBlock Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" Margin="0,0,8,0" IsEnabled="False"
+                                                            Text="{lex:LocExtension Key=wmsMLC.DCL.Resources:StringResources:SummaryDisplayType}" />
+                                                            <dxe:ComboBoxEdit Grid.Column="1" Grid.Row="2" Name="SummaryDisplayType" IsEnabled="False"
+                                                      VerticalAlignment="Center" HorizontalAlignment="Stretch"
+                                                      IsTextEditable="False" SelectedIndexChanged="SummaryDisplayType_OnSelectedIndexChanged" />
+                                                        </Grid>
+                                                    </dx:GroupFrame>
+                                                    <dx:GroupFrame Grid.Row="1" Header="Настройки отображение" VerticalAlignment="Stretch">
+                                                        <StackPanel>
+                                                            <dxe:CheckEdit IsChecked="{Binding ElementName=pivotGridControl, Path=ShowColumnGrandTotalHeader, Mode=TwoWay}" Content="{lex:LocExtension Key=wmsMLC.DCL.Resources:StringResources:ShowColumnGrandTotalHeader}" Margin="0,0,0,4" />
+                                                            <dxe:CheckEdit IsChecked="{Binding ElementName=pivotGridControl, Path=ShowColumnGrandTotals, Mode=TwoWay}" Content="{lex:LocExtension Key=wmsMLC.DCL.Resources:StringResources:ShowColumnGrandTotals}" Margin="0,0,0,4" />
+                                                            <dxe:CheckEdit IsChecked="{Binding ElementName=pivotGridControl, Path=ShowColumnTotals, Mode=TwoWay}" Content="{lex:LocExtension Key=wmsMLC.DCL.Resources:StringResources:ShowColumnTotals}" Margin="0,0,0,4" />
+                                                            <dxe:CheckEdit IsChecked="{Binding ElementName=pivotGridControl, Path=ShowRowGrandTotalHeader, Mode=TwoWay}" Content="{lex:LocExtension Key=wmsMLC.DCL.Resources:StringResources:ShowRowGrandTotalHeader}" Margin="0,0,0,4" />
+                                                            <dxe:CheckEdit IsChecked="{Binding ElementName=pivotGridControl, Path=ShowRowGrandTotals, Mode=TwoWay}" Content="{lex:LocExtension Key=wmsMLC.DCL.Resources:StringResources:ShowRowGrandTotals}" Margin="0,0,0,4" />
+                                                            <dxe:CheckEdit IsChecked="{Binding ElementName=pivotGridControl, Path=ShowRowTotals, Mode=TwoWay}" Content="{lex:LocExtension Key=wmsMLC.DCL.Resources:StringResources:ShowRowTotals}" Margin="0,0,0,4" />
+                                                            <dxe:CheckEdit IsChecked="{Binding ElementName=pivotGridControl, Path=ShowGrandTotalsForSingleValues, Mode=TwoWay}" Content="{lex:LocExtension Key=wmsMLC.DCL.Resources:StringResources:ShowGrandTotalsForSingleValues}" Margin="0,0,0,4" />
+                                                            <dxe:CheckEdit IsChecked="{Binding ElementName=pivotGridControl, Path=ShowTotalsForSingleValues, Mode=TwoWay}" Content="{lex:LocExtension Key=wmsMLC.DCL.Resources:StringResources:ShowTotalsForSingleValues}" Margin="0,0,0,4" />
+                                                        </StackPanel>
+                                                    </dx:GroupFrame>
+                                                    <dx:GroupFrame Grid.Row="2" MinHeight="300" Header="Сводный список полей управления" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                                        <dxpg:PivotExcelFieldListControl Owner="{Binding ElementName=pivotGridControl}" Margin="10,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                                                    </dx:GroupFrame>
+                                                </Grid>
+                                            </ScrollViewer>
+                                        </Border>
+
+                                        <dxpg:PivotGridControl x:Name="pivotGridControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0" 
+                                                           CustomSummary="OnPivotGridCustomSummary" RowTotalsLocation="Far" ShowBorder="False"
+                                                           FieldAreaChanged="PivotGridControl_OnFieldAreaChanged"
+                                                           ChartProvideDataByColumns="False" ChartSelectionOnly="True" ChartProvideColumnGrandTotals="False"
+                                                           ChartProvideRowGrandTotals="False" ChartDataProvideMode="UseCustomSettings"
+                                                           CustomChartDataSourceData="PivotGridControl_OnCustomChartDataSourceData"
+                                                           DataSource="{Binding Source}">
+                                            <dxpg:PivotGridControl.FieldValueMenuCustomizations>
+                                                <dxb:BarButtonItem Content="{lex:Loc Key=wmsMLC.DCL.Resources:StringResources:ActionPrint}" 
+                                           ItemClick="Item_PrintPivorGrid" />
+                                            </dxpg:PivotGridControl.FieldValueMenuCustomizations>
+                                        </dxpg:PivotGridControl>
+
+                                    </dxlc:DockLayoutControl>
+
+                                    <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                                        <Button Content="{lex:Loc Key=wmsMLC.DCL.Resources:StringResources:ActionPrint}" Click="Button_PrintPivorGrid" Margin="10" />
+                                        <Button Content="{lex:Loc Key=wmsMLC.DCL.Resources:StringResources:ActionCancel}" IsCancel="True" Margin="10" />
+                                    </StackPanel>
+                                </Grid>
+                            </dxdo:LayoutPanel>
+                        </dxdo:DocumentGroup>
+                        <dxdo:LayoutGroup Name="rightGroup" ItemWidth="0.2*" DestroyOnClosingChildren="True">
+                            <dxdo:LayoutPanel>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid Margin="10" Grid.Row="0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition />
+                                        </Grid.RowDefinitions>
+                                        <StackPanel Orientation="Vertical" Grid.Row="0">
+                                            <dx:GroupFrame Header="Настройка внешнего вида" Margin="0,0,0,4">
+                                                <StackPanel>
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="Auto" />
+                                                            <ColumnDefinition Width="Auto" />
+                                                        </Grid.ColumnDefinitions>
+                                                        <TextBlock Margin="4,3,7,0" VerticalAlignment="Center" FlowDirection="LeftToRight" Text="Тип диаграммы:" />
+                                                        <dxe:ComboBoxEdit Grid.Column="1" Name="cbChartType" VerticalAlignment="Center" HorizontalAlignment="Stretch"
+                                                                      IsTextEditable="False" Margin="4,0,0,4" SelectedIndexChanged="cbChartType_SelectedIndexChanged" TabIndex="1" />
+                                                    </Grid>
+                                                    <dxe:CheckEdit Name="ceShowPointsLabels" Checked="ceShowPointsLabels_Checked" Unchecked="ceShowPointsLabels_Checked" IsChecked="False" Content="Показать метки точек" Margin="4,4,0,0" TabIndex="2" />
+                                                </StackPanel>
+                                            </dx:GroupFrame>
+                                            <dx:GroupFrame Header="Ориентация диаграммы" Margin="0,0,0,8">
+                                                <StackPanel>
+                                                    <dxe:ListBoxEdit x:Name="crChartDataVertical" ShowBorder="False" SelectedIndexChanged="oncrChartDataVerticalSelectedIndexChanged" SelectedIndex="0" Background="{x:Null}">
+                                                        <dxe:ListBoxEdit.StyleSettings>
+                                                            <dxe:RadioListBoxEditStyleSettings />
+                                                        </dxe:ListBoxEdit.StyleSettings>
+                                                        <dxe:ListBoxEdit.Items>
+                                                            <sys:String>Создание серии из столбцов</sys:String>
+                                                            <sys:String>Создание серии из строк</sys:String>
+                                                        </dxe:ListBoxEdit.Items>
+                                                    </dxe:ListBoxEdit>
+                                                </StackPanel>
+                                            </dx:GroupFrame>
+                                            <dx:GroupFrame Header="Сводные параметры таблицы" Margin="0,0,0,8">
+                                                <StackPanel>
+                                                    <dxe:CheckEdit Name="ceChartSelectionOnly" IsChecked="{Binding ElementName=pivotGridControl, Path=ChartSelectionOnly, Mode=TwoWay}" Content="Только диаграмма выбора" Margin="4,4,0,4" TabIndex="4" />
+                                                    <dxe:CheckEdit Name="ceChartShowColumnGrandTotals" IsChecked="{Binding ElementName=pivotGridControl, Path=ChartProvideColumnGrandTotals, Mode=TwoWay}" Content="Показать колонку Итого" Margin="4,4,0,4" TabIndex="5" />
+                                                    <dxe:CheckEdit Name="ceChartProvideRowGrandTotals" IsChecked="{Binding ElementName=pivotGridControl, Path=ChartProvideRowGrandTotals, Mode=TwoWay}" Content="Показать строку Итого" Margin="4,4,0,0" TabIndex="6" />
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <TextBlock Margin="4,3,7,0" VerticalAlignment="Center" FlowDirection="LeftToRight">Задержка обновления:</TextBlock>
+                                                        <dxe:SpinEdit Name="UpdateDelay" Value="{Binding ElementName=pivotGridControl, Path=ChartUpdateDelay, Mode=TwoWay}" Mask="N00" Width="60" Margin="4,5,0,0" Increment="00" MaxValue="5000" MinValue="0" />
+                                                    </StackPanel>
+
+                                                </StackPanel>
+                                            </dx:GroupFrame>
+
+
+                                        </StackPanel>
+                                        <dxc:ChartControl x:Name="chartControl" DataSource="{Binding ElementName=pivotGridControl, Path=ChartDataSource}" 
+                                                BoundDataChanged="chartControl_BoundDataChanged"
+                                                HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                                                Grid.Row="1">
+                                            <dxc:ChartControl.Legend>
+                                                <dxc:Legend ReverseItems="True" />
+                                            </dxc:ChartControl.Legend>
+                                        </dxc:ChartControl>
+
+                                    </Grid>
+                                    <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                                        <Button x:Name="btn_Print" Content="{lex:Loc Key=wmsMLC.DCL.Resources:StringResources:ActionPrint}" Click="Button_PrintChart" Margin="10" />
+                                    </StackPanel>
+
+                                </Grid>
+                            </dxdo:LayoutPanel>
+                        </dxdo:LayoutGroup>
+                    </dxdo:LayoutGroup>
+                </dxdo:LayoutGroup>
+            </dxdo:LayoutGroup>
+        </dxdo:DockLayoutManager>
+    </Grid>
+</views:BaseDialogWindow>

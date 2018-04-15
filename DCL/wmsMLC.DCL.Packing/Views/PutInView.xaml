@@ -1,0 +1,44 @@
+﻿<views:BaseDialogWindow x:Class="wmsMLC.DCL.Packing.Views.PutInView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:views="clr-namespace:wmsMLC.DCL.Main.Views;assembly=wmsMLC.DCL.Main"
+    xmlns:lex="clr-namespace:WPFLocalizeExtension.Extensions;assembly=WPFLocalizeExtension"
+    xmlns:helpers="clr-namespace:wmsMLC.DCL.Main.Helpers;assembly=wmsMLC.DCL.Main"
+    xmlns:properties="clr-namespace:wmsMLC.DCL.Packing.Properties"
+    mc:Ignorable="d" 
+    d:DesignHeight="300" d:DesignWidth="300" 
+    helpers:Help.FileName="{Binding Source={x:Static properties:Settings.Default}, Path=HelpFileName}"      
+    ShowTitle="True"
+    Title="Упаковать Короб в Грузовое место"
+    WindowStartupLocation="CenterScreen" 
+    SizeToContent="WidthAndHeight"
+    KeyDown="PutInView_OnKeyDown" >
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <views:CustomObjectView Grid.Row="0" DataContext="{Binding}" Focusable="False" />
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" >
+            <Label Content="Время выполнения:"  Margin="10" IsEnabled="True" />
+            <Label Content="{Binding TimeText, Mode=OneWay}"  Margin="0,10,10,10" IsEnabled="True" />
+        </StackPanel>
+        <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" >
+            <Button Content="OK" IsCancel="False" Margin="10" Focusable="False" Click="ButtonBase_OnClick" Width="{Binding ElementName=BtnCancel, Path=ActualWidth}" />
+            <Button x:Name="BtnCancel" Content="{lex:LocExtension Key=wmsMLC.DCL.Resources:StringResources:ActionCancel}" IsCancel="True" Margin="10" Focusable="False" />
+        </StackPanel>
+        </Grid>
+    </Grid>
+  
+</views:BaseDialogWindow>

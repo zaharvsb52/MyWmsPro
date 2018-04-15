@@ -1,0 +1,892 @@
+<Activity mc:Ignorable="sads sap" x:Class="PurchaseInvoiceActivity"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:bm="clr-namespace:BLToolkit.Mapping;assembly=BLToolkit.4"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:mvc="clr-namespace:Microsoft.VisualBasic.CompilerServices;assembly=Microsoft.VisualBasic"
+ xmlns:s="clr-namespace:System;assembly=System"
+ xmlns:s1="clr-namespace:System;assembly=mscorlib"
+ xmlns:s2="clr-namespace:System;assembly=System.Core"
+ xmlns:s3="clr-namespace:System;assembly=System.ServiceModel"
+ xmlns:s4="clr-namespace:System;assembly=Microsoft.CompilerServices.AsyncTargetingPack.Net4"
+ xmlns:s5="clr-namespace:System;assembly=System.ComponentModel.Composition"
+ xmlns:s6="clr-namespace:System;assembly=System.Runtime"
+ xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:scg1="clr-namespace:System.Collections.Generic;assembly=System"
+ xmlns:scg2="clr-namespace:System.Collections.Generic;assembly=System.Core"
+ xmlns:scg3="clr-namespace:System.Collections.Generic;assembly=System.ServiceModel"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System"
+ xmlns:sd="clr-namespace:System.Dynamic;assembly=System.Core"
+ xmlns:sl="clr-namespace:System.Linq;assembly=System.Core"
+ xmlns:sxs="clr-namespace:System.Xml.Serialization;assembly=System.Xml"
+ xmlns:wab="clr-namespace:wmsMLC.Activities.Business;assembly=wmsMLC.Activities.Business"
+ xmlns:wag="clr-namespace:wmsMLC.Activities.General;assembly=wmsMLC.Activities.General"
+ xmlns:wbmp="clr-namespace:wmsMLC.Business.Managers.Processes;assembly=wmsMLC.Business.Managers"
+ xmlns:wbo="clr-namespace:wmsMLC.Business.Objects;assembly=wmsMLC.Business.Objects"
+ xmlns:wdgh="clr-namespace:wmsMLC.DCL.General.Helpers;assembly=wmsMLC.DCL.General"
+ xmlns:wg="clr-namespace:wmsMLC.General;assembly=wmsMLC.General"
+ xmlns:wgb="clr-namespace:wmsMLC.General.BL;assembly=wmsMLC.General.BL"
+ xmlns:wgbh="clr-namespace:wmsMLC.General.BL.Helpers;assembly=wmsMLC.General.BL"
+ xmlns:wgbv="clr-namespace:wmsMLC.General.BL.Validation;assembly=wmsMLC.General.BL"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="BpContext" Type="InOutArgument(wgb:BpContext)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>654,696</sap:VirtualizedContainerService.HintSize>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces for internal implementation</mva:VisualBasic.Settings>
+  <Flowchart sap:VirtualizedContainerService.HintSize="614,656">
+    <Flowchart.Variables>
+      <Variable x:TypeArguments="scg:IDictionary(x:String, x:Object)[]" Name="IWBList" />
+      <Variable x:TypeArguments="scg:IDictionary(x:String, x:Object)" Name="MyVar" />
+      <Variable x:TypeArguments="x:String" Name="WMSIMPORT" />
+      <Variable x:TypeArguments="scg:IDictionary(x:String, x:Object)[]" Name="ItemTag" />
+    </Flowchart.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+        <av:Size x:Key="ShapeSize">60,75</av:Size>
+        <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,80 251,80</av:PointCollection>
+        <x:Double x:Key="Height">620.5</x:Double>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Flowchart.StartNode>
+      <x:Reference>__ReferenceID18</x:Reference>
+    </Flowchart.StartNode>
+    <FlowStep x:Name="__ReferenceID13">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">298,154.5</av:Point>
+          <av:Size x:Key="ShapeSize">244,51</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">420,205.5 420,300 390,300</av:PointCollection>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ForEach x:TypeArguments="scg:IDictionary(x:String, x:Object)" DisplayName="Обработка телеграммы" sap:VirtualizedContainerService.HintSize="244,51" Values="[IWBList]">
+        <ActivityAction x:TypeArguments="scg:IDictionary(x:String, x:Object)">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="scg:IDictionary(x:String, x:Object)" Name="IWBItem" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Проходим по всем объектам IWB" sap:VirtualizedContainerService.HintSize="774,9303">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="scg:List(wbo:Partner)" Name="Partner" />
+              <Variable x:TypeArguments="x:Object" Name="PARTNERID_R" />
+              <Variable x:TypeArguments="x:String" Name="Filter" />
+              <Variable x:TypeArguments="wbo:IWB" Default="[new IWB()]" Name="IWB" />
+              <Variable x:TypeArguments="wbo:IWBPos" Default="[new IWBPos()]" Name="IWBPOS" />
+              <Variable x:TypeArguments="scg:List(wbo:Art)" Default="[new List(Of Art)]" Name="ArtList" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign DisplayName="Обнулим объект" sap:VirtualizedContainerService.HintSize="752,60">
+              <Assign.To>
+                <OutArgument x:TypeArguments="wbo:IWB">[IWB]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="wbo:IWB">[new IWB]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <TryCatch sap:VirtualizedContainerService.HintSize="752,9079">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <TryCatch.Try>
+                <Sequence DisplayName="Получение PARTNERID_R, IWBSENDER, IWBPAYER, IWBRECIPIENT по ссылкам" sap:VirtualizedContainerService.HintSize="734,8892">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:Object" Name="IWBSENDER" />
+                    <Variable x:TypeArguments="x:Object" Name="IWBPAYER" />
+                    <Variable x:TypeArguments="x:Object" Name="IWBRECIPIENT" />
+                    <Variable x:TypeArguments="scg:List(wbo:SKU)" Name="SKUS" />
+                    <Variable x:TypeArguments="x:Object" Name="SKU_ID" />
+                    <Variable x:TypeArguments="scg:IDictionary(x:String, x:Object)[]" Name="IWBPOSList" />
+                    <Variable x:TypeArguments="wbo:WMSBusinessCollection(wbo:IWBPos)" Name="IWBPOSL" />
+                    <Variable x:TypeArguments="scg:List(wbo:Mandant)" Name="Mandant" />
+                    <Variable x:TypeArguments="x:String" Name="Sender" />
+                    <Variable x:TypeArguments="x:String" Name="Payer" />
+                    <Variable x:TypeArguments="x:String" Name="Recipient" />
+                    <Variable x:TypeArguments="scg:List(x:String)" Name="NotFoundArts" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="Фильтр для манданта" sap:VirtualizedContainerService.HintSize="712,60">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[Filter]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[string.Format("PARTNERHOSTREF ='{0}' or PARTNERCODE = '{0}'", IWBItem("MANDANTHOSTREF"))]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <wag:GetByFilterActivity x:TypeArguments="wbo:Mandant" AttrEntity="{x:Null}" DisplayName="Получение манданта" Filter="[Filter]" sap:VirtualizedContainerService.HintSize="712,22" Mode="Full" Result="[Mandant]" />
+                  <If Condition="[Mandant.Count = 1]" DisplayName="Должен быть один мандант" sap:VirtualizedContainerService.HintSize="712,417">
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="222,246">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="x:String" Name="variable1" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <wag:GetValueActivity x:TypeArguments="wbo:Mandant" DisplayName="Получим MANDANT_ID" sap:VirtualizedContainerService.HintSize="200,22" PropertyName="MANDANTID" Result="[PARTNERID_R]" Source="[Mandant(0)]" />
+                        <wag:DynamicAssign x:TypeArguments="wbo:IWB" DisplayName="Присваиваем значение" sap:VirtualizedContainerService.HintSize="200,60" Object="[IWB]" PropertyName="[&quot;MANDANTID&quot;]" Value="[PARTNERID_R]" />
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap:VirtualizedContainerService.HintSize="233,309">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <wag:WriteLog4NetActivity DisplayName="Log4Net" Error="[String.Format(&quot;MANDANTHOSTREF: Количество Mandant= '{0}'&quot;, Mandant.Count)]" sap:VirtualizedContainerService.HintSize="211,22" Level="Debug" />
+                        <WriteLine sap:VirtualizedContainerService.HintSize="211,61" Text="[&quot;MANDANTHOSTREF: Количество Mandant= &quot; + Mandant.Count.ToString]" />
+                        <Throw Exception="[new Exception(&quot;Неверное количество соответствий для Partner&quot;)]" sap:VirtualizedContainerService.HintSize="211,22" />
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                  <Assign sap:VirtualizedContainerService.HintSize="712,60">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[Sender]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[BPH.ConvertTo(Of String)(IWBItem,"PARTNERHOSTREF_IWBSENDER")]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <If Condition="[not String.IsnullOrEmpty(Sender)]" DisplayName="Отправитель" sap:VirtualizedContainerService.HintSize="712,811">
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="502,703">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign DisplayName="Фильтр для отправителя" sap:VirtualizedContainerService.HintSize="480,60">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[Filter]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[string.Format("PartnerCode='{0}'", Sender)]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <wag:GetByFilterActivity x:TypeArguments="wbo:Partner" AttrEntity="{x:Null}" DisplayName="Получение отправителя" Filter="[Filter]" sap:VirtualizedContainerService.HintSize="480,22" Mode="Full" Result="[Partner]" />
+                        <If Condition="[Partner.Count = 1]" DisplayName="Должен быть один партнер" sap:VirtualizedContainerService.HintSize="480,417">
+                          <If.Then>
+                            <Sequence sap:VirtualizedContainerService.HintSize="222,246">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <wag:GetValueActivity x:TypeArguments="wbo:Partner" DisplayName="Получим IWBSENDER" sap:VirtualizedContainerService.HintSize="200,22" PropertyName="PARTNERID" Result="[IWBSENDER]" Source="[Partner(0)]" />
+                              <wag:DynamicAssign x:TypeArguments="wbo:IWB" DisplayName="Присваиваем значение" sap:VirtualizedContainerService.HintSize="200,60" Object="[IWB]" PropertyName="[&quot;IWBSENDER&quot;]" Value="[IWBSENDER]" />
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence sap:VirtualizedContainerService.HintSize="233,309">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <wag:WriteLog4NetActivity DisplayName="Log4Net" Error="[&quot;PARTNERHOSTREF_IWBSENDER: Количество Partner = &quot; + Partner.Count.ToString]" sap:VirtualizedContainerService.HintSize="211,22" Level="Debug" />
+                              <WriteLine sap:VirtualizedContainerService.HintSize="211,61" Text="[&quot;PARTNERHOSTREF_IWBSENDER: Количество Partner = &quot; + Partner.Count.ToString]" />
+                              <Throw Exception="[new Exception(&quot;Неверное количество соответствий для Partner&quot;)]" sap:VirtualizedContainerService.HintSize="211,22" />
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                      </Sequence>
+                    </If.Then>
+                  </If>
+                  <Assign sap:VirtualizedContainerService.HintSize="712,60">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[Payer]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[BPH.ConvertTo(Of String)(IWBItem,"PARTNERHOSTREF_IWBPAYER")]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <If Condition="[not String.IsnullOrEmpty(Payer)]" DisplayName="Плательщик" sap:VirtualizedContainerService.HintSize="712,811">
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="502,703">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign DisplayName="Фильтр для плательщика" sap:VirtualizedContainerService.HintSize="480,60">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[Filter]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[String.Format("PartnerCode='{0}'", Payer)]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <wag:GetByFilterActivity x:TypeArguments="wbo:Partner" AttrEntity="{x:Null}" DisplayName="Получение плательщика" Filter="[Filter]" sap:VirtualizedContainerService.HintSize="480,22" Mode="Full" Result="[Partner]" />
+                        <If Condition="[Partner.Count = 1]" DisplayName="Должен быть один партнер" sap:VirtualizedContainerService.HintSize="480,417">
+                          <If.Then>
+                            <Sequence sap:VirtualizedContainerService.HintSize="222,246">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <wag:GetValueActivity x:TypeArguments="wbo:Partner" DisplayName="Получим IWBPAYER" sap:VirtualizedContainerService.HintSize="200,22" PropertyName="PARTNERID" Result="[IWBPAYER]" Source="[Partner(0)]" />
+                              <wag:DynamicAssign x:TypeArguments="wbo:IWB" DisplayName="Присваиваем значение" sap:VirtualizedContainerService.HintSize="200,60" Object="[IWB]" PropertyName="[&quot;IWBPAYER&quot;]" Value="[IWBPAYER]" />
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence sap:VirtualizedContainerService.HintSize="233,309">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <wag:WriteLog4NetActivity DisplayName="Log4Net" Error="[&quot;PARTNERHOSTREF_IWBPAYER: Количество Partner = &quot; + Partner.Count.ToString]" sap:VirtualizedContainerService.HintSize="211,22" Level="Debug" />
+                              <WriteLine sap:VirtualizedContainerService.HintSize="211,61" Text="[&quot;PARTNERHOSTREF_IWBPAYER: Количество Partner = &quot; + Partner.Count.ToString]" />
+                              <Throw Exception="[new Exception(&quot;Неверное количество соответствий для Partner&quot;)]" sap:VirtualizedContainerService.HintSize="211,22" />
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                      </Sequence>
+                    </If.Then>
+                  </If>
+                  <Assign sap:VirtualizedContainerService.HintSize="712,60">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[Recipient]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[BPH.ConvertTo(Of String)(IWBItem,"PARTNERHOSTREF_IWBRECIPIENT")]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <If Condition="[not String.IsnullOrEmpty(Recipient)]" DisplayName="Получатель" sap:VirtualizedContainerService.HintSize="712,811">
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="507,703">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign DisplayName="Фильтр для получателя" sap:VirtualizedContainerService.HintSize="485,60">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[Filter]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[String.Format("PartnerCode='{0}'", Recipient)]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <wag:GetByFilterActivity x:TypeArguments="wbo:Partner" AttrEntity="{x:Null}" DisplayName="Получение получателя" Filter="[Filter]" sap:VirtualizedContainerService.HintSize="485,22" Mode="Full" Result="[Partner]" />
+                        <If Condition="[Partner.Count = 1]" DisplayName="Должен быть один партнер" sap:VirtualizedContainerService.HintSize="485,417">
+                          <If.Then>
+                            <Sequence sap:VirtualizedContainerService.HintSize="227,246">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <wag:GetValueActivity x:TypeArguments="wbo:Partner" DisplayName="Получим IWBRECIPIENT" sap:VirtualizedContainerService.HintSize="205,22" PropertyName="PARTNERID" Result="[IWBRECIPIENT]" Source="[Partner(0)]" />
+                              <wag:DynamicAssign x:TypeArguments="wbo:IWB" DisplayName="Присваиваем значение" sap:VirtualizedContainerService.HintSize="205,60" Object="[IWB]" PropertyName="IWBRECIPIENT" Value="[IWBRECIPIENT]" />
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence sap:VirtualizedContainerService.HintSize="233,309">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <wag:WriteLog4NetActivity DisplayName="Log4Net" Error="[&quot;PARTNERHOSTREF_IWBRECIPIENT: Количество Partner = &quot; + Partner.Count.ToString]" sap:VirtualizedContainerService.HintSize="211,22" Level="Debug" />
+                              <WriteLine sap:VirtualizedContainerService.HintSize="211,61" Text="[&quot;PARTNERHOSTREF_IWBRECIPIENT: Количество Partner = &quot; + Partner.Count.ToString]" />
+                              <Throw Exception="[new Exception(&quot;Неверное количество соответствий для Partner&quot;)]" sap:VirtualizedContainerService.HintSize="211,22" />
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                      </Sequence>
+                    </If.Then>
+                  </If>
+                  <wag:DynamicAssign x:TypeArguments="wbo:IWB" DisplayName="Присваиваем значение" sap:VirtualizedContainerService.HintSize="712,60" Object="[IWB]" PropertyName="[&quot;IWBNAME&quot;]" Value="[IWBItem(&quot;IWBNAME&quot;)]" />
+                  <wag:DynamicAssign x:TypeArguments="wbo:IWB" DisplayName="Присваиваем значение" sap:VirtualizedContainerService.HintSize="712,60" Object="[IWB]" PropertyName="[&quot;IWBPRIORITY&quot;]" Value="[IWBItem(&quot;IWBPRIORITY&quot;)]" />
+                  <wag:DynamicAssign x:TypeArguments="wbo:IWB" DisplayName="Присваиваем значение" sap:VirtualizedContainerService.HintSize="712,60" Object="[IWB]" PropertyName="[&quot;IWBHOSTREF&quot;]" Value="[IWBItem(&quot;IWBHOSTREF&quot;)]" />
+                  <wag:DynamicAssign x:TypeArguments="wbo:IWB" DisplayName="Присваиваем значение" sap:VirtualizedContainerService.HintSize="712,60" Object="[IWB]" PropertyName="[&quot;STATUSCODE_R&quot;]" Value="[&quot;IWB_CREATED&quot;]" />
+                  <wag:GetDynamicDictionaryFromXmlActivity Descendant="IWBPOSL" DisplayName="Получение списка позиций" sap:VirtualizedContainerService.HintSize="712,22" InputXml="[IWBItem(&quot;INNERXML&quot;).ToString]" Result="[IWBPOSList]" />
+                  <Assign sap:VirtualizedContainerService.HintSize="712,60">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="wbo:WMSBusinessCollection(wbo:IWBPos)">[IWBPOSL]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="wbo:WMSBusinessCollection(wbo:IWBPos)">[new wmsBusinessCollection( of IWBPos)]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Flowchart DisplayName="Получим все артикула по всем позициям" sap:VirtualizedContainerService.HintSize="712,51">
+                    <Flowchart.Variables>
+                      <Variable x:TypeArguments="s1:String[]" Name="filterArr" />
+                      <Variable x:TypeArguments="scg:List(wbo:Art)" Name="curArt" />
+                    </Flowchart.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+                        <av:Size x:Key="ShapeSize">60,75</av:Size>
+                        <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,107.5 299.895,107.5 299.895,120</av:PointCollection>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Flowchart.StartNode>
+                      <x:Reference>__ReferenceID1</x:Reference>
+                    </Flowchart.StartNode>
+                    <FlowStep x:Name="__ReferenceID1">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <av:Point x:Key="ShapeLocation">178.895,120</av:Point>
+                          <av:Size x:Key="ShapeSize">242,60</av:Size>
+                          <av:PointCollection x:Key="ConnectorLocation">299.895,180 299.895,210 300,210 300,224.5</av:PointCollection>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Assign sap:VirtualizedContainerService.HintSize="242,60">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="s1:String[]">[filterArr]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="s1:String[]">[wmsMLC.General.BL.Helpers.FilterHelper.GetArrayFilterIn("ARTNAME", IWBPOSList.Select(Function(x) x("IWBPOSARTNAME")).Distinct, string.Format(" and MANDANTID = {0}", Mandant(0).GetKey()))]</InArgument>
+                        </Assign.Value>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Assign>
+                      <FlowStep.Next>
+                        <FlowStep x:Name="__ReferenceID0">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <av:Point x:Key="ShapeLocation">200,224.5</av:Point>
+                              <av:Size x:Key="ShapeSize">200,51</av:Size>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ForEach x:TypeArguments="x:String" DisplayName="По каждому фильтру" sap:VirtualizedContainerService.HintSize="200,51" Values="[filterArr]">
+                            <ActivityAction x:TypeArguments="x:String">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="x:String" Name="item" />
+                              </ActivityAction.Argument>
+                              <Sequence sap:VirtualizedContainerService.HintSize="486,426">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <wag:GetByFilterActivity x:TypeArguments="wbo:Art" AttrEntity="{x:Null}" DisplayName="Получение Art" Filter="[item]" sap:VirtualizedContainerService.HintSize="464,22" Mode="Full" Result="[curArt]" />
+                                <If Condition="[curArt is nothing orelse curArt.Count = 0]" sap:VirtualizedContainerService.HintSize="464,240">
+                                  <If.Else>
+                                    <InvokeMethod sap:VirtualizedContainerService.HintSize="218,132" MethodName="AddRange">
+                                      <InvokeMethod.TargetObject>
+                                        <InArgument x:TypeArguments="scg:List(wbo:Art)">[ArtList]</InArgument>
+                                      </InvokeMethod.TargetObject>
+                                      <InArgument x:TypeArguments="scg:List(wbo:Art)">[curArt]</InArgument>
+                                    </InvokeMethod>
+                                  </If.Else>
+                                </If>
+                              </Sequence>
+                            </ActivityAction>
+                          </ForEach>
+                        </FlowStep>
+                      </FlowStep.Next>
+                    </FlowStep>
+                    <x:Reference>__ReferenceID0</x:Reference>
+                  </Flowchart>
+                  <Assign sap:VirtualizedContainerService.HintSize="712,60">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="scg:List(x:String)">[NotFoundArts]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="scg:List(x:String)">[IWBPOSList.Where(function(i) Not ArtList.Any(Function(j) j.ARTNAME = i("IWBPOSARTNAME").ToString)).Select(Function(i) i("IWBPOSARTNAME").ToString).ToList]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <If Condition="[NotFoundArts.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="712,316">
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="222,208">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <wag:WriteLog4NetActivity DisplayName="Log4Net" Error="[&quot;Не найдены артикулы со следующими ArtName &quot; + string.Join(&quot;;&quot;, NotFoundArts)]" sap:VirtualizedContainerService.HintSize="200,22" Level="Debug" />
+                        <Throw Exception="[new Exception(&quot;Не найдены артикулы со следующими ArtName &quot; + string.Join(&quot;;&quot;, NotFoundArts))]" sap:VirtualizedContainerService.HintSize="200,22" />
+                      </Sequence>
+                    </If.Then>
+                  </If>
+                  <ForEach x:TypeArguments="scg:IDictionary(x:String, x:Object)" DisplayName="Заполним все позиции" sap:VirtualizedContainerService.HintSize="712,4025" Values="[IWBPOSList]">
+                    <ActivityAction x:TypeArguments="scg:IDictionary(x:String, x:Object)">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="scg:IDictionary(x:String, x:Object)" Name="IWBPOSItem" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Заполнение списка IWBPOSL" sap:VirtualizedContainerService.HintSize="682,3917">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="x:String" Name="FilterSKU" />
+                          <Variable x:TypeArguments="x:String" Name="FilterArt" />
+                          <Variable x:TypeArguments="scg:List(wbo:Art)" Name="ArtL" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign DisplayName="Очистим переменную" sap:VirtualizedContainerService.HintSize="660,60">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="wbo:IWBPos">[IWBPOS]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="wbo:IWBPos">[new IWBPos]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <If Condition="[NOT IWBPOSItem.ContainsKey(&quot;FACTORYID_R&quot;) ORELSE  String.IsNullOrEmpty(CTYPE(IWBPOSItem(&quot;FACTORYID_R&quot;), String))]" DisplayName="Ищем артикул с учетом фабрики" sap:VirtualizedContainerService.HintSize="660,208">
+                          <If.Then>
+                            <Assign DisplayName="Заполним фильтр для Art" sap:VirtualizedContainerService.HintSize="242,60">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="scg:List(wbo:Art)">[ArtL]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="scg:List(wbo:Art)">[ArtList.Where(function(x) x.ARTNAME= IWBPOSItem("IWBPOSARTNAME").ToString AND x.FACTORYID_R is Nothing).ToList]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </If.Then>
+                          <If.Else>
+                            <Assign DisplayName="Заполним фильтр для Art" sap:VirtualizedContainerService.HintSize="242,60">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="scg:List(wbo:Art)">[ArtL]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="scg:List(wbo:Art)">[ArtList.Where(function(x) x.ARTNAME= IWBPOSItem("IWBPOSARTNAME").ToString and CType(IWBPOSItem("FACTORYID_R"), Decimal).Equals(x.FACTORYID_R.Value)).ToList]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </If.Else>
+                        </If>
+                        <If Condition="[ArtL.Count &lt;&gt; 1]" DisplayName="Должен быть один Art" sap:VirtualizedContainerService.HintSize="660,417">
+                          <If.Then>
+                            <Sequence sap:VirtualizedContainerService.HintSize="233,309">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <wag:WriteLog4NetActivity DisplayName="Log4Net" Error="[string.Format(&quot;Количество ART = {0} для ArtName = {1}&quot;, ArtL.Count.ToString, IWBPOSItem(&quot;IWBPOSARTNAME&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="211,22" Level="Debug" />
+                              <WriteLine sap:VirtualizedContainerService.HintSize="211,61" Text="[&quot;Количество ART = &quot; + ArtL.Count.ToString]" />
+                              <Throw Exception="[new Exception(&quot;Неверное количество соответствий для ART=&quot; + IWBPOSItem(&quot;IWBPOSARTNAME&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="211,22" />
+                            </Sequence>
+                          </If.Then>
+                        </If>
+                        <Flowchart DisplayName="Вычисление SKU" sap:VirtualizedContainerService.HintSize="660,826">
+                          <Flowchart.Variables>
+                            <Variable x:TypeArguments="x:String" Name="MeasureInfo" />
+                          </Flowchart.Variables>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+                              <av:Size x:Key="ShapeSize">60,75</av:Size>
+                              <x:Double x:Key="Width">645.5</x:Double>
+                              <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,116.5</av:PointCollection>
+                              <x:Double x:Key="Height">790</x:Double>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Flowchart.StartNode>
+                            <x:Reference>__ReferenceID12</x:Reference>
+                          </Flowchart.StartNode>
+                          <FlowStep x:Name="__ReferenceID3">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <av:Point x:Key="ShapeLocation">349,180</av:Point>
+                                <av:Size x:Key="ShapeSize">242,60</av:Size>
+                                <av:PointCollection x:Key="ConnectorLocation">470,240 470,250</av:PointCollection>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Assign DisplayName="Фильтр: все SKU с учетом ЕИ" sap:VirtualizedContainerService.HintSize="242,60">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[FilterSKU]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">[String.Format("((ARTCODE_R='{0}') AND (MEASURECODE_R='{1}'))", ArtL(0).GetKey(), IWBPOSItem("IWBPOSMEASURE"))]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <FlowStep.Next>
+                              <FlowStep x:Name="__ReferenceID8">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <av:Point x:Key="ShapeLocation">349,250</av:Point>
+                                    <av:Size x:Key="ShapeSize">242,60</av:Size>
+                                    <av:PointCollection x:Key="ConnectorLocation">470,310 470,350</av:PointCollection>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Assign DisplayName="Фильтр: все SKU с учетом ЕИ" sap:VirtualizedContainerService.HintSize="242,60">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">[MeasureInfo]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String">[String.Format(" (Указана ЕИ с кодом '{0}')", IWBPOSItem("IWBPOSMEASURE"))]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <FlowStep.Next>
+                                  <FlowStep x:Name="__ReferenceID10">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <av:Point x:Key="ShapeLocation">349,350</av:Point>
+                                        <av:Size x:Key="ShapeSize">242,60</av:Size>
+                                        <av:PointCollection x:Key="ConnectorLocation">470,410 470,440 300,440 300,516.5</av:PointCollection>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Assign sap:VirtualizedContainerService.HintSize="242,60">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="scg:List(wbo:SKU)">[SKUS]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="scg:List(wbo:SKU)">[ArtL(0).SKUL.Where(Function(i) IWBPOSItem("IWBPOSMEASURE").ToString = i.MeasureCode).ToList]</InArgument>
+                                      </Assign.Value>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </Assign>
+                                    <FlowStep.Next>
+                                      <FlowDecision x:Name="__ReferenceID2" Condition="[SKUS.Count = 1]" sap:VirtualizedContainerService.HintSize="70,87">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <av:Point x:Key="ShapeLocation">265,516.5</av:Point>
+                                            <av:Size x:Key="ShapeSize">70,87</av:Size>
+                                            <x:String x:Key="FalseLabel">Не один</x:String>
+                                            <x:String x:Key="TrueLabel">Всего один</x:String>
+                                            <av:PointCollection x:Key="FalseConnector">335,560 480,560 480,639.5</av:PointCollection>
+                                            <av:PointCollection x:Key="TrueConnector">265,560 210,560 210,700</av:PointCollection>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <FlowDecision.True>
+                                          <FlowStep x:Name="__ReferenceID7">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <av:Point x:Key="ShapeLocation">99,700</av:Point>
+                                                <av:Size x:Key="ShapeSize">222,60</av:Size>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <wag:DynamicAssign x:TypeArguments="wbo:IWBPos" DisplayName="Присваиваем значение SKU" sap:VirtualizedContainerService.HintSize="222,60" Object="[IWBPOS]" PropertyName="[&quot;SKUID_R&quot;]" Value="[SKUS(0).GetKey]">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </wag:DynamicAssign>
+                                          </FlowStep>
+                                        </FlowDecision.True>
+                                        <FlowDecision.False>
+                                          <FlowStep x:Name="__ReferenceID6">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <av:Point x:Key="ShapeLocation">374.5,639.5</av:Point>
+                                                <av:Size x:Key="ShapeSize">211,61</av:Size>
+                                                <av:PointCollection x:Key="ConnectorLocation">480,700.5 480,739</av:PointCollection>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <WriteLine sap:VirtualizedContainerService.HintSize="211,61" Text="[&quot;Количество SKU = &quot; + SKUS.Count.ToString]" />
+                                            <FlowStep.Next>
+                                              <FlowStep x:Name="__ReferenceID5">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <av:Point x:Key="ShapeLocation">380,739</av:Point>
+                                                    <av:Size x:Key="ShapeSize">200,22</av:Size>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <Throw Exception="[new Exception(string.Format(&quot;Неверное количество соответствий для SKU. Найдено {0} SKU для артикула '{1}'{2}&quot;, SKUS.Count.ToString, ArtL(0).GetKey().toString, MeasureInfo))]" sap:VirtualizedContainerService.HintSize="200,22" />
+                                              </FlowStep>
+                                            </FlowStep.Next>
+                                          </FlowStep>
+                                        </FlowDecision.False>
+                                      </FlowDecision>
+                                    </FlowStep.Next>
+                                  </FlowStep>
+                                </FlowStep.Next>
+                              </FlowStep>
+                            </FlowStep.Next>
+                          </FlowStep>
+                          <FlowDecision x:Name="__ReferenceID12" Condition="[IWBPOSItem(&quot;IWBPOSMEASURE&quot;) Is Nothing OrElse IWBPOSItem(&quot;IWBPOSMEASURE&quot;).ToString() = String.Empty]" sap:VirtualizedContainerService.HintSize="70,87">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <av:Point x:Key="ShapeLocation">265,116.5</av:Point>
+                                <av:Size x:Key="ShapeSize">70,87</av:Size>
+                                <x:String x:Key="FalseLabel">ИЕ задали</x:String>
+                                <x:String x:Key="TrueLabel">ЕИ не задали</x:String>
+                                <av:PointCollection x:Key="FalseConnector">335,160 470,160 470,180</av:PointCollection>
+                                <av:PointCollection x:Key="TrueConnector">265,160 130,160 130,180</av:PointCollection>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <FlowDecision.True>
+                              <FlowStep x:Name="__ReferenceID4">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <av:Point x:Key="ShapeLocation">9,180</av:Point>
+                                    <av:Size x:Key="ShapeSize">242,60</av:Size>
+                                    <av:PointCollection x:Key="ConnectorLocation">130,240 130,250</av:PointCollection>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Assign DisplayName="Фильтр: все SKU для данного артикула" sap:VirtualizedContainerService.HintSize="242,60">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">[FilterSKU]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String">[String.Format("(ARTCODE_R='{0}')", ArtL(0).GetKey())]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <FlowStep.Next>
+                                  <FlowStep x:Name="__ReferenceID9">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <av:Point x:Key="ShapeLocation">9,250</av:Point>
+                                        <av:Size x:Key="ShapeSize">242,60</av:Size>
+                                        <av:PointCollection x:Key="ConnectorLocation">130,310 130,350</av:PointCollection>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Assign DisplayName="Фильтр: все SKU для данного артикула" sap:VirtualizedContainerService.HintSize="242,60">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[MeasureInfo]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">[String.Format(" (ЕИ не указана)")]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                    <FlowStep.Next>
+                                      <FlowStep x:Name="__ReferenceID11">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <av:Point x:Key="ShapeLocation">9,350</av:Point>
+                                            <av:Size x:Key="ShapeSize">242,60</av:Size>
+                                            <av:PointCollection x:Key="ConnectorLocation">130,410 130,440 300,440 300,516.5</av:PointCollection>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <Assign sap:VirtualizedContainerService.HintSize="242,60">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="scg:List(wbo:SKU)">[SKUS]</OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="scg:List(wbo:SKU)">[ArtL(0).SKUL.ToList]</InArgument>
+                                          </Assign.Value>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </Assign>
+                                        <FlowStep.Next>
+                                          <x:Reference>__ReferenceID2</x:Reference>
+                                        </FlowStep.Next>
+                                      </FlowStep>
+                                    </FlowStep.Next>
+                                  </FlowStep>
+                                </FlowStep.Next>
+                              </FlowStep>
+                            </FlowDecision.True>
+                            <FlowDecision.False>
+                              <x:Reference>__ReferenceID3</x:Reference>
+                            </FlowDecision.False>
+                          </FlowDecision>
+                          <x:Reference>__ReferenceID4</x:Reference>
+                          <x:Reference>__ReferenceID2</x:Reference>
+                          <x:Reference>__ReferenceID5</x:Reference>
+                          <x:Reference>__ReferenceID6</x:Reference>
+                          <x:Reference>__ReferenceID7</x:Reference>
+                          <x:Reference>__ReferenceID8</x:Reference>
+                          <x:Reference>__ReferenceID9</x:Reference>
+                          <x:Reference>__ReferenceID10</x:Reference>
+                          <FlowStep>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <av:Point x:Key="ShapeLocation">410,479</av:Point>
+                                <av:Size x:Key="ShapeSize">200,22</av:Size>
+                                <av:PointCollection x:Key="ConnectorLocation">310,401 310,430</av:PointCollection>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <wag:GetByFilterActivity x:TypeArguments="wbo:SKU" AttrEntity="{x:Null}" DisplayName="Получение SKU" Filter="[FilterSKU]" sap:VirtualizedContainerService.HintSize="200,22" Mode="Full" Result="[SKUS]" />
+                          </FlowStep>
+                          <x:Reference>__ReferenceID11</x:Reference>
+                        </Flowchart>
+                        <wag:DynamicAssign x:TypeArguments="wbo:IWBPos" DisplayName="Присваиваем значение IWBPOSNUMBER" sap:VirtualizedContainerService.HintSize="660,60" Object="[IWBPOS]" PropertyName="[&quot;IWBPOSNUMBER&quot;]" Value="[IWBPOSItem(&quot;IWBPOSNUMBER&quot;)]" />
+                        <wag:DynamicAssign x:TypeArguments="wbo:IWBPos" DisplayName="Присваиваем значение IWBPOSCOUNT" sap:VirtualizedContainerService.HintSize="660,60" Object="[IWBPOS]" PropertyName="[&quot;IWBPOSCOUNT&quot;]" Value="[IWBPOSItem(&quot;IWBPOSCOUNT&quot;)]" />
+                        <wag:DynamicAssign x:TypeArguments="wbo:IWBPos" DisplayName="Присваиваем значение IWBPOSCOUNT" sap:VirtualizedContainerService.HintSize="660,60" Object="[IWBPOS]" PropertyName="[&quot;IWBPOSCOUNT2SKU&quot;]" Value="[IWBPOSItem(&quot;IWBPOSCOUNT2SKU&quot;)]" />
+                        <wag:DynamicAssign x:TypeArguments="wbo:IWBPos" DisplayName="Присваиваем значение IWBPOSCOLOR" sap:VirtualizedContainerService.HintSize="660,60" Object="[IWBPOS]" PropertyName="[&quot;IWBPOSCOLOR&quot;]" Value="[BPH.ConvertTo(Of Object)(IWBPOSItem, &quot;IWBPOSCOLOR&quot;)]" />
+                        <wag:DynamicAssign x:TypeArguments="wbo:IWBPos" DisplayName="Присваиваем значение IWBPOSTONE" sap:VirtualizedContainerService.HintSize="660,60" Object="[IWBPOS]" PropertyName="[&quot;IWBPOSTONE&quot;]" Value="[BPH.ConvertTo(Of Object)(IWBPOSItem, &quot;IWBPOSTONE&quot;)]" />
+                        <wag:DynamicAssign x:TypeArguments="wbo:IWBPos" DisplayName="Присваиваем значение IWBPOSTONE" sap:VirtualizedContainerService.HintSize="660,60" Object="[IWBPOS]" PropertyName="[&quot;IWBPOSLOT&quot;]" Value="[BPH.ConvertTo(Of Object)(IWBPOSItem, &quot;IWBPOSLOT&quot;)]" />
+                        <wag:DynamicAssign x:TypeArguments="wbo:IWBPos" DisplayName="Присваиваем значение IWBPOSSIZE" sap:VirtualizedContainerService.HintSize="660,60" Object="[IWBPOS]" PropertyName="[&quot;IWBPOSSIZE&quot;]" Value="[BPH.ConvertTo(Of Object)(IWBPOSItem,&quot;IWBPOSSIZE&quot;)]" />
+                        <wag:DynamicAssign x:TypeArguments="wbo:IWBPos" DisplayName="Присваиваем значение IWBPOSBATCH" sap:VirtualizedContainerService.HintSize="660,60" Object="[IWBPOS]" PropertyName="[&quot;IWBPOSBATCH&quot;]" Value="[BPH.ConvertTo(Of Object)(IWBPOSItem,&quot;IWBPOSBATCH&quot;)]" />
+                        <wag:DynamicAssign x:TypeArguments="wbo:IWBPos" DisplayName="Присваиваем значение IWBPOSEXPIRYDATE" sap:VirtualizedContainerService.HintSize="660,60" Object="[IWBPOS]" PropertyName="[&quot;IWBPOSEXPIRYDATE&quot;]" Value="[BPH.ConvertTo(Of DateTime?)(IWBPOSItem,&quot;IWBPOSEXPIRYDATE&quot;)]" />
+                        <wag:DynamicAssign x:TypeArguments="wbo:IWBPos" DisplayName="Присваиваем значение IWBPOSPRODUCTDATE" sap:VirtualizedContainerService.HintSize="660,60" Object="[IWBPOS]" PropertyName="[&quot;IWBPOSPRODUCTDATE&quot;]" Value="[BPH.ConvertTo(Of DateTime?)(IWBPOSItem,&quot;IWBPOSPRODUCTDATE&quot;)]" />
+                        <wag:DynamicAssign x:TypeArguments="wbo:IWBPos" DisplayName="Присваиваем значение IWBPOSSERIALNUMBER" sap:VirtualizedContainerService.HintSize="660,60" Object="[IWBPOS]" PropertyName="[&quot;IWBPOSSERIALNUMBER&quot;]" Value="[BPH.ConvertTo(Of Object)(IWBPOSItem,&quot;IWBPOSSERIALNUMBER&quot;)]" />
+                        <wag:DynamicAssign x:TypeArguments="wbo:IWBPos" DisplayName="Присваиваем значение FACTORYID_R" sap:VirtualizedContainerService.HintSize="660,60" Object="[IWBPOS]" PropertyName="FACTORYID_R" Value="[BPH.ConvertTo(Of Object)(IWBPOSItem,&quot;FACTORYID_R&quot;)]" />
+                        <wag:DynamicAssign x:TypeArguments="wbo:IWBPos" DisplayName="Присваиваем значение QLFCODE_R" sap:VirtualizedContainerService.HintSize="660,60" Object="[IWBPOS]" PropertyName="QLFCODE_R" Value="[BPH.ConvertTo(Of Object)(IWBPOSItem,&quot;QLFCODE_R&quot;)]" />
+                        <wag:DynamicAssign x:TypeArguments="wbo:IWBPos" DisplayName="Присваиваем значение IWBPOSBLOCKING" sap:VirtualizedContainerService.HintSize="660,60" Object="[IWBPOS]" PropertyName="[&quot;IWBPOSBLOCKING&quot;]" Value="[IWBPOSItem(&quot;IWBPOSBLOCKING&quot;)]" />
+                        <wag:DynamicAssign x:TypeArguments="wbo:IWBPos" DisplayName="Присваиваем значение IWBPOSARTNAME" sap:VirtualizedContainerService.HintSize="660,60" Object="[IWBPOS]" PropertyName="[&quot;IWBPOSARTNAME&quot;]" Value="[IWBPOSItem(&quot;IWBPOSARTNAME&quot;)]" />
+                        <wag:DynamicAssign x:TypeArguments="wbo:IWBPos" DisplayName="Присваиваем значение IWBPOSMEASURE" sap:VirtualizedContainerService.HintSize="660,60" Object="[IWBPOS]" PropertyName="[&quot;IWBPOSMEASURE&quot;]" Value="[IWBPOSItem(&quot;IWBPOSMEASURE&quot;)]" />
+                        <wag:DynamicAssign x:TypeArguments="wbo:IWBPos" DisplayName="Присваиваем значение IWBPOSHOSTREF" sap:VirtualizedContainerService.HintSize="660,60" Object="[IWBPOS]" PropertyName="[&quot;IWBPOSHOSTREF&quot;]" Value="[BPH.ConvertTo(Of Object)(IWBPOSItem,&quot;IWBPOSHOSTREF&quot;)]" />
+                        <wag:DynamicAssign x:TypeArguments="wbo:IWBPos" DisplayName="Присваиваем значение IWBBATCHCODE" sap:VirtualizedContainerService.HintSize="660,60" Object="[IWBPOS]" PropertyName="[&quot;IWBBATCHCODE&quot;]" Value="[BPH.ConvertTo(Of Object)(IWBPOSItem,&quot;IWBBATCHCODE&quot;)]" />
+                        <wag:DynamicAssign x:TypeArguments="wbo:IWBPos" DisplayName="Присваиваем значение IWBPOSMEASURE" sap:VirtualizedContainerService.HintSize="660,60" Object="[IWBPOS]" PropertyName="[&quot;IWBPOSTE&quot;]" Value="[IWBPOSItem(&quot;IWBPOSTE&quot;)]" />
+                        <wag:DynamicAssign x:TypeArguments="wbo:IWBPos" DisplayName="Присваиваем значение IWBPOSMEASURE" sap:VirtualizedContainerService.HintSize="660,60" Object="[IWBPOS]" PropertyName="[&quot;IWBPOSPRICEVALUE&quot;]" Value="[IWBPOSItem(&quot;IWBPOSPRICEVALUE&quot;)]" />
+                        <wag:DynamicAssign x:TypeArguments="wbo:IWBPos" DisplayName="Присваиваем значение STATUS" sap:VirtualizedContainerService.HintSize="660,60" Object="[IWBPOS]" PropertyName="[&quot;STATUSCODE_R&quot;]" Value="[&quot;IWB_CREATED&quot;]" />
+                        <AddToCollection x:TypeArguments="wbo:IWBPos" Collection="[IWBPOSL]" DisplayName="Добавим в позиции" sap:VirtualizedContainerService.HintSize="660,22" Item="[IWBPOS]" />
+                      </Sequence>
+                    </ActivityAction>
+                  </ForEach>
+                  <wag:DynamicAssign x:TypeArguments="wbo:IWB" DisplayName="Добавим позиции в накладную" sap:VirtualizedContainerService.HintSize="712,60" Object="[IWB]" PropertyName="[&quot;IWBPOSL&quot;]" Value="[IWBPOSL]" />
+                  <wag:UpdateActivity x:TypeArguments="wbo:IWB" DisplayName="Добавление записи в БД" sap:VirtualizedContainerService.HintSize="712,22" IsNew="False" Key="[IWB]" />
+                </Sequence>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s1:InvalidOperationException" sap:VirtualizedContainerService.HintSize="738,21">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ActivityAction x:TypeArguments="s1:InvalidOperationException">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s1:InvalidOperationException" Name="exception" />
+                    </ActivityAction.Argument>
+                    <Sequence sap:VirtualizedContainerService.HintSize="240,320">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <wag:WriteLog4NetActivity DisplayName="Log4Net" Error="[exception.ToString()]" sap:VirtualizedContainerService.HintSize="218,22" Level="Error" />
+                      <InvokeMethod sap:VirtualizedContainerService.HintSize="218,134" MethodName="Set">
+                        <InvokeMethod.GenericTypeArguments>
+                          <x:Type Type="x:String" />
+                        </InvokeMethod.GenericTypeArguments>
+                        <InvokeMethod.TargetObject>
+                          <InArgument x:TypeArguments="wgb:BpContext">[BpContext]</InArgument>
+                        </InvokeMethod.TargetObject>
+                        <InArgument x:TypeArguments="x:String">ERROR</InArgument>
+                        <InArgument x:TypeArguments="x:String">[exception.ToString]</InArgument>
+                      </InvokeMethod>
+                    </Sequence>
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+            </TryCatch>
+          </Sequence>
+        </ActivityAction>
+      </ForEach>
+      <FlowStep.Next>
+        <FlowStep x:Name="__ReferenceID14">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">190,289</av:Point>
+              <av:Size x:Key="ShapeSize">200,22</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">290,311 290,349.5</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <wag:WriteLog4NetActivity DisplayName="Процесс завершен" Error="Процесс завершен" sap:VirtualizedContainerService.HintSize="200,22" Level="Debug">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </wag:WriteLog4NetActivity>
+          <FlowStep.Next>
+            <FlowStep x:Name="__ReferenceID15">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">184.5,349.5</av:Point>
+                  <av:Size x:Key="ShapeSize">211,61</av:Size>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <WriteLine DisplayName="Процесс завершен" sap:VirtualizedContainerService.HintSize="211,61" Text="Конец">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </WriteLine>
+            </FlowStep>
+          </FlowStep.Next>
+        </FlowStep>
+      </FlowStep.Next>
+    </FlowStep>
+    <FlowStep x:Name="__ReferenceID16">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">30,159</av:Point>
+          <av:Size x:Key="ShapeSize">200,22</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">130,181 130,209</av:PointCollection>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <wag:GetDynamicDictionaryFromXmlActivity Descendant="ITEMS" DisplayName="Получение списка объектов" sap:VirtualizedContainerService.HintSize="200,22" InputXml="[WMSIMPORT]" Result="[ItemTag]">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </wag:GetDynamicDictionaryFromXmlActivity>
+      <FlowStep.Next>
+        <FlowStep x:Name="__ReferenceID17">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">30,209</av:Point>
+              <av:Size x:Key="ShapeSize">200,22</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">230,220 260,220 260,180 298,180</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <wag:GetDynamicDictionaryFromXmlActivity Descendant="IWB" DisplayName="Получение списка объектов" sap:VirtualizedContainerService.HintSize="200,22" InputXml="[ItemTag(0)(&quot;INNERXML&quot;).ToString]" Result="[IWBList]">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </wag:GetDynamicDictionaryFromXmlActivity>
+          <FlowStep.Next>
+            <x:Reference>__ReferenceID13</x:Reference>
+          </FlowStep.Next>
+        </FlowStep>
+      </FlowStep.Next>
+    </FlowStep>
+    <x:Reference>__ReferenceID14</x:Reference>
+    <x:Reference>__ReferenceID15</x:Reference>
+    <FlowStep x:Name="__ReferenceID18">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">9,50</av:Point>
+          <av:Size x:Key="ShapeSize">242,60</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">130,110 130,159</av:PointCollection>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Assign sap:VirtualizedContainerService.HintSize="242,60">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[WMSIMPORT]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[BpContext.Get(Of string)("WMSTELEGRAM")]</InArgument>
+        </Assign.Value>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Assign>
+      <FlowStep.Next>
+        <x:Reference>__ReferenceID16</x:Reference>
+      </FlowStep.Next>
+    </FlowStep>
+    <x:Reference>__ReferenceID17</x:Reference>
+  </Flowchart>
+</Activity>

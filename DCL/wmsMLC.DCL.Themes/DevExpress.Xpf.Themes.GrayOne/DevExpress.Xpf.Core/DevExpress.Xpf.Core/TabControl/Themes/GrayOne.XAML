@@ -1,0 +1,33 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcn="http://schemas.devexpress.com/winfx/2008/xaml/core/internal">
+
+    <!--BEGIN WPF-->
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/TabControl/Themes/GrayOne/Brushes.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/TabControl/Themes/GrayOne/Components.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/TabControl/Themes/GrayOne/TabControl.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/TabControl/Themes/GrayOne/TabItem.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/TabControl/Themes/Generic/Components.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/TabControl/Themes/Generic/TabControl.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/TabControl/Themes/Generic/TabItem.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <!--END WPF-->
+
+    <!--#include \GrayOne\Brushes.xaml-->
+    <!--#include \GrayOne\Components.xaml-->
+    <!--#include \Generic\Components.xaml-->
+    <!--#include \GrayOne\TabItem.xaml-->
+    <!--#include \Generic\TabItem.xaml-->
+    <!--#include \GrayOne\TabControl.xaml-->
+    <!--#include \Generic\TabControl.xaml-->
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Core.TabControlHeaderMenuItem}" TargetType="{x:Type dx:TabControlHeaderMenuItem}" BasedOn="{StaticResource TabControlHeaderMenuItemDefaultStyle}" />
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Core.TabControlHeaderMenuSeparator}" TargetType="{x:Type dx:TabControlHeaderMenuSeparator}" BasedOn="{StaticResource TabControlHeaderMenuSeparatorDefaultStyle}" />
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Core.TabControlHeaderMenu}" TargetType="{x:Type dx:TabControlHeaderMenu}" BasedOn="{StaticResource TabControlHeaderMenuDefaultStyle}" />
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Core.DXTabControl}" TargetType="{x:Type dx:DXTabControl}" BasedOn="{StaticResource TabControlDefaultStyle}" />
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Core.DXTabItem}" TargetType="{x:Type dx:DXTabItem}" BasedOn="{StaticResource TabItemDefaultStyle}" />
+
+</ResourceDictionary>

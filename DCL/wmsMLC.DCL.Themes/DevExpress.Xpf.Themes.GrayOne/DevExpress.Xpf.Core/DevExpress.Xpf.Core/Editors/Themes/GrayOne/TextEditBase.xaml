@@ -1,0 +1,13 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxet="http://schemas.devexpress.com/winfx/2008/xaml/editors/themekeys" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys">
+
+    <!--BEGIN WPF-->
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v15.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Generic/TextEditBase.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <!--END WPF-->
+
+    <SolidColorBrush x:Key="{dxet:TextEditThemeKey ResourceKey=CaretBrush}" Color="#FF201F35" />
+    <SolidColorBrush x:Key="TextEditSelectionBackground" Color="#FF6699FF" />
+    <SolidColorBrush x:Key="TextEditSelectionForeground" Color="#FFFFFFFF" />
+
+</ResourceDictionary>

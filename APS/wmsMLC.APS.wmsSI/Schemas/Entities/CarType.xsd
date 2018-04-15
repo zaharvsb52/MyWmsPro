@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CarType" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!--Сущность CarType-->
+  <xs:element name="TENTCARTYPE" type="CarTypeType"/>
+  
+  <!--Описание типа CarType-->
+  <xs:complexType name="CarTypeType">
+    <xs:sequence>
+      <!--ID записи-->
+      <xs:element name="CARTYPEID" type="xs:integer"/>
+      <!--Марка автомобиля-->
+      <xs:element name="CARTYPEMARK" nillable="false">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Модель автомобиля-->
+      <xs:element name="CARTYPEMODEL">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Описание-->
+      <xs:element name="CARTYPEDESC">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1024"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,1035 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxgcore="clr-namespace:DevExpress.Xpf.Grid;assembly=DevExpress.Xpf.Grid.v12.2.Core" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxe1="clr-namespace:DevExpress.Xpf.Editors.Filtering;assembly=DevExpress.Xpf.Core.v12.2" xmlns:dxe_helpers="clr-namespace:DevExpress.Xpf.Editors.Helpers;assembly=DevExpress.Xpf.Core.v12.2" xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" xmlns:dxgt="http://schemas.devexpress.com/winfx/2008/xaml/grid/themekeys" xmlns:dxght="http://schemas.devexpress.com/winfx/2008/xaml/grid/internal" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" xmlns:dxgtl="http://schemas.devexpress.com/winfx/2008/xaml/grid" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <!--PROCESS SETTERS WITH BINDING-->
+  <dxcore_unique_xmlns:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+  <dxcore_unique_xmlns:ObjectToVisibilityConverter x:Key="ObjectToVisibilityConverter" HandleList="false" />
+  <dxgtl:FilterPanelCaptionConverter x:Key="FilterPanelCaptionConverter" />
+  <dxgtl:GroupDetailNameConverter x:Key="GroupDetailNameConverter" />
+  <DataTemplate x:Key="{dxgt:GridColumnHeaderThemeKey ResourceKey=DragElementTemplate}">
+    <Grid VerticalAlignment="Top" HorizontalAlignment="Left" DataContext="{Binding Path=Content.Column, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;8;10">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="Auto" />
+      </Grid.ColumnDefinitions>
+      <dxgtl:DragGridColumnHeader x:Name="header" dxgtl:GridColumnHeader.GridColumn="{Binding}" ColumnPosition="Standalone" Width="{Binding Path=(dxg:GridColumnHeader.DragElementSize).Width, RelativeSource={RelativeSource TemplatedParent}}" Height="{Binding Path=(dxg:GridColumnHeader.DragElementSize).Height, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;17;14" />
+      <dxcore_unique_xmlns:DragIconControl Grid.Row="1" Grid.Column="1" Margin="-12,-12,0,0" x:Name="dropIndicator" DragType="Remove" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;18;14">
+        <dxcore_unique_xmlns:DragIconControl.Opacity>
+          <Binding Path="(dxg:GridColumnHeader.IsInDropArea)" RelativeSource="{RelativeSource TemplatedParent}">
+            <Binding.Converter>
+              <dxcore_unique_xmlns:BoolToObjectConverter TrueValue="1" FalseValue="0" />
+            </Binding.Converter>
+          </Binding>
+        </dxcore_unique_xmlns:DragIconControl.Opacity>
+      </dxcore_unique_xmlns:DragIconControl>
+    </Grid>
+    <DataTemplate.Triggers>
+      <DataTrigger Binding="{Binding Path=(dxgcore:BaseGridColumnHeader.DragElementAllowTransparency), RelativeSource={RelativeSource Self}}" Value="False">
+        <Setter Property="Grid.ColumnSpan" Value="2" TargetName="header" />
+        <Setter Property="Grid.RowSpan" Value="2" TargetName="header" />
+        <Setter Property="Grid.Column" Value="0" TargetName="dropIndicator" />
+        <Setter Property="Grid.ColumnSpan" Value="2" TargetName="dropIndicator" />
+        <Setter Property="Grid.Row" Value="0" TargetName="dropIndicator" />
+        <Setter Property="Grid.RowSpan" Value="2" TargetName="dropIndicator" />
+        <Setter Property="Grid.Column" Value="0" TargetName="dropIndicator" />
+        <Setter Property="Margin" Value="0" TargetName="dropIndicator" />
+        <Setter Property="HorizontalAlignment" Value="Right" TargetName="dropIndicator" />
+      </DataTrigger>
+    </DataTemplate.Triggers>
+  </DataTemplate>
+  <Style x:Key="GridColumnHeaderBaseStyle" TargetType="{x:Type dxgcore:GridColumnHeaderBase}">
+    <Setter Property="Template" Value="{DynamicResource {dxgt:GridColumnHeaderThemeKey ResourceKey=ControlTemplate}}" />
+    <Setter Property="dxg:GridColumnHeader.DragElementTemplate" Value="{DynamicResource {dxgt:GridColumnHeaderThemeKey ResourceKey=DragElementTemplate}}" />
+    <Setter Property="Focusable" Value="false" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.FitColumnHeader}" TargetType="{x:Type dxg:FitColumnHeader}" BasedOn="{StaticResource GridColumnHeaderBaseStyle}">
+    <Setter Property="dx:DragManager.DropTargetFactory">
+      <Setter.Value>
+        <dxgcore:FitColumnHeaderDropTargetFactory />
+      </Setter.Value>
+    </Setter>
+    <Setter Property="dxg:GridColumn.HeaderPresenterType" Value="Headers" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.IndicatorColumnHeader}" TargetType="{x:Type dxg:IndicatorColumnHeader}" BasedOn="{StaticResource GridColumnHeaderBaseStyle}">
+    <Setter Property="dx:DragManager.DropTargetFactory">
+      <Setter.Value>
+        <dxgcore:IndicatorColumnHeaderDropTargetFactory />
+      </Setter.Value>
+    </Setter>
+    <Setter Property="dxg:GridColumn.HeaderPresenterType" Value="Headers" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.ExpandButtonColumnHeader}" TargetType="{x:Type dxg:ExpandButtonColumnHeader}" BasedOn="{StaticResource GridColumnHeaderBaseStyle}">
+    <Setter Property="dx:DragManager.DropTargetFactory">
+      <Setter.Value>
+        <dxgcore:IndicatorColumnHeaderDropTargetFactory />
+      </Setter.Value>
+    </Setter>
+    <Setter Property="dxg:GridColumn.HeaderPresenterType" Value="Headers" />
+  </Style>
+  <Style x:Key="{dxgt:GridColumnHeaderThemeKey ResourceKey=FilterAreaStyle}" TargetType="{x:Type dxe:PopupBaseEdit}">
+    <Setter Property="Foreground" Value="{DynamicResource {dxgt:GridColumnHeaderThemeKey ResourceKey=FilterPopupForegroundBrush}}" />
+    <Setter Property="Template" Value="{DynamicResource {dxgt:GridColumnHeaderThemeKey ResourceKey=FilterAreaTemplate}}" />
+  </Style>
+  <Style x:Key="GridColumnHeaderStyle" TargetType="{x:Type dxg:GridColumnHeader}" BasedOn="{StaticResource GridColumnHeaderBaseStyle}">
+    <Setter Property="ColumnFilterPopupStyle" Value="{DynamicResource {dxgt:GridColumnHeaderThemeKey ResourceKey=FilterAreaStyle}}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.GridColumnHeader}" TargetType="{x:Type dxg:GridColumnHeader}" BasedOn="{StaticResource GridColumnHeaderStyle}"></Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.DragGridColumnHeader}" TargetType="{x:Type dxg:DragGridColumnHeader}" BasedOn="{StaticResource GridColumnHeaderStyle}">
+    <Setter Property="Opacity" Value="0.5" />
+    <!--BEGIN WPF-->
+    <Setter Property="dxg:GridColumn.HeaderPresenterType" Value="{Binding Path=(dxg:GridColumn.HeaderPresenterType)}" />
+    <!--END WPF-->
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.FilterCellContentPresenter}" TargetType="{x:Type dxg:FilterCellContentPresenter}">
+    <Setter Property="Template" Value="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=FilterCellContentPresenterTemplate}}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=GridDataRowDelimiterBrush}}" />
+    <Setter Property="dxg:GridViewHitInfoBase.HitTestAcceptor">
+      <Setter.Value>
+        <dxght:RowCellTableViewHitTestAcceptor />
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.NewItemRowCellContentPresenter}" TargetType="{x:Type dxg:NewItemRowCellContentPresenter}">
+    <Setter Property="Template" Value="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=CellContentPresenterTemplate}}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=GridDataRowDelimiterBrush}}" />
+    <Setter Property="dxg:GridViewHitInfoBase.HitTestAcceptor">
+      <Setter.Value>
+        <dxght:RowCellTableViewHitTestAcceptor />
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <!--BEGIN WPF-->
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.CardCellContentPresenter}" TargetType="{x:Type dxg:CardCellContentPresenter}">
+    <Setter Property="Template" Value="{DynamicResource {dxgt:CardTemplatesThemeKey ResourceKey=CellContentPresenterTemplate}}" />
+    <Setter Property="RowData" Value="{Binding RowData}" />
+    <Setter Property="dxg:GridViewHitInfoBase.HitTestAcceptor">
+      <Setter.Value>
+        <dxght:RowCellTableViewHitTestAcceptor />
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.GroupCardRow}" TargetType="{x:Type dxg:GroupCardRow}">
+    <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+    <Setter Property="Template" Value="{DynamicResource {dxgt:CardViewThemeKey ResourceKey=GroupRowControlTemplate}}" />
+    <Setter Property="dxg:GridViewHitInfoBase.HitTestAcceptor">
+      <Setter.Value>
+        <dxght:GroupRowTableViewHitTestAcceptor />
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <!--END WPF-->
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.GridRowContent}" TargetType="{x:Type dxg:GridRowContent}">
+    <Setter Property="Template" Value="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=RowControlContainerTemplate}}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=GridDataRowDelimiterBrush}}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.GroupGridRowContent}" TargetType="{x:Type dxg:GroupGridRowContent}">
+    <Setter Property="Template" Value="{DynamicResource {dxgt:GroupRowThemeKey ResourceKey=GroupRowContentTemplate}}" />
+  </Style>
+  <!--BEGIN WPF-->
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.GridCardContentPresenter}" TargetType="{x:Type dxg:GridCardContentPresenter}">
+    <Setter Property="Content" Value="{Binding}" />
+    <Setter Property="ContentTemplateSelector" Value="{Binding Path=(dxg:GridControl.ActiveView).ActualCardTemplateSelector, RelativeSource={RelativeSource TemplatedParent}}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.GridCardHeaderContentPresenter}" TargetType="{x:Type dxg:GridCardHeaderContentPresenter}">
+    <Setter Property="Content" Value="{Binding Path=CardHeaderData}" />
+    <Setter Property="ContentTemplateSelector" Value="{Binding Path=(dxg:GridControl.ActiveView).ActualCardHeaderTemplateSelector, RelativeSource={RelativeSource TemplatedParent}}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.GridCard}" TargetType="{x:Type dxg:GridCard}">
+    <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+    <Setter Property="Grid.IsSharedSizeScope" Value="True" />
+    <Setter Property="Template" Value="{DynamicResource {dxgt:GridCardThemeKey ResourceKey=ControlTemplate}}" />
+    <Setter Property="dxg:GridViewHitInfoBase.HitTestAcceptor">
+      <Setter.Value>
+        <dxght:RowTableViewHitTestAcceptor />
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Storyboard x:Key="{dxgt:GroupRowThemeKey ResourceKey=ExpandingStoryboard}">
+    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="AnimationProgress">
+      <SplineDoubleKeyFrame KeyTime="0:0:1" Value="1" KeySpline="0,0,0,1" />
+    </DoubleAnimationUsingKeyFrames>
+  </Storyboard>
+  <Storyboard x:Key="{dxgt:GroupRowThemeKey ResourceKey=CollapsingStoryboard}">
+    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="AnimationProgress">
+      <SplineDoubleKeyFrame KeyTime="0:0:1" Value="0" KeySpline="0,0,1,0.25" />
+    </DoubleAnimationUsingKeyFrames>
+  </Storyboard>
+  <Storyboard x:Key="{dxgt:GroupRowThemeKey ResourceKey=CardGroupExpandingStoryboard}">
+    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="AnimationProgress">
+      <SplineDoubleKeyFrame KeyTime="0:0:1" Value="1" KeySpline="0,0,0,1" />
+    </DoubleAnimationUsingKeyFrames>
+  </Storyboard>
+  <Storyboard x:Key="{dxgt:GroupRowThemeKey ResourceKey=CardGroupCollapsingStoryboard}">
+    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="AnimationProgress">
+      <SplineDoubleKeyFrame KeyTime="0:0:1" Value="0" KeySpline="0,0,1,0.25" />
+    </DoubleAnimationUsingKeyFrames>
+  </Storyboard>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.GridCardExpandButton}" TargetType="{x:Type dxg:GridCardExpandButton}">
+    <Setter Property="ToolTip" Value="Collapse a card" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <dxgtl:GridToggleStateButton dxcore_unique_xmlns:DataObjectBase.DataObject="{Binding}" dxcore_unique_xmlns:DataObjectBase.NeedsResetEvent="True" ClickMode="Press" IsChecked="{Binding Path=IsExpanded, Mode=OneWay}" Command="{x:Static dxg:GridCommands.ChangeCardExpanded}" CommandParameter="{Binding RowHandle.Value}" Template="{DynamicResource {dxgt:GridCardThemeKey ResourceKey=ExpandButtonTemplate}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;181;22" />
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="dxg:GridViewHitInfoBase.HitTestAcceptor">
+      <Setter.Value>
+        <dxght:CardHeaderButtonCardViewHitTestAcceptor />
+      </Setter.Value>
+    </Setter>
+    <Style.Triggers>
+      <DataTrigger Binding="{Binding Path=IsExpanded}" Value="false">
+        <Setter Property="ToolTip" Value="Expand a card" />
+      </DataTrigger>
+    </Style.Triggers>
+  </Style>
+  <Style x:Key="{dxgt:CardViewThemeKey ResourceKey=CardsPanelStyle}" TargetType="{x:Type dx:CardsPanel}">
+    <Setter Property="Orientation" Value="{Binding Path=(dxg:GridControl.ActiveView).Orientation, RelativeSource={RelativeSource Self}}" />
+    <Setter Property="MaxCardCountInRow" Value="{Binding Path=(dxg:GridControl.ActiveView).MaxCardCountInRow, RelativeSource={RelativeSource Self}}" />
+    <Setter Property="CardAlignment" Value="{Binding Path=(dxg:GridControl.ActiveView).CardAlignment, RelativeSource={RelativeSource Self}}" />
+    <Setter Property="FixedSize" Value="{Binding Path=(dxg:GridControl.ActiveView).FixedSize, RelativeSource={RelativeSource Self}}" />
+    <Setter Property="SeparatorThickness" Value="{Binding Path=(dxg:GridControl.ActiveView).SeparatorThickness, RelativeSource={RelativeSource Self}}" />
+    <Setter Property="CardMargin" Value="{Binding Path=(dxg:GridControl.ActiveView).CardMargin, RelativeSource={RelativeSource Self}}" />
+    <Setter Property="Owner" Value="{Binding Path=(dxg:GridControl.ActiveView), RelativeSource={RelativeSource Self}}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.CardsResizer}" TargetType="{x:Type dxg:CardsResizer}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <ContentPresenter ContentTemplate="{Binding Path=SeparatorTemplate, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxg:CardView}}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;209;22" />
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="dxg:GridViewHitInfoBase.HitTestAcceptor">
+      <Setter.Value>
+        <dxght:SeparatorCardViewHitTestAcceptor />
+      </Setter.Value>
+    </Setter>
+    <Style.Triggers>
+      <DataTrigger Binding="{Binding Orientation}" Value="Horizontal">
+        <Setter Property="Width" Value="{Binding Path=(dxg:GridControl.ActiveView).SeparatorThickness, RelativeSource={RelativeSource TemplatedParent}}" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding Orientation}" Value="Vertical">
+        <Setter Property="Height" Value="{Binding Path=(dxg:GridControl.ActiveView).SeparatorThickness, RelativeSource={RelativeSource TemplatedParent}}" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding Orientation}" Value="Vertical">
+        <Setter Property="Width" Value="{Binding Length}" />
+        <Setter Property="Cursor" Value="SizeNS" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding Orientation}" Value="Horizontal">
+        <Setter Property="Height" Value="{Binding Length}" />
+        <Setter Property="Cursor" Value="SizeWE" />
+      </DataTrigger>
+      <Trigger Property="dxg:CardView.IsResizingEnabled" Value="false">
+        <Setter Property="IsHitTestVisible" Value="false" />
+      </Trigger>
+    </Style.Triggers>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.GridCardHeaderControl}" TargetType="{x:Type dxg:GridCardHeaderControl}">
+    <Setter Property="Template" Value="{DynamicResource {dxgt:GridCardThemeKey ResourceKey=HeaderPanelTemplate}}" />
+    <Setter Property="dxg:GridViewHitInfoBase.HitTestAcceptor">
+      <Setter.Value>
+        <dxght:CardHeaderCardViewHitTestAcceptor />
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <!--END WPF-->
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.ColumnChooserControl}" TargetType="{x:Type dxg:ColumnChooserControl}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type dxg:ColumnChooserControl}">
+          <ScrollViewer VerticalScrollBarVisibility="Auto" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;251;22">
+            <ScrollViewer.Template>
+              <ControlTemplate TargetType="{x:Type ScrollViewer}">
+                <Grid Background="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=ColumnChooserBackgroundBrush}}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;254;34">
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                  </Grid.RowDefinitions>
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                  </Grid.ColumnDefinitions>
+                  <ScrollContentPresenter Name="PART_ScrollContentPresenter" Content="{TemplateBinding Content}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;263;38" />
+                  <ScrollBar Grid.Column="1" Grid.RowSpan="2" Value="{Binding VerticalOffset, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}" Maximum="{Binding ScrollableHeight, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}" ViewportSize="{Binding ViewportHeight, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}" Visibility="{Binding ComputedVerticalScrollBarVisibility, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;264;38">
+                    <!--BEGIN WPF-->
+                    <ScrollBar.Name>PART_VerticalScrollBar</ScrollBar.Name>
+                    <!--END WPF-->
+                    <!--ONLY SL<ScrollBar.Name>VerticalScrollBar</ScrollBar.Name>ONLY SL-->
+                  </ScrollBar>
+                  <ScrollBar Grid.Row="1" Orientation="Horizontal" Value="{Binding HorizontalOffset, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}" Maximum="{Binding ScrollableWidth, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}" ViewportSize="{Binding ViewportWidth, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}" Visibility="{Binding ComputedHorizontalScrollBarVisibility, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;270;38">
+                    <!--BEGIN WPF-->
+                    <ScrollBar.Name>PART_HorizontalScrollBar</ScrollBar.Name>
+                    <!--END WPF-->
+                    <!--ONLY SL<ScrollBar.Name>HorizontalScrollBar</ScrollBar.Name>ONLY SL-->
+                  </ScrollBar>
+                  <Border Grid.Row="1" Grid.Column="1" x:Name="PART_HorizontalScrollCorner" Style="{DynamicResource {dxgt:ScrollBarThemeKey ResourceKey=ScrollingCornerStyle}}" Margin="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;276;38" />
+                </Grid>
+              </ControlTemplate>
+            </ScrollViewer.Template>
+            <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;280;26">
+              <dxgtl:ColumnItemsControl ItemsSource="{Binding Path=Owner.ColumnChooserColumns, RelativeSource={RelativeSource TemplatedParent}}">
+                <dxgtl:ColumnItemsControl.Visibility>
+                  <Binding Path="Owner.ColumnChooserColumns" RelativeSource="{RelativeSource TemplatedParent}">
+                    <Binding.Converter>
+                      <dxcore_unique_xmlns:ObjectToVisibilityConverter />
+                    </Binding.Converter>
+                  </Binding>
+                </dxgtl:ColumnItemsControl.Visibility>
+                <dxgtl:ColumnItemsControl.ItemTemplate>
+                  <DataTemplate>
+                    <dxgtl:GridColumnHeader DataContext="{Binding Path=Content.Column, RelativeSource={RelativeSource TemplatedParent}}" dxgtl:GridColumn.HeaderPresenterType="ColumnChooser" dxgtl:GridColumnHeader.GridColumn="{Binding}" Margin="1,1,1,0" ColumnPosition="Standalone" SnapsToDevicePixels="True" dxgtl:GridPopupMenu.GridMenuType="Column" dxb:BarManager.DXContextMenu="{Binding Path=View.DataControlMenu}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;291;42" />
+                  </DataTemplate>
+                </dxgtl:ColumnItemsControl.ItemTemplate>
+                <dxgtl:ColumnItemsControl.ItemsPanel>
+                  <ControlTemplate>
+                    <StackPanel dxgtl:GridColumn.HeaderPresenterType="ColumnChooser" Orientation="Vertical" Margin="1,1,1,2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;296;42" />
+                  </ControlTemplate>
+                </dxgtl:ColumnItemsControl.ItemsPanel>
+              </dxgtl:ColumnItemsControl>
+              <TextBlock Style="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=ColumnChooserDragTextStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;300;30">
+                <TextBlock.Text>
+                  <Binding ConverterParameter="ColumnChooserDragText" Path="Owner.LocalizationDescriptor" RelativeSource="{RelativeSource TemplatedParent}">
+                    <Binding.Converter>
+                      <dxgtl:DynamicLocalizationStringValueConvertor />
+                    </Binding.Converter>
+                  </Binding>
+                </TextBlock.Text>
+                <TextBlock.Visibility>
+                  <Binding Path="Owner.ColumnChooserColumns" RelativeSource="{RelativeSource TemplatedParent}">
+                    <Binding.Converter>
+                      <dxcore_unique_xmlns:ObjectToVisibilityConverter Invert="True" />
+                    </Binding.Converter>
+                  </Binding>
+                </TextBlock.Visibility>
+              </TextBlock>
+            </Grid>
+          </ScrollViewer>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="dx:DragManager.DropTargetFactory">
+      <Setter.Value>
+        <dxgcore:ColumnChooserDropTargetFactory />
+      </Setter.Value>
+    </Setter>
+    <Setter Property="dxg:GridColumn.HeaderPresenterType" Value="ColumnChooser" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.BestFitControl}" TargetType="{x:Type dxg:BestFitControl}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type dxg:BestFitControl}">
+          <dxgtl:GridRowContent Style="{Binding Path=RowData.View.RowStyle, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;332;22">
+            <dxgtl:GridRowContent.Template>
+              <ControlTemplate TargetType="{x:Type dxg:GridRowContent}">
+                <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;335;34" />
+              </ControlTemplate>
+            </dxgtl:GridRowContent.Template>
+            <dxgtl:BestFitGridCellContentPresenter x:Name="PART_CellContentPresenter" IsFocusedCell="{TemplateBinding IsFocusedCell}" RowData="{Binding RowData, RelativeSource={RelativeSource TemplatedParent}}" Column="{TemplateBinding Column}" HasRightSibling="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;338;26" />
+          </dxgtl:GridRowContent>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.GridTotalSummary}" TargetType="{x:Type dxg:GridTotalSummary}">
+    <Setter Property="Template" Value="{DynamicResource {dxgt:TotalSummaryThemeKey ResourceKey=TotalSummaryControlTemplate}}" />
+  </Style>
+  <dxcore_unique_xmlns:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+  <dxcore_unique_xmlns:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverterInverted" Invert="True" />
+  <DataTemplate x:Key="{dxgt:GroupRowThemeKey ResourceKey=GroupSummaryItemTemplate}">
+    <Border Style="{Binding Path=View.GroupSummaryContentStyle}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;350;10">
+      <StackPanel Orientation="Horizontal" Name="defaultGroupSummaryItemTemplateStackPanel" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;351;14">
+        <TextBlock Text="{Binding Text}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;352;18" />
+        <TextBlock Text=", " Name="commaTextBlock" Visibility="{Binding IsLast, Converter={StaticResource BooleanToVisibilityConverterInverted}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;353;18" />
+      </StackPanel>
+    </Border>
+  </DataTemplate>
+  <DataTemplate x:Key="{dxgt:GroupRowThemeKey ResourceKey=GroupColumnSummaryItemTemplate}">
+    <TextBlock Text="{Binding Value}" TextAlignment="Right" Name="textBlock" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;358;10">
+      <!--BEGIN WPF-->
+      <TextBlock.TextTrimming>CharacterEllipsis</TextBlock.TextTrimming>
+      <dxe_helpers:TextBlockService.AllowIsTextTrimmed>true</dxe_helpers:TextBlockService.AllowIsTextTrimmed>
+      <!--END WPF-->
+    </TextBlock>
+    <DataTemplate.Triggers>
+      <Trigger Property="dxe_helpers:TextBlockService.IsTextTrimmed" Value="true" SourceName="textBlock">
+        <Setter Property="ToolTip" Value="{Binding Value}" TargetName="textBlock" />
+      </Trigger>
+    </DataTemplate.Triggers>
+  </DataTemplate>
+  <Style x:Key="DataViewBaseStyle" TargetType="{x:Type dxgcore:DataViewBase}">
+    <Setter Property="HeaderTemplate" Value="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=HeadersTemplate}}" />
+    <Setter Property="FooterTemplate" Value="{DynamicResource {dxgt:TotalSummaryThemeKey ResourceKey=FootersTemplate}}" />
+    <Setter Property="TotalSummaryItemTemplate" Value="{DynamicResource {dxgt:TotalSummaryThemeKey ResourceKey=TotalSummaryItemTemplate}}" />
+    <Setter Property="ColumnHeaderTemplate" Value="{DynamicResource {dxgt:GridColumnHeaderThemeKey ResourceKey=ContentTemplate}}" />
+    <Setter Property="ColumnHeaderCustomizationAreaTemplate" Value="{DynamicResource {dxgt:GridColumnHeaderThemeKey ResourceKey=CustomizationAreaTemplate}}" />
+    <Setter Property="CellStyle" Value="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=CellStyle}}" />
+    <Setter Property="TotalSummaryContentStyle" Value="{DynamicResource {dxgt:TotalSummaryThemeKey ResourceKey=TotalSummaryContentStyle}}" />
+    <Setter Property="ColumnHeaderDragIndicatorTemplate" Value="{DynamicResource {dxgt:GridColumnHeaderThemeKey ResourceKey=DragIndicatorTemplate}}" />
+    <Setter Property="ColumnChooserTemplate" Value="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=ColumnChooserTemplate}}" />
+    <Setter Property="Margin" Value="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=Margin}}" />
+    <Setter Property="FocusedCellBorderTemplate" Value="{DynamicResource {dxgt:GridControlThemeKey ResourceKey=FocusedCellBorderTemplate}}" />
+    <Setter Property="FocusedGroupRowBorderTemplate" Value="{DynamicResource {dxgt:GridControlThemeKey ResourceKey=FocusedGroupRowBorderTemplate}}" />
+    <!--BEGIN WPF-->
+    <Setter Property="SnapsToDevicePixels" Value="true" />
+    <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+    <!--END WPF-->
+  </Style>
+  <Style x:Key="GridViewBaseStyle" TargetType="{x:Type dxg:GridViewBase}" BasedOn="{StaticResource DataViewBaseStyle}">
+    <Setter Property="GroupRowTemplate" Value="{DynamicResource {dxgt:GroupRowThemeKey ResourceKey=GroupRowTemplate}}" />
+    <Setter Property="GroupValueTemplate" Value="{DynamicResource {dxgt:GroupRowThemeKey ResourceKey=GroupValueTemplate}}" />
+    <Setter Property="DefaultGroupSummaryItemTemplate" Value="{DynamicResource {dxgt:GroupRowThemeKey ResourceKey=GroupSummaryItemTemplate}}" />
+    <Setter Property="GroupSummaryItemTemplate" Value="{DynamicResource {dxgt:GroupRowThemeKey ResourceKey=GroupSummaryItemTemplate}}" />
+    <Setter Property="GroupRowStyle" Value="{DynamicResource {dxgt:GroupRowThemeKey ResourceKey=GroupRowStyle}}" />
+    <!--BEGIN WPF-->
+    <Setter Property="GroupValueContentStyle" Value="{DynamicResource {dxgt:GroupRowThemeKey ResourceKey=GroupValueContentStyle}}" />
+    <Setter Property="GroupSummaryContentStyle" Value="{DynamicResource {dxgt:GroupRowThemeKey ResourceKey=GroupSummaryContentStyle}}" />
+    <!--END WPF-->
+  </Style>
+  <!--BEGIN WPF-->
+  <Style x:Key="{dxgt:GroupRowThemeKey ResourceKey=GroupSummaryContentStyle}"></Style>
+  <!--END WPF-->
+  <!--ONLY SL
+    <sys:String x:Key="{dxgt:GroupRowThemeKey ResourceKey=ExpandingStoryboard}">
+        &lt;Storyboard&gt;
+            &lt;DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="AnimationProgress"&gt;
+                    &lt;SplineDoubleKeyFrame KeyTime="0:0:1" Value="1" KeySpline="0,0,0,1"/&gt;
+            &lt;/DoubleAnimationUsingKeyFrames&gt;
+        &lt;/Storyboard&gt;
+    </sys:String>
+    <sys:String x:Key="{dxgt:GroupRowThemeKey ResourceKey=CollapsingStoryboard}">
+        &lt;Storyboard&gt;
+            &lt;DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="AnimationProgress"&gt;
+                    &lt;SplineDoubleKeyFrame KeyTime="0:0:1" Value="0" KeySpline="0,0,1,0.25"/&gt;
+            &lt;/DoubleAnimationUsingKeyFrames&gt;
+        &lt;/Storyboard&gt;
+    </sys:String>
+    ONLY SL-->
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.TableView}" TargetType="{x:Type dxg:TableView}" BasedOn="{StaticResource GridViewBaseStyle}">
+    <Setter Property="PrintRowTemplate" Value="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=PrintRowTemplate}}" />
+    <Setter Property="PrintHeaderTemplate" Value="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=PrintHeaderTemplate}}" />
+    <Setter Property="PrintFooterTemplate" Value="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=PrintFooterTemplate}}" />
+    <Setter Property="PrintFixedFooterTemplate" Value="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=PrintFixedFooterTemplate}}" />
+    <Setter Property="PrintGroupRowTemplate" Value="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=PrintGroupRowTemplate}}" />
+    <Setter Property="PrintColumnHeaderStyle" Value="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=DefaultPrintHeaderStyle}}" />
+    <Setter Property="PrintTotalSummaryStyle" Value="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=DefaultPrintTotalSummaryStyle}}" />
+    <Setter Property="PrintFixedTotalSummaryStyle" Value="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=DefaultPrintFixedTotalSummaryStyle}}" />
+    <Setter Property="PrintGroupRowStyle" Value="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=DefaultPrintGroupRowStyle}}" />
+    <Setter Property="PrintCellStyle" Value="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=DefaultPrintCellStyle}}" />
+    <Setter Property="PrintRowIndentStyle" Value="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=DefaultPrintRowIndentStyle}}" />
+    <Setter Property="AutoFilterRowCellStyle" Value="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=CellStyle}}" />
+    <Setter Property="NewItemRowCellStyle" Value="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=CellStyle}}" />
+    <Setter Property="Template" Value="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=ControlTemplate}}" />
+    <Setter Property="RowDecorationTemplate" Value="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=RowDecorationTemplate}}" />
+    <Setter Property="RowIndicatorContentTemplate" Value="{DynamicResource {dxgt:RowIndicatorThemeKey ResourceKey=IconPresenterTemplate}}" />
+    <Setter Property="DefaultDataRowTemplate" Value="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=DataRowTemplate}}" />
+    <Setter Property="DataRowTemplate" Value="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=DataRowTemplate}}" />
+    <Setter Property="LeftDataAreaIndent" Value="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=LeftDataAreaIndent}}" />
+    <Setter Property="RightDataAreaIndent" Value="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=RightDataAreaIndent}}" />
+    <Setter Property="LeftGroupAreaIndent" Value="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=LeftGroupAreaIndent}}" />
+    <Setter Property="RightGroupAreaIndent" Value="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=RightGroupAreaIndent}}" />
+    <Setter Property="FixedLineWidth" Value="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=FixedLineWidth}}" />
+    <Setter Property="IndicatorWidth" Value="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=IndicatorWidth}}" />
+    <Setter Property="ExpandDetailButtonWidth" Value="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=ExpandDetailButtonWidth}}" />
+    <Setter Property="ExpandStoryboard" Value="{DynamicResource {dxgt:GroupRowThemeKey ResourceKey=ExpandingStoryboard}}" />
+    <Setter Property="CollapseStoryboard" Value="{DynamicResource {dxgt:GroupRowThemeKey ResourceKey=CollapsingStoryboard}}" />
+    <Setter Property="FocusedRowBorderTemplate" Value="{DynamicResource {dxgt:GridControlThemeKey ResourceKey=FocusedRowBorderTemplate}}" />
+    <Setter Property="GroupColumnSummaryItemTemplate" Value="{DynamicResource {dxgt:GroupRowThemeKey ResourceKey=GroupColumnSummaryItemTemplate}}" />
+    <!--BEGIN WPF-->
+    <Setter Property="RowStyle" Value="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=RowStyle}}" />
+    <!--END WPF-->
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.TreeListView}" TargetType="{x:Type dxg:TreeListView}" BasedOn="{StaticResource DataViewBaseStyle}">
+    <Setter Property="PrintRowTemplate" Value="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=PrintRowTemplate}}" />
+    <Setter Property="PrintHeaderTemplate" Value="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=PrintHeaderTemplate}}" />
+    <Setter Property="PrintFooterTemplate" Value="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=PrintFooterTemplate}}" />
+    <Setter Property="PrintFixedFooterTemplate" Value="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=PrintFixedFooterTemplate}}" />
+    <Setter Property="PrintColumnHeaderStyle" Value="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=DefaultPrintHeaderStyle}}" />
+    <Setter Property="PrintTotalSummaryStyle" Value="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=DefaultPrintTotalSummaryStyle}}" />
+    <Setter Property="PrintFixedTotalSummaryStyle" Value="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=DefaultPrintFixedTotalSummaryStyle}}" />
+    <Setter Property="PrintCellStyle" Value="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=DefaultPrintCellStyle}}" />
+    <Setter Property="PrintRowIndentStyle" Value="{DynamicResource {dxgt:TreeListViewThemeKey ResourceKey=DefaultPrintRowIndentStyle}}" />
+    <Setter Property="AutoFilterRowCellStyle" Value="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=CellStyle}}" />
+    <Setter Property="RowIndent" Value="{DynamicResource {dxgt:TreeListViewThemeKey ResourceKey=RowIndent}}" />
+    <Setter Property="RowPresenterMargin" Value="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=RowPresenterGridMargin}}" />
+    <Setter Property="Template" Value="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=ControlTemplate}}" />
+    <Setter Property="RowDecorationTemplate" Value="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=RowDecorationTemplate}}" />
+    <Setter Property="RowIndicatorContentTemplate" Value="{DynamicResource {dxgt:RowIndicatorThemeKey ResourceKey=IconPresenterTemplate}}" />
+    <Setter Property="DefaultDataRowTemplate" Value="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=DataRowTemplate}}" />
+    <Setter Property="DataRowTemplate" Value="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=DataRowTemplate}}" />
+    <Setter Property="LeftDataAreaIndent" Value="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=LeftDataAreaIndent}}" />
+    <Setter Property="RightDataAreaIndent" Value="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=RightDataAreaIndent}}" />
+    <Setter Property="FixedLineWidth" Value="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=FixedLineWidth}}" />
+    <Setter Property="IndicatorWidth" Value="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=IndicatorWidth}}" />
+    <Setter Property="FocusedRowBorderTemplate" Value="{DynamicResource {dxgt:GridControlThemeKey ResourceKey=FocusedRowBorderTemplate}}" />
+    <Setter Property="TreeLineStyle" Value="{DynamicResource {dxgt:TreeListViewThemeKey ResourceKey=DefaultTreeLineStyle}}" />
+    <!--BEGIN WPF-->
+    <Setter Property="RowStyle" Value="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=RowStyle}}" />
+    <!--END WPF-->
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.RowMarginControl}" TargetType="{x:Type dxg:RowMarginControl}">
+    <Setter Property="Foreground" Value="Black" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <Grid Background="{DynamicResource {dxgt:TreeListViewThemeKey ResourceKey=RowMarginBackgroundBrush}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;486;22">
+            <Path x:Name="PART_OffsetPath" Stroke="{TemplateBinding BorderBrush}" StrokeThickness="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;487;26" />
+            <Path x:Name="PART_TreeLinePath" Stroke="{TemplateBinding BorderBrush}" StrokeThickness="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;488;26" />
+            <dxgtl:IndentsPanel RowIndent="{Binding View.RowIndent}" HorizontalAlignment="Right">
+              <dxgtl:TreeListNodeExpandButton x:Name="PART_ExpandButton" HorizontalAlignment="Left" Command="{Binding View.Commands.ChangeNodeExpanded}" CommandParameter="{Binding RowHandle.Value}" IsChecked="{Binding IsExpanded}" IsExpandButtonVisible="{Binding Path=IsButtonVisible}" />
+              <dxe:CheckEdit x:Name="PART_NodeCheckBox" Visibility="{Binding IsCheckBoxVisible, Converter={StaticResource BooleanToVisibilityConverter}}" IsEnabled="{Binding IsCheckBoxEnabled}" IsChecked="{Binding IsChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Focusable="False" IsThreeState="{Binding View.AllowIndeterminateCheckState}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;491;30">
+                <dxgtl:GridViewHitInfoBase.HitTestAcceptor>
+                  <dxgtl:TreeListNodeCheckboxHitTestAcceptor />
+                </dxgtl:GridViewHitInfoBase.HitTestAcceptor>
+              </dxe:CheckEdit>
+              <dxcore_unique_xmlns:MeasurePixelSnapper Visibility="{Binding IsImageVisible, Converter={StaticResource BooleanToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;496;30">
+                <Image x:Name="PART_NodeImage" Width="16" Height="16" Focusable="False" Source="{Binding Image}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;497;34">
+                  <dxgtl:GridViewHitInfoBase.HitTestAcceptor>
+                    <dxgtl:TreeListNodeImageHitTestAcceptor />
+                  </dxgtl:GridViewHitInfoBase.HitTestAcceptor>
+                  <!--BEGIN WPF-->
+                  <RenderOptions.BitmapScalingMode>NearestNeighbor</RenderOptions.BitmapScalingMode>
+                  <!--END WPF-->
+                </Image>
+              </dxcore_unique_xmlns:MeasurePixelSnapper>
+            </dxgtl:IndentsPanel>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.RowOffsetPresenter}" TargetType="{x:Type dxg:RowOffsetPresenter}">
+    <Setter Property="Template" Value="{DynamicResource {dxgt:RowIndicatorThemeKey ResourceKey=RowOffsetTemplate}}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.GroupRowOffsetPresenter}" TargetType="{x:Type dxg:GroupRowOffsetPresenter}">
+    <Setter Property="Template" Value="{DynamicResource {dxgt:RowIndicatorThemeKey ResourceKey=GroupRowOffsetTemplate}}" />
+  </Style>
+  <!--BEGIN WPF-->
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.CardView}" TargetType="{x:Type dxg:CardView}" BasedOn="{StaticResource GridViewBaseStyle}">
+    <Setter Property="ExpandStoryboard" Value="{DynamicResource {dxgt:GroupRowThemeKey ResourceKey=CardGroupExpandingStoryboard}}" />
+    <Setter Property="CollapseStoryboard" Value="{DynamicResource {dxgt:GroupRowThemeKey ResourceKey=CardGroupCollapsingStoryboard}}" />
+    <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+    <Setter Property="SeparatorThickness" Value="{DynamicResource {dxgt:CardViewThemeKey ResourceKey=SeparatorThickness}}" />
+    <Setter Property="GroupRowTemplate" Value="{DynamicResource {dxgt:CardViewThemeKey ResourceKey=GroupRowTemplate}}" />
+    <Setter Property="CellStyle" Value="{DynamicResource {dxgt:CardTemplatesThemeKey ResourceKey=CellStyle}}" />
+    <Setter Property="CardStyle" Value="{DynamicResource {dxgt:CardTemplatesThemeKey ResourceKey=CardStyle}}" />
+    <Setter Property="FocusedCardBorderTemplate" Value="{DynamicResource {dxgt:GridControlThemeKey ResourceKey=FocusedCardBorderTemplate}}" />
+    <Setter Property="FocusedCellBorderCardViewTemplate" Value="{DynamicResource {dxgt:GridControlThemeKey ResourceKey=FocusedCellBorderCardViewTemplate}}" />
+    <Setter Property="VerticalFocusedGroupRowBorderTemplate" Value="{DynamicResource {dxgt:GridControlThemeKey ResourceKey=VerticalFocusedGroupRowBorderTemplate}}" />
+    <Setter Property="SeparatorTemplate" Value="{DynamicResource {dxgt:CardTemplatesThemeKey ResourceKey=SeparatorTemplate}}" />
+    <Setter Property="CardTemplate" Value="{DynamicResource {dxgt:CardTemplatesThemeKey ResourceKey=CardTemplate}}" />
+    <Setter Property="CardRowTemplate" Value="{DynamicResource {dxgt:CardTemplatesThemeKey ResourceKey=CardRowTemplate}}" />
+    <Setter Property="CardHeaderTemplate" Value="{DynamicResource {dxgt:CardTemplatesThemeKey ResourceKey=CardHeaderTemplate}}" />
+    <Setter Property="Template" Value="{DynamicResource {dxgt:CardViewThemeKey ResourceKey=ControlTemplate}}" />
+    <Style.Triggers>
+      <DataTrigger Binding="{Binding Path=Orientation, RelativeSource={RelativeSource Self}}" Value="Horizontal">
+        <Setter Property="CardMargin" Value="{DynamicResource {dxgt:CardViewThemeKey ResourceKey=HorizontalCardMargin}}" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding Path=Orientation, RelativeSource={RelativeSource Self}}" Value="Vertical">
+        <Setter Property="CardMargin" Value="{DynamicResource {dxgt:CardViewThemeKey ResourceKey=VerticalCardMargin}}" />
+      </DataTrigger>
+    </Style.Triggers>
+  </Style>
+  <!--END WPF-->
+  <Style x:Key="DataControlBaseStyle" TargetType="{x:Type dxgcore:DataControlBase}">
+    <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+    <Setter Property="SnapsToDevicePixels" Value="true" />
+    <Setter Property="Template" Value="{DynamicResource {dxgt:GridControlThemeKey ResourceKey=Template}}" />
+    <!--BEGIN WPF-->
+    <!--TODO SL-->
+    <Style.Triggers>
+      <Trigger Property="IsEnabled" Value="False">
+        <Setter Property="Opacity" Value="0.35" />
+      </Trigger>
+    </Style.Triggers>
+    <!--END WPF-->
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.GridControl}" TargetType="{x:Type dxg:GridControl}" BasedOn="{StaticResource DataControlBaseStyle}">
+    <!--SPECIFICTHEME Office2010Black <Setter Property="TextElement.Foreground" Value="{DynamicResource {dxdst:ThemeColorsThemeKey ResourceKey=WhiteForegroundColor}}" /> SPECIFICTHEME-->
+    <Setter Property="dx:DXSerializer.SerializationIDDefault" Value="GridControl" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.TreeListControl}" TargetType="{x:Type dxg:TreeListControl}" BasedOn="{StaticResource DataControlBaseStyle}">
+    <!--SPECIFICTHEME Office2010Black <Setter Property="TextElement.Foreground" Value="{DynamicResource {dxdst:ThemeColorsThemeKey ResourceKey=WhiteForegroundColor}}" /> SPECIFICTHEME-->
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.AdditionalRowContainerControl}" TargetType="{x:Type dxg:AdditionalRowContainerControl}">
+    <Setter Property="Foreground" Value="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=TextUnfocusedBrush}}" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type dxg:AdditionalRowContainerControl}">
+          <dxcore_unique_xmlns:DXDockPanel MinHeight="{Binding Path=View.RowMinHeight}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;574;22">
+            <dxgtl:RowIndicatorControl dxcore_unique_xmlns:DXDockPanel.Dock="Left" Width="{TemplateBinding IndicatorWidth}" Template="{DynamicResource {dxgt:RowIndicatorThemeKey ResourceKey=AdditionalTemplate}}" Visibility="{Binding Path=View.ActualShowIndicator, Converter={StaticResource BooleanToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;575;26"></dxgtl:RowIndicatorControl>
+            <dxgtl:BackgroundBorderControl Width="{Binding Path=View.ExpandDetailButtonWidth}" Visibility="{Binding View.ActualShowDetailButtons, Converter={StaticResource BooleanToVisibilityConverter}}" />
+            <ContentControl Template="{Binding Path=RowTemplate, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;578;26">
+              <dxcore_unique_xmlns:MeasurePixelSnapper dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;579;30">
+                <dxgtl:GridScrollablePart x:Name="ScrollablePart" FixedColumnsDelimiterTemplate="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=FixedColumnsDelimiterTemplate}}" ScrollingMargin="{Binding Path=View.ScrollingHeaderVirtualizationMargin}" FixedNoneContentWidth="{Binding Path=FixedNoneContentWidth}" dxgtl:GridControl.CurrentView="{Binding Path=View}" FixedLeftVisibleColumns="{Binding Path=View.FixedLeftVisibleColumns}" FixedRightVisibleColumns="{Binding Path=View.FixedRightVisibleColumns}" FixedLineWidth="{Binding Path=View.FixedLineWidth}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;580;34">
+                  <dxgtl:GridScrollablePart.FitContent>
+                    <dxgtl:FitRowContentPresenter Content="{Binding DataContext, RelativeSource={RelativeSource TemplatedParent}}" VerticalContentAlignment="Stretch" />
+                  </dxgtl:GridScrollablePart.FitContent>
+                  <dxgtl:GridScrollablePart.FixedLeftContent>
+                    <dxgtl:RowItemsControl Name="PART_FixedLeftColumnsItemsControl" ItemsSource="{Binding Path=FixedLeftCellData}" ItemsPanel="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=FixedLeftNoneDropPanelTemplate}}" ItemTemplate="{TemplateBinding ItemTemplate}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;586;42" />
+                  </dxgtl:GridScrollablePart.FixedLeftContent>
+                  <dxgtl:GridScrollablePart.FixedRightContent>
+                    <dxgtl:RowItemsControl Name="PART_FixedRightColumnsItemsControl" ItemsSource="{Binding Path=FixedRightCellData}" ItemsPanel="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=FixedRightNoneDropPanelTemplate}}" ItemTemplate="{TemplateBinding ItemTemplate}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;589;42" />
+                  </dxgtl:GridScrollablePart.FixedRightContent>
+                  <dxgtl:GridScrollablePart.FixedNoneContent>
+                    <dxgtl:RowItemsControl Name="PART_FixedNoneColumnsItemsControl" ItemsSource="{Binding Path=FixedNoneCellData}" ItemsPanel="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=FixedNoneDropPanelTemplate}}" ItemTemplate="{TemplateBinding ItemTemplate}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;592;42" />
+                  </dxgtl:GridScrollablePart.FixedNoneContent>
+                </dxgtl:GridScrollablePart>
+              </dxcore_unique_xmlns:MeasurePixelSnapper>
+            </ContentControl>
+          </dxcore_unique_xmlns:DXDockPanel>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="dxg:GridViewHitInfoBase.HitTestAcceptor">
+      <Setter.Value>
+        <dxght:RowTableViewHitTestAcceptor />
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.GridViewDataRowsControl}" TargetType="{x:Type dxg:GridViewDataRowsControl}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <dxgtl:RowsItemsControl ItemsSource="{Binding Path=Items}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;611;22">
+            <dxgtl:RowsItemsControl.ItemsPanel>
+              <ControlTemplate>
+                <dxcore_unique_xmlns:StackVisibleIndexPanel Orientation="Vertical" ArrangeAccordingToVisibleIndex="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;614;34" />
+              </ControlTemplate>
+            </dxgtl:RowsItemsControl.ItemsPanel>
+          </dxgtl:RowsItemsControl>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.GridRow}" TargetType="{x:Type dxg:GridRow}">
+    <Setter Property="Foreground" Value="Black" />
+    <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+    <Setter Property="Template" Value="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=RowControlTemplate}}" />
+    <Setter Property="dxg:GridViewHitInfoBase.HitTestAcceptor">
+      <Setter.Value>
+        <dxght:RowTableViewHitTestAcceptor />
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.GridViewGroupRowsControl}" TargetType="{x:Type dxg:GridViewGroupRowsControl}">
+    <Setter Property="Template" Value="{DynamicResource {dxgt:GroupRowThemeKey ResourceKey=GroupRowsControlTemplate}}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.GroupGridRow}" TargetType="{x:Type dxg:GroupGridRow}">
+    <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+    <Setter Property="dx:DXExpander.AllowTracksRevealing" Value="False" />
+    <Setter Property="Template" Value="{DynamicResource {dxgt:GroupRowThemeKey ResourceKey=GroupRowControlTemplate}}" />
+    <Setter Property="dxg:GridViewHitInfoBase.HitTestAcceptor">
+      <Setter.Value>
+        <dxght:GroupRowTableViewHitTestAcceptor />
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <!--BEGIN WPF-->
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.CardViewDataRowsControl}" TargetType="{x:Type dxg:CardViewDataRowsControl}">
+    <Setter Property="Template" Value="{DynamicResource {dxgt:CardViewThemeKey ResourceKey=DataRowsControlTemplate}}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.CardViewGroupRowsControl}" TargetType="{x:Type dxg:CardViewGroupRowsControl}">
+    <Setter Property="Template" Value="{DynamicResource {dxgt:CardViewThemeKey ResourceKey=GroupRowsControlTemplate}}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.CardItemsContainer}" TargetType="{x:Type dxg:CardItemsContainer}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type ContentControl}">
+          <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;656;22" />
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="DataRowsTemplate" Value="{DynamicResource {dxgt:CardViewThemeKey ResourceKey=DataRowsTemplate}}" />
+    <Setter Property="GroupRowsTemplate" Value="{DynamicResource {dxgt:CardViewThemeKey ResourceKey=GroupRowsTemplate}}" />
+  </Style>
+  <!--END WPF-->
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.GridScrollablePart}" TargetType="{x:Type dxg:GridScrollablePart}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type dxg:GridScrollablePart}">
+          <dxcore_unique_xmlns:DXDockPanel x:Name="PART_ScrollablePartPanel" LastChildFill="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;668;22">
+            <ContentPresenter Name="PART_FixedLeftContent" dxgcore:TableViewProperties.FixedAreaStyle="Left" dxcore_unique_xmlns:DXDockPanel.Dock="Left" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;669;26" />
+            <ContentPresenter x:Name="PART_FixedLeftLinePlaceHolder" dxcore_unique_xmlns:DXDockPanel.Dock="Left" Visibility="Collapsed" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;670;26">
+              <dxgtl:GridViewHitInfoBase.HitTestAcceptor>
+                <dxght:FixedLeftDivTableViewHitTestAcceptor />
+              </dxgtl:GridViewHitInfoBase.HitTestAcceptor>
+            </ContentPresenter>
+            <Border Name="PART_FixedNoneCellsBorder" ClipToBounds="True" dxcore_unique_xmlns:DXDockPanel.Dock="Left" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;675;26">
+              <dxgcore:FocusRectPresenter.IsHorizontalScrollHost>
+                                True
+                            </dxgcore:FocusRectPresenter.IsHorizontalScrollHost>
+              <!--ONLY SL
+                            <dx:FrameworkElementExtensions.IsClipped>
+                                True
+                            </dx:FrameworkElementExtensions.IsClipped>
+                             ONLY SL-->
+              <ContentPresenter Name="PART_FixedNoneContent" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;684;30" />
+            </Border>
+            <ContentPresenter x:Name="PART_FixedRightLinePlaceHolder" dxcore_unique_xmlns:DXDockPanel.Dock="Left" Visibility="Collapsed" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;686;26">
+              <dxgtl:GridViewHitInfoBase.HitTestAcceptor>
+                <dxght:FixedRightDivTableViewHitTestAcceptor />
+              </dxgtl:GridViewHitInfoBase.HitTestAcceptor>
+            </ContentPresenter>
+            <ContentPresenter Name="PART_FixedRightContent" dxgcore:TableViewProperties.FixedAreaStyle="Left" dxcore_unique_xmlns:DXDockPanel.Dock="Left" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;691;26" />
+            <dxgtl:FitContentContainer>
+              <ContentPresenter Name="PART_FitContent" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;693;30" />
+            </dxgtl:FitContentContainer>
+          </dxcore_unique_xmlns:DXDockPanel>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.GridCellContentPresenter}" TargetType="{x:Type dxg:GridCellContentPresenter}">
+    <Setter Property="Template" Value="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=CellContentPresenterTemplate}}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=GridDataRowDelimiterBrush}}" />
+    <Setter Property="dxb:BarManager.DXContextMenuPlacement" Value="Bottom" />
+    <Setter Property="dxg:GridViewHitInfoBase.HitTestAcceptor">
+      <Setter.Value>
+        <dxght:RowCellTableViewHitTestAcceptor />
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <ControlTemplate x:Key="{dxgt:TableViewThemeKey ResourceKey=GroupPanelContentTemplate}" TargetType="{x:Type dxg:GroupPanelControl}">
+    <dxcore_unique_xmlns:MeasurePixelSnapper dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;711;10">
+      <Border x:Name="GroupPanelBorder" Background="Transparent" BorderBrush="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=GroupPanelBorderBrush}}" BorderThickness="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=GroupPanelBorderThickness}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;712;14">
+        <Grid Margin="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=GroupPanelMargin}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;713;18">
+          <TextBlock x:Name="PART_GroupPanelDragText" Style="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=GroupPanelDragTextStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;714;22">
+            <TextBlock.Text>
+              <Binding Path="View.LocalizationDescriptor" RelativeSource="{RelativeSource TemplatedParent}" ConverterParameter="GridGroupPanelText">
+                <Binding.Converter>
+                  <dxgtl:DynamicLocalizationStringValueConvertor />
+                </Binding.Converter>
+              </Binding>
+            </TextBlock.Text>
+          </TextBlock>
+          <dxgtl:GroupPanelContainer View="{Binding Path=View, RelativeSource={RelativeSource TemplatedParent}}" />
+        </Grid>
+      </Border>
+    </dxcore_unique_xmlns:MeasurePixelSnapper>
+  </ControlTemplate>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.GroupPanelControl}" TargetType="{x:Type dxg:GroupPanelControl}">
+    <Setter Property="Template" Value="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=GroupPanelContentTemplate}}" />
+    <Setter Property="dx:DragManager.DropTargetFactory">
+      <Setter.Value>
+        <dxgtl:GroupPanelColumnHeaderDropTargetFactory />
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.GroupGridRowPresenter}" TargetType="{x:Type dxg:GroupGridRowPresenter}">
+    <!--BEGIN WPF-->
+    <Setter Property="Focusable" Value="True" />
+    <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+    <!--END WPF-->
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.GroupSummaryDefaultLayoutControl}" TargetType="{x:Type dxg:GroupSummaryDefaultLayoutControl}">
+    <Setter Property="Margin" Value="{DynamicResource {dxgt:GroupRowThemeKey ResourceKey=GroupDefaultSummaryPadding}}" />
+    <Setter Property="HorizontalAlignment" Value="Right" />
+    <Setter Property="ItemTemplate">
+      <Setter.Value>
+        <DataTemplate>
+          <dxgtl:GroupSummaryContentPresenter VerticalAlignment="Center" Content="{Binding}" ContentTemplateSelector="{Binding Path=View.ActualGroupSummaryItemTemplateSelector}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;748;22" />
+        </DataTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="ItemsPanel">
+      <Setter.Value>
+        <ItemsPanelTemplate>
+          <StackPanel Orientation="Horizontal" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;755;22" />
+        </ItemsPanelTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <ItemsPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;762;22" />
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <dxcore_unique_xmlns:BoolToThicknessConverter x:Key="GroupColumnSummaryBoolToThicknessConverter" ThicknessFalse="0" ThicknessTrue="0,0,1,0" />
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.GroupColumnSummaryControl}" TargetType="{x:Type dxg:GroupColumnSummaryControl}">
+    <Setter Property="Padding" Value="{DynamicResource {dxgt:GroupRowThemeKey ResourceKey=GroupColumnSummaryPadding}}" />
+    <Setter Property="NormalBorderBrush" Value="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=GridDataRowDelimiterBrush}}" />
+    <Setter Property="FocusedBorderBrush" Value="{DynamicResource {dxgt:GroupRowThemeKey ResourceKey=GroupColumnSummaryFocusedBorderBrush}}" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type dxg:GroupColumnSummaryControl}">
+          <Border Padding="{TemplateBinding Padding}" BorderThickness="{Binding HasRightSibling, Converter={StaticResource GroupColumnSummaryBoolToThicknessConverter}}" BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}" Width="{Binding Column.ActualHeaderWidth}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;775;22">
+            <ContentPresenter x:Name="PART_Content" Content="{Binding}" ContentTemplate="{Binding View.GroupColumnSummaryItemTemplate}" Visibility="{Binding HasSummary, Converter={StaticResource BoolToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;776;26" />
+          </Border>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.GroupSummaryItemsControl}" TargetType="{x:Type dxg:GroupSummaryItemsControl}">
+    <Setter Property="ItemTemplate">
+      <Setter.Value>
+        <DataTemplate>
+          <dxgtl:GroupColumnSummaryControl IsReady="{Binding Path=GroupRowData.IsReady}" IsGroupRowFocused="{Binding GroupRowData.IsFocused}" Style="{Binding View.GroupColumnSummaryContentStyle}" />
+        </DataTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="ItemsPanel" Value="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=FixedNoneDropPanelTemplate}}" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.GroupSummaryAlignByColumnsLayoutControl}" TargetType="{x:Type dxg:GroupSummaryAlignByColumnsLayoutControl}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type dxg:GroupSummaryAlignByColumnsLayoutControl}">
+          <Border ClipToBounds="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;796;22">
+            <!--ONLY SL<dx:FrameworkElementExtensions.IsClipped>True</dx:FrameworkElementExtensions.IsClipped>ONLY SL-->
+            <!--<dxg:GridScrollablePart x:Name="ScrollablePart" FixedColumnsDelimiterTemplate="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=FixedColumnsDelimiterTemplate}}"
+                                                        FitContentWidth="{Binding Path=(dxg:GridControl.CurrentView).AdditionalRowFitColumnWidth, RelativeSource={RelativeSource TemplatedParent}}"
+                                                        >-->
+            <dxgtl:GridScrollablePart x:Name="PART_ScrollablePart" FixedColumnsDelimiterTemplate="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=FixedColumnsDelimiterTemplate}}" ScrollingMargin="{Binding Path=View.ScrollingHeaderVirtualizationMargin}" FixedNoneContentWidth="{Binding Path=FixedNoneContentWidth}" dxgtl:GridControl.CurrentView="{Binding Path=View}" FixedLeftVisibleColumns="{Binding Path=View.FixedLeftVisibleColumns}" FixedRightVisibleColumns="{Binding Path=View.FixedRightVisibleColumns}" FixedLineWidth="{Binding Path=View.FixedLineWidth}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;801;26">
+              <dxgtl:GridScrollablePart.FixedLeftContent>
+                <dxgtl:GroupSummaryItemsControl Name="PART_FixedLeftColumnsItemsControl" ItemsSource="{Binding Path=FixedLeftGroupSummaryData}" />
+              </dxgtl:GridScrollablePart.FixedLeftContent>
+              <dxgtl:GridScrollablePart.FixedRightContent>
+                <dxgtl:GroupSummaryItemsControl Name="PART_FixedRightColumnsItemsControl" ItemsSource="{Binding Path=FixedRightGroupSummaryData}" />
+              </dxgtl:GridScrollablePart.FixedRightContent>
+              <dxgtl:GridScrollablePart.FixedNoneContent>
+                <dxgtl:GroupSummaryItemsControl Name="PART_FixedNoneColumnsItemsControl" ItemsSource="{Binding Path=FixedNoneGroupSummaryData}" />
+              </dxgtl:GridScrollablePart.FixedNoneContent>
+              <dxgtl:GridScrollablePart.FitContent>
+                <dxgtl:FitRowContentPresenter Content="{Binding}" VerticalContentAlignment="Stretch" />
+              </dxgtl:GridScrollablePart.FitContent>
+            </dxgtl:GridScrollablePart>
+          </Border>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.GridGroupExpandButton}" TargetType="{x:Type dxg:GridGroupExpandButton}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <dxgtl:GridToggleStateButton dxcore_unique_xmlns:DataObjectBase.DataObject="{Binding}" dxcore_unique_xmlns:DataObjectBase.NeedsResetEvent="True" x:Name="toggleButton" ClickMode="Press" IsChecked="{Binding Path=IsChecked, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" Command="{Binding Path=Command, RelativeSource={RelativeSource TemplatedParent}}" CommandParameter="{Binding Path=CommandParameter, RelativeSource={RelativeSource TemplatedParent}}" Style="{DynamicResource {dxgt:GroupRowThemeKey ResourceKey=ExpandButtonStyle}}" Foreground="{TemplateBinding Foreground}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;824;22">
+            <!--BEGIN WPF-->
+            <dxcore_unique_xmlns:DoubleClicker.IsDoubleClickArea>False</dxcore_unique_xmlns:DoubleClicker.IsDoubleClickArea>
+            <!--END WPF-->
+          </dxgtl:GridToggleStateButton>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="dxg:GridViewHitInfoBase.HitTestAcceptor">
+      <Setter.Value>
+        <dxght:GroupRowButtonTableViewHitTestAcceptor />
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.GridDetailExpandButton}" TargetType="{x:Type dxg:GridDetailExpandButton}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <dxgtl:GridToggleStateButton dxcore_unique_xmlns:DataObjectBase.DataObject="{Binding}" dxcore_unique_xmlns:DataObjectBase.NeedsResetEvent="True" x:Name="toggleButton" ClickMode="Press" IsChecked="{Binding Path=IsChecked, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" Command="{Binding Path=Command, RelativeSource={RelativeSource TemplatedParent}}" CommandParameter="{Binding Path=CommandParameter, RelativeSource={RelativeSource TemplatedParent}}" Foreground="{TemplateBinding Foreground}" dxgtl:GridDetailExpandButtonContainer.IsDetailButtonVisible="{Binding Path=(dxg:GridDetailExpandButtonContainer.IsDetailButtonVisible), RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;843;22"></dxgtl:GridToggleStateButton>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <dxcore_unique_xmlns:BooleanToDoubleConverter x:Key="BooleanToDoubleConverter" />
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.TreeListNodeExpandButton}" TargetType="{x:Type dxg:TreeListNodeExpandButton}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="dxg:TreeListNodeExpandButton">
+          <dxcore_unique_xmlns:DXExpander HorizontalAlignment="Left" AnimationProgress="{Binding IsExpandButtonVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToDoubleConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;854;22">
+            <dxgtl:GridToggleStateButton dxcore_unique_xmlns:DataObjectBase.DataObject="{Binding}" dxcore_unique_xmlns:DataObjectBase.NeedsResetEvent="True" x:Name="toggleButton" ClickMode="Press" IsChecked="{Binding Path=IsChecked, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" Command="{Binding Path=Command, RelativeSource={RelativeSource TemplatedParent}}" CommandParameter="{Binding Path=CommandParameter, RelativeSource={RelativeSource TemplatedParent}}" Style="{DynamicResource {dxgt:GroupRowThemeKey ResourceKey=ExpandButtonStyle}}" Foreground="{TemplateBinding Foreground}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;855;26"></dxgtl:GridToggleStateButton>
+          </dxcore_unique_xmlns:DXExpander>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.DetailRowsContentControl}" TargetType="{x:Type dxg:DetailRowsContentControl}">
+    <Setter Property="dxg:DetailSummaryControlBase.SummaryDetailLevel" Value="{Binding Path=(dxg:DetailSummaryControlBase.SummaryDetailLevel), RelativeSource={RelativeSource TemplatedParent}}" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type dxg:DetailRowsContentControl}">
+          <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;868;22">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="Auto" />
+              <ColumnDefinition Width="Auto" />
+              <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <dxgtl:DetailRowIndicatorControl Width="{Binding Path=View.ActualIndicatorWidth, RelativeSource={RelativeSource TemplatedParent}}" Template="{DynamicResource {dxgt:RowIndicatorThemeKey ResourceKey=ItemTemplate}}" Visibility="{Binding Path=View.ActualShowIndicator, Converter={StaticResource BooleanToVisibilityConverter}, RelativeSource={RelativeSource TemplatedParent}}"></dxgtl:DetailRowIndicatorControl>
+            <Border Grid.Column="1" Grid.ColumnSpan="2" Style="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=DetailTotalSummaryIndentBorderStyle}}" Visibility="{Binding Path=NeedBottomLine, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BoolToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;876;26" />
+            <dxgtl:DetailRowsIndentControl Grid.Column="1" ItemsSource="{Binding Path=DetailDescriptor.DetailViewIndents, RelativeSource={RelativeSource TemplatedParent}}" />
+            <ContentPresenter Grid.Column="2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;878;26" />
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.DetailContentControl}" TargetType="{x:Type dxg:DetailContentControl}">
+    <Setter Property="Foreground" Value="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=TextUnfocusedBrush}}" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="dxg:DetailContentControl">
+          <dxgtl:DetailRowsContentControl View="{Binding Path=MasterRowData.View, RelativeSource={RelativeSource TemplatedParent}}" DetailDescriptor="{Binding Path=DetailDescriptor, RelativeSource={RelativeSource TemplatedParent}}">
+            <dxgtl:DetailDescriptorContentBorder>
+              <dxgcore:DetailRowContentPresenter MasterRowData="{TemplateBinding MasterRowData}" Content="{Binding MasterRowData.Row, RelativeSource={RelativeSource TemplatedParent}}" ContentTemplate="{Binding DetailDescriptor.ContentTemplate, RelativeSource={RelativeSource TemplatedParent}}" />
+            </dxgtl:DetailDescriptorContentBorder>
+          </dxgtl:DetailRowsContentControl>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.DetailTabHeadersControl}" TargetType="{x:Type dxg:DetailTabHeadersControl}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="dxg:DetailTabHeadersControl">
+          <dxgtl:DetailRowsContentControl View="{Binding Path=View}" DetailDescriptor="{Binding Path=View.DataControl.DetailDescriptor}">
+            <Border MinHeight="20" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;903;26">
+              <dxgtl:DetailTabControl Padding="0" SelectedIndex="{Binding Path=SelectedTabIndex, Mode=TwoWay}">
+                <dxgtl:DetailTabControl.ItemsSource>
+                  <Binding Path="DetailDescriptor.DetailDescriptors" RelativeSource="{RelativeSource TemplatedParent}">
+                    <Binding.Converter>
+                      <dxgcore:DetailDescriptorCollectionConverter />
+                    </Binding.Converter>
+                  </Binding>
+                </dxgtl:DetailTabControl.ItemsSource>
+                <dxgtl:DetailTabControl.ItemHeaderTemplate>
+                  <DataTemplate>
+                    <dxgtl:DetailTabHeaderContentControl Content="{Binding Content.HeaderContent}" />
+                  </DataTemplate>
+                </dxgtl:DetailTabControl.ItemHeaderTemplate>
+                <dxgtl:DetailTabControl.ItemTemplate>
+                  <DataTemplate />
+                </dxgtl:DetailTabControl.ItemTemplate>
+              </dxgtl:DetailTabControl>
+              <!--<dxgcore:DetailRowContentPresenter MasterRowData="{TemplateBinding MasterRowData}" Content="{Binding MasterRowData.Row, RelativeSource={RelativeSource TemplatedParent}}" ContentTemplate="{Binding DetailDescriptor.ContentTemplate, RelativeSource={RelativeSource TemplatedParent}}"/>-->
+            </Border>
+          </dxgtl:DetailRowsContentControl>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.DetailTabHeaderContentControl}" TargetType="{x:Type dxg:DetailTabHeaderContentControl}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="dxg:DetailTabHeaderContentControl">
+          <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;932;22" />
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.DetailColumnHeadersControl}" TargetType="{x:Type dxg:DetailColumnHeadersControl}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="dxg:DetailColumnHeadersControl">
+          <dxgcore:DetailRowContentPresenter MinHeight="20" MasterRowData="{TemplateBinding MasterRowData}" Content="{Binding}" dxgtl:GridControl.CurrentView="{Binding View}">
+            <dxgcore:DetailRowContentPresenter.ContentTemplate>
+              <DataTemplate>
+                <dxgtl:DetailRowsContentControl View="{Binding Path=View}" DetailDescriptor="{Binding Path=View.DataControl.OwnerDetailDescriptor}" NeedBottomLine="True">
+                  <dxgtl:ColumnHeaderPanel dxgtl:GridControl.CurrentView="{Binding Path=View}" />
+                </dxgtl:DetailRowsContentControl>
+              </DataTemplate>
+            </dxgcore:DetailRowContentPresenter.ContentTemplate>
+            <dxgtl:GridControl.CurrentViewChangedListener>
+              <dxgtl:HeadersPanelInitializer />
+            </dxgtl:GridControl.CurrentViewChangedListener>
+          </dxgcore:DetailRowContentPresenter>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.DetailTotalSummaryControl}" TargetType="{x:Type dxg:DetailTotalSummaryControl}">
+    <Setter Property="dxg:DetailSummaryControlBase.SummaryDetailLevel" Value="{Binding DetailLevel}" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="dxg:DetailTotalSummaryControl">
+          <dxgtl:DetailRowsContentControl View="{Binding Path=View}" DetailDescriptor="{Binding Path=View.DataControl.OwnerDetailDescriptor}" NeedBottomLine="True">
+            <Border MinHeight="20" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;963;26">
+              <dxgcore:DetailRowContentPresenter MasterRowData="{TemplateBinding MasterRowData}" Content="{Binding}" ContentTemplate="{Binding View.FooterTemplate}" dxgtl:GridControl.CurrentView="{Binding View}" />
+            </Border>
+          </dxgtl:DetailRowsContentControl>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.DetailFixedTotalSummaryControl}" TargetType="{x:Type dxg:DetailFixedTotalSummaryControl}">
+    <Setter Property="dxg:DetailSummaryControlBase.SummaryDetailLevel" Value="{Binding DetailLevel}" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="dxg:DetailFixedTotalSummaryControl">
+          <dxgtl:DetailRowsContentControl View="{Binding Path=View}" DetailDescriptor="{Binding Path=View.DataControl.OwnerDetailDescriptor}" NeedBottomLine="True">
+            <Border MinHeight="20" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;977;26">
+              <dxgtl:FixedTotalSummaryContainerControl dxb:BarManager.DXContextMenu="{Binding Path=View.DataControlMenu}" dxgtl:GridControl.CurrentView="{Binding Path=View}" dxgtl:GridPopupMenu.GridMenuType="FixedTotalSummary" />
+              <!--<dxgcore:DetailRowContentPresenter MasterRowData="{TemplateBinding MasterRowData}"  Content="{Binding}" dxg:GridControl.CurrentView="{Binding View}"/>-->
+            </Border>
+          </dxgtl:DetailRowsContentControl>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.GroupPanelContainer}" TargetType="{x:Type dxg:GroupPanelContainer}">
+    <Setter Property="DetailPartTemplate">
+      <Setter.Value>
+        <ControlTemplate TargetType="dxg:GroupPanelContainer">
+          <dxcore_unique_xmlns:DXDockPanel Grid.Row="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;990;22">
+            <ItemsControl Name="PART_NextLevelItemsControl" dxcore_unique_xmlns:DXDockPanel.Dock="Bottom" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;991;26">
+              <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                  <dxgtl:GroupPanelContainer DetailDescriptor="{Binding Content}" />
+                </DataTemplate>
+              </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            <Grid Visibility="{Binding View.ShowGroupPanel, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BoolToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;998;26">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+              </Grid.RowDefinitions>
+              <Border x:Name="PART_BorderSeparator" Background="{DynamicResource {dxgt:TableViewThemeKey ResourceKey=GroupPanelSeparatorBrush}}" Height="1" Margin="0,11,0,11" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;1003;30" />
+              <dxcore_unique_xmlns:DXDockPanel Grid.Row="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;1004;30">
+                <dxgtl:GroupPanelCaptionControl Content="{Binding View.DetailHeaderContent, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource GroupDetailNameConverter}}" Visibility="{Binding Content, RelativeSource={RelativeSource Self}, Converter={StaticResource ObjectToVisibilityConverter}}" VerticalAlignment="Center" />
+                <dxgtl:GroupPanelColumnItemsControl ItemsSource="{Binding Path=View.GroupedColumns, RelativeSource={RelativeSource TemplatedParent}}" x:Name="groupPanelItemsControl" />
+              </dxcore_unique_xmlns:DXDockPanel>
+            </Grid>
+          </dxcore_unique_xmlns:DXDockPanel>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.FilterPanelContainer}" TargetType="{x:Type dxg:FilterPanelContainer}">
+    <Setter Property="DetailPartTemplate">
+      <Setter.Value>
+        <ControlTemplate TargetType="dxg:FilterPanelContainer">
+          <dxcore_unique_xmlns:DXDockPanel dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;1018;22">
+            <!--<dxg:FilterPanelControl x:Name="PART_FilterPanel"
+                            DataContext="{Binding Path=View, RelativeSource={RelativeSource TemplatedParent}}"
+                            Visibility="{Binding Path=View.ActualShowFilterPanel, Converter={StaticResource BoolToVisibilityConverter}, RelativeSource={RelativeSource TemplatedParent}}"/>-->
+            <ItemsControl Name="PART_NextLevelItemsControl" dxcore_unique_xmlns:DXDockPanel.Dock="Bottom" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;1022;26">
+              <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                  <dxgtl:FilterPanelContainer DetailDescriptor="{Binding Content}" />
+                </DataTemplate>
+              </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            <dxcore_unique_xmlns:DXDockPanel Visibility="{Binding Path=View.ActualShowFilterPanel, Converter={StaticResource BoolToVisibilityConverter}, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;1029;26">
+              <dxgtl:FilterPanelControl x:Name="PART_FilterPanel" DataContext="{Binding Path=View, RelativeSource={RelativeSource TemplatedParent}}" FilterPanelContent="{Binding View.DetailHeaderContent, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource FilterPanelCaptionConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;1030;30" />
+            </dxcore_unique_xmlns:DXDockPanel>
+          </dxcore_unique_xmlns:DXDockPanel>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.ErrorPanel}" TargetType="{x:Type dxg:ErrorPanel}">
+    <Setter Property="Template" Value="{DynamicResource {dxgt:GridControlThemeKey ResourceKey=ErrorPanelTemplate}}" />
+    <Setter Property="VerticalAlignment" Value="Bottom" />
+    <Setter Property="HorizontalAlignment" Value="Right" />
+  </Style>
+  <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.HeaderContentControl}" TargetType="{x:Type dxg:HeaderContentControl}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="dxg:HeaderContentControl">
+          <ContentPresenter dxgtl:GridColumnHeader.GridColumn="{Binding Path=(dxg:GridColumnHeader.GridColumn), RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\DefaultGridViewStyles.xaml;1046;22" />
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="HorizontalAlignment" Value="Left" />
+    <Setter Property="IsTabStop" Value="False" />
+  </Style>
+</ResourceDictionary>

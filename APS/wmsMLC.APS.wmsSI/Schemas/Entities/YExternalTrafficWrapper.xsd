@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="YExternalTrafficWrapper" nillable="true" type="YExternalTrafficWrapper" />
+  <xs:complexType name="YExternalTrafficWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="EXTERNALTRAFFICPLANARRIVED" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="EXTERNALTRAFFICFACTDEPARTED" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="EXTERNALTRAFFICFACTARRIVED" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="VEHICLEID_R" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="PARKINGID_R" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="MANDANTID" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="EXTERNALTRAFFICID" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="EXTERNALTRAFFICFORVARDER" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="EXTERNALTRAFFICDRIVER" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="EXTERNALTRAFFICCARRIER" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="STATUSCODE_R" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="EXTERNALTRAFFICTRAILERRN" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="EXTERNALTRAFFICHOSTREF" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CarrierName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MandantCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Vehicle" type="VehicleWrapper" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Driver" type="WorkerWrapper" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Parking" type="ParkingWrapper" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CargoIWBList" type="ArrayOfCargoIWBWrapper" />
+      <xs:element minOccurs="0" maxOccurs="1" name="InternalTrafficList" type="ArrayOfInternalTrafficWrapper" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VehicleWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="VEHICLETRAILERMAXWEIGHT" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="VEHICLETRAILEREMPTYWEIGHT" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="VEHICLEPERSON" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="VEHICLEOWNERLEGAL" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="VEHICLEMAXWEIGHT" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="VEHICLEID" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="VEHICLEEMPTYWEIGHT" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CARTYPEID_R" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="VEHICLEVIN" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="VEHICLETYPE" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="VEHICLETRAILERRN" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="VEHICLERN" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="VEHICLEHOSTREF" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="VEHICLECOLOR" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CARTYPE" type="CarTypeWrapper" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OWNERLEGAL" type="PartnerWrapper" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OWNERPERSON" type="WorkerWrapper" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CarTypeWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="CARTYPEDESC" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CARTYPEID" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CARTYPEMARK" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CARTYPEMODEL" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PartnerWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="PARTNERLOCKED" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="PARTNERDATECONTRACT" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="PARTNERID" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="MANDANTID" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PARTNERSETTLEMENTACCOUNT" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PARTNERPHONE" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PARTNEROKVED" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PARTNEROKPO" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PARTNEROGRN" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PARTNERNAME" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PARTNERKPP" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PARTNERINN" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PARTNERHOSTREF" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PARTNERFULLNAME" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PARTNERFAX" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PARTNEREMAIL" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PARTNERCORRESPONDENTACCOUNT" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PARTNERCONTRACT" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PARTNERCODE" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PARTNERBIK" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MandantCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ADDRESS" type="ArrayOfAddressBookWrapper" />
+      <xs:element minOccurs="0" maxOccurs="1" name="GPVs" type="ArrayOfGlobalParamValueWrapper" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfAddressBookWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AddressBookWrapper" nillable="true" type="AddressBookWrapper" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AddressBookWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ADDRESSBOOKAPARTMENT" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ADDRESSBOOKBUILDING" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ADDRESSBOOKCITY" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ADDRESSBOOKCOUNTRY" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ADDRESSBOOKDISTRICT" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ADDRESSBOOKID" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ADDRESSBOOKINDEX" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ADDRESSBOOKREGION" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ADDRESSBOOKSTREET" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ADDRESSBOOKTYPECODE" type="AddressBookType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="AddressBookType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ADR_PHYSICAL" />
+      <xs:enumeration value="ADR_LEGAL" />
+      <xs:enumeration value="ADR_POST" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ArrayOfGlobalParamValueWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GlobalParamValueWrapper" nillable="true" type="GlobalParamValueWrapper" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GlobalParamValueWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="GLOBALPARAMCODE_R" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="GPARAMID" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="GPARAMVAL2ENTITY" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="GPARAMVALKEY" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="GPARAMVALVALUE" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WorkerWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="WORKEREMPLOYEE" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="WORKERID" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="WORKERPHONEWORK" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="WORKERPHONEMOBILE" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="WORKERNAME" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="WORKERMIDDLENAME" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="WORKERLASTNAME" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="WORKEREMAILWORK" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="WORKEREMAILPERSONAL" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="GLOBALPARAMVAL" type="ArrayOfGlobalParamValueWrapper" />
+      <xs:element minOccurs="0" maxOccurs="1" name="WORKERADDRESS" type="ArrayOfAddressBookWrapper" />
+      <xs:element minOccurs="0" maxOccurs="1" name="WORKERPASSL" type="ArrayOfWorkerPassWrapper" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfWorkerPassWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkerPassWrapper" nillable="true" type="WorkerPassWrapper" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WorkerPassWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="WORKERID_R" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="WORKERPASSAGENCY" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="WORKERPASSID" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="WORKERPASSNUMBER" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="WORKERPASSRECEIPT" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="WORKERPASSSERIES" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="WORKERPASSTYPE" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ParkingWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="PARKINGAREA" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="PARKINGID" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PARKINGNAME" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PARKINGNUMBER" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfCargoIWBWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CargoIWBWrapper" nillable="true" type="CargoIWBWrapper" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CargoIWBWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="VEXTERNALTRAFFICPLANARRIVED" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="VEXTERNALTRAFFICFACTARRIVED" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CARGOIWBLOADEND" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CARGOIWBLOADBEGIN" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="MANDANTID" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="EXTERNALTRAFFICID_R" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CARGOIWBVOLUME" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CARGOIWBNET" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CARGOIWBID" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CARGOIWBCOUNT" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CARGOIWBBRUTTO" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="VWORKERFIO" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="VVEHICLERN" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CARGOIWBSTAMP" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CARGOIWBCONTAINER" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CARGOIWBLOADADDRESS" type="AddressBookWrapper" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CARGOIWBPOSLFACT" type="ArrayOfCargoIWBPosWrapper" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CARGOIWBPOSLCLIENT" type="ArrayOfCargoIWBPosWrapper" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfCargoIWBPosWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CargoIWBPosWrapper" nillable="true" type="CargoIWBPosWrapper" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CargoIWBPosWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CARGOIWBID_R" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CARGOIWBPOSCOUNT" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CARGOIWBPOSDESC" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CARGOIWBPOSID" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CARGOIWBPOSTYPE" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IWBID_R" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="QLFCODE_R" type="QLF" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TETYPECODE_R" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="VQLFNAME" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="QLF">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="QLFNORMAL" />
+      <xs:enumeration value="QLFQUALITY" />
+      <xs:enumeration value="QLFDEFECT" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ArrayOfInternalTrafficWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InternalTrafficWrapper" nillable="true" type="InternalTrafficWrapper" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InternalTrafficWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="EXTERNALTRAFFICID_R" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="GATECODE_R" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="INTERNALTRAFFICFACTARRIVED" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="INTERNALTRAFFICFACTDEPARTED" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="INTERNALTRAFFICID" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="INTERNALTRAFFICORDER" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="INTERNALTRAFFICPURPOSE" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="MANDANTID" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="WAREHOUSECODE_R" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

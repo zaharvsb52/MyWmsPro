@@ -1,0 +1,13 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" xmlns:dxbt="http://schemas.devexpress.com/winfx/2008/xaml/bars/themekeys">
+
+    <!-- Unusable template. Don't remove because its used by code -->
+    <ControlTemplate x:Key="{dxbt:BarContainerControlThemeKey ResourceKey=BorderTemplate}" TargetType="{x:Type ContentControl}" />
+    <Thickness x:Key="{dxbt:BarContainerControlThemeKey ResourceKey=HorizontalPadding}">0</Thickness>
+	<Thickness x:Key="{dxbt:BarContainerControlThemeKey ResourceKey=VerticalPadding}">0</Thickness>
+    <ControlTemplate x:Key="{dxbt:BarContainerControlThemeKey ResourceKey=BackgroundTemplate}" TargetType="{x:Type ContentControl}">
+        <Border Background="#FFEBECEF">
+            <ContentPresenter Content="{TemplateBinding Content}" />
+        </Border>
+    </ControlTemplate>
+
+</ResourceDictionary>

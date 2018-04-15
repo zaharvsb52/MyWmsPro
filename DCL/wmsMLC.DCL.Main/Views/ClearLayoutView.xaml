@@ -1,0 +1,34 @@
+﻿<views:DXPanelView x:Class="wmsMLC.DCL.Main.Views.ClearLayoutView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:views="clr-namespace:wmsMLC.DCL.Main.Views"
+    xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:lex="clr-namespace:WPFLocalizeExtension.Extensions;assembly=WPFLocalizeExtension"
+    mc:Ignorable="d" 
+    d:DesignHeight="200" d:DesignWidth="400">
+
+    <views:DXPanelView.Resources>
+        <dx:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+    </views:DXPanelView.Resources>
+
+    <Grid Margin="100,20,20,15">
+        <dxlc:LayoutControl Padding="2" Orientation="Vertical">
+            <dxlc:LayoutItem Margin="2" Label="{lex:LocExtension Key=wmsMLC.DCL.Resources:StringResources:ClearLayoutViewLabelClearMenu}">
+                <dxe:CheckEdit EditValue="{Binding IsClearMenu, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            </dxlc:LayoutItem>
+            <dxlc:LayoutItem Margin="2" Label="{lex:LocExtension Key=wmsMLC.DCL.Resources:StringResources:ClearLayoutViewLabelClearFormComponents}">
+                <dxe:CheckEdit EditValue="{Binding IsClearFormComponents, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            </dxlc:LayoutItem>
+            <dxlc:LayoutItem Margin="2" Label="{lex:LocExtension Key=wmsMLC.DCL.Resources:StringResources:ClearLayoutViewLabelClearFormSize}" Visibility="{Binding HasViewWindow, Converter={StaticResource BoolToVisibilityConverter}}">
+                <dxe:CheckEdit EditValue="{Binding IsClearFormSize, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            </dxlc:LayoutItem>
+            <dxlc:LayoutItem Margin="2" Label="{lex:LocExtension Key=wmsMLC.DCL.Resources:StringResources:ClearLayoutViewLabelClearFormPosition}" Visibility="{Binding HasViewWindow, Converter={StaticResource BoolToVisibilityConverter}}">
+                <dxe:CheckEdit EditValue="{Binding IsClearFormPosition, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            </dxlc:LayoutItem>
+        </dxlc:LayoutControl>
+    </Grid>
+</views:DXPanelView>

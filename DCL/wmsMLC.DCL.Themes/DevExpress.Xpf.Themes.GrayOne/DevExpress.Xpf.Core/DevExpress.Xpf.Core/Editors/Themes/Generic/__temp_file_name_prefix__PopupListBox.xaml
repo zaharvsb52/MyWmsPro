@@ -1,0 +1,214 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxet="http://schemas.devexpress.com/winfx/2008/xaml/editors/themekeys" xmlns:dxep="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxeh="http://schemas.devexpress.com/winfx/2008/xaml/editors/internal" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <!--BEGIN WPF-->
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Generic/Common.xaml" />
+  </ResourceDictionary.MergedDictionaries>
+  <!--END WPF-->
+  <dxcore_unique_xmlns:StringEmptyToSpaceConverter x:Key="stringToSpaceConverter" />
+  <dxcore_unique_xmlns:NegationConverter x:Key="negationConverter" />
+  <!--PROCESS SETTERS WITH BINDING-->
+  <!--BEGIN TOSLONLY REPLACE 'SelectAllItemCheckEdit'CheckEdit'-->
+  <!--BEGIN TOSLONLY REPLACE '(dxe:BaseEdit.OwnerEdit)'Owner'-->
+  <!--BEGIN TOSLONLY REPLACE '(dxe:ActualPropertyProvider.Properties).SelectionViewModel'SelectionViewModel'-->
+  <Style x:Key="{dxet:CustomItemThemeKey ResourceKey=SelectAllItemContainerStyle}" TargetType="{x:Type dxe:ListBoxEditItem}">
+    <Setter Property="HorizontalAlignment" Value="Stretch" />
+    <Setter Property="dx:FocusHelper2.Focusable" Value="True" />
+    <Setter Property="IsSelected" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).(dxe:ActualPropertyProvider.Properties).SelectionViewModel.IsSelected, RelativeSource={RelativeSource Self}, Mode=TwoWay}" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type dxe:ListBoxEditItem}">
+          <Border Background="Transparent" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\PopupListBox.xaml;22;22">
+            <dxe:SelectAllItemCheckEdit x:Name="checkEdit" Margin="2" Padding="4,0,0,0" dxcore_unique_xmlns:FocusHelper2.Focusable="false" dxeh:ControlHelper.IsFocused="{Binding Path=IsKeyboardFocused, RelativeSource={RelativeSource TemplatedParent}}" IsChecked="{Binding Path=(dxe:BaseEdit.OwnerEdit).(dxe:ActualPropertyProvider.Properties).SelectionViewModel.SelectAll, RelativeSource={RelativeSource TemplatedParent}, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" HorizontalContentAlignment="{Binding Path=(dxe:BaseEdit.OwnerEdit).HorizontalContentAlignment, RelativeSource={RelativeSource TemplatedParent}}" VerticalContentAlignment="{Binding Path=(dxe:BaseEdit.OwnerEdit).VerticalContentAlignment, RelativeSource={RelativeSource TemplatedParent}}">
+              <dxe:SelectAllItemCheckEdit.Content>
+                <Binding Path="DisplayText" Converter="{StaticResource stringToSpaceConverter}" />
+              </dxe:SelectAllItemCheckEdit.Content>
+            </dxe:SelectAllItemCheckEdit>
+          </Border>
+          <ControlTemplate.Triggers>
+            <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).ShowBorder, RelativeSource={RelativeSource Self}}" Value="False">
+              <Setter Property="Margin" TargetName="checkEdit" Value="0,2,0,2" />
+            </DataTrigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <!--END TOSLONLY REPLACE '(dxe:ActualPropertyProvider.Properties).SelectionViewModel'SelectionViewModel'-->
+  <!--END TOSLONLY REPLACE '(dxe:BaseEdit.OwnerEdit)'Owner'-->
+  <Style x:Key="{dxet:CustomItemThemeKey ResourceKey=WaitIndicatorItemContainerStyle}" TargetType="{x:Type dxe:ListBoxEditItem}">
+    <Setter Property="HorizontalAlignment" Value="Stretch" />
+    <Setter Property="dx:FocusHelper2.Focusable" Value="True" />
+    <Setter Property="IsSelected" Value="False" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type dxe:ListBoxEditItem}">
+          <dxcore_unique_xmlns:ColumnWaitIndicator />
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{dxet:CustomItemThemeKey ResourceKey=DefaultButtonStyle}" TargetType="{x:Type Button}">
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="HorizontalAlignment" Value="Stretch" />
+    <Setter Property="VerticalAlignment" Value="Stretch" />
+  </Style>
+  <DataTemplate x:Key="{dxet:CustomItemThemeKey ResourceKey=EmptyItemTemplate}">
+    <Button Style="{DynamicResource {dxet:CustomItemThemeKey ResourceKey=DefaultButtonStyle}}" Content="{Binding Path=DisplayText}" Command="{Binding Path=Command}" CommandParameter="{Binding Path=Item}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\PopupListBox.xaml;58;10"></Button>
+  </DataTemplate>
+  <!--BEGIN WPF-->
+  <DataTemplate x:Key="{dxet:CustomItemThemeKey ResourceKey=SeparatorTemplate}">
+    <Separator dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\PopupListBox.xaml;63;10" />
+  </DataTemplate>
+  <!--END WPF-->
+  <DataTemplate x:Key="{dxet:CustomItemThemeKey ResourceKey=DefaultTemplate}">
+    <ContentPresenter Content="{Binding Path=DisplayText, Converter={StaticResource stringToSpaceConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\PopupListBox.xaml;67;10" />
+  </DataTemplate>
+  <!--BEGIN TOSLONLY REPLACE '(dxe:BaseEdit.OwnerEdit)'Owner'-->
+  <Style x:Key="{dxet:EditorListBoxThemeKey ResourceKey=DefaultItemStyle}" TargetType="{x:Type dxe:ListBoxEditItem}">
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="HorizontalContentAlignment" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).HorizontalContentAlignment, RelativeSource={RelativeSource Self}}" />
+    <Setter Property="VerticalContentAlignment" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).VerticalContentAlignment, RelativeSource={RelativeSource Self}}" />
+    <Setter Property="Padding" Value="2,0,0,0" />
+    <Setter Property="Template" Value="{DynamicResource {dxet:EditorListBoxThemeKey ResourceKey=ItemTemplate}}" />
+    <!--BEGIN WPF-->
+    <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+    <!--END WPF-->
+  </Style>
+  <!--END TOSLONLY REPLACE '(dxe:BaseEdit.OwnerEdit)'Owner'-->
+  <!--BEGIN TOSLONLY REPLACE '(dxe:BaseEdit.OwnerEdit)'Owner'-->
+  <Style x:Key="{dxet:EditorListBoxThemeKey ResourceKey=CheckBoxItemStyle}" TargetType="{x:Type dxe:ListBoxEditItem}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type dxe:ListBoxEditItem}">
+          <Border Background="Transparent" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\PopupListBox.xaml;86;22">
+            <dxe:CheckEdit x:Name="checkEdit" HorizontalAlignment="Stretch" Margin="2" Padding="4,0,0,0" dxcore_unique_xmlns:FocusHelper2.Focusable="False" dxeh:ControlHelper.IsFocused="{Binding Path=IsKeyboardFocused, RelativeSource={RelativeSource TemplatedParent}}" IsHitTestVisible="True" IsChecked="{Binding Path=IsSelected, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" HorizontalContentAlignment="{Binding Path=(dxe:BaseEdit.OwnerEdit).HorizontalContentAlignment, RelativeSource={RelativeSource TemplatedParent}}" VerticalContentAlignment="{Binding Path=(dxe:BaseEdit.OwnerEdit).VerticalContentAlignment, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\PopupListBox.xaml;87;26">
+              <!--BEGIN WPF-->
+              <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\PopupListBox.xaml;89;30" />
+              <!--END WPF-->
+              <!--ONLY SL
+                            <dxe:CheckEdit.Content>
+                                <Binding Path="Content" RelativeSource="{RelativeSource TemplatedParent}" />
+                            </dxe:CheckEdit.Content>
+                            <dxe:CheckEdit.ContentTemplate>
+                                <Binding Path="ContentTemplate" RelativeSource="{RelativeSource TemplatedParent}" />
+                            </dxe:CheckEdit.ContentTemplate>
+                            ONLY SL-->
+            </dxe:CheckEdit>
+          </Border>
+          <ControlTemplate.Triggers>
+            <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).ShowBorder, RelativeSource={RelativeSource Self}}" Value="False">
+              <Setter Property="Margin" TargetName="checkEdit" Value="0,2,0,2" />
+            </DataTrigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <!--END TOSLONLY REPLACE '(dxe:BaseEdit.OwnerEdit)'Owner'-->
+  <!--BEGIN TOSLONLY REPLACE '(dxe:BaseEdit.OwnerEdit)'Owner'-->
+  <ControlTemplate x:Key="{dxet:EditorListBoxThemeKey ResourceKey=CustomItemTemplate}" TargetType="{x:Type dxe:ListBoxEditItem}">
+    <Border Background="Transparent" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\PopupListBox.xaml;113;10">
+      <dxe:SelectAllItemCheckEdit x:Name="checkEdit" Margin="2" Padding="4,0,0,0" dxcore_unique_xmlns:FocusHelper2.Focusable="False" IsHitTestVisible="True" IsChecked="{Binding Path=SelectAll, Mode=TwoWay}" IsThreeState="{Binding Path=IsThreeState, Mode=TwoWay}" HorizontalContentAlignment="{Binding Path=(dxe:BaseEdit.OwnerEdit).HorizontalContentAlignment, RelativeSource={RelativeSource TemplatedParent}}" VerticalContentAlignment="{Binding Path=(dxe:BaseEdit.OwnerEdit).VerticalContentAlignment, RelativeSource={RelativeSource TemplatedParent}}">
+        <dxe:CheckEdit.Content>
+          <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\PopupListBox.xaml;116;22" />
+        </dxe:CheckEdit.Content>
+      </dxe:SelectAllItemCheckEdit>
+    </Border>
+    <ControlTemplate.Triggers>
+      <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).ShowBorder, RelativeSource={RelativeSource Self}}" Value="False">
+        <Setter Property="Margin" TargetName="checkEdit" Value="0,2,0,2" />
+      </DataTrigger>
+    </ControlTemplate.Triggers>
+  </ControlTemplate>
+  <!--END TOSLONLY REPLACE '(dxe:BaseEdit.OwnerEdit)'Owner'-->
+  <Style x:Key="{dxet:EditorListBoxThemeKey ResourceKey=RadioButtonItemStyle}" TargetType="{x:Type dxe:ListBoxEditItem}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type dxe:ListBoxEditItem}">
+          <Border Background="Transparent" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\PopupListBox.xaml;131;22">
+            <!--BEGIN WPF-->
+            <RadioButton Name="radioButton" dxcore_unique_xmlns:FocusHelper2.Focusable="False" Foreground="{Binding Path=(dxe:BaseEdit.OwnerEdit).Foreground, RelativeSource={RelativeSource TemplatedParent}}" HorizontalAlignment="Stretch" HorizontalContentAlignment="{Binding Path=(dxe:BaseEdit.OwnerEdit).HorizontalContentAlignment, RelativeSource={RelativeSource TemplatedParent}}" IsChecked="{Binding Path=IsSelected, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" IsHitTestVisible="True" Margin="2" Padding="4,0,0,0" VerticalContentAlignment="{Binding Path=(dxe:BaseEdit.OwnerEdit).VerticalContentAlignment, RelativeSource={RelativeSource TemplatedParent}}" dxeh:ControlHelper.ShowFocusedState="{Binding Path=IsKeyboardFocused, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\PopupListBox.xaml;133;26">
+              <RadioButton.Content>
+                <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\PopupListBox.xaml;135;34" />
+              </RadioButton.Content>
+            </RadioButton>
+            <!--END WPF-->
+            <!--ONLY SL
+                        <RadioButton Name="radioButton"
+                            dxeh:ControlHelper.ClearDefaultStyleKey="True"
+                            dx:FocusHelper2.Focusable="False" 
+                            HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="{Binding Path=Owner.HorizontalContentAlignment, RelativeSource={RelativeSource TemplatedParent}}"
+                            IsChecked="{Binding Path=IsSelected, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                            IsHitTestVisible="True"
+                            Margin="2"
+                            Padding="4,0,0,0"
+                            VerticalContentAlignment="{Binding Path=Owner.VerticalContentAlignment, RelativeSource={RelativeSource TemplatedParent}}"
+                            Style="{StaticResource RadioButtonBaseStyle}"
+                            dxeh:ControlHelper.ShowFocusedState="{Binding Path=IsKeyboardFocused, RelativeSource={RelativeSource TemplatedParent}}">
+                            <RadioButton.Content>
+                                <ContentPresenter />
+                            </RadioButton.Content>
+                        </RadioButton>
+                        ONLY SL-->
+          </Border>
+          <ControlTemplate.Triggers>
+            <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).ShowBorder, RelativeSource={RelativeSource Self}}" Value="False">
+              <Setter Property="Margin" TargetName="radioButton" Value="0,2,0,2" />
+            </DataTrigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <!--BEGIN TOSLONLY REPLACE 'PART_HorizontalScrollBar'HorizontalScrollBar'-->
+  <!--BEGIN TOSLONLY REPLACE 'PART_ScrollContentPresenter'ScrollContentPresenter'-->
+  <!--BEGIN TOSLONLY REPLACE 'PART_VerticalScrollBar'VerticalScrollBar'-->
+  <ControlTemplate TargetType="{x:Type ScrollViewer}" x:Key="{dxet:EditorListBoxThemeKey ResourceKey=ScrollViewerTemplate}">
+    <Grid x:Name="Grid" Background="{TemplateBinding Background}" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\PopupListBox.xaml;171;10">
+      <Grid.Resources>
+        <dxeh:ScrollContentPresenterMarginCorrector x:Key="ScrollContentPresenterMarginCorrector" />
+      </Grid.Resources>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="Auto" />
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
+      <ScrollContentPresenter Margin="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ScrollContentPresenterMarginCorrector}}" x:Name="PART_ScrollContentPresenter" Grid.Column="0" Grid.Row="0" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" CanHorizontallyScroll="False" CanVerticallyScroll="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\PopupListBox.xaml;183;14">
+        <!--BEGIN WPF-->
+        <ScrollContentPresenter.CanContentScroll>
+          <Binding Path="CanContentScroll" RelativeSource="{RelativeSource TemplatedParent}" />
+        </ScrollContentPresenter.CanContentScroll>
+        <!--END WPF-->
+      </ScrollContentPresenter>
+      <ScrollBar Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}" Cursor="Arrow" x:Name="PART_VerticalScrollBar" Grid.Column="1" Grid.Row="0" ViewportSize="{TemplateBinding ViewportHeight}" Maximum="{TemplateBinding ScrollableHeight}" Minimum="0" Value="{Binding Path=VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" AutomationProperties.AutomationId="VerticalScrollBar" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\PopupListBox.xaml;190;14" />
+      <ScrollBar Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}" Cursor="Arrow" x:Name="PART_HorizontalScrollBar" Grid.Column="0" Grid.Row="1" Orientation="Horizontal" ViewportSize="{TemplateBinding ViewportWidth}" Maximum="{TemplateBinding ScrollableWidth}" Minimum="0" Value="{Binding Path=HorizontalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" AutomationProperties.AutomationId="HorizontalScrollBar" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\PopupListBox.xaml;191;14" />
+      <Border x:Name="Corner" Grid.Row="1" Grid.Column="1" Style="{DynamicResource {dxt:ScrollBarThemeKey ResourceKey=ScrollingCornerStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\PopupListBox.xaml;192;14" />
+    </Grid>
+  </ControlTemplate>
+  <!--END TOSLONLY REPLACE 'PART_VerticalScrollBar'VerticalScrollBar'-->
+  <!--END TOSLONLY REPLACE 'PART_ScrollContentPresenter'ScrollContentPresenter'-->
+  <!--END TOSLONLY REPLACE 'PART_HorizontalScrollBar'HorizontalScrollBar'-->
+  <ControlTemplate x:Key="{dxet:EditorListBoxThemeKey ResourceKey=Template}" TargetType="{x:Type dxep:EditorListBox}">
+    <Border x:Name="Bd" Background="{TemplateBinding Background}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\PopupListBox.xaml;199;10">
+      <ScrollViewer x:Name="ScrollViewer" Padding="{TemplateBinding Padding}" dxcore_unique_xmlns:FocusHelper2.Focusable="False" BorderThickness="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\PopupListBox.xaml;200;14">
+        <!--ONLY SL
+                <ScrollViewer.IsEnabled>
+                    <Binding Path="(dxe:BaseEdit.OwnerEdit).IsReadOnly" RelativeSource="{RelativeSource TemplatedParent}" Converter="{StaticResource negationConverter}"/>
+                </ScrollViewer.IsEnabled>
+                ONLY SL-->
+        <ItemsPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\PopupListBox.xaml;206;18">
+          <!--BEGIN WPF-->
+          <ItemsPresenter.IsEnabled>
+            <Binding Path="(dxe:BaseEdit.OwnerEdit).IsReadOnly" RelativeSource="{RelativeSource TemplatedParent}" Converter="{StaticResource negationConverter}" />
+          </ItemsPresenter.IsEnabled>
+          <!--END WPF-->
+        </ItemsPresenter>
+      </ScrollViewer>
+    </Border>
+  </ControlTemplate>
+  <!--END TOSLONLY REPLACE 'SelectAllItemCheckEdit'CheckEdit'-->
+</ResourceDictionary>

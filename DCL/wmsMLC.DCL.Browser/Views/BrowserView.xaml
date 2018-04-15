@@ -1,0 +1,42 @@
+﻿<views:DXPanelView x:Class="wmsMLC.DCL.Browser.Views.BrowserView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+             xmlns:helpers="clr-namespace:wmsMLC.DCL.Browser.Helpers"
+             xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+             xmlns:views="clr-namespace:wmsMLC.DCL.Main.Views;assembly=wmsMLC.DCL.Main"
+             mc:Ignorable="d"
+             PanelCaption="{Binding PanelCaption}"
+             PanelCaptionImage="{Binding PanelCaptionImage}"
+             AllowClosePanel="True"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <dxb:BarManager Name="BarManager" Grid.Row="0">
+            <dxb:BarManager.Items>
+                <dxb:BarButtonItem BarItemName="Refresh" Content="Обновить" ItemClick="BarItem_OnItemClick"/>
+            </dxb:BarManager.Items>
+            <dxb:BarManager.Bars>
+                <dxb:Bar>
+                    <dxb:Bar.DockInfo>
+                        <dxb:BarDockInfo ContainerType="Top" />
+                    </dxb:Bar.DockInfo>
+                    <dxb:BarButtonItemLink BarItemName="Refresh"/>
+                    </dxb:Bar>
+            </dxb:BarManager.Bars>
+        </dxb:BarManager>
+
+        <WebBrowser Name="tBrowser" Grid.Row="1">
+            <dxmvvm:Interaction.Behaviors>
+                <dxmvvm:DependencyPropertyBehavior PropertyName="Source" Binding="{Binding Url, Mode=OneWay}"/>
+                <!--<helpers:WebBrowserSupressScriptErrorsBehavior/>-->
+            </dxmvvm:Interaction.Behaviors>
+        </WebBrowser>
+    </Grid>
+</views:DXPanelView>
+

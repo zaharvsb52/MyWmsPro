@@ -1,0 +1,60 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="wmsMLC.General.ServiceTemplate.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DefaultPingTimeInMS" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">5000</Value>
+    </Setting>
+    <Setting Name="ReceiveTimeoutInMS" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">30000</Value>
+    </Setting>
+    <Setting Name="SendTimeoutInMS" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">30000</Value>
+    </Setting>
+    <Setting Name="MaxBufferPoolSize" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">2147483647</Value>
+    </Setting>
+    <Setting Name="MaxBufferSize" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">2147483647</Value>
+    </Setting>
+    <Setting Name="MaxConnections" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">4999999</Value>
+    </Setting>
+    <Setting Name="MaxReceivedMessageSize" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">2147483647</Value>
+    </Setting>
+    <Setting Name="PortSharingEnabled" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="TransactionFlow" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ListenBacklog" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">2147483647</Value>
+    </Setting>
+    <Setting Name="ReaderQuotas_MaxArrayLength" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">2147483647</Value>
+    </Setting>
+    <Setting Name="ReaderQuotas_MaxBytesPerRead" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">2147483647</Value>
+    </Setting>
+    <Setting Name="ReaderQuotas_MaxDepth" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">2147483647</Value>
+    </Setting>
+    <Setting Name="ReaderQuotas_MaxNameTableCharCount" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">2147483647</Value>
+    </Setting>
+    <Setting Name="ReaderQuotas_MaxStringContentLength" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">2147483647</Value>
+    </Setting>
+    <Setting Name="Login" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Password" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ChannelTimeout" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">60000</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

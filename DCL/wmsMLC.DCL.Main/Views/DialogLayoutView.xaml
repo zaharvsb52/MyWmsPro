@@ -1,0 +1,61 @@
+﻿<views:BaseDialogWindow x:Class="wmsMLC.DCL.Main.Views.DialogLayoutView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+    xmlns:dxprg="http://schemas.devexpress.com/winfx/2008/xaml/propertygrid"
+    xmlns:views="clr-namespace:wmsMLC.DCL.Main.Views"
+    xmlns:controls="clr-namespace:wmsMLC.DCL.Main.Views.Controls"
+    Title="{Binding Title}"
+    ShowInTaskbar="true" 
+    WindowStartupLocation="CenterScreen"
+    WindowState="Normal"
+    WindowStyle="SingleBorderWindow"
+    Width="800" Height="600"
+    mc:Ignorable="d" 
+    d:DesignHeight="300" d:DesignWidth="300">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.7*"/>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="0.3*"/>
+        </Grid.ColumnDefinitions>
+
+        <ToolBarTray Grid.Row="0" Grid.ColumnSpan="3" >
+            <ToolBar ToolBarTray.IsLocked="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Button ToolTip="Очистить настройку диалога" Content="Очистить" ToolBar.OverflowMode="Never" Click="OnClickClearLayout">
+                    <!--<Image Source="_XWPF_TBR_PRECED.PNG_IMAGES.png" Name="Image2"></Image>-->
+                </Button>
+            </ToolBar>
+        </ToolBarTray>
+
+        <dxlc:LayoutGroup Grid.Row="1" Grid.Column="0" Orientation="Vertical" Header="{Binding DialogHeder}" View="GroupBox" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <controls:CustomDataLayoutControl x:Name="objectDataLayout" Orientation="Vertical" AllowAvailableItemsDuringCustomization="True"/>
+        </dxlc:LayoutGroup>
+
+        <dxlc:LayoutGroup Grid.Row="1" Grid.Column="2" Header="{Binding LayoutHeder}" Orientation="Vertical" View="GroupBox" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <dxprg:PropertyGridControl x:Name="propGrid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                ShowProperties="WithPropertyDefinitions"
+                ShowCategories="True"
+                SortMode="Ascending"
+                ExpandCategoriesWhenSelectedObjectChanged="True">
+
+                <dxprg:PropertyGridControl.PropertyDefinitions>
+                    <dxprg:PropertyDefinition Path="Name" Header="Name" IsReadOnly="True" />
+                    <dxprg:PropertyDefinition Path="FieldType" Header="Тип" IsReadOnly="True" />
+                    <dxprg:PropertyDefinition Path="Value" Header="Значение" IsReadOnly="True" />
+                </dxprg:PropertyGridControl.PropertyDefinitions>
+            </dxprg:PropertyGridControl>
+        </dxlc:LayoutGroup>
+
+        <Button Grid.Row="2" Grid.Column="2" Margin="2,2,104,2" Height="27" Width="100" Content="ОК" HorizontalAlignment="Right" Click="OnOkButtonClick"/>
+        <Button Grid.Row="2" Grid.Column="2" Margin="2,2,0,2" Height="27" Width="100" Content="Закрыть" HorizontalAlignment="Right" Click="OnCancelButtonClick"/>
+    </Grid>
+</views:BaseDialogWindow>

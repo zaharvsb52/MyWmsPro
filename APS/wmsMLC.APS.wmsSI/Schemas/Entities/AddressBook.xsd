@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!--Сущность AddressBook-->
+  <xs:element name="TENTADDRESSBOOK" type="AddressBookType"/>
+  
+  <!--Описание типа адресная книга-->
+  <xs:complexType name="AddressBookType">
+    <xs:sequence>
+      <!--ID адреса-->
+      <!--<xs:element name="ADDRESSBOOKID" type="xs:integer"/>-->
+      <!--Страна-->
+      <xs:element name="ADDRESSBOOKCOUNTRY">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Почтовый индекс-->
+      <xs:element name="ADDRESSBOOKINDEX" type="xs:integer"/>
+      <!--Регион (регион, область, район, край)-->
+      <xs:element name="ADDRESSBOOKREGION">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Город-->
+      <xs:element name="ADDRESSBOOKCITY">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Район-->
+      <xs:element name="ADDRESSBOOKDISTRICT">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Улица-->
+      <xs:element name="ADDRESSBOOKSTREET">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Здание-->
+      <xs:element name="ADDRESSBOOKBUILDING">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Квартира или офис-->
+      <xs:element name="ADDRESSBOOKAPARTMENT">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Тип адреса-->
+      <xs:element name="ADDRESSBOOKTYPECODE" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+            <xs:enumeration value="ADR_PHYSICAL" />
+            <xs:enumeration value="ADR_LEGAL" />
+            <xs:enumeration value="ADR_POS" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

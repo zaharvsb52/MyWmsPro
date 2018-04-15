@@ -1,0 +1,191 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxci="http://schemas.devexpress.com/winfx/2008/xaml/core/internal" xmlns:themes="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <!--BEGIN WPF-->
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="../StandardControlStyles.XAML" />
+  </ResourceDictionary.MergedDictionaries>
+  <!--END WPF-->
+  <!--#include \..\..\..\..\Themes.SL\StandardControls\Brushes.xaml-->
+  <!--#include \..\..\..\..\Themes.SL\StandardControls\SharedResources.xaml-->
+  <!--#include \..\..\..\..\Themes.SL\StandardControls\Button.xaml-->
+  <!--SearchPanelBorderBrush-->
+  <SolidColorBrush x:Key="{themes:SearchPanelThemeKey ResourceKey=SearchPanelBorderBrush}" Color="#FFA4A6AF" />
+  <!--SearchPanelBackgroundBrush-->
+  <SolidColorBrush x:Key="{themes:SearchPanelThemeKey ResourceKey=SearchPanelBackgroundBrush}" Color="#FFD7D7E5" />
+  <!--SearchPanelTextBrush-->
+  <SolidColorBrush x:Key="{themes:SearchPanelThemeKey ResourceKey=SearchPanelTextBrush}" Color="#FF201F35" />
+  <!--SearchPanelGlyphBrush-->
+  <SolidColorBrush x:Key="{themes:SearchPanelThemeKey ResourceKey=SearchPanelGlyphBrush}" Color="#FF201F35" />
+  <!--ButtonControlTemplate-->
+  <ControlTemplate x:Key="{themes:SearchPanelThemeKey ResourceKey=ButtonControlTemplate}" TargetType="{x:Type Button}">
+    <Grid SnapsToDevicePixels="True" UseLayoutRounding="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\GrayOne\SearchPanel.xaml;27;10">
+      <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup x:Name="CommonStates">
+          <VisualStateGroup.Transitions>
+            <VisualTransition GeneratedDuration="00:00:00.1" To="MouseOver" />
+            <VisualTransition GeneratedDuration="00:00:00.1" To="Pressed" />
+          </VisualStateGroup.Transitions>
+          <VisualState x:Name="Normal" />
+          <VisualState x:Name="MouseOver">
+            <Storyboard>
+              <ColorAnimation Storyboard.TargetName="gs1" Storyboard.TargetProperty="Color" Duration="0:0:0.01" To="#FFCECECE" />
+              <ColorAnimation Storyboard.TargetName="gs2" Storyboard.TargetProperty="Color" Duration="0:0:0.01" To="#FFB3B3B3" />
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="Pressed">
+            <Storyboard>
+              <ColorAnimation Storyboard.TargetName="gs1" Storyboard.TargetProperty="Color" Duration="0:0:0.01" To="#FF939393" />
+              <ColorAnimation Storyboard.TargetName="gs2" Storyboard.TargetProperty="Color" Duration="0:0:0.01" To="#FF939393" />
+            </Storyboard>
+          </VisualState>
+        </VisualStateGroup>
+      </VisualStateManager.VisualStateGroups>
+      <Border CornerRadius="8,8,8,8" SnapsToDevicePixels="True" UseLayoutRounding="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\GrayOne\SearchPanel.xaml;49;14">
+        <Border.Background>
+          <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFEDEDED" x:Name="gs1" />
+            <GradientStop Color="#FFE1E1E1" x:Name="gs2" Offset="1" />
+          </LinearGradientBrush>
+        </Border.Background>
+        <ContentPresenter x:Name="contentPresenter" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" SnapsToDevicePixels="True" UseLayoutRounding="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\GrayOne\SearchPanel.xaml;56;18" />
+      </Border>
+    </Grid>
+  </ControlTemplate>
+  <!--ButtonBorderBrush-->
+  <LinearGradientBrush x:Key="{themes:SearchPanelThemeKey ResourceKey=ButtonBorderBrush}" EndPoint="0.5,1" StartPoint="0.5,0">
+    <GradientStop Color="#FFA3AEB9" Offset="0" />
+    <GradientStop Color="#FF8399A9" Offset="0.375" />
+    <GradientStop Color="#FF718597" Offset="0.375" />
+    <GradientStop Color="#FF617584" Offset="1" />
+  </LinearGradientBrush>
+  <!--OptionsButtonStyle-->
+  <!--BEGIN WPF-->
+  <Style x:Key="{themes:SearchPanelThemeKey ResourceKey=OptionsButtonStyle}" TargetType="{x:Type Button}" BasedOn="{StaticResource {themes:DefaultStyleThemeKey Type=Button}}">
+    <!--END WPF-->
+    <!--ONLY SL
+        <Style x:Key="{themes:SearchPanelThemeKey ResourceKey=OptionsButtonStyle}" TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonThemeKey_ButtonControlStyle}">
+        ONLY SL-->
+    <Setter Property="Width" Value="21" />
+    <Setter Property="Height" Value="21" />
+    <Setter Property="Cursor" Value="Hand" />
+  </Style>
+  <!--ReplaceButtonStyle-->
+  <!--BEGIN WPF-->
+  <Style x:Key="{themes:SearchPanelThemeKey ResourceKey=ReplaceButtonStyle}" TargetType="{x:Type Button}" BasedOn="{StaticResource {themes:DefaultStyleThemeKey Type=Button}}">
+    <!--END WPF-->
+    <!--ONLY SL
+        <Style x:Key="{themes:SearchPanelThemeKey ResourceKey=ReplaceButtonStyle}" TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonThemeKey_ButtonControlStyle}">
+        ONLY SL-->
+    <Setter Property="Margin" Value="0,0,4,0" />
+    <Setter Property="Height" Value="21" />
+  </Style>
+  <!--ReplaceAllButtonStyle-->
+  <!--BEGIN WPF-->
+  <Style x:Key="{themes:SearchPanelThemeKey ResourceKey=ReplaceAllButtonStyle}" TargetType="{x:Type Button}" BasedOn="{StaticResource {themes:DefaultStyleThemeKey Type=Button}}">
+    <!--END WPF-->
+    <!--ONLY SL
+        <Style x:Key="{themes:SearchPanelThemeKey ResourceKey=ReplaceAllButtonStyle}" TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonThemeKey_ButtonControlStyle}">
+        ONLY SL-->
+    <Setter Property="Height" Value="21" />
+    <!--Changed-->
+    <Setter Property="Margin" Value="0,0,8,0" />
+  </Style>
+  <!--FindPrevButtonStyle-->
+  <!--BEGIN WPF-->
+  <Style x:Key="{themes:SearchPanelThemeKey ResourceKey=FindPrevButtonStyle}" TargetType="{x:Type Button}" BasedOn="{StaticResource {themes:DefaultStyleThemeKey Type=Button}}">
+    <!--END WPF-->
+    <!--ONLY SL
+        <Style x:Key="{themes:SearchPanelThemeKey ResourceKey=FindPrevButtonStyle}" TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonThemeKey_ButtonControlStyle}">
+        ONLY SL-->
+    <Setter Property="Margin" Value="0,0,4,0" />
+    <Setter Property="Height" Value="21" />
+    <!--Changed-->
+    <Setter Property="Width" Value="21" />
+  </Style>
+  <!--FindNextButtonStyle-->
+  <!--BEGIN WPF-->
+  <Style x:Key="{themes:SearchPanelThemeKey ResourceKey=FindNextButtonStyle}" TargetType="{x:Type Button}" BasedOn="{StaticResource {themes:DefaultStyleThemeKey Type=Button}}">
+    <!--END WPF-->
+    <!--ONLY SL
+        <Style x:Key="{themes:SearchPanelThemeKey ResourceKey=FindNextButtonStyle}" TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonThemeKey_ButtonControlStyle}">
+        ONLY SL-->
+    <Setter Property="Height" Value="21" />
+    <!--Changed-->
+    <Setter Property="Margin" Value="0" />
+    <Setter Property="Width" Value="21" />
+  </Style>
+  <!--CloseButtonStyle-->
+  <!--<Style x:Key="{themes:SearchPanelThemeKey ResourceKey=CloseButtonStyle}" TargetType="{x:Type Button}" BasedOn="{StaticResource {themes:DefaultStyleThemeKey Type=Button}}">-->
+  <!--BEGIN WPF-->
+  <Style x:Key="{themes:SearchPanelThemeKey ResourceKey=CloseButtonStyle}" TargetType="{x:Type Button}" BasedOn="{StaticResource {themes:DefaultStyleThemeKey Type=Button}}">
+    <!--END WPF-->
+    <!--ONLY SL
+        <Style x:Key="{themes:SearchPanelThemeKey ResourceKey=CloseButtonStyle}" TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonThemeKey_ButtonControlStyle}">
+        ONLY SL-->
+    <Setter Property="Height" Value="21" />
+    <!--Changed-->
+    <Setter Property="Width" Value="21" />
+  </Style>
+  <!--ButtonTextBlockStyle-->
+  <Style x:Key="{themes:SearchPanelThemeKey ResourceKey=ButtonTextBlockStyle}" TargetType="{x:Type TextBlock}">
+    <Setter Property="Width" Value="Auto" />
+    <Setter Property="Height" Value="Auto" />
+    <Setter Property="Margin" Value="10,0,10,1" />
+    <Setter Property="VerticalAlignment" Value="Center" />
+  </Style>
+  <!--PanelTextBlockStyle-->
+  <Style x:Key="{themes:SearchPanelThemeKey ResourceKey=PanelTextBlockStyle}" TargetType="{x:Type TextBlock}">
+    <Setter Property="Width" Value="Auto" />
+    <Setter Property="Height" Value="Auto" />
+    <Setter Property="Foreground" Value="{DynamicResource {themes:SearchPanelThemeKey ResourceKey=SearchPanelTextBrush}}" />
+    <Setter Property="Margin" Value="0,0,4,0" />
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="HorizontalAlignment" Value="Left" />
+  </Style>
+  <!--FindPrevButtonShape-->
+  <DataTemplate x:Key="{themes:SearchPanelThemeKey ResourceKey=FindPrevButtonShape}">
+    <Path Stretch="Fill" Fill="{DynamicResource {themes:SearchPanelThemeKey ResourceKey=SearchPanelGlyphBrush}}" Data="F1 M 290.391,235.281L 283.391,231.281L 283.391,230.281L 290.391,226.281L 290.391,235.281 Z" Width="7" Height="9" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\GrayOne\SearchPanel.xaml;163;10" />
+  </DataTemplate>
+  <!--FindNextButtonShape-->
+  <DataTemplate x:Key="{themes:SearchPanelThemeKey ResourceKey=FindNextButtonShape}">
+    <Path Stretch="Fill" Fill="{DynamicResource {themes:SearchPanelThemeKey ResourceKey=SearchPanelGlyphBrush}}" Data="F1 M 294.594,226.313L 301.594,230.313L 301.594,231.313L 294.594,235.313L 294.594,226.313 Z" Width="7" Height="9" Margin="2,0,0,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\GrayOne\SearchPanel.xaml;168;10" />
+  </DataTemplate>
+  <!--CloseButtonShape-->
+  <DataTemplate x:Key="{themes:SearchPanelThemeKey ResourceKey=CloseButtonShape}">
+    <Path Stretch="Fill" Fill="{DynamicResource {themes:SearchPanelThemeKey ResourceKey=SearchPanelGlyphBrush}}" Data="F1 M 285,223L 288,226L 288.997,226.003L 292,223L 294,225L 290.997,228.003L 291,229L 294,232L 292,234L 289,231L 288,231L 285,234L 283,232L 286,229L 286,228L 283,225L 285,223 Z" Width="11" Height="11" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\GrayOne\SearchPanel.xaml;173;10" />
+  </DataTemplate>
+  <!--OptionsButtonShape-->
+  <DataTemplate x:Key="{themes:SearchPanelThemeKey ResourceKey=OptionsButtonShape}">
+    <Path Stretch="Fill" Fill="{DynamicResource {themes:SearchPanelThemeKey ResourceKey=SearchPanelGlyphBrush}}" Data="F1 M 304,230L 301,235L 300,235L 297,230L 304,230 Z" Width="7" Height="5" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\GrayOne\SearchPanel.xaml;178;10" />
+  </DataTemplate>
+  <!--SeparatorControlTemplate-->
+  <ControlTemplate x:Key="{themes:SearchPanelThemeKey ResourceKey=SeparatorControlTemplate}" TargetType="{x:Type ContentControl}">
+    <Border Background="#FF8591A2" Width="1" Margin="2,4,2,4" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\GrayOne\SearchPanel.xaml;183;10">
+      <Border.OpacityMask>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+          <GradientStop Color="#00FFFFFF" Offset="0" />
+          <GradientStop Color="#00FFFFFF" Offset="1" />
+          <GradientStop Color="#FFFFFFFF" Offset="0.5" />
+        </LinearGradientBrush>
+      </Border.OpacityMask>
+    </Border>
+  </ControlTemplate>
+  <!--BorderControlTemplate-->
+  <ControlTemplate x:Key="{themes:SearchPanelThemeKey ResourceKey=BorderControlTemplate}" TargetType="{x:Type ContentControl}">
+    <Border BorderThickness="0,0,0,1" Padding="8,5,8,4" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\GrayOne\SearchPanel.xaml;196;10">
+      <Border.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+          <GradientStop Color="#FFFFFFFF" Offset="0" />
+          <GradientStop Color="#FFF1F2F6" Offset="1" />
+        </LinearGradientBrush>
+      </Border.Background>
+      <Border.BorderBrush>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+          <GradientStop Color="#3FB8BAC2" Offset="0" />
+          <GradientStop Color="#FFB8BAC2" Offset="1" />
+        </LinearGradientBrush>
+      </Border.BorderBrush>
+      <ContentPresenter Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" ContentTemplate="{TemplateBinding ContentTemplate}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\GrayOne\SearchPanel.xaml;209;14" />
+    </Border>
+  </ControlTemplate>
+  <!--#include ..\Generic\SearchPanel.xaml-->
+</ResourceDictionary>

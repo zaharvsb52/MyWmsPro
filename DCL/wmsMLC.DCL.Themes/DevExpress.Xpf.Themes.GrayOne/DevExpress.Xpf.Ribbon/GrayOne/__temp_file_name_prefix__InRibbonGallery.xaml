@@ -1,0 +1,200 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon" xmlns:dxrt="http://schemas.devexpress.com/winfx/2008/xaml/ribbon/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <ControlTemplate x:Key="{dxrt:InRibbonGalleryThemeKey ResourceKey=GalleryBackgroundTemplate}" TargetType="{x:Type ContentControl}">
+    <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\InRibbonGallery.xaml;4;10" />
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxrt:InRibbonGalleryThemeKey ResourceKey=GalleryGroupsBackgroundTemplate}" TargetType="{x:Type ContentControl}">
+    <ContentPresenter Margin="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\InRibbonGallery.xaml;8;10" />
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxrt:InRibbonGalleryThemeKey ResourceKey=GalleryItemBorderTemplate}" TargetType="{x:Type dxb:ItemBorderControl}">
+    <Grid Background="Transparent" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\InRibbonGallery.xaml;12;10">
+      <Border x:Name="HoverState" CornerRadius="2" BorderThickness="1" Padding="1" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\InRibbonGallery.xaml;13;14">
+        <Border.Background>
+          <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFF4F6FE" Offset="0" />
+            <GradientStop Color="#FFF4F6FE" Offset="1" />
+            <GradientStop Color="#FFECEFF7" Offset="0.25" />
+          </LinearGradientBrush>
+        </Border.Background>
+        <Border.BorderBrush>
+          <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFCECFD5" Offset="0" />
+            <GradientStop Color="#FFCECFD5" Offset="1" />
+            <GradientStop Color="#FFACAFB8" Offset="0.25" />
+          </LinearGradientBrush>
+        </Border.BorderBrush>
+        <Border CornerRadius="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\InRibbonGallery.xaml;28;18">
+          <Border.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+              <GradientStop Color="#FFE5EBFF" Offset="0" />
+              <GradientStop Color="#FFE4EBFD" Offset="1" />
+              <GradientStop Color="#FFDEE6FE" Offset="0.25" />
+            </LinearGradientBrush>
+          </Border.Background>
+        </Border>
+      </Border>
+      <Border x:Name="PressedState" CornerRadius="2" BorderThickness="1" Padding="1" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\InRibbonGallery.xaml;38;14">
+        <Border.Background>
+          <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFD7D7DC" Offset="0" />
+            <GradientStop Color="#FFDADBDF" Offset="1" />
+          </LinearGradientBrush>
+        </Border.Background>
+        <Border.BorderBrush>
+          <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFBEBFC5" Offset="0" />
+            <GradientStop Color="#FFD1D2D6" Offset="1" />
+          </LinearGradientBrush>
+        </Border.BorderBrush>
+      </Border>
+      <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\InRibbonGallery.xaml;52;14" />
+      <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup x:Name="State">
+          <VisualState x:Name="Normal" />
+          <VisualState x:Name="Hover">
+            <Storyboard>
+              <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="HoverState" Duration="0" To="1" />
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="Pressed" />
+          <VisualState x:Name="Checked">
+            <Storyboard>
+              <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="PressedState" Duration="0" To="1" />
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="HoverChecked">
+            <Storyboard>
+              <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="PressedState" Duration="0" To="1" />
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="Focused">
+            <Storyboard>
+              <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="HoverState" Duration="0" To="1" />
+            </Storyboard>
+          </VisualState>
+        </VisualStateGroup>
+      </VisualStateManager.VisualStateGroups>
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxrt:InRibbonGalleryThemeKey ResourceKey=GalleryItemGlyphBorderTemplate}" TargetType="{x:Type dxb:ItemBorderControl}">
+    <Border Name="Root" BorderBrush="Transparent" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\InRibbonGallery.xaml;83;10">
+      <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\InRibbonGallery.xaml;84;14" />
+    </Border>
+    <ControlTemplate.Triggers>
+      <Trigger Property="State" Value="Checked">
+        <Setter TargetName="Root" Property="BorderBrush" Value="#FFDFFFFC" />
+      </Trigger>
+    </ControlTemplate.Triggers>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxrt:InRibbonGalleryThemeKey ResourceKey=UpButtonTemplate}" TargetType="{x:Type Button}">
+    <Grid Background="Transparent" Width="13" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\InRibbonGallery.xaml;94;10">
+      <Path x:Name="Glyph" Stretch="Fill" Fill="#FF201F35" Data="F1 M 168,33.0001L 174,33.0001L 171,30.0002L 168,33.0001 Z" Margin="0,0,0,1" Width="6" Height="3" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\InRibbonGallery.xaml;95;14" />
+      <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup x:Name="CommonStates">
+          <VisualState x:Name="Normal" />
+          <VisualState x:Name="MouseOver">
+            <Storyboard>
+              <ColorAnimation Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Glyph" Duration="0" To="#FF201F35" />
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="Pressed">
+            <Storyboard>
+              <ColorAnimation Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Glyph" Duration="0" To="#FF201F35" />
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="Disabled">
+            <Storyboard>
+              <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Glyph" Duration="0" To="0.35" />
+            </Storyboard>
+          </VisualState>
+        </VisualStateGroup>
+      </VisualStateManager.VisualStateGroups>
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxrt:InRibbonGalleryThemeKey ResourceKey=DownButtonTemplate}" TargetType="{x:Type Button}">
+    <Grid Background="Transparent" Width="13" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\InRibbonGallery.xaml;120;10">
+      <Path x:Name="Glyph" Stretch="Fill" Fill="#FF80838F" Data="F1 M 168,37L 174,37L 171,39.9999L 168,37 Z" Margin="0,0,0,1" Width="6" Height="3" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\InRibbonGallery.xaml;121;14" />
+      <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup x:Name="CommonStates">
+          <VisualState x:Name="Normal" />
+          <VisualState x:Name="MouseOver">
+            <Storyboard>
+              <ColorAnimation Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Glyph" Duration="0" To="#FF201F35" />
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="Pressed">
+            <Storyboard>
+              <ColorAnimation Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Glyph" Duration="0" To="#FF201F35" />
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="Disabled">
+            <Storyboard>
+              <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Glyph" Duration="0" To="0.35" />
+            </Storyboard>
+          </VisualState>
+        </VisualStateGroup>
+      </VisualStateManager.VisualStateGroups>
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxrt:InRibbonGalleryThemeKey ResourceKey=DropDownButtonTemplate}" TargetType="{x:Type dxr:RibbonCheckedBorderControl}">
+    <Grid Background="Transparent" Width="13" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\InRibbonGallery.xaml;146;10">
+      <Grid x:Name="Glyph" Width="6" Height="5" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\InRibbonGallery.xaml;147;14">
+        <Path x:Name="Path1" Stretch="Fill" Fill="#FF201F35" Data="F1 M 168,46.0001L 174,46.0001L 171,49L 168,46.0001 Z" Width="6" Height="3" VerticalAlignment="Bottom" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\InRibbonGallery.xaml;148;18" />
+        <Rectangle x:Name="Path2" Stretch="Fill" Fill="#FF201F35" Width="6" Height="1" VerticalAlignment="Top" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\InRibbonGallery.xaml;149;18" />
+      </Grid>
+      <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup x:Name="CommonStates">
+          <VisualState x:Name="Normal" />
+          <VisualState x:Name="MouseOver">
+            <Storyboard>
+              <ColorAnimation Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Path1" Duration="0" To="#FF201F35" />
+              <ColorAnimation Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Path2" Duration="0" To="#FF201F35" />
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="Pressed">
+            <Storyboard>
+              <ColorAnimation Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Path1" Duration="0" To="#FF201F35" />
+              <ColorAnimation Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Path2" Duration="0" To="#FF201F35" />
+            </Storyboard>
+          </VisualState>
+          <VisualState x:Name="Disabled">
+            <Storyboard>
+              <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Glyph" Duration="0" To="0.35" />
+            </Storyboard>
+          </VisualState>
+        </VisualStateGroup>
+      </VisualStateManager.VisualStateGroups>
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{dxrt:InRibbonGalleryThemeKey ResourceKey=BorderTemplate}" TargetType="{x:Type ContentControl}">
+    <Border Background="#FFFFFFFF" BorderThickness="1" CornerRadius="2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\InRibbonGallery.xaml;177;10">
+      <Border.BorderBrush>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+          <GradientStop Color="#FFE1E1E6" Offset="0" />
+          <GradientStop Color="#FFE1E1E6" Offset="1" />
+          <GradientStop Color="#FF8D919D" Offset="0.5" />
+        </LinearGradientBrush>
+      </Border.BorderBrush>
+      <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\InRibbonGallery.xaml;185;14">
+        <Border BorderThickness="1" CornerRadius="1" Opacity="0.15" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\InRibbonGallery.xaml;186;18">
+          <Border.BorderBrush>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+              <GradientStop Color="#00000000" Offset="0" />
+              <GradientStop Color="#00000000" Offset="1" />
+              <GradientStop Color="#FF000000" Offset="0.5" />
+            </LinearGradientBrush>
+          </Border.BorderBrush>
+          <Border BorderThickness="1" CornerRadius="1" Opacity="0.6" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\InRibbonGallery.xaml;194;22">
+            <Border.BorderBrush>
+              <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#00000000" Offset="0" />
+                <GradientStop Color="#00000000" Offset="1" />
+                <GradientStop Color="#FF000000" Offset="0.5" />
+              </LinearGradientBrush>
+            </Border.BorderBrush>
+          </Border>
+        </Border>
+        <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\GrayOne\InRibbonGallery.xaml;204;18" />
+      </Grid>
+    </Border>
+  </ControlTemplate>
+</ResourceDictionary>

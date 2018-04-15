@@ -1,0 +1,73 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" xmlns:dxbt="http://schemas.devexpress.com/winfx/2008/xaml/bars/themekeys" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon" xmlns:dxcn="http://schemas.devexpress.com/winfx/2008/xaml/core/internal" xmlns:dxrt="http://schemas.devexpress.com/winfx/2008/xaml/ribbon/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+  <!--BEGIN WPF-->
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Bars/Themes/GrayOne/Brushes.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Ribbon/GrayOne/BarItems.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Ribbon/GrayOne/DropDownGallery.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Ribbon/GrayOne/InRibbonGallery.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Ribbon/GrayOne/QuickAccessToolbar.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Ribbon/GrayOne/Ribbon.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Ribbon/GrayOne/RibbonHeader.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Ribbon/GrayOne/RibbonPage.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Ribbon/GrayOne/RibbonPageCategory.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Ribbon/GrayOne/RibbonPageGroup.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Ribbon/GrayOne/RibbonStatusBar.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Ribbon/GrayOne/BackstageButtonItem.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Ribbon/GrayOne/BackstageTabItem.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Ribbon/GrayOne/BackstageSeparatorItem.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Ribbon/GrayOne/BackstageView.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Ribbon/GrayOne/ApplicationMenu.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Ribbon/GrayOne/ApplicationButton.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Ribbon/GrayOne/RibbonWindow.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Ribbon/GrayOne/RibbonAeroWindow.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Ribbon/GrayOne/DXTreeView.xaml" />
+    <ResourceDictionary Source="/DevExpress.Xpf.Themes.GrayOne.v12.2;component/DevExpress.Xpf.Ribbon/GrayOne/DXTreeViewItem.xaml" />
+    <!--
+          skipped
+          Source ={dxc:RibbonResource Themes/GrayOne/RibbonWindow.xaml, DenyXBAP=True}
+          ignoreSource = RibbonWindow.xaml, DenyXBAP=True-->
+  </ResourceDictionary.MergedDictionaries>
+  <!--END WPF-->
+  <!--#include ..\DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\Brushes.xaml-->
+  <!--#include ..\DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\SubMenuBarControl.xaml-->
+  <!--#include \GrayOne\BarItems.xaml-->
+  <!--#include \GrayOne\DropDownGallery.xaml-->
+  <!--#include \GrayOne\InRibbonGallery.xaml-->
+  <!--#include \GrayOne\QuickAccessToolbar.xaml-->
+  <!--#include \GrayOne\Ribbon.xaml-->
+  <!--#include \GrayOne\RibbonHeader.xaml-->
+  <!--#include \GrayOne\RibbonPage.xaml-->
+  <!--#include \GrayOne\RibbonPageCategory.xaml-->
+  <!--#include \GrayOne\RibbonPageGroup.xaml-->
+  <!--#include \GrayOne\RibbonStatusBar.xaml-->
+  <!--#include \GrayOne\BackstageButtonItem.xaml-->
+  <!--#include \GrayOne\BackstageTabItem.xaml-->
+  <!--#include \GrayOne\BackstageSeparatorItem.xaml-->
+  <!--#include \GrayOne\BackstageView.xaml-->
+  <!--#include \GrayOne\ApplicationMenu.xaml-->
+  <!--#include \GrayOne\ApplicationButton.xaml-->
+  <!--#include \GrayOne\DXTreeView.xaml-->
+  <!--#include \GrayOne\DXTreeViewItem.xaml-->
+  <!--#include ..\DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\BarControl.xaml-->
+  <!--#include ..\DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\GrayOne\SubMenuBarControl.xaml-->
+  <!--#include ..\DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Generic\SubMenuBarControl.xaml-->
+  <!--#include \Generic\BarItems.xaml-->
+  <!--#include \Generic\DropDownGallery.xaml-->
+  <!--#include \Generic\InRibbonGallery.xaml-->
+  <!--#include \Generic\QuickAccessToolbar.xaml-->
+  <!--#include \Generic\Ribbon.xaml-->
+  <!--#include \Generic\RibbonHeader.xaml-->
+  <!--#include \Generic\RibbonPage.xaml-->
+  <!--#include \Generic\RibbonPageCategory.xaml-->
+  <!--#include \Generic\RibbonPageGroup.xaml-->
+  <!--#include \Generic\RibbonStatusBar.xaml-->
+  <!--#include \Generic\BackstageButtonItem.xaml-->
+  <!--#include \Generic\BackstageTabItem.xaml-->
+  <!--#include \Generic\BackstageSeparatorItem.xaml-->
+  <!--#include \Generic\BackstageView.xaml-->
+  <!--#include \Generic\ApplicationMenu.xaml-->
+  <!--#include \Generic\ApplicationButton.xaml-->
+  <!--#include \Generic\DXTreeView.xaml-->
+  <!--#include \Generic\DXTreeViewItem.xaml-->
+  <!--#include \Generic\IndependentPart.xaml-->
+</ResourceDictionary>

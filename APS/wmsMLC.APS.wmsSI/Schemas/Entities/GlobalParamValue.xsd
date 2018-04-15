@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GlobalParamValue" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!--Сущность GlobalParamValue-->
+  <xs:element name="TENTGLOBALPARAMVALUE" type="GlobalParamValueType"/>
+  
+  <!--Описание типа GlobalParamValue-->
+  <xs:complexType name="GlobalParamValueType">
+    <xs:sequence>
+      <!--ID записи-->
+      <xs:element name="GPARAMID" type="xs:integer"/>
+      <!--Отношение к сущности экземпляра-->
+      <xs:element name="GPARAMVAL2ENTITY" nillable="false">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Код параметра -->
+      <xs:element name="GLOBALPARAMCODE_R" nillable="false">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Код экземпляра сущности-->
+      <xs:element name="GPARAMVALKEY" nillable="false">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Значение параметра-->
+      <xs:element name="GPARAMVALVALUE">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1030"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

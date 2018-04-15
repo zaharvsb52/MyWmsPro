@@ -1,0 +1,51 @@
+﻿<Window x:Class="wmsMLC.RCL.Main.Views.SplashScreenView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    xmlns:lex="http://wpflocalizeextension.codeplex.com"
+    xmlns:general="clr-namespace:wmsMLC.General;assembly=wmsMLC.General"
+    xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
+    mc:Ignorable="po"
+    WindowStyle="None"
+    ResizeMode="NoResize"
+    AllowsTransparency="True" Background="Transparent" ShowInTaskbar="False"
+    WindowStartupLocation="CenterOwner"
+    Topmost="False"
+    WindowState="Maximized">
+
+    <Grid >
+        <Grid.Background>
+            <ImageBrush ImageSource="{lex:LocExtension Key=wmsMLC.RCL.Resources:ImageResources:SplashScreen}" po:Freeze="True"/>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="20" />
+            <RowDefinition />
+            <RowDefinition Height="15" />
+            <RowDefinition Height="15" />
+            <RowDefinition Height="15" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  Width="*"  />
+        </Grid.ColumnDefinitions>
+
+        
+        
+            <TextBlock Grid.Row="0" TextWrapping="Wrap" Margin="2,2,2,2" Text="{Binding Source={x:Static general:AssemblyAttributeAccessors.AssemblyProduct}, Mode=OneTime}" Foreground="White" />
+        <TextBlock Grid.Row="1" TextWrapping="Wrap" Margin="2,2,2,2" Text="{Binding Source={x:Static general:AssemblyAttributeAccessors.AssemblyFileVersion}, Mode=OneTime}" Foreground="White" />
+
+
+        <TextBlock Grid.Row="3" Grid.Column="0" x:Name="Info" TextWrapping="Wrap" Foreground="White" Margin="2,0,2,0" />
+
+        <dxe:ProgressBarEdit Grid.Row="4" Grid.Column="0"  x:Name="progressBar" Margin="2,0,2,0" >
+            <dxe:ProgressBarEdit.StyleSettings>
+                <dxe:ProgressBarMarqueeStyleSettings/>
+            </dxe:ProgressBarEdit.StyleSettings>
+        </dxe:ProgressBarEdit>
+
+        <!--<TextBlock Grid.Row="5" Margin="2" TextWrapping="Wrap" Text="{lex:LocExtension Key=wmsMLC.RCL.Resources:StringResources:MlcDescription}" Foreground="#FFB1D8FF" />-->
+        <TextBlock Grid.Row="5" Grid.Column="0" TextWrapping="Wrap" Text="{Binding Source={x:Static general:AssemblyAttributeAccessors.AssemblyCopyright}, Mode=OneTime}" Opacity="1" Foreground="Silver" HorizontalAlignment="Right" Margin="2,1,2,1" />
+    </Grid>
+</Window>
